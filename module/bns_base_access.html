@@ -1,0 +1,5862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>bns_base_access &ndash; SPHINCS_LORENE</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>bns_base_access 
+    <small>Submodule</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 2.6% of total for modules and submodules.">290 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/submodule_bns_base_access.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/submodule_bns_base_access.f90.html'>submodule_bns_base_access.f90</a></li>
+    
+  
+     <li class="active">bns_base_access</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-0">Module Procedures</a></h3></div>
+  <div id="modprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_adm_mass">get_adm_mass</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_angular_momentum">get_angular_momentum</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_angular_vel">get_angular_vel</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_barycenter">get_barycenter</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_barycenter1_x">get_barycenter1_x</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_barycenter2_x">get_barycenter2_x</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_center">get_center</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_center1_x">get_center1_x</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_center2_x">get_center2_x</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_distance">get_distance</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_distance_com">get_distance_com</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_energy_density_center1">get_energy_density_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_energy_density_center2">get_energy_density_center2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_ent_center1">get_ent_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_ent_center2">get_ent_center2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_eos">get_eos</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_eos1">get_eos1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_eos2">get_eos2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma0_1">get_gamma0_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma0_2">get_gamma0_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma1_1">get_gamma1_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma1_2">get_gamma1_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma2_1">get_gamma2_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma2_2">get_gamma2_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma3_1">get_gamma3_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma3_2">get_gamma3_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma_1">get_gamma_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma_2">get_gamma_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_grav_mass1">get_grav_mass1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_grav_mass2">get_grav_mass2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa0_1">get_kappa0_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa0_2">get_kappa0_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa1_1">get_kappa1_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa1_2">get_kappa1_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa2_1">get_kappa2_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa2_2">get_kappa2_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa3_1">get_kappa3_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa3_2">get_kappa3_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa_1">get_kappa_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa_2">get_kappa_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho0_1">get_logRho0_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho0_2">get_logRho0_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho1_1">get_logRho1_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho1_2">get_logRho1_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho2_1">get_logRho2_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho2_2">get_logRho2_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logp1_1">get_logp1_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logp1_2">get_logp1_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_mass">get_mass</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_mass1">get_mass1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_mass2">get_mass2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_nbar_center1">get_nbar_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_nbar_center2">get_nbar_center2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_npeos_1">get_npeos_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_npeos_2">get_npeos_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_pressure_center1">get_pressure_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_pressure_center2">get_pressure_center2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radii">get_radii</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius1_x_comp">get_radius1_x_comp</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius1_x_opp">get_radius1_x_opp</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius1_y">get_radius1_y</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius1_z">get_radius1_z</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius2_x_comp">get_radius2_x_comp</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius2_x_opp">get_radius2_x_opp</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius2_y">get_radius2_y</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius2_z">get_radius2_z</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_rho_center1">get_rho_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_rho_center2">get_rho_center2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_specific_energy_center1">get_specific_energy_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_specific_energy_center2">get_specific_energy_center2</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <p>The module contains the implementation of the
+  methods of TYPE bnsbase that allow to access
+  PRIVATE members.</p>
+<p>FT 12.07.2021</p>
+<hr>
+      <br>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    <li><h5>Ancestors:</h5></li>
+    
+    <li><a href='../module/bns_base.html'>bns_base</a></li>
+    
+    
+  </ul>
+      </li>
+      
+      
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~bns_base_access~~UsesGraph Pages: 1 -->
+<svg id="modulebns_base_accessUsesGraph" width="381pt" height="74pt"
+ viewBox="0.00 0.00 381.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~bns_base_access~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>module~~bns_base_access~~UsesGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 377,-70 377,4 -4,4"/>
+<!-- module~bns_base_access -->
+<g id="module~~bns_base_access~~UsesGraph_node1" class="node">
+<title>module~bns_base_access</title>
+<polygon fill="none" stroke="#000000" points="373,-45 275,-45 275,-21 373,-21 373,-45"/>
+<text text-anchor="middle" x="324" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">bns_base_access</text>
+</g>
+<!-- module~bns_base -->
+<g id="module~~bns_base_access~~UsesGraph_node2" class="node">
+<title>module~bns_base</title>
+<g id="a_module~~bns_base_access~~UsesGraph_node2"><a xlink:href=".././module/bns_base.html" xlink:title="bns_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="239,-45 180,-45 180,-21 239,-21 239,-45"/>
+<text text-anchor="middle" x="209.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_base</text>
+</a>
+</g>
+</g>
+<!-- module~bns_base_access&#45;&gt;module~bns_base -->
+<g id="module~~bns_base_access~~UsesGraph_edge1" class="edge">
+<title>module~bns_base_access&#45;&gt;module~bns_base</title>
+<path fill="none" stroke="#000000" d="M274.7772,-33C266.2536,-33 257.4878,-33 249.2559,-33"/>
+<polygon fill="#000000" stroke="#000000" points="249.1728,-29.5001 239.1728,-33 249.1727,-36.5001 249.1728,-29.5001"/>
+</g>
+<!-- module~id_base -->
+<g id="module~~bns_base_access~~UsesGraph_node3" class="node">
+<title>module~id_base</title>
+<g id="a_module~~bns_base_access~~UsesGraph_node3"><a xlink:href=".././module/id_base.html" xlink:title="id_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-66 90,-66 90,-42 144,-42 144,-66"/>
+<text text-anchor="middle" x="117" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">id_base</text>
+</a>
+</g>
+</g>
+<!-- module~bns_base&#45;&gt;module~id_base -->
+<g id="module~~bns_base_access~~UsesGraph_edge2" class="edge">
+<title>module~bns_base&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M179.9781,-39.7023C171.6936,-41.5831 162.5816,-43.6518 153.9243,-45.6172"/>
+<polygon fill="#000000" stroke="#000000" points="153.0242,-42.2324 144.0473,-47.8595 154.574,-49.0587 153.0242,-42.2324"/>
+</g>
+<!-- module~utility -->
+<g id="module~~bns_base_access~~UsesGraph_node4" class="node">
+<title>module~utility</title>
+<g id="a_module~~bns_base_access~~UsesGraph_node4"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-24 90,-24 90,0 144,0 144,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utility</text>
+</a>
+</g>
+</g>
+<!-- module~bns_base&#45;&gt;module~utility -->
+<g id="module~~bns_base_access~~UsesGraph_edge3" class="edge">
+<title>module~bns_base&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M179.9781,-26.2977C171.6936,-24.4169 162.5816,-22.3482 153.9243,-20.3828"/>
+<polygon fill="#000000" stroke="#000000" points="154.574,-16.9413 144.0473,-18.1405 153.0242,-23.7676 154.574,-16.9413"/>
+</g>
+<!-- timing -->
+<g id="module~~bns_base_access~~UsesGraph_node6" class="node">
+<title>timing</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timing</text>
+</g>
+<!-- module~id_base&#45;&gt;timing -->
+<g id="module~~bns_base_access~~UsesGraph_edge4" class="edge">
+<title>module~id_base&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-54C81.9723,-54 73.0335,-54 64.4691,-54"/>
+<polygon fill="#000000" stroke="#000000" points="64.295,-50.5001 54.295,-54 64.2949,-57.5001 64.295,-50.5001"/>
+</g>
+<!-- matrix -->
+<g id="module~~bns_base_access~~UsesGraph_node5" class="node">
+<title>matrix</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">matrix</text>
+</g>
+<!-- module~utility&#45;&gt;matrix -->
+<g id="module~~bns_base_access~~UsesGraph_edge5" class="edge">
+<title>module~utility&#45;&gt;matrix</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-12C81.9723,-12 73.0335,-12 64.4691,-12"/>
+<polygon fill="#000000" stroke="#000000" points="64.295,-8.5001 54.295,-12 64.2949,-15.5001 64.295,-8.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses.
+    </p>
+    </div></div></div></div>
+      </li>
+      
+      </ul>
+    </div>
+    
+
+    
+    
+
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-1">Module Procedures</a></h3></div>
+  <div id="modprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_adm_mass">get_adm_mass</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_angular_momentum">get_angular_momentum</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_angular_vel">get_angular_vel</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_barycenter">get_barycenter</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_barycenter1_x">get_barycenter1_x</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_barycenter2_x">get_barycenter2_x</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_center">get_center</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_center1_x">get_center1_x</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_center2_x">get_center2_x</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_distance">get_distance</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_distance_com">get_distance_com</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_energy_density_center1">get_energy_density_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_energy_density_center2">get_energy_density_center2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_ent_center1">get_ent_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_ent_center2">get_ent_center2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_eos">get_eos</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_eos1">get_eos1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_eos2">get_eos2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma0_1">get_gamma0_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma0_2">get_gamma0_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma1_1">get_gamma1_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma1_2">get_gamma1_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma2_1">get_gamma2_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma2_2">get_gamma2_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma3_1">get_gamma3_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma3_2">get_gamma3_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma_1">get_gamma_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_gamma_2">get_gamma_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_grav_mass1">get_grav_mass1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_grav_mass2">get_grav_mass2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa0_1">get_kappa0_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa0_2">get_kappa0_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa1_1">get_kappa1_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa1_2">get_kappa1_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa2_1">get_kappa2_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa2_2">get_kappa2_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa3_1">get_kappa3_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa3_2">get_kappa3_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa_1">get_kappa_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_kappa_2">get_kappa_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho0_1">get_logRho0_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho0_2">get_logRho0_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho1_1">get_logRho1_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho1_2">get_logRho1_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho2_1">get_logRho2_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logrho2_2">get_logRho2_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logp1_1">get_logp1_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_logp1_2">get_logp1_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_mass">get_mass</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_mass1">get_mass1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_mass2">get_mass2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_nbar_center1">get_nbar_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_nbar_center2">get_nbar_center2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_npeos_1">get_npeos_1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_npeos_2">get_npeos_2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_pressure_center1">get_pressure_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_pressure_center2">get_pressure_center2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radii">get_radii</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius1_x_comp">get_radius1_x_comp</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius1_x_opp">get_radius1_x_opp</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius1_y">get_radius1_y</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius1_z">get_radius1_z</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius2_x_comp">get_radius2_x_comp</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius2_x_opp">get_radius2_x_opp</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius2_y">get_radius2_y</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_radius2_z">get_radius2_z</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_rho_center1">get_rho_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_rho_center2">get_rho_center2</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_specific_energy_center1">get_specific_energy_center1</a>
+      
+      <a class="list-group-item" href="../module/bns_base_access.html#proc-get_specific_energy_center2">get_specific_energy_center2</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+        
+
+        
+
+        
+        <section>
+        <h2>Module Procedures</h2>
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_adm_mass"></span><h3>
+module procedure <a href='../proc/get_adm_mass.html'>get_adm_mass</a> <small>module module function get_adm_mass(THIS)</small>
+    
+    
+   <a href='../interface/get_adm_mass.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the ADM mass of the system</p><a href="../proc/get_adm_mass.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_angular_momentum"></span><h3>
+module procedure <a href='../proc/get_angular_momentum.html'>get_angular_momentum</a> <small>module module function get_angular_momentum(THIS)</small>
+    
+    
+   <a href='../interface/get_angular_momentum.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the angular momentum of the system</p><a href="../proc/get_angular_momentum.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_angular_vel"></span><h3>
+module procedure <a href='../proc/get_angular_vel.html'>get_angular_vel</a> <small>module module function get_angular_vel(THIS)</small>
+    
+    
+   <a href='../interface/get_angular_vel.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the angular velocity of the system</p><a href="../proc/get_angular_vel.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_barycenter"></span><h3>
+module procedure <a href='../proc/get_barycenter.html'>get_barycenter</a> <small>module module function get_barycenter(THIS, i_matter)</small>
+    
+    
+   <a href='../interface/get_barycenter.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the barycenter of the <code>i_matter</code>-th star
+  [<script type="math/tex">L_\odot</script>]</p><a href="../proc/get_barycenter.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose parameter is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(3)</small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_barycenter1_x"></span><h3>
+module procedure <a href='../proc/get_barycenter1_x.html'>get_barycenter1_x</a> <small>module module function get_barycenter1_x(THIS)</small>
+    
+    
+   <a href='../interface/get_barycenter1_x.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the barycenter of NS 1</p><a href="../proc/get_barycenter1_x.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_barycenter2_x"></span><h3>
+module procedure <a href='../proc/get_barycenter2_x.html'>get_barycenter2_x</a> <small>module module function get_barycenter2_x(THIS)</small>
+    
+    
+   <a href='../interface/get_barycenter2_x.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the barycenter of NS 2</p><a href="../proc/get_barycenter2_x.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_center"></span><h3>
+module procedure <a href='../proc/get_center.html'>get_center</a> <small>module module function get_center(THIS, i_matter)</small>
+    
+    
+   <a href='../interface/get_center.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the center of the <code>i_matter</code>-th star
+  [<script type="math/tex">L_\odot</script>]</p><a href="../proc/get_center.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose parameter is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(3)</small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_center1_x"></span><h3>
+module procedure <a href='../proc/get_center1_x.html'>get_center1_x</a> <small>module module function get_center1_x(THIS)</small>
+    
+    
+   <a href='../interface/get_center1_x.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the stellar center of NS 1, i.e., the
+  origin of the LORENE chart centered on NS 1</p><a href="../proc/get_center1_x.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_center2_x"></span><h3>
+module procedure <a href='../proc/get_center2_x.html'>get_center2_x</a> <small>module module function get_center2_x(THIS)</small>
+    
+    
+   <a href='../interface/get_center2_x.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the stellar center of NS 2, i.e., the
+  origin of the LORENE chart centered on NS 2</p><a href="../proc/get_center2_x.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_distance"></span><h3>
+module procedure <a href='../proc/get_distance.html'>get_distance</a> <small>module module function get_distance(THIS)</small>
+    
+    
+   <a href='../interface/get_distance.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the distance between the NSs</p><a href="../proc/get_distance.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_distance_com"></span><h3>
+module procedure <a href='../proc/get_distance_com.html'>get_distance_com</a> <small>module module function get_distance_com(THIS)</small>
+    
+    
+   <a href='../interface/get_distance_com.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the distance between the centers of
+  mass of the NSs</p><a href="../proc/get_distance_com.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_energy_density_center1"></span><h3>
+module procedure <a href='../proc/get_energy_density_center1.html'>get_energy_density_center1</a> <small>module module function get_energy_density_center1(THIS)</small>
+    
+    
+   <a href='../interface/get_energy_density_center1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central energy density of NS 1</p><a href="../proc/get_energy_density_center1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_energy_density_center2"></span><h3>
+module procedure <a href='../proc/get_energy_density_center2.html'>get_energy_density_center2</a> <small>module module function get_energy_density_center2(THIS)</small>
+    
+    
+   <a href='../interface/get_energy_density_center2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central energy density of NS 2</p><a href="../proc/get_energy_density_center2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_ent_center1"></span><h3>
+module procedure <a href='../proc/get_ent_center1.html'>get_ent_center1</a> <small>module module function get_ent_center1(THIS)</small>
+    
+    
+   <a href='../interface/get_ent_center1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central enthalpy of NS 1</p><a href="../proc/get_ent_center1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_ent_center2"></span><h3>
+module procedure <a href='../proc/get_ent_center2.html'>get_ent_center2</a> <small>module module function get_ent_center2(THIS)</small>
+    
+    
+   <a href='../interface/get_ent_center2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central enthalpy of NS 2</p><a href="../proc/get_ent_center2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_eos"></span><h3>
+module procedure <a href='../proc/get_eos.html'>get_eos</a> <small>module module function get_eos(THIS, i_matter)</small>
+    
+    
+   <a href='../interface/get_eos.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the EoS name of the <code>i_matter</code>-th star
+  [<script type="math/tex">L_\odot</script>]</p><a href="../proc/get_eos.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose string is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=:),
+  ALLOCATABLE</small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_eos1"></span><h3>
+module procedure <a href='../proc/get_eos1.html'>get_eos1</a> <small>module module function get_eos1(THIS)</small>
+    
+    
+   <a href='../interface/get_eos1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the name of the EOS for NS 1</p><a href="../proc/get_eos1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=:),
+  ALLOCATABLE</small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_eos2"></span><h3>
+module procedure <a href='../proc/get_eos2.html'>get_eos2</a> <small>module module function get_eos2(THIS)</small>
+    
+    
+   <a href='../interface/get_eos2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the name of the EOS for NS 2</p><a href="../proc/get_eos2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=:),
+  ALLOCATABLE</small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma0_1"></span><h3>
+module procedure <a href='../proc/get_gamma0_1.html'>get_gamma0_1</a> <small>module module function get_gamma0_1(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma0_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma0_1]], the crust's
+  polytropic index for NS 1 with piecewise
+  polytropic EOS</p><a href="../proc/get_gamma0_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma0_2"></span><h3>
+module procedure <a href='../proc/get_gamma0_2.html'>get_gamma0_2</a> <small>module module function get_gamma0_2(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma0_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma0_2]], the crust's
+  polytropic index for NS 2 with piecewise
+  polytropic EOS</p><a href="../proc/get_gamma0_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma1_1"></span><h3>
+module procedure <a href='../proc/get_gamma1_1.html'>get_gamma1_1</a> <small>module module function get_gamma1_1(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma1_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma1_1]], the first
+  polytropic index for NS 1 with piecewise
+  polytropic EOS</p><a href="../proc/get_gamma1_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma1_2"></span><h3>
+module procedure <a href='../proc/get_gamma1_2.html'>get_gamma1_2</a> <small>module module function get_gamma1_2(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma1_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma1_2]], the first
+  polytropic index for NS 2 with piecewise
+  polytropic EOS</p><a href="../proc/get_gamma1_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma2_1"></span><h3>
+module procedure <a href='../proc/get_gamma2_1.html'>get_gamma2_1</a> <small>module module function get_gamma2_1(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma2_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma2_1]], the second
+  polytropic index for NS 2 with piecewise
+  polytropic EOS</p><a href="../proc/get_gamma2_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma2_2"></span><h3>
+module procedure <a href='../proc/get_gamma2_2.html'>get_gamma2_2</a> <small>module module function get_gamma2_2(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma2_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma2_2]], the second
+  polytropic index for NS 2 with piecewise
+  polytropic EOS</p><a href="../proc/get_gamma2_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma3_1"></span><h3>
+module procedure <a href='../proc/get_gamma3_1.html'>get_gamma3_1</a> <small>module module function get_gamma3_1(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma3_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma3_1]], the third
+  polytropic index for NS 1 with piecewise
+  polytropic EOS (innermost index)</p><a href="../proc/get_gamma3_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma3_2"></span><h3>
+module procedure <a href='../proc/get_gamma3_2.html'>get_gamma3_2</a> <small>module module function get_gamma3_2(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma3_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma3_2]], the third
+  polytropic index for NS 2 with piecewise
+  polytropic EOS (innermost index)</p><a href="../proc/get_gamma3_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma_1"></span><h3>
+module procedure <a href='../proc/get_gamma_1.html'>get_gamma_1</a> <small>module module function get_gamma_1(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma_1]], the
+  polytropic index for NS 1 with polytropic EOS,
+  not piecewise polytropic EOS</p><a href="../proc/get_gamma_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma_2"></span><h3>
+module procedure <a href='../proc/get_gamma_2.html'>get_gamma_2</a> <small>module module function get_gamma_2(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma_2]], the
+  polytropic index for NS 2 with polytropic EOS,
+  not piecewise polytropic EOS</p><a href="../proc/get_gamma_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_grav_mass1"></span><h3>
+module procedure <a href='../proc/get_grav_mass1.html'>get_grav_mass1</a> <small>module module function get_grav_mass1(THIS)</small>
+    
+    
+   <a href='../interface/get_grav_mass1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the gravitational mass of NS 1 [<script type="math/tex">M_\odot</script>]</p><a href="../proc/get_grav_mass1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_grav_mass2"></span><h3>
+module procedure <a href='../proc/get_grav_mass2.html'>get_grav_mass2</a> <small>module module function get_grav_mass2(THIS)</small>
+    
+    
+   <a href='../interface/get_grav_mass2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the gravitational mass of NS 2 [<script type="math/tex">M_\odot</script>]</p><a href="../proc/get_grav_mass2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa0_1"></span><h3>
+module procedure <a href='../proc/get_kappa0_1.html'>get_kappa0_1</a> <small>module module function get_kappa0_1(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa0_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa0_1]], the crust's
+  polytropic constant for NS 1 with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa0_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa0_2"></span><h3>
+module procedure <a href='../proc/get_kappa0_2.html'>get_kappa0_2</a> <small>module module function get_kappa0_2(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa0_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa0_2]], the crust's
+  polytropic constant for NS 2 with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa0_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa1_1"></span><h3>
+module procedure <a href='../proc/get_kappa1_1.html'>get_kappa1_1</a> <small>module module function get_kappa1_1(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa1_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa1_1]], the first
+  polytropic constant for NS 1 with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa1_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa1_2"></span><h3>
+module procedure <a href='../proc/get_kappa1_2.html'>get_kappa1_2</a> <small>module module function get_kappa1_2(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa1_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa1_2]], the first
+  polytropic constant for NS 2 with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa1_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa2_1"></span><h3>
+module procedure <a href='../proc/get_kappa2_1.html'>get_kappa2_1</a> <small>module module function get_kappa2_1(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa2_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa2_1]], the second
+  polytropic constant for NS 1 with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa2_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa2_2"></span><h3>
+module procedure <a href='../proc/get_kappa2_2.html'>get_kappa2_2</a> <small>module module function get_kappa2_2(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa2_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa2_2]], the second
+  polytropic constant for NS 2 with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa2_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa3_1"></span><h3>
+module procedure <a href='../proc/get_kappa3_1.html'>get_kappa3_1</a> <small>module module function get_kappa3_1(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa3_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa3_1]], the third
+  polytropic constant for NS 1 with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa3_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa3_2"></span><h3>
+module procedure <a href='../proc/get_kappa3_2.html'>get_kappa3_2</a> <small>module module function get_kappa3_2(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa3_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa3_2]], the third
+  polytropic constant for NS 2 with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa3_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa_1"></span><h3>
+module procedure <a href='../proc/get_kappa_1.html'>get_kappa_1</a> <small>module module function get_kappa_1(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa_1]], the
+  polytropic constant for NS 1 with polytropic
+  EOS, not piecewise polytropic EOS</p><a href="../proc/get_kappa_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa_2"></span><h3>
+module procedure <a href='../proc/get_kappa_2.html'>get_kappa_2</a> <small>module module function get_kappa_2(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa_2]], the
+  polytropic constant for NS 2 with polytropic
+  EOS, not piecewise polytropic EOS</p><a href="../proc/get_kappa_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logrho0_1"></span><h3>
+module procedure <a href='../proc/get_logrho0_1.html'>get_logRho0_1</a> <small>module module function get_logRho0_1(THIS)</small>
+    
+    
+   <a href='../interface/get_logrho0_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logRho0_1]], the base 10
+  logarithm of the mass density where the
+  gamma1_1 polytrope starts, for NS 1 with
+  piecewise polytropic EOS</p><a href="../proc/get_logrho0_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logrho0_2"></span><h3>
+module procedure <a href='../proc/get_logrho0_2.html'>get_logRho0_2</a> <small>module module function get_logRho0_2(THIS)</small>
+    
+    
+   <a href='../interface/get_logrho0_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logRho0_2]], the base 10
+  logarithm of the mass density where the
+  gamma1_2 polytrope starts, for NS 2 with
+  piecewise polytropic EOS</p><a href="../proc/get_logrho0_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logrho1_1"></span><h3>
+module procedure <a href='../proc/get_logrho1_1.html'>get_logRho1_1</a> <small>module module function get_logRho1_1(THIS)</small>
+    
+    
+   <a href='../interface/get_logrho1_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logRho1_1]], the base 10
+  logarithm of the mass density where the
+  gamma2_1 polytrope starts, for NS 1 with
+  piecewise polytropic EOS</p><a href="../proc/get_logrho1_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logrho1_2"></span><h3>
+module procedure <a href='../proc/get_logrho1_2.html'>get_logRho1_2</a> <small>module module function get_logRho1_2(THIS)</small>
+    
+    
+   <a href='../interface/get_logrho1_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logRho1_2]], the base 10
+  logarithm of the mass density where the
+  gamma2_2 polytrope starts, for NS 2 with
+  piecewise polytropic EOS</p><a href="../proc/get_logrho1_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logrho2_1"></span><h3>
+module procedure <a href='../proc/get_logrho2_1.html'>get_logRho2_1</a> <small>module module function get_logRho2_1(THIS)</small>
+    
+    
+   <a href='../interface/get_logrho2_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logRho2_1]], the base 10
+  logarithm of the mass density where the
+  gamma3_1 polytrope starts, for NS 1 with
+  piecewise polytropic EOS</p><a href="../proc/get_logrho2_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logrho2_2"></span><h3>
+module procedure <a href='../proc/get_logrho2_2.html'>get_logRho2_2</a> <small>module module function get_logRho2_2(THIS)</small>
+    
+    
+   <a href='../interface/get_logrho2_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logRho2_2]]]], the base 10
+  logarithm of the mass density where the
+  gamma3_2 polytrope starts, for NS 2 with
+  piecewise polytropic EOS</p><a href="../proc/get_logrho2_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logp1_1"></span><h3>
+module procedure <a href='../proc/get_logp1_1.html'>get_logp1_1</a> <small>module module function get_logp1_1(THIS) result(get_logP1_1)</small>
+    
+    
+   <a href='../interface/get_logp1_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logp1_1]], the base 10
+  logarithm of the pressure where the gamma1_1
+  polytrope starts, for NS 1 with piecewise
+  polytropic EOS</p><a href="../proc/get_logp1_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logp1_2"></span><h3>
+module procedure <a href='../proc/get_logp1_2.html'>get_logp1_2</a> <small>module module function get_logp1_2(THIS) result(get_logP1_2)</small>
+    
+    
+   <a href='../interface/get_logp1_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logp1_2]], the base 10
+  logarithm of the pressure where the gamma1_2
+  polytrope starts, for NS 2 with piecewise
+  polytropic EOS</p><a href="../proc/get_logp1_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_mass"></span><h3>
+module procedure <a href='../proc/get_mass.html'>get_mass</a> <small>module module function get_mass(THIS, i_matter)</small>
+    
+    
+   <a href='../interface/get_mass~2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the baryon mass of NS <code>i_matter</code>-th star
+  [<script type="math/tex">M_\odot</script>]</p><a href="../proc/get_mass.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_mass1"></span><h3>
+module procedure <a href='../proc/get_mass1.html'>get_mass1</a> <small>module module function get_mass1(THIS)</small>
+    
+    
+   <a href='../interface/get_mass1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the baryon mass of NS 1 [<script type="math/tex">M_\odot</script>]</p><a href="../proc/get_mass1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_mass2"></span><h3>
+module procedure <a href='../proc/get_mass2.html'>get_mass2</a> <small>module module function get_mass2(THIS)</small>
+    
+    
+   <a href='../interface/get_mass2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the baryon mass of NS 2 [<script type="math/tex">M_\odot</script>]</p><a href="../proc/get_mass2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_nbar_center1"></span><h3>
+module procedure <a href='../proc/get_nbar_center1.html'>get_nbar_center1</a> <small>module module function get_nbar_center1(THIS)</small>
+    
+    
+   <a href='../interface/get_nbar_center1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central baryon number density
+  of NS 1</p><a href="../proc/get_nbar_center1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_nbar_center2"></span><h3>
+module procedure <a href='../proc/get_nbar_center2.html'>get_nbar_center2</a> <small>module module function get_nbar_center2(THIS)</small>
+    
+    
+   <a href='../interface/get_nbar_center2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central baryon number density
+  of NS 2</p><a href="../proc/get_nbar_center2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_npeos_1"></span><h3>
+module procedure <a href='../proc/get_npeos_1.html'>get_npeos_1</a> <small>module module function get_npeos_1(THIS)</small>
+    
+    
+   <a href='../interface/get_npeos_1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the identifier of the EOS for NS 1</p><a href="../proc/get_npeos_1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_npeos_2"></span><h3>
+module procedure <a href='../proc/get_npeos_2.html'>get_npeos_2</a> <small>module module function get_npeos_2(THIS)</small>
+    
+    
+   <a href='../interface/get_npeos_2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the identifier of the EOS for NS 2</p><a href="../proc/get_npeos_2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_pressure_center1"></span><h3>
+module procedure <a href='../proc/get_pressure_center1.html'>get_pressure_center1</a> <small>module module function get_pressure_center1(THIS)</small>
+    
+    
+   <a href='../interface/get_pressure_center1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central pressure of NS 1</p><a href="../proc/get_pressure_center1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_pressure_center2"></span><h3>
+module procedure <a href='../proc/get_pressure_center2.html'>get_pressure_center2</a> <small>module module function get_pressure_center2(THIS)</small>
+    
+    
+   <a href='../interface/get_pressure_center2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central pressure of NS 2</p><a href="../proc/get_pressure_center2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_radii"></span><h3>
+module procedure <a href='../proc/get_radii.html'>get_radii</a> <small>module module function get_radii(THIS, i_matter)</small>
+    
+    
+   <a href='../interface/get_radii.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the radii of the <code>i_matter</code>-th star
+  [<script type="math/tex">L_\odot</script>]</p><a href="../proc/get_radii.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose string is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(6)</small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_radius1_x_comp"></span><h3>
+module procedure <a href='../proc/get_radius1_x_comp.html'>get_radius1_x_comp</a> <small>module module function get_radius1_x_comp(THIS)</small>
+    
+    
+   <a href='../interface/get_radius1_x_comp.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the radius of NS 1 along the x axis
+  on the side of the companion</p><a href="../proc/get_radius1_x_comp.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_radius1_x_opp"></span><h3>
+module procedure <a href='../proc/get_radius1_x_opp.html'>get_radius1_x_opp</a> <small>module module function get_radius1_x_opp(THIS)</small>
+    
+    
+   <a href='../interface/get_radius1_x_opp.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the radius of NS 1 along the x axis
+  on the side opposite to the companion</p><a href="../proc/get_radius1_x_opp.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_radius1_y"></span><h3>
+module procedure <a href='../proc/get_radius1_y.html'>get_radius1_y</a> <small>module module function get_radius1_y(THIS)</small>
+    
+    
+   <a href='../interface/get_radius1_y.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the radius of NS 1 along the y axis</p><a href="../proc/get_radius1_y.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_radius1_z"></span><h3>
+module procedure <a href='../proc/get_radius1_z.html'>get_radius1_z</a> <small>module module function get_radius1_z(THIS)</small>
+    
+    
+   <a href='../interface/get_radius1_z.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the radius of NS 1 along the z axis</p><a href="../proc/get_radius1_z.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_radius2_x_comp"></span><h3>
+module procedure <a href='../proc/get_radius2_x_comp.html'>get_radius2_x_comp</a> <small>module module function get_radius2_x_comp(THIS)</small>
+    
+    
+   <a href='../interface/get_radius2_x_comp.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the radius of NS 2 along the x axis
+  on the side of the companion</p><a href="../proc/get_radius2_x_comp.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_radius2_x_opp"></span><h3>
+module procedure <a href='../proc/get_radius2_x_opp.html'>get_radius2_x_opp</a> <small>module module function get_radius2_x_opp(THIS)</small>
+    
+    
+   <a href='../interface/get_radius2_x_opp.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the radius of NS 2 along the x axis
+  on the side opposite to the companion</p><a href="../proc/get_radius2_x_opp.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_radius2_y"></span><h3>
+module procedure <a href='../proc/get_radius2_y.html'>get_radius2_y</a> <small>module module function get_radius2_y(THIS)</small>
+    
+    
+   <a href='../interface/get_radius2_y.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the radius of NS 2 along the y axis</p><a href="../proc/get_radius2_y.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_radius2_z"></span><h3>
+module procedure <a href='../proc/get_radius2_z.html'>get_radius2_z</a> <small>module module function get_radius2_z(THIS)</small>
+    
+    
+   <a href='../interface/get_radius2_z.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the radius of NS 2 along the z axis</p><a href="../proc/get_radius2_z.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_rho_center1"></span><h3>
+module procedure <a href='../proc/get_rho_center1.html'>get_rho_center1</a> <small>module module function get_rho_center1(THIS)</small>
+    
+    
+   <a href='../interface/get_rho_center1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central baryon mass density
+  of NS 1</p><a href="../proc/get_rho_center1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_rho_center2"></span><h3>
+module procedure <a href='../proc/get_rho_center2.html'>get_rho_center2</a> <small>module module function get_rho_center2(THIS)</small>
+    
+    
+   <a href='../interface/get_rho_center2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central baryon mass density
+  of NS 2</p><a href="../proc/get_rho_center2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_specific_energy_center1"></span><h3>
+module procedure <a href='../proc/get_specific_energy_center1.html'>get_specific_energy_center1</a> <small>module module function get_specific_energy_center1(THIS)</small>
+    
+    
+   <a href='../interface/get_specific_energy_center1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central specific energy of NS 1</p><a href="../proc/get_specific_energy_center1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_specific_energy_center2"></span><h3>
+module procedure <a href='../proc/get_specific_energy_center2.html'>get_specific_energy_center2</a> <small>module module function get_specific_energy_center2(THIS)</small>
+    
+    
+   <a href='../interface/get_specific_energy_center2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central specific energy of NS 2</p><a href="../proc/get_specific_energy_center2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        </section>    
+        
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

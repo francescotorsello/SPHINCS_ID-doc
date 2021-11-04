@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>write_par_eos &ndash; SPHINCS_LORENE</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>write_par_eos
+    <small>Program</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 5.0% of total for programs.">51 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/write_par_eos.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/write_par_eos.f90.html'>write_par_eos.f90</a></li>
+    
+  
+     <li class="active">write_par_eos</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-eos~3">eos</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-err_msg~2">err_msg</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-exist~18">exist</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-ios~2">ios</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-kappa0_lorene">kappa0_lorene</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-log10_p0_lorene">log10_p0_lorene</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-log10_rho0_lorene">log10_rho0_lorene</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-log10_rho1_lorene">log10_rho1_lorene</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-log10_rho2_lorene">log10_rho2_lorene</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-namefile~15">namefile</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-npoly">npoly</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../program/write_par_eos.html#src">write_par_eos</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li>pwp_EOS</li>
+    
+    <li>constants</li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: program~~write_par_eos~~UsesGraph Pages: 1 -->
+<svg id="programwrite_par_eosUsesGraph" width="184pt" height="74pt"
+ viewBox="0.00 0.00 184.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~write_par_eos~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>program~~write_par_eos~~UsesGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 180,-70 180,4 -4,4"/>
+<!-- program~write_par_eos -->
+<g id="program~~write_par_eos~~UsesGraph_node1" class="node">
+<title>program~write_par_eos</title>
+<polygon fill="none" stroke="#000000" points="176,-45 96,-45 96,-21 176,-21 176,-45"/>
+<text text-anchor="middle" x="136" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">write_par_eos</text>
+</g>
+<!-- pwp_EOS -->
+<g id="program~~write_par_eos~~UsesGraph_node2" class="node">
+<title>pwp_EOS</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="60,-66 0,-66 0,-42 60,-42 60,-66"/>
+<text text-anchor="middle" x="30" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pwp_EOS</text>
+</g>
+<!-- program~write_par_eos&#45;&gt;pwp_EOS -->
+<g id="program~~write_par_eos~~UsesGraph_edge2" class="edge">
+<title>program~write_par_eos&#45;&gt;pwp_EOS</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M95.9259,-40.9392C87.5065,-42.6072 78.6235,-44.367 70.1995,-46.036"/>
+<polygon fill="#000000" stroke="#000000" points="69.3427,-42.6376 60.2136,-48.0143 70.7031,-49.5041 69.3427,-42.6376"/>
+</g>
+<!-- constants -->
+<g id="program~~write_par_eos~~UsesGraph_node3" class="node">
+<title>constants</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="59,-24 1,-24 1,0 59,0 59,-24"/>
+<text text-anchor="middle" x="30" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">constants</text>
+</g>
+<!-- program~write_par_eos&#45;&gt;constants -->
+<g id="program~~write_par_eos~~UsesGraph_edge1" class="edge">
+<title>program~write_par_eos&#45;&gt;constants</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M95.9259,-25.0608C87.1611,-23.3244 77.894,-21.4884 69.1652,-19.7591"/>
+<polygon fill="#000000" stroke="#000000" points="69.7176,-16.3006 59.228,-17.7905 68.3572,-23.1672 69.7176,-16.3006"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses.
+    </p>
+    </div></div></div></div>
+      </li>
+      
+      </ul>
+    </div>
+    
+
+    
+    
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: program~~write_par_eos~~CallsGraph Pages: 1 -->
+<svg id="programwrite_par_eosCallsGraph" width="331pt" height="326pt"
+ viewBox="0.00 0.00 331.00 326.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~write_par_eos~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 322)">
+<title>program~~write_par_eos~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-322 327,-322 327,4 -4,4"/>
+<!-- program~write_par_eos -->
+<g id="program~~write_par_eos~~CallsGraph_node1" class="node">
+<title>program~write_par_eos</title>
+<polygon fill="none" stroke="#000000" points="80,-171 0,-171 0,-147 80,-147 80,-171"/>
+<text text-anchor="middle" x="40" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">write_par_eos</text>
+</g>
+<!-- select_eos_parameters -->
+<g id="program~~write_par_eos~~CallsGraph_node2" class="node">
+<title>select_eos_parameters</title>
+<polygon fill="#777777" stroke="#777777" points="281.5,-318 157.5,-318 157.5,-294 281.5,-294 281.5,-318"/>
+<text text-anchor="middle" x="219.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">select_eos_parameters</text>
+</g>
+<!-- program~write_par_eos&#45;&gt;select_eos_parameters -->
+<g id="program~~write_par_eos~~CallsGraph_edge1" class="edge">
+<title>program~write_par_eos&#45;&gt;select_eos_parameters</title>
+<path fill="none" stroke="#000000" d="M43.6956,-171.3719C52.0358,-197.0185 74.8693,-256.0004 116,-285 125.3298,-291.5781 136.2435,-296.1986 147.4189,-299.4247"/>
+<polygon fill="#000000" stroke="#000000" points="146.721,-302.8583 157.2738,-301.9149 148.436,-296.0716 146.721,-302.8583"/>
+</g>
+<!-- get_gamma2 -->
+<g id="program~~write_par_eos~~CallsGraph_node3" class="node">
+<title>get_gamma2</title>
+<polygon fill="#777777" stroke="#777777" points="257.5,-276 181.5,-276 181.5,-252 257.5,-252 257.5,-276"/>
+<text text-anchor="middle" x="219.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_gamma2</text>
+</g>
+<!-- program~write_par_eos&#45;&gt;get_gamma2 -->
+<g id="program~~write_par_eos~~CallsGraph_edge2" class="edge">
+<title>program~write_par_eos&#45;&gt;get_gamma2</title>
+<path fill="none" stroke="#000000" d="M47.3865,-171.2504C59.329,-189.917 84.7278,-225.1873 116,-243 132.5913,-252.4505 152.8117,-257.6872 170.963,-260.5747"/>
+<polygon fill="#000000" stroke="#000000" points="170.6949,-264.071 181.0819,-261.9832 171.66,-257.1379 170.6949,-264.071"/>
+</g>
+<!-- get_rho_1 -->
+<g id="program~~write_par_eos~~CallsGraph_node4" class="node">
+<title>get_rho_1</title>
+<polygon fill="#777777" stroke="#777777" points="250,-234 189,-234 189,-210 250,-210 250,-234"/>
+<text text-anchor="middle" x="219.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_rho_1</text>
+</g>
+<!-- program~write_par_eos&#45;&gt;get_rho_1 -->
+<g id="program~~write_par_eos~~CallsGraph_edge3" class="edge">
+<title>program~write_par_eos&#45;&gt;get_rho_1</title>
+<path fill="none" stroke="#000000" d="M57.986,-171.0051C72.9311,-180.4627 95.0607,-193.2967 116,-201 136.1286,-208.4051 159.4723,-213.4275 178.8901,-216.6985"/>
+<polygon fill="#000000" stroke="#000000" points="178.5121,-220.1823 188.9377,-218.2962 179.6114,-213.2692 178.5121,-220.1823"/>
+</g>
+<!-- get_rho_0 -->
+<g id="program~~write_par_eos~~CallsGraph_node5" class="node">
+<title>get_rho_0</title>
+<polygon fill="#777777" stroke="#777777" points="250,-192 189,-192 189,-168 250,-168 250,-192"/>
+<text text-anchor="middle" x="219.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_rho_0</text>
+</g>
+<!-- program~write_par_eos&#45;&gt;get_rho_0 -->
+<g id="program~~write_par_eos~~CallsGraph_edge4" class="edge">
+<title>program~write_par_eos&#45;&gt;get_rho_0</title>
+<path fill="none" stroke="#000000" d="M80.2833,-163.7128C109.6864,-167.1527 149.3906,-171.7978 178.8735,-175.247"/>
+<polygon fill="#000000" stroke="#000000" points="178.503,-178.7275 188.842,-176.4133 179.3165,-171.7749 178.503,-178.7275"/>
+</g>
+<!-- get_rho_2 -->
+<g id="program~~write_par_eos~~CallsGraph_node6" class="node">
+<title>get_rho_2</title>
+<polygon fill="#777777" stroke="#777777" points="250,-150 189,-150 189,-126 250,-126 250,-150"/>
+<text text-anchor="middle" x="219.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_rho_2</text>
+</g>
+<!-- program~write_par_eos&#45;&gt;get_rho_2 -->
+<g id="program~~write_par_eos~~CallsGraph_edge5" class="edge">
+<title>program~write_par_eos&#45;&gt;get_rho_2</title>
+<path fill="none" stroke="#000000" d="M80.2833,-154.2872C109.6864,-150.8473 149.3906,-146.2022 178.8735,-142.753"/>
+<polygon fill="#000000" stroke="#000000" points="179.3165,-146.2251 188.842,-141.5867 178.503,-139.2725 179.3165,-146.2251"/>
+</g>
+<!-- get_gamma1 -->
+<g id="program~~write_par_eos~~CallsGraph_node7" class="node">
+<title>get_gamma1</title>
+<polygon fill="#777777" stroke="#777777" points="257.5,-108 181.5,-108 181.5,-84 257.5,-84 257.5,-108"/>
+<text text-anchor="middle" x="219.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_gamma1</text>
+</g>
+<!-- program~write_par_eos&#45;&gt;get_gamma1 -->
+<g id="program~~write_par_eos~~CallsGraph_edge6" class="edge">
+<title>program~write_par_eos&#45;&gt;get_gamma1</title>
+<path fill="none" stroke="#000000" d="M57.986,-146.9949C72.9311,-137.5373 95.0607,-124.7033 116,-117 133.5488,-110.544 153.5414,-105.899 171.2457,-102.6468"/>
+<polygon fill="#000000" stroke="#000000" points="172.1153,-106.0483 181.3694,-100.8897 170.9182,-99.1514 172.1153,-106.0483"/>
+</g>
+<!-- k_lorene2hydrobase_piecewisepolytrope -->
+<g id="program~~write_par_eos~~CallsGraph_node8" class="node">
+<title>k_lorene2hydrobase_piecewisepolytrope</title>
+<polygon fill="#777777" stroke="#777777" points="323,-66 116,-66 116,-42 323,-42 323,-66"/>
+<text text-anchor="middle" x="219.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">k_lorene2hydrobase_piecewisepolytrope</text>
+</g>
+<!-- program~write_par_eos&#45;&gt;k_lorene2hydrobase_piecewisepolytrope -->
+<g id="program~~write_par_eos~~CallsGraph_edge7" class="edge">
+<title>program~write_par_eos&#45;&gt;k_lorene2hydrobase_piecewisepolytrope</title>
+<path fill="none" stroke="#000000" d="M47.3865,-146.7496C59.329,-128.083 84.7278,-92.8127 116,-75 119.3008,-73.1198 122.7453,-71.4064 126.2886,-69.8452"/>
+<polygon fill="#000000" stroke="#000000" points="127.8552,-72.9894 135.8676,-66.0575 125.2812,-66.4798 127.8552,-72.9894"/>
+</g>
+<!-- get_gamma3 -->
+<g id="program~~write_par_eos~~CallsGraph_node9" class="node">
+<title>get_gamma3</title>
+<polygon fill="#777777" stroke="#777777" points="257.5,-24 181.5,-24 181.5,0 257.5,0 257.5,-24"/>
+<text text-anchor="middle" x="219.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_gamma3</text>
+</g>
+<!-- program~write_par_eos&#45;&gt;get_gamma3 -->
+<g id="program~~write_par_eos~~CallsGraph_edge8" class="edge">
+<title>program~write_par_eos&#45;&gt;get_gamma3</title>
+<path fill="none" stroke="#000000" d="M43.6956,-146.6281C52.0358,-120.9815 74.8693,-61.9996 116,-33 131.9307,-21.7679 152.4796,-16.2431 171.0634,-13.6225"/>
+<polygon fill="#000000" stroke="#000000" points="171.6163,-17.0818 181.1438,-12.4475 170.8058,-10.1289 171.6163,-17.0818"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+    <br>
+
+     <section class="visible-xs visible-sm hidden-md">
+       
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-eos~3">eos</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-err_msg~2">err_msg</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-exist~18">exist</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-ios~2">ios</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-kappa0_lorene">kappa0_lorene</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-log10_p0_lorene">log10_p0_lorene</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-log10_rho0_lorene">log10_rho0_lorene</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-log10_rho1_lorene">log10_rho1_lorene</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-log10_rho2_lorene">log10_rho2_lorene</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-namefile~15">namefile</a>
+      
+      <a class="list-group-item" href="../program/write_par_eos.html#variable-npoly">npoly</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../program/write_par_eos.html#src">write_par_eos</a>
+  </div>
+</div>
+
+
+
+     </section>
+     <br class="visible-xs visible-sm hidden-md">
+
+     
+
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-eos~3"></span>character(len=4)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>eos</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-err_msg~2"></span>character(len=:),</td>
+  
+  
+  <td>ALLOCATABLE</td><td>::</td>
+  <td><strong>err_msg</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-exist~18"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>exist</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ios~2"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ios</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-kappa0_lorene"></span>double precision</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>kappa0_lorene</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-log10_p0_lorene"></span>double precision</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>log10_p0_lorene</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-log10_rho0_lorene"></span>double precision</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>log10_rho0_lorene</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-log10_rho1_lorene"></span>double precision</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>log10_rho1_lorene</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-log10_rho2_lorene"></span>double precision</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>log10_rho2_lorene</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile~15"></span>character(len=:),</td>
+  
+  
+  <td>ALLOCATABLE</td><td>::</td>
+  <td><strong>namefile</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-npoly"></span>integer,</td>
+  
+  
+  <td>parameter</td><td>::</td>
+  <td><strong>npoly</strong></td><td> =</td><td>4</td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+    
+    
+    
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="k">PROGRAM </span><span class="n">write_par_eos</span>
+
+  <span class="k">USE </span><span class="n">constants</span><span class="p">,</span> <span class="n">ONLY</span><span class="p">:</span> <span class="n">lorene2hydrobase</span><span class="p">,</span> <span class="n">kg2g</span><span class="p">,</span> <span class="n">m2cm</span><span class="p">,</span> <span class="p">&amp;</span>
+                       <span class="n">k_lorene2hydrobase_piecewisepolytrope</span>
+  <span class="k">USE </span><span class="n">pwp_EOS</span><span class="p">,</span>   <span class="n">ONLY</span><span class="p">:</span> <span class="n">Gamma0</span><span class="p">,</span> <span class="n">K0</span><span class="p">,</span> <span class="n">select_EOS_parameters</span><span class="p">,</span> <span class="n">gen_pwp_eos</span><span class="p">,</span> <span class="p">&amp;</span>
+                       <span class="n">get_rho_0</span><span class="p">,</span> <span class="n">get_rho_1</span><span class="p">,</span> <span class="n">get_rho_2</span><span class="p">,</span> <span class="p">&amp;</span>
+                       <span class="n">get_Gamma1</span><span class="p">,</span> <span class="n">get_Gamma2</span><span class="p">,</span> <span class="n">get_Gamma3</span><span class="p">,</span> <span class="p">&amp;</span>
+                       <span class="n">get_K1</span><span class="p">,</span> <span class="n">get_K2</span><span class="p">,</span> <span class="n">get_K3</span>
+
+  <span class="k">IMPLICIT NONE</span>
+
+<span class="k">  </span><span class="kt">INTEGER</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">npoly</span><span class="o">=</span> <span class="mi">4</span>
+  <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">ios</span>
+
+  <span class="c">!DOUBLE PRECISION:: gamma1_lorene, gamma2_lorene, gamma3_lorene</span>
+  <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">kappa0_lorene</span><span class="p">,</span> <span class="n">log10_p0_lorene</span><span class="p">,</span> <span class="n">log10_rho0_lorene</span><span class="p">,</span> <span class="p">&amp;</span>
+                     <span class="n">log10_rho1_lorene</span><span class="p">,</span> <span class="n">log10_rho2_lorene</span>
+
+  <span class="kt">LOGICAL</span><span class="kd">::</span> <span class="n">exist</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">namefile</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">err_msg</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">4</span> <span class="p">)</span><span class="kd">::</span> <span class="n">eos</span>
+
+<span class="cp">#ifdef __INTEL_COMPILER</span>
+  <span class="k">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(&quot;Please write a 4 character string containing the name of the piecewise polytropic EOS: &quot;,\)&#39;</span><span class="p">)</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifdef __GFORTRAN__</span>
+  <span class="k">WRITE</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(&quot;Please write a 4 character string containing the name of the piecewise polytropic EOS: &quot;)&#39;</span><span class="p">)</span>
+<span class="cp">#endif</span>
+  <span class="k">READ</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A)&#39;</span><span class="p">)</span> <span class="n">eos</span>
+
+  <span class="k">CALL </span><span class="n">select_EOS_parameters</span><span class="p">(</span><span class="n">eos</span><span class="p">)</span>
+
+  <span class="n">kappa0_lorene</span><span class="o">=</span> <span class="n">K0</span><span class="o">/</span><span class="n">k_lorene2hydrobase_piecewisepolytrope</span><span class="p">(</span><span class="n">Gamma0</span><span class="p">)</span>
+
+  <span class="n">log10_p0_lorene</span><span class="o">=</span> <span class="n">LOG10</span><span class="p">(</span> <span class="n">K0</span><span class="o">/</span><span class="n">k_lorene2hydrobase_piecewisepolytrope</span><span class="p">(</span><span class="n">Gamma0</span><span class="p">)</span> <span class="p">&amp;</span>
+              <span class="o">*</span><span class="p">(</span> <span class="n">get_rho_0</span><span class="p">()</span><span class="o">/</span><span class="n">lorene2hydrobase</span><span class="o">*</span><span class="n">kg2g</span><span class="o">/</span><span class="p">(</span><span class="n">m2cm</span><span class="o">**</span><span class="mf">3.0D0</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">Gamma0</span><span class="p">)</span> <span class="p">)</span>
+
+  <span class="n">log10_rho0_lorene</span><span class="o">=</span> <span class="n">LOG10</span><span class="p">(</span> <span class="n">get_rho_0</span><span class="p">()</span><span class="o">/</span><span class="n">lorene2hydrobase</span><span class="o">*</span><span class="n">kg2g</span><span class="o">/</span><span class="p">(</span><span class="n">m2cm</span><span class="o">**</span><span class="mf">3.0D0</span><span class="p">)</span> <span class="p">)</span>
+
+  <span class="n">log10_rho1_lorene</span><span class="o">=</span> <span class="n">LOG10</span><span class="p">(</span> <span class="n">get_rho_1</span><span class="p">()</span><span class="o">/</span><span class="n">lorene2hydrobase</span><span class="o">*</span><span class="n">kg2g</span><span class="o">/</span><span class="p">(</span><span class="n">m2cm</span><span class="o">**</span><span class="mf">3.0D0</span><span class="p">)</span> <span class="p">)</span>
+
+  <span class="n">log10_rho2_lorene</span><span class="o">=</span> <span class="n">LOG10</span><span class="p">(</span> <span class="n">get_rho_2</span><span class="p">()</span><span class="o">/</span><span class="n">lorene2hydrobase</span><span class="o">*</span><span class="n">kg2g</span><span class="o">/</span><span class="p">(</span><span class="n">m2cm</span><span class="o">**</span><span class="mf">3.0D0</span><span class="p">)</span> <span class="p">)</span>
+
+  <span class="n">namefile</span><span class="o">=</span> <span class="s2">&quot;par_eos.d&quot;</span>
+
+  <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">namefile</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+
+  <span class="k">IF</span><span class="p">(</span> <span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">      OPEN</span><span class="p">(</span> <span class="n">UNIT</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">namefile</span><span class="p">),</span> <span class="n">STATUS</span><span class="o">=</span> <span class="s2">&quot;REPLACE&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+            <span class="n">FORM</span><span class="o">=</span> <span class="s2">&quot;FORMATTED&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+            <span class="n">POSITION</span><span class="o">=</span> <span class="s2">&quot;REWIND&quot;</span><span class="p">,</span> <span class="n">ACTION</span><span class="o">=</span> <span class="s2">&quot;WRITE&quot;</span><span class="p">,</span> <span class="n">IOSTAT</span><span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="p">&amp;</span>
+            <span class="n">IOMSG</span><span class="o">=</span> <span class="n">err_msg</span> <span class="p">)</span>
+  <span class="k">ELSE</span>
+<span class="k">      OPEN</span><span class="p">(</span> <span class="n">UNIT</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">namefile</span><span class="p">),</span> <span class="n">STATUS</span><span class="o">=</span> <span class="s2">&quot;NEW&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+            <span class="n">FORM</span><span class="o">=</span> <span class="s2">&quot;FORMATTED&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+            <span class="n">ACTION</span><span class="o">=</span> <span class="s2">&quot;WRITE&quot;</span><span class="p">,</span> <span class="n">IOSTAT</span><span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span><span class="o">=</span> <span class="n">err_msg</span> <span class="p">)</span>
+  <span class="n">ENDIF</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="n">ios</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;...error when opening &quot;</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">namefile</span><span class="p">),</span> <span class="p">&amp;</span>
+             <span class="s2">&quot;. The error message is&quot;</span><span class="p">,</span> <span class="n">err_msg</span>
+    <span class="k">STOP</span>
+<span class="k">  </span><span class="n">ENDIF</span>
+
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(A69)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="s2">&quot;110        Type of the EOS (cf. documentation of Eos::eos_multi_poly)&quot;</span>
+
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(A16,A4,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="s2">&quot;Multipolytropic &quot;</span><span class="p">,</span> <span class="n">eos</span><span class="p">,</span> <span class="s2">&quot; EOS&quot;</span>
+
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(I1,A52)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="n">npoly</span><span class="p">,</span> <span class="s2">&quot;npoly,         number of polytropes&quot;</span>
+
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(F11.9,A43)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="n">Gamma0</span><span class="p">,</span> <span class="s2">&quot;gamma_0,       crust (here from SLy)&quot;</span>
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(F11.9,A69)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="n">get_Gamma1</span><span class="p">(),</span> <span class="s2">&quot;gamma_1,       array of adiabatic indexes (from crust to core)&quot;</span>
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(F11.9,A14)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="n">get_Gamma2</span><span class="p">(),</span> <span class="s2">&quot;gamma_2&quot;</span>
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(F11.9,A14)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="n">get_Gamma3</span><span class="p">(),</span> <span class="s2">&quot;gamma_3&quot;</span>
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(ES16.9E3,A73)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="n">kappa0_lorene</span><span class="p">,</span> <span class="p">&amp;</span>
+    <span class="s2">&quot;kappa0,        pressure coefficient for gam_0 polytrope (here from SLy)&quot;</span>
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(F12.9,A80)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="n">log10_p0_lorene</span><span class="p">,</span> <span class="p">&amp;</span>
+    <span class="s2">&quot;log10(P0/c^2), log of pressure between gam_0 and gam_1 (dyne/cm^2/c_cgs^2)&quot;</span>
+
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(F12.9,A71)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="n">log10_rho0_lorene</span><span class="p">,</span> <span class="p">&amp;</span>
+    <span class="s2">&quot;log10(rho_0),  array of logs of the transition densities (g/cm^3)&quot;</span>
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(F12.9,A18)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="n">log10_rho1_lorene</span><span class="p">,</span> <span class="s2">&quot;log10(rho_1)&quot;</span>
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(F12.9,A18)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="n">log10_rho2_lorene</span><span class="p">,</span> <span class="s2">&quot;log10(rho_2)&quot;</span>
+
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(F3.1,A79)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;decInc,        array (size npoly-1) of percentages which change &quot;</span>
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(F3.1,A71)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot; the transition densities by changing the &quot;</span>
+  <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="s2">&quot;(F3.1,A75)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+    <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot; transition enthalpies (set to 0. to disable)&quot;</span>
+
+  <span class="k">CLOSE</span><span class="p">(</span> <span class="n">UNIT</span><span class="o">=</span> <span class="mi">2</span> <span class="p">)</span>
+
+  <span class="k">PRINT</span> <span class="o">*</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Parameter file &quot;</span><span class="p">,</span> <span class="n">namefile</span><span class="p">,</span><span class="s2">&quot; written.&quot;</span>
+  <span class="k">PRINT</span> <span class="o">*</span>
+
+<span class="k">END PROGRAM </span><span class="n">write_par_eos</span>
+</pre></div>
+
+    </section>
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

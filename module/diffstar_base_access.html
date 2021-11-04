@@ -1,0 +1,4067 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>diffstar_base_access &ndash; SPHINCS_LORENE</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>diffstar_base_access 
+    <small>Submodule</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 1.7% of total for modules and submodules.">193 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/submodule_diffstar_base_access.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/submodule_diffstar_base_access.f90.html'>submodule_diffstar_base_access.f90</a></li>
+    
+  
+     <li class="active">diffstar_base_access</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-0">Module Procedures</a></h3></div>
+  <div id="modprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_angular_momentum~2">get_angular_momentum</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_area_radius">get_area_radius</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_barycenter~2">get_barycenter</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_center~2">get_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_energy_density_center">get_energy_density_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_ent_center">get_ent_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_eos~2">get_eos</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_f_isco">get_f_isco</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_gamma">get_gamma</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_gamma0">get_gamma0</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_gamma1">get_gamma1</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_gamma2">get_gamma2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_gamma3">get_gamma3</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_grv2">get_grv2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_grv3">get_grv3</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_kappa">get_kappa</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_kappa0">get_kappa0</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_kappa1">get_kappa1</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_kappa2">get_kappa2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_kappa3">get_kappa3</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_logrho0">get_logRho0</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_logrho1">get_logRho1</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_logrho2">get_logRho2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_logp1">get_logp1</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_mass~2">get_mass</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_mass_grav">get_mass_grav</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_nbar_center">get_nbar_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_npeos">get_npeos</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_omega_c">get_omega_c</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_pressure_center">get_pressure_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_circ">get_r_circ</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_eq">get_r_eq</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_eq_3pi2">get_r_eq_3pi2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_eq_pi">get_r_eq_pi</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_eq_pi2">get_r_eq_pi2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_isco">get_r_isco</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_mean">get_r_mean</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_pole">get_r_pole</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_ratio">get_r_ratio</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_radii~2">get_radii</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_rho_center">get_rho_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_specific_angular_momentum_isco">get_specific_angular_momentum_isco</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_specific_energy_center">get_specific_energy_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_specific_energy_isco">get_specific_energy_isco</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_surface_area">get_surface_area</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_tsw">get_tsw</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <p>The module contains the implementation of the
+  methods of TYPE diffstarbase that allow to
+  access PRIVATE members.</p>
+<p>FT 22.10.2021</p>
+<hr>
+      <br>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    <li><h5>Ancestors:</h5></li>
+    
+    <li><a href='../module/diffstar_base.html'>diffstar_base</a></li>
+    
+    
+  </ul>
+      </li>
+      
+      
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~diffstar_base_access~~UsesGraph Pages: 1 -->
+<svg id="modulediffstar_base_accessUsesGraph" width="411pt" height="74pt"
+ viewBox="0.00 0.00 411.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~diffstar_base_access~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>module~~diffstar_base_access~~UsesGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 407,-70 407,4 -4,4"/>
+<!-- module~diffstar_base_access -->
+<g id="module~~diffstar_base_access~~UsesGraph_node1" class="node">
+<title>module~diffstar_base_access</title>
+<polygon fill="none" stroke="#000000" points="403,-45 290,-45 290,-21 403,-21 403,-45"/>
+<text text-anchor="middle" x="346.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">diffstar_base_access</text>
+</g>
+<!-- module~diffstar_base -->
+<g id="module~~diffstar_base_access~~UsesGraph_node2" class="node">
+<title>module~diffstar_base</title>
+<g id="a_module~~diffstar_base_access~~UsesGraph_node2"><a xlink:href=".././module/diffstar_base.html" xlink:title="diffstar_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="254,-45 180,-45 180,-21 254,-21 254,-45"/>
+<text text-anchor="middle" x="217" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_base</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_base_access&#45;&gt;module~diffstar_base -->
+<g id="module~~diffstar_base_access~~UsesGraph_edge1" class="edge">
+<title>module~diffstar_base_access&#45;&gt;module~diffstar_base</title>
+<path fill="none" stroke="#000000" d="M289.6994,-33C281.1939,-33 272.5026,-33 264.2246,-33"/>
+<polygon fill="#000000" stroke="#000000" points="264.0053,-29.5001 254.0052,-33 264.0052,-36.5001 264.0053,-29.5001"/>
+</g>
+<!-- module~id_base -->
+<g id="module~~diffstar_base_access~~UsesGraph_node3" class="node">
+<title>module~id_base</title>
+<g id="a_module~~diffstar_base_access~~UsesGraph_node3"><a xlink:href=".././module/id_base.html" xlink:title="id_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-66 90,-66 90,-42 144,-42 144,-66"/>
+<text text-anchor="middle" x="117" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">id_base</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_base&#45;&gt;module~id_base -->
+<g id="module~~diffstar_base_access~~UsesGraph_edge2" class="edge">
+<title>module~diffstar_base&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M179.7637,-40.8196C171.3943,-42.5772 162.5135,-44.4422 154.1477,-46.199"/>
+<polygon fill="#000000" stroke="#000000" points="153.3348,-42.7933 144.2676,-48.2738 154.7735,-49.6438 153.3348,-42.7933"/>
+</g>
+<!-- module~utility -->
+<g id="module~~diffstar_base_access~~UsesGraph_node4" class="node">
+<title>module~utility</title>
+<g id="a_module~~diffstar_base_access~~UsesGraph_node4"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-24 90,-24 90,0 144,0 144,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utility</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_base&#45;&gt;module~utility -->
+<g id="module~~diffstar_base_access~~UsesGraph_edge3" class="edge">
+<title>module~diffstar_base&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M179.7637,-25.1804C171.3943,-23.4228 162.5135,-21.5578 154.1477,-19.801"/>
+<polygon fill="#000000" stroke="#000000" points="154.7735,-16.3562 144.2676,-17.7262 153.3348,-23.2067 154.7735,-16.3562"/>
+</g>
+<!-- timing -->
+<g id="module~~diffstar_base_access~~UsesGraph_node6" class="node">
+<title>timing</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timing</text>
+</g>
+<!-- module~id_base&#45;&gt;timing -->
+<g id="module~~diffstar_base_access~~UsesGraph_edge4" class="edge">
+<title>module~id_base&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-54C81.9723,-54 73.0335,-54 64.4691,-54"/>
+<polygon fill="#000000" stroke="#000000" points="64.295,-50.5001 54.295,-54 64.2949,-57.5001 64.295,-50.5001"/>
+</g>
+<!-- matrix -->
+<g id="module~~diffstar_base_access~~UsesGraph_node5" class="node">
+<title>matrix</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">matrix</text>
+</g>
+<!-- module~utility&#45;&gt;matrix -->
+<g id="module~~diffstar_base_access~~UsesGraph_edge5" class="edge">
+<title>module~utility&#45;&gt;matrix</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-12C81.9723,-12 73.0335,-12 64.4691,-12"/>
+<polygon fill="#000000" stroke="#000000" points="64.295,-8.5001 54.295,-12 64.2949,-15.5001 64.295,-8.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses.
+    </p>
+    </div></div></div></div>
+      </li>
+      
+      </ul>
+    </div>
+    
+
+    
+    
+
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#modprocs-1">Module Procedures</a></h3></div>
+  <div id="modprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_angular_momentum~2">get_angular_momentum</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_area_radius">get_area_radius</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_barycenter~2">get_barycenter</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_center~2">get_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_energy_density_center">get_energy_density_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_ent_center">get_ent_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_eos~2">get_eos</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_f_isco">get_f_isco</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_gamma">get_gamma</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_gamma0">get_gamma0</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_gamma1">get_gamma1</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_gamma2">get_gamma2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_gamma3">get_gamma3</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_grv2">get_grv2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_grv3">get_grv3</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_kappa">get_kappa</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_kappa0">get_kappa0</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_kappa1">get_kappa1</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_kappa2">get_kappa2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_kappa3">get_kappa3</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_logrho0">get_logRho0</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_logrho1">get_logRho1</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_logrho2">get_logRho2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_logp1">get_logp1</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_mass~2">get_mass</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_mass_grav">get_mass_grav</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_nbar_center">get_nbar_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_npeos">get_npeos</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_omega_c">get_omega_c</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_pressure_center">get_pressure_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_circ">get_r_circ</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_eq">get_r_eq</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_eq_3pi2">get_r_eq_3pi2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_eq_pi">get_r_eq_pi</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_eq_pi2">get_r_eq_pi2</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_isco">get_r_isco</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_mean">get_r_mean</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_pole">get_r_pole</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_r_ratio">get_r_ratio</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_radii~2">get_radii</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_rho_center">get_rho_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_specific_angular_momentum_isco">get_specific_angular_momentum_isco</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_specific_energy_center">get_specific_energy_center</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_specific_energy_isco">get_specific_energy_isco</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_surface_area">get_surface_area</a>
+      
+      <a class="list-group-item" href="../module/diffstar_base_access.html#proc-get_tsw">get_tsw</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+        
+
+        
+
+        
+        <section>
+        <h2>Module Procedures</h2>
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_angular_momentum~2"></span><h3>
+module procedure <a href='../proc/get_angular_momentum~2.html'>get_angular_momentum</a> <small>module module function get_angular_momentum(THIS)</small>
+    
+    
+   <a href='../interface/get_angular_momentum~2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the angular momentum of the DRS</p><a href="../proc/get_angular_momentum~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_area_radius"></span><h3>
+module procedure <a href='../proc/get_area_radius.html'>get_area_radius</a> <small>module module function get_area_radius(THIS)</small>
+    
+    
+   <a href='../interface/get_area_radius.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:area_radius]], the
+  areal radius of the DRS</p><a href="../proc/get_area_radius.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_barycenter~2"></span><h3>
+module procedure <a href='../proc/get_barycenter~2.html'>get_barycenter</a> <small>module module function get_barycenter(THIS, i_matter)</small>
+    
+    
+   <a href='../interface/get_barycenter~2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the barycenter of the DRS [<script type="math/tex">L_\odot</script>]</p><a href="../proc/get_barycenter~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose parameter is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(3)</small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_center~2"></span><h3>
+module procedure <a href='../proc/get_center~2.html'>get_center</a> <small>module module function get_center(THIS, i_matter)</small>
+    
+    
+   <a href='../interface/get_center~2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the center of the DRS [<script type="math/tex">L_\odot</script>]</p><a href="../proc/get_center~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose parameter is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(3)</small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_energy_density_center"></span><h3>
+module procedure <a href='../proc/get_energy_density_center.html'>get_energy_density_center</a> <small>module module function get_energy_density_center(THIS)</small>
+    
+    
+   <a href='../interface/get_energy_density_center.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central energy density of the DRS</p><a href="../proc/get_energy_density_center.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_ent_center"></span><h3>
+module procedure <a href='../proc/get_ent_center.html'>get_ent_center</a> <small>module module function get_ent_center(THIS)</small>
+    
+    
+   <a href='../interface/get_ent_center.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central enthalpy of the DRS</p><a href="../proc/get_ent_center.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_eos~2"></span><h3>
+module procedure <a href='../proc/get_eos~2.html'>get_eos</a> <small>module module function get_eos(THIS, i_matter)</small>
+    
+    
+   <a href='../interface/get_eos~2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the EoS name of the DRS</p><a href="../proc/get_eos~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose string is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=:),
+  ALLOCATABLE</small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_f_isco"></span><h3>
+module procedure <a href='../proc/get_f_isco.html'>get_f_isco</a> <small>module module function get_f_isco(THIS)</small>
+    
+    
+   <a href='../interface/get_f_isco.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:f_isco]], the orbital
+  frequency of the Innermost Stable Circular Orbit
+  (ISCO)</p><a href="../proc/get_f_isco.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma"></span><h3>
+module procedure <a href='../proc/get_gamma.html'>get_gamma</a> <small>module module function get_gamma(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma]], the
+  polytropic index for polytropic EOS,
+  not piecewise polytropic EOS</p><a href="../proc/get_gamma.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma0"></span><h3>
+module procedure <a href='../proc/get_gamma0.html'>get_gamma0</a> <small>module module function get_gamma0(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma0.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma0]], the crust's
+  polytropic index for the DRS with piecewise
+  polytropic EOS</p><a href="../proc/get_gamma0.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma1"></span><h3>
+module procedure <a href='../proc/get_gamma1.html'>get_gamma1</a> <small>module module function get_gamma1(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma1]], the first
+  polytropic index for the DRS with piecewise
+  polytropic EOS</p><a href="../proc/get_gamma1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma2"></span><h3>
+module procedure <a href='../proc/get_gamma2.html'>get_gamma2</a> <small>module module function get_gamma2(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma2]], the second
+  polytropic index for NS 2 with piecewise
+  polytropic EOS</p><a href="../proc/get_gamma2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_gamma3"></span><h3>
+module procedure <a href='../proc/get_gamma3.html'>get_gamma3</a> <small>module module function get_gamma3(THIS)</small>
+    
+    
+   <a href='../interface/get_gamma3.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[gamma3]], the third
+  polytropic index for the DRS with piecewise
+  polytropic EOS (innermost index)</p><a href="../proc/get_gamma3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_grv2"></span><h3>
+module procedure <a href='../proc/get_grv2.html'>get_grv2</a> <small>module module function get_grv2(THIS)</small>
+    
+    
+   <a href='../interface/get_grv2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:grv2]], the error on the
+  virial identity  <script type="math/tex">{\rm GRV2}</script>.</p><a href="../proc/get_grv2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_grv3"></span><h3>
+module procedure <a href='../proc/get_grv3.html'>get_grv3</a> <small>module module function get_grv3(THIS)</small>
+    
+    
+   <a href='../interface/get_grv3.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:grv3]], the error on the
+  virial identity  <script type="math/tex">{\rm GRV3}</script>.</p><a href="../proc/get_grv3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa"></span><h3>
+module procedure <a href='../proc/get_kappa.html'>get_kappa</a> <small>module module function get_kappa(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa]], the
+  polytropic constant for polytropic
+  EOS, not piecewise polytropic EOS</p><a href="../proc/get_kappa.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa0"></span><h3>
+module procedure <a href='../proc/get_kappa0.html'>get_kappa0</a> <small>module module function get_kappa0(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa0.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa0]], the crust's
+  polytropic constant for the DRS with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa0.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa1"></span><h3>
+module procedure <a href='../proc/get_kappa1.html'>get_kappa1</a> <small>module module function get_kappa1(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa1]], the first
+  polytropic constant for the DRS with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa2"></span><h3>
+module procedure <a href='../proc/get_kappa2.html'>get_kappa2</a> <small>module module function get_kappa2(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa2]], the second
+  polytropic constant for the DRS with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_kappa3"></span><h3>
+module procedure <a href='../proc/get_kappa3.html'>get_kappa3</a> <small>module module function get_kappa3(THIS)</small>
+    
+    
+   <a href='../interface/get_kappa3.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[kappa3]], the third
+  polytropic constant for the DRS with piecewise
+  polytropic EOS</p><a href="../proc/get_kappa3.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logrho0"></span><h3>
+module procedure <a href='../proc/get_logrho0.html'>get_logRho0</a> <small>module module function get_logRho0(THIS)</small>
+    
+    
+   <a href='../interface/get_logrho0.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logRho0]], the base 10
+  logarithm of the mass density where the
+  gamma1 polytrope starts, for the DRS with
+  piecewise polytropic EOS</p><a href="../proc/get_logrho0.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logrho1"></span><h3>
+module procedure <a href='../proc/get_logrho1.html'>get_logRho1</a> <small>module module function get_logRho1(THIS)</small>
+    
+    
+   <a href='../interface/get_logrho1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logRho1]], the base 10
+  logarithm of the mass density where the
+  gamma2 polytrope starts, for the DRS with
+  piecewise polytropic EOS</p><a href="../proc/get_logrho1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logrho2"></span><h3>
+module procedure <a href='../proc/get_logrho2.html'>get_logRho2</a> <small>module module function get_logRho2(THIS)</small>
+    
+    
+   <a href='../interface/get_logrho2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logRho2]], the base 10
+  logarithm of the mass density where the
+  gamma3 polytrope starts, for the DRS with
+  piecewise polytropic EOS</p><a href="../proc/get_logrho2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_logp1"></span><h3>
+module procedure <a href='../proc/get_logp1.html'>get_logp1</a> <small>module module function get_logp1(THIS) result(get_logP1)</small>
+    
+    
+   <a href='../interface/get_logp1.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the value of [[logp1]], the base 10
+  logarithm of the pressure where the gamma1
+  polytrope starts, for the DRS with piecewise
+  polytropic EOS</p><a href="../proc/get_logp1.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_mass~2"></span><h3>
+module procedure <a href='../proc/get_mass~2.html'>get_mass</a> <small>module module function get_mass(THIS, i_matter)</small>
+    
+    
+   <a href='../interface/get_mass.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the baryon mass of the DRS [<script type="math/tex">M_\odot</script>]</p><a href="../proc/get_mass~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_mass_grav"></span><h3>
+module procedure <a href='../proc/get_mass_grav.html'>get_mass_grav</a> <small>module module function get_mass_grav(THIS)</small>
+    
+    
+   <a href='../interface/get_mass_grav.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the gravitational mass of the DRS [<script type="math/tex">M_\odot</script>]</p><a href="../proc/get_mass_grav.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_nbar_center"></span><h3>
+module procedure <a href='../proc/get_nbar_center.html'>get_nbar_center</a> <small>module module function get_nbar_center(THIS)</small>
+    
+    
+   <a href='../interface/get_nbar_center.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central baryon number density
+  of the DRS</p><a href="../proc/get_nbar_center.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_npeos"></span><h3>
+module procedure <a href='../proc/get_npeos.html'>get_npeos</a> <small>module module function get_npeos(THIS)</small>
+    
+    
+   <a href='../interface/get_npeos.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the identifier of the EOS for the DRS</p><a href="../proc/get_npeos.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_omega_c"></span><h3>
+module procedure <a href='../proc/get_omega_c.html'>get_omega_c</a> <small>module module function get_omega_c(THIS)</small>
+    
+    
+   <a href='../interface/get_omega_c.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[omega_c]], the central  angular
+  velocity of the system</p><a href="../proc/get_omega_c.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_pressure_center"></span><h3>
+module procedure <a href='../proc/get_pressure_center.html'>get_pressure_center</a> <small>module module function get_pressure_center(THIS)</small>
+    
+    
+   <a href='../interface/get_pressure_center.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central pressure of the DRS</p><a href="../proc/get_pressure_center.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_r_circ"></span><h3>
+module procedure <a href='../proc/get_r_circ.html'>get_r_circ</a> <small>module module function get_r_circ(THIS)</small>
+    
+    
+   <a href='../interface/get_r_circ.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:r_circ]], the
+  circumferential radius of the DRS</p><a href="../proc/get_r_circ.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_r_eq"></span><h3>
+module procedure <a href='../proc/get_r_eq.html'>get_r_eq</a> <small>module module function get_r_eq(THIS)</small>
+    
+    
+   <a href='../interface/get_r_eq.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:r_eq]], the
+  equatorial radius of the DRS at <script type="math/tex">\phi=0</script>
+</p><a href="../proc/get_r_eq.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_r_eq_3pi2"></span><h3>
+module procedure <a href='../proc/get_r_eq_3pi2.html'>get_r_eq_3pi2</a> <small>module module function get_r_eq_3pi2(THIS)</small>
+    
+    
+   <a href='../interface/get_r_eq_3pi2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:r_eq_3pi2]], the
+  equatorial radius of the DRS at <script type="math/tex">\phi=\dfrac{3\pi}{2}</script>
+</p><a href="../proc/get_r_eq_3pi2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_r_eq_pi"></span><h3>
+module procedure <a href='../proc/get_r_eq_pi.html'>get_r_eq_pi</a> <small>module module function get_r_eq_pi(THIS)</small>
+    
+    
+   <a href='../interface/get_r_eq_pi.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:r_eq_pi]], the
+  equatorial radius of the DRS at <script type="math/tex">\phi=\pi</script>
+</p><a href="../proc/get_r_eq_pi.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_r_eq_pi2"></span><h3>
+module procedure <a href='../proc/get_r_eq_pi2.html'>get_r_eq_pi2</a> <small>module module function get_r_eq_pi2(THIS)</small>
+    
+    
+   <a href='../interface/get_r_eq_pi2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:r_eq_pi2]], the
+  equatorial radius of the DRS at <script type="math/tex">\phi=\dfrac{\pi}{2}</script>
+</p><a href="../proc/get_r_eq_pi2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_r_isco"></span><h3>
+module procedure <a href='../proc/get_r_isco.html'>get_r_isco</a> <small>module module function get_r_isco(THIS)</small>
+    
+    
+   <a href='../interface/get_r_isco.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:r_isco]], the
+  radius of the Innermost Stable Circular Orbit (ISCO)</p><a href="../proc/get_r_isco.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_r_mean"></span><h3>
+module procedure <a href='../proc/get_r_mean.html'>get_r_mean</a> <small>module module function get_r_mean(THIS)</small>
+    
+    
+   <a href='../interface/get_r_mean.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:r_mean]], the
+  circumferential radius of the DRS</p><a href="../proc/get_r_mean.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_r_pole"></span><h3>
+module procedure <a href='../proc/get_r_pole.html'>get_r_pole</a> <small>module module function get_r_pole(THIS)</small>
+    
+    
+   <a href='../interface/get_r_pole.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:r_pole]], the
+  polar radius of the DRS</p><a href="../proc/get_r_pole.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_r_ratio"></span><h3>
+module procedure <a href='../proc/get_r_ratio.html'>get_r_ratio</a> <small>module module function get_r_ratio(THIS)</small>
+    
+    
+   <a href='../interface/get_r_ratio.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:r_ratio]], the
+  Ratio [[diffstarbase:r_pole]]/[[diffstarbase:r_eq]]</p><a href="../proc/get_r_ratio.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_radii~2"></span><h3>
+module procedure <a href='../proc/get_radii~2.html'>get_radii</a> <small>module module function get_radii(THIS, i_matter)</small>
+    
+    
+   <a href='../interface/get_radii~2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the radii of the DRS [<script type="math/tex">L_\odot</script>]</p><a href="../proc/get_radii~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose string is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(6)</small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_rho_center"></span><h3>
+module procedure <a href='../proc/get_rho_center.html'>get_rho_center</a> <small>module module function get_rho_center(THIS)</small>
+    
+    
+   <a href='../interface/get_rho_center.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central baryon mass density
+  of the DRS</p><a href="../proc/get_rho_center.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_specific_angular_momentum_isco"></span><h3>
+module procedure <a href='../proc/get_specific_angular_momentum_isco.html'>get_specific_angular_momentum_isco</a> <small>module module function get_specific_angular_momentum_isco(THIS)</small>
+    
+    
+   <a href='../interface/get_specific_angular_momentum_isco.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:specific_angular_momentum_isco]],
+  the specific angular momentum of a test particle
+  at the Innermost Stable Circular Orbit (ISCO)</p><a href="../proc/get_specific_angular_momentum_isco.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_specific_energy_center"></span><h3>
+module procedure <a href='../proc/get_specific_energy_center.html'>get_specific_energy_center</a> <small>module module function get_specific_energy_center(THIS)</small>
+    
+    
+   <a href='../interface/get_specific_energy_center.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns the central specific energy of the DRS</p><a href="../proc/get_specific_energy_center.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_specific_energy_isco"></span><h3>
+module procedure <a href='../proc/get_specific_energy_isco.html'>get_specific_energy_isco</a> <small>module module function get_specific_energy_isco(THIS)</small>
+    
+    
+   <a href='../interface/get_specific_energy_isco.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:specific_energy_isco]],
+  the specific energy of a test particle at the
+  Innermost Stable Circular Orbit (ISCO)</p><a href="../proc/get_specific_energy_isco.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_surface_area"></span><h3>
+module procedure <a href='../proc/get_surface_area.html'>get_surface_area</a> <small>module module function get_surface_area(THIS)</small>
+    
+    
+   <a href='../interface/get_surface_area.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:surface_area]], the
+  surface area of the DRS</p><a href="../proc/get_surface_area.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_tsw"></span><h3>
+module procedure <a href='../proc/get_tsw.html'>get_tsw</a> <small>module module function get_tsw(THIS)</small>
+    
+    
+   <a href='../interface/get_tsw.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Returns [[diffstarbase:tsw]], the ratio <script type="math/tex">T/W</script>
+  between the kinetic and gravitational potential
+  energy of the DRS
+  FT 22.10.2021</p><a href="../proc/get_tsw.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarbase.html'>diffstarbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarbase.html">diffstarbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+  </div>
+  </div>
+
+        
+        </section>    
+        
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

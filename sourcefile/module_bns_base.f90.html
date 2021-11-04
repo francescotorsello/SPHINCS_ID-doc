@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>module_bns_base.f90 &ndash; SPHINCS_LORENE</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>module_bns_base.f90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 3.6% of total for source files.">448 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/module_bns_base.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+  
+     <li class="active">module_bns_base.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-0">Modules</a></h3></div>
+  <div id="mods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/bns_base.html">bns_base</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/module_bns_base.f90.html#src">module_bns_base.f90</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      
+      <br>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">This file depends on</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: sourcefile~~module_bns_base.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefilemodule_bns_basef90EfferentGraph" width="271pt" height="74pt"
+ viewBox="0.00 0.00 271.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~module_bns_base.f90~~EfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>sourcefile~~module_bns_base.f90~~EfferentGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 267,-70 267,4 -4,4"/>
+<!-- sourcefile~module_bns_base.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~EfferentGraph_node1" class="node">
+<title>sourcefile~module_bns_base.f90</title>
+<polygon fill="none" stroke="#000000" points="263,-45 145,-45 145,-21 263,-21 263,-45"/>
+<text text-anchor="middle" x="204" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">module_bns_base.f90</text>
+</g>
+<!-- sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~EfferentGraph_node2" class="node">
+<title>sourcefile~module_utility.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~EfferentGraph_node2"><a xlink:href=".././sourcefile/module_utility.f90.html" xlink:title="module_utility.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="102.5,-66 6.5,-66 6.5,-42 102.5,-42 102.5,-66"/>
+<text text-anchor="middle" x="54.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_utility.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~EfferentGraph_edge1" class="edge">
+<title>sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.9136,-41.2998C134.2754,-42.7941 123.194,-44.3507 112.5845,-45.841"/>
+<polygon fill="#000000" stroke="#000000" points="112.0029,-42.3882 102.587,-47.2453 112.9767,-49.3202 112.0029,-42.3882"/>
+</g>
+<!-- sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~EfferentGraph_node3" class="node">
+<title>sourcefile~module_id_base.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~EfferentGraph_node3"><a xlink:href=".././sourcefile/module_id_base.f90.html" xlink:title="module_id_base.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="109,-24 0,-24 0,0 109,0 109,-24"/>
+<text text-anchor="middle" x="54.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_id_base.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~EfferentGraph_edge2" class="edge">
+<title>sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.9136,-24.7002C136.4663,-23.5137 127.7395,-22.2878 119.1915,-21.0871"/>
+<polygon fill="#000000" stroke="#000000" points="119.6561,-17.6181 109.2664,-19.6929 118.6823,-24.55 119.6561,-17.6181"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,0 67,0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="182,-24 85,-24 85,0 182,0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    
+      
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Files dependent on this one</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: sourcefile~~module_bns_base.f90~~AfferentGraph Pages: 1 -->
+<svg id="sourcefilemodule_bns_basef90AfferentGraph" width="641pt" height="203pt"
+ viewBox="0.00 0.00 641.00 203.04" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph" class="graph" transform="scale(.839 .839) rotate(0) translate(4 238)">
+<title>sourcefile~~module_bns_base.f90~~AfferentGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-238 760,-238 760,4 -4,4"/>
+<!-- sourcefile~module_bns_base.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node1" class="node">
+<title>sourcefile~module_bns_base.f90</title>
+<polygon fill="none" stroke="#000000" points="118,-87 0,-87 0,-63 118,-63 118,-87"/>
+<text text-anchor="middle" x="59" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">module_bns_base.f90</text>
+</g>
+<!-- sourcefile~module_bns_lorene.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node2" class="node">
+<title>sourcefile~module_bns_lorene.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~AfferentGraph_node2"><a xlink:href=".././sourcefile/module_bns_lorene.f90.html" xlink:title="module_bns_lorene.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="317.5,-129 192.5,-129 192.5,-105 317.5,-105 317.5,-129"/>
+<text text-anchor="middle" x="255" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_bns_lorene.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_bns_base.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_edge1" class="edge">
+<title>sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_bns_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M196.4922,-104.965C182.5594,-102.0631 167.7465,-98.9483 154,-96 143.8623,-93.8257 133.1243,-91.4867 122.6568,-89.1871"/>
+<polygon fill="#000000" stroke="#000000" points="123.251,-85.7341 112.7322,-87.0009 121.7451,-92.5702 123.251,-85.7341"/>
+</g>
+<!-- sourcefile~submodule_bns_base_mass_profile.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node3" class="node">
+<title>sourcefile~submodule_bns_base_mass_profile.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~AfferentGraph_node3"><a xlink:href=".././sourcefile/submodule_bns_base_mass_profile.f90.html" xlink:title="submodule_bns_base_mass_profile.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="356,-87 154,-87 154,-63 356,-63 356,-87"/>
+<text text-anchor="middle" x="255" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_bns_base_mass_profile.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_bns_base_mass_profile.f90&#45;&gt;sourcefile~module_bns_base.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_edge2" class="edge">
+<title>sourcefile~submodule_bns_base_mass_profile.f90&#45;&gt;sourcefile~module_bns_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M153.8423,-75C145.1247,-75 136.4405,-75 128.0659,-75"/>
+<polygon fill="#000000" stroke="#000000" points="128.023,-71.5001 118.0229,-75 128.0229,-78.5001 128.023,-71.5001"/>
+</g>
+<!-- sourcefile~submodule_bns_base_access.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node4" class="node">
+<title>sourcefile~submodule_bns_base_access.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~AfferentGraph_node4"><a xlink:href=".././sourcefile/submodule_bns_base_access.f90.html" xlink:title="submodule_bns_base_access.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="342.5,-45 167.5,-45 167.5,-21 342.5,-21 342.5,-45"/>
+<text text-anchor="middle" x="255" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_bns_base_access.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_bns_base_access.f90&#45;&gt;sourcefile~module_bns_base.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_edge3" class="edge">
+<title>sourcefile~submodule_bns_base_access.f90&#45;&gt;sourcefile~module_bns_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M196.4922,-45.035C182.5594,-47.9369 167.7465,-51.0517 154,-54 143.8623,-56.1743 133.1243,-58.5133 122.6568,-60.8129"/>
+<polygon fill="#000000" stroke="#000000" points="121.7451,-57.4298 112.7322,-62.9991 123.251,-64.2659 121.7451,-57.4298"/>
+</g>
+<!-- sourcefile~submodule_bns_lorene_constructor.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node5" class="node">
+<title>sourcefile~submodule_bns_lorene_constructor.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~AfferentGraph_node5"><a xlink:href=".././sourcefile/submodule_bns_lorene_constructor.f90.html" xlink:title="submodule_bns_lorene_constructor.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="594,-234 392,-234 392,-210 594,-210 594,-234"/>
+<text text-anchor="middle" x="493" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_bns_lorene_constructor.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_bns_lorene_constructor.f90&#45;&gt;sourcefile~module_bns_lorene.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_edge4" class="edge">
+<title>sourcefile~submodule_bns_lorene_constructor.f90&#45;&gt;sourcefile~module_bns_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M420.1092,-209.9979C410.5023,-207.5047 400.907,-204.5319 392,-201 349.3592,-184.0916 304.9807,-154.2539 278.6849,-135.0686"/>
+<polygon fill="#000000" stroke="#000000" points="280.6097,-132.1389 270.489,-129.0048 276.4462,-137.7662 280.6097,-132.1389"/>
+</g>
+<!-- sourcefile~submodule_bns_lorene_access.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node6" class="node">
+<title>sourcefile~submodule_bns_lorene_access.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~AfferentGraph_node6"><a xlink:href=".././sourcefile/submodule_bns_lorene_access.f90.html" xlink:title="submodule_bns_lorene_access.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="583.5,-192 402.5,-192 402.5,-168 583.5,-168 583.5,-192"/>
+<text text-anchor="middle" x="493" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_bns_lorene_access.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_bns_lorene_access.f90&#45;&gt;sourcefile~module_bns_lorene.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_edge5" class="edge">
+<title>sourcefile~submodule_bns_lorene_access.f90&#45;&gt;sourcefile~module_bns_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M430.5626,-167.96C417.7571,-165.2268 404.4034,-162.1835 392,-159 361.3388,-151.1305 327.3111,-140.7077 300.8385,-132.214"/>
+<polygon fill="#000000" stroke="#000000" points="301.677,-128.8068 291.0853,-129.0625 299.5247,-135.4677 301.677,-128.8068"/>
+</g>
+<!-- sourcefile~submodule_bns_lorene_params.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node7" class="node">
+<title>sourcefile~submodule_bns_lorene_params.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~AfferentGraph_node7"><a xlink:href=".././sourcefile/submodule_bns_lorene_params.f90.html" xlink:title="submodule_bns_lorene_params.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="585,-150 401,-150 401,-126 585,-126 585,-150"/>
+<text text-anchor="middle" x="493" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_bns_lorene_params.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_bns_lorene_params.f90&#45;&gt;sourcefile~module_bns_lorene.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_edge6" class="edge">
+<title>sourcefile~submodule_bns_lorene_params.f90&#45;&gt;sourcefile~module_bns_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M400.983,-129.8809C376.7127,-127.7394 350.8616,-125.4584 327.7629,-123.4203"/>
+<polygon fill="#000000" stroke="#000000" points="327.9721,-119.9252 317.7031,-122.5326 327.3568,-126.8981 327.9721,-119.9252"/>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node8" class="node">
+<title>sourcefile~module_sphincs_lorene.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~AfferentGraph_node8"><a xlink:href=".././sourcefile/module_sphincs_lorene.f90.html" xlink:title="module_sphincs_lorene.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="565,-108 421,-108 421,-84 565,-84 565,-108"/>
+<text text-anchor="middle" x="493" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_sphincs_lorene.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_bns_lorene.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_edge7" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_bns_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M420.9463,-102.3577C391.4513,-104.9602 357.3739,-107.967 327.8021,-110.5763"/>
+<polygon fill="#000000" stroke="#000000" points="327.1987,-107.1158 317.5451,-111.4813 327.814,-114.0887 327.1987,-107.1158"/>
+</g>
+<!-- sourcefile~submodule_bns_lorene_import.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node9" class="node">
+<title>sourcefile~submodule_bns_lorene_import.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~AfferentGraph_node9"><a xlink:href=".././sourcefile/submodule_bns_lorene_import.f90.html" xlink:title="submodule_bns_lorene_import.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="582,-66 404,-66 404,-42 582,-42 582,-66"/>
+<text text-anchor="middle" x="493" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_bns_lorene_import.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_bns_lorene_import.f90&#45;&gt;sourcefile~module_bns_lorene.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_edge8" class="edge">
+<title>sourcefile~submodule_bns_lorene_import.f90&#45;&gt;sourcefile~module_bns_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M420.7202,-66.0482C410.9225,-68.5414 401.1124,-71.5019 392,-75 374.7072,-81.6385 373.2928,-89.3615 356,-96 346.9085,-99.4901 337.1225,-102.445 327.3472,-104.9346"/>
+<polygon fill="#000000" stroke="#000000" points="326.5097,-101.5361 317.6016,-107.2717 328.1421,-108.3431 326.5097,-101.5361"/>
+</g>
+<!-- sourcefile~submodule_bns_lorene_memory.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node10" class="node">
+<title>sourcefile~submodule_bns_lorene_memory.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~AfferentGraph_node10"><a xlink:href=".././sourcefile/submodule_bns_lorene_memory.f90.html" xlink:title="submodule_bns_lorene_memory.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="586.5,-24 399.5,-24 399.5,0 586.5,0 586.5,-24"/>
+<text text-anchor="middle" x="493" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_bns_lorene_memory.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_bns_lorene_memory.f90&#45;&gt;sourcefile~module_bns_lorene.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_edge9" class="edge">
+<title>sourcefile~submodule_bns_lorene_memory.f90&#45;&gt;sourcefile~module_bns_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M407.4867,-24.1349C402.0085,-26.5987 396.7814,-29.526 392,-33 365.9101,-51.9557 382.0899,-77.0443 356,-96 347.5453,-102.1428 337.6975,-106.5763 327.5308,-109.7606"/>
+<polygon fill="#000000" stroke="#000000" points="326.4419,-106.4298 317.7208,-112.4458 328.29,-113.1814 326.4419,-106.4298"/>
+</g>
+<!-- sourcefile~convergence_test.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node11" class="node">
+<title>sourcefile~convergence_test.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~AfferentGraph_node11"><a xlink:href=".././sourcefile/convergence_test.f90.html" xlink:title="convergence_test.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="750.5,-129 635.5,-129 635.5,-105 750.5,-105 750.5,-129"/>
+<text text-anchor="middle" x="693" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">convergence_test.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~convergence_test.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_edge11" class="edge">
+<title>sourcefile~convergence_test.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M635.42,-110.9541C616.6633,-108.9846 595.4624,-106.7586 575.2595,-104.6373"/>
+<polygon fill="#000000" stroke="#000000" points="575.4326,-101.1363 565.1218,-103.5728 574.7016,-108.098 575.4326,-101.1363"/>
+</g>
+<!-- sourcefile~sphincs_lorene_bns.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_node12" class="node">
+<title>sourcefile~sphincs_lorene_bns.f90</title>
+<g id="a_sourcefile~~module_bns_base.f90~~AfferentGraph_node12"><a xlink:href=".././sourcefile/sphincs_lorene_bns.f90.html" xlink:title="sphincs_lorene_bns.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="756,-87 630,-87 630,-63 756,-63 756,-87"/>
+<text text-anchor="middle" x="693" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene_bns.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sphincs_lorene_bns.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90 -->
+<g id="sourcefile~~module_bns_base.f90~~AfferentGraph_edge10" class="edge">
+<title>sourcefile~sphincs_lorene_bns.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M629.9933,-81.6157C612.6036,-83.4416 593.4765,-85.45 575.1729,-87.3718"/>
+<polygon fill="#000000" stroke="#000000" points="574.685,-83.9037 565.1052,-88.429 575.4161,-90.8655 574.685,-83.9037"/>
+</g>
+</g>
+</svg>
+</div><script>var pansourcefilemodule_bns_basef90AfferentGraph = svgPanZoom('#sourcefilemodule_bns_basef90AfferentGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,0 67,0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="182,-24 85,-24 85,0 182,0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-1">Modules</a></h3></div>
+  <div id="mods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/bns_base.html">bns_base</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/module_bns_base.f90.html#src">module_bns_base.f90</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="c">! File:         module_bns_base.f90</span>
+<a name="ln-2"></a><span class="c">! Authors:      Francesco Torsello (FT)</span>
+<a name="ln-3"></a><span class="c">! Copyright:    GNU General Public License (GPLv3)</span>
+<a name="ln-4"></a>
+<a name="ln-5"></a><span class="k">MODULE </span><span class="n">bns_base</span>
+<a name="ln-6"></a>
+<a name="ln-7"></a>  <span class="c">!********************************************************</span>
+<a name="ln-8"></a>  <span class="c">!</span>
+<a name="ln-9"></a>  <span class="c">!# This MODULE contains the definition of TYPE bnsbase,</span>
+<a name="ln-10"></a>  <span class="c">!  which is an ABSTRACT TYPE representing any possible</span>
+<a name="ln-11"></a>  <span class="c">!  type of binary neutron star (BNS) initial data (ID)</span>
+<a name="ln-12"></a>  <span class="c">!  to be set up for |sphincsbssn|. That is, BNS ID</span>
+<a name="ln-13"></a>  <span class="c">!  produced with LORENE, with |fuka|, etc.</span>
+<a name="ln-14"></a>  <span class="c">!</span>
+<a name="ln-15"></a>  <span class="c">!  PROCEDURES and variables shared by all the types</span>
+<a name="ln-16"></a>  <span class="c">!  of BNS ID should belong to TYPE bnsbase, as</span>
+<a name="ln-17"></a>  <span class="c">!  they are inherited by its EXTENDED TYPES that</span>
+<a name="ln-18"></a>  <span class="c">!  represent more specific typesof BNS ID.</span>
+<a name="ln-19"></a>  <span class="c">!</span>
+<a name="ln-20"></a>  <span class="c">!  FT 24.09.2021</span>
+<a name="ln-21"></a>  <span class="c">!</span>
+<a name="ln-22"></a>  <span class="c">!********************************************************</span>
+<a name="ln-23"></a>
+<a name="ln-24"></a>
+<a name="ln-25"></a>  <span class="k">USE </span><span class="n">id_base</span><span class="p">,</span> <span class="n">ONLY</span><span class="p">:</span> <span class="n">idbase</span>
+<a name="ln-26"></a>  <span class="k">USE </span><span class="n">utility</span><span class="p">,</span> <span class="n">ONLY</span><span class="p">:</span> <span class="n">ios</span><span class="p">,</span> <span class="n">err_msg</span>
+<a name="ln-27"></a>
+<a name="ln-28"></a>
+<a name="ln-29"></a>  <span class="k">IMPLICIT NONE</span>
+<a name="ln-30"></a>
+<a name="ln-31"></a>
+<a name="ln-32"></a>  <span class="c">!*******************************************************</span>
+<a name="ln-33"></a>  <span class="c">!                                                      *</span>
+<a name="ln-34"></a>  <span class="c">!   Definition of TYPE bnsbase (binary neutron star)   *</span>
+<a name="ln-35"></a>  <span class="c">!                                                      *</span>
+<a name="ln-36"></a>  <span class="c">!*******************************************************</span>
+<a name="ln-37"></a>
+<a name="ln-38"></a>  <span class="k">TYPE</span><span class="p">,</span> <span class="k">ABSTRACT</span><span class="p">,</span> <span class="k">EXTENDS</span><span class="p">(</span><span class="n">idbase</span><span class="p">)</span><span class="kd">::</span> <span class="n">bnsbase</span>
+<a name="ln-39"></a>  <span class="c">!# Represents a generic BNS ID for |sphincsbssn| (produced with LORENE, or with</span>
+<a name="ln-40"></a>  <span class="c">!  |fuka|, etc.; or produced with the same tool, but read in different ways,</span>
+<a name="ln-41"></a>  <span class="c">!  for example by linking to the LORENE library, or reading the ID from</span>
+<a name="ln-42"></a>  <span class="c">!  a lattice, etc.)</span>
+<a name="ln-43"></a>
+<a name="ln-44"></a>
+<a name="ln-45"></a>    <span class="c">!-----------------------------!</span>
+<a name="ln-46"></a>    <span class="c">!--  Parameters of the BNS  --!</span>
+<a name="ln-47"></a>    <span class="c">!-----------------------------!</span>
+<a name="ln-48"></a>
+<a name="ln-49"></a>    <span class="c">!&gt; Angular velocity \([{\rm rad/s}]\)</span>
+<a name="ln-50"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">angular_vel</span>
+<a name="ln-51"></a>
+<a name="ln-52"></a>    <span class="c">!&gt; Distance \(d\) between the points of maximum baryon density \([{\rm km}]\)</span>
+<a name="ln-53"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">distance</span>
+<a name="ln-54"></a>
+<a name="ln-55"></a>    <span class="c">!&gt; Distance between the centers of mass \([L_\odot(=1.47662503825040{\rm km})]\)</span>
+<a name="ln-56"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">distance_com</span>
+<a name="ln-57"></a>
+<a name="ln-58"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="kd">::</span> <span class="n">mass</span>
+<a name="ln-59"></a>    <span class="c">!! Array containing the baryonic masses \([M_\odot]\)</span>
+<a name="ln-60"></a>
+<a name="ln-61"></a>    <span class="c">!&gt; Baryonic mass of star 1 \([M_\odot]\)</span>
+<a name="ln-62"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">mass1</span>
+<a name="ln-63"></a>
+<a name="ln-64"></a>    <span class="c">!&gt; Baryonic mass of star 2 \([M_\odot]\)</span>
+<a name="ln-65"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">mass2</span>
+<a name="ln-66"></a>
+<a name="ln-67"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="kd">::</span> <span class="n">mass_grav</span>
+<a name="ln-68"></a>    <span class="c">!! Array containing the gravitatil masses \([M_\odot]\)</span>
+<a name="ln-69"></a>
+<a name="ln-70"></a>    <span class="c">!&gt; Gravitational mass of star 1 \([M_\odot]\)</span>
+<a name="ln-71"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">mass_grav1</span>
+<a name="ln-72"></a>
+<a name="ln-73"></a>    <span class="c">!&gt; Gravitational mass of star 2 \([M_\odot]\)</span>
+<a name="ln-74"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">mass_grav2</span>
+<a name="ln-75"></a>
+<a name="ln-76"></a>    <span class="c">!&gt; ADM mass of the BNS \([M_\odot]\)</span>
+<a name="ln-77"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">adm_mass</span>
+<a name="ln-78"></a>
+<a name="ln-79"></a>    <span class="c">!&amp; mOmega= ( [[bnsbase:angular_vel]]\([{\rm km^{-1}}]\) )</span>
+<a name="ln-80"></a>    <span class="c">!  \(\times\) ( [[bnsbase:mass_grav1]]\([{\rm km}]\)</span>
+<a name="ln-81"></a>    <span class="c">!      + [[bnsbase:mass_grav2]]\([{\rm km}]\) ) [pure number]</span>
+<a name="ln-82"></a>    <span class="c">!</span>
+<a name="ln-83"></a>    <span class="c">!  Constant used in [K. Hotokezaka et al, Phys. Rev. D 87, 024001](https://arxiv.org/abs/1212.0905){:target=&quot;_blank&quot;} (see Sec. IIB) to determine when</span>
+<a name="ln-84"></a>    <span class="c">!  the BNS is at approximately 3-4 quasicircular orbits from merger. For the</span>
+<a name="ln-85"></a>    <span class="c">! EOS APR4 and ALF2, this requirement is approximately satisfied for</span>
+<a name="ln-86"></a>    <span class="c">! mOmega \(=0.026\); for the EOS H4 and MS1, for mOmega \(=0.025\).</span>
+<a name="ln-87"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">mOmega</span>
+<a name="ln-88"></a>
+<a name="ln-89"></a>    <span class="c">!&amp; Estimated time of the merger \([M_\odot]\)</span>
+<a name="ln-90"></a>    <span class="c">!  $$</span>
+<a name="ln-91"></a>    <span class="c">!  t_\mathrm{merger}=\dfrac{5}{256}</span>
+<a name="ln-92"></a>    <span class="c">!  \dfrac{d^4}{M^1_\mathrm{g}M^2_\mathrm{g}(M^1_\mathrm{g}+M^2_\mathrm{g})}</span>
+<a name="ln-93"></a>    <span class="c">!  $$</span>
+<a name="ln-94"></a>    <span class="c">!  [P. C. Peters, &quot;Gravitational Radiation and the Motion of Two Point</span>
+<a name="ln-95"></a>    <span class="c">!  Masses&quot;, Phys. Rev. 136, B1224 (1964)](http://gravity.psu.edu/numrel/jclub/jc/Peters_PR_136_B1224_1964.pdf){:target=&quot;_blank&quot;}</span>
+<a name="ln-96"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">t_merger</span>
+<a name="ln-97"></a>
+<a name="ln-98"></a>    <span class="c">!&gt; Angular momentum of the BNS system \([G M_\odot^2/c]\)</span>
+<a name="ln-99"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">angular_momentum</span><span class="o">=</span> <span class="mf">0.0D0</span>
+<a name="ln-100"></a>
+<a name="ln-101"></a>    <span class="c">!&amp; Areal (or circumferential) radius of star 1 \([L_\odot]\)</span>
+<a name="ln-102"></a>    <span class="c">! Note that these is the areal radius of the star in the binary system,</span>
+<a name="ln-103"></a>    <span class="c">! which is different than that of an isolated star. The latter is used</span>
+<a name="ln-104"></a>    <span class="c">! in the mass-radius diagrams, together with the gravitatonal mass</span>
+<a name="ln-105"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">area_radius1</span>
+<a name="ln-106"></a>
+<a name="ln-107"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span><span class="kd">::</span> <span class="n">radii</span>
+<a name="ln-108"></a>    <span class="c">!# Array containing the **signed** radii of the stars</span>
+<a name="ln-109"></a>    <span class="c">!  @todo add details</span>
+<a name="ln-110"></a>
+<a name="ln-111"></a>    <span class="c">!&gt; Radius of star 1, in the x direction, towards the companion \([L_\odot]\)</span>
+<a name="ln-112"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">radius1_x_comp</span>
+<a name="ln-113"></a>
+<a name="ln-114"></a>    <span class="c">!&gt; Radius of star 1, in the y direction \([L_\odot]\)</span>
+<a name="ln-115"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">radius1_y</span>
+<a name="ln-116"></a>
+<a name="ln-117"></a>    <span class="c">!&gt; Radius of star 1, in the z direction \([L_\odot]\)</span>
+<a name="ln-118"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">radius1_z</span>
+<a name="ln-119"></a>
+<a name="ln-120"></a>    <span class="c">!&gt; Radius of star 1, in the x direction, opposite to companion \([L_\odot]\)</span>
+<a name="ln-121"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">radius1_x_opp</span>
+<a name="ln-122"></a>
+<a name="ln-123"></a>    <span class="c">!&amp; Stellar center of star 1 (origin of the LORENE chart centered on star 1)</span>
+<a name="ln-124"></a>    <span class="c">!  \([L_\odot]\)</span>
+<a name="ln-125"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">center1_x</span>
+<a name="ln-126"></a>
+<a name="ln-127"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">center</span>
+<a name="ln-128"></a>    <span class="c">!# Array containing the centers of the stars</span>
+<a name="ln-129"></a>    <span class="c">!  @todo add details</span>
+<a name="ln-130"></a>
+<a name="ln-131"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">barycenter</span>
+<a name="ln-132"></a>    <span class="c">!# Array containing the barycenters of the stars</span>
+<a name="ln-133"></a>    <span class="c">!  @todo add details</span>
+<a name="ln-134"></a>
+<a name="ln-135"></a>    <span class="c">!&gt; Barycenter of star 1 \([L_\odot]\)</span>
+<a name="ln-136"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">barycenter1_x</span>
+<a name="ln-137"></a>
+<a name="ln-138"></a>    <span class="c">!&amp; Areal (or circumferential) radius of star 2 \([L_\odot]\)</span>
+<a name="ln-139"></a>    <span class="c">! Note that these is the areal radius of the star in the binary system,</span>
+<a name="ln-140"></a>    <span class="c">! which is different than that of an isolated star. The latter is used</span>
+<a name="ln-141"></a>    <span class="c">! in the mass-radius diagrams, together with the gravitatonal mass</span>
+<a name="ln-142"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">area_radius2</span>
+<a name="ln-143"></a>
+<a name="ln-144"></a>    <span class="c">!&gt; Radius of star 2, in the x direction, towards the companion \([L_\odot]\)</span>
+<a name="ln-145"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">radius2_x_comp</span>
+<a name="ln-146"></a>
+<a name="ln-147"></a>    <span class="c">!&gt; Radius of star 2, in the y direction \([L_\odot]\)</span>
+<a name="ln-148"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">radius2_y</span>
+<a name="ln-149"></a>
+<a name="ln-150"></a>    <span class="c">!&gt; Radius of star 2, in the z direction \([L_\odot]\)</span>
+<a name="ln-151"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">radius2_z</span>
+<a name="ln-152"></a>
+<a name="ln-153"></a>    <span class="c">!&gt; Radius of star 2, in the x direction, opposite to companion \([L_\odot]\)</span>
+<a name="ln-154"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">radius2_x_opp</span>
+<a name="ln-155"></a>
+<a name="ln-156"></a>    <span class="c">!&amp; Stellar center of star 2 (origin of the LORENE chart centered on star 2)</span>
+<a name="ln-157"></a>    <span class="c">!  \([L_\odot]\)</span>
+<a name="ln-158"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">center2_x</span>
+<a name="ln-159"></a>
+<a name="ln-160"></a>    <span class="c">!&gt; Barycenter of star 2 \([L_\odot]\)</span>
+<a name="ln-161"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">barycenter2_x</span>
+<a name="ln-162"></a>
+<a name="ln-163"></a>    <span class="c">!&gt; Central enthalpy for star 1 \([c^2]\)</span>
+<a name="ln-164"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">ent_center1</span>
+<a name="ln-165"></a>
+<a name="ln-166"></a>    <span class="c">!&gt; Central baryon number density for star 1 \([L_\odot^{-3}]\)</span>
+<a name="ln-167"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">nbar_center1</span>
+<a name="ln-168"></a>
+<a name="ln-169"></a>    <span class="c">!&gt; Central baryon mass density for star 1 \([M_\odot L_\odot^{-3}]\)</span>
+<a name="ln-170"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">rho_center1</span>
+<a name="ln-171"></a>
+<a name="ln-172"></a>    <span class="c">!&gt; Central energy density for star 1 \([M_\odot c^2 L_\odot^{-3}]\)</span>
+<a name="ln-173"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">energy_density_center1</span>
+<a name="ln-174"></a>
+<a name="ln-175"></a>    <span class="c">!&gt; Central specific energy for star 1 \([c^2]\)</span>
+<a name="ln-176"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">specific_energy_center1</span>
+<a name="ln-177"></a>
+<a name="ln-178"></a>    <span class="c">!&gt; Central pressure for star 1 \([M_\odot c^2 L_\odot^{-3}]\)</span>
+<a name="ln-179"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">pressure_center1</span>
+<a name="ln-180"></a>
+<a name="ln-181"></a>    <span class="c">!&gt; Central enthalpy for star 2 \([c^2]\)</span>
+<a name="ln-182"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">ent_center2</span>
+<a name="ln-183"></a>
+<a name="ln-184"></a>    <span class="c">!&gt; Central baryon number density for star 2 \([L_\odot^{-3}]\)</span>
+<a name="ln-185"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">nbar_center2</span>
+<a name="ln-186"></a>
+<a name="ln-187"></a>    <span class="c">!&gt; Central baryon mass density for star 2 \([M_\odot L_\odot^{-3}]\)</span>
+<a name="ln-188"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">rho_center2</span>
+<a name="ln-189"></a>
+<a name="ln-190"></a>    <span class="c">!&gt; Central energy density for star 2 \([M_\odot c^2 L_\odot^{-3}]\)</span>
+<a name="ln-191"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">energy_density_center2</span>
+<a name="ln-192"></a>
+<a name="ln-193"></a>    <span class="c">!&gt; Central specific energy for star 2 \([c^2]\)</span>
+<a name="ln-194"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">specific_energy_center2</span>
+<a name="ln-195"></a>
+<a name="ln-196"></a>    <span class="c">!&gt; Central pressure for star 2 \([M_\odot c^2 L_\odot^{-3}]\)</span>
+<a name="ln-197"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">pressure_center2</span>
+<a name="ln-198"></a>
+<a name="ln-199"></a>    <span class="c">!&gt; Name of the equation of state (|eos|) of star 1</span>
+<a name="ln-200"></a>    <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span><span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">eos1</span>
+<a name="ln-201"></a>
+<a name="ln-202"></a>    <span class="c">!&gt; Name of the equation of state (|eos|) of star 2</span>
+<a name="ln-203"></a>    <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span><span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">eos2</span>
+<a name="ln-204"></a>
+<a name="ln-205"></a>    <span class="c">!</span>
+<a name="ln-206"></a>    <span class="c">!-- Parameters of single polytropic equations of state for the two NSs</span>
+<a name="ln-207"></a>    <span class="c">!</span>
+<a name="ln-208"></a>
+<a name="ln-209"></a>    <span class="c">!&gt; Single polytrope: polytropic index for star 1</span>
+<a name="ln-210"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">gamma_1</span>
+<a name="ln-211"></a>
+<a name="ln-212"></a>    <span class="c">!&gt; Single polytrope: polytropic index for star 2</span>
+<a name="ln-213"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">gamma_2</span>
+<a name="ln-214"></a>
+<a name="ln-215"></a>    <span class="c">!&gt; Single polytrope: polytropic constant for star 1 [pure number]</span>
+<a name="ln-216"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">kappa_1</span>
+<a name="ln-217"></a>
+<a name="ln-218"></a>    <span class="c">!&gt; Single polytrope: polytropic constant for star 2 [pure number]</span>
+<a name="ln-219"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">kappa_2</span>
+<a name="ln-220"></a>
+<a name="ln-221"></a>    <span class="c">!</span>
+<a name="ln-222"></a>    <span class="c">!-- Parameters of the piecewise polytropic equation of state for NS 1</span>
+<a name="ln-223"></a>    <span class="c">!</span>
+<a name="ln-224"></a>
+<a name="ln-225"></a>    <span class="c">!&gt; Piecewise polytrope: Number of polytropic pieces for star 1</span>
+<a name="ln-226"></a>    <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">npeos_1</span>
+<a name="ln-227"></a>
+<a name="ln-228"></a>    <span class="c">!&gt; Piecewise polytrope: polytropic index \(\gamma_0\) for star 1</span>
+<a name="ln-229"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">gamma0_1</span>
+<a name="ln-230"></a>
+<a name="ln-231"></a>    <span class="c">!&gt; Piecewise polytrope: polytropic index \(\gamma_1\) for star 1</span>
+<a name="ln-232"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">gamma1_1</span>
+<a name="ln-233"></a>
+<a name="ln-234"></a>    <span class="c">!&gt; Piecewise polytrope: polytropic index \(\gamma_2\) for star 1</span>
+<a name="ln-235"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">gamma2_1</span>
+<a name="ln-236"></a>
+<a name="ln-237"></a>    <span class="c">!&gt; Piecewise polytrope: polytropic index \(\gamma_3\) for star 1</span>
+<a name="ln-238"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">gamma3_1</span>
+<a name="ln-239"></a>
+<a name="ln-240"></a>    <span class="c">!&amp; Piecewise polytrope: polytropic constant \(\kappa_0\) for star 1</span>
+<a name="ln-241"></a>    <span class="c">!  [pure number]</span>
+<a name="ln-242"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">kappa0_1</span>
+<a name="ln-243"></a>
+<a name="ln-244"></a>    <span class="c">!&amp; Piecewise polytrope: polytropic constant \(\kappa_1\) for star 1</span>
+<a name="ln-245"></a>    <span class="c">!  [pure number]</span>
+<a name="ln-246"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">kappa1_1</span>
+<a name="ln-247"></a>
+<a name="ln-248"></a>    <span class="c">!&amp; Piecewise polytrope: polytropic constant \(\kappa_2\) for star 1</span>
+<a name="ln-249"></a>    <span class="c">!  [pure number]</span>
+<a name="ln-250"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">kappa2_1</span>
+<a name="ln-251"></a>
+<a name="ln-252"></a>    <span class="c">!&amp; Piecewise polytrope: polytropic constant \(\kappa_3\) for star 1</span>
+<a name="ln-253"></a>    <span class="c">!  [pure number]</span>
+<a name="ln-254"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">kappa3_1</span>
+<a name="ln-255"></a>
+<a name="ln-256"></a>    <span class="c">!&amp; Piecewise polytrope: Base 10 exponent of the pressure at the first</span>
+<a name="ln-257"></a>    <span class="c">!  fiducial density (between \(\gamma_0\) and \(\gamma_1\)) \([{\rm dyne/cm^2}]\)</span>
+<a name="ln-258"></a>    <span class="c">!  for star 1</span>
+<a name="ln-259"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">logP1_1</span>
+<a name="ln-260"></a>
+<a name="ln-261"></a>    <span class="c">!&amp; Piecewise polytrope: Base 10 exponent of the first fiducial density</span>
+<a name="ln-262"></a>    <span class="c">!  (between \(\gamma_0\) and \(\gamma_1\)) \([{\rm g/cm^3}]\) for star 1</span>
+<a name="ln-263"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">logRho0_1</span>
+<a name="ln-264"></a>
+<a name="ln-265"></a>    <span class="c">!&amp; Piecewise polytrope: Base 10 exponent of the second fiducial density</span>
+<a name="ln-266"></a>    <span class="c">!  (between \(\gamma_1\) and \(\gamma_2\)) \([{\rm g/cm^3}]\) for star 1</span>
+<a name="ln-267"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">logRho1_1</span>
+<a name="ln-268"></a>
+<a name="ln-269"></a>    <span class="c">!&amp; Piecewise polytrope: Base 10 exponent of the third fiducial density</span>
+<a name="ln-270"></a>    <span class="c">!  (between \(\gamma_2\) and \(\gamma_3\)) \([{\rm g/cm^3}]\) for star 1</span>
+<a name="ln-271"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">logRho2_1</span>
+<a name="ln-272"></a>
+<a name="ln-273"></a>    <span class="c">!</span>
+<a name="ln-274"></a>    <span class="c">!-- Parameters of the piecewise polytropic equation of state for NS 2</span>
+<a name="ln-275"></a>    <span class="c">!</span>
+<a name="ln-276"></a>
+<a name="ln-277"></a>    <span class="c">!&gt; Piecewise polytrope: Number of polytropic pieces for star 2</span>
+<a name="ln-278"></a>    <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">npeos_2</span>
+<a name="ln-279"></a>
+<a name="ln-280"></a>    <span class="c">!&gt; Piecewise polytrope: polytropic index \(\gamma_0\) for star 2</span>
+<a name="ln-281"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">gamma0_2</span>
+<a name="ln-282"></a>
+<a name="ln-283"></a>    <span class="c">!&gt; Piecewise polytrope: polytropic index \(\gamma_1\) for star 2</span>
+<a name="ln-284"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">gamma1_2</span>
+<a name="ln-285"></a>
+<a name="ln-286"></a>    <span class="c">!&gt; Piecewise polytrope: polytropic index \(\gamma_2\) for star 2</span>
+<a name="ln-287"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">gamma2_2</span>
+<a name="ln-288"></a>
+<a name="ln-289"></a>    <span class="c">!&gt; Piecewise polytrope: polytropic index \(\gamma_3\) for star 2</span>
+<a name="ln-290"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">gamma3_2</span>
+<a name="ln-291"></a>
+<a name="ln-292"></a>    <span class="c">!&amp; Piecewise polytrope: polytropic constant \(\kappa_0\) for star 2</span>
+<a name="ln-293"></a>    <span class="c">!  [pure number]</span>
+<a name="ln-294"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">kappa0_2</span>
+<a name="ln-295"></a>
+<a name="ln-296"></a>    <span class="c">!&amp; Piecewise polytrope: polytropic constant \(\kappa_1\) for star 2</span>
+<a name="ln-297"></a>    <span class="c">!  [pure number]</span>
+<a name="ln-298"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">kappa1_2</span>
+<a name="ln-299"></a>
+<a name="ln-300"></a>    <span class="c">!&amp; Piecewise polytrope: polytropic constant \(\kappa_2\) for star 2</span>
+<a name="ln-301"></a>    <span class="c">!  [pure number]</span>
+<a name="ln-302"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">kappa2_2</span>
+<a name="ln-303"></a>
+<a name="ln-304"></a>    <span class="c">!&amp; Piecewise polytrope: polytropic constant \(\kappa_3\) for star 2</span>
+<a name="ln-305"></a>    <span class="c">!  [pure number]</span>
+<a name="ln-306"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">kappa3_2</span>
+<a name="ln-307"></a>
+<a name="ln-308"></a>    <span class="c">!&amp; Piecewise polytrope: Base 10 exponent of the pressure at the first</span>
+<a name="ln-309"></a>    <span class="c">!  fiducial density (between \(\gamma_0\) and \(\gamma_1\)) \([{\rm dyne/cm^2}]\)</span>
+<a name="ln-310"></a>    <span class="c">!  for star 2</span>
+<a name="ln-311"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">logP1_2</span>
+<a name="ln-312"></a>
+<a name="ln-313"></a>    <span class="c">!&amp; Piecewise polytrope: Base 10 exponent of the second fiducial density</span>
+<a name="ln-314"></a>    <span class="c">!  (between \(\gamma_1\) and \(\gamma_2\)) \([{\rm g/cm^3}]\) for star 2</span>
+<a name="ln-315"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">logRho0_2</span>
+<a name="ln-316"></a>
+<a name="ln-317"></a>    <span class="c">!&amp; Piecewise polytrope: Base 10 exponent of the second fiducial density</span>
+<a name="ln-318"></a>    <span class="c">!  (between \(\gamma_1\) and \(\gamma_2\)) \([{\rm g/cm^3}]\) for star 2</span>
+<a name="ln-319"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">logRho1_2</span>
+<a name="ln-320"></a>
+<a name="ln-321"></a>    <span class="c">!&amp; Piecewise polytrope: Base 10 exponent of the third fiducial density</span>
+<a name="ln-322"></a>    <span class="c">!  (between \(\gamma_2\) and \(\gamma_3\)) \([{\rm g/cm^3}]\) for star 2</span>
+<a name="ln-323"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">logRho2_2</span>
+<a name="ln-324"></a>
+<a name="ln-325"></a>
+<a name="ln-326"></a>
+<a name="ln-327"></a>    <span class="k">CONTAINS</span>
+<a name="ln-328"></a>
+<a name="ln-329"></a>
+<a name="ln-330"></a>    <span class="c">!-------------------!</span>
+<a name="ln-331"></a>    <span class="c">!--  SUBROUTINES  --!</span>
+<a name="ln-332"></a>    <span class="c">!-------------------!</span>
+<a name="ln-333"></a>
+<a name="ln-334"></a>    <span class="k">PROCEDURE</span><span class="p">(</span><span class="n">get_eos_id_int</span><span class="p">),</span> <span class="k">DEFERRED</span><span class="kd">::</span> <span class="n">get_eos1_id</span>
+<a name="ln-335"></a>    <span class="c">!! Returns an integer that identifies the equation of state of star 1</span>
+<a name="ln-336"></a>
+<a name="ln-337"></a>    <span class="k">PROCEDURE</span><span class="p">(</span><span class="n">get_eos_id_int</span><span class="p">),</span> <span class="k">DEFERRED</span><span class="kd">::</span> <span class="n">get_eos2_id</span>
+<a name="ln-338"></a>    <span class="c">!! Returns an integer that identifies the equation of state of star 2</span>
+<a name="ln-339"></a>
+<a name="ln-340"></a>
+<a name="ln-341"></a>    <span class="c">!PROCEDURE:: integrate_field_on_star =&gt; integrate_baryon_mass_density</span>
+<a name="ln-342"></a>    <span class="c">!# Integrates the LORENE baryon mass density and computes the</span>
+<a name="ln-343"></a>    <span class="c">!  radial mass profile</span>
+<a name="ln-344"></a>
+<a name="ln-345"></a>
+<a name="ln-346"></a>    <span class="c">!-----------------!</span>
+<a name="ln-347"></a>    <span class="c">!--  FUNCTIONS  --!</span>
+<a name="ln-348"></a>    <span class="c">!-----------------!</span>
+<a name="ln-349"></a>
+<a name="ln-350"></a>    <span class="c">!</span>
+<a name="ln-351"></a>    <span class="c">!-- Overloaded FUNCTION to access the fields as arrays and as values</span>
+<a name="ln-352"></a>    <span class="c">!</span>
+<a name="ln-353"></a>
+<a name="ln-354"></a>  <span class="c">!     GENERIC, PUBLIC:: get_field =&gt; get_fa, get_fv</span>
+<a name="ln-355"></a>  <span class="c">!     !# GENERIC PROCEDURE, overloded to access the bns member variables as arrays</span>
+<a name="ln-356"></a>  <span class="c">!     !  and as values</span>
+<a name="ln-357"></a>  <span class="c">!     PROCEDURE::       get_fa    =&gt; get_field_array</span>
+<a name="ln-358"></a>  <span class="c">!     !! Access the bns member arrays</span>
+<a name="ln-359"></a>  <span class="c">!     PROCEDURE::       get_fv    =&gt; get_field_value</span>
+<a name="ln-360"></a>    <span class="c">!! Access the components of the bns member arrays</span>
+<a name="ln-361"></a>
+<a name="ln-362"></a>    <span class="c">!</span>
+<a name="ln-363"></a>    <span class="c">!-- FUNCTIONS that access member variables</span>
+<a name="ln-364"></a>    <span class="c">!</span>
+<a name="ln-365"></a>
+<a name="ln-366"></a>    <span class="c">!PROCEDURE, PUBLIC:: get_bns_identifier</span>
+<a name="ln-367"></a>    <span class="c">!PROCEDURE, PUBLIC:: get_bns_ptr</span>
+<a name="ln-368"></a>    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">return_mass</span>                 <span class="o">=&gt;</span> <span class="n">get_mass</span>
+<a name="ln-369"></a>    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">return_center</span>               <span class="o">=&gt;</span> <span class="n">get_center</span>
+<a name="ln-370"></a>    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">return_barycenter</span>           <span class="o">=&gt;</span> <span class="n">get_barycenter</span>
+<a name="ln-371"></a>    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">return_eos_name</span>             <span class="o">=&gt;</span> <span class="n">get_eos</span>
+<a name="ln-372"></a>    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">return_spatial_extent</span>       <span class="o">=&gt;</span> <span class="n">get_radii</span>
+<a name="ln-373"></a>    <span class="c">!PROCEDURE:: return_total_spatial_extent =&gt; get_bounding_box</span>
+<a name="ln-374"></a>
+<a name="ln-375"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_angular_vel</span>
+<a name="ln-376"></a>    <span class="c">!! Returns [[bnsbase:angular_vel]]</span>
+<a name="ln-377"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_distance</span>
+<a name="ln-378"></a>    <span class="c">!! Returns [[bnsbase:distance]]</span>
+<a name="ln-379"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_distance_com</span>
+<a name="ln-380"></a>    <span class="c">!! Returns [[bnsbase:distance_com]]</span>
+<a name="ln-381"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_mass1</span>
+<a name="ln-382"></a>    <span class="c">!! Returns [[bnsbase:mass1]]</span>
+<a name="ln-383"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_mass2</span>
+<a name="ln-384"></a>    <span class="c">!! Returns [[bnsbase:mass2]]</span>
+<a name="ln-385"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_grav_mass1</span>
+<a name="ln-386"></a>    <span class="c">!! Returns [[bnsbase:mass_grav1]]</span>
+<a name="ln-387"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_grav_mass2</span>
+<a name="ln-388"></a>    <span class="c">!! Returns [[bnsbase:mass_grav2]]</span>
+<a name="ln-389"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_adm_mass</span>
+<a name="ln-390"></a>    <span class="c">!! Returns [[bnsbase:adm_mass]]</span>
+<a name="ln-391"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_angular_momentum</span>
+<a name="ln-392"></a>    <span class="c">!! Returns [[bnsbase:angular_momentum]]</span>
+<a name="ln-393"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_radius1_x_comp</span>
+<a name="ln-394"></a>    <span class="c">!! Returns [[bnsbase:radius1_x_comp]]</span>
+<a name="ln-395"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_radius1_y</span>
+<a name="ln-396"></a>    <span class="c">!! Returns [[bnsbase:radius1_y]]</span>
+<a name="ln-397"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_radius1_z</span>
+<a name="ln-398"></a>    <span class="c">!! Returns [[bnsbase:radius1_z]]</span>
+<a name="ln-399"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_radius1_x_opp</span>
+<a name="ln-400"></a>    <span class="c">!! Returns [[bnsbase:radius1_x_opp]]</span>
+<a name="ln-401"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_center1_x</span>
+<a name="ln-402"></a>    <span class="c">!! Returns [[bnsbase:center1_x]]</span>
+<a name="ln-403"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_barycenter1_x</span>
+<a name="ln-404"></a>    <span class="c">!! Returns [[bnsbase:barycenter1_x]]</span>
+<a name="ln-405"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_radius2_x_comp</span>
+<a name="ln-406"></a>    <span class="c">!! Returns [[bnsbase:radius2_x_comp]]</span>
+<a name="ln-407"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_radius2_y</span>
+<a name="ln-408"></a>    <span class="c">!! Returns [[bnsbase:radius2_y]]</span>
+<a name="ln-409"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_radius2_z</span>
+<a name="ln-410"></a>    <span class="c">!! Returns [[bnsbase:radius2_y]]</span>
+<a name="ln-411"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_radius2_x_opp</span>
+<a name="ln-412"></a>    <span class="c">!! Returns [[bnsbase:radius2_x_opp]]</span>
+<a name="ln-413"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_center2_x</span>
+<a name="ln-414"></a>    <span class="c">!! Returns [[bnsbase:center2_x]]</span>
+<a name="ln-415"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_barycenter2_x</span>
+<a name="ln-416"></a>    <span class="c">!! Returns [[bnsbase:barycenter2_x]]</span>
+<a name="ln-417"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_ent_center1</span>
+<a name="ln-418"></a>    <span class="c">!! Returns [[bnsbase:ent_center1]]</span>
+<a name="ln-419"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_nbar_center1</span>
+<a name="ln-420"></a>    <span class="c">!! Returns [[bnsbase:nbar_center1]]</span>
+<a name="ln-421"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_rho_center1</span>
+<a name="ln-422"></a>    <span class="c">!! Returns [[bnsbase:rho_center1]]</span>
+<a name="ln-423"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_energy_density_center1</span>
+<a name="ln-424"></a>    <span class="c">!! Returns [[bnsbase:energy_density_center1]]</span>
+<a name="ln-425"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_specific_energy_center1</span>
+<a name="ln-426"></a>    <span class="c">!! Returns [[bnsbase:specific_energy_center1]]</span>
+<a name="ln-427"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_pressure_center1</span>
+<a name="ln-428"></a>    <span class="c">!! Returns [[bnsbase:pressure_center1]]</span>
+<a name="ln-429"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_ent_center2</span>
+<a name="ln-430"></a>    <span class="c">!! Returns [[bnsbase:ent_center2]]</span>
+<a name="ln-431"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_nbar_center2</span>
+<a name="ln-432"></a>    <span class="c">!! Returns [[bnsbase:nbar_center2]]</span>
+<a name="ln-433"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_rho_center2</span>
+<a name="ln-434"></a>    <span class="c">!! Returns [[bnsbase:rho_center2]]</span>
+<a name="ln-435"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_energy_density_center2</span>
+<a name="ln-436"></a>    <span class="c">!! Returns [[bnsbase:energy_density_center2]]</span>
+<a name="ln-437"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_specific_energy_center2</span>
+<a name="ln-438"></a>    <span class="c">!! Returns [[bnsbase:specific_energy_center2]]</span>
+<a name="ln-439"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_pressure_center2</span>
+<a name="ln-440"></a>    <span class="c">!! Returns [[bnsbase:pressure_center2]]</span>
+<a name="ln-441"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_eos1</span>
+<a name="ln-442"></a>    <span class="c">!! Returns [[bnsbase:eos1]]</span>
+<a name="ln-443"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_eos2</span>
+<a name="ln-444"></a>    <span class="c">!! Returns [[bnsbase:eos2]]</span>
+<a name="ln-445"></a>
+<a name="ln-446"></a>    <span class="c">!</span>
+<a name="ln-447"></a>    <span class="c">!-- PROCEDURES to be used for single polytropic EOS</span>
+<a name="ln-448"></a>    <span class="c">!</span>
+<a name="ln-449"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma_1</span>
+<a name="ln-450"></a>    <span class="c">!! Returns [[bnsbase:gamma_1]]</span>
+<a name="ln-451"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma_2</span>
+<a name="ln-452"></a>    <span class="c">!! Returns [[bnsbase:gamma_2]]</span>
+<a name="ln-453"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa_1</span>
+<a name="ln-454"></a>    <span class="c">!! Returns [[bnsbase:kappa_1]]</span>
+<a name="ln-455"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa_2</span>
+<a name="ln-456"></a>    <span class="c">!! Returns [[bnsbase:kappa_2]]</span>
+<a name="ln-457"></a>
+<a name="ln-458"></a>    <span class="c">!</span>
+<a name="ln-459"></a>    <span class="c">!-- PROCEDURES to be used for piecewise polytropic EOS</span>
+<a name="ln-460"></a>    <span class="c">!</span>
+<a name="ln-461"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_npeos_1</span>
+<a name="ln-462"></a>    <span class="c">!! Returns [[bnsbase:npeos_1]]</span>
+<a name="ln-463"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma0_1</span>
+<a name="ln-464"></a>    <span class="c">!! Returns [[bnsbase:gamma0_1]]</span>
+<a name="ln-465"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma1_1</span>
+<a name="ln-466"></a>    <span class="c">!! Returns [[bnsbase:gamma1_1]]</span>
+<a name="ln-467"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma2_1</span>
+<a name="ln-468"></a>    <span class="c">!! Returns [[bnsbase:gamma2_1]]</span>
+<a name="ln-469"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma3_1</span>
+<a name="ln-470"></a>    <span class="c">!! Returns [[bnsbase:gamma3_1]]</span>
+<a name="ln-471"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa0_1</span>
+<a name="ln-472"></a>    <span class="c">!! Returns [[bnsbase:kappa0_1]]</span>
+<a name="ln-473"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa1_1</span>
+<a name="ln-474"></a>    <span class="c">!! Returns [[bnsbase:kappa1_1]]</span>
+<a name="ln-475"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa2_1</span>
+<a name="ln-476"></a>    <span class="c">!! Returns [[bnsbase:kappa2_1]]</span>
+<a name="ln-477"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa3_1</span>
+<a name="ln-478"></a>    <span class="c">!! Returns [[bnsbase:kappa3_1]]</span>
+<a name="ln-479"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logP1_1</span>
+<a name="ln-480"></a>    <span class="c">!! Returns [[bnsbase:logP1_1]]</span>
+<a name="ln-481"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho0_1</span>
+<a name="ln-482"></a>    <span class="c">!! Returns [[bnsbase:logRho0_1]]</span>
+<a name="ln-483"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho1_1</span>
+<a name="ln-484"></a>    <span class="c">!! Returns [[bnsbase:logRho1_1]]</span>
+<a name="ln-485"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho2_1</span>
+<a name="ln-486"></a>    <span class="c">!! Returns [[bnsbase:logRho2_1]]</span>
+<a name="ln-487"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_npeos_2</span>
+<a name="ln-488"></a>    <span class="c">!! Returns [[bnsbase:npeos_2]]</span>
+<a name="ln-489"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma0_2</span>
+<a name="ln-490"></a>    <span class="c">!! Returns [[bnsbase:gamma0_2]]</span>
+<a name="ln-491"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma1_2</span>
+<a name="ln-492"></a>    <span class="c">!! Returns [[bnsbase:gamma1_2]]</span>
+<a name="ln-493"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma2_2</span>
+<a name="ln-494"></a>    <span class="c">!! Returns [[bnsbase:gamma2_2]]</span>
+<a name="ln-495"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma3_2</span>
+<a name="ln-496"></a>    <span class="c">!! Returns [[bnsbase:gamma3_2]]</span>
+<a name="ln-497"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa0_2</span>
+<a name="ln-498"></a>    <span class="c">!! Returns [[bnsbase:kappa0_2]]</span>
+<a name="ln-499"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa1_2</span>
+<a name="ln-500"></a>    <span class="c">!! Returns [[bnsbase:kappa1_2]]</span>
+<a name="ln-501"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa2_2</span>
+<a name="ln-502"></a>    <span class="c">!! Returns [[bnsbase:kappa2_2]]</span>
+<a name="ln-503"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa3_2</span>
+<a name="ln-504"></a>    <span class="c">!! Returns [[bnsbase:kappa3_2]]</span>
+<a name="ln-505"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logP1_2</span>
+<a name="ln-506"></a>    <span class="c">!! Returns [[bnsbase:logP1_2]]</span>
+<a name="ln-507"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho0_2</span>
+<a name="ln-508"></a>    <span class="c">!! Returns [[bnsbase:logRho0_2]]</span>
+<a name="ln-509"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho1_2</span>
+<a name="ln-510"></a>    <span class="c">!! Returns [[bnsbase:logRho1_2]]</span>
+<a name="ln-511"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho2_2</span>
+<a name="ln-512"></a>    <span class="c">!! Returns [[bnsbase:logRho2_2]]</span>
+<a name="ln-513"></a>
+<a name="ln-514"></a>
+<a name="ln-515"></a>  <span class="k">END TYPE </span><span class="n">bnsbase</span>
+<a name="ln-516"></a>
+<a name="ln-517"></a>
+<a name="ln-518"></a>  <span class="k">ABSTRACT INTERFACE</span>
+<a name="ln-519"></a>
+<a name="ln-520"></a><span class="k">    FUNCTION </span><span class="n">get_eos_id_int</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-521"></a>
+<a name="ln-522"></a>      <span class="k">IMPORT</span><span class="kd">::</span> <span class="n">bnsbase</span>
+<a name="ln-523"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-524"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-525"></a>      <span class="c">! Result</span>
+<a name="ln-526"></a>      <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">get_eos_id_int</span>
+<a name="ln-527"></a>
+<a name="ln-528"></a>    <span class="k">END FUNCTION </span><span class="n">get_eos_id_int</span>
+<a name="ln-529"></a>
+<a name="ln-530"></a>  <span class="k">END INTERFACE</span>
+<a name="ln-531"></a>
+<a name="ln-532"></a>
+<a name="ln-533"></a><span class="k">  INTERFACE</span>
+<a name="ln-534"></a>
+<a name="ln-535"></a>  <span class="c">!  MODULE FUNCTION get_field_array( THIS, field ) RESULT( field_array )</span>
+<a name="ln-536"></a>  <span class="c">!  !! Returns the [[bnsbase]] member arrays named field</span>
+<a name="ln-537"></a>  <span class="c">!</span>
+<a name="ln-538"></a>  <span class="c">!    !&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-539"></a>  <span class="c">!    CLASS(bnsbase),          INTENT( IN )             :: THIS</span>
+<a name="ln-540"></a>  <span class="c">!    !&gt; Name of the desired [[bnsbase]] member array</span>
+<a name="ln-541"></a>  <span class="c">!    CHARACTER( LEN= : ), INTENT( IN ), ALLOCATABLE:: field</span>
+<a name="ln-542"></a>  <span class="c">!    !&gt; Desired [[bnsbase]] member array</span>
+<a name="ln-543"></a>  <span class="c">!    DOUBLE PRECISION, DIMENSION(:),    ALLOCATABLE:: field_array</span>
+<a name="ln-544"></a>  <span class="c">!</span>
+<a name="ln-545"></a>  <span class="c">!  END FUNCTION get_field_array</span>
+<a name="ln-546"></a>  <span class="c">!</span>
+<a name="ln-547"></a>  <span class="c">!</span>
+<a name="ln-548"></a>  <span class="c">!  MODULE FUNCTION get_field_value( THIS, field, n ) RESULT( field_value )</span>
+<a name="ln-549"></a>  <span class="c">!  !! Returns the component n of the [[bnsbase]] member arrays named field</span>
+<a name="ln-550"></a>  <span class="c">!</span>
+<a name="ln-551"></a>  <span class="c">!    !&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-552"></a>  <span class="c">!    CLASS(bnsbase),          INTENT( IN )             :: THIS</span>
+<a name="ln-553"></a>  <span class="c">!    !&gt; Name of the desired [[bnsbase]] member array</span>
+<a name="ln-554"></a>  <span class="c">!    CHARACTER( LEN= : ), INTENT( IN ), ALLOCATABLE:: field</span>
+<a name="ln-555"></a>  <span class="c">!    !&gt; Component of the desired [[bnsbase]] member array</span>
+<a name="ln-556"></a>  <span class="c">!    INTEGER,             INTENT( IN )             :: n</span>
+<a name="ln-557"></a>  <span class="c">!    !&gt; Component n of the desired [[bnsbase]] member array</span>
+<a name="ln-558"></a>  <span class="c">!    DOUBLE PRECISION                              :: field_value</span>
+<a name="ln-559"></a>  <span class="c">!</span>
+<a name="ln-560"></a>  <span class="c">!  END FUNCTION get_field_value</span>
+<a name="ln-561"></a>  <span class="c">!</span>
+<a name="ln-562"></a>  <span class="c">!</span>
+<a name="ln-563"></a>  <span class="c">!  MODULE FUNCTION get_bns_identifier( THIS )</span>
+<a name="ln-564"></a>  <span class="c">!</span>
+<a name="ln-565"></a>  <span class="c">!    !&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-566"></a>  <span class="c">!    CLASS(bnsbase), INTENT( IN ):: THIS</span>
+<a name="ln-567"></a>  <span class="c">!    ! Result</span>
+<a name="ln-568"></a>  <span class="c">!    DOUBLE PRECISION:: get_bns_identifier</span>
+<a name="ln-569"></a>  <span class="c">!</span>
+<a name="ln-570"></a>  <span class="c">!  END FUNCTION get_bns_identifier</span>
+<a name="ln-571"></a>
+<a name="ln-572"></a> <span class="c">!   SUBROUTINE read_bns_id_spacetime_int( THIS, nx, ny, nz, &amp;</span>
+<a name="ln-573"></a> <span class="c">!                                             pos, &amp;</span>
+<a name="ln-574"></a> <span class="c">!                                             lapse, &amp;</span>
+<a name="ln-575"></a> <span class="c">!                                             shift, &amp;</span>
+<a name="ln-576"></a> <span class="c">!                                             g, &amp;</span>
+<a name="ln-577"></a> <span class="c">!                                             ek )</span>
+<a name="ln-578"></a> <span class="c">!   !# Stores the spacetime ID in multi-dimensional arrays needed to compute</span>
+<a name="ln-579"></a> <span class="c">!   !  the BSSN variables and constraints</span>
+<a name="ln-580"></a> <span class="c">!     IMPORT:: bnsbase</span>
+<a name="ln-581"></a> <span class="c">!     !&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-582"></a> <span class="c">!     CLASS(bnsbase),                        INTENT( IN OUT ):: THIS</span>
+<a name="ln-583"></a> <span class="c">!     INTEGER,                              INTENT( IN )    :: nx</span>
+<a name="ln-584"></a> <span class="c">!     INTEGER,                              INTENT( IN )    :: ny</span>
+<a name="ln-585"></a> <span class="c">!     INTEGER,                              INTENT( IN )    :: nz</span>
+<a name="ln-586"></a> <span class="c">!     DOUBLE PRECISION, DIMENSION(:,:,:,:), INTENT( IN )    :: pos</span>
+<a name="ln-587"></a> <span class="c">!     DOUBLE PRECISION, DIMENSION(:,:,:),   INTENT( IN OUT ):: lapse</span>
+<a name="ln-588"></a> <span class="c">!     DOUBLE PRECISION, DIMENSION(:,:,:,:), INTENT( IN OUT ):: shift</span>
+<a name="ln-589"></a> <span class="c">!     DOUBLE PRECISION, DIMENSION(:,:,:,:), INTENT( IN OUT ):: g</span>
+<a name="ln-590"></a> <span class="c">!     DOUBLE PRECISION, DIMENSION(:,:,:,:), INTENT( IN OUT ):: ek</span>
+<a name="ln-591"></a> <span class="c">!</span>
+<a name="ln-592"></a> <span class="c">!   END SUBROUTINE read_bns_id_spacetime_int</span>
+<a name="ln-593"></a>
+<a name="ln-594"></a>
+<a name="ln-595"></a> <span class="c">!   MODULE SUBROUTINE integrate_baryon_mass_density( THIS, center, radius, &amp;</span>
+<a name="ln-596"></a> <span class="c">!                                                    central_density, &amp;</span>
+<a name="ln-597"></a> <span class="c">!                                                    dr, dth, dphi, &amp;</span>
+<a name="ln-598"></a> <span class="c">!                                                    mass, mass_profile, &amp;</span>
+<a name="ln-599"></a> <span class="c">!                                                    mass_profile_idx )</span>
+<a name="ln-600"></a> <span class="c">!   !# Integrates the LORENE baryon mass density to compute the radial mass</span>
+<a name="ln-601"></a> <span class="c">!   !  profile. TODO: Improve integration algorithm.</span>
+<a name="ln-602"></a> <span class="c">!</span>
+<a name="ln-603"></a> <span class="c">!     !&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-604"></a> <span class="c">!     CLASS(bnsbase), INTENT( IN OUT )      :: THIS</span>
+<a name="ln-605"></a> <span class="c">!     !&amp; Array to store the indices for array mass_profile, sorted so that</span>
+<a name="ln-606"></a> <span class="c">!     !  mass_profile[mass_profile_idx] is in increasing order</span>
+<a name="ln-607"></a> <span class="c">!     INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT ):: mass_profile_idx</span>
+<a name="ln-608"></a> <span class="c">!     !&gt; Center of the star</span>
+<a name="ln-609"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: center</span>
+<a name="ln-610"></a> <span class="c">!     !&gt; Central density of the star</span>
+<a name="ln-611"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: central_density</span>
+<a name="ln-612"></a> <span class="c">!     !&gt; Radius of the star</span>
+<a name="ln-613"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: radius</span>
+<a name="ln-614"></a> <span class="c">!     !&gt; Integration steps</span>
+<a name="ln-615"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: dr, dth, dphi</span>
+<a name="ln-616"></a> <span class="c">!     !&gt; Integrated mass of the star</span>
+<a name="ln-617"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN OUT ):: mass</span>
+<a name="ln-618"></a> <span class="c">!     !&gt; Array storing the radial mass profile of the star</span>
+<a name="ln-619"></a> <span class="c">!     DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE, INTENT( IN OUT ):: &amp;</span>
+<a name="ln-620"></a> <span class="c">!                                      mass_profile</span>
+<a name="ln-621"></a> <span class="c">!</span>
+<a name="ln-622"></a> <span class="c">!   END SUBROUTINE integrate_baryon_mass_density</span>
+<a name="ln-623"></a>
+<a name="ln-624"></a>
+<a name="ln-625"></a>    <span class="c">!----------------------------!</span>
+<a name="ln-626"></a>    <span class="c">!--  OVERRIDING FUNCTIONS  --!</span>
+<a name="ln-627"></a>    <span class="c">!----------------------------!</span>
+<a name="ln-628"></a>
+<a name="ln-629"></a>
+<a name="ln-630"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_mass</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
+<a name="ln-631"></a>
+<a name="ln-632"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-633"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-634"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
+<a name="ln-635"></a>      <span class="c">! Result</span>
+<a name="ln-636"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_mass</span>
+<a name="ln-637"></a>
+<a name="ln-638"></a>    <span class="k">END FUNCTION </span><span class="n">get_mass</span>
+<a name="ln-639"></a>
+<a name="ln-640"></a>
+<a name="ln-641"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_radii</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
+<a name="ln-642"></a>
+<a name="ln-643"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-644"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-645"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
+<a name="ln-646"></a>      <span class="c">!! Index of the matter object whose string is to return</span>
+<a name="ln-647"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="kd">::</span> <span class="n">get_radii</span>
+<a name="ln-648"></a>
+<a name="ln-649"></a>    <span class="k">END FUNCTION </span><span class="n">get_radii</span>
+<a name="ln-650"></a>
+<a name="ln-651"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_center</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
+<a name="ln-652"></a>
+<a name="ln-653"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-654"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-655"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
+<a name="ln-656"></a>      <span class="c">!! Index of the matter object whose parameter is to return</span>
+<a name="ln-657"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">get_center</span>
+<a name="ln-658"></a>
+<a name="ln-659"></a>    <span class="k">END FUNCTION </span><span class="n">get_center</span>
+<a name="ln-660"></a>
+<a name="ln-661"></a>
+<a name="ln-662"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_barycenter</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
+<a name="ln-663"></a>
+<a name="ln-664"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-665"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-666"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
+<a name="ln-667"></a>      <span class="c">!! Index of the matter object whose parameter is to return</span>
+<a name="ln-668"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">get_barycenter</span>
+<a name="ln-669"></a>
+<a name="ln-670"></a>    <span class="k">END FUNCTION </span><span class="n">get_barycenter</span>
+<a name="ln-671"></a>
+<a name="ln-672"></a>
+<a name="ln-673"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_eos</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
+<a name="ln-674"></a>
+<a name="ln-675"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-676"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-677"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
+<a name="ln-678"></a>      <span class="c">!! Index of the matter object whose string is to return</span>
+<a name="ln-679"></a>      <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">get_eos</span>
+<a name="ln-680"></a>
+<a name="ln-681"></a>    <span class="k">END FUNCTION </span><span class="n">get_eos</span>
+<a name="ln-682"></a>
+<a name="ln-683"></a>
+<a name="ln-684"></a>    <span class="c">!-----------------!</span>
+<a name="ln-685"></a>    <span class="c">!--  FUNCTIONS  --!</span>
+<a name="ln-686"></a>    <span class="c">!-----------------!</span>
+<a name="ln-687"></a>
+<a name="ln-688"></a>
+<a name="ln-689"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-690"></a>
+<a name="ln-691"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-692"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-693"></a>      <span class="c">! Result</span>
+<a name="ln-694"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma_1</span>
+<a name="ln-695"></a>
+<a name="ln-696"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma_1</span>
+<a name="ln-697"></a>
+<a name="ln-698"></a>
+<a name="ln-699"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-700"></a>
+<a name="ln-701"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-702"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-703"></a>      <span class="c">! Result</span>
+<a name="ln-704"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma_2</span>
+<a name="ln-705"></a>
+<a name="ln-706"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma_2</span>
+<a name="ln-707"></a>
+<a name="ln-708"></a>
+<a name="ln-709"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-710"></a>
+<a name="ln-711"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-712"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-713"></a>      <span class="c">! Result</span>
+<a name="ln-714"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa_1</span>
+<a name="ln-715"></a>
+<a name="ln-716"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa_1</span>
+<a name="ln-717"></a>
+<a name="ln-718"></a>
+<a name="ln-719"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-720"></a>
+<a name="ln-721"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-722"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-723"></a>      <span class="c">! Result</span>
+<a name="ln-724"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa_2</span>
+<a name="ln-725"></a>
+<a name="ln-726"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa_2</span>
+<a name="ln-727"></a>
+<a name="ln-728"></a>
+<a name="ln-729"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_angular_vel</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-730"></a>    <span class="c">!! Returns angular_vel</span>
+<a name="ln-731"></a>
+<a name="ln-732"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-733"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-734"></a>      <span class="c">! Result</span>
+<a name="ln-735"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_angular_vel</span>
+<a name="ln-736"></a>
+<a name="ln-737"></a>    <span class="k">END FUNCTION </span><span class="n">get_angular_vel</span>
+<a name="ln-738"></a>
+<a name="ln-739"></a>
+<a name="ln-740"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_distance</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-741"></a>
+<a name="ln-742"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-743"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-744"></a>      <span class="c">! Result</span>
+<a name="ln-745"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_distance</span>
+<a name="ln-746"></a>
+<a name="ln-747"></a>    <span class="k">END FUNCTION </span><span class="n">get_distance</span>
+<a name="ln-748"></a>
+<a name="ln-749"></a>
+<a name="ln-750"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_distance_com</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-751"></a>
+<a name="ln-752"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-753"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-754"></a>      <span class="c">! Result</span>
+<a name="ln-755"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_distance_com</span>
+<a name="ln-756"></a>
+<a name="ln-757"></a>    <span class="k">END FUNCTION </span><span class="n">get_distance_com</span>
+<a name="ln-758"></a>
+<a name="ln-759"></a>
+<a name="ln-760"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_mass1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-761"></a>
+<a name="ln-762"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-763"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-764"></a>      <span class="c">! Result</span>
+<a name="ln-765"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_mass1</span>
+<a name="ln-766"></a>
+<a name="ln-767"></a>    <span class="k">END FUNCTION </span><span class="n">get_mass1</span>
+<a name="ln-768"></a>
+<a name="ln-769"></a>
+<a name="ln-770"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_mass2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-771"></a>
+<a name="ln-772"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-773"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-774"></a>      <span class="c">! Result</span>
+<a name="ln-775"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_mass2</span>
+<a name="ln-776"></a>
+<a name="ln-777"></a>    <span class="k">END FUNCTION </span><span class="n">get_mass2</span>
+<a name="ln-778"></a>
+<a name="ln-779"></a>
+<a name="ln-780"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_grav_mass1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-781"></a>
+<a name="ln-782"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-783"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-784"></a>      <span class="c">! Result</span>
+<a name="ln-785"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_grav_mass1</span>
+<a name="ln-786"></a>
+<a name="ln-787"></a>    <span class="k">END FUNCTION </span><span class="n">get_grav_mass1</span>
+<a name="ln-788"></a>
+<a name="ln-789"></a>
+<a name="ln-790"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_grav_mass2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-791"></a>
+<a name="ln-792"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-793"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-794"></a>      <span class="c">! Result</span>
+<a name="ln-795"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_grav_mass2</span>
+<a name="ln-796"></a>
+<a name="ln-797"></a>    <span class="k">END FUNCTION </span><span class="n">get_grav_mass2</span>
+<a name="ln-798"></a>
+<a name="ln-799"></a>
+<a name="ln-800"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_adm_mass</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-801"></a>
+<a name="ln-802"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-803"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-804"></a>      <span class="c">! Result</span>
+<a name="ln-805"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_adm_mass</span>
+<a name="ln-806"></a>
+<a name="ln-807"></a>    <span class="k">END FUNCTION </span><span class="n">get_adm_mass</span>
+<a name="ln-808"></a>
+<a name="ln-809"></a>
+<a name="ln-810"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_angular_momentum</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-811"></a>
+<a name="ln-812"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-813"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-814"></a>      <span class="c">! Result</span>
+<a name="ln-815"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_angular_momentum</span>
+<a name="ln-816"></a>
+<a name="ln-817"></a>    <span class="k">END FUNCTION </span><span class="n">get_angular_momentum</span>
+<a name="ln-818"></a>
+<a name="ln-819"></a>
+<a name="ln-820"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_radius1_x_comp</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-821"></a>
+<a name="ln-822"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-823"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-824"></a>      <span class="c">! Result</span>
+<a name="ln-825"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_radius1_x_comp</span>
+<a name="ln-826"></a>
+<a name="ln-827"></a>    <span class="k">END FUNCTION </span><span class="n">get_radius1_x_comp</span>
+<a name="ln-828"></a>
+<a name="ln-829"></a>
+<a name="ln-830"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_radius1_y</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-831"></a>
+<a name="ln-832"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-833"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-834"></a>      <span class="c">! Result</span>
+<a name="ln-835"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_radius1_y</span>
+<a name="ln-836"></a>
+<a name="ln-837"></a>    <span class="k">END FUNCTION </span><span class="n">get_radius1_y</span>
+<a name="ln-838"></a>
+<a name="ln-839"></a>
+<a name="ln-840"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_radius1_z</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-841"></a>
+<a name="ln-842"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-843"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-844"></a>      <span class="c">! Result</span>
+<a name="ln-845"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_radius1_z</span>
+<a name="ln-846"></a>
+<a name="ln-847"></a>    <span class="k">END FUNCTION </span><span class="n">get_radius1_z</span>
+<a name="ln-848"></a>
+<a name="ln-849"></a>
+<a name="ln-850"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_radius1_x_opp</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-851"></a>
+<a name="ln-852"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-853"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-854"></a>      <span class="c">! Result</span>
+<a name="ln-855"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_radius1_x_opp</span>
+<a name="ln-856"></a>
+<a name="ln-857"></a>    <span class="k">END FUNCTION </span><span class="n">get_radius1_x_opp</span>
+<a name="ln-858"></a>
+<a name="ln-859"></a>
+<a name="ln-860"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_center1_x</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-861"></a>
+<a name="ln-862"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-863"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-864"></a>      <span class="c">! Result</span>
+<a name="ln-865"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_center1_x</span>
+<a name="ln-866"></a>
+<a name="ln-867"></a>    <span class="k">END FUNCTION </span><span class="n">get_center1_x</span>
+<a name="ln-868"></a>
+<a name="ln-869"></a>
+<a name="ln-870"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_barycenter1_x</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-871"></a>
+<a name="ln-872"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-873"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-874"></a>      <span class="c">! Result</span>
+<a name="ln-875"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_barycenter1_x</span>
+<a name="ln-876"></a>
+<a name="ln-877"></a>    <span class="k">END FUNCTION </span><span class="n">get_barycenter1_x</span>
+<a name="ln-878"></a>
+<a name="ln-879"></a>
+<a name="ln-880"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_radius2_x_comp</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-881"></a>
+<a name="ln-882"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-883"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-884"></a>      <span class="c">! Result</span>
+<a name="ln-885"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_radius2_x_comp</span>
+<a name="ln-886"></a>
+<a name="ln-887"></a>    <span class="k">END FUNCTION </span><span class="n">get_radius2_x_comp</span>
+<a name="ln-888"></a>
+<a name="ln-889"></a>
+<a name="ln-890"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_radius2_y</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-891"></a>
+<a name="ln-892"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-893"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-894"></a>      <span class="c">! Result</span>
+<a name="ln-895"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_radius2_y</span>
+<a name="ln-896"></a>
+<a name="ln-897"></a>    <span class="k">END FUNCTION </span><span class="n">get_radius2_y</span>
+<a name="ln-898"></a>
+<a name="ln-899"></a>
+<a name="ln-900"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_radius2_z</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-901"></a>
+<a name="ln-902"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-903"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-904"></a>      <span class="c">! Result</span>
+<a name="ln-905"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_radius2_z</span>
+<a name="ln-906"></a>
+<a name="ln-907"></a>    <span class="k">END FUNCTION </span><span class="n">get_radius2_z</span>
+<a name="ln-908"></a>
+<a name="ln-909"></a>
+<a name="ln-910"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_radius2_x_opp</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-911"></a>
+<a name="ln-912"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-913"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-914"></a>      <span class="c">! Result</span>
+<a name="ln-915"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_radius2_x_opp</span>
+<a name="ln-916"></a>
+<a name="ln-917"></a>    <span class="k">END FUNCTION </span><span class="n">get_radius2_x_opp</span>
+<a name="ln-918"></a>
+<a name="ln-919"></a>
+<a name="ln-920"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_center2_x</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-921"></a>
+<a name="ln-922"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-923"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-924"></a>      <span class="c">! Result</span>
+<a name="ln-925"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_center2_x</span>
+<a name="ln-926"></a>
+<a name="ln-927"></a>    <span class="k">END FUNCTION </span><span class="n">get_center2_x</span>
+<a name="ln-928"></a>
+<a name="ln-929"></a>
+<a name="ln-930"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_barycenter2_x</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-931"></a>
+<a name="ln-932"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-933"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-934"></a>      <span class="c">! Result</span>
+<a name="ln-935"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_barycenter2_x</span>
+<a name="ln-936"></a>
+<a name="ln-937"></a>    <span class="k">END FUNCTION </span><span class="n">get_barycenter2_x</span>
+<a name="ln-938"></a>
+<a name="ln-939"></a>
+<a name="ln-940"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_ent_center1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-941"></a>
+<a name="ln-942"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-943"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-944"></a>      <span class="c">! Result</span>
+<a name="ln-945"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_ent_center1</span>
+<a name="ln-946"></a>
+<a name="ln-947"></a>    <span class="k">END FUNCTION </span><span class="n">get_ent_center1</span>
+<a name="ln-948"></a>
+<a name="ln-949"></a>
+<a name="ln-950"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_nbar_center1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-951"></a>
+<a name="ln-952"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-953"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-954"></a>      <span class="c">! Result</span>
+<a name="ln-955"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_nbar_center1</span>
+<a name="ln-956"></a>
+<a name="ln-957"></a>    <span class="k">END FUNCTION </span><span class="n">get_nbar_center1</span>
+<a name="ln-958"></a>
+<a name="ln-959"></a>
+<a name="ln-960"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_rho_center1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-961"></a>
+<a name="ln-962"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-963"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-964"></a>      <span class="c">! Result</span>
+<a name="ln-965"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_rho_center1</span>
+<a name="ln-966"></a>
+<a name="ln-967"></a>    <span class="k">END FUNCTION </span><span class="n">get_rho_center1</span>
+<a name="ln-968"></a>
+<a name="ln-969"></a>
+<a name="ln-970"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_energy_density_center1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-971"></a>
+<a name="ln-972"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-973"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-974"></a>      <span class="c">! Result</span>
+<a name="ln-975"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_energy_density_center1</span>
+<a name="ln-976"></a>
+<a name="ln-977"></a>    <span class="k">END FUNCTION </span><span class="n">get_energy_density_center1</span>
+<a name="ln-978"></a>
+<a name="ln-979"></a>
+<a name="ln-980"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_specific_energy_center1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-981"></a>
+<a name="ln-982"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-983"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-984"></a>      <span class="c">! Result</span>
+<a name="ln-985"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_specific_energy_center1</span>
+<a name="ln-986"></a>
+<a name="ln-987"></a>    <span class="k">END FUNCTION </span><span class="n">get_specific_energy_center1</span>
+<a name="ln-988"></a>
+<a name="ln-989"></a>
+<a name="ln-990"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_pressure_center1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-991"></a>
+<a name="ln-992"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-993"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-994"></a>      <span class="c">! Result</span>
+<a name="ln-995"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_pressure_center1</span>
+<a name="ln-996"></a>
+<a name="ln-997"></a>    <span class="k">END FUNCTION </span><span class="n">get_pressure_center1</span>
+<a name="ln-998"></a>
+<a name="ln-999"></a>
+<a name="ln-1000"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_ent_center2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1001"></a>
+<a name="ln-1002"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1003"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1004"></a>      <span class="c">! Result</span>
+<a name="ln-1005"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_ent_center2</span>
+<a name="ln-1006"></a>
+<a name="ln-1007"></a>    <span class="k">END FUNCTION </span><span class="n">get_ent_center2</span>
+<a name="ln-1008"></a>
+<a name="ln-1009"></a>
+<a name="ln-1010"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_nbar_center2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1011"></a>
+<a name="ln-1012"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1013"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1014"></a>      <span class="c">! Result</span>
+<a name="ln-1015"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_nbar_center2</span>
+<a name="ln-1016"></a>
+<a name="ln-1017"></a>    <span class="k">END FUNCTION </span><span class="n">get_nbar_center2</span>
+<a name="ln-1018"></a>
+<a name="ln-1019"></a>
+<a name="ln-1020"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_rho_center2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1021"></a>
+<a name="ln-1022"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1023"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1024"></a>      <span class="c">! Result</span>
+<a name="ln-1025"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_rho_center2</span>
+<a name="ln-1026"></a>
+<a name="ln-1027"></a>    <span class="k">END FUNCTION </span><span class="n">get_rho_center2</span>
+<a name="ln-1028"></a>
+<a name="ln-1029"></a>
+<a name="ln-1030"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_energy_density_center2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1031"></a>
+<a name="ln-1032"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1033"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1034"></a>      <span class="c">! Result</span>
+<a name="ln-1035"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_energy_density_center2</span>
+<a name="ln-1036"></a>
+<a name="ln-1037"></a>    <span class="k">END FUNCTION </span><span class="n">get_energy_density_center2</span>
+<a name="ln-1038"></a>
+<a name="ln-1039"></a>
+<a name="ln-1040"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_specific_energy_center2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1041"></a>
+<a name="ln-1042"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1043"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1044"></a>      <span class="c">! Result</span>
+<a name="ln-1045"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_specific_energy_center2</span>
+<a name="ln-1046"></a>
+<a name="ln-1047"></a>    <span class="k">END FUNCTION </span><span class="n">get_specific_energy_center2</span>
+<a name="ln-1048"></a>
+<a name="ln-1049"></a>
+<a name="ln-1050"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_pressure_center2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1051"></a>
+<a name="ln-1052"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1053"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1054"></a>      <span class="c">! Result</span>
+<a name="ln-1055"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_pressure_center2</span>
+<a name="ln-1056"></a>
+<a name="ln-1057"></a>    <span class="k">END FUNCTION </span><span class="n">get_pressure_center2</span>
+<a name="ln-1058"></a>
+<a name="ln-1059"></a>
+<a name="ln-1060"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_eos1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1061"></a>
+<a name="ln-1062"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1063"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1064"></a>      <span class="c">! Result</span>
+<a name="ln-1065"></a>      <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">get_eos1</span>
+<a name="ln-1066"></a>
+<a name="ln-1067"></a>    <span class="k">END FUNCTION </span><span class="n">get_eos1</span>
+<a name="ln-1068"></a>
+<a name="ln-1069"></a>
+<a name="ln-1070"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_eos2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1071"></a>
+<a name="ln-1072"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1073"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1074"></a>      <span class="c">! Result</span>
+<a name="ln-1075"></a>      <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">get_eos2</span>
+<a name="ln-1076"></a>
+<a name="ln-1077"></a>    <span class="k">END FUNCTION </span><span class="n">get_eos2</span>
+<a name="ln-1078"></a>
+<a name="ln-1079"></a>
+<a name="ln-1080"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_npeos_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1081"></a>
+<a name="ln-1082"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1083"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1084"></a>      <span class="c">! Result</span>
+<a name="ln-1085"></a>      <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">get_npeos_1</span>
+<a name="ln-1086"></a>
+<a name="ln-1087"></a>    <span class="k">END FUNCTION </span><span class="n">get_npeos_1</span>
+<a name="ln-1088"></a>
+<a name="ln-1089"></a>
+<a name="ln-1090"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_npeos_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1091"></a>
+<a name="ln-1092"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1093"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1094"></a>      <span class="c">! Result</span>
+<a name="ln-1095"></a>      <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">get_npeos_2</span>
+<a name="ln-1096"></a>
+<a name="ln-1097"></a>    <span class="k">END FUNCTION </span><span class="n">get_npeos_2</span>
+<a name="ln-1098"></a>
+<a name="ln-1099"></a>
+<a name="ln-1100"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma0_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1101"></a>
+<a name="ln-1102"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1103"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1104"></a>      <span class="c">! Result</span>
+<a name="ln-1105"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma0_1</span>
+<a name="ln-1106"></a>
+<a name="ln-1107"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma0_1</span>
+<a name="ln-1108"></a>
+<a name="ln-1109"></a>
+<a name="ln-1110"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma1_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1111"></a>
+<a name="ln-1112"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1113"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1114"></a>      <span class="c">! Result</span>
+<a name="ln-1115"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma1_1</span>
+<a name="ln-1116"></a>
+<a name="ln-1117"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma1_1</span>
+<a name="ln-1118"></a>
+<a name="ln-1119"></a>
+<a name="ln-1120"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma2_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1121"></a>
+<a name="ln-1122"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1123"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1124"></a>      <span class="c">! Result</span>
+<a name="ln-1125"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma2_1</span>
+<a name="ln-1126"></a>
+<a name="ln-1127"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma2_1</span>
+<a name="ln-1128"></a>
+<a name="ln-1129"></a>
+<a name="ln-1130"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma3_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1131"></a>
+<a name="ln-1132"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1133"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1134"></a>      <span class="c">! Result</span>
+<a name="ln-1135"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma3_1</span>
+<a name="ln-1136"></a>
+<a name="ln-1137"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma3_1</span>
+<a name="ln-1138"></a>
+<a name="ln-1139"></a>
+<a name="ln-1140"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa0_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1141"></a>
+<a name="ln-1142"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1143"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1144"></a>      <span class="c">! Result</span>
+<a name="ln-1145"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa0_1</span>
+<a name="ln-1146"></a>
+<a name="ln-1147"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa0_1</span>
+<a name="ln-1148"></a>
+<a name="ln-1149"></a>
+<a name="ln-1150"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa1_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1151"></a>
+<a name="ln-1152"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1153"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1154"></a>      <span class="c">! Result</span>
+<a name="ln-1155"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa1_1</span>
+<a name="ln-1156"></a>
+<a name="ln-1157"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa1_1</span>
+<a name="ln-1158"></a>
+<a name="ln-1159"></a>
+<a name="ln-1160"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa2_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1161"></a>
+<a name="ln-1162"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1163"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1164"></a>      <span class="c">! Result</span>
+<a name="ln-1165"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa2_1</span>
+<a name="ln-1166"></a>
+<a name="ln-1167"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa2_1</span>
+<a name="ln-1168"></a>
+<a name="ln-1169"></a>
+<a name="ln-1170"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa3_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1171"></a>
+<a name="ln-1172"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1173"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1174"></a>      <span class="c">! Result</span>
+<a name="ln-1175"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa3_1</span>
+<a name="ln-1176"></a>
+<a name="ln-1177"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa3_1</span>
+<a name="ln-1178"></a>
+<a name="ln-1179"></a>
+<a name="ln-1180"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logP1_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1181"></a>
+<a name="ln-1182"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1183"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1184"></a>      <span class="c">! Result</span>
+<a name="ln-1185"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logP1_1</span>
+<a name="ln-1186"></a>
+<a name="ln-1187"></a>    <span class="k">END FUNCTION </span><span class="n">get_logP1_1</span>
+<a name="ln-1188"></a>
+<a name="ln-1189"></a>
+<a name="ln-1190"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho0_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1191"></a>
+<a name="ln-1192"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1193"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1194"></a>      <span class="c">! Result</span>
+<a name="ln-1195"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho0_1</span>
+<a name="ln-1196"></a>
+<a name="ln-1197"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho0_1</span>
+<a name="ln-1198"></a>
+<a name="ln-1199"></a>
+<a name="ln-1200"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho1_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1201"></a>
+<a name="ln-1202"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1203"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1204"></a>      <span class="c">! Result</span>
+<a name="ln-1205"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho1_1</span>
+<a name="ln-1206"></a>
+<a name="ln-1207"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho1_1</span>
+<a name="ln-1208"></a>
+<a name="ln-1209"></a>
+<a name="ln-1210"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho2_1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1211"></a>
+<a name="ln-1212"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1213"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1214"></a>      <span class="c">! Result</span>
+<a name="ln-1215"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho2_1</span>
+<a name="ln-1216"></a>
+<a name="ln-1217"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho2_1</span>
+<a name="ln-1218"></a>
+<a name="ln-1219"></a>
+<a name="ln-1220"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma0_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1221"></a>
+<a name="ln-1222"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1223"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1224"></a>      <span class="c">! Result</span>
+<a name="ln-1225"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma0_2</span>
+<a name="ln-1226"></a>
+<a name="ln-1227"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma0_2</span>
+<a name="ln-1228"></a>
+<a name="ln-1229"></a>
+<a name="ln-1230"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma1_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1231"></a>
+<a name="ln-1232"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1233"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1234"></a>      <span class="c">! Result</span>
+<a name="ln-1235"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma1_2</span>
+<a name="ln-1236"></a>
+<a name="ln-1237"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma1_2</span>
+<a name="ln-1238"></a>
+<a name="ln-1239"></a>
+<a name="ln-1240"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma2_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1241"></a>
+<a name="ln-1242"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1243"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1244"></a>      <span class="c">! Result</span>
+<a name="ln-1245"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma2_2</span>
+<a name="ln-1246"></a>
+<a name="ln-1247"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma2_2</span>
+<a name="ln-1248"></a>
+<a name="ln-1249"></a>
+<a name="ln-1250"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma3_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1251"></a>
+<a name="ln-1252"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1253"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1254"></a>      <span class="c">! Result</span>
+<a name="ln-1255"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma3_2</span>
+<a name="ln-1256"></a>
+<a name="ln-1257"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma3_2</span>
+<a name="ln-1258"></a>
+<a name="ln-1259"></a>
+<a name="ln-1260"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa0_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1261"></a>
+<a name="ln-1262"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1263"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1264"></a>      <span class="c">! Result</span>
+<a name="ln-1265"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa0_2</span>
+<a name="ln-1266"></a>
+<a name="ln-1267"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa0_2</span>
+<a name="ln-1268"></a>
+<a name="ln-1269"></a>
+<a name="ln-1270"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa1_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1271"></a>
+<a name="ln-1272"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1273"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1274"></a>      <span class="c">! Result</span>
+<a name="ln-1275"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa1_2</span>
+<a name="ln-1276"></a>
+<a name="ln-1277"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa1_2</span>
+<a name="ln-1278"></a>
+<a name="ln-1279"></a>
+<a name="ln-1280"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa2_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1281"></a>
+<a name="ln-1282"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1283"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1284"></a>      <span class="c">! Result</span>
+<a name="ln-1285"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa2_2</span>
+<a name="ln-1286"></a>
+<a name="ln-1287"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa2_2</span>
+<a name="ln-1288"></a>
+<a name="ln-1289"></a>
+<a name="ln-1290"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa3_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1291"></a>
+<a name="ln-1292"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1293"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1294"></a>      <span class="c">! Result</span>
+<a name="ln-1295"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa3_2</span>
+<a name="ln-1296"></a>
+<a name="ln-1297"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa3_2</span>
+<a name="ln-1298"></a>
+<a name="ln-1299"></a>
+<a name="ln-1300"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logP1_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1301"></a>
+<a name="ln-1302"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1303"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1304"></a>      <span class="c">! Result</span>
+<a name="ln-1305"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logP1_2</span>
+<a name="ln-1306"></a>
+<a name="ln-1307"></a>    <span class="k">END FUNCTION </span><span class="n">get_logP1_2</span>
+<a name="ln-1308"></a>
+<a name="ln-1309"></a>
+<a name="ln-1310"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho0_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1311"></a>
+<a name="ln-1312"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1313"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1314"></a>      <span class="c">! Result</span>
+<a name="ln-1315"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho0_2</span>
+<a name="ln-1316"></a>
+<a name="ln-1317"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho0_2</span>
+<a name="ln-1318"></a>
+<a name="ln-1319"></a>
+<a name="ln-1320"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho1_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1321"></a>
+<a name="ln-1322"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1323"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1324"></a>      <span class="c">! Result</span>
+<a name="ln-1325"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho1_2</span>
+<a name="ln-1326"></a>
+<a name="ln-1327"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho1_2</span>
+<a name="ln-1328"></a>
+<a name="ln-1329"></a>
+<a name="ln-1330"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho2_2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-1331"></a>
+<a name="ln-1332"></a>      <span class="c">!&gt; [[bnsbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-1333"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">bnsbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-1334"></a>      <span class="c">! Result</span>
+<a name="ln-1335"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho2_2</span>
+<a name="ln-1336"></a>
+<a name="ln-1337"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho2_2</span>
+<a name="ln-1338"></a>
+<a name="ln-1339"></a>  <span class="k">END INTERFACE</span>
+<a name="ln-1340"></a>
+<a name="ln-1341"></a><span class="k">END MODULE </span><span class="n">bns_base</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

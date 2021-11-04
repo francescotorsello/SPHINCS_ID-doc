@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>compute_and_export_bssn_constraints_particles &ndash; SPHINCS_LORENE</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>compute_and_export_bssn_constraints_particles
+      <small>Module Procedure</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.9% of total for procedures.">415 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/submodule_bssn_id_constraints.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/submodule_bssn_id_constraints.f90.html'>submodule_bssn_id_constraints.f90</a></li>
+    
+     <li><a href='../module/bssn_id_constraints.html'>bssn_id_constraints</a></li>
+    
+  
+     <li class="active">compute_and_export_bssn_constraints_particles</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-a~4">a</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-abs_grid~4">abs_grid</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-allocation_status">allocation_status</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-counter">counter</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-debug~3">debug</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-exist~8">exist</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-finalname_logfile~2">finalname_logfile</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-i~14">i</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-imax~2">imax</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-imin~2">imin</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-j~13">j</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-k~13">k</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-l~23">l</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_abs_y~6">min_abs_y</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_abs_z~6">min_abs_z</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_ix_y~6">min_ix_y</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_ix_z~6">min_ix_z</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_iy_y~6">min_iy_y</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_iy_z~6">min_iy_z</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_iz_y~6">min_iz_y</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_iz_z~6">min_iz_z</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-n_reflev~2">n_reflev</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-name_analysis~3">name_analysis</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-name_constraint~3">name_constraint</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-nlrf_loc">nlrf_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-nu_loc">nu_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-pos_loc">pos_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-pressure_loc">pressure_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-sph_density">sph_density</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-theta_loc">theta_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-u_loc">u_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-unit_logfile~3">unit_logfile</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-vel_loc">vel_loc</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+module procedure compute_and_export_bssn_constraints_particles <small>module module subroutine compute_and_export_bssn_constraints_particles(THIS, parts_obj, namefile, name_logfile)</small>
+    
+    
+   <a href='../interface/compute_and_export_bssn_constraints_particles.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    
+   
+</h2>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li>BSSN_refine</li>
+    
+    <li>Tmunu_refine</li>
+    
+    <li>units</li>
+    
+    <li>RCB_tree_3D</li>
+    
+    <li>map_particles_2_grid</li>
+    
+    <li>set_h</li>
+    
+    <li>sph_variables</li>
+    
+    <li>constants</li>
+    
+    <li>options</li>
+    
+    <li>particle_mesh_hash</li>
+    
+    <li>input_output</li>
+    
+    <li>particle_mesh</li>
+    
+    <li>tensor</li>
+    
+    <li>GravityAcceleration_refine</li>
+    
+    <li>sphincs_sph</li>
+    
+    <li>McLachlan_refine</li>
+    
+    <li>ADM_refine</li>
+    
+    <li>alive_flag</li>
+    
+    <li>mesh_refinement</li>
+    
+    <li>gradient</li>
+    
+    <li>kernel_table</li>
+    
+    <li>metric_on_particles</li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~compute_and_export_bssn_constraints_particles~~UsesGraph Pages: 1 -->
+<svg id="proccompute_and_export_bssn_constraints_particlesUsesGraph" width="428pt" height="914pt"
+ viewBox="0.00 0.00 428.00 914.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 910)">
+<title>proc~~compute_and_export_bssn_constraints_particles~~UsesGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-910 424,-910 424,4 -4,4"/>
+<!-- proc~compute_and_export_bssn_constraints_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node1" class="node">
+<title>proc~compute_and_export_bssn_constraints_particles</title>
+<polygon fill="none" stroke="#000000" points="420,-465 174,-465 174,-441 420,-441 420,-465"/>
+<text text-anchor="middle" x="297" y="-450.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">compute_and_export_bssn_constraints_particles</text>
+</g>
+<!-- BSSN_refine -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node2" class="node">
+<title>BSSN_refine</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="105.5,-906 32.5,-906 32.5,-882 105.5,-882 105.5,-906"/>
+<text text-anchor="middle" x="69" y="-891.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">BSSN_refine</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;BSSN_refine -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge1" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;BSSN_refine</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M296.1758,-465.0802C291.7323,-520.5703 265.8124,-753.4114 138,-873 131.6253,-878.9645 123.6051,-883.2378 115.3086,-886.2987"/>
+<polygon fill="#000000" stroke="#000000" points="114.0206,-883.0344 105.5242,-889.3637 116.1132,-889.7143 114.0206,-883.0344"/>
+</g>
+<!-- Tmunu_refine -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node3" class="node">
+<title>Tmunu_refine</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="108.5,-864 29.5,-864 29.5,-840 108.5,-840 108.5,-864"/>
+<text text-anchor="middle" x="69" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Tmunu_refine</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;Tmunu_refine -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge2" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;Tmunu_refine</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M295.5865,-465.2735C288.8912,-517.6851 255.6139,-724.8875 138,-831 132.3753,-836.0747 125.5554,-839.9237 118.4194,-842.8428"/>
+<polygon fill="#000000" stroke="#000000" points="116.8654,-839.6779 108.5751,-846.275 119.1699,-846.2877 116.8654,-839.6779"/>
+</g>
+<!-- units -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node4" class="node">
+<title>units</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="96,-822 42,-822 42,-798 96,-798 96,-822"/>
+<text text-anchor="middle" x="69" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">units</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;units -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge3" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;units</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M294.8895,-465.2275C285.8347,-513.9375 245.7175,-696.0153 138,-789 129.0738,-796.7053 117.3777,-801.5834 106.1574,-804.6717"/>
+<polygon fill="#000000" stroke="#000000" points="105.017,-801.3441 96.08,-807.0344 106.6149,-808.1592 105.017,-801.3441"/>
+</g>
+<!-- RCB_tree_3D -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node5" class="node">
+<title>RCB_tree_3D</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="108.5,-780 29.5,-780 29.5,-756 108.5,-756 108.5,-780"/>
+<text text-anchor="middle" x="69" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">RCB_tree_3D</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;RCB_tree_3D -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge4" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;RCB_tree_3D</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M294.0043,-465.2187C282.3779,-510.0365 235.9458,-666.9432 138,-747 132.2677,-751.6853 125.5027,-755.3266 118.4878,-758.1561"/>
+<polygon fill="#000000" stroke="#000000" points="117.1226,-754.9257 108.8406,-761.5333 119.4355,-761.5326 117.1226,-754.9257"/>
+</g>
+<!-- map_particles_2_grid -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node6" class="node">
+<title>map_particles_2_grid</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="126.5,-738 11.5,-738 11.5,-714 126.5,-714 126.5,-738"/>
+<text text-anchor="middle" x="69" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">map_particles_2_grid</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;map_particles_2_grid -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge5" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;map_particles_2_grid</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M292.8758,-465.1301C278.4731,-505.6472 226.4275,-637.5417 138,-705 136.1396,-706.4193 134.1831,-707.7432 132.1544,-708.9782"/>
+<polygon fill="#000000" stroke="#000000" points="130.1047,-706.1009 122.8722,-713.8431 133.3542,-712.301 130.1047,-706.1009"/>
+</g>
+<!-- set_h -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node7" class="node">
+<title>set_h</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="96,-696 42,-696 42,-672 96,-672 96,-696"/>
+<text text-anchor="middle" x="69" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">set_h</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;set_h -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge6" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;set_h</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M291.3242,-465.068C273.8364,-500.9318 217.1377,-607.7963 138,-663 128.5645,-669.5819 117.0144,-674.1442 106.0828,-677.2889"/>
+<polygon fill="#000000" stroke="#000000" points="105.1147,-673.9238 96.2958,-679.7956 106.8515,-680.7049 105.1147,-673.9238"/>
+</g>
+<!-- sph_variables -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node8" class="node">
+<title>sph_variables</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="108.5,-654 29.5,-654 29.5,-630 108.5,-630 108.5,-654"/>
+<text text-anchor="middle" x="69" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sph_variables</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;sph_variables -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge7" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;sph_variables</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M288.918,-465.188C267.8507,-496.0085 208.0032,-577.6773 138,-621 132.0623,-624.6747 125.4373,-627.7449 118.7062,-630.2996"/>
+<polygon fill="#000000" stroke="#000000" points="117.1601,-627.1296 108.8361,-633.6841 119.4307,-633.7512 117.1601,-627.1296"/>
+</g>
+<!-- constants -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node9" class="node">
+<title>constants</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="98,-612 40,-612 40,-588 98,-588 98,-612"/>
+<text text-anchor="middle" x="69" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">constants</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;constants -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge8" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;constants</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M284.9678,-465.2384C259.8636,-490.1186 199.1428,-546.9519 138,-579 128.6839,-583.883 118.0526,-587.8225 107.9721,-590.912"/>
+<polygon fill="#000000" stroke="#000000" points="106.7972,-587.6076 98.1444,-593.7216 108.7213,-594.338 106.7972,-587.6076"/>
+</g>
+<!-- options -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node10" class="node">
+<title>options</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="96,-570 42,-570 42,-546 96,-546 96,-570"/>
+<text text-anchor="middle" x="69" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">options</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;options -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge9" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;options</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M277.0186,-465.1552C247.4583,-482.7636 189.9598,-515.5969 138,-537 127.8223,-541.1924 116.4983,-544.9817 106.0154,-548.1505"/>
+<polygon fill="#000000" stroke="#000000" points="104.9053,-544.8284 96.2874,-550.9913 106.8676,-551.5477 104.9053,-544.8284"/>
+</g>
+<!-- particle_mesh_hash -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node11" class="node">
+<title>particle_mesh_hash</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="123.5,-528 14.5,-528 14.5,-504 123.5,-504 123.5,-528"/>
+<text text-anchor="middle" x="69" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particle_mesh_hash</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;particle_mesh_hash -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge10" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;particle_mesh_hash</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M253.3091,-465.0725C215.9988,-475.3819 162.2041,-490.2462 122.3552,-501.2571"/>
+<polygon fill="#000000" stroke="#000000" points="121.2497,-497.9313 112.5431,-503.9684 123.1141,-504.6785 121.2497,-497.9313"/>
+</g>
+<!-- input_output -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node12" class="node">
+<title>input_output</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="105,-486 33,-486 33,-462 105,-462 105,-486"/>
+<text text-anchor="middle" x="69" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">input_output</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;input_output -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge11" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;input_output</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M173.9908,-464.3298C153.0894,-466.2549 132.5945,-468.1426 115.34,-469.7318"/>
+<polygon fill="#000000" stroke="#000000" points="114.6776,-466.2779 105.0408,-470.6805 115.3197,-473.2484 114.6776,-466.2779"/>
+</g>
+<!-- particle_mesh -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node13" class="node">
+<title>particle_mesh</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="108.5,-444 29.5,-444 29.5,-420 108.5,-420 108.5,-444"/>
+<text text-anchor="middle" x="69" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particle_mesh</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;particle_mesh -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge12" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;particle_mesh</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M173.9908,-441.6702C154.6669,-439.8904 135.6904,-438.1425 119.3009,-436.633"/>
+<polygon fill="#000000" stroke="#000000" points="119.2054,-433.1095 108.9265,-435.6774 118.5633,-440.0799 119.2054,-433.1095"/>
+</g>
+<!-- tensor -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node14" class="node">
+<title>tensor</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="96,-402 42,-402 42,-378 96,-378 96,-402"/>
+<text text-anchor="middle" x="69" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">tensor</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;tensor -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge13" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;tensor</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M253.3091,-440.9275C210.5155,-429.103 146.0362,-411.2863 105.7863,-400.1646"/>
+<polygon fill="#000000" stroke="#000000" points="106.6742,-396.7789 96.1032,-397.489 104.8098,-403.5261 106.6742,-396.7789"/>
+</g>
+<!-- GravityAcceleration_refine -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node15" class="node">
+<title>GravityAcceleration_refine</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="138,-360 0,-360 0,-336 138,-336 138,-360"/>
+<text text-anchor="middle" x="69" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">GravityAcceleration_refine</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;GravityAcceleration_refine -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge16" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;GravityAcceleration_refine</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M277.0186,-440.8448C247.4583,-423.2364 189.9598,-390.4031 138,-369 133.2024,-367.0238 128.1501,-365.1371 123.0513,-363.3628"/>
+<polygon fill="#000000" stroke="#000000" points="123.8369,-359.9355 113.2433,-360.0952 121.6243,-366.5766 123.8369,-359.9355"/>
+</g>
+<!-- McLachlan_refine -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node16" class="node">
+<title>McLachlan_refine</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="117.5,-318 20.5,-318 20.5,-294 117.5,-294 117.5,-318"/>
+<text text-anchor="middle" x="69" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">McLachlan_refine</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;McLachlan_refine -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge15" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;McLachlan_refine</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M284.9678,-440.7616C259.8636,-415.8814 199.1428,-359.0481 138,-327 134.3193,-325.0708 130.4333,-323.2888 126.4571,-321.6484"/>
+<polygon fill="#000000" stroke="#000000" points="127.6607,-318.3616 117.0697,-318.0748 125.1702,-324.9036 127.6607,-318.3616"/>
+</g>
+<!-- sphincs_sph -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node17" class="node">
+<title>sphincs_sph</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="105,-276 33,-276 33,-252 105,-252 105,-276"/>
+<text text-anchor="middle" x="69" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_sph</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;sphincs_sph -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge14" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;sphincs_sph</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M288.918,-440.812C267.8507,-409.9915 208.0032,-328.3227 138,-285 130.9601,-280.6432 122.9541,-277.1361 114.9505,-274.3304"/>
+<polygon fill="#000000" stroke="#000000" points="115.8447,-270.9421 105.2543,-271.246 113.7227,-277.6128 115.8447,-270.9421"/>
+</g>
+<!-- ADM_refine -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node18" class="node">
+<title>ADM_refine</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="103.5,-234 34.5,-234 34.5,-210 103.5,-210 103.5,-234"/>
+<text text-anchor="middle" x="69" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ADM_refine</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;ADM_refine -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge17" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;ADM_refine</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M291.3242,-440.932C273.8364,-405.0682 217.1377,-298.2037 138,-243 130.6129,-237.847 121.9296,-233.9319 113.2618,-230.9658"/>
+<polygon fill="#000000" stroke="#000000" points="114.138,-227.5739 103.5519,-228.0048 112.0962,-234.2695 114.138,-227.5739"/>
+</g>
+<!-- alive_flag -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node19" class="node">
+<title>alive_flag</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="98,-192 40,-192 40,-168 98,-168 98,-192"/>
+<text text-anchor="middle" x="69" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alive_flag</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;alive_flag -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge18" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;alive_flag</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M292.8758,-440.8699C278.4731,-400.3528 226.4275,-268.4583 138,-201 129.3239,-194.3813 118.5586,-189.8353 108.132,-186.7178"/>
+<polygon fill="#000000" stroke="#000000" points="108.8791,-183.2954 98.3184,-184.1455 107.1042,-190.0667 108.8791,-183.2954"/>
+</g>
+<!-- mesh_refinement -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node20" class="node">
+<title>mesh_refinement</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="117,-150 21,-150 21,-126 117,-126 117,-150"/>
+<text text-anchor="middle" x="69" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mesh_refinement</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;mesh_refinement -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge19" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;mesh_refinement</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M294.0043,-440.7813C282.3779,-395.9635 235.9458,-239.0568 138,-159 134.4688,-156.1138 130.5458,-153.6237 126.4138,-151.4756"/>
+<polygon fill="#000000" stroke="#000000" points="127.662,-148.1995 117.1056,-147.2979 124.7957,-154.5858 127.662,-148.1995"/>
+</g>
+<!-- gradient -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node21" class="node">
+<title>gradient</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="96,-108 42,-108 42,-84 96,-84 96,-108"/>
+<text text-anchor="middle" x="69" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gradient</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;gradient -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge20" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;gradient</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M294.8895,-440.7725C285.8347,-392.0625 245.7175,-209.9847 138,-117 129.0738,-109.2947 117.3777,-104.4166 106.1574,-101.3283"/>
+<polygon fill="#000000" stroke="#000000" points="106.6149,-97.8408 96.08,-98.9656 105.017,-104.6559 106.6149,-97.8408"/>
+</g>
+<!-- kernel_table -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node22" class="node">
+<title>kernel_table</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="104.5,-66 33.5,-66 33.5,-42 104.5,-42 104.5,-66"/>
+<text text-anchor="middle" x="69" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">kernel_table</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;kernel_table -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge21" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;kernel_table</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M295.5865,-440.7265C288.8912,-388.3149 255.6139,-181.1125 138,-75 131.3126,-68.9666 122.9359,-64.6658 114.3471,-61.6002"/>
+<polygon fill="#000000" stroke="#000000" points="115.2248,-58.2088 104.6386,-58.6375 113.1816,-64.904 115.2248,-58.2088"/>
+</g>
+<!-- metric_on_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_node23" class="node">
+<title>metric_on_particles</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="122,-24 16,-24 16,0 122,0 122,-24"/>
+<text text-anchor="middle" x="69" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">metric_on_particles</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;metric_on_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~UsesGraph_edge22" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;metric_on_particles</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M296.1758,-440.9198C291.7323,-385.4297 265.8124,-152.5886 138,-33 135.857,-30.9949 133.5281,-29.1809 131.0652,-27.5399"/>
+<polygon fill="#000000" stroke="#000000" points="132.6855,-24.4358 122.2509,-22.6002 129.2633,-30.5423 132.6855,-24.4358"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses.
+    </p>
+    </div></div></div></div>
+      </li>
+      
+      </ul>
+    </div>
+    
+
+
+    
+
+    <h3>Arguments</h3>
+    
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-this~45"></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-parts_obj~2"></span>class(<a href='../type/particles.html'>particles</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>parts_obj</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile~6"></span>character(len=*),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-name_logfile~4"></span>character(len=*),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>name_logfile</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    
+    
+    
+    <br>
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~compute_and_export_bssn_constraints_particles~~CallsGraph Pages: 1 -->
+<svg id="proccompute_and_export_bssn_constraints_particlesCallsGraph" width="460pt" height="1838pt"
+ viewBox="0.00 0.00 460.00 1838.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 1834)">
+<title>proc~~compute_and_export_bssn_constraints_particles~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-1834 456,-1834 456,4 -4,4"/>
+<!-- proc~compute_and_export_bssn_constraints_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node1" class="node">
+<title>proc~compute_and_export_bssn_constraints_particles</title>
+<polygon fill="none" stroke="#000000" points="246,-927 0,-927 0,-903 246,-903 246,-927"/>
+<text text-anchor="middle" x="123" y="-912.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">compute_and_export_bssn_constraints_particles</text>
+</g>
+<!-- iorig -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node2" class="node">
+<title>iorig</title>
+<polygon fill="#777777" stroke="#777777" points="394,-1830 340,-1830 340,-1806 394,-1806 394,-1830"/>
+<text text-anchor="middle" x="367" y="-1815.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iorig</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;iorig -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge1" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;iorig</title>
+<path fill="none" stroke="#000000" d="M123.4359,-927.2372C127.123,-1023.8072 156.1193,-1662.8136 282,-1797 294.1435,-1809.9448 312.8929,-1815.4498 329.6956,-1817.6088"/>
+<polygon fill="#000000" stroke="#000000" points="329.5471,-1821.1101 339.8297,-1818.5572 330.1994,-1814.1405 329.5471,-1821.1101"/>
+</g>
+<!-- allocate_metric_on_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node3" class="node">
+<title>allocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="441,-1788 293,-1788 293,-1764 441,-1764 441,-1788"/>
+<text text-anchor="middle" x="367" y="-1773.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_metric_on_particles</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_metric_on_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge2" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M123.5555,-927.2505C128.0637,-1021.2467 161.6187,-1627.7914 282,-1755 282.9109,-1755.9626 283.8584,-1756.884 284.8389,-1757.7659"/>
+<polygon fill="#000000" stroke="#000000" points="282.8274,-1760.6316 292.9433,-1763.7809 286.9992,-1755.0106 282.8274,-1760.6316"/>
+</g>
+<!-- deallocate_metric_on_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node4" class="node">
+<title>deallocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="447,-1746 287,-1746 287,-1722 447,-1722 447,-1746"/>
+<text text-anchor="middle" x="367" y="-1731.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_metric_on_particles</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_metric_on_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge3" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M123.6849,-927.2184C129.0415,-1018.426 167.0885,-1592.733 282,-1713 282.9451,-1713.9891 283.9288,-1714.9347 284.9472,-1715.8385"/>
+<polygon fill="#000000" stroke="#000000" points="283.2283,-1718.9167 293.3706,-1721.9803 287.3524,-1713.2606 283.2283,-1718.9167"/>
+</g>
+<!-- allocate_rcb_tree_memory_3d -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node5" class="node">
+<title>allocate_rcb_tree_memory_3d</title>
+<polygon fill="#777777" stroke="#777777" points="446,-1704 288,-1704 288,-1680 446,-1680 446,-1704"/>
+<text text-anchor="middle" x="367" y="-1689.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_rcb_tree_memory_3d</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_rcb_tree_memory_3d -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge4" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_rcb_tree_memory_3d</title>
+<path fill="none" stroke="#000000" d="M123.8243,-927.1385C130.0556,-1015.3454 172.5273,-1557.637 282,-1671 282.9503,-1671.9841 283.9389,-1672.925 284.9618,-1673.8244"/>
+<polygon fill="#000000" stroke="#000000" points="283.2599,-1676.913 293.4134,-1679.9392 287.3631,-1671.2417 283.2599,-1676.913"/>
+</g>
+<!-- levels -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node6" class="node">
+<title>levels</title>
+<polygon fill="#777777" stroke="#777777" points="394,-1662 340,-1662 340,-1638 394,-1638 394,-1662"/>
+<text text-anchor="middle" x="367" y="-1647.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">levels</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;levels -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge5" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;levels</title>
+<path fill="none" stroke="#000000" d="M123.974,-927.0089C131.1057,-1012.0053 177.9337,-1522.5021 282,-1629 294.3168,-1641.6046 312.9111,-1647.0995 329.5708,-1649.3393"/>
+<polygon fill="#000000" stroke="#000000" points="329.3209,-1652.8317 339.6204,-1650.3476 330.0198,-1645.8667 329.3209,-1652.8317"/>
+</g>
+<!-- deallocate_adm -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node7" class="node">
+<title>deallocate_adm</title>
+<polygon fill="#777777" stroke="#777777" points="411,-1620 323,-1620 323,-1596 411,-1596 411,-1620"/>
+<text text-anchor="middle" x="367" y="-1605.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_adm</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_adm -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge6" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_adm</title>
+<path fill="none" stroke="#000000" d="M124.1603,-927.0902C132.3001,-1009.4286 183.4113,-1487.433 282,-1587 290.2721,-1595.3542 301.3046,-1600.5773 312.6743,-1603.7986"/>
+<polygon fill="#000000" stroke="#000000" points="312.1574,-1607.2721 322.6918,-1606.1426 313.7522,-1600.4562 312.1574,-1607.2721"/>
+</g>
+<!-- deallocate_pp_g -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node8" class="node">
+<title>deallocate_pp_g</title>
+<polygon fill="#777777" stroke="#777777" points="412.5,-1578 321.5,-1578 321.5,-1554 412.5,-1554 412.5,-1578"/>
+<text text-anchor="middle" x="367" y="-1563.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_pp_g</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_pp_g -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge7" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_pp_g</title>
+<path fill="none" stroke="#000000" d="M124.3638,-927.0975C133.5474,-1006.462 188.8414,-1452.3069 282,-1545 290.0841,-1553.0437 300.73,-1558.1763 311.7421,-1561.4134"/>
+<polygon fill="#000000" stroke="#000000" points="310.9125,-1564.8136 321.4583,-1563.7956 312.5795,-1558.0149 310.9125,-1564.8136"/>
+</g>
+<!-- read_options -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node9" class="node">
+<title>read_options</title>
+<polygon fill="#777777" stroke="#777777" points="404.5,-1536 329.5,-1536 329.5,-1512 404.5,-1512 404.5,-1536"/>
+<text text-anchor="middle" x="367" y="-1521.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_options</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;read_options -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge8" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;read_options</title>
+<path fill="none" stroke="#000000" d="M124.6184,-927.273C134.9742,-1003.9971 194.3156,-1417.2137 282,-1503 291.9572,-1512.7416 305.6777,-1518.1998 319.1914,-1521.1929"/>
+<polygon fill="#000000" stroke="#000000" points="318.9578,-1524.707 329.4193,-1523.0314 320.1963,-1517.8174 318.9578,-1524.707"/>
+</g>
+<!-- allocate_ztmp -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node10" class="node">
+<title>allocate_ztmp</title>
+<polygon fill="#777777" stroke="#777777" points="406.5,-1494 327.5,-1494 327.5,-1470 406.5,-1470 406.5,-1494"/>
+<text text-anchor="middle" x="367" y="-1479.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_ztmp</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_ztmp -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge10" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_ztmp</title>
+<path fill="none" stroke="#000000" d="M124.899,-927.3452C136.4689,-1001.0124 199.7247,-1382.0436 282,-1461 291.6136,-1470.2258 304.6093,-1475.5958 317.5439,-1478.6687"/>
+<polygon fill="#000000" stroke="#000000" points="316.8791,-1482.105 327.3661,-1480.5967 318.2275,-1475.236 316.8791,-1482.105"/>
+</g>
+<!-- allocate_gradient -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node11" class="node">
+<title>allocate_gradient</title>
+<polygon fill="#777777" stroke="#777777" points="414,-1452 320,-1452 320,-1428 414,-1428 414,-1452"/>
+<text text-anchor="middle" x="367" y="-1437.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_gradient</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_gradient -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge11" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_gradient</title>
+<path fill="none" stroke="#000000" d="M125.2063,-927.3057C138.0292,-997.5091 205.0639,-1346.7923 282,-1419 289.7274,-1426.2525 299.5502,-1431.1122 309.7539,-1434.3446"/>
+<polygon fill="#000000" stroke="#000000" points="309.0334,-1437.7747 319.5976,-1436.9701 310.8373,-1431.0112 309.0334,-1437.7747"/>
+</g>
+<!-- lapse -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node12" class="node">
+<title>lapse</title>
+<polygon fill="#777777" stroke="#777777" points="394,-1410 340,-1410 340,-1386 394,-1386 394,-1410"/>
+<text text-anchor="middle" x="367" y="-1395.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">lapse</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;lapse -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge14" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;lapse</title>
+<path fill="none" stroke="#000000" d="M125.5411,-927.146C139.6518,-993.4879 210.3267,-1311.4542 282,-1377 294.7903,-1388.6968 313.0496,-1394.1401 329.3687,-1396.5801"/>
+<polygon fill="#000000" stroke="#000000" points="329.3982,-1400.107 339.7355,-1397.7853 330.2066,-1393.1538 329.3982,-1400.107"/>
+</g>
+<!-- get_metric_on_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node13" class="node">
+<title>get_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="430.5,-1368 303.5,-1368 303.5,-1344 430.5,-1344 430.5,-1368"/>
+<text text-anchor="middle" x="367" y="-1353.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_metric_on_particles</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;get_metric_on_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge13" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;get_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M123.6817,-927.2367C127.4956,-983.4178 151.0502,-1218.8552 282,-1335 285.6462,-1338.2339 289.7123,-1340.9872 294.0361,-1343.3295"/>
+<polygon fill="#000000" stroke="#000000" points="292.6759,-1346.5567 303.221,-1347.5825 295.6172,-1340.2046 292.6759,-1346.5567"/>
+</g>
+<!-- set_units -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node14" class="node">
+<title>set_units</title>
+<polygon fill="#777777" stroke="#777777" points="394.5,-1326 339.5,-1326 339.5,-1302 394.5,-1302 394.5,-1326"/>
+<text text-anchor="middle" x="367" y="-1311.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">set_units</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;set_units -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge12" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;set_units</title>
+<path fill="none" stroke="#000000" d="M124.2298,-927.0807C130.2407,-979.5719 161.3332,-1189.8238 282,-1293 294.9837,-1304.1017 312.9488,-1309.5033 329.0195,-1312.0699"/>
+<polygon fill="#000000" stroke="#000000" points="328.8715,-1315.5795 339.2352,-1313.3786 329.761,-1308.6362 328.8715,-1315.5795"/>
+</g>
+<!-- shift_u -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node15" class="node">
+<title>shift_u</title>
+<polygon fill="#777777" stroke="#777777" points="394,-1284 340,-1284 340,-1260 394,-1260 394,-1284"/>
+<text text-anchor="middle" x="367" y="-1269.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">shift_u</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;shift_u -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge15" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;shift_u</title>
+<path fill="none" stroke="#000000" d="M124.9124,-927.0612C133.316,-975.906 171.5963,-1160.7107 282,-1251 295.3204,-1261.8935 313.4812,-1267.2592 329.5968,-1269.8557"/>
+<polygon fill="#000000" stroke="#000000" points="329.451,-1273.3663 339.8204,-1271.1923 330.3585,-1266.4254 329.451,-1273.3663"/>
+</g>
+<!-- deallocate_bssn -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node16" class="node">
+<title>deallocate_bssn</title>
+<polygon fill="#777777" stroke="#777777" points="412,-1242 322,-1242 322,-1218 412,-1218 412,-1242"/>
+<text text-anchor="middle" x="367" y="-1227.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_bssn -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge17" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_bssn</title>
+<path fill="none" stroke="#000000" d="M125.781,-927.0821C136.794,-972.0901 181.7289,-1131.4006 282,-1209 290.7436,-1215.7666 301.3802,-1220.3834 312.1284,-1223.5257"/>
+<polygon fill="#000000" stroke="#000000" points="311.4266,-1226.9583 321.9794,-1226.0164 313.1424,-1220.1719 311.4266,-1226.9583"/>
+</g>
+<!-- deallocate_rcb_tree_memory_3d -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node17" class="node">
+<title>deallocate_rcb_tree_memory_3d</title>
+<polygon fill="#777777" stroke="#777777" points="452,-1200 282,-1200 282,-1176 452,-1176 452,-1200"/>
+<text text-anchor="middle" x="367" y="-1185.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_rcb_tree_memory_3d</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_rcb_tree_memory_3d -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge16" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_rcb_tree_memory_3d</title>
+<path fill="none" stroke="#000000" d="M126.8916,-927.0278C140.7256,-967.7873 191.5988,-1101.7675 282,-1167 284.2342,-1168.6122 286.5781,-1170.1013 289.005,-1171.4768"/>
+<polygon fill="#000000" stroke="#000000" points="287.5921,-1174.6826 298.1076,-1175.9766 290.6942,-1168.4075 287.5921,-1174.6826"/>
+</g>
+<!-- a_bssn3_ll -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node18" class="node">
+<title>a_bssn3_ll</title>
+<polygon fill="#777777" stroke="#777777" points="399,-1158 335,-1158 335,-1134 399,-1134 399,-1158"/>
+<text text-anchor="middle" x="367" y="-1143.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">a_bssn3_ll</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;a_bssn3_ll -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge18" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;a_bssn3_ll</title>
+<path fill="none" stroke="#000000" d="M128.4212,-927.0073C145.3928,-963.1657 201.2302,-1071.7961 282,-1125 294.5642,-1133.2762 310.1189,-1138.2918 324.4736,-1141.3311"/>
+<polygon fill="#000000" stroke="#000000" points="324.1844,-1144.8369 334.6541,-1143.2132 325.457,-1137.9535 324.1844,-1144.8369"/>
+</g>
+<!-- allocate_gravityacceleration -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node19" class="node">
+<title>allocate_gravityacceleration</title>
+<polygon fill="#777777" stroke="#777777" points="439.5,-1116 294.5,-1116 294.5,-1092 439.5,-1092 439.5,-1116"/>
+<text text-anchor="middle" x="367" y="-1101.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_gravityacceleration</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_gravityacceleration -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge19" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_gravityacceleration</title>
+<path fill="none" stroke="#000000" d="M130.9477,-927.4116C151.6998,-958.7569 210.8686,-1041.5556 282,-1083 285.2096,-1084.8701 288.581,-1086.5745 292.054,-1088.1278"/>
+<polygon fill="#000000" stroke="#000000" points="290.8594,-1091.4196 301.4435,-1091.8966 293.467,-1084.9234 290.8594,-1091.4196"/>
+</g>
+<!-- allocate_grid_function -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node20" class="node">
+<title>allocate_grid_function</title>
+<polygon fill="#777777" stroke="#777777" points="425.5,-1074 308.5,-1074 308.5,-1050 425.5,-1050 425.5,-1074"/>
+<text text-anchor="middle" x="367" y="-1059.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_grid_function</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_grid_function -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge20" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_grid_function</title>
+<path fill="none" stroke="#000000" d="M134.5176,-927.1225C159.1317,-952.2971 219.7097,-1010.4353 282,-1041 287.2453,-1043.5738 292.8317,-1045.8481 298.5386,-1047.8549"/>
+<polygon fill="#000000" stroke="#000000" points="297.6257,-1051.238 308.2175,-1050.9851 299.7798,-1044.5777 297.6257,-1051.238"/>
+</g>
+<!-- allocate_bssn -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node21" class="node">
+<title>allocate_bssn</title>
+<polygon fill="#777777" stroke="#777777" points="406,-1032 328,-1032 328,-1008 406,-1008 406,-1032"/>
+<text text-anchor="middle" x="367" y="-1017.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_bssn -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge21" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_bssn</title>
+<path fill="none" stroke="#000000" d="M142.3486,-927.2231C171.5779,-945.2176 229.1973,-978.8761 282,-999 293.4298,-1003.3561 306.0725,-1007.0485 318.0362,-1010.0642"/>
+<polygon fill="#000000" stroke="#000000" points="317.3428,-1013.4972 327.8845,-1012.4378 318.983,-1006.6921 317.3428,-1013.4972"/>
+</g>
+<!-- deallocate_grid_function -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node22" class="node">
+<title>deallocate_grid_function</title>
+<polygon fill="#777777" stroke="#777777" points="431.5,-990 302.5,-990 302.5,-966 431.5,-966 431.5,-990"/>
+<text text-anchor="middle" x="367" y="-975.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_grid_function</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_grid_function -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge22" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_grid_function</title>
+<path fill="none" stroke="#000000" d="M167.8406,-927.05C199.6653,-935.552 243.4118,-947.1374 282,-957 290.2564,-959.1102 298.9731,-961.3034 307.5525,-963.4418"/>
+<polygon fill="#000000" stroke="#000000" points="306.9762,-966.905 317.5251,-965.9189 308.6637,-960.1114 306.9762,-966.905"/>
+</g>
+<!-- hc_parts -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node23" class="node">
+<title>hc_parts</title>
+<polygon fill="#777777" stroke="#777777" points="394,-948 340,-948 340,-924 394,-924 394,-948"/>
+<text text-anchor="middle" x="367" y="-933.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">hc_parts</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;hc_parts -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge23" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;hc_parts</title>
+<path fill="none" stroke="#000000" d="M246.0723,-925.5923C276.5415,-928.2146 306.9215,-930.8293 329.6097,-932.782"/>
+<polygon fill="#000000" stroke="#000000" points="329.5168,-936.2868 339.7801,-933.6573 330.1171,-929.3126 329.5168,-936.2868"/>
+</g>
+<!-- alive -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node24" class="node">
+<title>alive</title>
+<polygon fill="#777777" stroke="#777777" points="394,-906 340,-906 340,-882 394,-882 394,-906"/>
+<text text-anchor="middle" x="367" y="-891.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alive</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;alive -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge43" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;alive</title>
+<path fill="none" stroke="#000000" d="M246.0723,-904.4077C276.5415,-901.7854 306.9215,-899.1707 329.6097,-897.218"/>
+<polygon fill="#000000" stroke="#000000" points="330.1171,-900.6874 339.7801,-896.3427 329.5168,-893.7132 330.1171,-900.6874"/>
+</g>
+<!-- allocate_sph_memory -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node25" class="node">
+<title>allocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="426,-864 308,-864 308,-840 426,-840 426,-864"/>
+<text text-anchor="middle" x="367" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_sph_memory</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_sph_memory -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge24" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M167.8406,-902.95C199.6653,-894.448 243.4118,-882.8626 282,-873 290.2564,-870.8898 298.9731,-868.6966 307.5525,-866.5582"/>
+<polygon fill="#000000" stroke="#000000" points="308.6637,-869.8886 317.5251,-864.0811 306.9762,-863.095 308.6637,-869.8886"/>
+</g>
+<!-- allocate_adm -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node26" class="node">
+<title>allocate_adm</title>
+<polygon fill="#777777" stroke="#777777" points="405,-822 329,-822 329,-798 405,-798 405,-822"/>
+<text text-anchor="middle" x="367" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_adm</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_adm -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge25" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_adm</title>
+<path fill="none" stroke="#000000" d="M142.3486,-902.7769C171.5779,-884.7824 229.1973,-851.1239 282,-831 293.6518,-826.5593 306.5639,-822.8083 318.7324,-819.7609"/>
+<polygon fill="#000000" stroke="#000000" points="319.8243,-823.0985 328.7349,-817.3669 318.1949,-816.2908 319.8243,-823.0985"/>
+</g>
+<!-- deallocate_hash_memory -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node27" class="node">
+<title>deallocate_hash_memory</title>
+<polygon fill="#777777" stroke="#777777" points="435,-780 299,-780 299,-756 435,-756 435,-780"/>
+<text text-anchor="middle" x="367" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_hash_memory</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_hash_memory -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge26" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_hash_memory</title>
+<path fill="none" stroke="#000000" d="M134.5176,-902.8775C159.1317,-877.7029 219.7097,-819.5647 282,-789 286.1024,-786.987 290.4135,-785.1572 294.8277,-783.4953"/>
+<polygon fill="#000000" stroke="#000000" points="296.3026,-786.689 304.6148,-780.1195 294.02,-780.0716 296.3026,-786.689"/>
+</g>
+<!-- map_2_grid_hash -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node28" class="node">
+<title>map_2_grid_hash</title>
+<polygon fill="#777777" stroke="#777777" points="416.5,-738 317.5,-738 317.5,-714 416.5,-714 416.5,-738"/>
+<text text-anchor="middle" x="367" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">map_2_grid_hash</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;map_2_grid_hash -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge27" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;map_2_grid_hash</title>
+<path fill="none" stroke="#000000" d="M130.9477,-902.5884C151.6998,-871.2431 210.8686,-788.4444 282,-747 289.7295,-742.4964 298.3973,-738.9537 307.1635,-736.168"/>
+<polygon fill="#000000" stroke="#000000" points="308.4084,-739.4522 317.0579,-733.3337 306.4807,-732.7229 308.4084,-739.4522"/>
+</g>
+<!-- deallocate_all_lists -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node29" class="node">
+<title>deallocate_all_lists</title>
+<polygon fill="#777777" stroke="#777777" points="418,-696 316,-696 316,-672 418,-672 418,-696"/>
+<text text-anchor="middle" x="367" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_all_lists</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_all_lists -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge28" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_all_lists</title>
+<path fill="none" stroke="#000000" d="M128.4212,-902.9927C145.3928,-866.8343 201.2302,-758.2039 282,-705 289.2862,-700.2005 297.5782,-696.4975 306.0586,-693.6406"/>
+<polygon fill="#000000" stroke="#000000" points="307.0949,-696.9839 315.6698,-690.7612 305.0859,-690.2784 307.0949,-696.9839"/>
+</g>
+<!-- phi -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node30" class="node">
+<title>phi</title>
+<polygon fill="#777777" stroke="#777777" points="394,-654 340,-654 340,-630 394,-630 394,-654"/>
+<text text-anchor="middle" x="367" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">phi</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;phi -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge29" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;phi</title>
+<path fill="none" stroke="#000000" d="M126.8916,-902.9722C140.7256,-862.2127 191.5988,-728.2325 282,-663 295.8529,-653.0039 313.9241,-647.7372 329.8401,-644.974"/>
+<polygon fill="#000000" stroke="#000000" points="330.536,-648.4095 339.9221,-643.4951 329.52,-641.4836 330.536,-648.4095"/>
+</g>
+<!-- g_bssn3_ll -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node31" class="node">
+<title>g_bssn3_ll</title>
+<polygon fill="#777777" stroke="#777777" points="399,-612 335,-612 335,-588 399,-588 399,-612"/>
+<text text-anchor="middle" x="367" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">g_bssn3_ll</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;g_bssn3_ll -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge30" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;g_bssn3_ll</title>
+<path fill="none" stroke="#000000" d="M125.781,-902.9179C136.794,-857.9099 181.7289,-698.5994 282,-621 294.2091,-611.5514 310.1092,-606.2947 324.8501,-603.3908"/>
+<polygon fill="#000000" stroke="#000000" points="325.5205,-606.8274 334.8105,-601.7337 324.3717,-599.9223 325.5205,-606.8274"/>
+</g>
+<!-- exact_nei_tree_update -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node32" class="node">
+<title>exact_nei_tree_update</title>
+<polygon fill="#777777" stroke="#777777" points="428,-570 306,-570 306,-546 428,-546 428,-570"/>
+<text text-anchor="middle" x="367" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">exact_nei_tree_update</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;exact_nei_tree_update -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge42" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;exact_nei_tree_update</title>
+<path fill="none" stroke="#000000" d="M124.9124,-902.9388C133.316,-854.094 171.5963,-669.2893 282,-579 286.339,-575.4515 291.1916,-572.4896 296.3198,-570.0189"/>
+<polygon fill="#000000" stroke="#000000" points="297.9051,-573.1504 305.7969,-566.0814 295.2193,-566.6861 297.9051,-573.1504"/>
+</g>
+<!-- deallocate_gradient -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node33" class="node">
+<title>deallocate_gradient</title>
+<polygon fill="#777777" stroke="#777777" points="420,-528 314,-528 314,-504 420,-504 420,-528"/>
+<text text-anchor="middle" x="367" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_gradient</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_gradient -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge31" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_gradient</title>
+<path fill="none" stroke="#000000" d="M124.2298,-902.9193C130.2407,-850.4281 161.3332,-640.1762 282,-537 288.477,-531.4619 296.1936,-527.3422 304.2962,-524.2854"/>
+<polygon fill="#000000" stroke="#000000" points="305.4992,-527.5749 313.9342,-521.1639 303.3423,-520.9155 305.4992,-527.5749"/>
+</g>
+<!-- gc_parts -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node34" class="node">
+<title>gc_parts</title>
+<polygon fill="#777777" stroke="#777777" points="394,-486 340,-486 340,-462 394,-462 394,-486"/>
+<text text-anchor="middle" x="367" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gc_parts</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;gc_parts -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge32" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;gc_parts</title>
+<path fill="none" stroke="#000000" d="M123.6817,-902.7633C127.4956,-846.5822 151.0502,-611.1448 282,-495 294.9668,-483.4992 313.2454,-478.0773 329.5316,-475.6008"/>
+<polygon fill="#000000" stroke="#000000" points="330.3567,-479.0271 339.8703,-474.3644 329.5255,-472.0766 330.3567,-479.0271"/>
+</g>
+<!-- deallocate_flag_nei_cell -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node35" class="node">
+<title>deallocate_flag_nei_cell</title>
+<polygon fill="#777777" stroke="#777777" points="430.5,-444 303.5,-444 303.5,-420 430.5,-420 430.5,-444"/>
+<text text-anchor="middle" x="367" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_flag_nei_cell</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_flag_nei_cell -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge33" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_flag_nei_cell</title>
+<path fill="none" stroke="#000000" d="M125.5411,-902.854C139.6518,-836.5121 210.3267,-518.5458 282,-453 285.6631,-449.65 289.7749,-446.813 294.1611,-444.4126"/>
+<polygon fill="#000000" stroke="#000000" points="295.9016,-447.4633 303.4943,-440.0741 292.9508,-441.1156 295.9016,-447.4633"/>
+</g>
+<!-- allocate_tmunu -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node36" class="node">
+<title>allocate_tmunu</title>
+<polygon fill="#777777" stroke="#777777" points="409.5,-402 324.5,-402 324.5,-378 409.5,-378 409.5,-402"/>
+<text text-anchor="middle" x="367" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_tmunu</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_tmunu -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge34" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;allocate_tmunu</title>
+<path fill="none" stroke="#000000" d="M125.2063,-902.6943C138.0292,-832.4909 205.0639,-483.2077 282,-411 290.9189,-402.6292 302.6292,-397.446 314.4947,-394.2734"/>
+<polygon fill="#000000" stroke="#000000" points="315.442,-397.6482 324.4405,-392.0556 313.9184,-390.816 315.442,-397.6482"/>
+</g>
+<!-- deallocate_tmunu -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node37" class="node">
+<title>deallocate_tmunu</title>
+<polygon fill="#777777" stroke="#777777" points="415.5,-360 318.5,-360 318.5,-336 415.5,-336 415.5,-360"/>
+<text text-anchor="middle" x="367" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_tmunu</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_tmunu -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge35" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_tmunu</title>
+<path fill="none" stroke="#000000" d="M124.899,-902.6548C136.4689,-828.9876 199.7247,-447.9564 282,-369 289.3207,-361.9746 298.6027,-357.1851 308.3254,-353.9431"/>
+<polygon fill="#000000" stroke="#000000" points="309.455,-357.2615 318.1387,-351.1916 307.5651,-350.5214 309.455,-357.2615"/>
+</g>
+<!-- deallocate_sph_memory -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node38" class="node">
+<title>deallocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="432,-318 302,-318 302,-294 432,-294 432,-318"/>
+<text text-anchor="middle" x="367" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_sph_memory</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_sph_memory -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge37" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M124.6184,-902.727C134.9742,-826.0029 194.3156,-412.7863 282,-327 285.2664,-323.8043 288.9378,-321.0695 292.8741,-318.7316"/>
+<polygon fill="#000000" stroke="#000000" points="294.4921,-321.8357 301.86,-314.2222 291.3524,-315.5793 294.4921,-321.8357"/>
+</g>
+<!-- mc_parts -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node39" class="node">
+<title>mc_parts</title>
+<polygon fill="#777777" stroke="#777777" points="395.5,-276 338.5,-276 338.5,-252 395.5,-252 395.5,-276"/>
+<text text-anchor="middle" x="367" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mc_parts</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;mc_parts -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge38" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;mc_parts</title>
+<path fill="none" stroke="#000000" d="M124.3638,-902.9025C133.5474,-823.538 188.8414,-377.6931 282,-285 294.0213,-273.0388 311.7077,-267.5146 327.8386,-265.0886"/>
+<polygon fill="#000000" stroke="#000000" points="328.604,-268.5238 338.1391,-263.9052 327.805,-261.5695 328.604,-268.5238"/>
+</g>
+<!-- bssn_constraints_interior -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node40" class="node">
+<title>bssn_constraints_interior</title>
+<polygon fill="#777777" stroke="#777777" points="433,-234 301,-234 301,-210 433,-210 433,-234"/>
+<text text-anchor="middle" x="367" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_constraints_interior</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;bssn_constraints_interior -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge39" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;bssn_constraints_interior</title>
+<path fill="none" stroke="#000000" d="M124.1603,-902.9098C132.3001,-820.5714 183.4113,-342.567 282,-243 284.9245,-240.0465 288.194,-237.4843 291.7014,-235.2636"/>
+<polygon fill="#000000" stroke="#000000" points="293.6503,-238.1921 300.849,-230.4184 290.3738,-232.0062 293.6503,-238.1921"/>
+</g>
+<!-- deallocate_ztmp -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node41" class="node">
+<title>deallocate_ztmp</title>
+<polygon fill="#777777" stroke="#777777" points="412.5,-192 321.5,-192 321.5,-168 412.5,-168 412.5,-192"/>
+<text text-anchor="middle" x="367" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_ztmp</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_ztmp -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge40" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_ztmp</title>
+<path fill="none" stroke="#000000" d="M123.974,-902.9911C131.1057,-817.9947 177.9337,-307.4979 282,-201 289.9702,-192.8435 300.5691,-187.6642 311.5714,-184.4175"/>
+<polygon fill="#000000" stroke="#000000" points="312.4089,-187.8159 321.288,-182.0356 310.7423,-181.0172 312.4089,-187.8159"/>
+</g>
+<!-- trk -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node42" class="node">
+<title>trk</title>
+<polygon fill="#777777" stroke="#777777" points="394,-150 340,-150 340,-126 394,-126 394,-150"/>
+<text text-anchor="middle" x="367" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">trk</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;trk -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge41" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;trk</title>
+<path fill="none" stroke="#000000" d="M123.8243,-902.8615C130.0556,-814.6546 172.5273,-272.363 282,-159 294.3295,-146.2323 313.0952,-140.7428 329.8607,-138.5484"/>
+<polygon fill="#000000" stroke="#000000" points="330.3486,-142.0176 339.9657,-137.5722 329.6755,-135.0501 330.3486,-142.0176"/>
+</g>
+<!-- gamma_u -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node43" class="node">
+<title>gamma_u</title>
+<polygon fill="#777777" stroke="#777777" points="397.5,-108 336.5,-108 336.5,-84 397.5,-84 397.5,-108"/>
+<text text-anchor="middle" x="367" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gamma_u</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;gamma_u -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge9" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;gamma_u</title>
+<path fill="none" stroke="#000000" d="M123.6849,-902.7816C129.0415,-811.574 167.0885,-237.267 282,-117 293.3706,-105.0995 310.3293,-99.5091 326.1147,-97.02"/>
+<polygon fill="#000000" stroke="#000000" points="326.7394,-100.47 336.2479,-95.7969 325.9005,-93.5205 326.7394,-100.47"/>
+</g>
+<!-- deallocate_gravityacceleration -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node44" class="node">
+<title>deallocate_gravityacceleration</title>
+<polygon fill="#777777" stroke="#777777" points="445.5,-66 288.5,-66 288.5,-42 445.5,-42 445.5,-66"/>
+<text text-anchor="middle" x="367" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_gravityacceleration</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_gravityacceleration -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge36" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;deallocate_gravityacceleration</title>
+<path fill="none" stroke="#000000" d="M123.5555,-902.7495C128.0637,-808.7533 161.6187,-202.2086 282,-75 282.9109,-74.0374 283.8584,-73.116 284.8389,-72.2341"/>
+<polygon fill="#000000" stroke="#000000" points="286.9992,-74.9894 292.9433,-66.2191 282.8274,-69.3684 286.9992,-74.9894"/>
+</g>
+<!-- k_phys3_ll -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_node45" class="node">
+<title>k_phys3_ll</title>
+<polygon fill="#777777" stroke="#777777" points="398.5,-24 335.5,-24 335.5,0 398.5,0 398.5,-24"/>
+<text text-anchor="middle" x="367" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">k_phys3_ll</text>
+</g>
+<!-- proc~compute_and_export_bssn_constraints_particles&#45;&gt;k_phys3_ll -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CallsGraph_edge44" class="edge">
+<title>proc~compute_and_export_bssn_constraints_particles&#45;&gt;k_phys3_ll</title>
+<path fill="none" stroke="#000000" d="M123.4359,-902.7628C127.123,-806.1928 156.1193,-167.1864 282,-33 293.0905,-21.1777 309.6909,-15.5609 325.2863,-13.031"/>
+<polygon fill="#000000" stroke="#000000" points="325.8313,-16.4903 335.3215,-11.7801 324.9654,-9.544 325.8313,-16.4903"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+     
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Called by</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: proc~~compute_and_export_bssn_constraints_particles~~CalledByGraph Pages: 1 -->
+<svg id="proccompute_and_export_bssn_constraints_particlesCalledByGraph" width="536pt" height="32pt"
+ viewBox="0.00 0.00 536.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~compute_and_export_bssn_constraints_particles~~CalledByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 532,-28 532,4 -4,4"/>
+<!-- proc~compute_and_export_bssn_constraints_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CalledByGraph_node1" class="node">
+<title>proc~compute_and_export_bssn_constraints_particles</title>
+<polygon fill="none" stroke="#000000" points="528,-24 282,-24 282,0 528,0 528,-24"/>
+<text text-anchor="middle" x="405" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">compute_and_export_bssn_constraints_particles</text>
+</g>
+<!-- interface~compute_and_export_bssn_constraints_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CalledByGraph_node2" class="node">
+<title>interface~compute_and_export_bssn_constraints_particles</title>
+<g id="a_proc~~compute_and_export_bssn_constraints_particles~~CalledByGraph_node2"><a xlink:href=".././interface/compute_and_export_bssn_constraints_particles.html" xlink:title="compute_and_export_bssn_constraints_particles">
+<polygon fill="#a7506f" stroke="#a7506f" points="246,-24 0,-24 0,0 246,0 246,-24"/>
+<text text-anchor="middle" x="123" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_and_export_bssn_constraints_particles</text>
+</a>
+</g>
+</g>
+<!-- interface~compute_and_export_bssn_constraints_particles&#45;&gt;proc~compute_and_export_bssn_constraints_particles -->
+<g id="proc~~compute_and_export_bssn_constraints_particles~~CalledByGraph_edge1" class="edge">
+<title>interface~compute_and_export_bssn_constraints_particles&#45;&gt;proc~compute_and_export_bssn_constraints_particles</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M246.2791,-12C254.603,-12 263.0106,-12 271.3834,-12"/>
+<polygon fill="#000000" stroke="#000000" points="271.5711,-15.5001 281.5711,-12 271.5711,-8.5001 271.5711,-15.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-a~4">a</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-abs_grid~4">abs_grid</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-allocation_status">allocation_status</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-counter">counter</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-debug~3">debug</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-exist~8">exist</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-finalname_logfile~2">finalname_logfile</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-i~14">i</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-imax~2">imax</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-imin~2">imin</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-j~13">j</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-k~13">k</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-l~23">l</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_abs_y~6">min_abs_y</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_abs_z~6">min_abs_z</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_ix_y~6">min_ix_y</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_ix_z~6">min_ix_z</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_iy_y~6">min_iy_y</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_iy_z~6">min_iy_z</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_iz_y~6">min_iz_y</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-min_iz_z~6">min_iz_z</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-n_reflev~2">n_reflev</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-name_analysis~3">name_analysis</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-name_constraint~3">name_constraint</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-nlrf_loc">nlrf_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-nu_loc">nu_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-pos_loc">pos_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-pressure_loc">pressure_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-sph_density">sph_density</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-theta_loc">theta_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-u_loc">u_loc</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-unit_logfile~3">unit_logfile</a>
+      
+      <a class="list-group-item" href="../proc/compute_and_export_bssn_constraints_particles.html#variable-vel_loc">vel_loc</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    <section>    
+      <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-a~4"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>a</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-abs_grid~4"></span>double precision,</td>
+  
+  <td>private,</td>
+  <td>DIMENSION( :, :, :, : ), ALLOCATABLE</td><td>::</td>
+  <td><strong>abs_grid</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-allocation_status"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>allocation_status</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-counter"></span>integer,</td>
+  
+  <td>private,</td>
+  <td>SAVE</td><td>::</td>
+  <td><strong>counter</strong></td><td> =</td><td>1</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-debug~3"></span>logical,</td>
+  
+  <td>private,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>debug</strong></td><td> =</td><td>.FALSE.</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-exist~8"></span>logical,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>exist</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-finalname_logfile~2"></span>character(len=:),</td>
+  
+  <td>private,</td>
+  <td>ALLOCATABLE</td><td>::</td>
+  <td><strong>finalname_logfile</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i~14"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-imax~2"></span>integer,</td>
+  
+  <td>private,</td>
+  <td>DIMENSION(3)</td><td>::</td>
+  <td><strong>imax</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-imin~2"></span>integer,</td>
+  
+  <td>private,</td>
+  <td>DIMENSION(3)</td><td>::</td>
+  <td><strong>imin</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-j~13"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-k~13"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-l~23"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-min_abs_y~6"></span>double precision,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>min_abs_y</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-min_abs_z~6"></span>double precision,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>min_abs_z</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-min_ix_y~6"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>min_ix_y</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-min_ix_z~6"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>min_ix_z</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-min_iy_y~6"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>min_iy_y</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-min_iy_z~6"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>min_iy_z</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-min_iz_y~6"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>min_iz_y</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-min_iz_z~6"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>min_iz_z</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-n_reflev~2"></span>character(len=2),</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>n_reflev</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-name_analysis~3"></span>character(len=:),</td>
+  
+  <td>private,</td>
+  <td>ALLOCATABLE</td><td>::</td>
+  <td><strong>name_analysis</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-name_constraint~3"></span>character(len=:),</td>
+  
+  <td>private,</td>
+  <td>ALLOCATABLE</td><td>::</td>
+  <td><strong>name_constraint</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nlrf_loc"></span>double precision,</td>
+  
+  <td>private,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>nlrf_loc</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nu_loc"></span>double precision,</td>
+  
+  <td>private,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>nu_loc</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-pos_loc"></span>double precision,</td>
+  
+  <td>private,</td>
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>pos_loc</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-pressure_loc"></span>double precision,</td>
+  
+  <td>private,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>pressure_loc</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-sph_density"></span>double precision,</td>
+  
+  <td>private,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>sph_density</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-theta_loc"></span>double precision,</td>
+  
+  <td>private,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>theta_loc</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-u_loc"></span>double precision,</td>
+  
+  <td>private,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>u_loc</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-unit_logfile~3"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>unit_logfile</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-vel_loc"></span>double precision,</td>
+  
+  <td>private,</td>
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>vel_loc</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

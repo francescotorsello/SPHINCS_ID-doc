@@ -1,0 +1,4738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>bssn_id &ndash; SPHINCS_LORENE </title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>bssn_id
+    <small>Derived Type</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="<p> 5.0% of total for derived types.</p>Including implementation: 66 statements,  8.4% of total for derived types.">27 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/module_bssn_id.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/module_bssn_id.f90.html'>module_bssn_id.f90</a></li>
+    
+     <li><a href='../module/formul_bssn_id.html'>formul_bssn_id</a></li>
+    
+  
+     <li class="active">bssn_id</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-a_bssn3_ll">A_BSSN3_ll</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc">GC</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc_l2">GC_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc_loo">GC_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc_parts">GC_parts</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc_parts_l2">GC_parts_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc_parts_loo">GC_parts_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gamma_u">Gamma_u</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc">HC</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc_l2">HC_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc_loo">HC_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc_parts">HC_parts</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc_parts_l2">HC_parts_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc_parts_loo">HC_parts_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-k_phys3_ll">K_phys3_ll</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc">MC</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc_l2">MC_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc_loo">MC_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc_parts">MC_parts</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc_parts_l2">MC_parts_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc_parts_loo">MC_parts_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-bssn_computer_timer">bssn_computer_timer</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-call_flag">call_flag</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-cons_step">cons_step</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-coords">coords</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_bin~2">export_bin</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_constraints">export_constraints</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_constraints_details">export_constraints_details</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_constraints_x">export_constraints_x</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_constraints_xy">export_constraints_xy</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_form_x~2">export_form_x</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_form_xy~2">export_form_xy</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-g_bssn3_ll">g_BSSN3_ll</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-g_phys3_ll">g_phys3_ll</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-grid_timer">grid_timer</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-importer_timer">importer_timer</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-lapse">lapse</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-levels">levels</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-nlevels">nlevels</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-phi">phi</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-rad_coord">rad_coord</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-shift_u">shift_u</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-trk">trK</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#cons-0">Constructor</a></h3></div>
+  <div id="cons-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/bssn_id.html#interface-bssn_id">bssn_id</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#fins-0">Finalization Procedures</a></h3></div>
+  <div id="fins-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/bssn_id.html#finalproc-destructor">destructor</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-abs_values_in">abs_values_in</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-analyze_constraint">analyze_constraint</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-compute_and_export_3p1_constraints~2">compute_and_export_3p1_constraints</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-compute_and_export_3p1_constraints_grid~2">compute_and_export_3p1_constraints_grid</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-compute_and_export_3p1_constraints_particles~2">compute_and_export_3p1_constraints_particles</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-compute_and_export_3p1_variables~2">compute_and_export_3p1_variables</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-deallocate_fields~2">deallocate_fields</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-deallocate_standard3p1_variables">deallocate_standard3p1_variables</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-define_allocate_fields~2">define_allocate_fields</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-destruct_bssn_id">destruct_bssn_id</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_hc">get_HC</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_hc_parts">get_HC_parts</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_mc">get_MC</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_mc_parts">get_MC_parts</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_dx">get_dx</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_dy">get_dy</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_dz">get_dz</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_grid_point">get_grid_point</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_levels">get_levels</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_ngrid_x">get_ngrid_x</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_ngrid_y">get_ngrid_y</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_ngrid_z">get_ngrid_z</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_nlevels">get_nlevels</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_xr">get_xR</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_yr">get_yR</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_zr">get_zR</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-print_formatted_lorene_id_3p1_variables~2">print_formatted_lorene_id_3p1_variables</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-read_bssn_dump_print_formatted">read_bssn_dump_print_formatted</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-setup_standard3p1_variables">setup_standard3p1_variables</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/bssn_id.html#src">bssn_id</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2>type, public, extends(<a href='../type/formul_3p1.html'>formul_3p1</a>) :: bssn_id</h2>
+    
+    <br>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Inherits</h3>
+      </div>
+      <div class="panel-body">
+    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: type~~bssn_id~~InheritsGraph Pages: 1 -->
+<svg id="typebssn_idInheritsGraph" width="641pt" height="209pt"
+ viewBox="0.00 0.00 641.00 208.71" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~bssn_id~~InheritsGraph" class="graph" transform="scale(.9105 .9105) rotate(0) translate(4 225.2236)">
+<title>type~~bssn_id~~InheritsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-225.2236 700,-225.2236 700,4 -4,4"/>
+<!-- type~bssn_id -->
+<g id="type~~bssn_id~~InheritsGraph_node1" class="node">
+<title>type~bssn_id</title>
+<polygon fill="none" stroke="#000000" points="696,-93.2236 642,-93.2236 642,-69.2236 696,-69.2236 696,-93.2236"/>
+<text text-anchor="middle" x="669" y="-78.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">bssn_id</text>
+</g>
+<!-- grid_function -->
+<g id="type~~bssn_id~~InheritsGraph_node2" class="node">
+<title>grid_function</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="91.5,-221.2236 17.5,-221.2236 17.5,-197.2236 91.5,-197.2236 91.5,-221.2236"/>
+<text text-anchor="middle" x="54.5" y="-206.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function</text>
+</g>
+<!-- type~bssn_id&#45;&gt;grid_function -->
+<g id="type~~bssn_id~~InheritsGraph_edge1" class="edge">
+<title>type~bssn_id&#45;&gt;grid_function</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M623.5,-81.2236C595.3018,-83.9584 625.5222,-122.6926 605,-142.2236 524.027,-219.2857 471.8055,-188.4806 361,-203.2236 269.923,-215.3416 162.3002,-213.8445 101.8648,-211.5843"/>
+<polygon fill="#000000" stroke="#000000" points="101.6344,-208.0725 91.503,-211.1718 101.3558,-215.0669 101.6344,-208.0725"/>
+<text text-anchor="middle" x="492" y="-202.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">Gamma_u, A_BSSN3_ll, g_BSSN3_ll, GC, GC_parts</text>
+</g>
+<!-- timer -->
+<g id="type~~bssn_id~~InheritsGraph_node3" class="node">
+<title>timer</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-119.2236 27.5,-119.2236 27.5,-95.2236 81.5,-95.2236 81.5,-119.2236"/>
+<text text-anchor="middle" x="54.5" y="-104.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
+</g>
+<!-- type~bssn_id&#45;&gt;timer -->
+<g id="type~~bssn_id~~InheritsGraph_edge3" class="edge">
+<title>type~bssn_id&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M623.5,-81.2236C403.4708,-98.2712 342.6745,-27.4478 127,-74.2236 112.2453,-77.4236 96.8899,-83.8957 84.1296,-90.2672"/>
+<polygon fill="#000000" stroke="#000000" points="82.1791,-87.337 74.9304,-95.0641 85.4156,-93.5439 82.1791,-87.337"/>
+<text text-anchor="middle" x="492" y="-85.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">bssn_computer_timer</text>
+</g>
+<!-- type~formul_3p1 -->
+<g id="type~~bssn_id~~InheritsGraph_node4" class="node">
+<title>type~formul_3p1</title>
+<g id="a_type~~bssn_id~~InheritsGraph_node4"><a xlink:href=".././type/formul_3p1.html" xlink:title="formul_3p1">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="525.5,-133.2236 458.5,-133.2236 458.5,-109.2236 525.5,-109.2236 525.5,-133.2236"/>
+<text text-anchor="middle" x="492" y="-118.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1</text>
+</a>
+</g>
+</g>
+<!-- type~bssn_id&#45;&gt;type~formul_3p1 -->
+<g id="type~~bssn_id~~InheritsGraph_edge4" class="edge">
+<title>type~bssn_id&#45;&gt;type~formul_3p1</title>
+<path fill="none" stroke="#000000" d="M623.5,-81.2236C613.2196,-82.0201 614.3423,-90.8598 605,-95.2236 583.1926,-105.4098 557.1062,-111.7526 535.4948,-115.6201"/>
+<polygon fill="#000000" stroke="#000000" points="534.8833,-112.1737 525.5985,-117.2768 536.0391,-119.0776 534.8833,-112.1737"/>
+</g>
+<!-- grid_function_scalar -->
+<g id="type~~bssn_id~~InheritsGraph_node5" class="node">
+<title>grid_function_scalar</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="109,-57.2236 0,-57.2236 0,-33.2236 109,-33.2236 109,-57.2236"/>
+<text text-anchor="middle" x="54.5" y="-42.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function_scalar</text>
+</g>
+<!-- type~bssn_id&#45;&gt;grid_function_scalar -->
+<g id="type~~bssn_id~~InheritsGraph_edge2" class="edge">
+<title>type~bssn_id&#45;&gt;grid_function_scalar</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M641.5433,-80.5225C635.5874,-80.5662 629.3272,-80.7612 623.5,-81.2236"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M623.5,-81.2236C608.9989,-82.3742 617.8129,-61.1108 605,-54.2236 442.4473,33.1526 211.9636,-6.1473 108.4724,-30.7483"/>
+<polygon fill="#000000" stroke="#000000" points="107.4565,-27.3931 98.5634,-33.1518 109.1066,-34.1959 107.4565,-27.3931"/>
+<text text-anchor="middle" x="492" y="-56.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">phi, trK</text>
+</g>
+<!-- type~formul_3p1&#45;&gt;grid_function -->
+<g id="type~~bssn_id~~InheritsGraph_edge6" class="edge">
+<title>type~formul_3p1&#45;&gt;grid_function</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.4933,-123.7859C434.969,-126.7728 403.4677,-133.2375 379,-147.2236 368.9012,-152.9962 371.4042,-161.0215 361,-166.2236 267.3624,-213.0424 230.2502,-175.9204 127,-193.2236 118.6853,-194.617 109.8867,-196.3428 101.3943,-198.1402"/>
+<polygon fill="#000000" stroke="#000000" points="100.6406,-194.7223 91.6129,-200.2675 102.1283,-201.5624 100.6406,-194.7223"/>
+<text text-anchor="middle" x="244" y="-195.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">coords, shift_u, g_phys3_ll, K_phys3_ll, MC, MC_parts</text>
+</g>
+<!-- type~formul_3p1&#45;&gt;timer -->
+<g id="type~~bssn_id~~InheritsGraph_edge8" class="edge">
+<title>type~formul_3p1&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.3966,-120.1483C378.0935,-117.5786 175.5156,-111.0961 91.6957,-108.4138"/>
+<polygon fill="#000000" stroke="#000000" points="91.7183,-104.9129 81.6114,-108.0911 91.4943,-111.9093 91.7183,-104.9129"/>
+<text text-anchor="middle" x="244" y="-118.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">grid_timer, importer_timer</text>
+</g>
+<!-- type~formul_3p1&#45;&gt;grid_function_scalar -->
+<g id="type~~bssn_id~~InheritsGraph_edge7" class="edge">
+<title>type~formul_3p1&#45;&gt;grid_function_scalar</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.405,-114.227C431.977,-108.8026 394.1987,-101.2242 361,-95.2236 277.6979,-80.1669 181.2846,-64.7713 119.1774,-55.1163"/>
+<polygon fill="#000000" stroke="#000000" points="119.5504,-51.6324 109.1321,-53.5582 118.4774,-58.5496 119.5504,-51.6324"/>
+<text text-anchor="middle" x="244" y="-97.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">rad_coord, lapse, HC, HC_parts</text>
+</g>
+<!-- level -->
+<g id="type~~bssn_id~~InheritsGraph_node6" class="node">
+<title>level</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-171.2236 27.5,-171.2236 27.5,-147.2236 81.5,-147.2236 81.5,-171.2236"/>
+<text text-anchor="middle" x="54.5" y="-156.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">level</text>
+</g>
+<!-- type~formul_3p1&#45;&gt;level -->
+<g id="type~~bssn_id~~InheritsGraph_edge5" class="edge">
+<title>type~formul_3p1&#45;&gt;level</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.3966,-124.1423C378.0935,-131.1172 175.5156,-148.7125 91.6957,-155.9929"/>
+<polygon fill="#000000" stroke="#000000" points="91.271,-152.5165 81.6114,-156.8687 91.8768,-159.4902 91.271,-152.5165"/>
+<text text-anchor="middle" x="244" y="-154.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">levels</text>
+</g>
+</g>
+</svg>
+</div><script>var pantypebssn_idInheritsGraph = svgPanZoom('#typebssn_idInheritsGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="178pt" height="32pt"
+ viewBox="0.00 0.00 177.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 173.5,-28 173.5,4 -4,4"/>
+<!-- Type -->
+<g id="node1" class="node">
+<title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Type</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="169.5,-24 72.5,-24 72.5,0 169.5,0 169.5,-24"/>
+<text text-anchor="middle" x="121" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a derived type to the parent type which it
+    extends. Dashed arrows point from a derived type to the other
+    types it contains as a components, with a label listing the name(s) of
+    said component(s).
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    
+    
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-a_bssn3_ll">A_BSSN3_ll</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc">GC</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc_l2">GC_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc_loo">GC_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc_parts">GC_parts</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc_parts_l2">GC_parts_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gc_parts_loo">GC_parts_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-gamma_u">Gamma_u</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc">HC</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc_l2">HC_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc_loo">HC_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc_parts">HC_parts</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc_parts_l2">HC_parts_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-hc_parts_loo">HC_parts_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-k_phys3_ll">K_phys3_ll</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc">MC</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc_l2">MC_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc_loo">MC_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc_parts">MC_parts</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc_parts_l2">MC_parts_l2</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-mc_parts_loo">MC_parts_loo</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-bssn_computer_timer">bssn_computer_timer</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-call_flag">call_flag</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-cons_step">cons_step</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-coords">coords</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_bin~2">export_bin</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_constraints">export_constraints</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_constraints_details">export_constraints_details</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_constraints_x">export_constraints_x</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_constraints_xy">export_constraints_xy</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_form_x~2">export_form_x</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-export_form_xy~2">export_form_xy</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-g_bssn3_ll">g_BSSN3_ll</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-g_phys3_ll">g_phys3_ll</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-grid_timer">grid_timer</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-importer_timer">importer_timer</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-lapse">lapse</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-levels">levels</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-nlevels">nlevels</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-phi">phi</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-rad_coord">rad_coord</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-shift_u">shift_u</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-trk">trK</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#cons-1">Constructor</a></h3></div>
+  <div id="cons-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/bssn_id.html#interface-bssn_id">bssn_id</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#fins-1">Finalization Procedures</a></h3></div>
+  <div id="fins-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/bssn_id.html#finalproc-destructor">destructor</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-abs_values_in">abs_values_in</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-analyze_constraint">analyze_constraint</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-compute_and_export_3p1_constraints~2">compute_and_export_3p1_constraints</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-compute_and_export_3p1_constraints_grid~2">compute_and_export_3p1_constraints_grid</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-compute_and_export_3p1_constraints_particles~2">compute_and_export_3p1_constraints_particles</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-compute_and_export_3p1_variables~2">compute_and_export_3p1_variables</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-deallocate_fields~2">deallocate_fields</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-deallocate_standard3p1_variables">deallocate_standard3p1_variables</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-define_allocate_fields~2">define_allocate_fields</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-destruct_bssn_id">destruct_bssn_id</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_hc">get_HC</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_hc_parts">get_HC_parts</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_mc">get_MC</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_mc_parts">get_MC_parts</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_dx">get_dx</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_dy">get_dy</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_dz">get_dz</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_grid_point">get_grid_point</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_levels">get_levels</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_ngrid_x">get_ngrid_x</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_ngrid_y">get_ngrid_y</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_ngrid_z">get_ngrid_z</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_nlevels">get_nlevels</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_xr">get_xR</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_yr">get_yR</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_zr">get_zR</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-print_formatted_lorene_id_3p1_variables~2">print_formatted_lorene_id_3p1_variables</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-read_bssn_dump_print_formatted">read_bssn_dump_print_formatted</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-setup_standard3p1_variables">setup_standard3p1_variables</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/bssn_id.html#src">bssn_id</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+    <section>
+    <h2>Components</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-a_bssn3_ll"></span>type(grid_function),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>A_BSSN3_ll</strong></td><td></td><td></td><td><p>Conformal traceless extrinsic curvature</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-gc"></span>type(grid_function),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>GC</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-gc_l2"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>GC_l2</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-gc_loo"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>GC_loo</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-gc_parts"></span>type(grid_function),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>GC_parts</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-gc_parts_l2"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>GC_parts_l2</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-gc_parts_loo"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>GC_parts_loo</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-gamma_u"></span>type(grid_function),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>Gamma_u</strong></td><td></td><td></td><td><p>Conformal connection</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-hc"></span>type(grid_function_scalar),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>HC</strong></td><td></td><td></td><td><p>Grid scalar function storing the Hamiltonian constraint (violations)
+ computed using the full \(\texttt{LORENE}\) ID on the mesh</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-hc_l2"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>HC_l2</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_2</script> norm of the Hamiltonian constraint computed on the mesh</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-hc_loo"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>HC_loo</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_\infty</script> norm of the Hamiltonian constraint computed on the mesh
+ (i.e., its maximum)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-hc_parts"></span>type(grid_function_scalar),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>HC_parts</strong></td><td></td><td></td><td><p>Grid scalar function storing the Hamiltonian constraint (violations)
+ computed using the stress-energy tensor mapped from the particles to the
+ mesh</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-hc_parts_l2"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>HC_parts_l2</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_2</script> norm of the Hamiltonian constraint computed on the mesh, using
+ the stress-energy tensor mapped from the particles</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-hc_parts_loo"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>HC_parts_loo</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_\infty</script> norm of the Hamiltonian constraint computed on the mesh,
+ using the stress-energy tensor mapped from the particles
+ (i.e., its maximum)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-k_phys3_ll"></span>type(grid_function),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>K_phys3_ll</strong></td><td></td><td></td><td><p>Grid function storing the extrinsic curvature</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mc"></span>type(grid_function),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>MC</strong></td><td></td><td></td><td><p>Grid function storing the momentum constraint (violations)
+ computed using the full \(\texttt{LORENE}\) ID on the mesh</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mc_l2"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>MC_l2</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_2</script> norm of the momentum constraint computed on the mesh</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mc_loo"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>MC_loo</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_\infty</script> norm of the momentum constraint computed on the mesh
+ (i.e., its maximum)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mc_parts"></span>type(grid_function),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>MC_parts</strong></td><td></td><td></td><td><p>Grid function storing the momentum constraint (violations)
+ computed using the stress-energy tensor mapped from the particles to the
+ mesh</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mc_parts_l2"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>MC_parts_l2</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_2</script> norm of the Hamiltonian constraint computed on the mesh, using
+ the stress-energy tensor mapped from the particles</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mc_parts_loo"></span>double precision,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>MC_parts_loo</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_\infty</script> norm of the momentum constraint computed on the mesh,
+ using the stress-energy tensor mapped from the particles
+ (i.e., its maximum)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bssn_computer_timer"></span>type(timer),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>bssn_computer_timer</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-call_flag"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>call_flag</strong></td><td> =</td><td>0</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-cons_step"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>cons_step</strong></td><td></td><td></td><td><p>Constraint violations are printed to file every cons_step-th grid point</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-coords"></span>type(grid_function),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>coords</strong></td><td></td><td></td><td><p>Grid function storing the Cartesian coordinates</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_bin~2"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>export_bin</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_constraints"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>export_constraints</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if the constraint violations  are to be printed to file,
+ <code>.FALSE.</code> otherwise</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_constraints_details"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>export_constraints_details</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if the points at which the constraints violations are within the
+ intervals <script type="math/tex">[0,10^{-7}],[10^3,\infty],[10^n,10^m]</script>, with
+ <script type="math/tex">n\in\{-7,2\}</script> and <script type="math/tex">m=n+1</script>, are to be printed to file;
+ <code>.FALSE.</code> otherwise</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_constraints_x"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>export_constraints_x</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if only the constrain violations on the <script type="math/tex">x</script> axis are to be</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_constraints_xy"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>export_constraints_xy</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if only the constrain violations on the <script type="math/tex">xy</script> plane are to be</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_form_x~2"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>export_form_x</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_form_xy~2"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>export_form_xy</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-g_bssn3_ll"></span>type(grid_function),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>g_BSSN3_ll</strong></td><td></td><td></td><td><p>Conformal spatial metric</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-g_phys3_ll"></span>type(grid_function),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>g_phys3_ll</strong></td><td></td><td></td><td><p>Grid function storing the spatial metric</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-grid_timer"></span>type(timer),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>grid_timer</strong></td><td></td><td></td><td><p>Timer that times how long it takes to set up the grid and allocate
+ the grid functions</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-importer_timer"></span>type(timer),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>importer_timer</strong></td><td></td><td></td><td><p>Timer that times how long it takes to import the \(\texttt{LORENE}\) ID
+ on the mesh</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-lapse"></span>type(grid_function_scalar),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>lapse</strong></td><td></td><td></td><td><p>Grid scalar function storing the lapse function</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-levels"></span>type(level),</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>levels</strong></td><td></td><td></td><td><p>Array containing the information on each refinement level</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nlevels"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>nlevels</strong></td><td></td><td></td><td><p>Number of refinement levels</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-phi"></span>type(grid_function_scalar),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>phi</strong></td><td></td><td></td><td><p>Conformal factor</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-rad_coord"></span>type(grid_function_scalar),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>rad_coord</strong></td><td></td><td></td><td><p>Grid scalar function storing the radial coordinates of each grid point</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-shift_u"></span>type(grid_function),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>shift_u</strong></td><td></td><td></td><td><p>Grid function storing the shift vector</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-trk"></span>type(grid_function_scalar),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>trK</strong></td><td></td><td></td><td><p>Trace of extrinsic curvature</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+   <section>
+   <h2>Constructor</h2>
+     
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-bssn_id"></span><h3>public interface <a href='../interface/bssn_id.html'>bssn_id</a>
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public interface <a href='../interface/construct_bssn_id.html'>construct_bssn_id</a>()
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+    </li>
+  
+  
+  </ul>
+</div>
+
+     
+   </section>
+   <br>
+    
+    
+    
+    <section>
+    <h2>Finalization Procedures</h2>
+     
+         
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="finalproc-destructor"></span><h3>final :: <strong>destructor</strong> 
+    </h3></div>
+  <div class="panel-body">
+    
+
+
+    <p>Destructor; finalizes members from both CLASSES formul_3p1, and bssn_id,
+ by calling destruct_formul_3p1 and destruct_bssn_id</p>
+  </div>
+  <ul class="list-group">
+     <li class="list-group-item">
+       
+    
+    <h3>
+public interface <a href='../interface/destructor.html'>destructor</a>()
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+     </li>
+  </ul>
+</div>
+
+         
+    </section>
+    <br>
+    
+    
+     
+    <section>
+    <h2>Type-Bound Procedures</h2>
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-abs_values_in"></span><h3>procedure, public :: <strong>abs_values_in</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine abs_values_in(THIS, lower_bound, upper_bound, constraint, l, export, unit_analysis, cnt)
+    
+    
+   
+   <a href='../proc/abs_values_in.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>lower_bound</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>upper_bound</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:)</td><td>::</td>
+  <td><strong>constraint</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>export</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>unit_analysis</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>cnt</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-analyze_constraint"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>analyze_constraint</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine analyze_constraint(THIS, l, constraint, name_constraint, unit_logfile, name_analysis, l2_norm, loo_norm)
+    
+    
+   
+   <a href='../proc/analyze_constraint.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:)</td><td>::</td>
+  <td><strong>constraint</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>name_constraint</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>unit_logfile</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>name_analysis</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l2_norm</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>loo_norm</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-compute_and_export_3p1_constraints~2"></span><h3>generic, public :: <strong>compute_and_export_3p1_constraints</strong>  => <a href='../type/bssn_id.html#boundprocedure-compute_and_export_3p1_constraints_grid~2'>compute_and_export_3p1_constraints_grid</a>, <a href='../type/bssn_id.html#boundprocedure-compute_and_export_3p1_constraints_particles~2'>compute_and_export_3p1_constraints_particles</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+public interface <a href='../interface/compute_and_export_bssn_constraints_grid.html'>compute_and_export_bssn_constraints_grid</a>()
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+         
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+public interface <a href='../interface/compute_and_export_bssn_constraints_particles.html'>compute_and_export_bssn_constraints_particles</a>()
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-compute_and_export_3p1_constraints_grid~2"></span><h3>procedure, public :: <strong>compute_and_export_3p1_constraints_grid</strong>  => <a href='../interface/compute_and_export_bssn_constraints_grid.html'>compute_and_export_bssn_constraints_grid</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine compute_and_export_bssn_constraints_grid(THIS, id, namefile, name_logfile)
+    
+    
+   
+   <a href='../proc/compute_and_export_bssn_constraints_grid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>id</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>name_logfile</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-compute_and_export_3p1_constraints_particles~2"></span><h3>procedure, public :: <strong>compute_and_export_3p1_constraints_particles</strong>  => <a href='../interface/compute_and_export_bssn_constraints_particles.html'>compute_and_export_bssn_constraints_particles</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine compute_and_export_bssn_constraints_particles(THIS, parts_obj, namefile, name_logfile)
+    
+    
+   
+   <a href='../proc/compute_and_export_bssn_constraints_particles.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>parts_obj</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>name_logfile</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-compute_and_export_3p1_variables~2"></span><h3>procedure, public :: <strong>compute_and_export_3p1_variables</strong>  => <a href='../interface/compute_and_export_bssn_variables.html'>compute_and_export_bssn_variables</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine compute_and_export_bssn_variables(THIS, namefile)
+    
+    
+   
+   <a href='../proc/compute_and_export_bssn_variables.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_fields~2"></span><h3>procedure, public :: <strong>deallocate_fields</strong>  => <a href='../interface/deallocate_bssn_fields.html'>deallocate_bssn_fields</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine deallocate_bssn_fields(THIS)
+    
+    
+   
+   <a href='../proc/deallocate_bssn_fields.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_standard3p1_variables"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>deallocate_standard3p1_variables</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine deallocate_standard3p1_variables(f3p1)
+    
+    
+   
+   <a href='../proc/deallocate_standard3p1_variables.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>f3p1</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-define_allocate_fields~2"></span><h3>procedure, public :: <strong>define_allocate_fields</strong>  => <a href='../interface/allocate_bssn_fields.html'>allocate_bssn_fields</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine allocate_bssn_fields(THIS)
+    
+    
+   
+   <a href='../proc/allocate_bssn_fields.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-destruct_bssn_id"></span><h3>procedure, public :: <strong>destruct_bssn_id</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p>Finalizer for members of the extended class bssn_id, not the
+ primitive class formul_3p1</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine destruct_bssn_id(THIS)
+    
+    
+   
+   <a href='../proc/destruct_bssn_id.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_hc"></span><h3>procedure, public :: <strong>get_HC</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_HC(THIS, i, j, k, l) result(HC_value)
+    
+    
+   
+   <a href='../proc/get_hc.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_hc_parts"></span><h3>procedure, public :: <strong>get_HC_parts</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_HC_parts(THIS, i, j, k, l) result(HC_value)
+    
+    
+   
+   <a href='../proc/get_hc_parts.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_mc"></span><h3>procedure, public :: <strong>get_MC</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_MC(THIS, i, j, k, l) result(MC_value)
+    
+    
+   
+   <a href='../proc/get_mc.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(3)</small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_mc_parts"></span><h3>procedure, public :: <strong>get_MC_parts</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_MC_parts(THIS, i, j, k, l) result(MC_value)
+    
+    
+   
+   <a href='../proc/get_mc_parts.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(3)</small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_dx"></span><h3>procedure, public :: <strong>get_dx</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_dx(THIS, l) result(dx)
+    
+    
+   
+   <a href='../proc/get_dx.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_dy"></span><h3>procedure, public :: <strong>get_dy</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_dy(THIS, l) result(dy)
+    
+    
+   
+   <a href='../proc/get_dy.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_dz"></span><h3>procedure, public :: <strong>get_dz</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_dz(THIS, l) result(dz)
+    
+    
+   
+   <a href='../proc/get_dz.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_grid_point"></span><h3>procedure, public :: <strong>get_grid_point</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_grid_point(THIS, i, j, k, l) result(grid_point)
+    
+    
+   
+   <a href='../proc/get_grid_point.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(3)</small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_levels"></span><h3>procedure, public :: <strong>get_levels</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_levels(THIS, l) result(levels)
+    
+    
+   
+   <a href='../proc/get_levels.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>type(level),
+  DIMENSION(:), ALLOCATABLE</small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ngrid_x"></span><h3>procedure, public :: <strong>get_ngrid_x</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_ngrid_x(THIS, l) result(ngrid_x)
+    
+    
+   
+   <a href='../proc/get_ngrid_x.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ngrid_y"></span><h3>procedure, public :: <strong>get_ngrid_y</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_ngrid_y(THIS, l) result(ngrid_y)
+    
+    
+   
+   <a href='../proc/get_ngrid_y.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ngrid_z"></span><h3>procedure, public :: <strong>get_ngrid_z</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_ngrid_z(THIS, l) result(ngrid_z)
+    
+    
+   
+   <a href='../proc/get_ngrid_z.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_nlevels"></span><h3>procedure, public :: <strong>get_nlevels</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_nlevels(THIS) result(nlevels)
+    
+    
+   
+   <a href='../proc/get_nlevels.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_xr"></span><h3>procedure, public :: <strong>get_xR</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_xR(THIS, l) result(xR)
+    
+    
+   
+   <a href='../proc/get_xr.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_yr"></span><h3>procedure, public :: <strong>get_yR</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_yR(THIS, l) result(yR)
+    
+    
+   
+   <a href='../proc/get_yr.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_zr"></span><h3>procedure, public :: <strong>get_zR</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module function get_zR(THIS, l) result(zR)
+    
+    
+   
+   <a href='../proc/get_zr.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_formatted_lorene_id_3p1_variables~2"></span><h3>procedure, public :: <strong>print_formatted_lorene_id_3p1_variables</strong>  => <a href='../interface/print_formatted_lorene_id_bssn_variables.html'>print_formatted_lorene_id_bssn_variables</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine print_formatted_lorene_id_bssn_variables(THIS, namefile)
+    
+    
+   
+   <a href='../proc/print_formatted_lorene_id_bssn_variables.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-read_bssn_dump_print_formatted"></span><h3>procedure, public :: <strong>read_bssn_dump_print_formatted</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine read_bssn_dump_print_formatted(THIS, namefile_bin, namefile)
+    
+    
+   
+   <a href='../proc/read_bssn_dump_print_formatted.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_bin</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-setup_standard3p1_variables"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>setup_standard3p1_variables</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine setup_standard3p1_variables(f3p1, id, dx, dy, dz)
+    
+    
+   
+   <a href='../proc/setup_standard3p1_variables.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>f3p1</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>id</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td></td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>dx</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td></td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>dy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td></td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>dz</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+    </section>
+    
+    
+    
+    <section>
+    <h3><span class="anchor" id="src"></span>Source Code</h3>
+    <div class="highlight"><pre><span></span>  <span class="k">TYPE</span><span class="p">,</span> <span class="k">EXTENDS</span><span class="p">(</span> <span class="n">formul_3p1</span> <span class="p">)</span><span class="kd">::</span> <span class="n">bssn_id</span>
+
+
+    <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">call_flag</span><span class="o">=</span> <span class="mi">0</span>
+    <span class="c">! Flag set to a value different than 0 if the SUBROUTINE</span>
+    <span class="c">! compute_and_export_bssn_variables is called</span>
+
+    <span class="c">!</span>
+    <span class="c">!-- Arrays storing the BSSN variables for the LORENE ID on the grid</span>
+    <span class="c">!</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function</span><span class="p">)</span><span class="kd">::</span> <span class="n">Gamma_u</span>
+    <span class="c">!! Conformal connection</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function_scalar</span><span class="p">)</span><span class="kd">::</span> <span class="n">phi</span>
+    <span class="c">!! Conformal factor</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function_scalar</span><span class="p">)</span><span class="kd">::</span> <span class="n">trK</span>
+    <span class="c">!! Trace of extrinsic curvature</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function</span><span class="p">)</span><span class="kd">::</span> <span class="n">A_BSSN3_ll</span>
+    <span class="c">!! Conformal traceless extrinsic curvature</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function</span><span class="p">)</span><span class="kd">::</span> <span class="n">g_BSSN3_ll</span>
+    <span class="c">!! Conformal spatial metric</span>
+
+    <span class="c">!</span>
+    <span class="c">!-- Connection constraints and its l2 norm and loo norm</span>
+    <span class="c">!</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function</span><span class="p">)</span><span class="kd">::</span> <span class="n">GC</span>
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function</span><span class="p">)</span><span class="kd">::</span> <span class="n">GC_parts</span>
+
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">GC_l2</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">GC_parts_l2</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">GC_loo</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">GC_parts_loo</span>
+
+    <span class="kt">LOGICAL</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">export_bin</span>
+    <span class="kt">LOGICAL</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">export_form_xy</span><span class="p">,</span> <span class="n">export_form_x</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">timer</span><span class="p">)</span><span class="kd">::</span> <span class="n">bssn_computer_timer</span>
+
+
+    <span class="k">CONTAINS</span>
+
+
+    <span class="c">!-------------------!</span>
+    <span class="c">!--  SUBROUTINES  --!</span>
+    <span class="c">!-------------------!</span>
+
+
+    <span class="k">PROCEDURE</span> <span class="kd">::</span> <span class="n">define_allocate_fields</span> <span class="o">=&gt;</span> <span class="n">allocate_bssn_fields</span>
+
+    <span class="k">PROCEDURE</span> <span class="kd">::</span> <span class="n">compute_and_export_3p1_variables</span> <span class="p">&amp;</span>
+                    <span class="o">=&gt;</span> <span class="n">compute_and_export_bssn_variables</span>
+
+    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span> <span class="kd">::</span> <span class="n">read_bssn_dump_print_formatted</span>
+
+    <span class="k">PROCEDURE</span> <span class="kd">::</span> <span class="n">print_formatted_lorene_id_3p1_variables</span> <span class="p">&amp;</span>
+                    <span class="o">=&gt;</span> <span class="n">print_formatted_lorene_id_bssn_variables</span>
+
+    <span class="k">PROCEDURE</span> <span class="kd">::</span> <span class="n">compute_and_export_3p1_constraints_grid</span> <span class="p">&amp;</span>
+                    <span class="o">=&gt;</span> <span class="n">compute_and_export_bssn_constraints_grid</span>
+
+    <span class="k">PROCEDURE</span> <span class="kd">::</span> <span class="n">compute_and_export_3p1_constraints_particles</span> <span class="p">&amp;</span>
+                    <span class="o">=&gt;</span> <span class="n">compute_and_export_bssn_constraints_particles</span>
+
+    <span class="k">PROCEDURE</span> <span class="kd">::</span> <span class="n">deallocate_fields</span> <span class="o">=&gt;</span> <span class="n">deallocate_bssn_fields</span>
+
+
+    <span class="k">PROCEDURE</span> <span class="kd">::</span> <span class="n">destruct_bssn_id</span>
+    <span class="c">!# Finalizer for members of the extended class bssn_id, not the</span>
+    <span class="c">!  primitive class formul_3p1</span>
+
+    <span class="k">FINAL</span>     <span class="kd">::</span> <span class="n">destructor</span>
+    <span class="c">!# Destructor; finalizes members from both CLASSES formul_3p1, and bssn_id,</span>
+    <span class="c">!  by calling destruct_formul_3p1 and destruct_bssn_id</span>
+
+  <span class="k">END TYPE </span><span class="n">bssn_id</span>
+</pre></div>
+
+    </section>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

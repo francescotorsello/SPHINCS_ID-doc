@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>read_bssn_dump_print_formatted &ndash; SPHINCS_LORENE</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>read_bssn_dump_print_formatted
+   <small>Interface</small>
+    
+    </h1>
+    
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.1% of total for procedures.">39 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/module_bssn_id.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/module_bssn_id.f90.html'>module_bssn_id.f90</a></li>
+    
+     <li><a href='../module/formul_bssn_id.html'>formul_bssn_id</a></li>
+    
+  
+     <li class="active">read_bssn_dump_print_formatted</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+    
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<em>None</em>
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    
+    
+      <h2>interface</h2>
+      
+      <br>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: interface~~read_bssn_dump_print_formatted~~CallsGraph Pages: 1 -->
+<svg id="interfaceread_bssn_dump_print_formattedCallsGraph" width="526pt" height="494pt"
+ viewBox="0.00 0.00 526.00 494.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 490)">
+<title>interface~~read_bssn_dump_print_formatted~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-490 522,-490 522,4 -4,4"/>
+<!-- interface~read_bssn_dump_print_formatted -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node1" class="node">
+<title>interface~read_bssn_dump_print_formatted</title>
+<polygon fill="none" stroke="#000000" points="175,-255 0,-255 0,-231 175,-231 175,-255"/>
+<text text-anchor="middle" x="87.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">read_bssn_dump_print_formatted</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node2" class="node">
+<title>proc~read_bssn_dump_print_formatted</title>
+<g id="a_interface~~read_bssn_dump_print_formatted~~CallsGraph_node2"><a xlink:href=".././proc/read_bssn_dump_print_formatted.html" xlink:title="read_bssn_dump_print_formatted">
+<polygon fill="#d9534f" stroke="#d9534f" points="386,-255 211,-255 211,-231 386,-231 386,-255"/>
+<text text-anchor="middle" x="298.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_bssn_dump_print_formatted</text>
+</a>
+</g>
+</g>
+<!-- interface~read_bssn_dump_print_formatted&#45;&gt;proc~read_bssn_dump_print_formatted -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge1" class="edge">
+<title>interface~read_bssn_dump_print_formatted&#45;&gt;proc~read_bssn_dump_print_formatted</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M175.1499,-243C183.5216,-243 192.0477,-243 200.5091,-243"/>
+<polygon fill="#000000" stroke="#000000" points="200.7834,-246.5001 210.7833,-243 200.7833,-239.5001 200.7834,-246.5001"/>
+</g>
+<!-- a_bssn3_ll -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node3" class="node">
+<title>a_bssn3_ll</title>
+<polygon fill="#777777" stroke="#777777" points="502,-486 438,-486 438,-462 502,-462 502,-486"/>
+<text text-anchor="middle" x="470" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">a_bssn3_ll</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;a_bssn3_ll -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge2" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;a_bssn3_ll</title>
+<path fill="none" stroke="#000000" d="M302.5944,-255.1941C315.02,-290.5021 355.5643,-394.047 422,-453 424.1686,-454.9244 426.5414,-456.6951 429.0338,-458.3206"/>
+<polygon fill="#000000" stroke="#000000" points="427.418,-461.4277 437.8461,-463.3 430.8617,-455.3333 427.418,-461.4277"/>
+</g>
+<!-- allocate_bssn -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node4" class="node">
+<title>allocate_bssn</title>
+<polygon fill="#777777" stroke="#777777" points="509,-444 431,-444 431,-420 509,-420 509,-444"/>
+<text text-anchor="middle" x="470" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;allocate_bssn -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge4" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;allocate_bssn</title>
+<path fill="none" stroke="#000000" d="M304.5784,-255.2694C320.1482,-285.5794 364.3308,-364.8734 422,-411 423.7314,-412.3849 425.5683,-413.6964 427.4748,-414.936"/>
+<polygon fill="#000000" stroke="#000000" points="425.7519,-417.9826 436.1691,-419.9147 429.2304,-411.9081 425.7519,-417.9826"/>
+</g>
+<!-- read_bssn_dump -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node5" class="node">
+<title>read_bssn_dump</title>
+<polygon fill="#777777" stroke="#777777" points="518,-402 422,-402 422,-378 518,-378 518,-402"/>
+<text text-anchor="middle" x="470" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_bssn_dump</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;read_bssn_dump -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge5" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;read_bssn_dump</title>
+<path fill="none" stroke="#000000" d="M307.8201,-255.2752C326.9134,-279.7285 372.8354,-335.0814 422,-369 424.1291,-370.4689 426.3775,-371.8706 428.6925,-373.2018"/>
+<polygon fill="#000000" stroke="#000000" points="427.3551,-376.452 437.8391,-377.9809 430.5968,-370.2478 427.3551,-376.452"/>
+</g>
+<!-- lapse -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node6" class="node">
+<title>lapse</title>
+<polygon fill="#777777" stroke="#777777" points="497,-360 443,-360 443,-336 497,-336 497,-360"/>
+<text text-anchor="middle" x="470" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">lapse</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;lapse -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge9" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;lapse</title>
+<path fill="none" stroke="#000000" d="M314.2717,-255.1336C337.1815,-272.4267 381.3749,-304.55 422,-327 425.7169,-329.054 429.6745,-331.0573 433.6615,-332.96"/>
+<polygon fill="#000000" stroke="#000000" points="432.3684,-336.2173 442.9181,-337.1938 435.28,-329.8515 432.3684,-336.2173"/>
+</g>
+<!-- allocate_adm -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node7" class="node">
+<title>allocate_adm</title>
+<polygon fill="#777777" stroke="#777777" points="508,-318 432,-318 432,-294 508,-294 508,-318"/>
+<text text-anchor="middle" x="470" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_adm</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;allocate_adm -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge6" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;allocate_adm</title>
+<path fill="none" stroke="#000000" d="M331.5669,-255.147C358.9388,-265.202 398.0036,-279.5523 427.6597,-290.4464"/>
+<polygon fill="#000000" stroke="#000000" points="426.7323,-293.8344 437.3258,-293.9972 429.146,-287.2637 426.7323,-293.8344"/>
+</g>
+<!-- shift_u -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node8" class="node">
+<title>shift_u</title>
+<polygon fill="#777777" stroke="#777777" points="497,-276 443,-276 443,-252 497,-252 497,-276"/>
+<text text-anchor="middle" x="470" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">shift_u</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;shift_u -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge11" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;shift_u</title>
+<path fill="none" stroke="#000000" d="M386.0084,-253.7153C402.4599,-255.7298 418.825,-257.7337 432.6803,-259.4302"/>
+<polygon fill="#000000" stroke="#000000" points="432.3948,-262.9213 442.7461,-260.6628 433.2457,-255.9732 432.3948,-262.9213"/>
+</g>
+<!-- deallocate_adm -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node9" class="node">
+<title>deallocate_adm</title>
+<polygon fill="#777777" stroke="#777777" points="514,-234 426,-234 426,-210 514,-210 514,-234"/>
+<text text-anchor="middle" x="470" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_adm</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_adm -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge7" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_adm</title>
+<path fill="none" stroke="#000000" d="M386.0084,-232.2847C396.1967,-231.0371 406.3519,-229.7936 415.8984,-228.6247"/>
+<polygon fill="#000000" stroke="#000000" points="416.4907,-232.0784 425.9911,-227.3888 415.6398,-225.1303 416.4907,-232.0784"/>
+</g>
+<!-- trk -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node10" class="node">
+<title>trk</title>
+<polygon fill="#777777" stroke="#777777" points="497,-192 443,-192 443,-168 497,-168 497,-192"/>
+<text text-anchor="middle" x="470" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">trk</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;trk -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge8" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;trk</title>
+<path fill="none" stroke="#000000" d="M331.5669,-230.853C360.6878,-220.1555 403.0436,-204.5962 433.2239,-193.5096"/>
+<polygon fill="#000000" stroke="#000000" points="434.7756,-196.6683 442.9554,-189.9347 432.3618,-190.0976 434.7756,-196.6683"/>
+</g>
+<!-- gamma_u -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node11" class="node">
+<title>gamma_u</title>
+<polygon fill="#777777" stroke="#777777" points="500.5,-150 439.5,-150 439.5,-126 500.5,-126 500.5,-150"/>
+<text text-anchor="middle" x="470" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gamma_u</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;gamma_u -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge3" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;gamma_u</title>
+<path fill="none" stroke="#000000" d="M314.2717,-230.8664C337.1815,-213.5733 381.3749,-181.45 422,-159 424.866,-157.4162 427.8752,-155.8625 430.9306,-154.3619"/>
+<polygon fill="#000000" stroke="#000000" points="432.572,-157.4579 440.1385,-150.0418 429.5987,-151.1207 432.572,-157.4579"/>
+</g>
+<!-- phi -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node12" class="node">
+<title>phi</title>
+<polygon fill="#777777" stroke="#777777" points="497,-108 443,-108 443,-84 497,-84 497,-108"/>
+<text text-anchor="middle" x="470" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">phi</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;phi -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge10" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;phi</title>
+<path fill="none" stroke="#000000" d="M307.8201,-230.7248C326.9134,-206.2715 372.8354,-150.9186 422,-117 425.6792,-114.4617 429.7145,-112.1241 433.8338,-110.0037"/>
+<polygon fill="#000000" stroke="#000000" points="435.3432,-113.1616 442.8797,-105.7151 432.3444,-106.8365 435.3432,-113.1616"/>
+</g>
+<!-- g_bssn3_ll -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node13" class="node">
+<title>g_bssn3_ll</title>
+<polygon fill="#777777" stroke="#777777" points="502,-66 438,-66 438,-42 502,-42 502,-66"/>
+<text text-anchor="middle" x="470" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">g_bssn3_ll</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;g_bssn3_ll -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge12" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;g_bssn3_ll</title>
+<path fill="none" stroke="#000000" d="M304.5784,-230.7306C320.1482,-200.4206 364.3308,-121.1266 422,-75 424.2309,-73.2156 426.6368,-71.553 429.1413,-70.0092"/>
+<polygon fill="#000000" stroke="#000000" points="430.8252,-73.0775 437.9247,-65.2131 427.4705,-66.9337 430.8252,-73.0775"/>
+</g>
+<!-- deallocate_bssn -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_node14" class="node">
+<title>deallocate_bssn</title>
+<polygon fill="#777777" stroke="#777777" points="515,-24 425,-24 425,0 515,0 515,-24"/>
+<text text-anchor="middle" x="470" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_bssn -->
+<g id="interface~~read_bssn_dump_print_formatted~~CallsGraph_edge13" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_bssn</title>
+<path fill="none" stroke="#000000" d="M302.5944,-230.8059C315.02,-195.4979 355.5643,-91.953 422,-33 423.3097,-31.8378 424.6938,-30.7317 426.1338,-29.6797"/>
+<polygon fill="#000000" stroke="#000000" points="428.2303,-32.4971 434.862,-24.2344 424.5251,-26.5581 428.2303,-32.4971"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+     
+    
+    <br>
+    
+      <h2>
+public module module subroutine read_bssn_dump_print_formatted(THIS, namefile_bin, namefile)
+    
+    
+   
+   <a href='../proc/read_bssn_dump_print_formatted.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h2>
+    
+
+    
+  
+
+
+    <h3>Arguments</h3>
+    
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-this~51"></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile_bin"></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_bin</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile~9"></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    
+    
+    
+    <br>
+
+ </div>
+</div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

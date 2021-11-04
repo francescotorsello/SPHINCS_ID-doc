@@ -1,0 +1,5053 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>id_base &ndash; SPHINCS_LORENE</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>id_base 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 2.2% of total for modules and submodules.">253 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/module_id_base.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/module_id_base.f90.html'>module_id_base.f90</a></li>
+    
+  
+     <li class="active">id_base</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
+  <div id="inters-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-check_i_matter">check_i_matter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-get_n_matter">get_n_matter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-get_one_lapse">get_one_lapse</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-get_total_spatial_extent">get_total_spatial_extent</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-get_zero_shift">get_zero_shift</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-integrate_baryon_mass_density">integrate_baryon_mass_density</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-set_n_matter">set_n_matter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-set_one_lapse">set_one_lapse</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-set_zero_shift">set_zero_shift</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#absints-0">Abstract Interfaces</a></h3></div>
+  <div id="absints-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-integrate_field_int">integrate_field_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_double_at_pos">read_double_at_pos</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_full_int">read_id_full_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_hydro_int">read_id_hydro_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_k_int">read_id_k_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_mass_b_int">read_id_mass_b_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_particles_int">read_id_particles_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_spacetime_int">read_id_spacetime_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_integer_at_pos">read_integer_at_pos</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_double_parameter">return_double_parameter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_eos_parameters_int">return_eos_parameters_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_integer_parameter">return_integer_parameter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_position">return_position</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_spatial_extent_int">return_spatial_extent_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_string_parameter">return_string_parameter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_total_spatial_extent_int">return_total_spatial_extent_int</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/id_base.html#type-idbase">idbase</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <p>This MODULE contains the definition of TYPE idbase,
+  which is an ABSTRACT TYPE representing any possible
+  type of initial data (ID) to be set up for \(\texttt{SPHINCS_BSSN}\).
+  That is, a binary neutron star system, a rotating
+  star, a binary black hole system, etc.</p>
+<p>PROCEDURES and variables shared by all these types
+  of ID should belong to TYPE idbase, as
+  they are inherited by its EXTENDED TYPES that
+  represent more specific types of ID.</p>
+<p>FT 24.09.2021</p>
+<hr>
+      <br>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li>timing</li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~id_base~~UsesGraph Pages: 1 -->
+<svg id="moduleid_baseUsesGraph" width="152pt" height="32pt"
+ viewBox="0.00 0.00 152.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~id_base~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>module~~id_base~~UsesGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 148,-28 148,4 -4,4"/>
+<!-- module~id_base -->
+<g id="module~~id_base~~UsesGraph_node1" class="node">
+<title>module~id_base</title>
+<polygon fill="none" stroke="#000000" points="144,-24 90,-24 90,0 144,0 144,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">id_base</text>
+</g>
+<!-- timing -->
+<g id="module~~id_base~~UsesGraph_node2" class="node">
+<title>timing</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timing</text>
+</g>
+<!-- module~id_base&#45;&gt;timing -->
+<g id="module~~id_base~~UsesGraph_edge1" class="edge">
+<title>module~id_base&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-12C81.9723,-12 73.0335,-12 64.4691,-12"/>
+<polygon fill="#000000" stroke="#000000" points="64.295,-8.5001 54.295,-12 64.2949,-15.5001 64.295,-8.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses.
+    </p>
+    </div></div></div></div>
+      </li>
+      
+      </ul>
+    </div>
+    
+
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Used by</h3>
+      </div>
+      <ul class="list-group">
+  
+  <li class="list-group-item">  
+    <ul class="list-inline">
+      <li><h5>Descendants:</h5></li>
+      
+      <li><a href='../module/id_base_access.html'>id_base_access</a></li>
+      
+      <li><a href='../module/id_base_mass_profile.html'>id_base_mass_profile</a></li>
+      
+    </ul>
+  </li>
+  
+  
+  <li class="list-group-item">
+    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~id_base~~UsedByGraph Pages: 1 -->
+<svg id="moduleid_baseUsedByGraph" width="641pt" height="573pt"
+ viewBox="0.00 0.00 641.00 573.27" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~id_base~~UsedByGraph" class="graph" transform="scale(.6983 .6983) rotate(0) translate(4 817)">
+<title>module~~id_base~~UsedByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-817 914,-817 914,4 -4,4"/>
+<!-- module~id_base -->
+<g id="module~~id_base~~UsedByGraph_node1" class="node">
+<title>module~id_base</title>
+<polygon fill="none" stroke="#000000" points="54,-520 0,-520 0,-496 54,-496 54,-520"/>
+<text text-anchor="middle" x="27" y="-505.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">id_base</text>
+</g>
+<!-- module~formul_3p1_id -->
+<g id="module~~id_base~~UsedByGraph_node2" class="node">
+<title>module~formul_3p1_id</title>
+<g id="a_module~~id_base~~UsedByGraph_node2"><a xlink:href=".././module/formul_3p1_id.html" xlink:title="formul_3p1_id">
+<polygon fill="#337ab7" stroke="#337ab7" points="348.5,-709 267.5,-709 267.5,-685 348.5,-685 348.5,-709"/>
+<text text-anchor="middle" x="308" y="-694.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1_id</text>
+</a>
+</g>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;module~id_base -->
+<g id="module~~id_base~~UsedByGraph_edge1" class="edge">
+<title>module~formul_3p1_id&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M279.2137,-709.0077C239.7355,-724.6648 171.1105,-748.7462 148.5,-737"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M148.5,-737C68.6524,-695.519 39.4176,-579.1602 30.4414,-530.1767"/>
+<polygon fill="#000000" stroke="#000000" points="33.84,-529.2872 28.6983,-520.0237 26.941,-530.4718 33.84,-529.2872"/>
+</g>
+<!-- module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_node6" class="node">
+<title>module~particles_id</title>
+<g id="a_module~~id_base~~UsedByGraph_node6"><a xlink:href=".././module/particles_id.html" xlink:title="particles_id">
+<polygon fill="#337ab7" stroke="#337ab7" points="182,-499 115,-499 115,-475 182,-475 182,-499"/>
+<text text-anchor="middle" x="148.5" y="-484.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_id</text>
+</a>
+</g>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge18" class="edge">
+<title>module~formul_3p1_id&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M267.4315,-690.9692C258.3112,-687.8475 249.4394,-683.1278 243,-676 191.8099,-619.3371 257.2725,-565.4785 207,-508 202.7575,-503.1494 197.3109,-499.4191 191.4529,-496.5504"/>
+<polygon fill="#000000" stroke="#000000" points="192.6044,-493.2403 182.0226,-492.7143 189.9668,-499.7244 192.6044,-493.2403"/>
+</g>
+<!-- module~sphincs_lorene -->
+<g id="module~~id_base~~UsedByGraph_node3" class="node">
+<title>module~sphincs_lorene</title>
+<g id="a_module~~id_base~~UsedByGraph_node3"><a xlink:href=".././module/sphincs_lorene.html" xlink:title="sphincs_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="738.5,-367 653.5,-367 653.5,-343 738.5,-343 738.5,-367"/>
+<text text-anchor="middle" x="696" y="-352.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~id_base -->
+<g id="module~~id_base~~UsedByGraph_edge2" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M676.2117,-367.0005C641.7137,-387.2826 567.7165,-427.986 499.5,-447"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M499.5,-447C457.1389,-458.8074 437.2424,-440.7082 409,-407 365.8014,-355.4411 424.1187,-303.7187 373,-260 334.9504,-227.4584 186.8999,-208.8725 148.5,-241"/>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~formul_3p1_id -->
+<g id="module~~id_base~~UsedByGraph_edge11" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M499.5,-447C426.3958,-466.2251 443.9634,-523.9822 409,-591 390.0237,-627.3739 403.2598,-648.2961 373,-676 368.6293,-680.0015 363.4884,-683.241 358.0444,-685.8635"/>
+<polygon fill="#000000" stroke="#000000" points="356.5931,-682.676 348.6791,-689.7201 359.2585,-689.1487 356.5931,-682.676"/>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge19" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M499.5,-447C388.9467,-476.0736 356.0911,-449.3352 243,-466 226.3601,-468.452 208.2882,-472.1962 192.4469,-475.8476"/>
+<polygon fill="#000000" stroke="#000000" points="191.3254,-472.5161 182.3965,-478.2192 192.933,-479.329 191.3254,-472.5161"/>
+</g>
+<!-- module~bns_lorene -->
+<g id="module~~id_base~~UsedByGraph_node7" class="node">
+<title>module~bns_lorene</title>
+<g id="a_module~~id_base~~UsedByGraph_node7"><a xlink:href=".././module/bns_lorene.html" xlink:title="bns_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="341,-213 275,-213 275,-189 341,-189 341,-213"/>
+<text text-anchor="middle" x="308" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~bns_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge29" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M682.6871,-342.9936C663.5908,-326.4396 626.6672,-296.8582 590,-281 514.5554,-248.3709 487.2151,-268.2773 409,-243 392.3394,-237.6157 389.1313,-233.8081 373,-227 365.0322,-223.6372 356.472,-220.1351 348.2642,-216.831"/>
+<polygon fill="#000000" stroke="#000000" points="349.4322,-213.5286 338.8476,-213.0633 346.8318,-220.0277 349.4322,-213.5286"/>
+</g>
+<!-- module~formul_bssn_id -->
+<g id="module~~id_base~~UsedByGraph_node9" class="node">
+<title>module~formul_bssn_id</title>
+<g id="a_module~~id_base~~UsedByGraph_node9"><a xlink:href=".././module/formul_bssn_id.html" xlink:title="formul_bssn_id">
+<polygon fill="#337ab7" stroke="#337ab7" points="542,-750 457,-750 457,-726 542,-726 542,-750"/>
+<text text-anchor="middle" x="499.5" y="-735.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_bssn_id</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~formul_bssn_id -->
+<g id="module~~id_base~~UsedByGraph_edge37" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M694.1302,-367.0316C685.0359,-424.0374 643.6723,-666.2952 590,-717 579.7162,-726.7152 565.8556,-732.2383 552.0764,-735.3015"/>
+<polygon fill="#000000" stroke="#000000" points="551.318,-731.882 542.1096,-737.1219 552.5758,-738.7681 551.318,-731.882"/>
+</g>
+<!-- module~diffstar_lorene -->
+<g id="module~~id_base~~UsedByGraph_node15" class="node">
+<title>module~diffstar_lorene</title>
+<g id="a_module~~id_base~~UsedByGraph_node15"><a xlink:href=".././module/diffstar_lorene.html" xlink:title="diffstar_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="540,-108 459,-108 459,-84 540,-84 540,-108"/>
+<text text-anchor="middle" x="499.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~diffstar_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge45" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M690.283,-342.6647C678.2233,-316.5916 649.3672,-253.9272 626,-201 609.5952,-163.8428 621.1454,-143.0718 590,-117 578.8534,-107.6692 564.3386,-102.3055 550.2087,-99.2721"/>
+<polygon fill="#000000" stroke="#000000" points="550.5019,-95.769 540.0416,-97.4518 549.2682,-102.6595 550.5019,-95.769"/>
+</g>
+<!-- module~id_base_mass_profile -->
+<g id="module~~id_base~~UsedByGraph_node4" class="node">
+<title>module~id_base_mass_profile</title>
+<g id="a_module~~id_base~~UsedByGraph_node4"><a xlink:href=".././module/id_base_mass_profile.html" xlink:title="id_base_mass_profile">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="207,-583 90,-583 90,-559 207,-559 207,-583"/>
+<text text-anchor="middle" x="148.5" y="-568.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">id_base_mass_profile</text>
+</a>
+</g>
+</g>
+<!-- module~id_base_mass_profile&#45;&gt;module~id_base -->
+<g id="module~~id_base~~UsedByGraph_edge8" class="edge">
+<title>module~id_base_mass_profile&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" d="M110.7942,-558.9956C103.7542,-556.3272 96.5543,-553.2991 90,-550 76.4329,-543.171 62.2785,-533.9503 50.8309,-525.8881"/>
+<polygon fill="#000000" stroke="#000000" points="52.8202,-523.0077 42.659,-520.0076 48.7315,-528.6895 52.8202,-523.0077"/>
+</g>
+<!-- module~id_base_access -->
+<g id="module~~id_base~~UsedByGraph_node5" class="node">
+<title>module~id_base_access</title>
+<g id="a_module~~id_base~~UsedByGraph_node5"><a xlink:href=".././module/id_base_access.html" xlink:title="id_base_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="193,-541 104,-541 104,-517 193,-517 193,-541"/>
+<text text-anchor="middle" x="148.5" y="-526.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">id_base_access</text>
+</a>
+</g>
+</g>
+<!-- module~id_base_access&#45;&gt;module~id_base -->
+<g id="module~~id_base~~UsedByGraph_edge9" class="edge">
+<title>module~id_base_access&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" d="M103.9478,-521.2996C90.9316,-519.0499 76.8451,-516.6152 64.3259,-514.4514"/>
+<polygon fill="#000000" stroke="#000000" points="64.6863,-510.9619 54.2362,-512.7075 63.494,-517.8596 64.6863,-510.9619"/>
+</g>
+<!-- module~particles_id&#45;&gt;module~id_base -->
+<g id="module~~id_base~~UsedByGraph_edge3" class="edge">
+<title>module~particles_id&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M114.978,-492.7939C99.3055,-495.5028 80.5846,-498.7385 64.4487,-501.5274"/>
+<polygon fill="#000000" stroke="#000000" points="63.5342,-498.1335 54.2764,-503.2856 64.7265,-505.0312 63.5342,-498.1335"/>
+</g>
+<!-- module~bns_lorene&#45;&gt;module~id_base -->
+<g id="module~~id_base~~UsedByGraph_edge4" class="edge">
+<title>module~bns_lorene&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M274.9204,-201.1446C239.7685,-202.9903 184.409,-210.9566 148.5,-241"/>
+</g>
+<!-- module~bns_base -->
+<g id="module~~id_base~~UsedByGraph_node10" class="node">
+<title>module~bns_base</title>
+<g id="a_module~~id_base~~UsedByGraph_node10"><a xlink:href=".././module/bns_base.html" xlink:title="bns_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="178,-171 119,-171 119,-147 178,-147 178,-171"/>
+<text text-anchor="middle" x="148.5" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_base</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene&#45;&gt;module~bns_base -->
+<g id="module~~id_base~~UsedByGraph_edge42" class="edge">
+<title>module~bns_lorene&#45;&gt;module~bns_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M274.9515,-192.2976C249.6265,-185.6289 214.6003,-176.4057 187.8322,-169.3571"/>
+<polygon fill="#000000" stroke="#000000" points="188.5764,-165.9338 178.0148,-166.7719 186.7939,-172.703 188.5764,-165.9338"/>
+</g>
+<!-- module~diffstar_base -->
+<g id="module~~id_base~~UsedByGraph_node8" class="node">
+<title>module~diffstar_base</title>
+<g id="a_module~~id_base~~UsedByGraph_node8"><a xlink:href=".././module/diffstar_base.html" xlink:title="diffstar_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="345,-171 271,-171 271,-147 345,-147 345,-171"/>
+<text text-anchor="middle" x="308" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_base</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_base&#45;&gt;module~id_base -->
+<g id="module~~id_base~~UsedByGraph_edge5" class="edge">
+<title>module~diffstar_base&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M270.9119,-169.1412C261.6129,-172.1808 251.7863,-175.8329 243,-180 197.8322,-201.4216 186.8408,-208.922 148.5,-241"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M148.5,-241C69.7158,-306.9152 39.6545,-434.7087 30.4465,-485.9554"/>
+<polygon fill="#000000" stroke="#000000" points="26.9738,-485.4994 28.7453,-495.9451 33.8745,-486.6745 26.9738,-485.4994"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~id_base -->
+<g id="module~~id_base~~UsedByGraph_edge6" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M308,-737C241.0511,-713.6958 211.4066,-769.6801 148.5,-737"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~formul_3p1_id -->
+<g id="module~~id_base~~UsedByGraph_edge10" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M456.9999,-728.9008C427.9932,-722.6904 389.4264,-714.4333 358.7979,-707.8758"/>
+<polygon fill="#000000" stroke="#000000" points="359.2515,-704.3937 348.7404,-705.7225 357.786,-711.2385 359.2515,-704.3937"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge17" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M456.7068,-745.5167C416.9918,-750.7132 356.8256,-753.9957 308,-737"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M308,-737C279.5751,-727.1056 263.0285,-740.4663 243,-718 179.9854,-647.3157 267.8565,-580.5507 207,-508 202.8586,-503.0628 197.466,-499.2863 191.6312,-496.3976"/>
+<polygon fill="#000000" stroke="#000000" points="192.7956,-493.0925 182.2146,-492.5499 190.1477,-499.5725 192.7956,-493.0925"/>
+</g>
+<!-- module~bns_base&#45;&gt;module~id_base -->
+<g id="module~~id_base~~UsedByGraph_edge7" class="edge">
+<title>module~bns_base&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M134.7086,-171.1223C121.2398,-183.7382 101.1844,-204.7343 90,-227 45.3418,-315.9052 32.0446,-436.3876 28.3371,-485.6331"/>
+<polygon fill="#000000" stroke="#000000" points="24.8327,-485.5783 27.635,-495.7957 31.816,-486.0608 24.8327,-485.5783"/>
+</g>
+<!-- module~particles_redistribute_nu -->
+<g id="module~~id_base~~UsedByGraph_node11" class="node">
+<title>module~particles_redistribute_nu</title>
+<g id="a_module~~id_base~~UsedByGraph_node11"><a xlink:href=".././module/particles_redistribute_nu.html" xlink:title="particles_redistribute_nu">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="373,-667 243,-667 243,-643 373,-643 373,-667"/>
+<text text-anchor="middle" x="308" y="-652.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_redistribute_nu</text>
+</a>
+</g>
+</g>
+<!-- module~particles_redistribute_nu&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge21" class="edge">
+<title>module~particles_redistribute_nu&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M254.6173,-642.8418C250.3426,-640.4115 246.3788,-637.4964 243,-634 202.5275,-592.1195 246.7939,-550.5258 207,-508 202.6453,-503.3464 197.1862,-499.7223 191.3639,-496.9003"/>
+<polygon fill="#000000" stroke="#000000" points="192.6038,-493.6262 182.0224,-493.0935 189.9621,-500.1086 192.6038,-493.6262"/>
+</g>
+<!-- module~particles_compose -->
+<g id="module~~id_base~~UsedByGraph_node12" class="node">
+<title>module~particles_compose</title>
+<g id="a_module~~id_base~~UsedByGraph_node12"><a xlink:href=".././module/particles_compose.html" xlink:title="particles_compose">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="359,-625 257,-625 257,-601 359,-601 359,-625"/>
+<text text-anchor="middle" x="308" y="-610.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_compose</text>
+</a>
+</g>
+</g>
+<!-- module~particles_compose&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge22" class="edge">
+<title>module~particles_compose&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M256.6802,-601.2095C251.7127,-598.7075 247.0314,-595.6751 243,-592 212.9833,-564.6362 236.5729,-535.8428 207,-508 202.5708,-503.8299 197.2555,-500.4781 191.659,-497.7864"/>
+<polygon fill="#000000" stroke="#000000" points="192.6619,-494.4146 182.082,-493.8516 190.0017,-500.8894 192.6619,-494.4146"/>
+</g>
+<!-- program~convergence_test -->
+<g id="module~~id_base~~UsedByGraph_node13" class="node">
+<title>program~convergence_test</title>
+<g id="a_module~~id_base~~UsedByGraph_node13"><a xlink:href=".././program/convergence_test.html" xlink:title="convergence_test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="904.5,-388 807.5,-388 807.5,-364 904.5,-364 904.5,-388"/>
+<text text-anchor="middle" x="856" y="-373.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">convergence_test</text>
+</a>
+</g>
+</g>
+<!-- program~convergence_test&#45;&gt;module~sphincs_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge15" class="edge">
+<title>program~convergence_test&#45;&gt;module~sphincs_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M807.1253,-369.5852C788.5851,-367.1518 767.4025,-364.3716 748.5384,-361.8957"/>
+<polygon fill="#000000" stroke="#000000" points="748.9914,-358.4252 738.6209,-360.594 748.0804,-365.3657 748.9914,-358.4252"/>
+</g>
+<!-- module~particles_constructor -->
+<g id="module~~id_base~~UsedByGraph_node14" class="node">
+<title>module~particles_constructor</title>
+<g id="a_module~~id_base~~UsedByGraph_node14"><a xlink:href=".././module/particles_constructor.html" xlink:title="particles_constructor">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="364,-583 252,-583 252,-559 364,-559 364,-583"/>
+<text text-anchor="middle" x="308" y="-568.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_constructor</text>
+</a>
+</g>
+</g>
+<!-- module~particles_constructor&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge26" class="edge">
+<title>module~particles_constructor&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M260.0742,-558.8978C254.0837,-556.4238 248.232,-553.4829 243,-550 222.5345,-536.3762 227.2438,-521.9511 207,-508 202.3353,-504.7853 197.1235,-502.0059 191.7852,-499.6185"/>
+<polygon fill="#000000" stroke="#000000" points="192.7142,-496.2197 182.1304,-495.7352 190.102,-502.7141 192.7142,-496.2197"/>
+</g>
+<!-- module~diffstar_lorene&#45;&gt;module~diffstar_base -->
+<g id="module~~id_base~~UsedByGraph_edge35" class="edge">
+<title>module~diffstar_lorene&#45;&gt;module~diffstar_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.6134,-102.7752C442.7928,-106.093 424.7399,-110.749 409,-117 391.7847,-123.837 389.9112,-130.4422 373,-138 367.2448,-140.5721 361.0771,-142.9814 354.9164,-145.1847"/>
+<polygon fill="#000000" stroke="#000000" points="353.6319,-141.9249 345.3014,-148.4713 355.896,-148.5487 353.6319,-141.9249"/>
+</g>
+<!-- module~bns_lorene_params -->
+<g id="module~~id_base~~UsedByGraph_node16" class="node">
+<title>module~bns_lorene_params</title>
+<g id="a_module~~id_base~~UsedByGraph_node16"><a xlink:href=".././module/bns_lorene_params.html" xlink:title="bns_lorene_params">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="553.5,-192 445.5,-192 445.5,-168 553.5,-168 553.5,-192"/>
+<text text-anchor="middle" x="499.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene_params</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene_params&#45;&gt;module~bns_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge33" class="edge">
+<title>module~bns_lorene_params&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" d="M445.3917,-185.9336C415.6753,-189.1923 379.3131,-193.1798 351.463,-196.2338"/>
+<polygon fill="#000000" stroke="#000000" points="350.7964,-192.7858 341.2376,-197.3552 351.5595,-199.7441 350.7964,-192.7858"/>
+</g>
+<!-- module~bssn_id_variables -->
+<g id="module~~id_base~~UsedByGraph_node17" class="node">
+<title>module~bssn_id_variables</title>
+<g id="a_module~~id_base~~UsedByGraph_node17"><a xlink:href=".././module/bssn_id_variables.html" xlink:title="bssn_id_variables">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="745,-729 647,-729 647,-705 745,-705 745,-729"/>
+<text text-anchor="middle" x="696" y="-714.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id_variables</text>
+</a>
+</g>
+</g>
+<!-- module~bssn_id_variables&#45;&gt;module~formul_bssn_id -->
+<g id="module~~id_base~~UsedByGraph_edge39" class="edge">
+<title>module~bssn_id_variables&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" d="M646.9216,-722.245C618.1444,-725.3204 581.7842,-729.2063 552.3749,-732.3492"/>
+<polygon fill="#000000" stroke="#000000" points="551.8576,-728.8845 542.2862,-733.4274 552.6015,-735.8449 551.8576,-728.8845"/>
+</g>
+<!-- module~particles_lattices -->
+<g id="module~~id_base~~UsedByGraph_node18" class="node">
+<title>module~particles_lattices</title>
+<g id="a_module~~id_base~~UsedByGraph_node18"><a xlink:href=".././module/particles_lattices.html" xlink:title="particles_lattices">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="353.5,-541 262.5,-541 262.5,-517 353.5,-517 353.5,-541"/>
+<text text-anchor="middle" x="308" y="-526.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_lattices</text>
+</a>
+</g>
+</g>
+<!-- module~particles_lattices&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge20" class="edge">
+<title>module~particles_lattices&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M262.2937,-516.9645C240.1014,-511.1207 213.5792,-504.1368 191.7247,-498.3821"/>
+<polygon fill="#000000" stroke="#000000" points="192.6059,-494.9949 182.0443,-495.833 190.8234,-501.7641 192.6059,-494.9949"/>
+</g>
+<!-- module~spherical_surfaces -->
+<g id="module~~id_base~~UsedByGraph_node19" class="node">
+<title>module~spherical_surfaces</title>
+<g id="a_module~~id_base~~UsedByGraph_node19"><a xlink:href=".././module/spherical_surfaces.html" xlink:title="spherical_surfaces">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="359,-499 257,-499 257,-475 359,-475 359,-499"/>
+<text text-anchor="middle" x="308" y="-484.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">spherical_surfaces</text>
+</a>
+</g>
+</g>
+<!-- module~spherical_surfaces&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge24" class="edge">
+<title>module~spherical_surfaces&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M256.6552,-487C235.8718,-487 212.1276,-487 192.1915,-487"/>
+<polygon fill="#000000" stroke="#000000" points="192.1492,-483.5001 182.1492,-487 192.1492,-490.5001 192.1492,-483.5001"/>
+</g>
+<!-- module~bns_lorene_memory -->
+<g id="module~~id_base~~UsedByGraph_node20" class="node">
+<title>module~bns_lorene_memory</title>
+<g id="a_module~~id_base~~UsedByGraph_node20"><a xlink:href=".././module/bns_lorene_memory.html" xlink:title="bns_lorene_memory">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="555,-398 444,-398 444,-374 555,-374 555,-398"/>
+<text text-anchor="middle" x="499.5" y="-383.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene_memory</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene_memory&#45;&gt;module~bns_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge31" class="edge">
+<title>module~bns_lorene_memory&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" d="M443.573,-382.7505C430.8609,-379.5599 418.3628,-374.1118 409,-365 363.5746,-320.7925 414.926,-274.5394 373,-227 366.9838,-220.1783 358.9304,-215.1231 350.545,-211.3846"/>
+<polygon fill="#000000" stroke="#000000" points="351.6165,-208.0463 341.0274,-207.6991 349.0888,-214.574 351.6165,-208.0463"/>
+</g>
+<!-- module~formul_3p1_standard3p1_variables -->
+<g id="module~~id_base~~UsedByGraph_node21" class="node">
+<title>module~formul_3p1_standard3p1_variables</title>
+<g id="a_module~~id_base~~UsedByGraph_node21"><a xlink:href=".././module/formul_3p1_standard3p1_variables.html" xlink:title="formul_3p1_standard3p1_variables">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="590,-708 409,-708 409,-684 590,-684 590,-708"/>
+<text text-anchor="middle" x="499.5" y="-693.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1_standard3p1_variables</text>
+</a>
+</g>
+</g>
+<!-- module~formul_3p1_standard3p1_variables&#45;&gt;module~formul_3p1_id -->
+<g id="module~~id_base~~UsedByGraph_edge13" class="edge">
+<title>module~formul_3p1_standard3p1_variables&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" d="M408.7972,-696.4736C391.6739,-696.5631 374.3348,-696.6536 358.9784,-696.7338"/>
+<polygon fill="#000000" stroke="#000000" points="358.6725,-693.2352 348.6909,-696.7875 358.7091,-700.2352 358.6725,-693.2352"/>
+</g>
+<!-- module~particles_access -->
+<g id="module~~id_base~~UsedByGraph_node22" class="node">
+<title>module~particles_access</title>
+<g id="a_module~~id_base~~UsedByGraph_node22"><a xlink:href=".././module/particles_access.html" xlink:title="particles_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="353.5,-419 262.5,-419 262.5,-395 353.5,-395 353.5,-419"/>
+<text text-anchor="middle" x="308" y="-404.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_access</text>
+</a>
+</g>
+</g>
+<!-- module~particles_access&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge27" class="edge">
+<title>module~particles_access&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M275.2152,-419.09C264.7848,-423.2074 253.2883,-428.0324 243,-433 220.1458,-444.0349 195.261,-458.3546 176.767,-469.475"/>
+<polygon fill="#000000" stroke="#000000" points="174.7147,-466.6263 167.9811,-474.8061 178.346,-472.6107 174.7147,-466.6263"/>
+</g>
+<!-- program~sphincs_lorene_bns -->
+<g id="module~~id_base~~UsedByGraph_node23" class="node">
+<title>program~sphincs_lorene_bns</title>
+<g id="a_module~~id_base~~UsedByGraph_node23"><a xlink:href=".././program/sphincs_lorene_bns.html" xlink:title="sphincs_lorene_bns">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="910,-346 802,-346 802,-322 910,-322 910,-346"/>
+<text text-anchor="middle" x="856" y="-331.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene_bns</text>
+</a>
+</g>
+</g>
+<!-- program~sphincs_lorene_bns&#45;&gt;module~sphincs_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge16" class="edge">
+<title>program~sphincs_lorene_bns&#45;&gt;module~sphincs_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M801.8313,-341.1096C784.7889,-343.3465 765.9944,-345.8132 749.0319,-348.0396"/>
+<polygon fill="#000000" stroke="#000000" points="748.1986,-344.6188 738.7391,-349.3905 749.1096,-351.5593 748.1986,-344.6188"/>
+</g>
+<!-- module~formul_3p1_analysis -->
+<g id="module~~id_base~~UsedByGraph_node24" class="node">
+<title>module~formul_3p1_analysis</title>
+<g id="a_module~~id_base~~UsedByGraph_node24"><a xlink:href=".././module/formul_3p1_analysis.html" xlink:title="formul_3p1_analysis">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="555,-666 444,-666 444,-642 555,-642 555,-666"/>
+<text text-anchor="middle" x="499.5" y="-651.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1_analysis</text>
+</a>
+</g>
+</g>
+<!-- module~formul_3p1_analysis&#45;&gt;module~formul_3p1_id -->
+<g id="module~~id_base~~UsedByGraph_edge12" class="edge">
+<title>module~formul_3p1_analysis&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" d="M445.9019,-666.0351C418.5279,-672.1817 385.4111,-679.6179 358.4923,-685.6623"/>
+<polygon fill="#000000" stroke="#000000" points="357.4941,-682.2992 348.5039,-687.9051 359.0277,-689.1292 357.4941,-682.2992"/>
+</g>
+<!-- module~bssn_id_constructor -->
+<g id="module~~id_base~~UsedByGraph_node25" class="node">
+<title>module~bssn_id_constructor</title>
+<g id="a_module~~id_base~~UsedByGraph_node25"><a xlink:href=".././module/bssn_id_constructor.html" xlink:title="bssn_id_constructor">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="750.5,-687 641.5,-687 641.5,-663 750.5,-663 750.5,-687"/>
+<text text-anchor="middle" x="696" y="-672.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id_constructor</text>
+</a>
+</g>
+</g>
+<!-- module~bssn_id_constructor&#45;&gt;module~formul_bssn_id -->
+<g id="module~~id_base~~UsedByGraph_edge40" class="edge">
+<title>module~bssn_id_constructor&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" d="M650.2517,-687.0192C642.0538,-689.6521 633.6807,-692.6638 626,-696 609.0102,-703.3796 607.2153,-710.163 590,-717 578.0534,-721.7445 564.7743,-725.5702 552.1501,-728.5893"/>
+<polygon fill="#000000" stroke="#000000" points="551.1851,-725.2191 542.2041,-730.8398 552.73,-732.0465 551.1851,-725.2191"/>
+</g>
+<!-- module~bssn_id_constraints -->
+<g id="module~~id_base~~UsedByGraph_node26" class="node">
+<title>module~bssn_id_constraints</title>
+<g id="a_module~~id_base~~UsedByGraph_node26"><a xlink:href=".././module/bssn_id_constraints.html" xlink:title="bssn_id_constraints">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="749.5,-813 642.5,-813 642.5,-789 749.5,-789 749.5,-813"/>
+<text text-anchor="middle" x="696" y="-798.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id_constraints</text>
+</a>
+</g>
+</g>
+<!-- module~bssn_id_constraints&#45;&gt;module~formul_bssn_id -->
+<g id="module~~id_base~~UsedByGraph_edge38" class="edge">
+<title>module~bssn_id_constraints&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" d="M655.2222,-788.9847C645.6214,-786.0955 635.4368,-782.9814 626,-780 598.849,-771.4221 568.5735,-761.387 544.4497,-753.2773"/>
+<polygon fill="#000000" stroke="#000000" points="545.4473,-749.9202 534.8532,-750.0438 543.2121,-756.5537 545.4473,-749.9202"/>
+</g>
+<!-- module~particles_sph_variables -->
+<g id="module~~id_base~~UsedByGraph_node27" class="node">
+<title>module~particles_sph_variables</title>
+<g id="a_module~~id_base~~UsedByGraph_node27"><a xlink:href=".././module/particles_sph_variables.html" xlink:title="particles_sph_variables">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="370,-377 246,-377 246,-353 370,-353 370,-377"/>
+<text text-anchor="middle" x="308" y="-362.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_sph_variables</text>
+</a>
+</g>
+</g>
+<!-- module~particles_sph_variables&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge23" class="edge">
+<title>module~particles_sph_variables&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M260.896,-377.0442C254.6477,-379.5419 248.5068,-382.5047 243,-386 209.1725,-407.4712 179.2969,-443.8585 162.5915,-466.5975"/>
+<polygon fill="#000000" stroke="#000000" points="159.6452,-464.6999 156.6567,-474.8645 165.3317,-468.7821 159.6452,-464.6999"/>
+</g>
+<!-- module~bns_lorene_access -->
+<g id="module~~id_base~~UsedByGraph_node28" class="node">
+<title>module~bns_lorene_access</title>
+<g id="a_module~~id_base~~UsedByGraph_node28"><a xlink:href=".././module/bns_lorene_access.html" xlink:title="bns_lorene_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="552,-356 447,-356 447,-332 552,-332 552,-356"/>
+<text text-anchor="middle" x="499.5" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene_access</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene_access&#45;&gt;module~bns_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge32" class="edge">
+<title>module~bns_lorene_access&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" d="M446.5737,-340.6179C433.0633,-337.5178 419.4283,-332.1466 409,-323 374.7422,-292.9526 404.8694,-259.5697 373,-227 366.7623,-220.6252 358.7596,-215.7687 350.5165,-212.0838"/>
+<polygon fill="#000000" stroke="#000000" points="351.7755,-208.818 341.1888,-208.4029 349.2059,-215.3294 351.7755,-208.818"/>
+</g>
+<!-- module~particles_apm -->
+<g id="module~~id_base~~UsedByGraph_node29" class="node">
+<title>module~particles_apm</title>
+<g id="a_module~~id_base~~UsedByGraph_node29"><a xlink:href=".././module/particles_apm.html" xlink:title="particles_apm">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="347.5,-335 268.5,-335 268.5,-311 347.5,-311 347.5,-335"/>
+<text text-anchor="middle" x="308" y="-320.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_apm</text>
+</a>
+</g>
+</g>
+<!-- module~particles_apm&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge28" class="edge">
+<title>module~particles_apm&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M268.4483,-331.1072C259.5059,-334.1634 250.4601,-338.3327 243,-344 200.422,-376.3455 171.0581,-433.7359 157.3351,-465.0773"/>
+<polygon fill="#000000" stroke="#000000" points="153.9646,-464.0607 153.2843,-474.6336 160.4095,-466.7926 153.9646,-464.0607"/>
+</g>
+<!-- module~formul_3p1_access -->
+<g id="module~~id_base~~UsedByGraph_node30" class="node">
+<title>module~formul_3p1_access</title>
+<g id="a_module~~id_base~~UsedByGraph_node30"><a xlink:href=".././module/formul_3p1_access.html" xlink:title="formul_3p1_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="552.5,-624 446.5,-624 446.5,-600 552.5,-600 552.5,-624"/>
+<text text-anchor="middle" x="499.5" y="-609.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1_access</text>
+</a>
+</g>
+</g>
+<!-- module~formul_3p1_access&#45;&gt;module~formul_3p1_id -->
+<g id="module~~id_base~~UsedByGraph_edge14" class="edge">
+<title>module~formul_3p1_access&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" d="M446.053,-618.4361C433.2796,-621.5479 420.1319,-626.1613 409,-633 387.7628,-646.0467 393.6673,-662.0681 373,-676 368.452,-679.0658 363.4258,-681.7093 358.2426,-683.9829"/>
+<polygon fill="#000000" stroke="#000000" points="356.8403,-680.7733 348.8126,-687.6875 359.3999,-687.2886 356.8403,-680.7733"/>
+</g>
+<!-- module~bns_lorene_import -->
+<g id="module~~id_base~~UsedByGraph_node31" class="node">
+<title>module~bns_lorene_import</title>
+<g id="a_module~~id_base~~UsedByGraph_node31"><a xlink:href=".././module/bns_lorene_import.html" xlink:title="bns_lorene_import">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="550.5,-314 448.5,-314 448.5,-290 550.5,-290 550.5,-314"/>
+<text text-anchor="middle" x="499.5" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene_import</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene_import&#45;&gt;module~bns_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge30" class="edge">
+<title>module~bns_lorene_import&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" d="M448.0387,-293.4624C434.534,-289.6071 420.5356,-284.036 409,-276 386.8264,-260.5532 394.3677,-243.5437 373,-227 366.3727,-221.8689 358.5992,-217.6155 350.7779,-214.1393"/>
+<polygon fill="#000000" stroke="#000000" points="351.8695,-210.8049 341.2878,-210.2778 349.2312,-217.2887 351.8695,-210.8049"/>
+</g>
+<!-- module~diffstar_base_access -->
+<g id="module~~id_base~~UsedByGraph_node32" class="node">
+<title>module~diffstar_base_access</title>
+<g id="a_module~~id_base~~UsedByGraph_node32"><a xlink:href=".././module/diffstar_base_access.html" xlink:title="diffstar_base_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="556,-150 443,-150 443,-126 556,-126 556,-150"/>
+<text text-anchor="middle" x="499.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_base_access</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_base_access&#45;&gt;module~diffstar_base -->
+<g id="module~~id_base~~UsedByGraph_edge36" class="edge">
+<title>module~diffstar_base_access&#45;&gt;module~diffstar_base</title>
+<path fill="none" stroke="#000000" d="M442.821,-144.2155C414.9743,-147.2691 381.8061,-150.9064 355.3365,-153.8091"/>
+<polygon fill="#000000" stroke="#000000" points="354.7366,-150.3538 345.1777,-154.9231 355.4997,-157.3121 354.7366,-150.3538"/>
+</g>
+<!-- module~particles_memory -->
+<g id="module~~id_base~~UsedByGraph_node33" class="node">
+<title>module~particles_memory</title>
+<g id="a_module~~id_base~~UsedByGraph_node33"><a xlink:href=".././module/particles_memory.html" xlink:title="particles_memory">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="356.5,-293 259.5,-293 259.5,-269 356.5,-269 356.5,-293"/>
+<text text-anchor="middle" x="308" y="-278.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_memory</text>
+</a>
+</g>
+</g>
+<!-- module~particles_memory&#45;&gt;module~particles_id -->
+<g id="module~~id_base~~UsedByGraph_edge25" class="edge">
+<title>module~particles_memory&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M259.2306,-291.9843C253.3745,-294.6363 247.7849,-297.9245 243,-302 191.0502,-346.2487 164.27,-426.1497 153.8324,-464.8293"/>
+<polygon fill="#000000" stroke="#000000" points="150.4255,-464.0245 151.3145,-474.582 157.2032,-465.7744 150.4255,-464.0245"/>
+</g>
+<!-- module~bns_base_mass_profile -->
+<g id="module~~id_base~~UsedByGraph_node34" class="node">
+<title>module~bns_base_mass_profile</title>
+<g id="a_module~~id_base~~UsedByGraph_node34"><a xlink:href=".././module/bns_base_mass_profile.html" xlink:title="bns_base_mass_profile">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="371,-129 245,-129 245,-105 371,-105 371,-129"/>
+<text text-anchor="middle" x="308" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_base_mass_profile</text>
+</a>
+</g>
+</g>
+<!-- module~bns_base_mass_profile&#45;&gt;module~bns_base -->
+<g id="module~~id_base~~UsedByGraph_edge43" class="edge">
+<title>module~bns_base_mass_profile&#45;&gt;module~bns_base</title>
+<path fill="none" stroke="#000000" d="M262.2937,-129.0355C238.8241,-135.2156 210.5119,-142.6708 187.9994,-148.5989"/>
+<polygon fill="#000000" stroke="#000000" points="186.8812,-145.274 178.1022,-151.2051 188.6638,-152.0432 186.8812,-145.274"/>
+</g>
+<!-- module~bns_base_access -->
+<g id="module~~id_base~~UsedByGraph_node35" class="node">
+<title>module~bns_base_access</title>
+<g id="a_module~~id_base~~UsedByGraph_node35"><a xlink:href=".././module/bns_base_access.html" xlink:title="bns_base_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="357,-87 259,-87 259,-63 357,-63 357,-87"/>
+<text text-anchor="middle" x="308" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_base_access</text>
+</a>
+</g>
+</g>
+<!-- module~bns_base_access&#45;&gt;module~bns_base -->
+<g id="module~~id_base~~UsedByGraph_edge44" class="edge">
+<title>module~bns_base_access&#45;&gt;module~bns_base</title>
+<path fill="none" stroke="#000000" d="M265.0332,-87.0239C257.5465,-89.6405 249.9402,-92.6454 243,-96 217.2529,-108.4451 190.3486,-127.0093 171.8618,-140.765"/>
+<polygon fill="#000000" stroke="#000000" points="169.6178,-138.0738 163.7499,-146.8953 173.8382,-143.6585 169.6178,-138.0738"/>
+</g>
+<!-- module~bns_lorene_constructor -->
+<g id="module~~id_base~~UsedByGraph_node36" class="node">
+<title>module~bns_lorene_constructor</title>
+<g id="a_module~~id_base~~UsedByGraph_node36"><a xlink:href=".././module/bns_lorene_constructor.html" xlink:title="bns_lorene_constructor">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="562,-234 437,-234 437,-210 562,-210 562,-234"/>
+<text text-anchor="middle" x="499.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene_constructor</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene_constructor&#45;&gt;module~bns_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge34" class="edge">
+<title>module~bns_lorene_constructor&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" d="M436.7957,-215.1238C408.8011,-212.0539 376.5109,-208.5129 351.2651,-205.7445"/>
+<polygon fill="#000000" stroke="#000000" points="351.583,-202.2584 341.261,-204.6474 350.8199,-209.2167 351.583,-202.2584"/>
+</g>
+<!-- module~bssn_id_memory -->
+<g id="module~~id_base~~UsedByGraph_node37" class="node">
+<title>module~bssn_id_memory</title>
+<g id="a_module~~id_base~~UsedByGraph_node37"><a xlink:href=".././module/bssn_id_memory.html" xlink:title="bssn_id_memory">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="743,-771 649,-771 649,-747 743,-747 743,-771"/>
+<text text-anchor="middle" x="696" y="-756.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id_memory</text>
+</a>
+</g>
+</g>
+<!-- module~bssn_id_memory&#45;&gt;module~formul_bssn_id -->
+<g id="module~~id_base~~UsedByGraph_edge41" class="edge">
+<title>module~bssn_id_memory&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" d="M648.9334,-753.97C619.8856,-750.8656 582.5565,-746.8763 552.4747,-743.6614"/>
+<polygon fill="#000000" stroke="#000000" points="552.4775,-740.1419 542.1622,-742.5593 551.7336,-747.1022 552.4775,-740.1419"/>
+</g>
+<!-- module~diffstar_lorene_memory -->
+<g id="module~~id_base~~UsedByGraph_node38" class="node">
+<title>module~diffstar_lorene_memory</title>
+<g id="a_module~~id_base~~UsedByGraph_node38"><a xlink:href=".././module/diffstar_lorene_memory.html" xlink:title="diffstar_lorene_memory">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="759,-192 633,-192 633,-168 759,-168 759,-192"/>
+<text text-anchor="middle" x="696" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_memory</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_memory&#45;&gt;module~diffstar_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge46" class="edge">
+<title>module~diffstar_lorene_memory&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M643.6618,-167.957C637.4648,-165.4852 631.4239,-162.5289 626,-159 605.3924,-145.5922 611.0225,-129.7474 590,-117 578.1304,-109.8027 564.0134,-105.0712 550.5014,-101.961"/>
+<polygon fill="#000000" stroke="#000000" points="550.8321,-98.4564 540.334,-99.8847 549.4315,-105.3148 550.8321,-98.4564"/>
+</g>
+<!-- module~diffstar_lorene_access -->
+<g id="module~~id_base~~UsedByGraph_node39" class="node">
+<title>module~diffstar_lorene_access</title>
+<g id="a_module~~id_base~~UsedByGraph_node39"><a xlink:href=".././module/diffstar_lorene_access.html" xlink:title="diffstar_lorene_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="756,-150 636,-150 636,-126 756,-126 756,-150"/>
+<text text-anchor="middle" x="696" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_access</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_access&#45;&gt;module~diffstar_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge47" class="edge">
+<title>module~diffstar_lorene_access&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M639.691,-125.9645C611.4096,-119.9196 577.4205,-112.6548 549.9928,-106.7924"/>
+<polygon fill="#000000" stroke="#000000" points="550.7182,-103.3684 540.2075,-104.7008 549.255,-110.2138 550.7182,-103.3684"/>
+</g>
+<!-- module~diffstar_lorene_constructor -->
+<g id="module~~id_base~~UsedByGraph_node40" class="node">
+<title>module~diffstar_lorene_constructor</title>
+<g id="a_module~~id_base~~UsedByGraph_node40"><a xlink:href=".././module/diffstar_lorene_constructor.html" xlink:title="diffstar_lorene_constructor">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="766,-108 626,-108 626,-84 766,-84 766,-108"/>
+<text text-anchor="middle" x="696" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_constructor</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_constructor&#45;&gt;module~diffstar_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge48" class="edge">
+<title>module~diffstar_lorene_constructor&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M625.8912,-96C600.9448,-96 573.3548,-96 550.3336,-96"/>
+<polygon fill="#000000" stroke="#000000" points="550.1037,-92.5001 540.1037,-96 550.1036,-99.5001 550.1037,-92.5001"/>
+</g>
+<!-- module~diffstar_lorene_import -->
+<g id="module~~id_base~~UsedByGraph_node41" class="node">
+<title>module~diffstar_lorene_import</title>
+<g id="a_module~~id_base~~UsedByGraph_node41"><a xlink:href=".././module/diffstar_lorene_import.html" xlink:title="diffstar_lorene_import">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="754.5,-66 637.5,-66 637.5,-42 754.5,-42 754.5,-66"/>
+<text text-anchor="middle" x="696" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_import</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_import&#45;&gt;module~diffstar_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge49" class="edge">
+<title>module~diffstar_lorene_import&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M639.691,-66.0355C611.4096,-72.0804 577.4205,-79.3452 549.9928,-85.2076"/>
+<polygon fill="#000000" stroke="#000000" points="549.255,-81.7862 540.2075,-87.2992 550.7182,-88.6316 549.255,-81.7862"/>
+</g>
+<!-- module~diffstar_lorene_params -->
+<g id="module~~id_base~~UsedByGraph_node42" class="node">
+<title>module~diffstar_lorene_params</title>
+<g id="a_module~~id_base~~UsedByGraph_node42"><a xlink:href=".././module/diffstar_lorene_params.html" xlink:title="diffstar_lorene_params">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="757.5,-24 634.5,-24 634.5,0 757.5,0 757.5,-24"/>
+<text text-anchor="middle" x="696" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_params</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_params&#45;&gt;module~diffstar_lorene -->
+<g id="module~~id_base~~UsedByGraph_edge50" class="edge">
+<title>module~diffstar_lorene_params&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M651.5457,-24.0897C642.9782,-26.7688 634.1406,-29.7791 626,-33 592.2168,-46.3667 555.1903,-65.3493 529.9765,-78.9784"/>
+<polygon fill="#000000" stroke="#000000" points="528.0257,-76.0556 520.9228,-83.9169 531.3777,-82.2008 528.0257,-76.0556"/>
+</g>
+</g>
+</svg>
+</div><script>var panmoduleid_baseUsedByGraph = svgPanZoom('#moduleid_baseUsedByGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses.
+    </p>
+    </div></div></div></div>
+  </li>
+  
+      </ul>
+    </div>
+    
+
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
+  <div id="inters-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-check_i_matter">check_i_matter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-get_n_matter">get_n_matter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-get_one_lapse">get_one_lapse</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-get_total_spatial_extent">get_total_spatial_extent</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-get_zero_shift">get_zero_shift</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-integrate_baryon_mass_density">integrate_baryon_mass_density</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-set_n_matter">set_n_matter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-set_one_lapse">set_one_lapse</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-set_zero_shift">set_zero_shift</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#absints-1">Abstract Interfaces</a></h3></div>
+  <div id="absints-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-integrate_field_int">integrate_field_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_double_at_pos">read_double_at_pos</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_full_int">read_id_full_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_hydro_int">read_id_hydro_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_k_int">read_id_k_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_mass_b_int">read_id_mass_b_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_particles_int">read_id_particles_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_id_spacetime_int">read_id_spacetime_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-read_integer_at_pos">read_integer_at_pos</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_double_parameter">return_double_parameter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_eos_parameters_int">return_eos_parameters_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_integer_parameter">return_integer_parameter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_position">return_position</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_spatial_extent_int">return_spatial_extent_int</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_string_parameter">return_string_parameter</a>
+      
+      <a class="list-group-item" href="../module/id_base.html#interface-return_total_spatial_extent_int">return_total_spatial_extent_int</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/id_base.html#type-idbase">idbase</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+    <section>
+   <h2>Interfaces</h2>
+   
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-check_i_matter"></span><h3>interface 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public module module subroutine check_i_matter(THIS, i_matter)
+    
+    
+   
+   <a href='../proc/check_i_matter.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Checks that the given index <code>i_matter</code> is between 1 and
+ <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, included. If not, it stops the execution of the
+ program.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Value to be checked</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-get_n_matter"></span><h3>interface 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public module module function get_n_matter(THIS)
+    
+    
+   
+   <a href='../proc/get_n_matter.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Returns <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+ physical system</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  <p><a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the</p>
+    
+
+    </li>
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-get_one_lapse"></span><h3>interface 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public module module function get_one_lapse(THIS)
+    
+    
+   
+   <a href='../proc/get_one_lapse.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Returns <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+ physical system</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>logical
+  </small></h4>
+  <p><a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the</p>
+    
+
+    </li>
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-get_total_spatial_extent"></span><h3>interface 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public module module function get_total_spatial_extent(THIS) result(box)
+    
+    
+   
+   <a href='../proc/get_total_spatial_extent.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>INTERFACE to the SUBROUTINE that detects the spatial extent of the
+  physical system considered, and returns a 6-dimensional array
+  containing the coordinates
+<script type="math/tex">x_{\rm min},x_{\rm max},y_{\rm min},y_{\rm max},z_{\rm min},z_{\rm max}</script>
+  of a box <strong>centered at the center of the object</strong> and containing the
+  system.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p>Object of class <a href="../type/idbase.html">idbase</a> which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(6)</small></h4>
+  <p>6-dimensional array containing the coordinates
+ <script type="math/tex">x_{\rm min},x_{\rm max},y_{\rm min},y_{\rm max},
+   z_{\rm min},z_{\rm max}</script>
+ of a box containing the physical system.</p>
+    
+
+    </li>
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-get_zero_shift"></span><h3>interface 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public module module function get_zero_shift(THIS)
+    
+    
+   
+   <a href='../proc/get_zero_shift.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Returns <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+ physical system</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>logical
+  </small></h4>
+  <p><a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the</p>
+    
+
+    </li>
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-integrate_baryon_mass_density"></span><h3>interface 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public module module subroutine integrate_baryon_mass_density(THIS, center, radius, central_density, dr, dth, dphi, mass, mass_profile, mass_profile_idx)
+    
+    
+   
+   <a href='../proc/integrate_baryon_mass_density.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>INTERFACE to the SUBROUTINE integrating the baryon mass density to
+ compute the radial mass profile of a single star.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p>Object of class <a href="../type/idbase.html">idbase</a> which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>center</strong></td><td><p>Center of the star</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>radius</strong></td><td><p>Radius of the star</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>central_density</strong></td><td><p>Central density of the star</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dr</strong></td><td><p>Integration steps</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dth</strong></td><td><p>Integration steps</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dphi</strong></td><td><p>Integration steps</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>mass</strong></td><td><p>Integrated mass of the star</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>mass_profile</strong></td><td><p>Array storing the radial mass profile of the star</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>mass_profile_idx</strong></td><td><p>Array to store the indices for array mass_profile, sorted so that
+ mass_profile[mass_profile_idx] is in increasing order</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-set_n_matter"></span><h3>interface 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public module module subroutine set_n_matter(THIS, value)
+    
+    
+   
+   <a href='../proc/set_n_matter.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Sets <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+ physical system, to the given value</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>value</strong></td><td><p>Value to set <a href="../type/idbase.html#variable-n_matter~2">n_matter</a> to</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-set_one_lapse"></span><h3>interface 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public module module subroutine set_one_lapse(THIS, logic)
+    
+    
+   
+   <a href='../proc/set_one_lapse.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Sets <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+ physical system, to the given value</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>logic</strong></td><td><p>Value to set <a href="../type/idbase.html#variable-n_matter~2">n_matter</a> to</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-set_zero_shift"></span><h3>interface 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public module module subroutine set_zero_shift(THIS, logic)
+    
+    
+   
+   <a href='../proc/set_zero_shift.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Sets <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+ physical system, to the given value</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>logic</strong></td><td><p>Value to set <a href="../type/idbase.html#variable-n_matter~2">n_matter</a> to</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  
+  </ul>
+</div>
+
+    
+    </section>
+  <br>
+    
+
+    
+    <section>
+     <h2>Abstract Interfaces</h2>
+   
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-integrate_field_int"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public subroutine integrate_field_int(THIS, center, radius, central_density, dr, dth, dphi, mass, mass_profile, mass_profile_idx)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE to the SUBROUTINE integrating the baryon mass density to
+ compute the radial mass profile of a single star.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p>Object of class <a href="../type/idbase.html">idbase</a> which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>center</strong></td><td><p>Center of the star</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>radius</strong></td><td><p>Radius of the star</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>central_density</strong></td><td><p>Central density of the star</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dr</strong></td><td><p>Integration steps</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dth</strong></td><td><p>Integration steps</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dphi</strong></td><td><p>Integration steps</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>mass</strong></td><td><p>Integrated mass of the star</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>mass_profile</strong></td><td><p>Array storing the radial mass profile of the star</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>mass_profile_idx</strong></td><td><p>Array to store the indices for array mass_profile, sorted so that
+ mass_profile[mass_profile_idx] is in increasing order</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-read_double_at_pos"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function read_double_at_pos(THIS, x, y, z) result(res)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE for a PROCEDURE that returns a DOUBLE PRECISION at a given
+ position</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p>Object of class <a href="../type/idbase.html">idbase</a> which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>VALUE</td><td>::</td>
+  <td><strong>x</strong></td><td><p>
+<script type="math/tex">x</script> coordinate of the desired point</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>VALUE</td><td>::</td>
+  <td><strong>y</strong></td><td><p>
+<script type="math/tex">y</script> coordinate of the desired point</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>VALUE</td><td>::</td>
+  <td><strong>z</strong></td><td><p>
+<script type="math/tex">z</script> coordinate of the desired point</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  <p>Real number at <script type="math/tex">(x,y,z)</script>
+</p>
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-read_id_full_int"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public subroutine read_id_full_int(THIS, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz, baryon_density, energy_density, specific_energy, u_euler_x, u_euler_y, u_euler_z)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE or the SUBROUTINE reading the full ID</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/idbase.html">idbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>n</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>y</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>z</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>lapse</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>shift_x</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>shift_y</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>shift_z</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_xx</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_xy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_xz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_yy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_yz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_zz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_xx</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_xy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_xz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_yy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_yz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_zz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>baryon_density</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>energy_density</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>specific_energy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>u_euler_x</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>u_euler_y</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>u_euler_z</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-read_id_hydro_int"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public subroutine read_id_hydro_int(THIS, nx, ny, nz, pos, baryon_density, energy_density, specific_energy, pressure, u_euler)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE or the SUBROUTINE reading the the hydro ID needed to compute
+ the constraints on the refined mesh</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/idbase.html">idbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nx</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>ny</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:,:)</td><td>::</td>
+  <td><strong>pos</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:)</td><td>::</td>
+  <td><strong>baryon_density</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:)</td><td>::</td>
+  <td><strong>energy_density</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:)</td><td>::</td>
+  <td><strong>specific_energy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:)</td><td>::</td>
+  <td><strong>pressure</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:,:)</td><td>::</td>
+  <td><strong>u_euler</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-read_id_k_int"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public subroutine read_id_k_int(THIS, n, x, y, z, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE or the SUBROUTINE reading the components of the extrinsic
+ curvature</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/idbase.html">idbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>n</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>y</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>z</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_xx</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_xy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_xz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_yy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_yz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>k_zz</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-read_id_mass_b_int"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public subroutine read_id_mass_b_int(THIS, x, y, z, g_xx, baryon_density, gamma_euler)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE or the SUBROUTINE reading the hydro ID needed to compute the
+ baryon mass</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p>Object of class <a href="../type/idbase.html">idbase</a> which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>y</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>z</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>g_xx</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>baryon_density</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>gamma_euler</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-read_id_particles_int"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public subroutine read_id_particles_int(THIS, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, baryon_density, energy_density, specific_energy, pressure, u_euler_x, u_euler_y, u_euler_z)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE or the SUBROUTINE reading the hydro ID needed to compute the
+ SPH ID</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/idbase.html">idbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>n</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>y</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>z</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>lapse</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>shift_x</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>shift_y</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>shift_z</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_xx</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_xy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_xz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_yy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_yz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>g_zz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>baryon_density</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>energy_density</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>specific_energy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>pressure</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>u_euler_x</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>u_euler_y</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>u_euler_z</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-read_id_spacetime_int"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public subroutine read_id_spacetime_int(THIS, nx, ny, nz, pos, lapse, shift, g, ek)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE or the SUBROUTINE reading the spacetime ID</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/idbase.html">idbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nx</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>ny</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:,:)</td><td>::</td>
+  <td><strong>pos</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:)</td><td>::</td>
+  <td><strong>lapse</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:,:)</td><td>::</td>
+  <td><strong>shift</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:,:)</td><td>::</td>
+  <td><strong>g</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:,:)</td><td>::</td>
+  <td><strong>ek</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-read_integer_at_pos"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function read_integer_at_pos(THIS, x, y, z) result(res)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE for a PROCEDURE that returns an INTEGER at a given position</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p>Object of class <a href="../type/idbase.html">idbase</a> which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>VALUE</td><td>::</td>
+  <td><strong>x</strong></td><td><p>
+<script type="math/tex">x</script> coordinate of the desired point</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>VALUE</td><td>::</td>
+  <td><strong>y</strong></td><td><p>
+<script type="math/tex">y</script> coordinate of the desired point</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>VALUE</td><td>::</td>
+  <td><strong>z</strong></td><td><p>
+<script type="math/tex">z</script> coordinate of the desired point</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  <p>Integer at <script type="math/tex">(x,y,z)</script>
+</p>
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-return_double_parameter"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function return_double_parameter(THIS, i_matter) result(res)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE for a PROCEDURE that returns a DOUBLE PRECISION</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose parameter is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision
+  </small></h4>
+  <p>Real number. Parameter of the <code>i_matter</code>-th matter object</p>
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-return_eos_parameters_int"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public subroutine return_eos_parameters_int(THIS, i_matter, eos_params)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE for a PROCEDURE that returns an array containing the
+ parametersf the EoS for the matter objects</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose parameter is to return</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(out),</td>
+  <td></td>
+  
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>eos_params</strong></td><td><p>Array containing the parameters of the EoS for the <code>i_matter</code>-th
+ matter object</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-return_integer_parameter"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function return_integer_parameter(THIS, i_matter) result(res)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE for a PROCEDURE that returns an INTEGER</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose parameter is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>integer
+  </small></h4>
+  <p>Real number. Parameter of the <code>i_matter</code>-th matter object</p>
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-return_position"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function return_position(THIS, i_matter) result(res)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE for a PROCEDURE that returns a DOUBLE PRECISION</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose parameter is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(3)</small></h4>
+  <p>Centers of the matter objects. The first index runs over the matter
+ objects, the second index over <script type="math/tex">(x,y,z)</script>.</p>
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-return_spatial_extent_int"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function return_spatial_extent_int(THIS, i_matter) result(box)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE to the SUBROUTINE that detects the spatial extent of the
+  matter objects, and returns a 6-dimensional array
+  containing the coordinates
+<script type="math/tex">x_{\rm min},x_{\rm max},y_{\rm min},y_{\rm max},z_{\rm min},z_{\rm max}</script>
+  of a box <strong>centered at the center of the object</strong> and containing the
+  system.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p>Object of class <a href="../type/idbase.html">idbase</a> which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose string is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(6)</small></h4>
+  <p>6-dimensional array containing the coordinates
+ <script type="math/tex">x_{\rm min},x_{\rm max},y_{\rm min},y_{\rm max},
+   z_{\rm min},z_{\rm max}</script>
+ of a box containing the physical system.</p>
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-return_string_parameter"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function return_string_parameter(THIS, i_matter) result(string)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE for a PROCEDURE that returns a CHARACTER( LEN= : )</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/idbase.html">idbase</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object whose string is to return</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>character(len=:),
+  ALLOCATABLE</small></h4>
+  
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-return_total_spatial_extent_int"></span><h3>abstract interface
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function return_total_spatial_extent_int(THIS) result(box)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>INTERFACE to the SUBROUTINE that detects the spatial extent of the
+  physical system considered, and returns a 6-dimensional array
+  containing the coordinates
+<script type="math/tex">x_{\rm min},x_{\rm max},y_{\rm min},y_{\rm max},z_{\rm min},z_{\rm max}</script>
+  of a box <strong>centered at the center of the object</strong> and containing the
+  system.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p>Object of class <a href="../type/idbase.html">idbase</a> which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>double precision,
+  DIMENSION(6)</small></h4>
+  <p>6-dimensional array containing the coordinates
+ <script type="math/tex">x_{\rm min},x_{\rm max},y_{\rm min},y_{\rm max},
+   z_{\rm min},z_{\rm max}</script>
+ of a box containing the physical system.</p>
+    
+
+    </li>
+  </ul>
+</div>
+
+    
+    </section>
+  <br>
+    
+    
+    
+    <section>
+     <h2>Derived Types</h2>
+   
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-idbase"></span><h3>type, public, ABSTRACT :: <a href='../type/idbase.html'>idbase</a>
+    
+  </h3></div>
+  <div class="panel-body">
+    
+    
+    <p>Represents a generic ID for \(\texttt{SPHINCS_BSSN}\) (binary neutron star, rotating
+ star, etc.)</p>
+    
+     
+     <h4>Components</h4>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-construction_timer"></span>type(timer),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>construction_timer</strong></td><td></td><td></td><td><p>Timer that times the construction of the appropriate object</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-n_matter~2"></span>integer,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>n_matter</strong></td><td> =</td><td>0</td><td><p>Number of matter objects belonging the physical system.
+ For example, n_objects= 2 for a binary system of stars, and n_objects= 1
+ for a single star or for a binary system of a black hole and a star.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-one_lapse"></span>logical,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>one_lapse</strong></td><td></td><td></td><td><p>Logical variable that determines if the lapse function <script type="math/tex">\alpha=1</script>,</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zero_shift"></span>logical,</td>
+  
+  <td>private</td>
+  <td></td><td>::</td>
+  <td><strong>zero_shift</strong></td><td></td><td></td><td><p>Logical variable that determines if the shift <script type="math/tex">\beta^i=0</script>
+</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+     
+     
+          
+     
+     <h4>Type-Bound Procedures</h4>
+      <table class="table table-striped varlist">
+      <tbody>
+      
+       <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-check_i_matter'>check_i_matter</a></strong>  </td>
+       <td><p>Checks that the given index is between 1 and <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>,
+ included. If not, it stops the execution of the program.</p></td></tr>
+      
+       <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-get_n_matter'>get_n_matter</a></strong>  </td>
+       <td><p>Returns <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+ physical system</p></td></tr>
+      
+       <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-get_one_lapse'>get_one_lapse</a></strong>  </td>
+       <td><p>Returns <a href="../type/idbase.html#variable-one_lapse">one_lapse</a>, the logical variable that determines if
+the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geodesic gauge is to be used</p></td></tr>
+      
+       <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-get_total_spatial_extent'>get_total_spatial_extent</a></strong>  </td>
+       <td><p>Returns the spatial extent of the physical system considered,
+  as the array of 6 numbers
+<script type="math/tex">x_{\rm min},x_{\rm max},y_{\rm min},y_{\rm max},z_{\rm min},z_{\rm max}</script>
+</p></td></tr>
+      
+       <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-get_zero_shift'>get_zero_shift</a></strong>  </td>
+       <td><p>Returns <a href="../type/idbase.html#variable-zero_shift">zero_shift</a>, the logical variable that determines if
+ the shift <script type="math/tex">\beta^i=0</script>
+</p></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/idbase.html#boundprocedure-integrate_baryon_mass_density'>integrate_baryon_mass_density</a></strong>  </td>
+       <td><p>Integrates the baryon mass density over a matter object, using spherical
+ coordinates, and computes its radial profile inside the star</p></td></tr>
+      
+       <tr><td>procedure(read_id_full_int), public :: <strong><a href='../type/idbase.html#boundprocedure-read_id_full'>read_id_full</a></strong>  </td>
+       <td><p>Reads the full ID</p></td></tr>
+      
+       <tr><td>procedure(read_id_hydro_int), public :: <strong><a href='../type/idbase.html#boundprocedure-read_id_hydro'>read_id_hydro</a></strong>  </td>
+       <td><p>Reads the hydro ID needed to compute the constraints on the refined mesh</p></td></tr>
+      
+       <tr><td>procedure(read_id_k_int), public :: <strong><a href='../type/idbase.html#boundprocedure-read_id_k'>read_id_k</a></strong>  </td>
+       <td><p>Reads the components of the extrinsic curvature</p></td></tr>
+      
+       <tr><td>procedure(read_id_mass_b_int), public :: <strong><a href='../type/idbase.html#boundprocedure-read_id_mass_b'>read_id_mass_b</a></strong>  </td>
+       <td><p>Reads the hydro ID needed to compute the baryon mass</p></td></tr>
+      
+       <tr><td>procedure(read_id_particles_int), public :: <strong><a href='../type/idbase.html#boundprocedure-read_id_particles'>read_id_particles</a></strong>  </td>
+       <td><p>Reads the hydro ID needed to compute the SPH ID</p></td></tr>
+      
+       <tr><td>procedure(read_id_spacetime_int), public :: <strong><a href='../type/idbase.html#boundprocedure-read_id_spacetime'>read_id_spacetime</a></strong>  </td>
+       <td><p>Reads the spacetime ID needed to compute
+ the BSSN variables and constraints</p></td></tr>
+      
+       <tr><td>procedure(read_double_at_pos), public :: <strong><a href='../type/idbase.html#boundprocedure-read_mass_density'>read_mass_density</a></strong>  </td>
+       <td><p>Returns the baryon mass density at the given point</p></td></tr>
+      
+       <tr><td>procedure(return_position), public :: <strong><a href='../type/idbase.html#boundprocedure-return_barycenter'>return_barycenter</a></strong>  </td>
+       <td><p>Returns the barycenters (centers of mass) of the matter objects.</p></td></tr>
+      
+       <tr><td>procedure(return_position), public :: <strong><a href='../type/idbase.html#boundprocedure-return_center'>return_center</a></strong>  </td>
+       <td><p>Returns the centers of the matter objects.</p></td></tr>
+      
+       <tr><td>procedure(return_string_parameter), public :: <strong><a href='../type/idbase.html#boundprocedure-return_eos_name'>return_eos_name</a></strong>  </td>
+       <td><p>Returns the name of the EoS of the matter objects.</p><a href="../type/idbase.html#boundprocedure-return_eos_name" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+      
+       <tr><td>procedure(return_eos_parameters_int), public :: <strong><a href='../type/idbase.html#boundprocedure-return_eos_parameters'>return_eos_parameters</a></strong>  </td>
+       <td><p>Returns the identification number of the EoS of the matter objects.
+ </p><a href="../type/idbase.html#boundprocedure-return_eos_parameters" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+      
+       <tr><td>procedure(return_double_parameter), public :: <strong><a href='../type/idbase.html#boundprocedure-return_mass'>return_mass</a></strong>  </td>
+       <td><p>Returns the masses of the matter objects.</p></td></tr>
+      
+       <tr><td>procedure(return_spatial_extent_int), public :: <strong><a href='../type/idbase.html#boundprocedure-return_spatial_extent'>return_spatial_extent</a></strong>  </td>
+       <td><p>Returns the spatial extent of the matter objects,
+  returning the array of 6 numbers
+<script type="math/tex">x_{\rm min},x_{\rm max},y_{\rm min},y_{\rm max},z_{\rm min},z_{\rm max}</script>
+</p></td></tr>
+      
+       <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-set_n_matter'>set_n_matter</a></strong>  </td>
+       <td><p>Sets <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+ physical system, to a value</p></td></tr>
+      
+       <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-set_one_lapse'>set_one_lapse</a></strong>  </td>
+       <td><p>Sets <a href="../type/idbase.html#variable-one_lapse">one_lapse</a>, the logical variable that determines if
+ the lapse <script type="math/tex">\alpha=1</script>, i.e., if the geodesic gauge is to be used</p></td></tr>
+      
+       <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-set_zero_shift'>set_zero_shift</a></strong>  </td>
+       <td><p>Sets <a href="../type/idbase.html#variable-zero_shift">zero_shift</a>, the logical variable that determines if
+ the shift <script type="math/tex">\beta^i=0</script>
+</p></td></tr>
+      
+       <tr><td>procedure(read_integer_at_pos), public :: <strong><a href='../type/idbase.html#boundprocedure-test_position'>test_position</a></strong>  </td>
+       <td><p>Returns 1 if the position has physically acceptable properties,
+ 0 otherwise</p></td></tr>
+      
+       </tbody>
+       </table>
+     
+  </div>
+</div>
+
+     
+    </section>
+  <br>
+    
+    
+    
+
+    
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,2984 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>sphincs_lorene_bns &ndash; SPHINCS_LORENE</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>sphincs_lorene_bns
+    <small>Program</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="30.5% of total for programs.">314 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/sphincs_lorene_bns.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/sphincs_lorene_bns.f90.html'>sphincs_lorene_bns.f90</a></li>
+    
+  
+     <li class="active">sphincs_lorene_bns</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-binaries">binaries</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-bssn_forms~2">bssn_forms</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-common_path~2">common_path</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-compute_constraints~2">compute_constraints</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-compute_parts_constraints~2">compute_parts_constraints</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-constraints_step~2">constraints_step</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-denominator_ratio_dx~2">denominator_ratio_dx</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-dir_out">dir_out</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-execution_timer~2">execution_timer</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-exist~19">exist</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_bin~4">export_bin</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_constraints~3">export_constraints</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_constraints_details~3">export_constraints_details</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_constraints_x~3">export_constraints_x</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_constraints_xy~3">export_constraints_xy</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_form~2">export_form</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_form_x~4">export_form_x</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_form_xy~4">export_form_xy</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-filenames~2">filenames</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-i_matter~23">i_matter</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-idata">idata</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-last_level">last_level</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-max_length~3">max_length</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-max_n_bns~2">max_n_bns</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-max_n_parts~2">max_n_parts</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-n_bns~2">n_bns</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-name_logfile~6">name_logfile</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-namefile_bssn~2">namefile_bssn</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-namefile_bssn_bin">namefile_bssn_bin</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-namefile_parts~2">namefile_parts</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-namefile_parts_bin">namefile_parts_bin</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-namefile_sph~2">namefile_sph</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-numerator_ratio_dx~2">numerator_ratio_dx</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-one_lapse~3">one_lapse</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-particles_dist~2">particles_dist</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-placer~2">placer</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-ref_lev~4">ref_lev</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-run_spacetime~2">run_spacetime</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-run_sph~2">run_sph</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-spacetime_path~2">spacetime_path</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-sph_path~2">sph_path</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-system">system</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-test_int~2">test_int</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-zero_shift~3">zero_shift</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#proc-read_bns_id_parameters~2">read_bns_id_parameters</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../program/sphincs_lorene_bns.html#src">sphincs_lorene_bns</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li><a href='../module/sphincs_lorene.html'>sphincs_lorene</a></li>
+    
+    <li>constants</li>
+    
+    <li>IFPORT</li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: program~~sphincs_lorene_bns~~UsesGraph Pages: 1 -->
+<svg id="programsphincs_lorene_bnsUsesGraph" width="641pt" height="364pt"
+ viewBox="0.00 0.00 641.00 363.67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~sphincs_lorene_bns~~UsesGraph" class="graph" transform="scale(.8145 .8145) rotate(0) translate(4 442.5008)">
+<title>program~~sphincs_lorene_bns~~UsesGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-442.5008 783,-442.5008 783,4 -4,4"/>
+<!-- program~sphincs_lorene_bns -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node1" class="node">
+<title>program~sphincs_lorene_bns</title>
+<polygon fill="none" stroke="#000000" points="779,-119.8876 671,-119.8876 671,-95.8876 779,-95.8876 779,-119.8876"/>
+<text text-anchor="middle" x="725" y="-105.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">sphincs_lorene_bns</text>
+</g>
+<!-- module~sphincs_lorene -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node2" class="node">
+<title>module~sphincs_lorene</title>
+<g id="a_program~~sphincs_lorene_bns~~UsesGraph_node2"><a xlink:href=".././module/sphincs_lorene.html" xlink:title="sphincs_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="635,-161.8876 550,-161.8876 550,-137.8876 635,-137.8876 635,-161.8876"/>
+<text text-anchor="middle" x="592.5" y="-147.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene</text>
+</a>
+</g>
+</g>
+<!-- program~sphincs_lorene_bns&#45;&gt;module~sphincs_lorene -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge1" class="edge">
+<title>program~sphincs_lorene_bns&#45;&gt;module~sphincs_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M687.0308,-119.9231C672.4773,-124.5363 655.6822,-129.86 640.3228,-134.7287"/>
+<polygon fill="#000000" stroke="#000000" points="638.9497,-131.4922 630.4747,-137.8503 641.0649,-138.165 638.9497,-131.4922"/>
+</g>
+<!-- constants -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node3" class="node">
+<title>constants</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="621.5,-119.8876 563.5,-119.8876 563.5,-95.8876 621.5,-95.8876 621.5,-119.8876"/>
+<text text-anchor="middle" x="592.5" y="-105.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">constants</text>
+</g>
+<!-- program~sphincs_lorene_bns&#45;&gt;constants -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge2" class="edge">
+<title>program~sphincs_lorene_bns&#45;&gt;constants</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M670.7249,-107.8876C657.7903,-107.8876 644.2257,-107.8876 632.0928,-107.8876"/>
+<polygon fill="#000000" stroke="#000000" points="631.8508,-104.3877 621.8508,-107.8876 631.8508,-111.3877 631.8508,-104.3877"/>
+</g>
+<!-- IFPORT -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node4" class="node">
+<title>IFPORT</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="619.5,-77.8876 565.5,-77.8876 565.5,-53.8876 619.5,-53.8876 619.5,-77.8876"/>
+<text text-anchor="middle" x="592.5" y="-63.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">IFPORT</text>
+</g>
+<!-- program~sphincs_lorene_bns&#45;&gt;IFPORT -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge3" class="edge">
+<title>program~sphincs_lorene_bns&#45;&gt;IFPORT</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M687.0308,-95.8521C668.8353,-90.0845 647.1361,-83.2062 629.1192,-77.4952"/>
+<polygon fill="#000000" stroke="#000000" points="630.1244,-74.1423 619.5343,-74.457 628.0092,-80.8151 630.1244,-74.1423"/>
+</g>
+<!-- module~formul_3p1_id -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node5" class="node">
+<title>module~formul_3p1_id</title>
+<g id="a_program~~sphincs_lorene_bns~~UsesGraph_node5"><a xlink:href=".././module/formul_3p1_id.html" xlink:title="formul_3p1_id">
+<polygon fill="#337ab7" stroke="#337ab7" points="393,-201.8876 312,-201.8876 312,-177.8876 393,-177.8876 393,-201.8876"/>
+<text text-anchor="middle" x="352.5" y="-187.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1_id</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~formul_3p1_id -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge5" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-109.8876C430.0901,-101.0304 426.1655,-137.5573 393,-163.8876 389.4438,-166.7109 385.5724,-169.5072 381.6798,-172.1607"/>
+<polygon fill="#000000" stroke="#000000" points="379.6813,-169.2857 373.2387,-177.6966 383.5203,-175.1392 379.6813,-169.2857"/>
+</g>
+<!-- module~id_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node6" class="node">
+<title>module~id_base</title>
+<g id="a_program~~sphincs_lorene_bns~~UsesGraph_node6"><a xlink:href=".././module/id_base.html" xlink:title="id_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-281.8876 90,-281.8876 90,-257.8876 144,-257.8876 144,-281.8876"/>
+<text text-anchor="middle" x="117" y="-267.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">id_base</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~id_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge4" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M588.9763,-161.9709C572.1972,-216.7575 495.2341,-438.7163 352.5,-427.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-427.8876C323.9326,-432.4328 253.5516,-403.4474 228,-389.8876"/>
+</g>
+<!-- timing -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node7" class="node">
+<title>timing</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-261.8876 0,-261.8876 0,-237.8876 54,-237.8876 54,-261.8876"/>
+<text text-anchor="middle" x="27" y="-247.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timing</text>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;timing -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge6" class="edge">
+<title>module~sphincs_lorene&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-427.8876C297.854,-436.582 280.3071,-445.9361 228,-427.8876"/>
+</g>
+<!-- module~utility -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node8" class="node">
+<title>module~utility</title>
+<g id="a_program~~sphincs_lorene_bns~~UsesGraph_node8"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-120.8876 90,-120.8876 90,-96.8876 144,-96.8876 144,-120.8876"/>
+<text text-anchor="middle" x="117" y="-106.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utility</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~utility -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge7" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M562.174,-137.8209C538.002,-128.7042 503.0881,-116.644 471.5,-109.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-109.8876C416.5884,-98.1425 443.5587,-35.3222 393,-10.8876 360.5869,4.7773 347.9977,-10.4786 312,-10.8876 253.322,-11.5543 231.3859,14.4504 180,-13.8876 151.4467,-29.634 133.5509,-64.4641 124.4219,-87.2899"/>
+<polygon fill="#000000" stroke="#000000" points="121.0816,-86.229 120.8376,-96.821 127.6336,-88.693 121.0816,-86.229"/>
+</g>
+<!-- module~particles_id -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node9" class="node">
+<title>module~particles_id</title>
+<g id="a_program~~sphincs_lorene_bns~~UsesGraph_node9"><a xlink:href=".././module/particles_id.html" xlink:title="particles_id">
+<polygon fill="#337ab7" stroke="#337ab7" points="261.5,-281.8876 194.5,-281.8876 194.5,-257.8876 261.5,-257.8876 261.5,-281.8876"/>
+<text text-anchor="middle" x="228" y="-267.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_id</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~particles_id -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge8" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-109.8876C457.8593,-106.97 364.9571,-143.6106 352.5,-149.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-149.8876C334.7444,-158.8345 326.1212,-154.8911 312,-168.8876 285.7394,-194.9163 301.4979,-217.1113 276,-243.8876 273.0222,-247.0147 269.5839,-249.8523 265.9434,-252.4043"/>
+<polygon fill="#000000" stroke="#000000" points="263.8446,-249.588 257.2032,-257.8428 267.5428,-255.5313 263.8446,-249.588"/>
+</g>
+<!-- module~diffstar_lorene -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node10" class="node">
+<title>module~diffstar_lorene</title>
+<g id="a_program~~sphincs_lorene_bns~~UsesGraph_node10"><a xlink:href=".././module/diffstar_lorene.html" xlink:title="diffstar_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="393,-79.8876 312,-79.8876 312,-55.8876 393,-55.8876 393,-79.8876"/>
+<text text-anchor="middle" x="352.5" y="-65.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~diffstar_lorene -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge9" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-109.8876C443.3808,-103.8732 412.8149,-92.9859 389.7023,-83.8033"/>
+<polygon fill="#000000" stroke="#000000" points="390.8649,-80.4981 380.2822,-79.9914 388.2391,-86.987 390.8649,-80.4981"/>
+</g>
+<!-- module~bns_lorene -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node11" class="node">
+<title>module~bns_lorene</title>
+<g id="a_program~~sphincs_lorene_bns~~UsesGraph_node11"><a xlink:href=".././module/bns_lorene.html" xlink:title="bns_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="385.5,-121.8876 319.5,-121.8876 319.5,-97.8876 385.5,-97.8876 385.5,-121.8876"/>
+<text text-anchor="middle" x="352.5" y="-107.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~bns_lorene -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge10" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-109.8876C446.7974,-104.6039 418.5446,-104.3675 395.7685,-105.5623"/>
+<polygon fill="#000000" stroke="#000000" points="395.4802,-102.0735 385.7216,-106.199 395.9229,-109.0595 395.4802,-102.0735"/>
+</g>
+<!-- module~formul_bssn_id -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node12" class="node">
+<title>module~formul_bssn_id</title>
+<g id="a_program~~sphincs_lorene_bns~~UsesGraph_node12"><a xlink:href=".././module/formul_bssn_id.html" xlink:title="formul_bssn_id">
+<polygon fill="#337ab7" stroke="#337ab7" points="514,-161.8876 429,-161.8876 429,-137.8876 514,-137.8876 514,-161.8876"/>
+<text text-anchor="middle" x="471.5" y="-147.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_bssn_id</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~formul_bssn_id -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge11" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M549.8399,-149.8876C541.6166,-149.8876 532.9104,-149.8876 524.4075,-149.8876"/>
+<polygon fill="#000000" stroke="#000000" points="524.1827,-146.3877 514.1827,-149.8876 524.1826,-153.3877 524.1827,-146.3877"/>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;module~id_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge12" class="edge">
+<title>module~formul_3p1_id&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M346.1446,-202.1849C334.7499,-223.1268 308.9278,-265.8695 276,-290.8876 257.7311,-304.7681 249.957,-303.2309 228,-309.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-309.8876C197.5046,-319.133 163.0825,-302.3708 140.7672,-287.7956"/>
+<polygon fill="#000000" stroke="#000000" points="142.501,-284.7406 132.275,-281.9695 138.541,-290.5128 142.501,-284.7406"/>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;timing -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge13" class="edge">
+<title>module~formul_3p1_id&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-309.8876C180.7886,-324.2008 159.3572,-335.1788 117,-309.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M117,-309.8876C94.7572,-296.6066 70.3516,-280.2159 52.5733,-267.9236"/>
+<polygon fill="#000000" stroke="#000000" points="54.1345,-264.746 43.927,-261.9073 50.1363,-270.4919 54.1345,-264.746"/>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;module~utility -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge14" class="edge">
+<title>module~formul_3p1_id&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M322.8838,-177.8854C298.0117,-168.4146 261.2991,-155.8409 228,-149.8876"/>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;module~particles_id -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge15" class="edge">
+<title>module~formul_3p1_id&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M336.4639,-202.0468C321.2407,-213.3859 297.5467,-230.5123 276,-243.8876 271.1688,-246.8866 265.9654,-249.9081 260.8299,-252.7767"/>
+<polygon fill="#000000" stroke="#000000" points="258.8501,-249.8701 251.7539,-257.7374 262.2074,-256.0124 258.8501,-249.8701"/>
+</g>
+<!-- mesh_refinement -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node16" class="node">
+<title>mesh_refinement</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="276,-361.8876 180,-361.8876 180,-337.8876 276,-337.8876 276,-361.8876"/>
+<text text-anchor="middle" x="228" y="-347.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mesh_refinement</text>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;mesh_refinement -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge16" class="edge">
+<title>module~formul_3p1_id&#45;&gt;mesh_refinement</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M348.195,-202.08C338.6928,-227.5285 313.7299,-286.9906 276,-323.8876 272.7486,-327.0672 269.0298,-329.9683 265.1328,-332.5836"/>
+<polygon fill="#000000" stroke="#000000" points="263.1736,-329.6782 256.4298,-337.8495 266.7974,-335.6672 263.1736,-329.6782"/>
+</g>
+<!-- module~id_base&#45;&gt;timing -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge17" class="edge">
+<title>module~id_base&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-263.887C81.8842,-262.0841 72.8369,-260.0736 64.1869,-258.1514"/>
+<polygon fill="#000000" stroke="#000000" points="64.8161,-254.7059 54.295,-255.9532 63.2976,-261.5392 64.8161,-254.7059"/>
+</g>
+<!-- matrix -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node13" class="node">
+<title>matrix</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-120.8876 0,-120.8876 0,-96.8876 54,-96.8876 54,-120.8876"/>
+<text text-anchor="middle" x="27" y="-106.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">matrix</text>
+</g>
+<!-- module~utility&#45;&gt;matrix -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge18" class="edge">
+<title>module~utility&#45;&gt;matrix</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-108.8876C81.9723,-108.8876 73.0335,-108.8876 64.4691,-108.8876"/>
+<polygon fill="#000000" stroke="#000000" points="64.295,-105.3877 54.295,-108.8876 64.2949,-112.3877 64.295,-105.3877"/>
+</g>
+<!-- module~particles_id&#45;&gt;module~id_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge19" class="edge">
+<title>module~particles_id&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M194.3951,-269.8876C181.7071,-269.8876 167.2009,-269.8876 154.2025,-269.8876"/>
+<polygon fill="#000000" stroke="#000000" points="154.1648,-266.3877 144.1648,-269.8876 154.1647,-273.3877 154.1648,-266.3877"/>
+</g>
+<!-- module~particles_id&#45;&gt;timing -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge20" class="edge">
+<title>module~particles_id&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M208.3099,-257.8397C186.6949,-245.8159 150.5867,-229.209 117,-229.8876"/>
+</g>
+<!-- module~particles_id&#45;&gt;module~utility -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge21" class="edge">
+<title>module~particles_id&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M198.7542,-257.8831C192.0016,-254.1305 185.2635,-249.4757 180,-243.8876 149.0221,-210.9997 130.9867,-160.1368 122.6546,-131.1427"/>
+<polygon fill="#000000" stroke="#000000" points="125.9449,-129.9058 119.9296,-121.1842 119.1931,-131.7534 125.9449,-129.9058"/>
+</g>
+<!-- module~diffstar_lorene&#45;&gt;timing -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge23" class="edge">
+<title>module~diffstar_lorene&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M340.5732,-55.8236C326.5472,-42.578 301.8767,-22.1006 276,-13.8876 235.3325,-.9803 220.1659,.5049 180,-13.8876 131.2503,-31.3559 120.3736,-45.9457 90,-87.8876 58.0368,-132.0247 39.8188,-194.5046 31.8591,-227.4857"/>
+<polygon fill="#000000" stroke="#000000" points="28.3932,-226.9389 29.5479,-237.4706 35.2129,-228.5175 28.3932,-226.9389"/>
+</g>
+<!-- module~diffstar_lorene&#45;&gt;module~utility -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge24" class="edge">
+<title>module~diffstar_lorene&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M335.0071,-55.8782C311.1291,-40.9655 266.8534,-18.5622 228,-27.8876"/>
+</g>
+<!-- iso_c_binding -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node14" class="node">
+<title>iso_c_binding</title>
+<g id="a_program~~sphincs_lorene_bns~~UsesGraph_node14"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="267,-121.8876 189,-121.8876 189,-97.8876 267,-97.8876 267,-121.8876"/>
+<text text-anchor="middle" x="228" y="-107.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iso_c_binding</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene&#45;&gt;iso_c_binding -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge25" class="edge">
+<title>module~diffstar_lorene&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M316.8233,-79.9231C303.2787,-84.4924 287.6679,-89.7587 273.3481,-94.5895"/>
+<polygon fill="#000000" stroke="#000000" points="272.0385,-91.3374 263.6819,-97.8503 274.2761,-97.9701 272.0385,-91.3374"/>
+</g>
+<!-- module~diffstar_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node15" class="node">
+<title>module~diffstar_base</title>
+<g id="a_program~~sphincs_lorene_bns~~UsesGraph_node15"><a xlink:href=".././module/diffstar_base.html" xlink:title="diffstar_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="265,-79.8876 191,-79.8876 191,-55.8876 265,-55.8876 265,-79.8876"/>
+<text text-anchor="middle" x="228" y="-65.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_base</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene&#45;&gt;module~diffstar_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge22" class="edge">
+<title>module~diffstar_lorene&#45;&gt;module~diffstar_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M311.734,-67.8876C300.1059,-67.8876 287.3378,-67.8876 275.3524,-67.8876"/>
+<polygon fill="#000000" stroke="#000000" points="275.0697,-64.3877 265.0696,-67.8876 275.0696,-71.3877 275.0697,-64.3877"/>
+</g>
+<!-- module~bns_lorene&#45;&gt;module~id_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge26" class="edge">
+<title>module~bns_lorene&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-229.8876C214.7209,-236.6769 180.6342,-248.6846 153.7078,-257.7774"/>
+<polygon fill="#000000" stroke="#000000" points="152.5302,-254.4807 144.1633,-260.9804 154.7573,-261.1169 152.5302,-254.4807"/>
+</g>
+<!-- module~bns_lorene&#45;&gt;timing -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge27" class="edge">
+<title>module~bns_lorene&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M328.9363,-121.9335C322.8907,-125.8025 316.7586,-130.5034 312,-135.8876 287.5141,-163.5923 303.0515,-185.6819 276,-210.8876 259.2137,-226.5286 248.4286,-219.4429 228,-229.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-229.8876C184.0749,-252.3457 166.3233,-228.8911 117,-229.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M117,-229.8876C99.4093,-230.243 80.3317,-233.9806 64.2872,-238.1303"/>
+<polygon fill="#000000" stroke="#000000" points="62.948,-234.8681 54.2278,-240.8854 64.7972,-241.6195 62.948,-234.8681"/>
+</g>
+<!-- module~bns_lorene&#45;&gt;module~utility -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge28" class="edge">
+<title>module~bns_lorene&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M333.9171,-121.955C309.9271,-136.1025 266.6628,-156.7998 228,-149.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-149.8876C201.3439,-145.122 172.7101,-134.3942 151.2022,-125.1075"/>
+<polygon fill="#000000" stroke="#000000" points="152.4152,-121.8169 141.8543,-120.9686 149.5812,-128.2176 152.4152,-121.8169"/>
+</g>
+<!-- module~bns_lorene&#45;&gt;iso_c_binding -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge29" class="edge">
+<title>module~bns_lorene&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M319.4631,-109.8876C306.5941,-109.8876 291.5709,-109.8876 277.4634,-109.8876"/>
+<polygon fill="#000000" stroke="#000000" points="277.3966,-106.3877 267.3966,-109.8876 277.3966,-113.3877 277.3966,-106.3877"/>
+</g>
+<!-- module~bns_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_node17" class="node">
+<title>module~bns_base</title>
+<g id="a_program~~sphincs_lorene_bns~~UsesGraph_node17"><a xlink:href=".././module/bns_base.html" xlink:title="bns_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="257.5,-201.8876 198.5,-201.8876 198.5,-177.8876 257.5,-177.8876 257.5,-201.8876"/>
+<text text-anchor="middle" x="228" y="-187.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_base</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene&#45;&gt;module~bns_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge30" class="edge">
+<title>module~bns_lorene&#45;&gt;module~bns_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M332.8993,-121.9687C326.1855,-126.2386 318.6839,-131.1574 312,-135.8876 295.4545,-147.597 292.969,-152.8008 276,-163.8876 271.3388,-166.9331 266.289,-169.95 261.2745,-172.7912"/>
+<polygon fill="#000000" stroke="#000000" points="259.4538,-169.798 252.3779,-177.6836 262.8269,-175.9317 259.4538,-169.798"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~formul_3p1_id -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge32" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M435.7961,-161.8889C424.0197,-165.8474 410.7542,-170.3064 398.3296,-174.4827"/>
+<polygon fill="#000000" stroke="#000000" points="396.9537,-171.2527 388.59,-177.7565 399.184,-177.8879 396.9537,-171.2527"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~id_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge31" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-389.8876C305.4014,-418.9306 276.8772,-415.8259 228,-389.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-389.8876C207.7332,-379.1324 196.7863,-386.5286 180,-370.8876 152.9485,-345.6819 165.6604,-325.8532 144,-295.8876 142.4322,-293.7187 140.6714,-291.5757 138.8199,-289.5062"/>
+<polygon fill="#000000" stroke="#000000" points="140.9485,-286.6779 131.4473,-281.9897 135.9511,-291.5797 140.9485,-286.6779"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;timing -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge33" class="edge">
+<title>module~formul_bssn_id&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-389.8876C327.8782,-405.0705 255.3446,-437.3229 228,-427.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-427.8876C205.4531,-420.1078 197.9002,-419.6506 180,-403.8876 142.2557,-370.6498 160.1812,-335.6707 117,-309.8876"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~utility -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge34" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M446.283,-137.7837C440.0834,-133.9652 433.8429,-129.304 429,-123.8876 403.8197,-95.7254 423.6573,-68.9623 393,-46.8876 333.0955,-3.7537 299.7794,-10.6594 228,-27.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-27.8876C205.6588,-33.1116 199.2274,-34.3685 180,-46.8876 162.3215,-58.3982 145.4629,-75.4247 133.6413,-88.7241"/>
+<polygon fill="#000000" stroke="#000000" points="130.8624,-86.5869 126.9693,-96.4406 136.1575,-91.1653 130.8624,-86.5869"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~particles_id -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge35" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M428.8711,-140.8595C405.1694,-137.9895 375.839,-138.1274 352.5,-149.8876"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;mesh_refinement -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge36" class="edge">
+<title>module~formul_bssn_id&#45;&gt;mesh_refinement</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M469.9126,-162.0576C463.8181,-203.1739 437.8082,-337.283 352.5,-389.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-389.8876C337.0014,-399.4447 292.0452,-381.3206 260.6317,-366.4525"/>
+<polygon fill="#000000" stroke="#000000" points="261.8921,-363.1744 251.3651,-361.977 258.8478,-369.4778 261.8921,-363.1744"/>
+</g>
+<!-- module~diffstar_base&#45;&gt;module~id_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge37" class="edge">
+<title>module~diffstar_base&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.8953,-79.7098C186.798,-82.2232 183.0228,-85.2497 180,-88.8876 134.8028,-143.2833 178.9095,-182.3815 144,-243.8876 142.7352,-246.116 141.2207,-248.274 139.5633,-250.3306"/>
+<polygon fill="#000000" stroke="#000000" points="136.9548,-247.9958 132.6884,-257.6937 142.0713,-252.7731 136.9548,-247.9958"/>
+</g>
+<!-- module~diffstar_base&#45;&gt;module~utility -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge38" class="edge">
+<title>module~diffstar_base&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M195.2967,-79.9672C182.226,-84.7951 167.1135,-90.3772 153.6724,-95.342"/>
+<polygon fill="#000000" stroke="#000000" points="152.4014,-92.0802 144.2336,-98.8284 154.8269,-98.6466 152.4014,-92.0802"/>
+</g>
+<!-- module~bns_base&#45;&gt;module~id_base -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge39" class="edge">
+<title>module~bns_base&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M202.9866,-202.1436C195.4034,-206.1986 187.1838,-210.9463 180,-215.8876 164.7634,-226.3681 148.9656,-239.9166 137.001,-250.8207"/>
+<polygon fill="#000000" stroke="#000000" points="134.3414,-248.5133 129.3842,-257.8769 139.0986,-253.6485 134.3414,-248.5133"/>
+</g>
+<!-- module~bns_base&#45;&gt;module~utility -->
+<g id="program~~sphincs_lorene_bns~~UsesGraph_edge40" class="edge">
+<title>module~bns_base&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M202.9589,-177.6717C195.3746,-173.6183 187.1613,-168.8615 180,-163.8876 164.6914,-153.2549 148.8938,-139.4554 136.9473,-128.3389"/>
+<polygon fill="#000000" stroke="#000000" points="139.0138,-125.4757 129.3452,-121.1434 134.2019,-130.5595 139.0138,-125.4757"/>
+</g>
+</g>
+</svg>
+</div><script>var panprogramsphincs_lorene_bnsUsesGraph = svgPanZoom('#programsphincs_lorene_bnsUsesGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses.
+    </p>
+    </div></div></div></div>
+      </li>
+      
+      </ul>
+    </div>
+    
+
+    
+    
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: program~~sphincs_lorene_bns~~CallsGraph Pages: 1 -->
+<svg id="programsphincs_lorene_bnsCallsGraph" width="641pt" height="185pt"
+ viewBox="0.00 0.00 641.00 185.01" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~sphincs_lorene_bns~~CallsGraph" class="graph" transform="scale(.4093 .4093) rotate(0) translate(4 448)">
+<title>program~~sphincs_lorene_bns~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-448 1562,-448 1562,4 -4,4"/>
+<!-- program~sphincs_lorene_bns -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node1" class="node">
+<title>program~sphincs_lorene_bns</title>
+<polygon fill="none" stroke="#000000" points="108,-212 0,-212 0,-188 108,-188 108,-212"/>
+<text text-anchor="middle" x="54" y="-197.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">sphincs_lorene_bns</text>
+</g>
+<!-- makedirqq -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node2" class="node">
+<title>makedirqq</title>
+<polygon fill="#777777" stroke="#777777" points="242,-316 179,-316 179,-292 242,-292 242,-316"/>
+<text text-anchor="middle" x="210.5" y="-301.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">makedirqq</text>
+</g>
+<!-- program~sphincs_lorene_bns&#45;&gt;makedirqq -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge6" class="edge">
+<title>program~sphincs_lorene_bns&#45;&gt;makedirqq</title>
+<path fill="none" stroke="#000000" d="M64.0781,-212.229C79.5082,-230.2023 110.7175,-263.7035 144,-283 151.7622,-287.5004 160.6033,-291.155 169.248,-294.0765"/>
+<polygon fill="#000000" stroke="#000000" points="168.2684,-297.4371 178.8568,-297.0693 170.3501,-290.7538 168.2684,-297.4371"/>
+</g>
+<!-- interface~particles -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node3" class="node">
+<title>interface~particles</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node3"><a xlink:href=".././interface/particles.html" xlink:title="particles">
+<polygon fill="#a7506f" stroke="#a7506f" points="237.5,-274 183.5,-274 183.5,-250 237.5,-250 237.5,-274"/>
+<text text-anchor="middle" x="210.5" y="-259.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles</text>
+</a>
+</g>
+</g>
+<!-- program~sphincs_lorene_bns&#45;&gt;interface~particles -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge1" class="edge">
+<title>program~sphincs_lorene_bns&#45;&gt;interface~particles</title>
+<path fill="none" stroke="#000000" d="M78.486,-212.1332C96.3926,-220.7643 121.3997,-232.3206 144,-241 153.4789,-244.6403 163.8843,-248.1492 173.5918,-251.2222"/>
+<polygon fill="#000000" stroke="#000000" points="172.7995,-254.6408 183.3873,-254.254 174.8693,-247.9537 172.7995,-254.6408"/>
+</g>
+<!-- proc~read_bns_id_parameters~2 -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node4" class="node">
+<title>proc~read_bns_id_parameters~2</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node4"><a xlink:href=".././proc/read_bns_id_parameters~2.html" xlink:title="read_bns_id_parameters">
+<polygon fill="#d9534f" stroke="#d9534f" points="277,-232 144,-232 144,-208 277,-208 277,-232"/>
+<text text-anchor="middle" x="210.5" y="-217.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_bns_id_parameters</text>
+</a>
+</g>
+</g>
+<!-- program~sphincs_lorene_bns&#45;&gt;proc~read_bns_id_parameters~2 -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge2" class="edge">
+<title>program~sphincs_lorene_bns&#45;&gt;proc~read_bns_id_parameters~2</title>
+<path fill="none" stroke="#000000" d="M108.2969,-206.9389C116.5458,-207.9931 125.1878,-209.0975 133.8047,-210.1987"/>
+<polygon fill="#000000" stroke="#000000" points="133.5204,-213.6907 143.8835,-211.4867 134.4079,-206.7472 133.5204,-213.6907"/>
+</g>
+<!-- timer -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node5" class="node">
+<title>timer</title>
+<polygon fill="#777777" stroke="#777777" points="747.5,-192 693.5,-192 693.5,-168 747.5,-168 747.5,-192"/>
+<text text-anchor="middle" x="720.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
+</g>
+<!-- program~sphincs_lorene_bns&#45;&gt;timer -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge3" class="edge">
+<title>program~sphincs_lorene_bns&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" d="M108.2599,-198.3718C239.5162,-194.4331 571.5768,-184.4688 683.2236,-181.1186"/>
+<polygon fill="#000000" stroke="#000000" points="683.4354,-184.6139 693.3259,-180.8154 683.2254,-177.617 683.4354,-184.6139"/>
+</g>
+<!-- interface~diffstarlorene -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node6" class="node">
+<title>interface~diffstarlorene</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node6"><a xlink:href=".././interface/diffstarlorene.html" xlink:title="diffstarlorene">
+<polygon fill="#a7506f" stroke="#a7506f" points="248,-152 173,-152 173,-128 248,-128 248,-152"/>
+<text text-anchor="middle" x="210.5" y="-137.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstarlorene</text>
+</a>
+</g>
+</g>
+<!-- program~sphincs_lorene_bns&#45;&gt;interface~diffstarlorene -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge4" class="edge">
+<title>program~sphincs_lorene_bns&#45;&gt;interface~diffstarlorene</title>
+<path fill="none" stroke="#000000" d="M85.6701,-187.8581C109.8255,-178.5972 143.2919,-165.7667 169.4929,-155.7216"/>
+<polygon fill="#000000" stroke="#000000" points="171.0601,-158.8692 179.1444,-152.0213 168.5542,-152.3331 171.0601,-158.8692"/>
+</g>
+<!-- interface~bssn_id -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node7" class="node">
+<title>interface~bssn_id</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node7"><a xlink:href=".././interface/bssn_id.html" xlink:title="bssn_id">
+<polygon fill="#a7506f" stroke="#a7506f" points="237.5,-109 183.5,-109 183.5,-85 237.5,-85 237.5,-109"/>
+<text text-anchor="middle" x="210.5" y="-94.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id</text>
+</a>
+</g>
+</g>
+<!-- program~sphincs_lorene_bns&#45;&gt;interface~bssn_id -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge5" class="edge">
+<title>program~sphincs_lorene_bns&#45;&gt;interface~bssn_id</title>
+<path fill="none" stroke="#000000" d="M64.4352,-187.8464C80.0776,-170.3281 111.2795,-138.0028 144,-119 153.0698,-113.7326 163.5766,-109.5173 173.5226,-106.243"/>
+<polygon fill="#000000" stroke="#000000" points="174.6701,-109.5521 183.2077,-103.2783 172.6212,-102.8587 174.6701,-109.5521"/>
+</g>
+<!-- interface~construct_particles -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node9" class="node">
+<title>interface~construct_particles</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node9"><a xlink:href=".././interface/construct_particles.html" xlink:title="construct_particles">
+<polygon fill="#a7506f" stroke="#a7506f" points="426,-296 324,-296 324,-272 426,-272 426,-296"/>
+<text text-anchor="middle" x="375" y="-281.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_particles</text>
+</a>
+</g>
+</g>
+<!-- interface~particles&#45;&gt;interface~construct_particles -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge7" class="edge">
+<title>interface~particles&#45;&gt;interface~construct_particles</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M237.6638,-265.6329C258.2875,-268.391 287.4628,-272.2929 313.622,-275.7914"/>
+<polygon fill="#000000" stroke="#000000" points="313.4772,-279.3031 323.8529,-277.1597 314.4051,-272.3649 313.4772,-279.3031"/>
+</g>
+<!-- interface~construct_diffstarlorene -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node10" class="node">
+<title>interface~construct_diffstarlorene</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node10"><a xlink:href=".././interface/construct_diffstarlorene.html" xlink:title="construct_diffstarlorene">
+<polygon fill="#a7506f" stroke="#a7506f" points="437,-152 313,-152 313,-128 437,-128 437,-152"/>
+<text text-anchor="middle" x="375" y="-137.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_diffstarlorene</text>
+</a>
+</g>
+</g>
+<!-- interface~diffstarlorene&#45;&gt;interface~construct_diffstarlorene -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge8" class="edge">
+<title>interface~diffstarlorene&#45;&gt;interface~construct_diffstarlorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248.2396,-140C264.4814,-140 284.0369,-140 302.8731,-140"/>
+<polygon fill="#000000" stroke="#000000" points="302.936,-143.5001 312.936,-140 302.9359,-136.5001 302.936,-143.5001"/>
+</g>
+<!-- interface~construct_bssn_id -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node8" class="node">
+<title>interface~construct_bssn_id</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node8"><a xlink:href=".././interface/construct_bssn_id.html" xlink:title="construct_bssn_id">
+<polygon fill="#a7506f" stroke="#a7506f" points="424.5,-108 325.5,-108 325.5,-84 424.5,-84 424.5,-108"/>
+<text text-anchor="middle" x="375" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_bssn_id</text>
+</a>
+</g>
+</g>
+<!-- interface~bssn_id&#45;&gt;interface~construct_bssn_id -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge9" class="edge">
+<title>interface~bssn_id&#45;&gt;interface~construct_bssn_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M237.6638,-96.8349C258.6097,-96.7075 288.3766,-96.5266 314.846,-96.3657"/>
+<polygon fill="#000000" stroke="#000000" points="315.2057,-99.8637 325.1842,-96.3028 315.1631,-92.8638 315.2057,-99.8637"/>
+</g>
+<!-- proc~construct_bssn_id -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node13" class="node">
+<title>proc~construct_bssn_id</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node13"><a xlink:href=".././proc/construct_bssn_id.html" xlink:title="construct_bssn_id">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="584.5,-108 485.5,-108 485.5,-84 584.5,-84 584.5,-108"/>
+<text text-anchor="middle" x="535" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_bssn_id</text>
+</a>
+</g>
+</g>
+<!-- interface~construct_bssn_id&#45;&gt;proc~construct_bssn_id -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge10" class="edge">
+<title>interface~construct_bssn_id&#45;&gt;proc~construct_bssn_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M424.7479,-96C440.7012,-96 458.5368,-96 475.1355,-96"/>
+<polygon fill="#000000" stroke="#000000" points="475.2829,-99.5001 485.2828,-96 475.2828,-92.5001 475.2829,-99.5001"/>
+</g>
+<!-- proc~construct_particles -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node12" class="node">
+<title>proc~construct_particles</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node12"><a xlink:href=".././proc/construct_particles.html" xlink:title="construct_particles">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="586,-297 484,-297 484,-273 586,-273 586,-297"/>
+<text text-anchor="middle" x="535" y="-282.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_particles</text>
+</a>
+</g>
+</g>
+<!-- interface~construct_particles&#45;&gt;proc~construct_particles -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge11" class="edge">
+<title>interface~construct_particles&#45;&gt;proc~construct_particles</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M426.0649,-284.3192C441.2193,-284.4139 457.9747,-284.5186 473.7075,-284.6169"/>
+<polygon fill="#000000" stroke="#000000" points="473.8497,-288.1178 483.8714,-284.6804 473.8935,-281.1179 473.8497,-288.1178"/>
+</g>
+<!-- proc~construct_diffstarlorene -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node11" class="node">
+<title>proc~construct_diffstarlorene</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node11"><a xlink:href=".././proc/construct_diffstarlorene.html" xlink:title="construct_diffstarlorene">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="597,-152 473,-152 473,-128 597,-128 597,-152"/>
+<text text-anchor="middle" x="535" y="-137.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_diffstarlorene</text>
+</a>
+</g>
+</g>
+<!-- interface~construct_diffstarlorene&#45;&gt;proc~construct_diffstarlorene -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge12" class="edge">
+<title>interface~construct_diffstarlorene&#45;&gt;proc~construct_diffstarlorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M437.3183,-140C445.615,-140 454.1788,-140 462.628,-140"/>
+<polygon fill="#000000" stroke="#000000" points="462.8518,-143.5001 472.8518,-140 462.8517,-136.5001 462.8518,-143.5001"/>
+</g>
+<!-- proc~construct_diffstarlorene&#45;&gt;timer -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge14" class="edge">
+<title>proc~construct_diffstarlorene&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" d="M590.6561,-152.0013C620.6158,-158.4616 656.7578,-166.2551 683.2953,-171.9774"/>
+<polygon fill="#000000" stroke="#000000" points="682.8056,-175.4522 693.3187,-174.1388 684.2812,-168.6095 682.8056,-175.4522"/>
+</g>
+<!-- interface~import_diffstar_params -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node21" class="node">
+<title>interface~import_diffstar_params</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node21"><a xlink:href=".././interface/import_diffstar_params.html" xlink:title="import_diffstar_params">
+<polygon fill="#a7506f" stroke="#a7506f" points="782,-150 659,-150 659,-126 782,-126 782,-150"/>
+<text text-anchor="middle" x="720.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">import_diffstar_params</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_diffstarlorene&#45;&gt;interface~import_diffstar_params -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge13" class="edge">
+<title>proc~construct_diffstarlorene&#45;&gt;interface~import_diffstar_params</title>
+<path fill="none" stroke="#000000" d="M597.0267,-139.3312C613.5117,-139.1535 631.4564,-138.96 648.4278,-138.7771"/>
+<polygon fill="#000000" stroke="#000000" points="648.8858,-142.2724 658.8475,-138.6647 648.8103,-135.2728 648.8858,-142.2724"/>
+</g>
+<!-- proc~construct_particles&#45;&gt;timer -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge16" class="edge">
+<title>proc~construct_particles&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" d="M545.4523,-272.9534C562.0927,-254.5594 596.4776,-219.6481 633,-201 648.5224,-193.0744 667.1332,-188.0684 683.1927,-184.9426"/>
+<polygon fill="#000000" stroke="#000000" points="684.0836,-188.3393 693.3195,-183.1481 682.8622,-181.4467 684.0836,-188.3393"/>
+</g>
+<!-- ktable -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node15" class="node">
+<title>ktable</title>
+<polygon fill="#777777" stroke="#777777" points="747.5,-318 693.5,-318 693.5,-294 747.5,-294 747.5,-318"/>
+<text text-anchor="middle" x="720.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ktable</text>
+</g>
+<!-- proc~construct_particles&#45;&gt;ktable -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge19" class="edge">
+<title>proc~construct_particles&#45;&gt;ktable</title>
+<path fill="none" stroke="#000000" d="M586.1797,-290.7939C616.8944,-294.2711 655.2776,-298.6163 683.1386,-301.7704"/>
+<polygon fill="#000000" stroke="#000000" points="682.9332,-305.2694 693.2635,-302.9166 683.7207,-298.3139 682.9332,-305.2694"/>
+</g>
+<!-- proc~check_particle_positions -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node16" class="node">
+<title>proc~check_particle_positions</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node16"><a xlink:href=".././proc/check_particle_positions.html" xlink:title="check_particle_positions">
+<polygon fill="#d9534f" stroke="#d9534f" points="785,-276 656,-276 656,-252 785,-252 785,-276"/>
+<text text-anchor="middle" x="720.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">check_particle_positions</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_particles&#45;&gt;proc~check_particle_positions -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge15" class="edge">
+<title>proc~construct_particles&#45;&gt;proc~check_particle_positions</title>
+<path fill="none" stroke="#000000" d="M586.1797,-279.2061C604.6196,-277.1185 625.8234,-274.7181 645.855,-272.4504"/>
+<polygon fill="#000000" stroke="#000000" points="646.3458,-275.9173 655.8886,-271.3145 645.5584,-268.9617 646.3458,-275.9173"/>
+</g>
+<!-- read_options -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node19" class="node">
+<title>read_options</title>
+<polygon fill="#777777" stroke="#777777" points="758,-234 683,-234 683,-210 758,-210 758,-234"/>
+<text text-anchor="middle" x="720.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_options</text>
+</g>
+<!-- proc~construct_particles&#45;&gt;read_options -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge17" class="edge">
+<title>proc~construct_particles&#45;&gt;read_options</title>
+<path fill="none" stroke="#000000" d="M559.927,-272.9241C579.4676,-263.8008 607.5241,-251.4486 633,-243 645.7615,-238.7679 659.8318,-235.0079 672.8885,-231.8809"/>
+<polygon fill="#000000" stroke="#000000" points="673.6887,-235.2883 682.637,-229.6157 672.1043,-228.4699 673.6887,-235.2883"/>
+</g>
+<!-- set_units -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node20" class="node">
+<title>set_units</title>
+<polygon fill="#777777" stroke="#777777" points="748,-444 693,-444 693,-420 748,-420 748,-444"/>
+<text text-anchor="middle" x="720.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">set_units</text>
+</g>
+<!-- proc~construct_particles&#45;&gt;set_units -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge18" class="edge">
+<title>proc~construct_particles&#45;&gt;set_units</title>
+<path fill="none" stroke="#000000" d="M540.9052,-297.2791C553.8167,-322.75 587.1156,-381.4178 633,-411 647.6483,-420.4439 666.1468,-425.6449 682.3579,-428.5074"/>
+<polygon fill="#000000" stroke="#000000" points="682.2038,-432.0243 692.6171,-430.072 683.2591,-425.1043 682.2038,-432.0243"/>
+</g>
+<!-- alive -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node22" class="node">
+<title>alive</title>
+<polygon fill="#777777" stroke="#777777" points="747.5,-402 693.5,-402 693.5,-378 747.5,-378 747.5,-402"/>
+<text text-anchor="middle" x="720.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alive</text>
+</g>
+<!-- proc~construct_particles&#45;&gt;alive -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge20" class="edge">
+<title>proc~construct_particles&#45;&gt;alive</title>
+<path fill="none" stroke="#000000" d="M545.4523,-297.0466C562.0927,-315.4406 596.4776,-350.3519 633,-369 648.5224,-376.9256 667.1332,-381.9316 683.1927,-385.0574"/>
+<polygon fill="#000000" stroke="#000000" points="682.8622,-388.5533 693.3195,-386.8519 684.0836,-381.6607 682.8622,-388.5533"/>
+</g>
+<!-- interface~allocate_lorene_id_parts_memory -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node23" class="node">
+<title>interface~allocate_lorene_id_parts_memory</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node23"><a xlink:href=".././interface/allocate_lorene_id_parts_memory.html" xlink:title="allocate_lorene_id_parts_memory">
+<polygon fill="#a7506f" stroke="#a7506f" points="808,-360 633,-360 633,-336 808,-336 808,-360"/>
+<text text-anchor="middle" x="720.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_lorene_id_parts_memory</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_particles&#45;&gt;interface~allocate_lorene_id_parts_memory -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge21" class="edge">
+<title>proc~construct_particles&#45;&gt;interface~allocate_lorene_id_parts_memory</title>
+<path fill="none" stroke="#000000" d="M559.927,-297.0759C579.4676,-306.1992 607.5241,-318.5514 633,-327 639.8302,-329.2651 647.0354,-331.395 654.2594,-333.365"/>
+<polygon fill="#000000" stroke="#000000" points="653.5272,-336.7913 664.0885,-335.9498 655.3075,-330.0215 653.5272,-336.7913"/>
+</g>
+<!-- proc~construct_bssn_id&#45;&gt;timer -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge24" class="edge">
+<title>proc~construct_bssn_id&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" d="M576.0775,-108.0316C583.3575,-111.0433 590.6368,-114.6783 597,-119 616.7857,-132.4378 612.446,-146.7696 633,-159 648.0878,-167.9778 666.7914,-173.1202 683.0284,-176.0645"/>
+<polygon fill="#000000" stroke="#000000" points="682.853,-179.5807 693.2795,-177.7002 683.956,-172.6682 682.853,-179.5807"/>
+</g>
+<!-- initialize_bssn -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node14" class="node">
+<title>initialize_bssn</title>
+<polygon fill="#777777" stroke="#777777" points="760,-108 681,-108 681,-84 760,-84 760,-108"/>
+<text text-anchor="middle" x="720.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">initialize_bssn</text>
+</g>
+<!-- proc~construct_bssn_id&#45;&gt;initialize_bssn -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge22" class="edge">
+<title>proc~construct_bssn_id&#45;&gt;initialize_bssn</title>
+<path fill="none" stroke="#000000" d="M584.7106,-96C611.3333,-96 644.0348,-96 670.6748,-96"/>
+<polygon fill="#000000" stroke="#000000" points="670.9349,-99.5001 680.9349,-96 670.9349,-92.5001 670.9349,-99.5001"/>
+</g>
+<!-- interface~allocate_bssn_fields -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node17" class="node">
+<title>interface~allocate_bssn_fields</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node17"><a xlink:href=".././interface/allocate_bssn_fields.html" xlink:title="allocate_bssn_fields">
+<polygon fill="#a7506f" stroke="#a7506f" points="775,-66 666,-66 666,-42 775,-42 775,-66"/>
+<text text-anchor="middle" x="720.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn_fields</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_bssn_id&#45;&gt;interface~allocate_bssn_fields -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge23" class="edge">
+<title>proc~construct_bssn_id&#45;&gt;interface~allocate_bssn_fields</title>
+<path fill="none" stroke="#000000" d="M584.7106,-84.7448C607.0598,-79.6846 633.6929,-73.6544 657.4277,-68.2805"/>
+<polygon fill="#000000" stroke="#000000" points="658.4211,-71.6443 667.4014,-66.0223 656.8753,-64.8171 658.4211,-71.6443"/>
+</g>
+<!-- deallocate_bssn -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node18" class="node">
+<title>deallocate_bssn</title>
+<polygon fill="#777777" stroke="#777777" points="765.5,-24 675.5,-24 675.5,0 765.5,0 765.5,-24"/>
+<text text-anchor="middle" x="720.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn</text>
+</g>
+<!-- proc~construct_bssn_id&#45;&gt;deallocate_bssn -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge25" class="edge">
+<title>proc~construct_bssn_id&#45;&gt;deallocate_bssn</title>
+<path fill="none" stroke="#000000" d="M550.3695,-83.7668C568.9229,-69.5769 601.5619,-46.4195 633,-33 643.1205,-28.68 654.2961,-25.1474 665.1798,-22.2961"/>
+<polygon fill="#000000" stroke="#000000" points="666.1806,-25.6543 675.0545,-19.8659 664.5078,-18.8571 666.1806,-25.6543"/>
+</g>
+<!-- indexx -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node27" class="node">
+<title>indexx</title>
+<polygon fill="#777777" stroke="#777777" points="958.5,-276 904.5,-276 904.5,-252 958.5,-252 958.5,-276"/>
+<text text-anchor="middle" x="931.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">indexx</text>
+</g>
+<!-- proc~check_particle_positions&#45;&gt;indexx -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge26" class="edge">
+<title>proc~check_particle_positions&#45;&gt;indexx</title>
+<path fill="none" stroke="#000000" d="M785.2409,-264C821.0013,-264 864.1447,-264 894.2704,-264"/>
+<polygon fill="#000000" stroke="#000000" points="894.35,-267.5001 904.3499,-264 894.3499,-260.5001 894.35,-267.5001"/>
+</g>
+<!-- proc~allocate_bssn_fields -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node25" class="node">
+<title>proc~allocate_bssn_fields</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node25"><a xlink:href=".././proc/allocate_bssn_fields.html" xlink:title="allocate_bssn_fields">
+<polygon fill="#d9534f" stroke="#d9534f" points="986,-66 877,-66 877,-42 986,-42 986,-66"/>
+<text text-anchor="middle" x="931.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn_fields</text>
+</a>
+</g>
+</g>
+<!-- interface~allocate_bssn_fields&#45;&gt;proc~allocate_bssn_fields -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge27" class="edge">
+<title>interface~allocate_bssn_fields&#45;&gt;proc~allocate_bssn_fields</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M775.1121,-54C803.0745,-54 837.3085,-54 866.6102,-54"/>
+<polygon fill="#000000" stroke="#000000" points="866.7505,-57.5001 876.7505,-54 866.7505,-50.5001 866.7505,-57.5001"/>
+</g>
+<!-- proc~import_diffstar_params -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node26" class="node">
+<title>proc~import_diffstar_params</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node26"><a xlink:href=".././proc/import_diffstar_params.html" xlink:title="import_diffstar_params">
+<polygon fill="#d9534f" stroke="#d9534f" points="993,-150 870,-150 870,-126 993,-126 993,-150"/>
+<text text-anchor="middle" x="931.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">import_diffstar_params</text>
+</a>
+</g>
+</g>
+<!-- interface~import_diffstar_params&#45;&gt;proc~import_diffstar_params -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge28" class="edge">
+<title>interface~import_diffstar_params&#45;&gt;proc~import_diffstar_params</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M782.0971,-138C806.3657,-138 834.4066,-138 859.5949,-138"/>
+<polygon fill="#000000" stroke="#000000" points="859.8263,-141.5001 869.8263,-138 859.8263,-134.5001 859.8263,-141.5001"/>
+</g>
+<!-- proc~allocate_lorene_id_parts_memory -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node24" class="node">
+<title>proc~allocate_lorene_id_parts_memory</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node24"><a xlink:href=".././proc/allocate_lorene_id_parts_memory.html" xlink:title="allocate_lorene_id_parts_memory">
+<polygon fill="#d9534f" stroke="#d9534f" points="1019,-360 844,-360 844,-336 1019,-336 1019,-360"/>
+<text text-anchor="middle" x="931.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_lorene_id_parts_memory</text>
+</a>
+</g>
+</g>
+<!-- interface~allocate_lorene_id_parts_memory&#45;&gt;proc~allocate_lorene_id_parts_memory -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge29" class="edge">
+<title>interface~allocate_lorene_id_parts_memory&#45;&gt;proc~allocate_lorene_id_parts_memory</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M808.1499,-348C816.5216,-348 825.0477,-348 833.5091,-348"/>
+<polygon fill="#000000" stroke="#000000" points="833.7834,-351.5001 843.7833,-348 833.7833,-344.5001 833.7834,-351.5001"/>
+</g>
+<!-- allocate_grid_function -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node30" class="node">
+<title>allocate_grid_function</title>
+<polygon fill="#777777" stroke="#777777" points="1217,-66 1100,-66 1100,-42 1217,-42 1217,-66"/>
+<text text-anchor="middle" x="1158.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_grid_function</text>
+</g>
+<!-- proc~allocate_bssn_fields&#45;&gt;allocate_grid_function -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge30" class="edge">
+<title>proc~allocate_bssn_fields&#45;&gt;allocate_grid_function</title>
+<path fill="none" stroke="#000000" d="M986.161,-54C1017.3104,-54 1056.6321,-54 1089.8475,-54"/>
+<polygon fill="#000000" stroke="#000000" points="1089.9439,-57.5001 1099.9439,-54 1089.9439,-50.5001 1089.9439,-57.5001"/>
+</g>
+<!-- interface~print_diffstar_params -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node28" class="node">
+<title>interface~print_diffstar_params</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node28"><a xlink:href=".././interface/print_diffstar_params.html" xlink:title="print_diffstar_params">
+<polygon fill="#a7506f" stroke="#a7506f" points="1215.5,-108 1101.5,-108 1101.5,-84 1215.5,-84 1215.5,-108"/>
+<text text-anchor="middle" x="1158.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">print_diffstar_params</text>
+</a>
+</g>
+</g>
+<!-- proc~import_diffstar_params&#45;&gt;interface~print_diffstar_params -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge33" class="edge">
+<title>proc~import_diffstar_params&#45;&gt;interface~print_diffstar_params</title>
+<path fill="none" stroke="#000000" d="M993.2289,-126.5788C1023.6748,-120.9456 1060.446,-114.1422 1091.5666,-108.3842"/>
+<polygon fill="#000000" stroke="#000000" points="1092.2607,-111.8152 1101.457,-106.5542 1090.9871,-104.932 1092.2607,-111.8152"/>
+</g>
+<!-- k_lorene2hydrobase -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node29" class="node">
+<title>k_lorene2hydrobase</title>
+<polygon fill="#777777" stroke="#777777" points="1558,-191 1448,-191 1448,-167 1558,-167 1558,-191"/>
+<text text-anchor="middle" x="1503" y="-176.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">k_lorene2hydrobase</text>
+</g>
+<!-- proc~import_diffstar_params&#45;&gt;k_lorene2hydrobase -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge34" class="edge">
+<title>proc~import_diffstar_params&#45;&gt;k_lorene2hydrobase</title>
+<path fill="none" stroke="#000000" d="M948.8618,-150.2382C971.8588,-165.626 1014.2784,-191.2134 1055,-201 1189.3749,-233.2942 1352.7474,-210.2389 1440.3312,-193.0561"/>
+<polygon fill="#000000" stroke="#000000" points="1441.253,-196.4411 1450.3716,-191.0465 1439.8792,-189.5773 1441.253,-196.4411"/>
+</g>
+<!-- interface~get_diffstar_params -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node31" class="node">
+<title>interface~get_diffstar_params</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node31"><a xlink:href=".././interface/get_diffstar_params.html" xlink:title="get_diffstar_params">
+<polygon fill="#a7506f" stroke="#a7506f" points="1212.5,-192 1104.5,-192 1104.5,-168 1212.5,-168 1212.5,-192"/>
+<text text-anchor="middle" x="1158.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_diffstar_params</text>
+</a>
+</g>
+</g>
+<!-- proc~import_diffstar_params&#45;&gt;interface~get_diffstar_params -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge31" class="edge">
+<title>proc~import_diffstar_params&#45;&gt;interface~get_diffstar_params</title>
+<path fill="none" stroke="#000000" d="M993.2289,-149.4212C1024.504,-155.2078 1062.4538,-162.2293 1094.0967,-168.084"/>
+<polygon fill="#000000" stroke="#000000" points="1093.6624,-171.563 1104.1324,-169.9408 1094.936,-164.6798 1093.6624,-171.563"/>
+</g>
+<!-- k_lorene2hydrobase_piecewisepolytrope -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node32" class="node">
+<title>k_lorene2hydrobase_piecewisepolytrope</title>
+<polygon fill="#777777" stroke="#777777" points="1262,-150 1055,-150 1055,-126 1262,-126 1262,-150"/>
+<text text-anchor="middle" x="1158.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">k_lorene2hydrobase_piecewisepolytrope</text>
+</g>
+<!-- proc~import_diffstar_params&#45;&gt;k_lorene2hydrobase_piecewisepolytrope -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge32" class="edge">
+<title>proc~import_diffstar_params&#45;&gt;k_lorene2hydrobase_piecewisepolytrope</title>
+<path fill="none" stroke="#000000" d="M993.2289,-138C1009.1424,-138 1026.7839,-138 1044.4434,-138"/>
+<polygon fill="#000000" stroke="#000000" points="1044.8302,-141.5001 1054.8302,-138 1044.8302,-134.5001 1044.8302,-141.5001"/>
+</g>
+<!-- proc~print_diffstar_params -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_node33" class="node">
+<title>proc~print_diffstar_params</title>
+<g id="a_program~~sphincs_lorene_bns~~CallsGraph_node33"><a xlink:href=".././proc/print_diffstar_params.html" xlink:title="print_diffstar_params">
+<polygon fill="#d9534f" stroke="#d9534f" points="1412,-150 1298,-150 1298,-126 1412,-126 1412,-150"/>
+<text text-anchor="middle" x="1355" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">print_diffstar_params</text>
+</a>
+</g>
+</g>
+<!-- interface~print_diffstar_params&#45;&gt;proc~print_diffstar_params -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge35" class="edge">
+<title>interface~print_diffstar_params&#45;&gt;proc~print_diffstar_params</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1215.7589,-107.3847C1230.8149,-110.4421 1247.0303,-113.7916 1262,-117 1271.8323,-119.1073 1282.2352,-121.397 1292.3843,-123.664"/>
+<polygon fill="#000000" stroke="#000000" points="1291.8944,-127.141 1302.4182,-125.9157 1293.4272,-120.3109 1291.8944,-127.141"/>
+</g>
+<!-- proc~print_diffstar_params&#45;&gt;k_lorene2hydrobase -->
+<g id="program~~sphincs_lorene_bns~~CallsGraph_edge36" class="edge">
+<title>proc~print_diffstar_params&#45;&gt;k_lorene2hydrobase</title>
+<path fill="none" stroke="#000000" d="M1398.6044,-150.0796C1414.6418,-154.5224 1432.9845,-159.6038 1449.7746,-164.2551"/>
+<polygon fill="#000000" stroke="#000000" points="1448.8803,-167.6391 1459.4517,-166.936 1450.7491,-160.8932 1448.8803,-167.6391"/>
+</g>
+</g>
+</svg>
+</div><script>var panprogramsphincs_lorene_bnsCallsGraph = svgPanZoom('#programsphincs_lorene_bnsCallsGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+    <br>
+
+     <section class="visible-xs visible-sm hidden-md">
+       
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-binaries">binaries</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-bssn_forms~2">bssn_forms</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-common_path~2">common_path</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-compute_constraints~2">compute_constraints</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-compute_parts_constraints~2">compute_parts_constraints</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-constraints_step~2">constraints_step</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-denominator_ratio_dx~2">denominator_ratio_dx</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-dir_out">dir_out</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-execution_timer~2">execution_timer</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-exist~19">exist</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_bin~4">export_bin</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_constraints~3">export_constraints</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_constraints_details~3">export_constraints_details</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_constraints_x~3">export_constraints_x</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_constraints_xy~3">export_constraints_xy</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_form~2">export_form</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_form_x~4">export_form_x</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-export_form_xy~4">export_form_xy</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-filenames~2">filenames</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-i_matter~23">i_matter</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-idata">idata</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-last_level">last_level</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-max_length~3">max_length</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-max_n_bns~2">max_n_bns</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-max_n_parts~2">max_n_parts</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-n_bns~2">n_bns</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-name_logfile~6">name_logfile</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-namefile_bssn~2">namefile_bssn</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-namefile_bssn_bin">namefile_bssn_bin</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-namefile_parts~2">namefile_parts</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-namefile_parts_bin">namefile_parts_bin</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-namefile_sph~2">namefile_sph</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-numerator_ratio_dx~2">numerator_ratio_dx</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-one_lapse~3">one_lapse</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-particles_dist~2">particles_dist</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-placer~2">placer</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-ref_lev~4">ref_lev</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-run_spacetime~2">run_spacetime</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-run_sph~2">run_sph</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-spacetime_path~2">spacetime_path</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-sph_path~2">sph_path</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-system">system</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-test_int~2">test_int</a>
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#variable-zero_shift~3">zero_shift</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/sphincs_lorene_bns.html#proc-read_bns_id_parameters~2">read_bns_id_parameters</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../program/sphincs_lorene_bns.html#src">sphincs_lorene_bns</a>
+  </div>
+</div>
+
+
+
+     </section>
+     <br class="visible-xs visible-sm hidden-md">
+
+     
+
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-binaries"></span>type(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
+  
+  
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>binaries</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-bssn_forms~2"></span>type(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  
+  
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>bssn_forms</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-common_path~2"></span>character(len=max_length)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>common_path</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-compute_constraints~2"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>compute_constraints</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-compute_parts_constraints~2"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>compute_parts_constraints</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-constraints_step~2"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>constraints_step</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-denominator_ratio_dx~2"></span>double precision</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>denominator_ratio_dx</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dir_out"></span>logical(kind=4)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>dir_out</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-execution_timer~2"></span>type(timer)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>execution_timer</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-exist~19"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>exist</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_bin~4"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>export_bin</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_constraints~3"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>export_constraints</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_constraints_details~3"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>export_constraints_details</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_constraints_x~3"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>export_constraints_x</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_constraints_xy~3"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>export_constraints_xy</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_form~2"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>export_form</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_form_x~4"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>export_form_x</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-export_form_xy~4"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>export_form_xy</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-filenames~2"></span>character(len=max_length),</td>
+  
+  
+  <td>DIMENSION( max_length )</td><td>::</td>
+  <td><strong>filenames</strong></td><td> =</td><td>"0"</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i_matter~23"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-idata"></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  
+  
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>idata</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-last_level"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>last_level</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-max_length~3"></span>integer,</td>
+  
+  
+  <td>parameter</td><td>::</td>
+  <td><strong>max_length</strong></td><td> =</td><td>50</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-max_n_bns~2"></span>integer,</td>
+  
+  
+  <td>parameter</td><td>::</td>
+  <td><strong>max_n_bns</strong></td><td> =</td><td>50</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-max_n_parts~2"></span>integer,</td>
+  
+  
+  <td>parameter</td><td>::</td>
+  <td><strong>max_n_parts</strong></td><td> =</td><td>250</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-n_bns~2"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>n_bns</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-name_logfile~6"></span>character(len=500)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>name_logfile</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile_bssn~2"></span>character(len=500)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_bssn</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile_bssn_bin"></span>character(len=500)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_bssn_bin</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile_parts~2"></span>character(len=500)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_parts</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile_parts_bin"></span>character(len=500)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_parts_bin</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile_sph~2"></span>character(len=500)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_sph</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-numerator_ratio_dx~2"></span>double precision</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>numerator_ratio_dx</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-one_lapse~3"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>one_lapse</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-particles_dist~2"></span>type(<a href='../type/particles.html'>particles</a>),</td>
+  
+  
+  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>particles_dist</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-placer~2"></span>integer,</td>
+  
+  
+  <td>DIMENSION( max_n_bns, max_n_parts )</td><td>::</td>
+  <td><strong>placer</strong></td><td> =</td><td>test_int</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ref_lev~4"></span>integer</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ref_lev</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-run_spacetime~2"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>run_spacetime</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-run_sph~2"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>run_sph</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-spacetime_path~2"></span>character(len=max_length)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>spacetime_path</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-sph_path~2"></span>character(len=max_length)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>sph_path</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-system"></span>character(len=max_length)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>system</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-test_int~2"></span>integer,</td>
+  
+  
+  <td>parameter</td><td>::</td>
+  <td><strong>test_int</strong></td><td> =</td><td>-112</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zero_shift~3"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>zero_shift</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-read_bns_id_parameters~2"></span><h3>
+subroutine <a href='../proc/read_bns_id_parameters~2.html'>read_bns_id_parameters</a>()
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      <em>None</em>
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    
+    
+    
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="k">PROGRAM </span><span class="n">sphincs_lorene_bns</span>
+
+  <span class="c">!*****************************************************</span>
+  <span class="c">!                                                    *</span>
+  <span class="c">! Use the MODULE sphincs_lorene to export binary     *</span>
+  <span class="c">! files containing the initial data (ID) required    *</span>
+  <span class="c">! by the evolution code in SPHINCS, and built using  *</span>
+  <span class="c">! the binary files produced by LORENE and containing *</span>
+  <span class="c">! the binary neutron stars (BNS) ID.                 *</span>
+  <span class="c">!                                                    *</span>
+  <span class="c">! FT 28.10.2020                                      *</span>
+  <span class="c">!                                                    *</span>
+  <span class="c">!*****************************************************</span>
+
+<span class="cp">#ifdef __INTEL_COMPILER</span>
+  <span class="k">USE </span><span class="n">IFPORT</span><span class="p">,</span>         <span class="n">ONLY</span><span class="p">:</span> <span class="n">MAKEDIRQQ</span>
+<span class="cp">#endif</span>
+  <span class="k">USE </span><span class="n">sphincs_lorene</span>
+  <span class="k">USE </span><span class="n">constants</span><span class="p">,</span>      <span class="n">ONLY</span><span class="p">:</span> <span class="n">lorene2hydrobase</span><span class="p">,</span> <span class="n">c_light2</span><span class="p">,</span> <span class="n">k_lorene2hydrobase</span><span class="p">,</span> <span class="p">&amp;</span>
+                            <span class="n">k_lorene2hydrobase_piecewisepolytrope</span><span class="p">,</span> <span class="n">MSun_geo</span><span class="p">,</span> <span class="p">&amp;</span>
+                            <span class="n">kg2g</span><span class="p">,</span> <span class="n">m2cm</span><span class="p">,</span> <span class="n">m0c2</span>
+
+  <span class="k">IMPLICIT NONE</span>
+
+  <span class="c">! Maximum length for strings, and for the number of imported binaries</span>
+  <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">max_length</span><span class="o">=</span> <span class="mi">50</span>
+  <span class="c">! Maximum number of binary systems</span>
+  <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">max_n_bns</span><span class="o">=</span> <span class="mi">50</span>
+  <span class="c">! Maximum number of particle distributions</span>
+  <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">max_n_parts</span><span class="o">=</span> <span class="mi">250</span>
+  <span class="c">! Number of binary systems of neutron stars (BNS) to import</span>
+  <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">n_bns</span><span class="p">,</span> <span class="n">ref_lev</span><span class="p">,</span> <span class="n">i_matter</span>
+  <span class="c">! Export the constraints every constraints_step-th step</span>
+  <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">constraints_step</span><span class="p">,</span> <span class="n">last_level</span>
+
+  <span class="c">! Matrix storing the information on how to place particles for each bns</span>
+  <span class="c">! object. Row i contains information about the i^th bns object.</span>
+  <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">test_int</span><span class="o">=</span> <span class="o">-</span> <span class="mi">112</span>
+  <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span> <span class="n">max_n_bns</span><span class="p">,</span> <span class="n">max_n_parts</span> <span class="p">)</span><span class="kd">::</span> <span class="n">placer</span><span class="o">=</span> <span class="n">test_int</span>
+
+  <span class="c">! Rational ratio between the large grid spacing and the medium one,</span>
+  <span class="c">! equal to the ratio between the medium grid spacing nd the small one</span>
+  <span class="c">! Not used in this PROGRAM, but needed since the PROGRAM reads the same</span>
+  <span class="c">! parameter ile as the convergence_test PROGRAM</span>
+  <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">numerator_ratio_dx</span>
+  <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">denominator_ratio_dx</span>
+
+  <span class="c">! String storing the name of the phyical system</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="nb">system</span>
+  <span class="c">! Strings storing different names for output files</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_parts</span><span class="p">,</span> <span class="n">namefile_parts_bin</span><span class="p">,</span> <span class="n">namefile_sph</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_bssn</span><span class="p">,</span> <span class="n">namefile_bssn_bin</span><span class="p">,</span> <span class="n">name_logfile</span>
+  <span class="c">! Array of strings storing the names of the LORENE BNS ID binary files</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">filenames</span><span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+  <span class="c">! String storing the local path to the directory where the</span>
+  <span class="c">! LORENE BNS ID files are stored</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">common_path</span>
+  <span class="c">! String storing the local path to the directory where the</span>
+  <span class="c">! SPH output is to be saved</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">sph_path</span>
+  <span class="c">! String storing the local path to the directory where the</span>
+  <span class="c">! spacetime output is to be saved</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">spacetime_path</span>
+
+  <span class="kt">LOGICAL</span><span class="kd">::</span> <span class="n">exist</span>
+  <span class="kt">LOGICAL</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="kd">::</span> <span class="n">dir_out</span>
+  <span class="c">! Logical variables to steer the execution</span>
+  <span class="kt">LOGICAL</span><span class="kd">::</span> <span class="n">export_bin</span><span class="p">,</span> <span class="n">export_form</span><span class="p">,</span> <span class="n">export_form_xy</span><span class="p">,</span> <span class="n">export_form_x</span><span class="p">,</span> <span class="p">&amp;</span>
+            <span class="n">compute_constraints</span><span class="p">,</span> <span class="n">export_constraints_xy</span><span class="p">,</span> <span class="p">&amp;</span>
+            <span class="n">export_constraints_x</span><span class="p">,</span> <span class="n">export_constraints</span><span class="p">,</span> <span class="p">&amp;</span>
+            <span class="n">export_constraints_details</span><span class="p">,</span> <span class="n">compute_parts_constraints</span><span class="p">,</span> <span class="p">&amp;</span>
+            <span class="n">one_lapse</span><span class="p">,</span> <span class="n">zero_shift</span><span class="p">,</span> <span class="n">run_sph</span><span class="p">,</span> <span class="n">run_spacetime</span>
+
+  <span class="k">TYPE</span><span class="p">(</span> <span class="n">timer</span> <span class="p">)</span><span class="kd">::</span> <span class="n">execution_timer</span>
+
+  <span class="c">! Declaration of the allocatable array storing the bns objects,</span>
+  <span class="c">! containing the LORENE ID for different BNS</span>
+  <span class="k">TYPE</span><span class="p">(</span> <span class="n">bnslorene</span> <span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">binaries</span>
+  <span class="k">CLASS</span><span class="p">(</span> <span class="n">idbase</span> <span class="p">),</span>   <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">idata</span>
+  <span class="c">! Declaration of the allocatable array storing the particles objects,</span>
+  <span class="c">! containing the particle distributions for each bns object.</span>
+  <span class="c">! Multiple particle objects can contain different particle distributions</span>
+  <span class="c">! for the same bns object.</span>
+  <span class="k">TYPE</span><span class="p">(</span> <span class="n">particles</span> <span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">particles_dist</span>
+  <span class="c">! Declaration of the allocatable array storing the bssn_id objects,</span>
+  <span class="c">! containing the BSSN variables on the gravity grid ofr each bns object</span>
+  <span class="k">TYPE</span><span class="p">(</span> <span class="n">bssn_id</span> <span class="p">),</span>   <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">bssn_forms</span>
+
+  <span class="c">! Namelist containing parameters read from lorene_bns_id_parameters.par</span>
+  <span class="c">! by the SUBROUTINE read_bns_id_parameters of this PROGRAM</span>
+  <span class="k">NAMELIST</span> <span class="o">/</span><span class="n">bns_parameters</span><span class="o">/</span> <span class="nb">system</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="n">common_path</span><span class="p">,</span> <span class="n">filenames</span><span class="p">,</span> <span class="n">placer</span><span class="p">,</span> <span class="p">&amp;</span>
+                            <span class="n">export_bin</span><span class="p">,</span> <span class="n">export_form</span><span class="p">,</span> <span class="n">export_form_xy</span><span class="p">,</span> <span class="p">&amp;</span>
+                            <span class="n">export_form_x</span><span class="p">,</span> <span class="n">export_constraints_xy</span><span class="p">,</span> <span class="p">&amp;</span>
+                            <span class="n">export_constraints_x</span><span class="p">,</span> <span class="n">compute_constraints</span><span class="p">,</span> <span class="p">&amp;</span>
+                            <span class="n">export_constraints</span><span class="p">,</span> <span class="n">export_constraints_details</span><span class="p">,</span> <span class="p">&amp;</span>
+                            <span class="n">constraints_step</span><span class="p">,</span> <span class="n">compute_parts_constraints</span><span class="p">,</span> <span class="p">&amp;</span>
+                            <span class="n">numerator_ratio_dx</span><span class="p">,</span> <span class="n">denominator_ratio_dx</span><span class="p">,</span> <span class="n">ref_lev</span><span class="p">,</span> <span class="p">&amp;</span>
+                            <span class="n">one_lapse</span><span class="p">,</span> <span class="n">zero_shift</span><span class="p">,</span> <span class="n">show_progress</span><span class="p">,</span> <span class="p">&amp;</span>
+                            <span class="n">run_sph</span><span class="p">,</span> <span class="n">run_spacetime</span><span class="p">,</span> <span class="n">sph_path</span><span class="p">,</span> <span class="n">spacetime_path</span>
+
+  <span class="c">!---------------------------!</span>
+  <span class="c">!--  End of declarations  --!</span>
+  <span class="c">!---------------------------!</span>
+
+  <span class="c">!PRINT *, lorene2hydrobase</span>
+  <span class="c">!PRINT *, 2.45191D-4/lorene2hydrobase/1000</span>
+  <span class="c">!PRINT *, LOG10(2.45191D-4/lorene2hydrobase/1000)</span>
+  <span class="c">!PRINT *</span>
+  <span class="c">!PRINT *, LOG10(10**(34.616)/c_light2)</span>
+  <span class="c">!STOP</span>
+
+  <span class="c">!PRINT *, &quot;** Polytropic constant used for gamma= 2.75 single polytrope:&quot;</span>
+  <span class="c">!PRINT *, &quot;   k used in LORENE= &quot;, 0.01691726009823966</span>
+  <span class="c">!PRINT *, &quot;   k converted in SPHINCS units= &quot;, &amp;</span>
+  <span class="c">!                               0.01691726009823966*k_lorene2hydrobase(2.75D0)</span>
+  <span class="c">!PRINT *</span>
+  <span class="c">!PRINT *, &quot;** Polytropic constant used for gamma= 2 single polytrope:&quot;</span>
+  <span class="c">!PRINT *, &quot;   k used in LORENE= &quot;, 0.02686965902663748</span>
+  <span class="c">!PRINT *, &quot;   k converted in SPHINCS units= &quot;, &amp;</span>
+  <span class="c">!                               0.02686965902663748*k_lorene2hydrobase(2.0D0)</span>
+  <span class="c">!PRINT *</span>
+  <span class="c">!PRINT *, &quot;** Polytropic constant used for the crust in PWP:&quot;</span>
+  <span class="c">!PRINT *, &quot;   k used in LORENE= &quot;, 3.99874D-8</span>
+  <span class="c">!PRINT *, &quot;   k converted in SPHINCS units= &quot;, &amp;</span>
+  <span class="c">!                3.99874D-8*k_lorene2hydrobase_piecewisepolytrope(1.35692395D0)</span>
+  <span class="c">!PRINT *</span>
+  <span class="c">!PRINT *, &quot;** Polytropic constant used for the crust in PWP:&quot;</span>
+  <span class="c">!PRINT *, &quot;   k used in LORENE= &quot;, 8.948185D-2</span>
+  <span class="c">!PRINT *, &quot;   k converted in SPHINCS units= &quot;, &amp;</span>
+  <span class="c">!                               8.948185D-2*k_lorene2hydrobase(1.35692395D0)</span>
+  <span class="c">!PRINT *</span>
+  <span class="c">!PRINT *, &quot;   k used in LORENE, corresponding to k-100 in SPHINCS units= &quot;, &amp;</span>
+  <span class="c">!         100/k_lorene2hydrobase(2.0D0)</span>
+  <span class="c">! Our testbed cases are gamma= 2.75, k= 30000; and gamma=2, k= 100</span>
+  <span class="c">! in SPHINCS units</span>
+  <span class="c">! 7.901e+14 density for 1.4 GRAVITATIONAL mass, poly 2</span>
+  <span class="c">! 1.4-1.4 systems for both ; 1.6-1.6 ; 1.2-1.8 GRAVIATIONAL masses</span>
+  <span class="c">!STOP</span>
+
+  <span class="k">CALL </span><span class="nb">DATE_AND_TIME</span><span class="p">(</span> <span class="n">date</span><span class="p">,</span> <span class="nb">time</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">values</span> <span class="p">)</span>
+  <span class="n">run_id</span><span class="o">=</span> <span class="n">date</span> <span class="o">//</span> <span class="s2">&quot;-&quot;</span> <span class="o">//</span> <span class="nb">time</span>
+
+<span class="nb">  </span><span class="n">execution_timer</span><span class="o">=</span> <span class="n">timer</span><span class="p">(</span> <span class="s2">&quot;execution_timer&quot;</span> <span class="p">)</span>
+  <span class="k">CALL </span><span class="n">execution_timer</span><span class="p">%</span> <span class="n">start_timer</span><span class="p">()</span>
+
+  <span class="k">CALL </span><span class="n">read_bns_id_parameters</span><span class="p">()</span>
+
+  <span class="c">!</span>
+  <span class="c">!-- Check that the specified subdirectories exist. If not, create them</span>
+  <span class="c">!-- TODO: this compils with ifort, but not with gfortran</span>
+  <span class="c">!</span>
+
+<span class="cp">#ifdef __INTEL_COMPILER</span>
+
+  <span class="k">INQUIRE</span><span class="p">(</span> <span class="n">DIRECTORY</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="n">MAKEDIRQQ</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span> <span class="p">)</span>
+  <span class="k">ELSE</span>
+<span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
+  <span class="n">ENDIF</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">dir_out</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Failed to create subdirectory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Stopping...&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+    <span class="k">STOP</span>
+<span class="k">  </span><span class="n">ENDIF</span>
+
+  <span class="k">INQUIRE</span><span class="p">(</span> <span class="n">DIRECTORY</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="n">MAKEDIRQQ</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">)</span> <span class="p">)</span>
+  <span class="k">ELSE</span>
+<span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
+  <span class="n">ENDIF</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">dir_out</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Failed to create subdirectory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Stopping...&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+    <span class="k">STOP</span>
+<span class="k">  </span><span class="n">ENDIF</span>
+
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef __GFORTRAN__</span>
+
+  <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span><span class="o">//</span><span class="s2">&quot;/.&quot;</span><span class="p">,</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Directory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">),</span> <span class="s2">&quot; does not exist!&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Please create it and re-run the executable. Stopping...&quot;</span>
+    <span class="k">STOP</span>
+<span class="k">  </span><span class="n">ENDIF</span>
+
+  <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">)</span><span class="o">//</span><span class="s2">&quot;/.&quot;</span><span class="p">,</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Directory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">),</span> <span class="s2">&quot; does not exist!&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Please create it and re-run the executable. Stopping...&quot;</span>
+    <span class="k">STOP</span>
+<span class="k">  </span><span class="n">ENDIF</span>
+
+<span class="cp">#endif</span>
+
+  <span class="c">! Allocate needed memory</span>
+  <span class="c">!ALLOCATE( binaries      ( n_bns ) )</span>
+  <span class="c">!ALLOCATE( diffrotstars  ( n_bns ) )</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="nb">system</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;BNS&quot;</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    ALLOCATE</span><span class="p">(</span> <span class="n">bnslorene</span><span class="kd">::</span> <span class="n">idata</span><span class="p">(</span> <span class="n">n_bns</span> <span class="p">)</span> <span class="p">)</span>
+  <span class="n">ELSEIF</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="nb">system</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;DRS&quot;</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    ALLOCATE</span><span class="p">(</span> <span class="n">diffstarlorene</span><span class="kd">::</span> <span class="n">idata</span><span class="p">(</span> <span class="n">n_bns</span> <span class="p">)</span> <span class="p">)</span>
+  <span class="k">ELSE</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Unknown name for the physical system: &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="nb">system</span><span class="p">)</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Set the variable &#39;system&#39; in the parameter file &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+             <span class="s2">&quot;sphincs_lorene_parameters.par to one of the values listed there.&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Stopping...&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+    <span class="k">STOP</span>
+<span class="k">  </span><span class="n">ENDIF</span>
+  <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">particles_dist</span><span class="p">(</span> <span class="n">n_bns</span><span class="p">,</span> <span class="n">max_n_parts</span> <span class="p">)</span> <span class="p">)</span>
+  <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">bssn_forms</span>    <span class="p">(</span> <span class="n">n_bns</span> <span class="p">)</span> <span class="p">)</span>
+
+  <span class="c">!</span>
+  <span class="c">!-- Construct the LORENE ID from the LORENE binary files</span>
+  <span class="c">!</span>
+ <span class="c">! build_bns_loop: DO itr= 1, n_bns, 1</span>
+ <span class="c">!   binaries( itr )= bnslorene( TRIM(common_path)//TRIM(filenames( itr )) )</span>
+ <span class="c">!   ! Set the variables to decide on using the geodesic gauge or not</span>
+ <span class="c">!   ! (lapse=1, shift=0)</span>
+ <span class="c">!   binaries( itr )% one_lapse = one_lapse</span>
+ <span class="c">!   binaries( itr )% zero_shift= zero_shift</span>
+ <span class="c">! ENDDO build_bns_loop</span>
+
+  <span class="n">build_drs_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="n">idata</span><span class="p">(</span> <span class="n">itr</span> <span class="p">)</span><span class="o">=</span> <span class="n">diffstarlorene</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">common_path</span><span class="p">)</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="n">filenames</span><span class="p">(</span> <span class="n">itr</span> <span class="p">))</span> <span class="p">)</span>
+    <span class="c">! Set the variables to decide on using the geodesic gauge or not</span>
+    <span class="c">! (lapse=1, shift=0)</span>
+    <span class="k">CALL </span><span class="n">idata</span><span class="p">(</span> <span class="n">itr</span> <span class="p">)%</span> <span class="n">set_one_lapse</span><span class="p">(</span> <span class="n">one_lapse</span> <span class="p">)</span>
+    <span class="k">CALL </span><span class="n">idata</span><span class="p">(</span> <span class="n">itr</span> <span class="p">)%</span> <span class="n">set_zero_shift</span><span class="p">(</span> <span class="n">zero_shift</span> <span class="p">)</span>
+  <span class="n">ENDDO</span> <span class="n">build_drs_loop</span>
+
+  <span class="c">!STOP</span>
+
+  <span class="k">IF</span><span class="p">(</span> <span class="n">run_sph</span> <span class="p">)</span><span class="k">THEN</span>
+
+    <span class="c">!</span>
+    <span class="c">!-- Construct the particles objects from the bns objects</span>
+    <span class="c">!</span>
+    <span class="n">place_hydro_id_loops</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+      <span class="n">part_distribution_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr4</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_n_parts</span><span class="p">,</span> <span class="mi">1</span>
+        <span class="k">IF</span><span class="p">(</span> <span class="n">placer</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span> <span class="o">==</span> <span class="n">test_int</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">          EXIT </span><span class="n">part_distribution_loop</span>
+        <span class="k">ELSE</span>
+
+<span class="k">          PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+                   <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Placing particles for &quot;</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="nb">system</span><span class="p">),</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+                   <span class="s2">&quot;, distribution&quot;</span><span class="p">,</span> <span class="n">itr4</span>
+          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+                   <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+          <span class="k">PRINT</span> <span class="o">*</span>
+          <span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span><span class="o">=</span> <span class="n">particles</span><span class="p">(</span> <span class="n">idata</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">),</span> <span class="p">&amp;</span>
+                                                   <span class="n">placer</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span> <span class="p">)</span>
+
+        <span class="n">ENDIF</span>
+      <span class="n">ENDDO</span> <span class="n">part_distribution_loop</span>
+    <span class="n">ENDDO</span> <span class="n">place_hydro_id_loops</span>
+
+    <span class="c">!STOP</span>
+
+    <span class="n">compute_export_sph_loops</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+      <span class="n">part_distribution_loop2</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr4</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_n_parts</span><span class="p">,</span> <span class="mi">1</span>
+        <span class="k">IF</span><span class="p">(</span> <span class="n">placer</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span> <span class="o">==</span> <span class="n">test_int</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">          EXIT </span><span class="n">part_distribution_loop2</span>
+          <span class="c">! Experimental: empty particles object</span>
+          <span class="c">!particles_dist( itr, itr2 )= particles()</span>
+        <span class="k">ELSE</span>
+
+<span class="k">          PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+                   <span class="o">//</span> <span class="s2">&quot;=====================&quot;</span>
+          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Computing SPH variables for &quot;</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="nb">system</span><span class="p">),</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+                   <span class="s2">&quot;, distribution&quot;</span><span class="p">,</span> <span class="n">itr4</span>
+          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+                   <span class="o">//</span> <span class="s2">&quot;=====================&quot;</span>
+          <span class="k">PRINT</span> <span class="o">*</span>
+          <span class="c">!WRITE( namefile_parts_bin, &quot;(A1,I1,A1,I1,A1)&quot; ) &amp;</span>
+          <span class="c">!                            &quot;l&quot;, &amp;</span>
+          <span class="c">!                            itr3, &quot;-&quot;, itr4, &quot;.&quot;</span>
+          <span class="k">IF</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="nb">system</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;BNS&quot;</span> <span class="p">)</span> <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_parts_bin</span><span class="p">,</span> <span class="s2">&quot;(A5)&quot;</span> <span class="p">)</span> <span class="s2">&quot;NSNS.&quot;</span>
+          <span class="k">IF</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="nb">system</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;DRS&quot;</span> <span class="p">)</span> <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_parts_bin</span><span class="p">,</span> <span class="s2">&quot;(A5)&quot;</span> <span class="p">)</span> <span class="s2">&quot;DRSx.&quot;</span>
+          <span class="n">namefile_parts_bin</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">sph_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_parts_bin</span> <span class="p">)</span>
+
+          <span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)%</span> <span class="n">export_bin</span><span class="o">=</span> <span class="n">export_bin</span>
+          <span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)%</span> <span class="n">export_form_xy</span><span class="o">=</span> <span class="n">export_form_xy</span>
+          <span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)%</span> <span class="n">export_form_x</span> <span class="o">=</span> <span class="n">export_form_x</span>
+
+          <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)%</span> <span class="p">&amp;</span>
+               <span class="n">compute_and_export_SPH_variables</span><span class="p">(</span> <span class="n">namefile_parts_bin</span> <span class="p">)</span>
+          <span class="c">!IF( particles_dist( itr3, itr4 )% export_bin )THEN</span>
+          <span class="c">!  WRITE( namefile_parts, &quot;(A10,I1,A1,I1,A4)&quot; ) &amp;</span>
+          <span class="c">!                  &quot;sph_vars-&quot;, itr3, &quot;-&quot;, itr4, &quot;.dat&quot;</span>
+          <span class="c">!  CALL particles_dist( itr3, itr4 )% &amp;</span>
+          <span class="c">!                  read_sphincs_dump_print_formatted( &amp;</span>
+          <span class="c">!                                namefile_parts_bin, namefile_parts )</span>
+          <span class="c">!ENDIF</span>
+
+        <span class="n">ENDIF</span>
+      <span class="n">ENDDO</span> <span class="n">part_distribution_loop2</span>
+    <span class="n">ENDDO</span> <span class="n">compute_export_sph_loops</span>
+
+    <span class="c">!</span>
+    <span class="c">!-- Print the particle initial data to a formatted file</span>
+    <span class="c">!</span>
+    <span class="k">IF</span><span class="p">(</span> <span class="n">export_form</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">      </span><span class="n">export_sph_loops</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+        <span class="k">DO </span><span class="n">itr4</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_n_parts</span><span class="p">,</span> <span class="mi">1</span>
+          <span class="k">IF</span><span class="p">(</span> <span class="n">placer</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span> <span class="o">==</span> <span class="n">test_int</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">            EXIT</span>
+            <span class="c">! Experimental: empty particles object</span>
+            <span class="c">!particles_dist( itr, itr2 )= particles()</span>
+          <span class="k">ELSE</span>
+<span class="k">            WRITE</span><span class="p">(</span> <span class="n">namefile_parts</span><span class="p">,</span> <span class="s2">&quot;(A29,I1,A1,I1,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+                                   <span class="s2">&quot;lorene-bns-id-particles-form_&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+                                   <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">itr4</span><span class="p">,</span> <span class="s2">&quot;.dat&quot;</span>
+            <span class="n">namefile_parts</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">sph_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_parts</span> <span class="p">)</span>
+            <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)%</span> <span class="p">&amp;</span>
+                 <span class="n">print_formatted_lorene_id_particles</span><span class="p">(</span> <span class="n">namefile_parts</span> <span class="p">)</span>
+          <span class="n">ENDIF</span>
+        <span class="n">ENDDO</span>
+      <span class="n">ENDDO</span> <span class="n">export_sph_loops</span>
+    <span class="n">ENDIF</span>
+
+    <span class="c">!PRINT *, &quot;===================================================&quot; &amp;</span>
+    <span class="c">!         // &quot;================================================&quot;</span>
+    <span class="c">!PRINT *, &quot; Timing &quot;</span>
+    <span class="c">!PRINT *, &quot;===================================================&quot; &amp;</span>
+    <span class="c">!         // &quot;================================================&quot;</span>
+    <span class="c">!PRINT *</span>
+    <span class="c">!PRINT *</span>
+    <span class="c">!PRINT *, &quot; * SPH:&quot;</span>
+    <span class="c">!CALL particles_dist( 1, 1 )% placer_timer% print_timer( 2 )</span>
+    <span class="c">!CALL particles_dist( 1, 1 )% apm1_timer% print_timer( 2 )</span>
+    <span class="c">!CALL particles_dist( 1, 1 )% apm2_timer% print_timer( 2 )</span>
+    <span class="c">!CALL particles_dist( 1, 1 )% importer_timer% print_timer( 2 )</span>
+    <span class="c">!CALL particles_dist( 1, 1 )% sph_computer_timer% print_timer( 2 )</span>
+    <span class="c">!PRINT *</span>
+
+  <span class="n">ENDIF</span>
+
+  <span class="k">IF</span><span class="p">(</span> <span class="n">run_spacetime</span> <span class="p">)</span><span class="k">THEN</span>
+
+    <span class="c">!</span>
+    <span class="c">!-- Construct the bssn_id objects from the bns objects</span>
+    <span class="c">!</span>
+    <span class="n">place_spacetime_id_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+               <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Setting up BSSN object for &quot;</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="nb">system</span><span class="p">),</span> <span class="n">itr3</span>
+      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+               <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+      <span class="k">PRINT</span> <span class="o">*</span>
+      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)</span><span class="o">=</span> <span class="n">bssn_id</span><span class="p">(</span> <span class="n">idata</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="n">ENDDO</span> <span class="n">place_spacetime_id_loop</span>
+
+    <span class="c">!</span>
+    <span class="c">!-- Compute the BSSN initial data, optionally export it to a binary file</span>
+    <span class="c">!-- readable by SPHINCS_BSSN, and optionally read the content of such binary</span>
+    <span class="c">!-- file and print it to a formatted file (the latter for debugging)</span>
+    <span class="c">!</span>
+    <span class="n">compute_export_bssn_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+               <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Computing BSSN variables for &quot;</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="nb">system</span><span class="p">),</span> <span class="n">itr3</span>
+      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+               <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+      <span class="k">PRINT</span> <span class="o">*</span>
+      <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_bssn_bin</span><span class="p">,</span> <span class="s2">&quot;(A15)&quot;</span> <span class="p">)</span> <span class="s2">&quot;BSSN_vars.00000&quot;</span><span class="c">!&quot;BSSN_l&quot;, itr3, &quot;.bin&quot;&quot;(A6,I1,A4)&quot;</span>
+      <span class="n">namefile_bssn_bin</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn_bin</span> <span class="p">)</span>
+
+      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_form_xy</span><span class="o">=</span> <span class="n">export_form_xy</span>
+      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_form_x</span> <span class="o">=</span> <span class="n">export_form_x</span>
+      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_bin</span><span class="o">=</span> <span class="n">export_bin</span>
+
+      <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
+                          <span class="n">compute_and_export_3p1_variables</span><span class="p">(</span> <span class="n">namefile_bssn_bin</span> <span class="p">)</span>
+      <span class="c">!IF( bssn_forms( itr3 )% export_bin )THEN</span>
+      <span class="c">!  WRITE( namefile_bssn, &quot;(A10,I1,A4)&quot; ) &quot;bssn_vars-&quot;, itr3, &quot;.dat&quot;</span>
+      <span class="c">!  CALL bssn_forms( itr3 )% &amp;</span>
+      <span class="c">!        read_bssn_dump_print_formatted( namefile_bssn_bin, namefile_bssn )</span>
+      <span class="c">!ENDIF</span>
+    <span class="n">ENDDO</span> <span class="n">compute_export_bssn_loop</span>
+
+    <span class="c">!</span>
+    <span class="c">!-- Print the BSSN initial data to a formatted file</span>
+    <span class="c">!</span>
+    <span class="k">IF</span><span class="p">(</span> <span class="n">export_form</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">      </span><span class="n">export_bssn_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+        <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_bssn</span><span class="p">,</span> <span class="s2">&quot;(A24,I1,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+                              <span class="s2">&quot;lorene-bns-id-bssn-form_&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;.dat&quot;</span>
+
+        <span class="n">namefile_bssn</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+
+        <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
+                    <span class="n">print_formatted_lorene_id_3p1_variables</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+      <span class="n">ENDDO</span> <span class="n">export_bssn_loop</span>
+    <span class="n">ENDIF</span>
+
+    <span class="c">!</span>
+    <span class="c">!-- Compute the BSSN constraints</span>
+    <span class="c">!</span>
+    <span class="n">compute_export_bssn_constraints_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+
+        <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">cons_step</span><span class="o">=</span> <span class="n">constraints_step</span>
+        <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_constraints</span><span class="o">=</span> <span class="n">export_constraints</span>
+        <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_constraints_details</span><span class="o">=</span> <span class="p">&amp;</span>
+                            <span class="n">export_constraints_details</span>
+        <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_constraints_xy</span><span class="o">=</span> <span class="n">export_constraints_xy</span>
+        <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_constraints_x</span> <span class="o">=</span> <span class="n">export_constraints_x</span>
+
+        <span class="k">IF</span><span class="p">(</span> <span class="n">compute_constraints</span> <span class="p">)</span><span class="k">THEN</span>
+
+<span class="k">          PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+                   <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Computing BSSN constraints for BSSN formulation&quot;</span><span class="p">,</span> <span class="n">itr3</span>
+          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+                   <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+          <span class="k">PRINT</span> <span class="o">*</span>
+
+          <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_bssn</span><span class="p">,</span> <span class="s2">&quot;(A17,I1,A4)&quot;</span> <span class="p">)</span> <span class="s2">&quot;bssn-constraints-&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+                                                <span class="s2">&quot;.dat&quot;</span>
+          <span class="k">WRITE</span><span class="p">(</span> <span class="n">name_logfile</span><span class="p">,</span> <span class="s2">&quot;(A28,I1)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+                              <span class="s2">&quot;bssn-constraints-statistics-&quot;</span><span class="p">,</span> <span class="n">itr3</span>
+
+          <span class="n">namefile_bssn</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+          <span class="n">name_logfile</span> <span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">name_logfile</span> <span class="p">)</span>
+
+          <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
+                      <span class="n">compute_and_export_3p1_constraints</span><span class="p">(</span> <span class="n">idata</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">),</span> <span class="p">&amp;</span>
+                                                          <span class="n">namefile_bssn</span><span class="p">,</span> <span class="p">&amp;</span>
+                                                          <span class="n">name_logfile</span> <span class="p">)</span>
+
+        <span class="n">ENDIF</span>
+
+        <span class="n">part_distribution_loop3</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr4</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_n_parts</span><span class="p">,</span> <span class="mi">1</span>
+
+          <span class="k">IF</span><span class="p">(</span> <span class="n">placer</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span> <span class="o">==</span> <span class="n">test_int</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">            EXIT</span>
+            <span class="c">! Experimental: empty particles object</span>
+            <span class="c">!particles_dist( itr, itr2 )= particles()</span>
+          <span class="k">ELSE</span>
+
+<span class="k">          IF</span><span class="p">(</span> <span class="n">compute_parts_constraints</span> <span class="p">.</span><span class="nb">AND</span><span class="p">.</span> <span class="n">run_sph</span> <span class="p">)</span><span class="k">THEN</span>
+
+<span class="k">            PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+                     <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+            <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Computing BSSN constraints for BSSN&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+                     <span class="s2">&quot; formulation&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;with particle distribution&quot;</span><span class="p">,</span> <span class="n">itr4</span>
+            <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+                     <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+            <span class="k">PRINT</span> <span class="o">*</span>
+
+            <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_bssn</span><span class="p">,</span> <span class="s2">&quot;(A23,I1,A1,I1,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+                                                  <span class="s2">&quot;bssn-constraints-parts-&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+                                                  <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">itr4</span><span class="p">,</span> <span class="s2">&quot;.dat&quot;</span>
+            <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_sph</span><span class="p">,</span> <span class="s2">&quot;(A12,I1,A1,I1,A4)&quot;</span> <span class="p">)</span> <span class="s2">&quot;sph-density-&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+                                                  <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">itr4</span><span class="p">,</span> <span class="s2">&quot;.dat&quot;</span>
+            <span class="k">WRITE</span><span class="p">(</span> <span class="n">name_logfile</span><span class="p">,</span> <span class="s2">&quot;(A34,I1,A1,I1,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+                                 <span class="s2">&quot;bssn-constraints-parts-statistics-&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+                                 <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">itr4</span>
+
+            <span class="n">namefile_bssn</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+            <span class="n">namefile_sph</span> <span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">sph_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_sph</span> <span class="p">)</span>
+            <span class="n">name_logfile</span> <span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">name_logfile</span> <span class="p">)</span>
+
+            <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
+                        <span class="n">compute_and_export_3p1_constraints</span><span class="p">(</span> <span class="p">&amp;</span>
+                                                <span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">),</span> <span class="p">&amp;</span>
+                                                <span class="n">namefile_bssn</span><span class="p">,</span> <span class="p">&amp;</span>
+                                                <span class="n">name_logfile</span> <span class="p">)</span>
+
+          <span class="n">ENDIF</span>
+        <span class="n">ENDIF</span>
+
+      <span class="n">ENDDO</span> <span class="n">part_distribution_loop3</span>
+    <span class="n">ENDDO</span> <span class="n">compute_export_bssn_constraints_loop</span>
+
+  <span class="n">ENDIF</span>
+
+  <span class="k">CALL </span><span class="n">execution_timer</span><span class="p">%</span> <span class="n">stop_timer</span><span class="p">()</span>
+
+  <span class="k">CALL </span><span class="nb">DATE_AND_TIME</span><span class="p">(</span> <span class="n">date</span><span class="p">,</span> <span class="nb">time</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">values</span> <span class="p">)</span>
+  <span class="n">end_time</span><span class="o">=</span> <span class="n">date</span> <span class="o">//</span> <span class="s2">&quot;-&quot;</span> <span class="o">//</span> <span class="nb">time</span>
+
+  <span class="c">!</span>
+  <span class="c">!-- Print the timers</span>
+  <span class="c">!</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+           <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Timing &quot;</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+           <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+  <span class="k">PRINT</span> <span class="o">*</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * LORENE:&quot;</span>
+  <span class="k">CALL </span><span class="n">idata</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">construction_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+  <span class="k">PRINT</span> <span class="o">*</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="n">run_sph</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * SPH:&quot;</span>
+    <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">placer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">same_particle_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="k">DO </span><span class="n">i_matter</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">idata</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_n_matter</span><span class="p">(),</span> <span class="mi">1</span>
+      <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">apm_timers</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="n">ENDDO</span>
+    <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">importer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">sph_computer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+  <span class="n">ENDIF</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="n">run_spacetime</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Spacetime:&quot;</span>
+    <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">grid_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">importer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">bssn_computer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+  <span class="n">ENDIF</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Total:&quot;</span>
+  <span class="k">CALL </span><span class="n">execution_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+  <span class="k">PRINT</span> <span class="o">*</span>
+
+  <span class="c">!</span>
+  <span class="c">!-- Print a summary</span>
+  <span class="c">!</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+           <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Summary &quot;</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+           <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+  <span class="k">PRINT</span> <span class="o">*</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Binary system of neutron stars:&quot;</span>
+  <span class="k">PRINT</span> <span class="o">*</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Used binary file produced by LORENE: &quot;</span> <span class="p">&amp;</span>
+           <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">common_path</span><span class="p">)</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="n">filenames</span><span class="p">(</span> <span class="mi">1</span> <span class="p">))</span>
+  <span class="k">PRINT</span> <span class="o">*</span>
+  <span class="c">!DO i_matter= 1, idata(1)% get_n_matter(), 1</span>
+  <span class="c">!  PRINT *, &quot;   Baryon mass of matter object &quot;, i_matter, &quot;=&quot;, &amp;</span>
+  <span class="c">!           idata( 1 )% return_mass(i_matter), &quot;Msun&quot;</span>
+  <span class="c">!  !PRINT *, &quot;   Gravitational mass of object &quot;, i_matter, &quot;=&quot;, &amp;</span>
+  <span class="c">!  !         idata( 1 )% get_grav_mass(i_matter), &quot;Msun&quot;</span>
+  <span class="c">!ENDDO</span>
+  <span class="c">!PRINT *</span>
+  <span class="c">!PRINT *, &quot;   Equatorial (not areal) radius of neutron star 1 towards &quot; &amp;</span>
+  <span class="c">!         // &quot;companion= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_radius1_x_comp(), &quot;Msun_geo&quot;</span>
+  <span class="c">!PRINT *, &quot;   Equatorial (not areal) radius of neutron star 2 towards &quot; &amp;</span>
+  <span class="c">!         // &quot;companion= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_radius2_x_comp(), &quot;Msun_geo&quot;</span>
+  <span class="c">!PRINT *, &quot;   Equatorial (not areal) radius of neutron star 1 opposite to &quot; &amp;</span>
+  <span class="c">!         // &quot;companion= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_radius1_x_opp(), &quot;Msun_geo&quot;</span>
+  <span class="c">!PRINT *, &quot;   Equatorial (not areal) radius of neutron star 2 opposite to &quot; &amp;</span>
+  <span class="c">!         // &quot;companion= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_radius2_x_opp(), &quot;Msun_geo&quot;</span>
+  <span class="c">!PRINT *, &quot;   Radius (not areal) along y of neutron star 1= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_radius1_y(), &quot;Msun_geo&quot;</span>
+  <span class="c">!PRINT *, &quot;   Radius (not areal) along y of neutron star 2= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_radius2_y(), &quot;Msun_geo&quot;</span>
+  <span class="c">!PRINT *, &quot;   Radius (not areal) along y of neutron star 1= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_radius1_z(), &quot;Msun_geo&quot;</span>
+  <span class="c">!PRINT *, &quot;   Radius (not areal) along y of neutron star 2= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_radius2_z(), &quot;Msun_geo&quot;</span>
+  <span class="c">!PRINT *</span>
+  <span class="c">!PRINT *, &quot;   EOS for neutron star 1= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_eos1()</span>
+  <span class="c">!PRINT *, &quot;   EOS for neutron star 2= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_eos2()</span>
+  <span class="c">!PRINT *</span>
+  <span class="c">!PRINT *, &quot;   Central baryon mass density for star 1= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_rho_center1(), &quot;Msun/Msun_geo**3= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_rho_center1() &amp;</span>
+  <span class="c">!             /lorene2hydrobase*kg2g/(m2cm**3), &quot;g cm^{-3}&quot;</span>
+  <span class="c">!PRINT *, &quot;   Central baryon mass density for star 2= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_rho_center2(), &quot;Msun/Msun_geo**3= &quot;, &amp;</span>
+  <span class="c">!             binaries( 1 )% get_rho_center2() &amp;</span>
+  <span class="c">!             /lorene2hydrobase*kg2g/(m2cm**3), &quot;g cm^{-3}&quot;</span>
+  <span class="c">!PRINT *</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="n">run_sph</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * SPH:&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Total particle number= &quot;</span><span class="p">,</span> <span class="n">particles_dist</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_npart</span><span class="p">()</span>
+   <span class="c">! PRINT *, &quot;   Particle number on star 1: npart1=&quot;, &amp;</span>
+   <span class="c">!                                       particles_dist( 1, 1 )% get_npart1()</span>
+   <span class="c">! PRINT *, &quot;   Particle number on star 2: npart2=&quot;, &amp;</span>
+   <span class="c">!                                       particles_dist( 1, 1 )% get_npart2()</span>
+   <span class="c">! PRINT *, &quot;   Particle number ratio: npart1/npart2= &quot;, &amp;</span>
+   <span class="c">!                         DBLE(particles_dist( 1, 1 )% get_npart1()) &amp;</span>
+   <span class="c">!                        /DBLE(particles_dist( 1, 1 )% get_npart2())</span>
+   <span class="c">! PRINT *, &quot;   Star mass ratio: mass1/mass2= &quot;, &amp;</span>
+   <span class="c">!                        binaries( 1 )% get_mass1()/binaries( 1 )% get_mass2()</span>
+   <span class="c">! PRINT *</span>
+   <span class="c">! PRINT *, &quot;   Baryon number ratio over both stars=&quot;, &amp;</span>
+   <span class="c">!          particles_dist( 1, 1 )% get_nuratio()</span>
+   <span class="c">! PRINT *, &quot;   Baryon number ratio on star 1=&quot;, &amp;</span>
+   <span class="c">!          particles_dist( 1, 1 )% get_nuratio1()</span>
+   <span class="c">! PRINT *, &quot;   Baryon number ratio on star 2=&quot;, &amp;</span>
+   <span class="c">!          particles_dist( 1, 1 )% get_nuratio2()</span>
+   <span class="c">! PRINT *</span>
+  <span class="n">ENDIF</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="n">run_spacetime</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Spacetime:&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Number of refinement levels= &quot;</span><span class="p">,</span> <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_nlevels</span><span class="p">()</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Number of grid points on each level= &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+             <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_ngrid_x</span><span class="p">(</span> <span class="mi">1</span> <span class="p">),</span> <span class="s2">&quot;**3&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+    <span class="k">DO </span><span class="n">itr</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_nlevels</span><span class="p">(),</span> <span class="mi">1</span>
+      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Resolution on level &quot;</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="s2">&quot;= &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+               <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_dx</span><span class="p">(</span><span class="n">itr</span><span class="p">)</span>
+    <span class="n">ENDDO</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+    <span class="k">DO </span><span class="n">itr</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_nlevels</span><span class="p">(),</span> <span class="mi">1</span>
+      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   x boundary of level &quot;</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="s2">&quot;= &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+               <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_xR</span><span class="p">(</span><span class="n">itr</span><span class="p">)</span>
+      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   y boundary of level &quot;</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="s2">&quot;= &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+               <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_yR</span><span class="p">(</span><span class="n">itr</span><span class="p">)</span>
+      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   z boundary of level &quot;</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="s2">&quot;= &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+               <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_zR</span><span class="p">(</span><span class="n">itr</span><span class="p">)</span>
+               <span class="c">!bssn_forms( 1 )% get_dx(itr)* &amp;</span>
+               <span class="c">!(bssn_forms( 1 )% get_ngrid_x(itr)-2.0D0)/2.0D0, &quot;Msun_geo= &quot;, &amp;</span>
+               <span class="c">!bssn_forms( 1 )% get_dx(itr)* &amp;</span>
+               <span class="c">!(bssn_forms( 1 )% get_ngrid_x(itr)-2.0D0)/2.0D0*Msun_geo, &quot;km &quot;</span>
+    <span class="n">ENDDO</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+    <span class="n">last_level</span><span class="o">=</span> <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_nlevels</span><span class="p">()</span>
+    <span class="c">!PRINT *, &quot;   Number of grid points across the x-axis-diameter of star 1=&quot;, &amp;</span>
+    <span class="c">!         FLOOR( ( binaries( 1 )% get_radius1_x_comp() + &amp;</span>
+    <span class="c">!         binaries( 1 )% get_radius1_x_opp() ) &amp;</span>
+    <span class="c">!         /bssn_forms( 1 )% get_dx( last_level ) )</span>
+    <span class="c">!PRINT *, &quot;   Number of grid points across the x-axis-diameter of star 2=&quot;, &amp;</span>
+    <span class="c">!         FLOOR( ( binaries( 1 )% get_radius2_x_comp() + &amp;</span>
+    <span class="c">!        binaries( 1 )% get_radius2_x_opp() ) &amp;</span>
+    <span class="c">!        /bssn_forms( 1 )% get_dx( last_level ) )</span>
+    <span class="c">!PRINT *</span>
+  <span class="n">ENDIF</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** Run started on &quot;</span><span class="p">,</span> <span class="n">run_id</span><span class="p">,</span> <span class="s2">&quot; and ended on &quot;</span><span class="p">,</span> <span class="n">end_time</span>
+  <span class="k">PRINT</span> <span class="o">*</span>
+
+  <span class="c">!</span>
+  <span class="c">!-- Deallocate memory</span>
+  <span class="c">!</span>
+  <span class="k">DO </span><span class="n">itr</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="c">!</span>
+    <span class="c">!-- Destruct the LORENE Bin_NS object by hand, since the pointer to it is</span>
+    <span class="c">!-- global (because it is bound to C++) and cannot be nullified by the</span>
+    <span class="c">!-- destructor of bns. In case of multiple bns objects, this would lead</span>
+    <span class="c">!-- to problems...</span>
+    <span class="c">!-- TODO: fix this</span>
+    <span class="c">!</span>
+    <span class="c">!CALL binaries( itr )% destruct_binary()</span>
+  <span class="n">ENDDO</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="nb">ALLOCATED</span><span class="p">(</span> <span class="n">binaries</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    DEALLOCATE</span><span class="p">(</span> <span class="n">binaries</span> <span class="p">)</span>
+  <span class="n">ENDIF</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="nb">ALLOCATED</span><span class="p">(</span> <span class="n">idata</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    DEALLOCATE</span><span class="p">(</span> <span class="n">idata</span> <span class="p">)</span>
+  <span class="n">ENDIF</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="nb">ALLOCATED</span><span class="p">(</span> <span class="n">particles_dist</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    DEALLOCATE</span><span class="p">(</span> <span class="n">particles_dist</span> <span class="p">)</span>
+  <span class="n">ENDIF</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="nb">ALLOCATED</span><span class="p">(</span> <span class="n">bssn_forms</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    DEALLOCATE</span><span class="p">(</span> <span class="n">bssn_forms</span> <span class="p">)</span>
+  <span class="n">ENDIF</span>
+
+
+  <span class="k">CONTAINS</span>
+
+
+<span class="k">  SUBROUTINE </span><span class="n">read_bns_id_parameters</span><span class="p">()</span>
+
+    <span class="k">IMPLICIT NONE</span>
+
+<span class="k">    </span><span class="kt">INTEGER</span><span class="kd">::</span> <span class="nb">stat</span>
+
+<span class="nb">    </span><span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">lorene_bns_id_parameters</span>
+    <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">100</span> <span class="p">)</span><span class="kd">::</span> <span class="n">msg</span>
+
+    <span class="n">lorene_bns_id_parameters</span><span class="o">=</span> <span class="s1">&#39;sphincs_lorene_bns_parameters.par&#39;</span>
+
+    <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="n">lorene_bns_id_parameters</span><span class="p">,</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">file_exists</span> <span class="p">)</span>
+    <span class="k">IF</span><span class="p">(</span> <span class="n">file_exists</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">     OPEN</span><span class="p">(</span> <span class="mi">17</span><span class="p">,</span> <span class="k">FILE</span><span class="o">=</span> <span class="n">lorene_bns_id_parameters</span><span class="p">,</span> <span class="n">STATUS</span><span class="o">=</span> <span class="s1">&#39;OLD&#39;</span> <span class="p">)</span>
+    <span class="k">ELSE</span>
+<span class="k">     PRINT</span><span class="o">*</span>
+     <span class="k">PRINT</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;** ERROR: &#39;</span><span class="p">,</span> <span class="n">lorene_bns_id_parameters</span><span class="p">,</span> <span class="s2">&quot; file not found!&quot;</span>
+     <span class="k">PRINT</span><span class="o">*</span>
+     <span class="k">STOP</span>
+<span class="k">    </span><span class="n">ENDIF</span>
+
+    <span class="k">READ</span><span class="p">(</span> <span class="mi">17</span><span class="p">,</span> <span class="n">NML</span><span class="o">=</span> <span class="n">bns_parameters</span><span class="p">,</span> <span class="n">IOSTAT</span><span class="o">=</span> <span class="nb">stat</span><span class="p">,</span> <span class="n">IOMSG</span><span class="o">=</span> <span class="n">msg</span> <span class="p">)</span>
+      <span class="k">IF</span><span class="p">(</span> <span class="nb">stat</span> <span class="o">/=</span> <span class="mi">0</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR: Error in reading &quot;</span><span class="p">,</span><span class="n">lorene_bns_id_parameters</span><span class="p">,&amp;</span>
+                 <span class="s2">&quot;. The IOSTAT variable is &quot;</span><span class="p">,</span> <span class="nb">stat</span><span class="p">,</span> <span class="p">&amp;</span>
+                 <span class="s2">&quot;The error message is&quot;</span><span class="p">,</span> <span class="n">msg</span>
+        <span class="k">STOP</span>
+<span class="k">      </span><span class="n">ENDIF</span>
+    <span class="k">CLOSE</span><span class="p">(</span> <span class="mi">17</span> <span class="p">)</span>
+
+    <span class="k">DO </span><span class="n">itr</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_length</span><span class="p">,</span> <span class="mi">1</span>
+      <span class="k">IF</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">filenames</span><span class="p">(</span><span class="n">itr</span><span class="p">)).</span><span class="n">NE</span><span class="p">.</span><span class="s2">&quot;0&quot;</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">        </span><span class="n">cnt</span><span class="o">=</span> <span class="n">cnt</span> <span class="o">+</span> <span class="mi">1</span>
+      <span class="n">ENDIF</span>
+    <span class="n">ENDDO</span>
+    <span class="k">IF</span><span class="p">(</span> <span class="n">cnt</span><span class="p">.</span><span class="n">NE</span><span class="p">.</span><span class="n">n_bns</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">      PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The number of file names is&quot;</span><span class="p">,</span> <span class="n">cnt</span><span class="p">,</span> <span class="p">&amp;</span>
+               <span class="s2">&quot;and n_bns=&quot;</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="s2">&quot;. The two should be the same.&quot;</span>
+      <span class="k">PRINT</span> <span class="o">*</span>
+      <span class="k">STOP</span>
+<span class="k">    </span><span class="n">ENDIF</span>
+
+   <span class="c">!DO itr= 1, n_bns, 1</span>
+   <span class="c">!  DO itr2= 1, max_n_parts, 1</span>
+   <span class="c">!    IF( placer( itr, itr2 ) == test_int )THEN</span>
+   <span class="c">!      PRINT *</span>
+   <span class="c">!      PRINT *, &quot;** ERROR! The array placer does not have &quot;, &amp;</span>
+   <span class="c">!               &quot;enough components to specify all the desired &quot;, &amp;</span>
+   <span class="c">!               &quot;particle distributions. Specify the &quot;, &amp;</span>
+   <span class="c">!               &quot;components in file lorene_bns_id_particles.par&quot;</span>
+   <span class="c">!      PRINT *</span>
+   <span class="c">!      STOP</span>
+   <span class="c">!    ENDIF</span>
+   <span class="c">!  ENDDO</span>
+   <span class="c">!ENDDO</span>
+
+  <span class="k">END SUBROUTINE</span>
+
+<span class="k">END PROGRAM </span><span class="n">sphincs_lorene_bns</span>
+</pre></div>
+
+    </section>
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

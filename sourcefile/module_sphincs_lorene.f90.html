@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>module_sphincs_lorene.f90 &ndash; SPHINCS_LORENE</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>module_sphincs_lorene.f90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.1% of total for source files.">11 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/module_sphincs_lorene.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+  
+     <li class="active">module_sphincs_lorene.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-0">Modules</a></h3></div>
+  <div id="mods-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/sphincs_lorene.html">sphincs_lorene</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/module_sphincs_lorene.f90.html#src">module_sphincs_lorene.f90</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      
+      <br>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">This file depends on</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: sourcefile~~module_sphincs_lorene.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefilemodule_sphincs_lorenef90EfferentGraph" width="641pt" height="295pt"
+ viewBox="0.00 0.00 641.00 295.14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph" class="graph" transform="scale(.8145 .8145) rotate(0) translate(4 358.3669)">
+<title>sourcefile~~module_sphincs_lorene.f90~~EfferentGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-358.3669 783,-358.3669 783,4 -4,4"/>
+<!-- sourcefile~module_sphincs_lorene.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node1" class="node">
+<title>sourcefile~module_sphincs_lorene.f90</title>
+<polygon fill="none" stroke="#000000" points="779,-179.1261 635,-179.1261 635,-155.1261 779,-155.1261 779,-179.1261"/>
+<text text-anchor="middle" x="707" y="-164.7261" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">module_sphincs_lorene.f90</text>
+</g>
+<!-- sourcefile~module_bns_lorene.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node2" class="node">
+<title>sourcefile~module_bns_lorene.f90</title>
+<g id="a_sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node2"><a xlink:href=".././sourcefile/module_bns_lorene.f90.html" xlink:title="module_bns_lorene.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="446.5,-82.1261 321.5,-82.1261 321.5,-58.1261 446.5,-58.1261 446.5,-82.1261"/>
+<text text-anchor="middle" x="384" y="-67.7261" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_bns_lorene.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_bns_lorene.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge1" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_bns_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M544.5,-99.1261C516.0748,-92.213 484.4527,-86.1566 456.8434,-81.3913"/>
+<polygon fill="#000000" stroke="#000000" points="457.3118,-77.9208 446.8665,-79.6949 456.1383,-84.8218 457.3118,-77.9208"/>
+</g>
+<!-- sourcefile~module_diffstar_lorene.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node3" class="node">
+<title>sourcefile~module_diffstar_lorene.f90</title>
+<g id="a_sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node3"><a xlink:href=".././sourcefile/module_diffstar_lorene.f90.html" xlink:title="module_diffstar_lorene.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="454,-299.1261 314,-299.1261 314,-275.1261 454,-275.1261 454,-299.1261"/>
+<text text-anchor="middle" x="384" y="-284.7261" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_diffstar_lorene.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge2" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M544.5,-327.1261C522.3887,-332.2663 466.3722,-315.8011 426.7627,-302.4562"/>
+<polygon fill="#000000" stroke="#000000" points="427.6711,-299.068 417.0765,-299.1458 425.4072,-305.6918 427.6711,-299.068"/>
+</g>
+<!-- sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node4" class="node">
+<title>sourcefile~module_utility.f90</title>
+<g id="a_sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node4"><a xlink:href=".././sourcefile/module_utility.f90.html" xlink:title="module_utility.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="102.5,-221.1261 6.5,-221.1261 6.5,-197.1261 102.5,-197.1261 102.5,-221.1261"/>
+<text text-anchor="middle" x="54.5" y="-206.7261" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_utility.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge3" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M544.5,-327.1261C400.3441,-360.6383 354.3513,-365.8238 211.5,-327.1261"/>
+</g>
+<!-- sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node5" class="node">
+<title>sourcefile~module_id_base.f90</title>
+<g id="a_sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node5"><a xlink:href=".././sourcefile/module_id_base.f90.html" xlink:title="module_id_base.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="109,-160.1261 0,-160.1261 0,-136.1261 109,-136.1261 109,-160.1261"/>
+<text text-anchor="middle" x="54.5" y="-145.7261" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_id_base.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge4" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M684.6332,-155.081C653.9944,-139.2164 596.8004,-111.8456 544.5,-99.1261"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M544.5,-99.1261C499.8488,-88.2668 497.4718,-64.0208 454,-49.1261 350.7967,-13.7656 316.9253,16.9238 211.5,-11.1261"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M211.5,-11.1261C181.741,-18.8229 170.4141,-12.8355 145,-30.1261 107.9286,-55.3477 79.5049,-100.656 65.0571,-127.1892"/>
+<polygon fill="#000000" stroke="#000000" points="61.9559,-125.5668 60.3765,-136.0432 68.1444,-128.8383 61.9559,-125.5668"/>
+</g>
+<!-- sourcefile~module_bssn_id.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node6" class="node">
+<title>sourcefile~module_bssn_id.f90</title>
+<g id="a_sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node6"><a xlink:href=".././sourcefile/module_bssn_id.f90.html" xlink:title="module_bssn_id.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="599,-179.1261 490,-179.1261 490,-155.1261 599,-155.1261 599,-179.1261"/>
+<text text-anchor="middle" x="544.5" y="-164.7261" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_bssn_id.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_bssn_id.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge5" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_bssn_id.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M634.7788,-167.1261C626.342,-167.1261 617.7738,-167.1261 609.444,-167.1261"/>
+<polygon fill="#000000" stroke="#000000" points="609.4266,-163.6262 599.4266,-167.1261 609.4265,-170.6262 609.4266,-163.6262"/>
+</g>
+<!-- sourcefile~module_formul_3p1_id.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node7" class="node">
+<title>sourcefile~module_formul_3p1_id.f90</title>
+<g id="a_sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node7"><a xlink:href=".././sourcefile/module_formul_3p1_id.f90.html" xlink:title="module_formul_3p1_id.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="454,-219.1261 314,-219.1261 314,-195.1261 454,-195.1261 454,-219.1261"/>
+<text text-anchor="middle" x="384" y="-204.7261" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_formul_3p1_id.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_formul_3p1_id.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge6" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_formul_3p1_id.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M700.7292,-179.4303C682.4038,-213.6031 625.0976,-308.3893 544.5,-327.1261"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M544.5,-327.1261C536.3192,-329.0279 449.1392,-259.7669 406.8089,-225.6305"/>
+<polygon fill="#000000" stroke="#000000" points="408.9555,-222.8652 398.9775,-219.303 404.5563,-228.3101 408.9555,-222.8652"/>
+</g>
+<!-- sourcefile~module_particles_id.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node8" class="node">
+<title>sourcefile~module_particles_id.f90</title>
+<g id="a_sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node8"><a xlink:href=".././sourcefile/module_particles_id.f90.html" xlink:title="module_particles_id.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="274.5,-181.1261 148.5,-181.1261 148.5,-157.1261 274.5,-157.1261 274.5,-181.1261"/>
+<text text-anchor="middle" x="211.5" y="-166.7261" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_particles_id.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_particles_id.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge7" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_particles_id.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M544.5,-99.1261C469.2228,-80.8185 461.0018,-158.6081 384,-167.1261"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M384,-167.1261C351.6386,-170.7059 315.655,-171.606 284.9613,-171.4568"/>
+<polygon fill="#000000" stroke="#000000" points="284.7979,-167.9553 274.7678,-171.3683 284.737,-174.9551 284.7979,-167.9553"/>
+</g>
+<!-- sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge9" class="edge">
+<title>sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M333.455,-82.2402C283.9686,-95.1024 207.1641,-117.7691 145,-148.1261 131.7729,-154.5853 101.2644,-175.6744 79.3243,-191.2552"/>
+<polygon fill="#000000" stroke="#000000" points="77.2088,-188.465 71.1005,-197.1217 81.274,-194.1636 77.2088,-188.465"/>
+</g>
+<!-- sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge8" class="edge">
+<title>sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M359.7168,-58.0751C319.382,-38.6932 240.1754,-3.4966 211.5,-11.1261"/>
+</g>
+<!-- sourcefile~module_bns_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node10" class="node">
+<title>sourcefile~module_bns_base.f90</title>
+<g id="a_sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node10"><a xlink:href=".././sourcefile/module_bns_base.f90.html" xlink:title="module_bns_base.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="270.5,-63.1261 152.5,-63.1261 152.5,-39.1261 270.5,-39.1261 270.5,-63.1261"/>
+<text text-anchor="middle" x="211.5" y="-48.7261" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_bns_base.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_bns_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge10" class="edge">
+<title>sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_bns_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M321.2356,-63.2129C308.1088,-61.767 294.1964,-60.2347 280.8464,-58.7642"/>
+<polygon fill="#000000" stroke="#000000" points="281.0926,-55.2702 270.7695,-57.6543 280.3261,-62.2282 281.0926,-55.2702"/>
+</g>
+<!-- sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge12" class="edge">
+<title>sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M349.4538,-299.2064C306.9209,-313.3675 237.1672,-334.0792 211.5,-327.1261"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M211.5,-327.1261C181.8311,-319.0889 171.1364,-324.3041 145,-308.1261 112.1088,-287.767 83.7979,-252.1456 67.9718,-229.6408"/>
+<polygon fill="#000000" stroke="#000000" points="70.7011,-227.4319 62.1621,-221.1601 64.9262,-231.388 70.7011,-227.4319"/>
+</g>
+<!-- sourcefile~module_diffstar_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node9" class="node">
+<title>sourcefile~module_diffstar_base.f90</title>
+<g id="a_sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_node9"><a xlink:href=".././sourcefile/module_diffstar_base.f90.html" xlink:title="module_diffstar_base.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="278,-299.1261 145,-299.1261 145,-275.1261 278,-275.1261 278,-299.1261"/>
+<text text-anchor="middle" x="211.5" y="-284.7261" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_diffstar_base.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_diffstar_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge11" class="edge">
+<title>sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_diffstar_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M313.8376,-287.1261C305.4821,-287.1261 296.9177,-287.1261 288.4734,-287.1261"/>
+<polygon fill="#000000" stroke="#000000" points="288.2547,-283.6262 278.2547,-287.1261 288.2547,-290.6262 288.2547,-283.6262"/>
+</g>
+<!-- sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge14" class="edge">
+<title>sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M532.0151,-179.184C515.6573,-194.0574 485.3488,-218.5474 454,-228.1261 335.9522,-264.1958 189.2111,-241.0094 110.5494,-223.4699"/>
+<polygon fill="#000000" stroke="#000000" points="110.9027,-219.9606 100.3746,-221.1474 109.345,-226.7851 110.9027,-219.9606"/>
+</g>
+<!-- sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge16" class="edge">
+<title>sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M489.5985,-157.5078C477.8834,-155.7714 465.5581,-154.1801 454,-153.1261 336.4925,-142.4103 198.7488,-143.728 119.5497,-145.8183"/>
+<polygon fill="#000000" stroke="#000000" points="119.1425,-142.3282 109.2432,-146.1035 119.3362,-149.3255 119.1425,-142.3282"/>
+</g>
+<!-- sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_formul_3p1_id.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge13" class="edge">
+<title>sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_formul_3p1_id.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M496.3447,-179.1274C479.4406,-183.3402 460.2619,-188.12 442.5962,-192.5226"/>
+<polygon fill="#000000" stroke="#000000" points="441.2553,-189.2497 432.3985,-195.0641 442.9481,-196.0419 441.2553,-189.2497"/>
+</g>
+<!-- sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_particles_id.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge15" class="edge">
+<title>sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_particles_id.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M489.7351,-164.1508C458.6356,-163.205 419.035,-163.2505 384,-167.1261"/>
+</g>
+<!-- sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge17" class="edge">
+<title>sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M211.5,-209.1261C178.9605,-206.1849 142.4723,-205.998 112.8671,-206.631"/>
+<polygon fill="#000000" stroke="#000000" points="112.6093,-203.1363 102.7002,-206.8859 112.7849,-210.1341 112.6093,-203.1363"/>
+</g>
+<!-- sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge19" class="edge">
+<title>sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M313.7921,-211.1659C282.4334,-212.1402 245.0569,-212.1592 211.5,-209.1261"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M211.5,-209.1261C164.5205,-204.8797 114.4087,-181.7642 83.7657,-165.2455"/>
+<polygon fill="#000000" stroke="#000000" points="85.3528,-162.1238 74.9059,-160.359 81.9721,-168.2533 85.3528,-162.1238"/>
+</g>
+<!-- sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_particles_id.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge18" class="edge">
+<title>sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_particles_id.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M329.4199,-195.1026C312.5051,-191.3765 293.7031,-187.2346 276.1721,-183.3727"/>
+<polygon fill="#000000" stroke="#000000" points="276.5397,-179.8698 266.0209,-181.1365 275.0337,-186.7059 276.5397,-179.8698"/>
+</g>
+<!-- sourcefile~module_particles_id.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge20" class="edge">
+<title>sourcefile~module_particles_id.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M164.3948,-181.1274C147.8594,-185.3402 129.0988,-190.12 111.8184,-194.5226"/>
+<polygon fill="#000000" stroke="#000000" points="110.6693,-191.2035 101.8431,-197.0641 112.3976,-197.9868 110.6693,-191.2035"/>
+</g>
+<!-- sourcefile~module_particles_id.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge21" class="edge">
+<title>sourcefile~module_particles_id.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M148.0946,-160.6451C138.5949,-159.3744 128.7887,-158.0628 119.2611,-156.7884"/>
+<polygon fill="#000000" stroke="#000000" points="119.4356,-153.2806 109.0598,-155.4239 118.5075,-160.2188 119.4356,-153.2806"/>
+</g>
+<!-- sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge22" class="edge">
+<title>sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M177.9361,-275.1207C167.2639,-271.0079 155.507,-266.1642 145,-261.1261 123.294,-250.7181 99.7457,-237.1094 82.112,-226.4245"/>
+<polygon fill="#000000" stroke="#000000" points="83.8274,-223.3709 73.471,-221.136 80.1733,-229.3415 83.8274,-223.3709"/>
+</g>
+<!-- sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge23" class="edge">
+<title>sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M198.733,-274.876C185.3316,-262.0085 163.6574,-241.1734 145,-223.1261 128.9606,-207.6111 126.0356,-202.54 109,-188.1261 100.0373,-180.5427 89.7577,-172.7783 80.5588,-166.1323"/>
+<polygon fill="#000000" stroke="#000000" points="82.325,-163.0934 72.1485,-160.1454 78.2655,-168.7961 82.325,-163.0934"/>
+</g>
+<!-- sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge24" class="edge">
+<title>sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M165.5426,-63.2739C158.0087,-66.8117 150.786,-71.3417 145,-77.1261 113.948,-108.1692 135.758,-134.3135 109,-169.1261 102.4555,-177.6406 93.6268,-185.1786 84.983,-191.3504"/>
+<polygon fill="#000000" stroke="#000000" points="82.8427,-188.5717 76.4921,-197.0523 86.7452,-194.3829 82.8427,-188.5717"/>
+</g>
+<!-- sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~EfferentGraph_edge25" class="edge">
+<title>sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M175.0643,-63.1651C165.0446,-67.0608 154.3647,-71.777 145,-77.1261 119.2195,-91.8518 92.8601,-113.4198 75.2892,-128.9162"/>
+<polygon fill="#000000" stroke="#000000" points="72.5202,-126.6979 67.4105,-135.9792 77.1928,-131.9102 72.5202,-126.6979"/>
+</g>
+</g>
+</svg>
+</div><script>var pansourcefilemodule_sphincs_lorenef90EfferentGraph = svgPanZoom('#sourcefilemodule_sphincs_lorenef90EfferentGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,0 67,0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="182,-24 85,-24 85,0 182,0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    
+      
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Files dependent on this one</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: sourcefile~~module_sphincs_lorene.f90~~AfferentGraph Pages: 1 -->
+<svg id="sourcefilemodule_sphincs_lorenef90AfferentGraph" width="314pt" height="74pt"
+ viewBox="0.00 0.00 314.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~module_sphincs_lorene.f90~~AfferentGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>sourcefile~~module_sphincs_lorene.f90~~AfferentGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 310,-70 310,4 -4,4"/>
+<!-- sourcefile~module_sphincs_lorene.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~AfferentGraph_node1" class="node">
+<title>sourcefile~module_sphincs_lorene.f90</title>
+<polygon fill="none" stroke="#000000" points="144,-45 0,-45 0,-21 144,-21 144,-45"/>
+<text text-anchor="middle" x="72" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">module_sphincs_lorene.f90</text>
+</g>
+<!-- sourcefile~convergence_test.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~AfferentGraph_node2" class="node">
+<title>sourcefile~convergence_test.f90</title>
+<g id="a_sourcefile~~module_sphincs_lorene.f90~~AfferentGraph_node2"><a xlink:href=".././sourcefile/convergence_test.f90.html" xlink:title="convergence_test.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="300.5,-66 185.5,-66 185.5,-42 300.5,-42 300.5,-66"/>
+<text text-anchor="middle" x="243" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">convergence_test.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~convergence_test.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~AfferentGraph_edge2" class="edge">
+<title>sourcefile~convergence_test.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M185.1072,-46.8904C175.1213,-45.664 164.5726,-44.3686 154.0923,-43.0815"/>
+<polygon fill="#000000" stroke="#000000" points="154.4378,-39.5977 144.0857,-41.8526 153.5845,-46.5455 154.4378,-39.5977"/>
+</g>
+<!-- sourcefile~sphincs_lorene_bns.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~AfferentGraph_node3" class="node">
+<title>sourcefile~sphincs_lorene_bns.f90</title>
+<g id="a_sourcefile~~module_sphincs_lorene.f90~~AfferentGraph_node3"><a xlink:href=".././sourcefile/sphincs_lorene_bns.f90.html" xlink:title="sphincs_lorene_bns.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="306,-24 180,-24 180,0 306,0 306,-24"/>
+<text text-anchor="middle" x="243" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene_bns.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sphincs_lorene_bns.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90 -->
+<g id="sourcefile~~module_sphincs_lorene.f90~~AfferentGraph_edge1" class="edge">
+<title>sourcefile~sphincs_lorene_bns.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M179.8117,-19.76C171.4692,-20.7845 162.8219,-21.8464 154.219,-22.9029"/>
+<polygon fill="#000000" stroke="#000000" points="153.66,-19.4452 144.1612,-24.1381 154.5133,-26.393 153.66,-19.4452"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,0 67,0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="182,-24 85,-24 85,0 182,0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#mods-1">Modules</a></h3></div>
+  <div id="mods-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/sphincs_lorene.html">sphincs_lorene</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/module_sphincs_lorene.f90.html#src">module_sphincs_lorene.f90</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="c">! File:         module_sphincs_lorene.f90</span>
+<a name="ln-2"></a><span class="c">! Author:       Francesco Torsello (FT)</span>
+<a name="ln-3"></a><span class="c">! Copyright:    GNU General Public License (GPLv3)</span>
+<a name="ln-4"></a>
+<a name="ln-5"></a><span class="k">MODULE </span><span class="n">sphincs_lorene</span>
+<a name="ln-6"></a>
+<a name="ln-7"></a>
+<a name="ln-8"></a>    <span class="c">!**********************************************</span>
+<a name="ln-9"></a>    <span class="c">!                                             *</span>
+<a name="ln-10"></a>    <span class="c">! This module uses the other                  *</span>
+<a name="ln-11"></a>    <span class="c">! modules needed to import and set up the     *</span>
+<a name="ln-12"></a>    <span class="c">! LORENE ID                                   *</span>
+<a name="ln-13"></a>    <span class="c">!                                             *</span>
+<a name="ln-14"></a>    <span class="c">! FT 23.10.2020                               *</span>
+<a name="ln-15"></a>    <span class="c">!                                             *</span>
+<a name="ln-16"></a>    <span class="c">!**********************************************</span>
+<a name="ln-17"></a>
+<a name="ln-18"></a>
+<a name="ln-19"></a>    <span class="k">USE </span><span class="n">utility</span><span class="p">,</span>         <span class="n">ONLY</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="nb">time</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">run_id</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-20"></a>                               <span class="n">itr4</span><span class="p">,</span> <span class="n">ios</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">file_exists</span><span class="p">,</span> <span class="n">cnt</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-21"></a>                               <span class="n">test_status</span><span class="p">,</span> <span class="n">show_progress</span><span class="p">,</span> <span class="n">end_time</span>
+<a name="ln-22"></a>    <span class="k">USE </span><span class="n">timing</span><span class="p">,</span>          <span class="n">ONLY</span><span class="p">:</span> <span class="n">timer</span>
+<a name="ln-23"></a>    <span class="k">USE </span><span class="n">id_base</span><span class="p">,</span>         <span class="n">ONLY</span><span class="p">:</span> <span class="n">idbase</span>
+<a name="ln-24"></a>    <span class="k">USE </span><span class="n">bns_lorene</span><span class="p">,</span>      <span class="n">ONLY</span><span class="p">:</span> <span class="n">bnslorene</span>
+<a name="ln-25"></a>    <span class="k">USE </span><span class="n">diffstar_lorene</span><span class="p">,</span> <span class="n">ONLY</span><span class="p">:</span> <span class="n">diffstarlorene</span>
+<a name="ln-26"></a>    <span class="k">USE </span><span class="n">particles_id</span><span class="p">,</span>    <span class="n">ONLY</span><span class="p">:</span> <span class="n">particles</span>
+<a name="ln-27"></a>    <span class="k">USE </span><span class="n">formul_3p1_id</span><span class="p">,</span>   <span class="n">ONLY</span><span class="p">:</span> <span class="n">formul_3p1</span>
+<a name="ln-28"></a>    <span class="k">USE </span><span class="n">formul_bssn_id</span><span class="p">,</span>  <span class="n">ONLY</span><span class="p">:</span> <span class="n">bssn_id</span>
+<a name="ln-29"></a>
+<a name="ln-30"></a>
+<a name="ln-31"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-32"></a>
+<a name="ln-33"></a>
+<a name="ln-34"></a><span class="k">END MODULE </span><span class="n">sphincs_lorene</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

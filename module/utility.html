@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>utility &ndash; SPHINCS_LORENE</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>utility 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.7% of total for modules and submodules.">80 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/module_utility.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/module_utility.f90.html'>module_utility.f90</a></li>
+    
+  
+     <li class="active">utility</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/utility.html#variable-cnt~4">cnt</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-creturn">creturn</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-date">date</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-end_time">end_time</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-err_msg">err_msg</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-file_exists~2">file_exists</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-ios">ios</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-itr~10">itr</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-itr3">itr3</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-itr4">itr4</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-perc">perc</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-perc2">perc2</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-run_id">run_id</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-show_progress">show_progress</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-time">time</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-values">values</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-zone">zone</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/utility.html#proc-compute_g4">compute_g4</a>
+      
+      <a class="list-group-item" href="../module/utility.html#proc-determinant_sym3x3_grid">determinant_sym3x3_grid</a>
+      
+      <a class="list-group-item" href="../module/utility.html#proc-determinant_sym4x4_grid">determinant_sym4x4_grid</a>
+      
+      <a class="list-group-item" href="../module/utility.html#proc-test_status">test_status</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    
+      <br>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li>matrix</li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~utility~~UsesGraph Pages: 1 -->
+<svg id="moduleutilityUsesGraph" width="152pt" height="32pt"
+ viewBox="0.00 0.00 152.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~utility~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>module~~utility~~UsesGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 148,-28 148,4 -4,4"/>
+<!-- module~utility -->
+<g id="module~~utility~~UsesGraph_node1" class="node">
+<title>module~utility</title>
+<polygon fill="none" stroke="#000000" points="144,-24 90,-24 90,0 144,0 144,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">utility</text>
+</g>
+<!-- matrix -->
+<g id="module~~utility~~UsesGraph_node2" class="node">
+<title>matrix</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">matrix</text>
+</g>
+<!-- module~utility&#45;&gt;matrix -->
+<g id="module~~utility~~UsesGraph_edge1" class="edge">
+<title>module~utility&#45;&gt;matrix</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-12C81.9723,-12 73.0335,-12 64.4691,-12"/>
+<polygon fill="#000000" stroke="#000000" points="64.295,-8.5001 54.295,-12 64.2949,-15.5001 64.295,-8.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses.
+    </p>
+    </div></div></div></div>
+      </li>
+      
+      </ul>
+    </div>
+    
+
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Used by</h3>
+      </div>
+      <ul class="list-group">
+  
+  
+  <li class="list-group-item">
+    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~utility~~UsedByGraph Pages: 1 -->
+<svg id="moduleutilityUsedByGraph" width="641pt" height="746pt"
+ viewBox="0.00 0.00 641.00 746.47" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~utility~~UsedByGraph" class="graph" transform="scale(.6856 .6856) rotate(0) translate(4 1084.8447)">
+<title>module~~utility~~UsedByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-1084.8447 931,-1084.8447 931,4 -4,4"/>
+<!-- module~utility -->
+<g id="module~~utility~~UsedByGraph_node1" class="node">
+<title>module~utility</title>
+<polygon fill="none" stroke="#000000" points="54,-458 0,-458 0,-434 54,-434 54,-458"/>
+<text text-anchor="middle" x="27" y="-443.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">utility</text>
+</g>
+<!-- module~formul_3p1_id -->
+<g id="module~~utility~~UsedByGraph_node2" class="node">
+<title>module~formul_3p1_id</title>
+<g id="a_module~~utility~~UsedByGraph_node2"><a xlink:href=".././module/formul_3p1_id.html" xlink:title="formul_3p1_id">
+<polygon fill="#337ab7" stroke="#337ab7" points="396.5,-596 315.5,-596 315.5,-572 396.5,-572 396.5,-596"/>
+<text text-anchor="middle" x="356" y="-581.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1_id</text>
+</a>
+</g>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;module~utility -->
+<g id="module~~utility~~UsedByGraph_edge1" class="edge">
+<title>module~formul_3p1_id&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M338.9467,-571.8583C319.5009,-558.545 286.3363,-537.4262 255,-525 220.0231,-511.1302 209.4225,-513.2445 172.5,-506"/>
+</g>
+<!-- module~particles_id -->
+<g id="module~~utility~~UsedByGraph_node5" class="node">
+<title>module~particles_id</title>
+<g id="a_module~~utility~~UsedByGraph_node5"><a xlink:href=".././module/particles_id.html" xlink:title="particles_id">
+<polygon fill="#337ab7" stroke="#337ab7" points="206,-802 139,-802 139,-778 206,-778 206,-802"/>
+<text text-anchor="middle" x="172.5" y="-787.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_id</text>
+</a>
+</g>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge20" class="edge">
+<title>module~formul_3p1_id&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M315.3712,-592.3845C306.7663,-595.4104 298.1378,-599.4969 291,-605 233.8456,-649.065 196.4437,-729.0538 180.818,-767.7918"/>
+<polygon fill="#000000" stroke="#000000" points="177.3801,-766.9723 176.9899,-777.5599 183.8975,-769.5265 177.3801,-766.9723"/>
+</g>
+<!-- module~sphincs_lorene -->
+<g id="module~~utility~~UsedByGraph_node3" class="node">
+<title>module~sphincs_lorene</title>
+<g id="a_module~~utility~~UsedByGraph_node3"><a xlink:href=".././module/sphincs_lorene.html" xlink:title="sphincs_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="771,-599 686,-599 686,-575 771,-575 771,-599"/>
+<text text-anchor="middle" x="728.5" y="-584.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~utility -->
+<g id="module~~utility~~UsedByGraph_edge2" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M715.9898,-574.9497C699.6051,-560.0494 669.2682,-535.3869 638,-525 441.4971,-459.7242 375.687,-545.8668 172.5,-506"/>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~formul_3p1_id -->
+<g id="module~~utility~~UsedByGraph_edge13" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M687.8816,-599.0588C672.4161,-603.0706 654.5362,-607.0189 638,-609 558.1267,-618.569 536.8531,-618.7359 457,-609 439.9234,-606.918 421.5746,-602.9252 405.2635,-598.7315"/>
+<polygon fill="#000000" stroke="#000000" points="405.9639,-595.2963 395.4003,-596.1097 404.1655,-602.0613 405.9639,-595.2963"/>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge21" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M721.9303,-599.0241C709.0954,-621.1893 678.3784,-668.1286 638,-689 500.1787,-760.2391 439.2672,-681.3209 291,-727 257.1892,-737.4167 221.7974,-757.6406 198.5953,-772.3729"/>
+<polygon fill="#000000" stroke="#000000" points="196.5265,-769.5426 190.0321,-777.9136 200.3292,-775.4197 196.5265,-769.5426"/>
+</g>
+<!-- module~diffstar_lorene -->
+<g id="module~~utility~~UsedByGraph_node6" class="node">
+<title>module~diffstar_lorene</title>
+<g id="a_module~~utility~~UsedByGraph_node6"><a xlink:href=".././module/diffstar_lorene.html" xlink:title="diffstar_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="396.5,-438 315.5,-438 315.5,-414 396.5,-414 396.5,-438"/>
+<text text-anchor="middle" x="356" y="-423.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~diffstar_lorene -->
+<g id="module~~utility~~UsedByGraph_edge31" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M724.8983,-574.7319C715.7746,-546.1206 688.7911,-475.1241 638,-445 566.5852,-402.6441 466.3736,-407.98 406.6342,-416.4661"/>
+<polygon fill="#000000" stroke="#000000" points="406.0544,-413.0139 396.686,-417.9619 407.0952,-419.9361 406.0544,-413.0139"/>
+</g>
+<!-- module~bns_lorene -->
+<g id="module~~utility~~UsedByGraph_node7" class="node">
+<title>module~bns_lorene</title>
+<g id="a_module~~utility~~UsedByGraph_node7"><a xlink:href=".././module/bns_lorene.html" xlink:title="bns_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="389,-170 323,-170 323,-146 389,-146 389,-170"/>
+<text text-anchor="middle" x="356" y="-155.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~bns_lorene -->
+<g id="module~~utility~~UsedByGraph_edge37" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M727.4872,-574.7719C722.2402,-514.5302 696.1246,-250.084 638,-197 603.938,-165.8919 469.6138,-159.4141 399.3541,-158.1871"/>
+<polygon fill="#000000" stroke="#000000" points="399.1125,-154.6833 389.0625,-158.037 399.0104,-161.6826 399.1125,-154.6833"/>
+</g>
+<!-- module~formul_bssn_id -->
+<g id="module~~utility~~UsedByGraph_node11" class="node">
+<title>module~formul_bssn_id</title>
+<g id="a_module~~utility~~UsedByGraph_node11"><a xlink:href=".././module/formul_bssn_id.html" xlink:title="formul_bssn_id">
+<polygon fill="#337ab7" stroke="#337ab7" points="590,-763 505,-763 505,-739 590,-739 590,-763"/>
+<text text-anchor="middle" x="547.5" y="-748.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_bssn_id</text>
+</a>
+</g>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~formul_bssn_id -->
+<g id="module~~utility~~UsedByGraph_edge45" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M720.1199,-599.1507C709.359,-614.7877 690.1464,-642.8221 674,-667 657.775,-691.2957 661.246,-704.3038 638,-722 627.0158,-730.3618 613.544,-736.3556 600.3841,-740.6361"/>
+<polygon fill="#000000" stroke="#000000" points="599.0215,-737.3893 590.4279,-743.5862 601.0102,-744.1009 599.0215,-737.3893"/>
+</g>
+<!-- proc~perform_apm -->
+<g id="module~~utility~~UsedByGraph_node4" class="node">
+<title>proc~perform_apm</title>
+<g id="a_module~~utility~~UsedByGraph_node4"><a xlink:href=".././proc/perform_apm.html" xlink:title="perform_apm">
+<polygon fill="#d9534f" stroke="#d9534f" points="211,-558 134,-558 134,-534 211,-534 211,-558"/>
+<text text-anchor="middle" x="172.5" y="-543.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">perform_apm</text>
+</a>
+</g>
+</g>
+<!-- proc~perform_apm&#45;&gt;module~utility -->
+<g id="module~~utility~~UsedByGraph_edge3" class="edge">
+<title>proc~perform_apm&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M133.9691,-538.6275C119.383,-534.652 103.1426,-528.7126 90,-520 68.9978,-506.0771 51.0594,-483.2147 39.7577,-466.5812"/>
+<polygon fill="#000000" stroke="#000000" points="42.5934,-464.5227 34.1844,-458.0775 36.7387,-468.3599 42.5934,-464.5227"/>
+</g>
+<!-- module~particles_id&#45;&gt;module~utility -->
+<g id="module~~utility~~UsedByGraph_edge4" class="edge">
+<title>module~particles_id&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M167.3216,-777.7569C145.842,-726.9734 63.5953,-532.5209 36.0499,-467.3963"/>
+<polygon fill="#000000" stroke="#000000" points="39.2355,-465.943 32.1164,-458.0964 32.7884,-468.6699 39.2355,-465.943"/>
+</g>
+<!-- module~diffstar_lorene&#45;&gt;module~utility -->
+<g id="module~~utility~~UsedByGraph_edge5" class="edge">
+<title>module~diffstar_lorene&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M342.8531,-438.1125C313.6037,-463.5886 240.3656,-519.3157 172.5,-506"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M172.5,-506C131.0661,-497.8704 86.6372,-477.6927 57.9268,-462.9746"/>
+<polygon fill="#000000" stroke="#000000" points="59.304,-459.7453 48.8198,-458.2178 56.0632,-465.9499 59.304,-459.7453"/>
+</g>
+<!-- module~diffstar_base -->
+<g id="module~~utility~~UsedByGraph_node8" class="node">
+<title>module~diffstar_base</title>
+<g id="a_module~~utility~~UsedByGraph_node8"><a xlink:href=".././module/diffstar_base.html" xlink:title="diffstar_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="209.5,-458 135.5,-458 135.5,-434 209.5,-434 209.5,-458"/>
+<text text-anchor="middle" x="172.5" y="-443.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_base</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene&#45;&gt;module~diffstar_base -->
+<g id="module~~utility~~UsedByGraph_edge43" class="edge">
+<title>module~diffstar_lorene&#45;&gt;module~diffstar_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M315.2754,-430.4386C287.0346,-433.5167 249.3368,-437.6254 219.7693,-440.848"/>
+<polygon fill="#000000" stroke="#000000" points="219.2407,-437.3848 209.6789,-441.9478 219.9992,-444.3436 219.2407,-437.3848"/>
+</g>
+<!-- module~bns_lorene&#45;&gt;module~utility -->
+<g id="module~~utility~~UsedByGraph_edge6" class="edge">
+<title>module~bns_lorene&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M331.7951,-170.0534C281.7821,-195.8685 165.4258,-260.7315 90,-341 66.2666,-366.2572 47.2113,-401.9292 36.5012,-424.5074"/>
+<polygon fill="#000000" stroke="#000000" points="33.1905,-423.3287 32.1807,-433.8754 39.5471,-426.2604 33.1905,-423.3287"/>
+</g>
+<!-- module~bns_base -->
+<g id="module~~utility~~UsedByGraph_node12" class="node">
+<title>module~bns_base</title>
+<g id="a_module~~utility~~UsedByGraph_node12"><a xlink:href=".././module/bns_base.html" xlink:title="bns_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="202,-149 143,-149 143,-125 202,-125 202,-149"/>
+<text text-anchor="middle" x="172.5" y="-134.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_base</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene&#45;&gt;module~bns_base -->
+<g id="module~~utility~~UsedByGraph_edge50" class="edge">
+<title>module~bns_lorene&#45;&gt;module~bns_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M322.7695,-154.1971C291.7357,-150.6455 245.3716,-145.3395 212.3599,-141.5616"/>
+<polygon fill="#000000" stroke="#000000" points="212.4804,-138.0527 202.1473,-140.3929 211.6845,-145.0073 212.4804,-138.0527"/>
+</g>
+<!-- module~diffstar_base&#45;&gt;module~utility -->
+<g id="module~~utility~~UsedByGraph_edge7" class="edge">
+<title>module~diffstar_base&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M135.4077,-446C113.7011,-446 86.3677,-446 64.578,-446"/>
+<polygon fill="#000000" stroke="#000000" points="64.3755,-442.5001 54.3754,-446 64.3754,-449.5001 64.3755,-442.5001"/>
+</g>
+<!-- proc~integrate_baryon_mass_density -->
+<g id="module~~utility~~UsedByGraph_node9" class="node">
+<title>proc~integrate_baryon_mass_density</title>
+<g id="a_module~~utility~~UsedByGraph_node9"><a xlink:href=".././proc/integrate_baryon_mass_density.html" xlink:title="integrate_baryon_mass_density">
+<polygon fill="#d9534f" stroke="#d9534f" points="255,-416 90,-416 90,-392 255,-392 255,-416"/>
+<text text-anchor="middle" x="172.5" y="-401.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">integrate_baryon_mass_density</text>
+</a>
+</g>
+</g>
+<!-- proc~integrate_baryon_mass_density&#45;&gt;module~utility -->
+<g id="module~~utility~~UsedByGraph_edge8" class="edge">
+<title>proc~integrate_baryon_mass_density&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M122.6075,-416.0797C111.8149,-418.8655 100.4942,-421.9197 90,-425 81.4923,-427.4972 72.4106,-430.3892 63.8675,-433.2135"/>
+<polygon fill="#000000" stroke="#000000" points="62.5218,-429.9731 54.1529,-436.4701 64.7468,-436.6101 62.5218,-429.9731"/>
+</g>
+<!-- proc~setup_standard3p1_variables -->
+<g id="module~~utility~~UsedByGraph_node10" class="node">
+<title>proc~setup_standard3p1_variables</title>
+<g id="a_module~~utility~~UsedByGraph_node10"><a xlink:href=".././proc/setup_standard3p1_variables.html" xlink:title="setup_standard3p1_variables">
+<polygon fill="#d9534f" stroke="#d9534f" points="249.5,-374 95.5,-374 95.5,-350 249.5,-350 249.5,-374"/>
+<text text-anchor="middle" x="172.5" y="-359.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">setup_standard3p1_variables</text>
+</a>
+</g>
+</g>
+<!-- proc~setup_standard3p1_variables&#45;&gt;module~utility -->
+<g id="module~~utility~~UsedByGraph_edge9" class="edge">
+<title>proc~setup_standard3p1_variables&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M109.8249,-374.1135C102.92,-376.5604 96.1659,-379.4915 90,-383 71.0735,-393.7695 53.911,-411.7465 42.296,-425.747"/>
+<polygon fill="#000000" stroke="#000000" points="39.3276,-423.8548 35.8148,-433.8504 44.7942,-428.2271 39.3276,-423.8548"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~utility -->
+<g id="module~~utility~~UsedByGraph_edge10" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M546.9849,-763.0313C544.2126,-810.8151 526.876,-988.0267 421,-1059 373.0076,-1091.1714 343.1546,-1083.863 291,-1059 162.9301,-997.947 148.6298,-940.1973 90,-811 61.7443,-748.7354 36.9583,-538.0408 29.376,-468.4872"/>
+<polygon fill="#000000" stroke="#000000" points="32.8224,-467.8011 28.272,-458.2333 25.8626,-468.5505 32.8224,-467.8011"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~formul_3p1_id -->
+<g id="module~~utility~~UsedByGraph_edge12" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M522.3203,-738.8375C502.3408,-728.102 474.8881,-710.7835 457,-689 431.2232,-657.61 451.0167,-632.3638 421,-605 416.6208,-601.0078 411.4746,-597.774 406.0279,-595.1546"/>
+<polygon fill="#000000" stroke="#000000" points="407.2394,-591.8685 396.6598,-591.3011 404.5764,-598.3422 407.2394,-591.8685"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge19" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M537.616,-763.1991C518.1706,-786.1065 472.3447,-834.8783 421,-853 366.5161,-872.2296 347.0619,-866.9763 291,-853 256.2725,-844.3424 220.5553,-823.3918 197.5396,-808.0178"/>
+<polygon fill="#000000" stroke="#000000" points="199.3079,-804.9869 189.0775,-802.232 195.357,-810.7654 199.3079,-804.9869"/>
+</g>
+<!-- module~bns_base&#45;&gt;module~utility -->
+<g id="module~~utility~~UsedByGraph_edge11" class="edge">
+<title>module~bns_base&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M161.0604,-149.1205C143.5192,-168.291 109.9216,-207.4073 90,-246 58.6918,-306.6509 39.4503,-385.7408 31.394,-423.7277"/>
+<polygon fill="#000000" stroke="#000000" points="27.9257,-423.2174 29.3344,-433.7182 34.7815,-424.6308 27.9257,-423.2174"/>
+</g>
+<!-- module~particles_redistribute_nu -->
+<g id="module~~utility~~UsedByGraph_node13" class="node">
+<title>module~particles_redistribute_nu</title>
+<g id="a_module~~utility~~UsedByGraph_node13"><a xlink:href=".././module/particles_redistribute_nu.html" xlink:title="particles_redistribute_nu">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="421,-924 291,-924 291,-900 421,-900 421,-924"/>
+<text text-anchor="middle" x="356" y="-909.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_redistribute_nu</text>
+</a>
+</g>
+</g>
+<!-- module~particles_redistribute_nu&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge23" class="edge">
+<title>module~particles_redistribute_nu&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M320.3419,-899.9646C310.5478,-896.069 300.1196,-891.3519 291,-886 253.1723,-863.8007 214.6811,-830.1333 192.2248,-809.1352"/>
+<polygon fill="#000000" stroke="#000000" points="194.3754,-806.3515 184.7078,-802.017 189.5623,-811.4342 194.3754,-806.3515"/>
+</g>
+<!-- module~particles_compose -->
+<g id="module~~utility~~UsedByGraph_node14" class="node">
+<title>module~particles_compose</title>
+<g id="a_module~~utility~~UsedByGraph_node14"><a xlink:href=".././module/particles_compose.html" xlink:title="particles_compose">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="407,-844 305,-844 305,-820 407,-820 407,-844"/>
+<text text-anchor="middle" x="356" y="-829.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_compose</text>
+</a>
+</g>
+</g>
+<!-- module~particles_compose&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge24" class="edge">
+<title>module~particles_compose&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M304.885,-820.3007C276.9569,-813.9084 242.7339,-806.0753 216.0808,-799.9749"/>
+<polygon fill="#000000" stroke="#000000" points="216.7941,-796.5477 206.2653,-797.7283 215.2323,-803.3713 216.7941,-796.5477"/>
+</g>
+<!-- program~convergence_test -->
+<g id="module~~utility~~UsedByGraph_node15" class="node">
+<title>program~convergence_test</title>
+<g id="a_module~~utility~~UsedByGraph_node15"><a xlink:href=".././program/convergence_test.html" xlink:title="convergence_test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="921.5,-620 824.5,-620 824.5,-596 921.5,-596 921.5,-620"/>
+<text text-anchor="middle" x="873" y="-605.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">convergence_test</text>
+</a>
+</g>
+</g>
+<!-- program~convergence_test&#45;&gt;module~sphincs_lorene -->
+<g id="module~~utility~~UsedByGraph_edge17" class="edge">
+<title>program~convergence_test&#45;&gt;module~sphincs_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M824.4816,-600.9489C810.6266,-598.9354 795.4618,-596.7315 781.3611,-594.6822"/>
+<polygon fill="#000000" stroke="#000000" points="781.715,-591.197 771.3155,-593.2223 780.7082,-598.1242 781.715,-591.197"/>
+</g>
+<!-- module~diffstar_lorene_constructor -->
+<g id="module~~utility~~UsedByGraph_node16" class="node">
+<title>module~diffstar_lorene_constructor</title>
+<g id="a_module~~utility~~UsedByGraph_node16"><a xlink:href=".././module/diffstar_lorene_constructor.html" xlink:title="diffstar_lorene_constructor">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="617.5,-314 477.5,-314 477.5,-290 617.5,-290 617.5,-314"/>
+<text text-anchor="middle" x="547.5" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_constructor</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_constructor&#45;&gt;module~diffstar_lorene -->
+<g id="module~~utility~~UsedByGraph_edge34" class="edge">
+<title>module~diffstar_lorene_constructor&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M477.1522,-311.2718C469.864,-314.2288 462.9584,-318.0566 457,-323 426.3678,-348.4139 450.5317,-378.3152 421,-405 416.6032,-408.9729 411.4464,-412.1949 405.9938,-414.8079"/>
+<polygon fill="#000000" stroke="#000000" points="404.5422,-411.6203 396.6201,-418.6552 407.2002,-418.096 404.5422,-411.6203"/>
+</g>
+<!-- module~particles_constructor -->
+<g id="module~~utility~~UsedByGraph_node17" class="node">
+<title>module~particles_constructor</title>
+<g id="a_module~~utility~~UsedByGraph_node17"><a xlink:href=".././module/particles_constructor.html" xlink:title="particles_constructor">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="412,-802 300,-802 300,-778 412,-778 412,-802"/>
+<text text-anchor="middle" x="356" y="-787.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_constructor</text>
+</a>
+</g>
+</g>
+<!-- module~particles_constructor&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge28" class="edge">
+<title>module~particles_constructor&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M299.9469,-790C273.1098,-790 241.4453,-790 216.3922,-790"/>
+<polygon fill="#000000" stroke="#000000" points="216.0934,-786.5001 206.0933,-790 216.0933,-793.5001 216.0934,-786.5001"/>
+</g>
+<!-- module~bns_lorene_params -->
+<g id="module~~utility~~UsedByGraph_node18" class="node">
+<title>module~bns_lorene_params</title>
+<g id="a_module~~utility~~UsedByGraph_node18"><a xlink:href=".././module/bns_lorene_params.html" xlink:title="bns_lorene_params">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="601.5,-66 493.5,-66 493.5,-42 601.5,-42 601.5,-66"/>
+<text text-anchor="middle" x="547.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene_params</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene_params&#45;&gt;module~bns_lorene -->
+<g id="module~~utility~~UsedByGraph_edge41" class="edge">
+<title>module~bns_lorene_params&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" d="M493.1776,-59.1388C480.4258,-62.2827 467.5074,-67.2359 457,-75 431.3732,-93.9361 445.8043,-116.9986 421,-137 414.5025,-142.2393 406.6646,-146.1851 398.7143,-149.1525"/>
+<polygon fill="#000000" stroke="#000000" points="397.4646,-145.8786 389.0437,-152.3082 399.6361,-152.5333 397.4646,-145.8786"/>
+</g>
+<!-- module~bssn_id_variables -->
+<g id="module~~utility~~UsedByGraph_node19" class="node">
+<title>module~bssn_id_variables</title>
+<g id="a_module~~utility~~UsedByGraph_node19"><a xlink:href=".././module/bssn_id_variables.html" xlink:title="bssn_id_variables">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="777.5,-700 679.5,-700 679.5,-676 777.5,-676 777.5,-700"/>
+<text text-anchor="middle" x="728.5" y="-685.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id_variables</text>
+</a>
+</g>
+</g>
+<!-- module~bssn_id_variables&#45;&gt;module~formul_bssn_id -->
+<g id="module~~utility~~UsedByGraph_edge47" class="edge">
+<title>module~bssn_id_variables&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" d="M697.6419,-700.0236C680.2097,-706.7074 657.9741,-715.0524 638,-722 624.4574,-726.7105 609.6799,-731.5649 596.0667,-735.9226"/>
+<polygon fill="#000000" stroke="#000000" points="594.8632,-732.6326 586.3943,-738.9988 596.9848,-739.3034 594.8632,-732.6326"/>
+</g>
+<!-- module~diffstar_lorene_params -->
+<g id="module~~utility~~UsedByGraph_node20" class="node">
+<title>module~diffstar_lorene_params</title>
+<g id="a_module~~utility~~UsedByGraph_node20"><a xlink:href=".././module/diffstar_lorene_params.html" xlink:title="diffstar_lorene_params">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="609,-272 486,-272 486,-248 609,-248 609,-272"/>
+<text text-anchor="middle" x="547.5" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_params</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_params&#45;&gt;module~diffstar_lorene -->
+<g id="module~~utility~~UsedByGraph_edge36" class="edge">
+<title>module~diffstar_lorene_params&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M485.6491,-265.1412C475.0826,-268.4423 464.9641,-273.4589 457,-281 415.33,-320.4569 460.9666,-363.8186 421,-405 416.7672,-409.3615 411.6241,-412.8183 406.1048,-415.5579"/>
+<polygon fill="#000000" stroke="#000000" points="404.4478,-412.4561 396.5553,-419.5244 407.133,-418.9207 404.4478,-412.4561"/>
+</g>
+<!-- module~particles_lattices -->
+<g id="module~~utility~~UsedByGraph_node21" class="node">
+<title>module~particles_lattices</title>
+<g id="a_module~~utility~~UsedByGraph_node21"><a xlink:href=".././module/particles_lattices.html" xlink:title="particles_lattices">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="401.5,-760 310.5,-760 310.5,-736 401.5,-736 401.5,-760"/>
+<text text-anchor="middle" x="356" y="-745.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_lattices</text>
+</a>
+</g>
+</g>
+<!-- module~particles_lattices&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge22" class="edge">
+<title>module~particles_lattices&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M310.1686,-758.49C281.4271,-765.0685 244.5856,-773.5008 216.2481,-779.9868"/>
+<polygon fill="#000000" stroke="#000000" points="215.1905,-776.6383 206.2235,-782.2813 216.7524,-783.4618 215.1905,-776.6383"/>
+</g>
+<!-- module~diffstar_lorene_memory -->
+<g id="module~~utility~~UsedByGraph_node22" class="node">
+<title>module~diffstar_lorene_memory</title>
+<g id="a_module~~utility~~UsedByGraph_node22"><a xlink:href=".././module/diffstar_lorene_memory.html" xlink:title="diffstar_lorene_memory">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="610.5,-478 484.5,-478 484.5,-454 610.5,-454 610.5,-478"/>
+<text text-anchor="middle" x="547.5" y="-463.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_memory</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_memory&#45;&gt;module~diffstar_lorene -->
+<g id="module~~utility~~UsedByGraph_edge32" class="edge">
+<title>module~diffstar_lorene_memory&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M490.0437,-453.9987C463.4916,-448.4526 432.2358,-441.9239 406.5878,-436.5666"/>
+<polygon fill="#000000" stroke="#000000" points="407.199,-433.1188 396.6946,-434.5002 405.7677,-439.971 407.199,-433.1188"/>
+</g>
+<!-- module~diffstar_lorene_access -->
+<g id="module~~utility~~UsedByGraph_node23" class="node">
+<title>module~diffstar_lorene_access</title>
+<g id="a_module~~utility~~UsedByGraph_node23"><a xlink:href=".././module/diffstar_lorene_access.html" xlink:title="diffstar_lorene_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="607.5,-398 487.5,-398 487.5,-374 607.5,-374 607.5,-398"/>
+<text text-anchor="middle" x="547.5" y="-383.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_access</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_access&#45;&gt;module~diffstar_lorene -->
+<g id="module~~utility~~UsedByGraph_edge33" class="edge">
+<title>module~diffstar_lorene_access&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M490.0437,-398.0013C463.4916,-403.5474 432.2358,-410.0761 406.5878,-415.4334"/>
+<polygon fill="#000000" stroke="#000000" points="405.7677,-412.029 396.6946,-417.4998 407.199,-418.8812 405.7677,-412.029"/>
+</g>
+<!-- module~spherical_surfaces -->
+<g id="module~~utility~~UsedByGraph_node24" class="node">
+<title>module~spherical_surfaces</title>
+<g id="a_module~~utility~~UsedByGraph_node24"><a xlink:href=".././module/spherical_surfaces.html" xlink:title="spherical_surfaces">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="407,-680 305,-680 305,-656 407,-656 407,-680"/>
+<text text-anchor="middle" x="356" y="-665.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">spherical_surfaces</text>
+</a>
+</g>
+</g>
+<!-- module~spherical_surfaces&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge26" class="edge">
+<title>module~spherical_surfaces&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M320.3419,-680.0354C310.5478,-683.931 300.1196,-688.6481 291,-694 253.1723,-716.1993 214.6811,-749.8667 192.2248,-770.8648"/>
+<polygon fill="#000000" stroke="#000000" points="189.5623,-768.5658 184.7078,-777.983 194.3754,-773.6485 189.5623,-768.5658"/>
+</g>
+<!-- module~bns_lorene_memory -->
+<g id="module~~utility~~UsedByGraph_node25" class="node">
+<title>module~bns_lorene_memory</title>
+<g id="a_module~~utility~~UsedByGraph_node25"><a xlink:href=".././module/bns_lorene_memory.html" xlink:title="bns_lorene_memory">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="603,-24 492,-24 492,0 603,0 603,-24"/>
+<text text-anchor="middle" x="547.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene_memory</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene_memory&#45;&gt;module~bns_lorene -->
+<g id="module~~utility~~UsedByGraph_edge39" class="edge">
+<title>module~bns_lorene_memory&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" d="M491.5902,-15.8901C479.026,-19.0808 466.5913,-24.3684 457,-33 420.642,-65.7199 455.9438,-102.7739 421,-137 414.8497,-143.0239 406.9608,-147.3201 398.8137,-150.384"/>
+<polygon fill="#000000" stroke="#000000" points="397.6833,-147.0708 389.22,-153.4444 399.8107,-153.7397 397.6833,-147.0708"/>
+</g>
+<!-- module~formul_3p1_standard3p1_variables -->
+<g id="module~~utility~~UsedByGraph_node26" class="node">
+<title>module~formul_3p1_standard3p1_variables</title>
+<g id="a_module~~utility~~UsedByGraph_node26"><a xlink:href=".././module/formul_3p1_standard3p1_variables.html" xlink:title="formul_3p1_standard3p1_variables">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="638,-600 457,-600 457,-576 638,-576 638,-600"/>
+<text text-anchor="middle" x="547.5" y="-585.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1_standard3p1_variables</text>
+</a>
+</g>
+</g>
+<!-- module~formul_3p1_standard3p1_variables&#45;&gt;module~formul_3p1_id -->
+<g id="module~~utility~~UsedByGraph_edge15" class="edge">
+<title>module~formul_3p1_standard3p1_variables&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" d="M456.7972,-586.1054C439.6739,-585.7478 422.3348,-585.3856 406.9784,-585.0648"/>
+<polygon fill="#000000" stroke="#000000" points="406.7619,-581.5596 396.6909,-584.8499 406.6156,-588.5581 406.7619,-581.5596"/>
+</g>
+<!-- module~diffstar_lorene_import -->
+<g id="module~~utility~~UsedByGraph_node27" class="node">
+<title>module~diffstar_lorene_import</title>
+<g id="a_module~~utility~~UsedByGraph_node27"><a xlink:href=".././module/diffstar_lorene_import.html" xlink:title="diffstar_lorene_import">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="606,-356 489,-356 489,-332 606,-332 606,-356"/>
+<text text-anchor="middle" x="547.5" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_import</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_import&#45;&gt;module~diffstar_lorene -->
+<g id="module~~utility~~UsedByGraph_edge35" class="edge">
+<title>module~diffstar_lorene_import&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M488.9994,-352.0629C477.8972,-355.0935 466.7244,-359.2631 457,-365 436.4001,-377.1529 441.0684,-391.9881 421,-405 416.3979,-407.9839 411.3371,-410.5751 406.1335,-412.818"/>
+<polygon fill="#000000" stroke="#000000" points="404.7359,-409.6061 396.6812,-416.4889 407.27,-416.1313 404.7359,-409.6061"/>
+</g>
+<!-- module~particles_access -->
+<g id="module~~utility~~UsedByGraph_node28" class="node">
+<title>module~particles_access</title>
+<g id="a_module~~utility~~UsedByGraph_node28"><a xlink:href=".././module/particles_access.html" xlink:title="particles_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="401.5,-638 310.5,-638 310.5,-614 401.5,-614 401.5,-638"/>
+<text text-anchor="middle" x="356" y="-623.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_access</text>
+</a>
+</g>
+</g>
+<!-- module~particles_access&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge29" class="edge">
+<title>module~particles_access&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M310.3958,-637.0597C303.5897,-639.7335 296.89,-643.0079 291,-647 242.6244,-679.7877 203.3483,-737.8299 184.5362,-768.9301"/>
+<polygon fill="#000000" stroke="#000000" points="181.4509,-767.2712 179.3675,-777.6591 187.4742,-770.8377 181.4509,-767.2712"/>
+</g>
+<!-- program~sphincs_lorene_bns -->
+<g id="module~~utility~~UsedByGraph_node29" class="node">
+<title>program~sphincs_lorene_bns</title>
+<g id="a_module~~utility~~UsedByGraph_node29"><a xlink:href=".././program/sphincs_lorene_bns.html" xlink:title="sphincs_lorene_bns">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="927,-578 819,-578 819,-554 927,-554 927,-578"/>
+<text text-anchor="middle" x="873" y="-563.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene_bns</text>
+</a>
+</g>
+</g>
+<!-- program~sphincs_lorene_bns&#45;&gt;module~sphincs_lorene -->
+<g id="module~~utility~~UsedByGraph_edge18" class="edge">
+<title>program~sphincs_lorene_bns&#45;&gt;module~sphincs_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M818.7824,-573.8794C806.5197,-575.6615 793.5166,-577.5512 781.3129,-579.3248"/>
+<polygon fill="#000000" stroke="#000000" points="780.6762,-575.8804 771.2835,-580.7823 781.6829,-582.8077 780.6762,-575.8804"/>
+</g>
+<!-- module~formul_3p1_analysis -->
+<g id="module~~utility~~UsedByGraph_node30" class="node">
+<title>module~formul_3p1_analysis</title>
+<g id="a_module~~utility~~UsedByGraph_node30"><a xlink:href=".././module/formul_3p1_analysis.html" xlink:title="formul_3p1_analysis">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="603,-558 492,-558 492,-534 603,-534 603,-558"/>
+<text text-anchor="middle" x="547.5" y="-543.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1_analysis</text>
+</a>
+</g>
+</g>
+<!-- module~formul_3p1_analysis&#45;&gt;module~formul_3p1_id -->
+<g id="module~~utility~~UsedByGraph_edge14" class="edge">
+<title>module~formul_3p1_analysis&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" d="M491.853,-557.0422C464.9457,-562.3815 432.8814,-568.7442 406.6621,-573.9469"/>
+<polygon fill="#000000" stroke="#000000" points="405.683,-570.5729 396.5555,-575.9524 407.0455,-577.439 405.683,-570.5729"/>
+</g>
+<!-- module~bssn_id_constructor -->
+<g id="module~~utility~~UsedByGraph_node31" class="node">
+<title>module~bssn_id_constructor</title>
+<g id="a_module~~utility~~UsedByGraph_node31"><a xlink:href=".././module/bssn_id_constructor.html" xlink:title="bssn_id_constructor">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="783,-826 674,-826 674,-802 783,-802 783,-826"/>
+<text text-anchor="middle" x="728.5" y="-811.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id_constructor</text>
+</a>
+</g>
+</g>
+<!-- module~bssn_id_constructor&#45;&gt;module~formul_bssn_id -->
+<g id="module~~utility~~UsedByGraph_edge48" class="edge">
+<title>module~bssn_id_constructor&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" d="M693.6014,-801.853C664.5877,-791.7543 623.1258,-777.3228 591.778,-766.4117"/>
+<polygon fill="#000000" stroke="#000000" points="592.5789,-762.9846 581.9841,-763.0028 590.2778,-769.5955 592.5789,-762.9846"/>
+</g>
+<!-- module~bssn_id_constraints -->
+<g id="module~~utility~~UsedByGraph_node32" class="node">
+<title>module~bssn_id_constraints</title>
+<g id="a_module~~utility~~UsedByGraph_node32"><a xlink:href=".././module/bssn_id_constraints.html" xlink:title="bssn_id_constraints">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="782,-784 675,-784 675,-760 782,-760 782,-784"/>
+<text text-anchor="middle" x="728.5" y="-769.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id_constraints</text>
+</a>
+</g>
+</g>
+<!-- module~bssn_id_constraints&#45;&gt;module~formul_bssn_id -->
+<g id="module~~utility~~UsedByGraph_edge46" class="edge">
+<title>module~bssn_id_constraints&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" d="M674.6841,-765.7562C651.1737,-763.0284 623.6873,-759.8394 600.294,-757.1253"/>
+<polygon fill="#000000" stroke="#000000" points="600.5405,-753.6305 590.2037,-755.9546 599.7337,-760.5838 600.5405,-753.6305"/>
+</g>
+<!-- module~particles_sph_variables -->
+<g id="module~~utility~~UsedByGraph_node33" class="node">
+<title>module~particles_sph_variables</title>
+<g id="a_module~~utility~~UsedByGraph_node33"><a xlink:href=".././module/particles_sph_variables.html" xlink:title="particles_sph_variables">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="418,-1050 294,-1050 294,-1026 418,-1026 418,-1050"/>
+<text text-anchor="middle" x="356" y="-1035.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_sph_variables</text>
+</a>
+</g>
+</g>
+<!-- module~particles_sph_variables&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge25" class="edge">
+<title>module~particles_sph_variables&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M304.957,-1025.8941C299.9377,-1023.4511 295.1685,-1020.5188 291,-1017 224.3104,-960.7041 190.2177,-857.2599 177.9454,-812.084"/>
+<polygon fill="#000000" stroke="#000000" points="181.2655,-810.9457 175.3488,-802.1569 174.4933,-812.7172 181.2655,-810.9457"/>
+</g>
+<!-- module~bns_lorene_access -->
+<g id="module~~utility~~UsedByGraph_node34" class="node">
+<title>module~bns_lorene_access</title>
+<g id="a_module~~utility~~UsedByGraph_node34"><a xlink:href=".././module/bns_lorene_access.html" xlink:title="bns_lorene_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="600,-230 495,-230 495,-206 600,-206 600,-230"/>
+<text text-anchor="middle" x="547.5" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene_access</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene_access&#45;&gt;module~bns_lorene -->
+<g id="module~~utility~~UsedByGraph_edge40" class="edge">
+<title>module~bns_lorene_access&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" d="M504.1108,-205.9627C489.1412,-201.6964 472.2942,-196.7686 457,-192 437.775,-186.0058 416.64,-178.9625 398.6945,-172.8458"/>
+<polygon fill="#000000" stroke="#000000" points="399.6799,-169.4838 389.0853,-169.5556 397.4122,-176.1063 399.6799,-169.4838"/>
+</g>
+<!-- module~particles_apm -->
+<g id="module~~utility~~UsedByGraph_node35" class="node">
+<title>module~particles_apm</title>
+<g id="a_module~~utility~~UsedByGraph_node35"><a xlink:href=".././module/particles_apm.html" xlink:title="particles_apm">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="395.5,-1008 316.5,-1008 316.5,-984 395.5,-984 395.5,-1008"/>
+<text text-anchor="middle" x="356" y="-993.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_apm</text>
+</a>
+</g>
+</g>
+<!-- module~particles_apm&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge30" class="edge">
+<title>module~particles_apm&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M316.3901,-987.9689C307.4498,-984.91 298.4195,-980.7203 291,-975 233.8456,-930.935 196.4437,-850.9462 180.818,-812.2082"/>
+<polygon fill="#000000" stroke="#000000" points="183.8975,-810.4735 176.9899,-802.4401 177.3801,-813.0277 183.8975,-810.4735"/>
+</g>
+<!-- module~formul_3p1_access -->
+<g id="module~~utility~~UsedByGraph_node36" class="node">
+<title>module~formul_3p1_access</title>
+<g id="a_module~~utility~~UsedByGraph_node36"><a xlink:href=".././module/formul_3p1_access.html" xlink:title="formul_3p1_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="600.5,-680 494.5,-680 494.5,-656 600.5,-656 600.5,-680"/>
+<text text-anchor="middle" x="547.5" y="-665.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1_access</text>
+</a>
+</g>
+</g>
+<!-- module~formul_3p1_access&#45;&gt;module~formul_3p1_id -->
+<g id="module~~utility~~UsedByGraph_edge16" class="edge">
+<title>module~formul_3p1_access&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" d="M494.3744,-657.6965C481.593,-653.9017 468.3611,-648.8014 457,-642 437.3141,-630.215 440.4904,-617.1056 421,-605 416.3408,-602.1061 411.2435,-599.5724 406.0185,-597.3633"/>
+<polygon fill="#000000" stroke="#000000" points="407.1328,-594.0421 396.5426,-593.7296 404.6264,-600.5781 407.1328,-594.0421"/>
+</g>
+<!-- module~bns_lorene_import -->
+<g id="module~~utility~~UsedByGraph_node37" class="node">
+<title>module~bns_lorene_import</title>
+<g id="a_module~~utility~~UsedByGraph_node37"><a xlink:href=".././module/bns_lorene_import.html" xlink:title="bns_lorene_import">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="598.5,-150 496.5,-150 496.5,-126 598.5,-126 598.5,-150"/>
+<text text-anchor="middle" x="547.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene_import</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene_import&#45;&gt;module~bns_lorene -->
+<g id="module~~utility~~UsedByGraph_edge38" class="edge">
+<title>module~bns_lorene_import&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" d="M496.4331,-143.3334C466.1382,-146.4973 428.1505,-150.4647 399.326,-153.4751"/>
+<polygon fill="#000000" stroke="#000000" points="398.7345,-150.0177 389.1522,-154.5376 399.4617,-156.9799 398.7345,-150.0177"/>
+</g>
+<!-- module~diffstar_base_access -->
+<g id="module~~utility~~UsedByGraph_node38" class="node">
+<title>module~diffstar_base_access</title>
+<g id="a_module~~utility~~UsedByGraph_node38"><a xlink:href=".././module/diffstar_base_access.html" xlink:title="diffstar_base_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="412.5,-396 299.5,-396 299.5,-372 412.5,-372 412.5,-396"/>
+<text text-anchor="middle" x="356" y="-381.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_base_access</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_base_access&#45;&gt;module~diffstar_base -->
+<g id="module~~utility~~UsedByGraph_edge44" class="edge">
+<title>module~diffstar_base_access&#45;&gt;module~diffstar_base</title>
+<path fill="none" stroke="#000000" d="M314.6347,-396.0269C306.6867,-398.7115 298.5052,-401.7398 291,-405 274.2121,-412.2924 272.01,-418.2419 255,-425 243.7327,-429.4765 231.2154,-433.2403 219.4059,-436.2887"/>
+<polygon fill="#000000" stroke="#000000" points="218.5679,-432.8904 209.6955,-438.6809 220.2424,-439.6872 218.5679,-432.8904"/>
+</g>
+<!-- module~particles_memory -->
+<g id="module~~utility~~UsedByGraph_node39" class="node">
+<title>module~particles_memory</title>
+<g id="a_module~~utility~~UsedByGraph_node39"><a xlink:href=".././module/particles_memory.html" xlink:title="particles_memory">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="404.5,-966 307.5,-966 307.5,-942 404.5,-942 404.5,-966"/>
+<text text-anchor="middle" x="356" y="-951.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_memory</text>
+</a>
+</g>
+</g>
+<!-- module~particles_memory&#45;&gt;module~particles_id -->
+<g id="module~~utility~~UsedByGraph_edge27" class="edge">
+<title>module~particles_memory&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" d="M308.0191,-941.9797C302.0374,-939.4927 296.2029,-936.5264 291,-933 242.6244,-900.2123 203.3483,-842.1701 184.5362,-811.0699"/>
+<polygon fill="#000000" stroke="#000000" points="187.4742,-809.1623 179.3675,-802.3409 181.4509,-812.7288 187.4742,-809.1623"/>
+</g>
+<!-- module~bns_base_mass_profile -->
+<g id="module~~utility~~UsedByGraph_node40" class="node">
+<title>module~bns_base_mass_profile</title>
+<g id="a_module~~utility~~UsedByGraph_node40"><a xlink:href=".././module/bns_base_mass_profile.html" xlink:title="bns_base_mass_profile">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="419,-86 293,-86 293,-62 419,-62 419,-86"/>
+<text text-anchor="middle" x="356" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_base_mass_profile</text>
+</a>
+</g>
+</g>
+<!-- module~bns_base_mass_profile&#45;&gt;module~bns_base -->
+<g id="module~~utility~~UsedByGraph_edge51" class="edge">
+<title>module~bns_base_mass_profile&#45;&gt;module~bns_base</title>
+<path fill="none" stroke="#000000" d="M318.1327,-86.0358C309.2178,-88.9242 299.7612,-92.0328 291,-95 264.4088,-104.0059 234.6236,-114.5647 211.5669,-122.8424"/>
+<polygon fill="#000000" stroke="#000000" points="210.3509,-119.5602 202.1264,-126.2392 212.7208,-126.1469 210.3509,-119.5602"/>
+</g>
+<!-- module~bns_base_access -->
+<g id="module~~utility~~UsedByGraph_node41" class="node">
+<title>module~bns_base_access</title>
+<g id="a_module~~utility~~UsedByGraph_node41"><a xlink:href=".././module/bns_base_access.html" xlink:title="bns_base_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="405,-128 307,-128 307,-104 405,-104 405,-128"/>
+<text text-anchor="middle" x="356" y="-113.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_base_access</text>
+</a>
+</g>
+</g>
+<!-- module~bns_base_access&#45;&gt;module~bns_base -->
+<g id="module~~utility~~UsedByGraph_edge52" class="edge">
+<title>module~bns_base_access&#45;&gt;module~bns_base</title>
+<path fill="none" stroke="#000000" d="M306.8254,-121.6276C277.1726,-125.0211 239.8963,-129.2871 212.1394,-132.4636"/>
+<polygon fill="#000000" stroke="#000000" points="211.5403,-129.0092 202.0031,-133.6236 212.3363,-135.9638 211.5403,-129.0092"/>
+</g>
+<!-- module~bns_lorene_constructor -->
+<g id="module~~utility~~UsedByGraph_node42" class="node">
+<title>module~bns_lorene_constructor</title>
+<g id="a_module~~utility~~UsedByGraph_node42"><a xlink:href=".././module/bns_lorene_constructor.html" xlink:title="bns_lorene_constructor">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="610,-108 485,-108 485,-84 610,-84 610,-108"/>
+<text text-anchor="middle" x="547.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene_constructor</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene_constructor&#45;&gt;module~bns_lorene -->
+<g id="module~~utility~~UsedByGraph_edge42" class="edge">
+<title>module~bns_lorene_constructor&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" d="M484.982,-108.093C475.4749,-110.6217 465.8807,-113.5805 457,-117 439.9192,-123.577 437.7879,-129.7076 421,-137 413.9664,-140.0553 406.3388,-142.907 398.8662,-145.463"/>
+<polygon fill="#000000" stroke="#000000" points="397.5999,-142.1949 389.1948,-148.645 399.7877,-148.8443 397.5999,-142.1949"/>
+</g>
+<!-- module~bssn_id_memory -->
+<g id="module~~utility~~UsedByGraph_node43" class="node">
+<title>module~bssn_id_memory</title>
+<g id="a_module~~utility~~UsedByGraph_node43"><a xlink:href=".././module/bssn_id_memory.html" xlink:title="bssn_id_memory">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="775.5,-742 681.5,-742 681.5,-718 775.5,-718 775.5,-742"/>
+<text text-anchor="middle" x="728.5" y="-727.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id_memory</text>
+</a>
+</g>
+</g>
+<!-- module~bssn_id_memory&#45;&gt;module~formul_bssn_id -->
+<g id="module~~utility~~UsedByGraph_edge49" class="edge">
+<title>module~bssn_id_memory&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" d="M681.4169,-735.4627C656.4499,-738.3594 625.7053,-741.9265 599.9737,-744.9119"/>
+<polygon fill="#000000" stroke="#000000" points="599.5468,-741.4378 590.0169,-746.0671 600.3536,-748.3912 599.5468,-741.4378"/>
+</g>
+</g>
+</svg>
+</div><script>var panmoduleutilityUsedByGraph = svgPanZoom('#moduleutilityUsedByGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses.
+    </p>
+    </div></div></div></div>
+  </li>
+  
+      </ul>
+    </div>
+    
+
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/utility.html#variable-cnt~4">cnt</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-creturn">creturn</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-date">date</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-end_time">end_time</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-err_msg">err_msg</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-file_exists~2">file_exists</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-ios">ios</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-itr~10">itr</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-itr3">itr3</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-itr4">itr4</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-perc">perc</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-perc2">perc2</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-run_id">run_id</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-show_progress">show_progress</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-time">time</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-values">values</a>
+      
+      <a class="list-group-item" href="../module/utility.html#variable-zone">zone</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../module/utility.html#proc-compute_g4">compute_g4</a>
+      
+      <a class="list-group-item" href="../module/utility.html#proc-determinant_sym3x3_grid">determinant_sym3x3_grid</a>
+      
+      <a class="list-group-item" href="../module/utility.html#proc-determinant_sym4x4_grid">determinant_sym4x4_grid</a>
+      
+      <a class="list-group-item" href="../module/utility.html#proc-test_status">test_status</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-cnt~4"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>cnt</strong></td><td> =</td><td>0</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-creturn"></span>character,</td>
+  
+  <td>public,</td>
+  <td>parameter</td><td>::</td>
+  <td><strong>creturn</strong></td><td> =</td><td>ACHAR(13)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-date"></span>character(len=8),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>date</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-end_time"></span>character(len=19),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>end_time</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-err_msg"></span>character(len=:),</td>
+  
+  <td>public,</td>
+  <td>ALLOCATABLE</td><td>::</td>
+  <td><strong>err_msg</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-file_exists~2"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>file_exists</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ios"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ios</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-itr~10"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>itr</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-itr3"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>itr3</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-itr4"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>itr4</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-perc"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>perc</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-perc2"></span>double precision,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>perc2</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-run_id"></span>character(len=19),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>run_id</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-show_progress"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>show_progress</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-time"></span>character(len=10),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>time</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-values"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(8)</td><td>::</td>
+  <td><strong>values</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zone"></span>character(len=5),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>zone</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-compute_g4"></span><h3>
+public subroutine <a href='../proc/compute_g4.html'>compute_g4</a>(ix, iy, iz, lapse, shift_u, g_phys3_ll, g4)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>ix</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>iy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>iz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:)</td><td>::</td>
+  <td><strong>lapse</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:,:)</td><td>::</td>
+  <td><strong>shift_u</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:,:)</td><td>::</td>
+  <td><strong>g_phys3_ll</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:,:,:)</td><td>::</td>
+  <td><strong>g4</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-determinant_sym3x3_grid"></span><h3>
+public subroutine <a href='../proc/determinant_sym3x3_grid.html'>determinant_sym3x3_grid</a>(i, j, k, A, det)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong>(:,:,:,:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>det</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-determinant_sym4x4_grid"></span><h3>
+public subroutine <a href='../proc/determinant_sym4x4_grid.html'>determinant_sym4x4_grid</a>(ix, iy, iz, A, det)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>ix</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>iy</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>iz</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>A</strong>(:,:,:,:)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>det</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_status"></span><h3>
+public subroutine <a href='../proc/test_status.html'>test_status</a>(io_stat, io_msg, opt_msg)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>io_stat</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=100),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>io_msg</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>opt_msg</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    <br>
+    
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

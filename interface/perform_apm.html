@@ -1,0 +1,1326 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>perform_apm &ndash; SPHINCS_LORENE</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>perform_apm
+   <small>Interface</small>
+    
+    </h1>
+    
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.3% of total for procedures.">144 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/module_particles_id.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/module_particles_id.f90.html'>module_particles_id.f90</a></li>
+    
+     <li><a href='../module/particles_id.html'>particles_id</a></li>
+    
+  
+     <li class="active">perform_apm</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+    
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<em>None</em>
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    
+    
+      <h2>interface</h2>
+      
+      <br>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: interface~~perform_apm~~CallsGraph Pages: 1 -->
+<svg id="interfaceperform_apmCallsGraph" width="547pt" height="910pt"
+ viewBox="0.00 0.00 547.00 910.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="interface~~perform_apm~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 906)">
+<title>interface~~perform_apm~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-906 543,-906 543,4 -4,4"/>
+<!-- interface~perform_apm -->
+<g id="interface~~perform_apm~~CallsGraph_node1" class="node">
+<title>interface~perform_apm</title>
+<polygon fill="none" stroke="#000000" points="77,-465 0,-465 0,-441 77,-441 77,-465"/>
+<text text-anchor="middle" x="38.5" y="-450.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">perform_apm</text>
+</g>
+<!-- proc~perform_apm -->
+<g id="interface~~perform_apm~~CallsGraph_node2" class="node">
+<title>proc~perform_apm</title>
+<g id="a_interface~~perform_apm~~CallsGraph_node2"><a xlink:href=".././proc/perform_apm.html" xlink:title="perform_apm">
+<polygon fill="#d9534f" stroke="#d9534f" points="190,-465 113,-465 113,-441 190,-441 190,-465"/>
+<text text-anchor="middle" x="151.5" y="-450.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">perform_apm</text>
+</a>
+</g>
+</g>
+<!-- interface~perform_apm&#45;&gt;proc~perform_apm -->
+<g id="interface~~perform_apm~~CallsGraph_edge1" class="edge">
+<title>interface~perform_apm&#45;&gt;proc~perform_apm</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M77.0721,-453C85.2539,-453 93.9953,-453 102.5054,-453"/>
+<polygon fill="#000000" stroke="#000000" points="102.7181,-456.5001 112.718,-453 102.718,-449.5001 102.7181,-456.5001"/>
+</g>
+<!-- nu -->
+<g id="interface~~perform_apm~~CallsGraph_node3" class="node">
+<title>nu</title>
+<polygon fill="#777777" stroke="#777777" points="345.5,-902 291.5,-902 291.5,-878 345.5,-878 345.5,-902"/>
+<text text-anchor="middle" x="318.5" y="-887.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">nu</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;nu -->
+<g id="interface~~perform_apm~~CallsGraph_edge3" class="edge">
+<title>proc~perform_apm&#45;&gt;nu</title>
+<path fill="none" stroke="#000000" d="M151.9213,-465.0755C154.3304,-527.0301 168.3589,-808.6424 226,-869 240.0105,-883.6708 261.9561,-889.085 280.9558,-890.7542"/>
+<polygon fill="#000000" stroke="#000000" points="280.957,-894.2597 291.139,-891.3311 281.353,-887.271 280.957,-894.2597"/>
+</g>
+<!-- iorig -->
+<g id="interface~~perform_apm~~CallsGraph_node4" class="node">
+<title>iorig</title>
+<polygon fill="#777777" stroke="#777777" points="345.5,-860 291.5,-860 291.5,-836 345.5,-836 345.5,-860"/>
+<text text-anchor="middle" x="318.5" y="-845.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iorig</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;iorig -->
+<g id="interface~~perform_apm~~CallsGraph_edge2" class="edge">
+<title>proc~perform_apm&#45;&gt;iorig</title>
+<path fill="none" stroke="#000000" d="M152.2029,-465.3838C155.7856,-524.0648 173.9234,-773.5184 226,-827 240.1523,-841.5341 262.1032,-846.9432 281.0702,-848.6438"/>
+<polygon fill="#000000" stroke="#000000" points="281.0438,-852.1482 291.2321,-849.2414 281.4548,-845.1602 281.0438,-852.1482"/>
+</g>
+<!-- allocate_metric_on_particles -->
+<g id="interface~~perform_apm~~CallsGraph_node5" class="node">
+<title>allocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="392.5,-818 244.5,-818 244.5,-794 392.5,-794 392.5,-818"/>
+<text text-anchor="middle" x="318.5" y="-803.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_metric_on_particles</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;allocate_metric_on_particles -->
+<g id="interface~~perform_apm~~CallsGraph_edge4" class="edge">
+<title>proc~perform_apm&#45;&gt;allocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M152.511,-465.0699C157.2799,-519.1022 179.2757,-738.1587 226,-785 228.862,-787.8692 232.0286,-790.3808 235.4147,-792.5771"/>
+<polygon fill="#000000" stroke="#000000" points="233.7839,-795.6745 244.2354,-797.411 237.148,-789.5358 233.7839,-795.6745"/>
+</g>
+<!-- deallocate_metric_on_particles -->
+<g id="interface~~perform_apm~~CallsGraph_node6" class="node">
+<title>deallocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="398.5,-776 238.5,-776 238.5,-752 398.5,-752 398.5,-776"/>
+<text text-anchor="middle" x="318.5" y="-761.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_metric_on_particles</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;deallocate_metric_on_particles -->
+<g id="interface~~perform_apm~~CallsGraph_edge5" class="edge">
+<title>proc~perform_apm&#45;&gt;deallocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M152.9454,-465.1947C159.1012,-515.0809 184.7215,-702.8701 226,-743 227.2582,-744.2232 228.572,-745.381 229.9345,-746.4767"/>
+<polygon fill="#000000" stroke="#000000" points="227.982,-749.3815 238.2232,-752.0958 231.9099,-743.5874 227.982,-749.3815"/>
+</g>
+<!-- allocate_rcb_tree_memory_3d -->
+<g id="interface~~perform_apm~~CallsGraph_node7" class="node">
+<title>allocate_rcb_tree_memory_3d</title>
+<polygon fill="#777777" stroke="#777777" points="397.5,-734 239.5,-734 239.5,-710 397.5,-710 397.5,-734"/>
+<text text-anchor="middle" x="318.5" y="-719.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_rcb_tree_memory_3d</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;allocate_rcb_tree_memory_3d -->
+<g id="interface~~perform_apm~~CallsGraph_edge6" class="edge">
+<title>proc~perform_apm&#45;&gt;allocate_rcb_tree_memory_3d</title>
+<path fill="none" stroke="#000000" d="M153.5165,-465.2478C161.2101,-510.5149 190.1003,-667.4817 226,-701 227.4896,-702.3907 229.0512,-703.6961 230.6746,-704.9211"/>
+<polygon fill="#000000" stroke="#000000" points="228.9448,-707.9691 239.2571,-710.3993 232.7111,-702.0687 228.9448,-707.9691"/>
+</g>
+<!-- com -->
+<g id="interface~~perform_apm~~CallsGraph_node8" class="node">
+<title>com</title>
+<polygon fill="#777777" stroke="#777777" points="520,-444 466,-444 466,-420 520,-420 520,-444"/>
+<text text-anchor="middle" x="493" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">com</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;com -->
+<g id="interface~~perform_apm~~CallsGraph_edge7" class="edge">
+<title>proc~perform_apm&#45;&gt;com</title>
+<path fill="none" stroke="#000000" d="M154.4024,-465.2312C161.4213,-491.7042 182.0734,-553.9419 226,-579 297.4189,-619.7411 340.099,-620.6358 411,-579 457.1589,-551.8937 479.2443,-488.3166 488.0742,-454.3386"/>
+<polygon fill="#000000" stroke="#000000" points="491.5215,-454.9749 490.489,-444.4305 484.7205,-453.3173 491.5215,-454.9749"/>
+</g>
+<!-- none~validate_position_final -->
+<g id="interface~~perform_apm~~CallsGraph_node9" class="node">
+<title>none~validate_position_final</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="377.5,-692 259.5,-692 259.5,-668 377.5,-668 377.5,-692"/>
+<text text-anchor="middle" x="318.5" y="-677.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">validate_position_final</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;none~validate_position_final -->
+<g id="interface~~perform_apm~~CallsGraph_edge8" class="edge">
+<title>proc~perform_apm&#45;&gt;none~validate_position_final</title>
+<path fill="none" stroke="#000000" d="M152.0376,-465.1866C154.3009,-500.88 166,-606.002 226,-659 232.7256,-664.9407 240.7791,-669.3038 249.2904,-672.4918"/>
+<polygon fill="#000000" stroke="#000000" points="248.4572,-675.8999 259.0482,-675.6133 250.5901,-669.2328 248.4572,-675.8999"/>
+</g>
+<!-- proc~check_particle_positions -->
+<g id="interface~~perform_apm~~CallsGraph_node10" class="node">
+<title>proc~check_particle_positions</title>
+<g id="a_interface~~perform_apm~~CallsGraph_node10"><a xlink:href=".././proc/check_particle_positions.html" xlink:title="check_particle_positions">
+<polygon fill="#d9534f" stroke="#d9534f" points="383,-650 254,-650 254,-626 383,-626 383,-650"/>
+<text text-anchor="middle" x="318.5" y="-635.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">check_particle_positions</text>
+</a>
+</g>
+</g>
+<!-- proc~perform_apm&#45;&gt;proc~check_particle_positions -->
+<g id="interface~~perform_apm~~CallsGraph_edge9" class="edge">
+<title>proc~perform_apm&#45;&gt;proc~check_particle_positions</title>
+<path fill="none" stroke="#000000" d="M153.6019,-465.0374C159.4231,-494.6942 178.5695,-571.7802 226,-612 231.5106,-616.6728 237.8044,-620.5087 244.4585,-623.6572"/>
+<polygon fill="#000000" stroke="#000000" points="243.1405,-626.8997 253.7161,-627.5383 245.847,-620.4441 243.1405,-626.8997"/>
+</g>
+<!-- density -->
+<g id="interface~~perform_apm~~CallsGraph_node11" class="node">
+<title>density</title>
+<polygon fill="#777777" stroke="#777777" points="345.5,-570 291.5,-570 291.5,-546 345.5,-546 345.5,-570"/>
+<text text-anchor="middle" x="318.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">density</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;density -->
+<g id="interface~~perform_apm~~CallsGraph_edge10" class="edge">
+<title>proc~perform_apm&#45;&gt;density</title>
+<path fill="none" stroke="#000000" d="M158.7296,-465.1648C170.4214,-483.7168 195.2993,-518.8361 226,-537 242.7052,-546.8835 263.6363,-552.1176 281.3606,-554.8885"/>
+<polygon fill="#000000" stroke="#000000" points="280.9888,-558.3701 291.3697,-556.2518 281.9336,-551.4341 280.9888,-558.3701"/>
+</g>
+<!-- assign_h -->
+<g id="interface~~perform_apm~~CallsGraph_node12" class="node">
+<title>assign_h</title>
+<polygon fill="#777777" stroke="#777777" points="346,-528 291,-528 291,-504 346,-504 346,-528"/>
+<text text-anchor="middle" x="318.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">assign_h</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;assign_h -->
+<g id="interface~~perform_apm~~CallsGraph_edge11" class="edge">
+<title>proc~perform_apm&#45;&gt;assign_h</title>
+<path fill="none" stroke="#000000" d="M169.4423,-465.0848C184.0952,-474.4599 205.6373,-487.142 226,-495 243.4303,-501.7264 263.5787,-506.6153 280.6126,-509.9743"/>
+<polygon fill="#000000" stroke="#000000" points="280.2912,-513.4748 290.7639,-511.8709 281.5768,-506.5938 280.2912,-513.4748"/>
+</g>
+<!-- allocate_gradient -->
+<g id="interface~~perform_apm~~CallsGraph_node13" class="node">
+<title>allocate_gradient</title>
+<polygon fill="#777777" stroke="#777777" points="365.5,-486 271.5,-486 271.5,-462 365.5,-462 365.5,-486"/>
+<text text-anchor="middle" x="318.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_gradient</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;allocate_gradient -->
+<g id="interface~~perform_apm~~CallsGraph_edge12" class="edge">
+<title>proc~perform_apm&#45;&gt;allocate_gradient</title>
+<path fill="none" stroke="#000000" d="M190.2329,-457.8706C211.3003,-460.5198 237.7656,-463.8478 261.1767,-466.7917"/>
+<polygon fill="#000000" stroke="#000000" points="260.9834,-470.2949 271.342,-468.0699 261.8568,-463.3496 260.9834,-470.2949"/>
+</g>
+<!-- proc~correct_center_of_mass -->
+<g id="interface~~perform_apm~~CallsGraph_node14" class="node">
+<title>proc~correct_center_of_mass</title>
+<g id="a_interface~~perform_apm~~CallsGraph_node14"><a xlink:href=".././proc/correct_center_of_mass.html" xlink:title="correct_center_of_mass">
+<polygon fill="#d9534f" stroke="#d9534f" points="382.5,-444 254.5,-444 254.5,-420 382.5,-420 382.5,-444"/>
+<text text-anchor="middle" x="318.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">correct_center_of_mass</text>
+</a>
+</g>
+</g>
+<!-- proc~perform_apm&#45;&gt;proc~correct_center_of_mass -->
+<g id="interface~~perform_apm~~CallsGraph_edge13" class="edge">
+<title>proc~perform_apm&#45;&gt;proc~correct_center_of_mass</title>
+<path fill="none" stroke="#000000" d="M190.2329,-448.1294C206.4047,-446.0958 225.7571,-443.6623 244.4672,-441.3095"/>
+<polygon fill="#000000" stroke="#000000" points="244.9856,-444.772 254.4707,-440.0516 244.1121,-437.8267 244.9856,-444.772"/>
+</g>
+<!-- proc~impose_equatorial_plane_symmetry -->
+<g id="interface~~perform_apm~~CallsGraph_node15" class="node">
+<title>proc~impose_equatorial_plane_symmetry</title>
+<g id="a_interface~~perform_apm~~CallsGraph_node15"><a xlink:href=".././proc/impose_equatorial_plane_symmetry.html" xlink:title="impose_equatorial_plane_symmetry">
+<polygon fill="#d9534f" stroke="#d9534f" points="411,-402 226,-402 226,-378 411,-378 411,-402"/>
+<text text-anchor="middle" x="318.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">impose_equatorial_plane_symmetry</text>
+</a>
+</g>
+</g>
+<!-- proc~perform_apm&#45;&gt;proc~impose_equatorial_plane_symmetry -->
+<g id="interface~~perform_apm~~CallsGraph_edge14" class="edge">
+<title>proc~perform_apm&#45;&gt;proc~impose_equatorial_plane_symmetry</title>
+<path fill="none" stroke="#000000" d="M169.4423,-440.9152C184.0952,-431.5401 205.6373,-418.858 226,-411 231.8477,-408.7434 238.0013,-406.6935 244.2407,-404.8389"/>
+<polygon fill="#000000" stroke="#000000" points="245.3978,-408.1496 254.0842,-402.0835 243.5109,-401.4087 245.3978,-408.1496"/>
+</g>
+<!-- deallocate_rcb_tree_memory_3d -->
+<g id="interface~~perform_apm~~CallsGraph_node16" class="node">
+<title>deallocate_rcb_tree_memory_3d</title>
+<polygon fill="#777777" stroke="#777777" points="403.5,-360 233.5,-360 233.5,-336 403.5,-336 403.5,-360"/>
+<text text-anchor="middle" x="318.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_rcb_tree_memory_3d</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;deallocate_rcb_tree_memory_3d -->
+<g id="interface~~perform_apm~~CallsGraph_edge15" class="edge">
+<title>proc~perform_apm&#45;&gt;deallocate_rcb_tree_memory_3d</title>
+<path fill="none" stroke="#000000" d="M158.7296,-440.8352C170.4214,-422.2832 195.2993,-387.1639 226,-369 229.0693,-367.1841 232.2813,-365.5251 235.5898,-364.0095"/>
+<polygon fill="#000000" stroke="#000000" points="237.2007,-367.1321 245.1313,-360.1067 234.5505,-360.6531 237.2007,-367.1321"/>
+</g>
+<!-- ncand -->
+<g id="interface~~perform_apm~~CallsGraph_node17" class="node">
+<title>ncand</title>
+<polygon fill="#777777" stroke="#777777" points="345.5,-318 291.5,-318 291.5,-294 345.5,-294 345.5,-318"/>
+<text text-anchor="middle" x="318.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ncand</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;ncand -->
+<g id="interface~~perform_apm~~CallsGraph_edge16" class="edge">
+<title>proc~perform_apm&#45;&gt;ncand</title>
+<path fill="none" stroke="#000000" d="M155.1016,-440.7071C163.2372,-415.2101 185.5487,-356.4956 226,-327 241.9802,-315.3478 263.3246,-310.0067 281.4831,-307.6196"/>
+<polygon fill="#000000" stroke="#000000" points="281.8932,-311.0958 291.4647,-306.553 281.1494,-304.1354 281.8932,-311.0958"/>
+</g>
+<!-- allocate_sph_memory -->
+<g id="interface~~perform_apm~~CallsGraph_node18" class="node">
+<title>allocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="377.5,-276 259.5,-276 259.5,-252 377.5,-252 377.5,-276"/>
+<text text-anchor="middle" x="318.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_sph_memory</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;allocate_sph_memory -->
+<g id="interface~~perform_apm~~CallsGraph_edge17" class="edge">
+<title>proc~perform_apm&#45;&gt;allocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M153.1777,-440.6009C158.0999,-409.2849 175.4853,-326.5493 226,-285 232.9304,-279.2996 241.1016,-275.0745 249.6712,-271.9548"/>
+<polygon fill="#000000" stroke="#000000" points="250.9759,-275.2139 259.471,-268.8827 248.8819,-268.5344 250.9759,-275.2139"/>
+</g>
+<!-- position_correction -->
+<g id="interface~~perform_apm~~CallsGraph_node19" class="node">
+<title>position_correction</title>
+<polygon fill="#777777" stroke="#777777" points="370,-234 267,-234 267,-210 370,-210 370,-234"/>
+<text text-anchor="middle" x="318.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">position_correction</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;position_correction -->
+<g id="interface~~perform_apm~~CallsGraph_edge18" class="edge">
+<title>proc~perform_apm&#45;&gt;position_correction</title>
+<path fill="none" stroke="#000000" d="M151.9411,-440.8412C153.9402,-404.7237 164.9888,-297.2236 226,-243 234.6634,-235.3004 245.555,-230.2472 256.7947,-226.9673"/>
+<polygon fill="#000000" stroke="#000000" points="257.8442,-230.3134 266.7144,-224.5194 256.1671,-223.5172 257.8442,-230.3134"/>
+</g>
+<!-- deallocate_gradient -->
+<g id="interface~~perform_apm~~CallsGraph_node20" class="node">
+<title>deallocate_gradient</title>
+<polygon fill="#777777" stroke="#777777" points="371.5,-192 265.5,-192 265.5,-168 371.5,-168 371.5,-192"/>
+<text text-anchor="middle" x="318.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_gradient</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;deallocate_gradient -->
+<g id="interface~~perform_apm~~CallsGraph_edge19" class="edge">
+<title>proc~perform_apm&#45;&gt;deallocate_gradient</title>
+<path fill="none" stroke="#000000" d="M153.4353,-440.8709C160.9455,-395.2982 189.5603,-235.1722 226,-201 234.1852,-193.3242 244.5665,-188.2468 255.3949,-184.9283"/>
+<polygon fill="#000000" stroke="#000000" points="256.602,-188.2318 265.4149,-182.3511 254.8583,-181.4525 256.602,-188.2318"/>
+</g>
+<!-- h -->
+<g id="interface~~perform_apm~~CallsGraph_node21" class="node">
+<title>h</title>
+<polygon fill="#777777" stroke="#777777" points="345.5,-150 291.5,-150 291.5,-126 345.5,-126 345.5,-150"/>
+<text text-anchor="middle" x="318.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">h</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;h -->
+<g id="interface~~perform_apm~~CallsGraph_edge20" class="edge">
+<title>proc~perform_apm&#45;&gt;h</title>
+<path fill="none" stroke="#000000" d="M152.8792,-440.9793C158.8611,-390.9323 184.1597,-199.8098 226,-159 240.5222,-144.8355 262.487,-139.4403 281.3689,-137.6547"/>
+<polygon fill="#000000" stroke="#000000" points="281.7216,-141.1393 291.4749,-137.0012 281.2699,-134.1538 281.7216,-141.1393"/>
+</g>
+<!-- deallocate_sph_memory -->
+<g id="interface~~perform_apm~~CallsGraph_node22" class="node">
+<title>deallocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="383.5,-108 253.5,-108 253.5,-84 383.5,-84 383.5,-108"/>
+<text text-anchor="middle" x="318.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_sph_memory</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;deallocate_sph_memory -->
+<g id="interface~~perform_apm~~CallsGraph_edge21" class="edge">
+<title>proc~perform_apm&#45;&gt;deallocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M152.4887,-440.7862C157.1609,-386.1097 178.7999,-164.4389 226,-117 231.1904,-111.7833 237.3874,-107.7479 244.0813,-104.6405"/>
+<polygon fill="#000000" stroke="#000000" points="245.4405,-107.867 253.4696,-100.9544 242.8821,-101.3513 245.4405,-107.867"/>
+</g>
+<!-- density_loop -->
+<g id="interface~~perform_apm~~CallsGraph_node23" class="node">
+<title>density_loop</title>
+<polygon fill="#777777" stroke="#777777" points="355,-66 282,-66 282,-42 355,-42 355,-66"/>
+<text text-anchor="middle" x="318.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">density_loop</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;density_loop -->
+<g id="interface~~perform_apm~~CallsGraph_edge22" class="edge">
+<title>proc~perform_apm&#45;&gt;density_loop</title>
+<path fill="none" stroke="#000000" d="M152.1594,-440.8767C155.5923,-382.3016 173.3259,-129.2051 226,-75 237.8799,-62.7748 255.2766,-57.0027 271.7861,-54.4639"/>
+<polygon fill="#000000" stroke="#000000" points="272.3724,-57.9191 281.8937,-53.2721 271.5526,-50.9672 272.3724,-57.9191"/>
+</g>
+<!-- exact_nei_tree_update -->
+<g id="interface~~perform_apm~~CallsGraph_node24" class="node">
+<title>exact_nei_tree_update</title>
+<polygon fill="#777777" stroke="#777777" points="379.5,-24 257.5,-24 257.5,0 379.5,0 379.5,-24"/>
+<text text-anchor="middle" x="318.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">exact_nei_tree_update</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;exact_nei_tree_update -->
+<g id="interface~~perform_apm~~CallsGraph_edge23" class="edge">
+<title>proc~perform_apm&#45;&gt;exact_nei_tree_update</title>
+<path fill="none" stroke="#000000" d="M151.9032,-440.8096C154.222,-378.2648 167.8722,-93.9681 226,-33 232.1096,-26.5918 239.7331,-21.9491 247.9649,-18.6128"/>
+<polygon fill="#000000" stroke="#000000" points="249.131,-21.9132 257.4692,-15.3768 246.8748,-15.2868 249.131,-21.9132"/>
+</g>
+<!-- validate_position -->
+<g id="interface~~perform_apm~~CallsGraph_node26" class="node">
+<title>validate_position</title>
+<polygon fill="#777777" stroke="#777777" points="539,-692 447,-692 447,-668 539,-668 539,-692"/>
+<text text-anchor="middle" x="493" y="-677.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">validate_position</text>
+</g>
+<!-- none~validate_position_final&#45;&gt;validate_position -->
+<g id="interface~~perform_apm~~CallsGraph_edge24" class="edge">
+<title>none~validate_position_final&#45;&gt;validate_position</title>
+<path fill="none" stroke="#000000" d="M377.5777,-680C396.6822,-680 417.8053,-680 436.7027,-680"/>
+<polygon fill="#000000" stroke="#000000" points="436.9454,-683.5001 446.9453,-680 436.9453,-676.5001 436.9454,-683.5001"/>
+</g>
+<!-- indexx -->
+<g id="interface~~perform_apm~~CallsGraph_node25" class="node">
+<title>indexx</title>
+<polygon fill="#777777" stroke="#777777" points="520,-650 466,-650 466,-626 520,-626 520,-650"/>
+<text text-anchor="middle" x="493" y="-635.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">indexx</text>
+</g>
+<!-- proc~check_particle_positions&#45;&gt;indexx -->
+<g id="interface~~perform_apm~~CallsGraph_edge25" class="edge">
+<title>proc~check_particle_positions&#45;&gt;indexx</title>
+<path fill="none" stroke="#000000" d="M383.4774,-638C407.8485,-638 434.7043,-638 455.7229,-638"/>
+<polygon fill="#000000" stroke="#000000" points="455.8362,-641.5001 465.8362,-638 455.8361,-634.5001 455.8362,-641.5001"/>
+</g>
+<!-- proc~correct_center_of_mass&#45;&gt;com -->
+<g id="interface~~perform_apm~~CallsGraph_edge26" class="edge">
+<title>proc~correct_center_of_mass&#45;&gt;com</title>
+<path fill="none" stroke="#000000" d="M382.9816,-432C407.3997,-432 434.376,-432 455.505,-432"/>
+<polygon fill="#000000" stroke="#000000" points="455.673,-435.5001 465.6729,-432 455.6729,-428.5001 455.673,-435.5001"/>
+</g>
+<!-- proc~impose_equatorial_plane_symmetry&#45;&gt;com -->
+<g id="interface~~perform_apm~~CallsGraph_edge27" class="edge">
+<title>proc~impose_equatorial_plane_symmetry&#45;&gt;com</title>
+<path fill="none" stroke="#000000" d="M372.8505,-402.0771C385.3948,-404.9372 398.6743,-408.0232 411,-411 425.7134,-414.5535 441.8613,-418.647 455.9076,-422.2708"/>
+<polygon fill="#000000" stroke="#000000" points="455.1552,-425.6914 465.7134,-424.812 456.9113,-418.9152 455.1552,-425.6914"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+     
+    
+    <br>
+    
+      <h2>
+public module module subroutine perform_apm(get_density, get_nstar_p, pos_input, pvol, h_output, nu_output, center, com_star, mass, radx_comp, radx_opp, rady, radz, apm_max_it, max_inc, mass_it, correct_nu, nuratio_thres, nuratio_des, nx_gh, ny_gh, nz_gh, namefile_pos_id, namefile_pos, namefile_results, validate_position)
+    
+    
+   
+   <a href='../proc/perform_apm.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h2>
+    
+
+    
+  
+
+
+    <h3>Arguments</h3>
+    
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td colspan="7">
+      <small>
+    
+    <h5>
+function get_density(x, y, z) result(density)
+    
+    
+   
+</h5>
+    
+
+
+
+<p>Returns the baryon mass density at the desired point</p>
+    
+    <h6>Arguments</h6>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong></td><td><p>
+<script type="math/tex">x</script> coordinate of the desired point</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>y</strong></td><td><p>
+<script type="math/tex">y</script> coordinate of the desired point</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>z</strong></td><td><p>
+<script type="math/tex">z</script> coordinate of the desired point</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h6>Return Value <small>double precision
+  </small></h6>
+  <p>Baryon mass density at <script type="math/tex">(x,y,z)</script>
+</p>
+    
+</small>
+  </td> 
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td colspan="7">
+      <small>
+    
+    <h5>
+subroutine get_nstar_p(npart_real, x, y, z, nstar_p)
+    
+    
+   
+</h5>
+    
+
+
+
+<p>Computes the proper baryon number density at the particle positions</p>
+    
+    <h6>Arguments</h6>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>npart_real</strong></td><td><p>Number of real particles (i.e., no ghost particles included here)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong>(npart_real)</td><td><p>Array of <script type="math/tex">x</script> coordinates</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>y</strong>(npart_real)</td><td><p>Array of <script type="math/tex">y</script> coordinates</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>z</strong>(npart_real)</td><td><p>Array of <script type="math/tex">z</script> coordinates</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nstar_p</strong>(npart_real)</td><td><p>Array to store the computed proper baryon number density</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+</small>
+  </td> 
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-pos_input"></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:,:)</td><td>::</td>
+  <td><strong>pos_input</strong></td><td><p>Initial particle positions</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-pvol~3"></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>pvol</strong></td><td><p>Initial particle volume</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-h_output"></span>double precision,</td>
+  <td>intent(out),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>h_output</strong></td><td><p>Array to store the smoothing lengths computed at the end of the
+ APM iteration</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nu_output"></span>double precision,</td>
+  <td>intent(out),</td>
+  <td></td>
+  
+  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>nu_output</strong></td><td><p>Array to store the baryon number per particle computed at the end of
+ the APM iteration</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-center~6"></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>center</strong></td><td><p>Center of the star (point of highest density), computed by \(\texttt{LORENE}\)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-com_star"></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>com_star</strong></td><td><p>Center of mass of the star, computed by \(\texttt{LORENE}\)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mass~4"></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>mass</strong></td><td><p>Mass of the star</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-radx_comp"></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>radx_comp</strong></td><td><p>Radius of the star in the x direction, towards the companion</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-radx_opp"></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>radx_opp</strong></td><td><p>Radius of the star in the x direction, opposite to companion</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-rady"></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rady</strong></td><td><p>Radius of the star in the y direction</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-radz"></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>radz</strong></td><td><p>Radius of the star in the z direction</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-apm_max_it"></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>apm_max_it</strong></td><td><p>Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-max_inc"></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>max_inc</strong></td><td><p>Sets the EXIT condition: If the average over all the
+ particles of the relative error in the density estimate
+ grows max_inc times, exit the iteration.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mass_it"></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>mass_it</strong></td><td><p>If .TRUE. performs a second iteration after the APM one, without moving
+ the particles, changing their mass in order to better match
+ the star density. The mass ratio grows very fast in all the tried
+ experiments, hence the suggested value is .FALSE.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-correct_nu~2"></span>logical,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>correct_nu</strong></td><td><p>If .TRUE., the baryon number per particle nu is corrected
+ to include the total baryonic masses of the
+ stars.</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nuratio_thres"></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nuratio_thres</strong></td><td><p>Maximum mass ratio (equivalently baryon number ratio)
+ to be used in the one-time-only final correction
+ of the particle masses to match the star density even
+ better (without moving the particles)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nuratio_des"></span>double precision,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nuratio_des</strong></td><td><p>Sets the EXIT condition: If the baryon number ratio
+ is within 2.5% of nuratio_des, exit the iteration
+ Set nuratio_des to 0 to deactivate and exit the APM
+ iteration using max_inc</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nx_gh"></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nx_gh</strong></td><td><p>Number of lattice points in the x direction for ghosts</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ny_gh"></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>ny_gh</strong></td><td><p>Number of lattice points in the y direction for ghosts</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nz_gh"></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>nz_gh</strong></td><td><p>Number of lattice points in the z direction for ghosts</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile_pos_id"></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_pos_id</strong></td><td><p>Name for the formatted file where the initial particle positions</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile_pos"></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_pos</strong></td><td><p>Name for the formatted file where the particle positions</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile_results"></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_results</strong></td><td><p>Name for the formatted file where various quantities related</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-validate_position"></span>procedure(validate_position_int),</td>
+  <td></td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>validate_position</strong></td><td><p>Returns 1 if the position is not valid, 0 otherwise</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    
+    
+    
+    <h3>Description</h3>
+    <p>Performs the Artificial Pressure Method (APM) on one star's particles</p>
+    
+    <br>
+
+ </div>
+</div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-04 13:48:13 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>
