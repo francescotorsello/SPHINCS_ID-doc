@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>destructor &ndash; SPHINCS_LORENE</title>
+    <title>destructor &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -242,7 +242,7 @@ module procedure destructor <small>module module subroutine destructor(THIS)</sm
   
 <tr>
   
-  <td><span class="anchor" id="variable-this~49"></span>type(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td><span class="anchor" id="variable-this~50"></span>type(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -282,89 +282,89 @@ module procedure destructor <small>module module subroutine destructor(THIS)</sm
 <polygon fill="none" stroke="#000000" points="61,-45 0,-45 0,-21 61,-21 61,-45"/>
 <text text-anchor="middle" x="30.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">destructor</text>
 </g>
-<!-- interface~destruct_bssn_id -->
+<!-- deallocate_standard3p1_variables -->
 <g id="proc~~destructor~~CallsGraph_node2" class="node">
+<title>deallocate_standard3p1_variables</title>
+<polygon fill="#777777" stroke="#777777" points="273,-66 97,-66 97,-42 273,-42 273,-66"/>
+<text text-anchor="middle" x="185" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_standard3p1_variables</text>
+</g>
+<!-- proc~destructor&#45;&gt;deallocate_standard3p1_variables -->
+<g id="proc~~destructor~~CallsGraph_edge1" class="edge">
+<title>proc~destructor&#45;&gt;deallocate_standard3p1_variables</title>
+<path fill="none" stroke="#000000" d="M61.0242,-37.1489C68.7741,-38.2023 77.5289,-39.3923 86.7132,-40.6406"/>
+<polygon fill="#000000" stroke="#000000" points="86.4401,-44.1356 96.8204,-42.0144 87.3829,-37.1994 86.4401,-44.1356"/>
+</g>
+<!-- interface~destruct_bssn_id -->
+<g id="proc~~destructor~~CallsGraph_node3" class="node">
 <title>interface~destruct_bssn_id</title>
-<g id="a_proc~~destructor~~CallsGraph_node2"><a xlink:href=".././interface/destruct_bssn_id.html" xlink:title="destruct_bssn_id">
-<polygon fill="#a7506f" stroke="#a7506f" points="232,-66 138,-66 138,-42 232,-42 232,-66"/>
-<text text-anchor="middle" x="185" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">destruct_bssn_id</text>
+<g id="a_proc~~destructor~~CallsGraph_node3"><a xlink:href=".././interface/destruct_bssn_id.html" xlink:title="destruct_bssn_id">
+<polygon fill="#a7506f" stroke="#a7506f" points="232,-24 138,-24 138,0 232,0 232,-24"/>
+<text text-anchor="middle" x="185" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">destruct_bssn_id</text>
 </a>
 </g>
 </g>
 <!-- proc~destructor&#45;&gt;interface~destruct_bssn_id -->
-<g id="proc~~destructor~~CallsGraph_edge1" class="edge">
-<title>proc~destructor&#45;&gt;interface~destruct_bssn_id</title>
-<path fill="none" stroke="#000000" d="M61.0242,-37.1489C80.0134,-39.73 105.0363,-43.1312 127.6262,-46.2016"/>
-<polygon fill="#000000" stroke="#000000" points="127.4234,-49.7062 137.8038,-47.585 128.3663,-42.7699 127.4234,-49.7062"/>
-</g>
-<!-- deallocate_standard3p1_variables -->
-<g id="proc~~destructor~~CallsGraph_node3" class="node">
-<title>deallocate_standard3p1_variables</title>
-<polygon fill="#777777" stroke="#777777" points="273,-24 97,-24 97,0 273,0 273,-24"/>
-<text text-anchor="middle" x="185" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_standard3p1_variables</text>
-</g>
-<!-- proc~destructor&#45;&gt;deallocate_standard3p1_variables -->
 <g id="proc~~destructor~~CallsGraph_edge2" class="edge">
-<title>proc~destructor&#45;&gt;deallocate_standard3p1_variables</title>
-<path fill="none" stroke="#000000" d="M61.0242,-28.8511C68.7741,-27.7977 77.5289,-26.6077 86.7132,-25.3594"/>
-<polygon fill="#000000" stroke="#000000" points="87.3829,-28.8006 96.8204,-23.9856 86.4401,-21.8644 87.3829,-28.8006"/>
+<title>proc~destructor&#45;&gt;interface~destruct_bssn_id</title>
+<path fill="none" stroke="#000000" d="M61.0242,-28.8511C80.0134,-26.27 105.0363,-22.8688 127.6262,-19.7984"/>
+<polygon fill="#000000" stroke="#000000" points="128.3663,-23.2301 137.8038,-18.415 127.4234,-16.2938 128.3663,-23.2301"/>
 </g>
 <!-- proc~destruct_bssn_id -->
 <g id="proc~~destructor~~CallsGraph_node4" class="node">
 <title>proc~destruct_bssn_id</title>
 <g id="a_proc~~destructor~~CallsGraph_node4"><a xlink:href=".././proc/destruct_bssn_id.html" xlink:title="destruct_bssn_id">
-<polygon fill="#d9534f" stroke="#d9534f" points="403,-66 309,-66 309,-42 403,-42 403,-66"/>
-<text text-anchor="middle" x="356" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">destruct_bssn_id</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="403,-24 309,-24 309,0 403,0 403,-24"/>
+<text text-anchor="middle" x="356" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">destruct_bssn_id</text>
 </a>
 </g>
 </g>
 <!-- interface~destruct_bssn_id&#45;&gt;proc~destruct_bssn_id -->
 <g id="proc~~destructor~~CallsGraph_edge3" class="edge">
 <title>interface~destruct_bssn_id&#45;&gt;proc~destruct_bssn_id</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.1792,-54C252.8319,-54 277.2458,-54 298.913,-54"/>
-<polygon fill="#000000" stroke="#000000" points="298.9748,-57.5001 308.9748,-54 298.9748,-50.5001 298.9748,-57.5001"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.1792,-12C252.8319,-12 277.2458,-12 298.913,-12"/>
+<polygon fill="#000000" stroke="#000000" points="298.9748,-15.5001 308.9748,-12 298.9748,-8.5001 298.9748,-15.5001"/>
 </g>
 <!-- interface~deallocate_bssn_fields -->
 <g id="proc~~destructor~~CallsGraph_node5" class="node">
 <title>interface~deallocate_bssn_fields</title>
 <g id="a_proc~~destructor~~CallsGraph_node5"><a xlink:href=".././interface/deallocate_bssn_fields.html" xlink:title="deallocate_bssn_fields">
-<polygon fill="#a7506f" stroke="#a7506f" points="560,-66 439,-66 439,-42 560,-42 560,-66"/>
-<text text-anchor="middle" x="499.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn_fields</text>
+<polygon fill="#a7506f" stroke="#a7506f" points="560,-24 439,-24 439,0 560,0 560,-24"/>
+<text text-anchor="middle" x="499.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn_fields</text>
 </a>
 </g>
 </g>
 <!-- proc~destruct_bssn_id&#45;&gt;interface~deallocate_bssn_fields -->
 <g id="proc~~destructor~~CallsGraph_edge4" class="edge">
 <title>proc~destruct_bssn_id&#45;&gt;interface~deallocate_bssn_fields</title>
-<path fill="none" stroke="#000000" d="M403.385,-54C411.5411,-54 420.1738,-54 428.7866,-54"/>
-<polygon fill="#000000" stroke="#000000" points="428.8584,-57.5001 438.8584,-54 428.8584,-50.5001 428.8584,-57.5001"/>
+<path fill="none" stroke="#000000" d="M403.385,-12C411.5411,-12 420.1738,-12 428.7866,-12"/>
+<polygon fill="#000000" stroke="#000000" points="428.8584,-15.5001 438.8584,-12 428.8584,-8.5001 428.8584,-15.5001"/>
 </g>
 <!-- proc~deallocate_bssn_fields -->
 <g id="proc~~destructor~~CallsGraph_node6" class="node">
 <title>proc~deallocate_bssn_fields</title>
 <g id="a_proc~~destructor~~CallsGraph_node6"><a xlink:href=".././proc/deallocate_bssn_fields.html" xlink:title="deallocate_bssn_fields">
-<polygon fill="#d9534f" stroke="#d9534f" points="717,-66 596,-66 596,-42 717,-42 717,-66"/>
-<text text-anchor="middle" x="656.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn_fields</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="717,-24 596,-24 596,0 717,0 717,-24"/>
+<text text-anchor="middle" x="656.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn_fields</text>
 </a>
 </g>
 </g>
 <!-- interface~deallocate_bssn_fields&#45;&gt;proc~deallocate_bssn_fields -->
 <g id="proc~~destructor~~CallsGraph_edge5" class="edge">
 <title>interface~deallocate_bssn_fields&#45;&gt;proc~deallocate_bssn_fields</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M560.2003,-54C568.635,-54 577.3591,-54 585.9547,-54"/>
-<polygon fill="#000000" stroke="#000000" points="585.9612,-57.5001 595.9611,-54 585.9611,-50.5001 585.9612,-57.5001"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M560.2003,-12C568.635,-12 577.3591,-12 585.9547,-12"/>
+<polygon fill="#000000" stroke="#000000" points="585.9612,-15.5001 595.9611,-12 585.9611,-8.5001 585.9612,-15.5001"/>
 </g>
 <!-- deallocate_grid_function -->
 <g id="proc~~destructor~~CallsGraph_node7" class="node">
 <title>deallocate_grid_function</title>
-<polygon fill="#777777" stroke="#777777" points="882,-66 753,-66 753,-42 882,-42 882,-66"/>
-<text text-anchor="middle" x="817.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_grid_function</text>
+<polygon fill="#777777" stroke="#777777" points="882,-24 753,-24 753,0 882,0 882,-24"/>
+<text text-anchor="middle" x="817.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_grid_function</text>
 </g>
 <!-- proc~deallocate_bssn_fields&#45;&gt;deallocate_grid_function -->
 <g id="proc~~destructor~~CallsGraph_edge6" class="edge">
 <title>proc~deallocate_bssn_fields&#45;&gt;deallocate_grid_function</title>
-<path fill="none" stroke="#000000" d="M717.3672,-54C725.5971,-54 734.1187,-54 742.5583,-54"/>
-<polygon fill="#000000" stroke="#000000" points="742.7872,-57.5001 752.7871,-54 742.7871,-50.5001 742.7872,-57.5001"/>
+<path fill="none" stroke="#000000" d="M717.3672,-12C725.5971,-12 734.1187,-12 742.5583,-12"/>
+<polygon fill="#000000" stroke="#000000" points="742.7872,-15.5001 752.7871,-12 742.7871,-8.5001 742.7872,-15.5001"/>
 </g>
 </g>
 </svg>
@@ -593,14 +593,14 @@ module procedure destructor <small>module module subroutine destructor(THIS)</sm
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

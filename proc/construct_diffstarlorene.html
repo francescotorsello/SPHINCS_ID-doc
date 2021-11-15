@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>construct_diffstarlorene &ndash; SPHINCS_LORENE</title>
+    <title>construct_diffstarlorene &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -221,7 +221,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-module procedure construct_diffstarlorene <small>module module function construct_diffstarlorene(resu_file) result(drs)</small>
+module procedure construct_diffstarlorene <small>module module subroutine construct_diffstarlorene(derived_type, filename)</small>
     
     
    <a href='../interface/construct_diffstarlorene.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
@@ -256,12 +256,27 @@ module procedure construct_diffstarlorene <small>module module function construc
   
 <tr>
   
-  <td><span class="anchor" id="variable-resu_file~3"></span>character(len=*),</td>
+  <td><span class="anchor" id="variable-derived_type~5"></span>class(<a href='../type/diffstarlorene.html'>diffstarlorene</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>derived_type</strong></td><td><p>Constructed <a href="../type/diffstarlorene.html">diffstarlorene</a> object</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-filename~10"></span>character(len=*),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>resu_file</strong></td><td><p>\(\texttt{LORENE}\) binary file containing the spectral DRS ID</p></td>
+  <td><strong>filename</strong></td><td><p>\(\texttt{LORENE}\) binary file containing the spectral DRS ID</p></td>
   
 </tr>
 
@@ -269,15 +284,6 @@ module procedure construct_diffstarlorene <small>module module function construc
 </table>
 
     
-    
-    
-    
-    
-    
-    
-   <h3>Return Value <small><span class="anchor" id="variable-drs"></span>type(<a href='../type/diffstarlorene.html'>diffstarlorene</a>)
-  </small></h3>
-    <p>Constructed <a href="../type/diffstarlorene.html">diffstarlorene</a> object</p>
     
     
     <br>
@@ -347,47 +353,47 @@ module procedure construct_diffstarlorene <small>module module function construc
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M283.4288,-59.7975C291.6737,-59.7975 300.1839,-59.7975 308.5803,-59.7975"/>
 <polygon fill="#000000" stroke="#000000" points="308.7402,-63.2976 318.7402,-59.7975 308.7401,-56.2976 308.7402,-63.2976"/>
 </g>
-<!-- interface~get_diffstar_params -->
-<g id="proc~~construct_diffstarlorene~~CallsGraph_node5" class="node">
-<title>interface~get_diffstar_params</title>
-<g id="a_proc~~construct_diffstarlorene~~CallsGraph_node5"><a xlink:href=".././interface/get_diffstar_params.html" xlink:title="get_diffstar_params">
-<polygon fill="#a7506f" stroke="#a7506f" points="635.5,-134.7975 527.5,-134.7975 527.5,-110.7975 635.5,-110.7975 635.5,-134.7975"/>
-<text text-anchor="middle" x="581.5" y="-120.3975" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_diffstar_params</text>
-</a>
-</g>
-</g>
-<!-- proc~import_diffstar_params&#45;&gt;interface~get_diffstar_params -->
-<g id="proc~~construct_diffstarlorene~~CallsGraph_edge4" class="edge">
-<title>proc~import_diffstar_params&#45;&gt;interface~get_diffstar_params</title>
-<path fill="none" stroke="#000000" d="M404.8109,-71.943C424.2193,-81.2263 452.3206,-93.7563 478,-101.7975 490.5487,-105.7269 504.1895,-109.1029 517.3256,-111.927"/>
-<polygon fill="#000000" stroke="#000000" points="516.7444,-115.3808 527.2461,-113.9792 518.1624,-108.526 516.7444,-115.3808"/>
-</g>
-<!-- k_lorene2hydrobase_piecewisepolytrope -->
-<g id="proc~~construct_diffstarlorene~~CallsGraph_node6" class="node">
-<title>k_lorene2hydrobase_piecewisepolytrope</title>
-<polygon fill="#777777" stroke="#777777" points="685,-92.7975 478,-92.7975 478,-68.7975 685,-68.7975 685,-92.7975"/>
-<text text-anchor="middle" x="581.5" y="-78.3975" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">k_lorene2hydrobase_piecewisepolytrope</text>
-</g>
-<!-- proc~import_diffstar_params&#45;&gt;k_lorene2hydrobase_piecewisepolytrope -->
-<g id="proc~~construct_diffstarlorene~~CallsGraph_edge5" class="edge">
-<title>proc~import_diffstar_params&#45;&gt;k_lorene2hydrobase_piecewisepolytrope</title>
-<path fill="none" stroke="#000000" d="M442.1726,-66.2409C450.3011,-67.0901 458.83,-67.9812 467.4954,-68.8865"/>
-<polygon fill="#000000" stroke="#000000" points="467.405,-72.3961 477.7146,-69.9542 468.1325,-65.434 467.405,-72.3961"/>
-</g>
 <!-- interface~print_diffstar_params -->
-<g id="proc~~construct_diffstarlorene~~CallsGraph_node7" class="node">
+<g id="proc~~construct_diffstarlorene~~CallsGraph_node5" class="node">
 <title>interface~print_diffstar_params</title>
-<g id="a_proc~~construct_diffstarlorene~~CallsGraph_node7"><a xlink:href=".././interface/print_diffstar_params.html" xlink:title="print_diffstar_params">
-<polygon fill="#a7506f" stroke="#a7506f" points="638.5,-50.7975 524.5,-50.7975 524.5,-26.7975 638.5,-26.7975 638.5,-50.7975"/>
-<text text-anchor="middle" x="581.5" y="-36.3975" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">print_diffstar_params</text>
+<g id="a_proc~~construct_diffstarlorene~~CallsGraph_node5"><a xlink:href=".././interface/print_diffstar_params.html" xlink:title="print_diffstar_params">
+<polygon fill="#a7506f" stroke="#a7506f" points="638.5,-134.7975 524.5,-134.7975 524.5,-110.7975 638.5,-110.7975 638.5,-134.7975"/>
+<text text-anchor="middle" x="581.5" y="-120.3975" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">print_diffstar_params</text>
 </a>
 </g>
 </g>
 <!-- proc~import_diffstar_params&#45;&gt;interface~print_diffstar_params -->
 <g id="proc~~construct_diffstarlorene~~CallsGraph_edge6" class="edge">
 <title>proc~import_diffstar_params&#45;&gt;interface~print_diffstar_params</title>
-<path fill="none" stroke="#000000" d="M442.1726,-53.3541C464.9916,-50.97 490.9664,-48.2562 514.2559,-45.823"/>
-<polygon fill="#000000" stroke="#000000" points="514.8176,-49.2834 524.3998,-44.7632 514.0902,-42.3213 514.8176,-49.2834"/>
+<path fill="none" stroke="#000000" d="M404.8109,-71.943C424.2193,-81.2263 452.3206,-93.7563 478,-101.7975 489.5508,-105.4145 502.027,-108.5625 514.1831,-111.2428"/>
+<polygon fill="#000000" stroke="#000000" points="513.7833,-114.7358 524.2916,-113.3844 515.2342,-107.8878 513.7833,-114.7358"/>
+</g>
+<!-- interface~get_diffstar_params -->
+<g id="proc~~construct_diffstarlorene~~CallsGraph_node6" class="node">
+<title>interface~get_diffstar_params</title>
+<g id="a_proc~~construct_diffstarlorene~~CallsGraph_node6"><a xlink:href=".././interface/get_diffstar_params.html" xlink:title="get_diffstar_params">
+<polygon fill="#a7506f" stroke="#a7506f" points="635.5,-92.7975 527.5,-92.7975 527.5,-68.7975 635.5,-68.7975 635.5,-92.7975"/>
+<text text-anchor="middle" x="581.5" y="-78.3975" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_diffstar_params</text>
+</a>
+</g>
+</g>
+<!-- proc~import_diffstar_params&#45;&gt;interface~get_diffstar_params -->
+<g id="proc~~construct_diffstarlorene~~CallsGraph_edge7" class="edge">
+<title>proc~import_diffstar_params&#45;&gt;interface~get_diffstar_params</title>
+<path fill="none" stroke="#000000" d="M442.1726,-66.2409C466.0027,-68.7306 493.2745,-71.5799 517.3354,-74.0937"/>
+<polygon fill="#000000" stroke="#000000" points="517.1216,-77.5903 527.4312,-75.1485 517.8491,-70.6282 517.1216,-77.5903"/>
+</g>
+<!-- k_lorene2hydrobase_piecewisepolytrope -->
+<g id="proc~~construct_diffstarlorene~~CallsGraph_node7" class="node">
+<title>k_lorene2hydrobase_piecewisepolytrope</title>
+<polygon fill="#777777" stroke="#777777" points="685,-50.7975 478,-50.7975 478,-26.7975 685,-26.7975 685,-50.7975"/>
+<text text-anchor="middle" x="581.5" y="-36.3975" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">k_lorene2hydrobase_piecewisepolytrope</text>
+</g>
+<!-- proc~import_diffstar_params&#45;&gt;k_lorene2hydrobase_piecewisepolytrope -->
+<g id="proc~~construct_diffstarlorene~~CallsGraph_edge5" class="edge">
+<title>proc~import_diffstar_params&#45;&gt;k_lorene2hydrobase_piecewisepolytrope</title>
+<path fill="none" stroke="#000000" d="M442.1726,-53.3541C450.3011,-52.5048 458.83,-51.6137 467.4954,-50.7084"/>
+<polygon fill="#000000" stroke="#000000" points="468.1325,-54.161 477.7146,-49.6407 467.405,-47.1989 468.1325,-54.161"/>
 </g>
 <!-- k_lorene2hydrobase -->
 <g id="proc~~construct_diffstarlorene~~CallsGraph_node8" class="node">
@@ -396,7 +402,7 @@ module procedure construct_diffstarlorene <small>module module function construc
 <text text-anchor="middle" x="926" y="-16.3975" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">k_lorene2hydrobase</text>
 </g>
 <!-- proc~import_diffstar_params&#45;&gt;k_lorene2hydrobase -->
-<g id="proc~~construct_diffstarlorene~~CallsGraph_edge7" class="edge">
+<g id="proc~~construct_diffstarlorene~~CallsGraph_edge4" class="edge">
 <title>proc~import_diffstar_params&#45;&gt;k_lorene2hydrobase</title>
 <path fill="none" stroke="#000000" d="M401.737,-47.6376C420.9498,-37.3827 450.382,-23.493 478,-17.7975 611.7247,9.7799 772.7157,-.9348 860.6953,-10.3927"/>
 <polygon fill="#000000" stroke="#000000" points="860.4724,-13.8893 870.7961,-11.5077 861.2406,-6.9315 860.4724,-13.8893"/>
@@ -405,22 +411,22 @@ module procedure construct_diffstarlorene <small>module module function construc
 <g id="proc~~construct_diffstarlorene~~CallsGraph_node9" class="node">
 <title>proc~print_diffstar_params</title>
 <g id="a_proc~~construct_diffstarlorene~~CallsGraph_node9"><a xlink:href=".././proc/print_diffstar_params.html" xlink:title="print_diffstar_params">
-<polygon fill="#d9534f" stroke="#d9534f" points="835,-50.7975 721,-50.7975 721,-26.7975 835,-26.7975 835,-50.7975"/>
-<text text-anchor="middle" x="778" y="-36.3975" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">print_diffstar_params</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="835,-92.7975 721,-92.7975 721,-68.7975 835,-68.7975 835,-92.7975"/>
+<text text-anchor="middle" x="778" y="-78.3975" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">print_diffstar_params</text>
 </a>
 </g>
 </g>
 <!-- interface~print_diffstar_params&#45;&gt;proc~print_diffstar_params -->
 <g id="proc~~construct_diffstarlorene~~CallsGraph_edge8" class="edge">
 <title>interface~print_diffstar_params&#45;&gt;proc~print_diffstar_params</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M638.5999,-38.7975C661.1053,-38.7975 687.1266,-38.7975 710.5496,-38.7975"/>
-<polygon fill="#000000" stroke="#000000" points="710.7577,-42.2976 720.7577,-38.7975 710.7577,-35.2976 710.7577,-42.2976"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M638.7589,-111.4127C653.8149,-108.3554 670.0303,-105.0059 685,-101.7975 694.8323,-99.6902 705.2352,-97.4004 715.3843,-95.1335"/>
+<polygon fill="#000000" stroke="#000000" points="716.4272,-98.4866 725.4182,-92.8818 714.8944,-91.6564 716.4272,-98.4866"/>
 </g>
 <!-- proc~print_diffstar_params&#45;&gt;k_lorene2hydrobase -->
 <g id="proc~~construct_diffstarlorene~~CallsGraph_edge9" class="edge">
 <title>proc~print_diffstar_params&#45;&gt;k_lorene2hydrobase</title>
-<path fill="none" stroke="#000000" d="M835.2207,-31.065C843.6396,-29.9273 852.3644,-28.7482 860.9273,-27.5911"/>
-<polygon fill="#000000" stroke="#000000" points="861.4359,-31.0543 870.8771,-26.2465 860.4984,-24.1173 861.4359,-31.0543"/>
+<path fill="none" stroke="#000000" d="M806.8872,-68.6961C830.011,-59.0091 862.6386,-45.3408 887.8998,-34.7584"/>
+<polygon fill="#000000" stroke="#000000" points="889.3146,-37.9605 897.1856,-30.8684 886.6099,-31.5041 889.3146,-37.9605"/>
 </g>
 </g>
 </svg>
@@ -498,61 +504,31 @@ module procedure construct_diffstarlorene <small>module module function construc
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: proc~~construct_diffstarlorene~~CalledByGraph Pages: 1 -->
-<svg id="procconstruct_diffstarloreneCalledByGraph" width="547pt" height="32pt"
- viewBox="0.00 0.00 547.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="procconstruct_diffstarloreneCalledByGraph" width="292pt" height="32pt"
+ viewBox="0.00 0.00 292.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="proc~~construct_diffstarlorene~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>proc~~construct_diffstarlorene~~CalledByGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 543,-28 543,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 288,-28 288,4 -4,4"/>
 <!-- proc~construct_diffstarlorene -->
 <g id="proc~~construct_diffstarlorene~~CalledByGraph_node1" class="node">
 <title>proc~construct_diffstarlorene</title>
-<polygon fill="none" stroke="#000000" points="539,-24 415,-24 415,0 539,0 539,-24"/>
-<text text-anchor="middle" x="477" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">construct_diffstarlorene</text>
+<polygon fill="none" stroke="#000000" points="284,-24 160,-24 160,0 284,0 284,-24"/>
+<text text-anchor="middle" x="222" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">construct_diffstarlorene</text>
 </g>
 <!-- interface~construct_diffstarlorene -->
 <g id="proc~~construct_diffstarlorene~~CalledByGraph_node2" class="node">
 <title>interface~construct_diffstarlorene</title>
 <g id="a_proc~~construct_diffstarlorene~~CalledByGraph_node2"><a xlink:href=".././interface/construct_diffstarlorene.html" xlink:title="construct_diffstarlorene">
-<polygon fill="#a7506f" stroke="#a7506f" points="379,-24 255,-24 255,0 379,0 379,-24"/>
-<text text-anchor="middle" x="317" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_diffstarlorene</text>
+<polygon fill="#a7506f" stroke="#a7506f" points="124,-24 0,-24 0,0 124,0 124,-24"/>
+<text text-anchor="middle" x="62" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_diffstarlorene</text>
 </a>
 </g>
 </g>
 <!-- interface~construct_diffstarlorene&#45;&gt;proc~construct_diffstarlorene -->
 <g id="proc~~construct_diffstarlorene~~CalledByGraph_edge1" class="edge">
 <title>interface~construct_diffstarlorene&#45;&gt;proc~construct_diffstarlorene</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M379.3183,-12C387.615,-12 396.1788,-12 404.628,-12"/>
-<polygon fill="#000000" stroke="#000000" points="404.8518,-15.5001 414.8518,-12 404.8517,-8.5001 404.8518,-15.5001"/>
-</g>
-<!-- interface~diffstarlorene -->
-<g id="proc~~construct_diffstarlorene~~CalledByGraph_node3" class="node">
-<title>interface~diffstarlorene</title>
-<g id="a_proc~~construct_diffstarlorene~~CalledByGraph_node3"><a xlink:href=".././interface/diffstarlorene.html" xlink:title="diffstarlorene">
-<polygon fill="#a7506f" stroke="#a7506f" points="219,-24 144,-24 144,0 219,0 219,-24"/>
-<text text-anchor="middle" x="181.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstarlorene</text>
-</a>
-</g>
-</g>
-<!-- interface~diffstarlorene&#45;&gt;interface~construct_diffstarlorene -->
-<g id="proc~~construct_diffstarlorene~~CalledByGraph_edge2" class="edge">
-<title>interface~diffstarlorene&#45;&gt;interface~construct_diffstarlorene</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M219.2443,-12C227.1803,-12 235.8046,-12 244.5338,-12"/>
-<polygon fill="#000000" stroke="#000000" points="244.7944,-15.5001 254.7943,-12 244.7943,-8.5001 244.7944,-15.5001"/>
-</g>
-<!-- program~sphincs_lorene_bns -->
-<g id="proc~~construct_diffstarlorene~~CalledByGraph_node4" class="node">
-<title>program~sphincs_lorene_bns</title>
-<g id="a_proc~~construct_diffstarlorene~~CalledByGraph_node4"><a xlink:href=".././program/sphincs_lorene_bns.html" xlink:title="sphincs_lorene_bns">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="108,-24 0,-24 0,0 108,0 108,-24"/>
-<text text-anchor="middle" x="54" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene_bns</text>
-</a>
-</g>
-</g>
-<!-- program~sphincs_lorene_bns&#45;&gt;interface~diffstarlorene -->
-<g id="proc~~construct_diffstarlorene~~CalledByGraph_edge3" class="edge">
-<title>program~sphincs_lorene_bns&#45;&gt;interface~diffstarlorene</title>
-<path fill="none" stroke="#000000" d="M108.0715,-12C116.6604,-12 125.4893,-12 133.9148,-12"/>
-<polygon fill="#000000" stroke="#000000" points="133.9489,-15.5001 143.9488,-12 133.9488,-8.5001 133.9489,-15.5001"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M124.3183,-12C132.615,-12 141.1788,-12 149.628,-12"/>
+<polygon fill="#000000" stroke="#000000" points="149.8518,-15.5001 159.8518,-12 149.8517,-8.5001 149.8518,-15.5001"/>
 </g>
 </g>
 </svg>
@@ -721,14 +697,14 @@ module procedure construct_diffstarlorene <small>module module function construc
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

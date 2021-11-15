@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>particles &ndash; SPHINCS_LORENE </title>
+    <title>particles &ndash; SPHINCS_ID </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -144,7 +144,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>19.2% of total for derived types.</p>Including implementation: 256 statements, 32.5% of total for derived types.">112 statements</a>
+    title="<p>18.1% of total for derived types.</p>Including implementation: 248 statements, 31.4% of total for derived types.">106 statements</a>
      </li> 
      
      
@@ -205,7 +205,7 @@
       
       <a class="list-group-item" href="../type/particles.html#variable-baryon_density_parts">baryon_density_parts</a>
       
-      <a class="list-group-item" href="../type/particles.html#variable-call_flag~2">call_flag</a>
+      <a class="list-group-item" href="../type/particles.html#variable-call_flag">call_flag</a>
       
       <a class="list-group-item" href="../type/particles.html#variable-compose_eos">compose_eos</a>
       
@@ -253,7 +253,7 @@
       
       <a class="list-group-item" href="../type/particles.html#variable-masses">masses</a>
       
-      <a class="list-group-item" href="../type/particles.html#variable-n_matter">n_matter</a>
+      <a class="list-group-item" href="../type/particles.html#variable-n_matter~2">n_matter</a>
       
       <a class="list-group-item" href="../type/particles.html#variable-nb_table">nb_table</a>
       
@@ -275,7 +275,7 @@
       
       <a class="list-group-item" href="../type/particles.html#variable-nu">nu</a>
       
-      <a class="list-group-item" href="../type/particles.html#variable-nu_ratio">nu_ratio</a>
+      <a class="list-group-item" href="../type/particles.html#variable-nu_ratio_des">nu_ratio_des</a>
       
       <a class="list-group-item" href="../type/particles.html#variable-nuratio">nuratio</a>
       
@@ -295,21 +295,9 @@
       
       <a class="list-group-item" href="../type/particles.html#variable-pos_x2">pos_x2</a>
       
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_length_scale_x1">pressure_length_scale_x1</a>
-      
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_length_scale_x2">pressure_length_scale_x2</a>
-      
       <a class="list-group-item" href="../type/particles.html#variable-pressure_parts">pressure_parts</a>
       
       <a class="list-group-item" href="../type/particles.html#variable-pressure_parts_cu">pressure_parts_cu</a>
-      
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_parts_x1">pressure_parts_x1</a>
-      
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_parts_x2">pressure_parts_x2</a>
-      
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_parts_x_der1">pressure_parts_x_der1</a>
-      
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_parts_x_der2">pressure_parts_x_der2</a>
       
       <a class="list-group-item" href="../type/particles.html#variable-pvol">pvol</a>
       
@@ -413,17 +401,13 @@
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-get_npart">get_npart</a>
       
-      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_npart1">get_npart1</a>
-      
-      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_npart2">get_npart2</a>
+      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_npart_i">get_npart_i</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-get_nu">get_nu</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-get_nuratio">get_nuratio</a>
       
-      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_nuratio1">get_nuratio1</a>
-      
-      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_nuratio2">get_nuratio2</a>
+      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_nuratio_i">get_nuratio_i</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-get_pos">get_pos</a>
       
@@ -437,6 +421,8 @@
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-get_vel">get_vel</a>
       
+      <a class="list-group-item" href="../type/particles.html#boundprocedure-impose_equatorial_plane_symmetry">impose_equatorial_plane_symmetry</a>
+      
       <a class="list-group-item" href="../type/particles.html#boundprocedure-is_empty">is_empty</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-perform_apm">perform_apm</a>
@@ -446,6 +432,8 @@
       <a class="list-group-item" href="../type/particles.html#boundprocedure-place_particles_spherical_surfaces">place_particles_spherical_surfaces</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-print_formatted_lorene_id_particles">print_formatted_lorene_id_particles</a>
+      
+      <a class="list-group-item" href="../type/particles.html#boundprocedure-print_summary">print_summary</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-read_compose_composition">read_compose_composition</a>
       
@@ -473,7 +461,7 @@
     
     <div class="col-md-9" id='text'>
       <h2>type, public :: particles</h2>
-    <p>TYPE representing a particle distribution</p>
+    <p>TYPE representing a \(\mathrm{SPH}\) particle distribution</p>
     <br>
     
     <div class="panel panel-default">
@@ -498,34 +486,34 @@
 <polygon fill="none" stroke="#000000" points="507,-45 453,-45 453,-21 507,-21 507,-45"/>
 <text text-anchor="middle" x="480" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">particles</text>
 </g>
-<!-- type~eos -->
+<!-- timer -->
 <g id="type~~particles~~InheritsGraph_node2" class="node">
-<title>type~eos</title>
-<g id="a_type~~particles~~InheritsGraph_node2"><a xlink:href=".././type/eos.html" xlink:title="eos">
+<title>timer</title>
 <polygon fill="#5cb85c" stroke="#5cb85c" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
-<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">eos</text>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
+</g>
+<!-- type~particles&#45;&gt;timer -->
+<g id="type~~particles~~InheritsGraph_edge2" class="edge">
+<title>type~particles&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M452.683,-34.2664C375.0211,-37.8666 152.8608,-48.1654 64.1982,-52.2756"/>
+<polygon fill="#000000" stroke="#000000" points="63.8933,-48.7859 54.0662,-52.7453 64.2176,-55.7783 63.8933,-48.7859"/>
+<text text-anchor="middle" x="253.5" y="-53.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">placer_timer, same_particle_timer, apm_timers, importer_timer, sph_computer_timer</text>
+</g>
+<!-- type~eos -->
+<g id="type~~particles~~InheritsGraph_node3" class="node">
+<title>type~eos</title>
+<g id="a_type~~particles~~InheritsGraph_node3"><a xlink:href=".././type/eos.html" xlink:title="eos">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">eos</text>
 </a>
 </g>
 </g>
 <!-- type~particles&#45;&gt;type~eos -->
 <g id="type~~particles~~InheritsGraph_edge1" class="edge">
 <title>type~particles&#45;&gt;type~eos</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M452.683,-34.2664C375.0211,-37.8666 152.8608,-48.1654 64.1982,-52.2756"/>
-<polygon fill="#000000" stroke="#000000" points="63.8933,-48.7859 54.0662,-52.7453 64.2176,-55.7783 63.8933,-48.7859"/>
-<text text-anchor="middle" x="253.5" y="-53.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">all_eos</text>
-</g>
-<!-- timer -->
-<g id="type~~particles~~InheritsGraph_node3" class="node">
-<title>timer</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
-<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
-</g>
-<!-- type~particles&#45;&gt;timer -->
-<g id="type~~particles~~InheritsGraph_edge2" class="edge">
-<title>type~particles&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M452.6088,-24.5846C446.8446,-23.128 440.7635,-21.82 435,-21 299.8937,-1.7774 137.127,-6.3858 64.8056,-9.8465"/>
-<polygon fill="#000000" stroke="#000000" points="64.2115,-6.3718 54.3989,-10.367 64.5613,-13.363 64.2115,-6.3718"/>
-<text text-anchor="middle" x="253.5" y="-23.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">placer_timer, same_particle_timer, apm_timers, importer_timer, sph_computer_timer</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M452.5726,-25.3032C446.811,-23.9667 440.7401,-22.7629 435,-22 299.7148,-4.0208 137.0384,-7.4355 64.7727,-10.2288"/>
+<polygon fill="#000000" stroke="#000000" points="64.2239,-6.7481 54.3742,-10.6511 64.508,-13.7423 64.2239,-6.7481"/>
+<text text-anchor="middle" x="253.5" y="-24.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">all_eos</text>
 </g>
 </g>
 </svg>
@@ -598,7 +586,7 @@
       
       <a class="list-group-item" href="../type/particles.html#variable-baryon_density_parts">baryon_density_parts</a>
       
-      <a class="list-group-item" href="../type/particles.html#variable-call_flag~2">call_flag</a>
+      <a class="list-group-item" href="../type/particles.html#variable-call_flag">call_flag</a>
       
       <a class="list-group-item" href="../type/particles.html#variable-compose_eos">compose_eos</a>
       
@@ -646,7 +634,7 @@
       
       <a class="list-group-item" href="../type/particles.html#variable-masses">masses</a>
       
-      <a class="list-group-item" href="../type/particles.html#variable-n_matter">n_matter</a>
+      <a class="list-group-item" href="../type/particles.html#variable-n_matter~2">n_matter</a>
       
       <a class="list-group-item" href="../type/particles.html#variable-nb_table">nb_table</a>
       
@@ -668,7 +656,7 @@
       
       <a class="list-group-item" href="../type/particles.html#variable-nu">nu</a>
       
-      <a class="list-group-item" href="../type/particles.html#variable-nu_ratio">nu_ratio</a>
+      <a class="list-group-item" href="../type/particles.html#variable-nu_ratio_des">nu_ratio_des</a>
       
       <a class="list-group-item" href="../type/particles.html#variable-nuratio">nuratio</a>
       
@@ -688,21 +676,9 @@
       
       <a class="list-group-item" href="../type/particles.html#variable-pos_x2">pos_x2</a>
       
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_length_scale_x1">pressure_length_scale_x1</a>
-      
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_length_scale_x2">pressure_length_scale_x2</a>
-      
       <a class="list-group-item" href="../type/particles.html#variable-pressure_parts">pressure_parts</a>
       
       <a class="list-group-item" href="../type/particles.html#variable-pressure_parts_cu">pressure_parts_cu</a>
-      
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_parts_x1">pressure_parts_x1</a>
-      
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_parts_x2">pressure_parts_x2</a>
-      
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_parts_x_der1">pressure_parts_x_der1</a>
-      
-      <a class="list-group-item" href="../type/particles.html#variable-pressure_parts_x_der2">pressure_parts_x_der2</a>
       
       <a class="list-group-item" href="../type/particles.html#variable-pvol">pvol</a>
       
@@ -806,17 +782,13 @@
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-get_npart">get_npart</a>
       
-      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_npart1">get_npart1</a>
-      
-      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_npart2">get_npart2</a>
+      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_npart_i">get_npart_i</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-get_nu">get_nu</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-get_nuratio">get_nuratio</a>
       
-      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_nuratio1">get_nuratio1</a>
-      
-      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_nuratio2">get_nuratio2</a>
+      <a class="list-group-item" href="../type/particles.html#boundprocedure-get_nuratio_i">get_nuratio_i</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-get_pos">get_pos</a>
       
@@ -830,6 +802,8 @@
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-get_vel">get_vel</a>
       
+      <a class="list-group-item" href="../type/particles.html#boundprocedure-impose_equatorial_plane_symmetry">impose_equatorial_plane_symmetry</a>
+      
       <a class="list-group-item" href="../type/particles.html#boundprocedure-is_empty">is_empty</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-perform_apm">perform_apm</a>
@@ -839,6 +813,8 @@
       <a class="list-group-item" href="../type/particles.html#boundprocedure-place_particles_spherical_surfaces">place_particles_spherical_surfaces</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-print_formatted_lorene_id_particles">print_formatted_lorene_id_particles</a>
+      
+      <a class="list-group-item" href="../type/particles.html#boundprocedure-print_summary">print_summary</a>
       
       <a class="list-group-item" href="../type/particles.html#boundprocedure-read_compose_composition">read_compose_composition</a>
       
@@ -928,8 +904,7 @@
   
   <td>private,</td>
   <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>all_eos</strong></td><td></td><td></td><td><p>String containing the \(\texttt{LORENE}\) name of the EOS for star 1
-String containing the \(\texttt{LORENE}\) name of the EOS for star 2</p></td>
+  <td><strong>all_eos</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1001,11 +976,12 @@ String containing the \(\texttt{LORENE}\) name of the EOS for star 2</p></td>
   
 <tr>
   
-  <td><span class="anchor" id="variable-call_flag~2"></span>integer,</td>
+  <td><span class="anchor" id="variable-call_flag"></span>integer,</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>call_flag</strong></td><td> =</td><td>0</td><td></td>
+  <td><strong>call_flag</strong></td><td> =</td><td>0</td><td><p>Flag that is set different than 0 if the SUBROUTINE
+ compute_and_export_SPH_variables is called</p></td>
   
 </tr>
 
@@ -1050,7 +1026,8 @@ String containing the \(\texttt{LORENE}\) name of the EOS for star 2</p></td>
   
   <td>private,</td>
   <td>ALLOCATABLE</td><td>::</td>
-  <td><strong>compose_path</strong></td><td></td><td></td><td><p>String storing the local path to the directory containing the CompOSE EOS</p></td>
+  <td><strong>compose_path</strong></td><td></td><td></td><td><p>String storing the local path to the directory containing the
+ CompOSE \(\mathrm{EOS}\)</p></td>
   
 </tr>
 
@@ -1079,9 +1056,7 @@ String containing the \(\texttt{LORENE}\) name of the EOS for star 2</p></td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>distribution_id</strong></td><td></td><td></td><td><p>Identification number for the particle distribution</p>
-<p>\(\texttt{LORENE}\) identification number for the EOS of star 1</p>
-<p>\(\texttt{LORENE}\) identification number for the EOS of star 1</p></td>
+  <td><strong>distribution_id</strong></td><td></td><td></td><td><p>Identification number for the particle distribution</p></td>
   
 </tr>
 
@@ -1302,11 +1277,7 @@ String containing the \(\texttt{LORENE}\) name of the EOS for star 2</p></td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>lorene_bns_id_parfile</strong></td><td></td><td></td><td><p>Polytropic index for single polytropic EOS for star 1
-Polytropic constant for single polytropic EOS for star 1 </p><div class="alert alert-success" role="alert"><h4>Todo</h4><p>add units
-Polytropic index for single polytropic EOS for star 2
-Polytropic constant for single polytropic EOS for star 2 @todo add units
-String containing the name of the particles parameter file</p></div></td>
+  <td><strong>lorene_bns_id_parfile</strong></td><td></td><td></td><td><p>String containing the name of the particles parameter file</p></td>
   
 </tr>
 
@@ -1320,7 +1291,8 @@ String containing the name of the particles parameter file</p></div></td>
   
   <td>private,</td>
   <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>mass_fractions</strong></td><td></td><td></td><td></td>
+  <td><strong>mass_fractions</strong></td><td></td><td></td><td><p>Ratio between baryonic masses of the matter objects and the total
+ baryonic mass of all the matter objects </p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>always <script type="math/tex">< 1</script></p></div></td>
   
 </tr>
 
@@ -1334,8 +1306,8 @@ String containing the name of the particles parameter file</p></div></td>
   
   <td>private,</td>
   <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>mass_ratios</strong></td><td></td><td></td><td><p>Ratio of baryonic masses of the stars <script type="math/tex">M_\odot</script>
- </p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>always <script type="math/tex">< 1</script></p></div></td>
+  <td><strong>mass_ratios</strong></td><td></td><td></td><td><p>Ratio between baryonic masses of the matter objects and the maximum
+ baryonic mass among them </p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>always <script type="math/tex">< 1</script></p></div></td>
   
 </tr>
 
@@ -1360,11 +1332,11 @@ String containing the name of the particles parameter file</p></div></td>
   
 <tr>
   
-  <td><span class="anchor" id="variable-n_matter"></span>integer,</td>
+  <td><span class="anchor" id="variable-n_matter~2"></span>integer,</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>n_matter</strong></td><td></td><td></td><td><p>Particle number for star 1</p></td>
+  <td><strong>n_matter</strong></td><td></td><td></td><td><p>Number of matter objects in the physical system</p></td>
   
 </tr>
 
@@ -1393,7 +1365,7 @@ String containing the name of the particles parameter file</p></div></td>
   
   <td>private,</td>
   <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>nbar_i</strong></td><td></td><td></td><td><p>Baryon number on star 1</p></td>
+  <td><strong>nbar_i</strong></td><td></td><td></td><td><p>Baryon numbers of the matter objects</p></td>
   
 </tr>
 
@@ -1453,9 +1425,7 @@ String containing the name of the particles parameter file</p></div></td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>npart</strong></td><td></td><td></td><td><p>Total particle number</p>
-<p>Particle number for star 1</p>
-<p>Particle number for star 1</p></td>
+  <td><strong>npart</strong></td><td></td><td></td><td><p>Total particle number</p></td>
   
 </tr>
 
@@ -1469,7 +1439,7 @@ String containing the name of the particles parameter file</p></div></td>
   
   <td>private,</td>
   <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>npart_i</strong></td><td></td><td></td><td><p>Particle number for star 2</p></td>
+  <td><strong>npart_i</strong></td><td></td><td></td><td><p>Array storing the particle numbers for the matter objects</p></td>
   
 </tr>
 
@@ -1525,13 +1495,13 @@ String containing the name of the particles parameter file</p></div></td>
   
 <tr>
   
-  <td><span class="anchor" id="variable-nu_ratio"></span>double precision,</td>
+  <td><span class="anchor" id="variable-nu_ratio_des"></span>double precision,</td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>nu_ratio</strong></td><td></td><td></td><td><p>Total grid volume
-Volume per particle
-Ratio between the max and min of the baryon number per particle</p></td>
+  <td><strong>nu_ratio_des</strong></td><td></td><td></td><td><p>Desired ratio between the max and min of the baryon number per particle,
+ over all the matter objects. <strong>Only used when redistribute_nu is .TRUE.</strong>
+ </p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Almost deprecated</p></div></td>
   
 </tr>
 
@@ -1545,8 +1515,8 @@ Ratio between the max and min of the baryon number per particle</p></td>
   
   <td>private</td>
   <td></td><td>::</td>
-  <td><strong>nuratio</strong></td><td></td><td></td><td><p>Baryon number on star 2
-Baryon number ratio on both stars</p></td>
+  <td><strong>nuratio</strong></td><td></td><td></td><td><p>Ratio between the max and min of the baryon number per particle, over
+ all the matter objects</p></td>
   
 </tr>
 
@@ -1560,8 +1530,7 @@ Baryon number ratio on both stars</p></td>
   
   <td>private,</td>
   <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>nuratio_i</strong></td><td></td><td></td><td><p>Baryon number ratio on star 1
-Baryon number ratio on star 2</p></td>
+  <td><strong>nuratio_i</strong></td><td></td><td></td><td><p>Baryon number ratios on the matter objects</p></td>
   
 </tr>
 
@@ -1674,34 +1643,6 @@ Baryon number ratio on star 2</p></td>
   
 <tr>
   
-  <td><span class="anchor" id="variable-pressure_length_scale_x1"></span>double precision,</td>
-  
-  <td>private,</td>
-  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>pressure_length_scale_x1</strong></td><td></td><td></td><td><p>1-D array storing the typical length scale for the pressure change</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-pressure_length_scale_x2"></span>double precision,</td>
-  
-  <td>private,</td>
-  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>pressure_length_scale_x2</strong></td><td></td><td></td><td><p>1-D array storing the typical length scale for the pressure change</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
   <td><span class="anchor" id="variable-pressure_parts"></span>double precision,</td>
   
   <td>private,</td>
@@ -1721,69 +1662,23 @@ Baryon number ratio on star 2</p></td>
   
   <td>private,</td>
   <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>pressure_parts_cu</strong></td><td></td><td></td><td><p>1-D array storing the pressure in code units
- <script type="math/tex">[\mathrm{amu}\,c^2\,\mathrm{L_\odot}^{-3}]</script>
+  <td><strong>pressure_parts_cu</strong></td><td></td><td></td><td><p>1-D array storing the pressure on the x axis
+  <script type="math/tex">[\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]</script> for NS 1
+DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x1
+ 1-D array storing the pressure on the x axis
+  <script type="math/tex">[\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]</script> for NS 2
+DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x2
+ 1-D array storing the first derivative of the pressure
+  along the x axis <script type="math/tex">[\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]</script> for NS 1
+DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x_der1
+ 1-D array storing the first derivative of the pressure
+  along the x axis <script type="math/tex">[\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]</script> for NS2
+DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x_der2
+ 1-D array storing the typical length scale for the pressure change
+ 1-D array storing the typical length scale for the pressure change
+ 1-D array storing the pressure in code units
+  <script type="math/tex">[\mathrm{amu}\,c^2\,\mathrm{L_\odot}^{-3}]</script>
 </p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-pressure_parts_x1"></span>double precision,</td>
-  
-  <td>private,</td>
-  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>pressure_parts_x1</strong></td><td></td><td></td><td><p>1-D array storing the pressure on the x axis
- <script type="math/tex">[\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]</script> for NS 1</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-pressure_parts_x2"></span>double precision,</td>
-  
-  <td>private,</td>
-  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>pressure_parts_x2</strong></td><td></td><td></td><td><p>1-D array storing the pressure on the x axis
- <script type="math/tex">[\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]</script> for NS 2</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-pressure_parts_x_der1"></span>double precision,</td>
-  
-  <td>private,</td>
-  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>pressure_parts_x_der1</strong></td><td></td><td></td><td><p>1-D array storing the first derivative of the pressure
- along the x axis <script type="math/tex">[\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]</script> for NS 1</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-pressure_parts_x_der2"></span>double precision,</td>
-  
-  <td>private,</td>
-  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>pressure_parts_x_der2</strong></td><td></td><td></td><td><p>1-D array storing the first derivative of the pressure
- along the x axis <script type="math/tex">[\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]</script> for NS2</p></td>
   
 </tr>
 
@@ -2656,7 +2551,7 @@ public module module subroutine deallocate_lorene_id_parts_memory(THIS)
           
     
     <h3>
-public module module function get_h(THIS) result(h)
+public pure module module function get_h(THIS) result(h)
     
     
    
@@ -2689,7 +2584,7 @@ public module module function get_h(THIS) result(h)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -2747,7 +2642,7 @@ public module module function get_h(THIS) result(h)
           
     
     <h3>
-public module module function get_nlrf(THIS) result(nlrf)
+public pure module module function get_nlrf(THIS) result(nlrf)
     
     
    
@@ -2780,7 +2675,7 @@ public module module function get_nlrf(THIS) result(nlrf)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -2838,7 +2733,7 @@ public module module function get_nlrf(THIS) result(nlrf)
           
     
     <h3>
-public module module function get_npart(THIS) result(n_part)
+public pure module module function get_npart(THIS) result(n_part)
     
     
    
@@ -2871,7 +2766,7 @@ public module module function get_npart(THIS) result(n_part)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -2905,7 +2800,7 @@ public module module function get_npart(THIS) result(n_part)
     
      
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_npart1"></span><h3>procedure, public :: <strong>get_npart1</strong>  
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_npart_i"></span><h3>procedure, public :: <strong>get_npart_i</strong>  
     
   </h3></div>
   
@@ -2913,7 +2808,7 @@ public module module function get_npart(THIS) result(n_part)
     
 
 
-    <p>Returns <a href="../type/particles.html">particles</a></p>
+    <p>Returns the number of particles on the object <code>i_matter</code></p>
   </div>
   
   <ul class="list-group">
@@ -2929,18 +2824,18 @@ public module module function get_npart(THIS) result(n_part)
           
     
     <h3>
-public module module function get_npart1(THIS) result(n_part)
+public pure module module function get_npart_i(THIS, i_matter) result(n_part)
     
     
    
-   <a href='../proc/get_npart1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+   <a href='../proc/get_npart_i.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
     
 </h3>
     
 
 
 
-<p>Returns <a href="../type/particles.html">particles</a></p>
+<p>Returns the number of particles on the object <code>i_matter</code></p>
     
     <h4>Arguments</h4>
     
@@ -2962,89 +2857,13 @@ public module module function get_npart1(THIS) result(n_part)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
   <td><strong>THIS</strong></td><td><p><a href="../type/particles.html">particles</a> object which this PROCEDURE is a member of</p></td>
   
 </tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>integer
-  </small></h4>
-  <p><a href="../type/particles.html">particles</a></p>
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_npart2"></span><h3>procedure, public :: <strong>get_npart2</strong>  
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-
-
-    <p>Returns <a href="../type/particles.html">particles</a></p>
-  </div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          <h3>interface
-          
-          </h3>
-  
-          
-          
-    
-    <h3>
-public module module function get_npart2(THIS) result(n_part)
-    
-    
-   
-   <a href='../proc/get_npart2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-    
-</h3>
-    
-
-
-
-<p>Returns <a href="../type/particles.html">particles</a></p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
 
   
   
@@ -3052,12 +2871,12 @@ public module module function get_npart2(THIS) result(n_part)
   
 <tr>
   
-  <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/particles.html">particles</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object</p></td>
   
 </tr>
 
@@ -3074,7 +2893,7 @@ public module module function get_npart2(THIS) result(n_part)
   
      <h4>Return Value <small>integer
   </small></h4>
-  <p><a href="../type/particles.html">particles</a></p>
+  <p>Number of particles on the object <code>i_matter</code></p>
     
 
         
@@ -3111,7 +2930,7 @@ public module module function get_npart2(THIS) result(n_part)
           
     
     <h3>
-public module module function get_nu(THIS) result(nu)
+public pure module module function get_nu(THIS) result(nu)
     
     
    
@@ -3144,7 +2963,7 @@ public module module function get_nu(THIS) result(nu)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -3202,7 +3021,7 @@ public module module function get_nu(THIS) result(nu)
           
     
     <h3>
-public module module function get_nuratio(THIS) result(nuratio)
+public pure module module function get_nuratio(THIS) result(nuratio)
     
     
    
@@ -3235,7 +3054,7 @@ public module module function get_nuratio(THIS) result(nuratio)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -3269,7 +3088,7 @@ public module module function get_nuratio(THIS) result(nuratio)
     
      
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_nuratio1"></span><h3>procedure, public :: <strong>get_nuratio1</strong>  
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_nuratio_i"></span><h3>procedure, public :: <strong>get_nuratio_i</strong>  
     
   </h3></div>
   
@@ -3277,7 +3096,7 @@ public module module function get_nuratio(THIS) result(nuratio)
     
 
 
-    <p>Returns <a href="../type/particles.html">particles</a></p>
+    <p>Returns the baryon number ratio on the object <code>i_matter</code></p>
   </div>
   
   <ul class="list-group">
@@ -3293,18 +3112,18 @@ public module module function get_nuratio(THIS) result(nuratio)
           
     
     <h3>
-public module module function get_nuratio1(THIS) result(nuratio1)
+public pure module module function get_nuratio_i(THIS, i_matter) result(nuratio)
     
     
    
-   <a href='../proc/get_nuratio1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+   <a href='../proc/get_nuratio_i.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
     
 </h3>
     
 
 
 
-<p>Returns <a href="../type/particles.html">particles</a></p>
+<p>Returns the baryon number ratio on the object <code>i_matter</code></p>
     
     <h4>Arguments</h4>
     
@@ -3326,89 +3145,13 @@ public module module function get_nuratio1(THIS) result(nuratio1)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
   <td><strong>THIS</strong></td><td><p><a href="../type/particles.html">particles</a> object which this PROCEDURE is a member of</p></td>
   
 </tr>
-
-</tbody>
-</table>
-
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>double precision
-  </small></h4>
-  <p><a href="../type/particles.html">particles</a></p>
-    
-
-        
-      
-      </li>
-    
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_nuratio2"></span><h3>procedure, public :: <strong>get_nuratio2</strong>  
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-
-
-    <p>Returns <a href="../type/particles.html">particles</a></p>
-  </div>
-  
-  <ul class="list-group">
-    
-      <li class="list-group-item">
-      
-        
-          <h3>interface
-          
-          </h3>
-  
-          
-          
-    
-    <h3>
-public module module function get_nuratio2(THIS) result(nuratio2)
-    
-    
-   
-   <a href='../proc/get_nuratio2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
-    
-</h3>
-    
-
-
-
-<p>Returns <a href="../type/particles.html">particles</a></p>
-    
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
-<tbody>
 
   
   
@@ -3416,12 +3159,12 @@ public module module function get_nuratio2(THIS) result(nuratio2)
   
 <tr>
   
-  <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/particles.html">particles</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>i_matter</strong></td><td><p>Index of the matter object</p></td>
   
 </tr>
 
@@ -3436,9 +3179,9 @@ public module module function get_nuratio2(THIS) result(nuratio2)
   
   
   
-     <h4>Return Value <small>double precision
+     <h4>Return Value <small>integer
   </small></h4>
-  <p><a href="../type/particles.html">particles</a></p>
+  <p>Baryon number ratio on the object <code>i_matter</code></p>
     
 
         
@@ -3475,7 +3218,7 @@ public module module function get_nuratio2(THIS) result(nuratio2)
           
     
     <h3>
-public module module function get_pos(THIS) result(pos_u)
+public pure module module function get_pos(THIS) result(pos_u)
     
     
    
@@ -3508,7 +3251,7 @@ public module module function get_pos(THIS) result(pos_u)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -3566,7 +3309,7 @@ public module module function get_pos(THIS) result(pos_u)
           
     
     <h3>
-public module module function get_pressure(THIS) result(pressure)
+public pure module module function get_pressure(THIS) result(pressure)
     
     
    
@@ -3599,7 +3342,7 @@ public module module function get_pressure(THIS) result(pressure)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -3657,7 +3400,7 @@ public module module function get_pressure(THIS) result(pressure)
           
     
     <h3>
-public module module function get_pressure_cu(THIS) result(pressure_cu)
+public pure module module function get_pressure_cu(THIS) result(pressure_cu)
     
     
    
@@ -3690,7 +3433,7 @@ public module module function get_pressure_cu(THIS) result(pressure_cu)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -3748,7 +3491,7 @@ public module module function get_pressure_cu(THIS) result(pressure_cu)
           
     
     <h3>
-public module module function get_theta(THIS) result(theta)
+public pure module module function get_theta(THIS) result(theta)
     
     
    
@@ -3781,7 +3524,7 @@ public module module function get_theta(THIS) result(theta)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -3839,7 +3582,7 @@ public module module function get_theta(THIS) result(theta)
           
     
     <h3>
-public module module function get_u(THIS) result(u)
+public pure module module function get_u(THIS) result(u)
     
     
    
@@ -3872,7 +3615,7 @@ public module module function get_u(THIS) result(u)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -3930,7 +3673,7 @@ public module module function get_u(THIS) result(u)
           
     
     <h3>
-public module module function get_vel(THIS) result(vel)
+public pure module module function get_vel(THIS) result(vel)
     
     
    
@@ -3963,7 +3706,7 @@ public module module function get_vel(THIS) result(vel)
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
-  <td>intent(inout)</td>
+  <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -3985,6 +3728,150 @@ public module module function get_vel(THIS) result(vel)
      <h4>Return Value <small>double precision,
   DIMENSION(:,:), ALLOCATABLE</small></h4>
   <p><a href="../type/particles.html#variable-v">v</a></p>
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-impose_equatorial_plane_symmetry"></span><h3>procedure, public, NOPASS :: <strong>impose_equatorial_plane_symmetry</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p>Reflects the positions of the particles on a matter object with respect
+ to the <script type="math/tex">xy</script> plane</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine impose_equatorial_plane_symmetry(npart, pos, nu, com_star, verbose)
+    
+    
+   
+   <a href='../proc/impose_equatorial_plane_symmetry.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Mirror the particle with z&gt;0 with respect to the xy plane,
+ to impose the equatorial-plane symmetry</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer,</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>npart</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td></td>
+  
+  <td>DIMENSION(3,npart)</td><td>::</td>
+  <td><strong>pos</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>nu</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>double precision,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>com_star</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>verbose</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
     
 
         
@@ -4764,7 +4651,6 @@ subroutine get_nstar_p(npart_real, x, y, z, nstar_p)
 
 
     <p>Places particles on a single lattice that surrounds both stars</p>
-<p>Places particles on two lattices, each one surrounding one star</p>
   </div>
   
   <ul class="list-group">
@@ -6050,6 +5936,105 @@ public module module subroutine print_formatted_lorene_id_particles(THIS, namefi
     
      
 <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_summary"></span><h3>procedure, public :: <strong>print_summary</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p>Prints the SPH ID to a formatted file</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine print_summary(THIS, filename)
+    
+    
+   
+   <a href='../proc/print_summary~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Prints a summary of the properties of the \(\mathrm{SPH}\) particle
+ distribution, optionally, to a formatted file whose name
+ is given as the optional argument <code>filename</code></p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>filename</strong></td><td><p>Name of the formatted file to print the summary to</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-read_compose_composition"></span><h3>procedure, public :: <strong>read_compose_composition</strong>  
     
   </h3></div>
@@ -6268,7 +6253,7 @@ public module module subroutine read_sphincs_dump_print_formatted(THIS, namefile
     <section>
     <h3><span class="anchor" id="src"></span>Source Code</h3>
     <div class="highlight"><pre><span></span>  <span class="k">TYPE</span><span class="kd">::</span> <span class="n">particles</span>
-  <span class="c">!! TYPE representing a particle distribution</span>
+  <span class="c">!! TYPE representing a |sph| particle distribution</span>
 
 
     <span class="k">PRIVATE</span>
@@ -6276,23 +6261,15 @@ public module module subroutine read_sphincs_dump_print_formatted(THIS, namefile
 
 <span class="k">    </span><span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">npart</span>
     <span class="c">!! Total particle number</span>
-    <span class="c">!INTEGER:: npart1</span>
-    <span class="c">!! Particle number for star 1</span>
-    <span class="c">!INTEGER:: npart2</span>
-    <span class="c">!! Particle number for star 1</span>
     <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">n_matter</span>
-    <span class="c">!! Particle number for star 1</span>
+    <span class="c">!! Number of matter objects in the physical system</span>
     <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">npart_i</span>
-    <span class="c">!! Particle number for star 2</span>
+    <span class="c">!! Array storing the particle numbers for the matter objects</span>
     <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">distribution_id</span>
     <span class="c">!! Identification number for the particle distribution</span>
-  <span class="c">!  INTEGER:: eos1_id</span>
-    <span class="c">!! |lorene| identification number for the EOS of star 1</span>
-  <span class="c">!  INTEGER:: eos2_id</span>
-    <span class="c">!! |lorene| identification number for the EOS of star 1</span>
     <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">call_flag</span><span class="o">=</span> <span class="mi">0</span>
-    <span class="c">! Flag that is set different than 0 if the SUBROUTINE</span>
-    <span class="c">! compute_and_export_SPH_variables is called</span>
+    <span class="c">!# Flag that is set different than 0 if the SUBROUTINE</span>
+    <span class="c">!  compute_and_export_SPH_variables is called</span>
 
     <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">baryon_density_index</span>
     <span class="c">!# Array storing the indices to use with [[particles:baryon_density_parts]]</span>
@@ -6325,20 +6302,20 @@ public module module subroutine read_sphincs_dump_print_formatted(THIS, namefile
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">pressure_parts</span>
     <span class="c">!&amp; 1-D array storing the pressure on the x axis</span>
     <span class="c">!  \([\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]\) for NS 1</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">pressure_parts_x1</span>
+    <span class="c">!DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x1</span>
     <span class="c">!&amp; 1-D array storing the pressure on the x axis</span>
     <span class="c">!  \([\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]\) for NS 2</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">pressure_parts_x2</span>
+    <span class="c">!DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x2</span>
     <span class="c">!&amp; 1-D array storing the first derivative of the pressure</span>
     <span class="c">!  along the x axis \([\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]\) for NS 1</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">pressure_parts_x_der1</span>
+    <span class="c">!DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x_der1</span>
     <span class="c">!&amp; 1-D array storing the first derivative of the pressure</span>
     <span class="c">!  along the x axis \([\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]\) for NS2</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">pressure_parts_x_der2</span>
+    <span class="c">!DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x_der2</span>
     <span class="c">!&gt; 1-D array storing the typical length scale for the pressure change</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">pressure_length_scale_x1</span>
+    <span class="c">!DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_length_scale_x1</span>
     <span class="c">!&gt; 1-D array storing the typical length scale for the pressure change</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">pressure_length_scale_x2</span>
+    <span class="c">!DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_length_scale_x2</span>
     <span class="c">!&amp; 1-D array storing the pressure in code units</span>
     <span class="c">!  \([\mathrm{amu}\,c^2\,\mathrm{L_\odot}^{-3}]\)</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">pressure_parts_cu</span>
@@ -6438,38 +6415,25 @@ public module module subroutine read_sphincs_dump_print_formatted(THIS, namefile
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">pmass</span>
     <span class="c">!&gt; Baryonic masses of the matter objects \(M_\odot\)</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">masses</span>
-    <span class="c">!&amp; Ratio of baryonic masses of the stars \(M_\odot\)</span>
-    <span class="c">!  @warning always \(&lt; 1\)</span>
+    <span class="c">!&amp; Ratio between baryonic masses of the matter objects and the maximum</span>
+    <span class="c">!  baryonic mass among them @warning always \(&lt; 1\)</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">mass_ratios</span>
+    <span class="c">!&amp; Ratio between baryonic masses of the matter objects and the total</span>
+    <span class="c">!  baryonic mass of all the matter objects @warning always \(&lt; 1\)</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">mass_fractions</span>
-    <span class="c">!&gt; Total grid volume</span>
-    <span class="c">!DOUBLE PRECISION:: vol, vol1, vol2</span>
-    <span class="c">!&gt; Volume per particle</span>
-    <span class="c">!DOUBLE PRECISION:: vol_a, vol1_a, vol2_a</span>
-    <span class="c">!&gt; Ratio between the max and min of the baryon number per particle</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">nu_ratio</span>
     <span class="c">!&gt; Total baryon number</span>
     <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">nbar_tot</span>
-    <span class="c">!&gt; Baryon number on star 1</span>
-    <span class="c">!DOUBLE PRECISION:: nbar1</span>
+    <span class="c">!&gt; Baryon numbers of the matter objects</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">nbar_i</span>
-    <span class="c">!&gt; Baryon number on star 2</span>
-    <span class="c">!DOUBLE PRECISION:: nbar2</span>
-    <span class="c">!&gt; Baryon number ratio on both stars</span>
+    <span class="c">!&amp; Ratio between the max and min of the baryon number per particle, over</span>
+    <span class="c">!  all the matter objects</span>
     <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">nuratio</span>
-    <span class="c">!&gt; Baryon number ratio on star 1</span>
-    <span class="c">!DOUBLE PRECISION:: nuratio1</span>
-    <span class="c">!&gt; Baryon number ratio on star 2</span>
-    <span class="c">!DOUBLE PRECISION:: nuratio2</span>
+    <span class="c">!&amp; Desired ratio between the max and min of the baryon number per particle,</span>
+    <span class="c">!  over all the matter objects. **Only used when redistribute_nu is .TRUE.**</span>
+    <span class="c">!  @warning Almost deprecated</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">nu_ratio_des</span>
+    <span class="c">!&gt; Baryon number ratios on the matter objects</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">nuratio_i</span>
-    <span class="c">!&gt; Polytropic index for single polytropic EOS for star 1</span>
-    <span class="c">!DOUBLE PRECISION:: gamma_sp1= 0.0D0</span>
-    <span class="c">!&gt; Polytropic constant for single polytropic EOS for star 1 @todo add units</span>
-    <span class="c">!DOUBLE PRECISION:: kappa_sp1= 0.0D0</span>
-    <span class="c">!&gt; Polytropic index for single polytropic EOS for star 2</span>
-    <span class="c">!DOUBLE PRECISION:: gamma_sp2= 0.0D0</span>
-    <span class="c">!&gt; Polytropic constant for single polytropic EOS for star 2 @todo add units</span>
-    <span class="c">!DOUBLE PRECISION:: kappa_sp2= 0.0D0</span>
 
     <span class="c">!</span>
     <span class="c">!-- Strings</span>
@@ -6478,16 +6442,16 @@ public module module subroutine read_sphincs_dump_print_formatted(THIS, namefile
     <span class="c">!&gt; String containing the name of the particles parameter file</span>
     <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">50</span> <span class="p">)</span><span class="kd">::</span> <span class="n">lorene_bns_id_parfile</span>
 
-    <span class="c">!&gt; String storing the local path to the directory containing the CompOSE EOS</span>
+    <span class="c">!&amp; String storing the local path to the directory containing the</span>
+    <span class="c">!  CompOSE |eos|</span>
     <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">compose_path</span>
     <span class="c">!&gt; String storing the subpath of compose_path to the CompOSE file with</span>
     <span class="c">!  .beta extension</span>
     <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">compose_filename</span>
 
-    <span class="c">!&gt; String containing the |lorene| name of the EOS for star 1</span>
- <span class="c">!   CHARACTER( LEN= : ), ALLOCATABLE:: eos1</span>
-    <span class="c">!&gt; String containing the |lorene| name of the EOS for star 2</span>
- <span class="c">!   CHARACTER( LEN= : ), ALLOCATABLE:: eos2</span>
+    <span class="c">!</span>
+    <span class="c">!-- Equations of state</span>
+    <span class="c">!</span>
 
     <span class="k">TYPE</span><span class="p">(</span><span class="n">eos</span><span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">all_eos</span>
 
@@ -6571,11 +6535,12 @@ public module module subroutine read_sphincs_dump_print_formatted(THIS, namefile
     <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">place_particles_lattice</span>
     <span class="c">!! Places particles on a single lattice that surrounds both stars</span>
 
-  <span class="c">!  PROCEDURE:: place_particles_lattices</span>
-    <span class="c">!! Places particles on two lattices, each one surrounding one star</span>
-
     <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">place_particles_spherical_surfaces</span>
     <span class="c">!! Places particles on spherical surfaces on one star</span>
+
+    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">NOPASS</span><span class="kd">::</span> <span class="n">impose_equatorial_plane_symmetry</span>
+    <span class="c">!# Reflects the positions of the particles on a matter object with respect</span>
+    <span class="c">!  to the \(xy\) plane</span>
 
     <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">NOPASS</span><span class="kd">::</span> <span class="n">perform_apm</span>
     <span class="c">!! Performs the Artificial Pressure Method (APM) on one star&#39;s particles</span>
@@ -6619,6 +6584,9 @@ public module module subroutine read_sphincs_dump_print_formatted(THIS, namefile
     <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">print_formatted_lorene_id_particles</span>
     <span class="c">!! Prints the SPH ID to a formatted file</span>
 
+    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">print_summary</span>
+    <span class="c">!! Prints the SPH ID to a formatted file</span>
+
     <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">is_empty</span>
     <span class="c">!# Returns `.TRUE` if the [[particles]] object is empty, `.FALSE` otherwise</span>
     <span class="c">!  @warning experimental, not actively used in the code yet</span>
@@ -6631,16 +6599,12 @@ public module module subroutine read_sphincs_dump_print_formatted(THIS, namefile
 
     <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_npart</span>
     <span class="c">!! Returns [[particles:npart]]</span>
-    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_npart1</span>
-    <span class="c">!! Returns [[particles:npart1]]</span>
-    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_npart2</span>
-    <span class="c">!! Returns [[particles:npart2]]</span>
+    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_npart_i</span>
+    <span class="c">!! Returns the number of particles on the object `i_matter`</span>
     <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_nuratio</span>
     <span class="c">!! Returns [[particles:nuratio]]</span>
-    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_nuratio1</span>
-    <span class="c">!! Returns [[particles:nuratio1]]</span>
-    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_nuratio2</span>
-    <span class="c">!! Returns [[particles:nuratio2]]</span>
+    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_nuratio_i</span>
+    <span class="c">!! Returns the baryon number ratio on the object `i_matter`</span>
     <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_pos</span>
     <span class="c">!! Returns [[particles:pos]]</span>
     <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_vel</span>
@@ -6678,14 +6642,14 @@ public module module subroutine read_sphincs_dump_print_formatted(THIS, namefile
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>compute_and_export_SPH_variables &ndash; SPHINCS_LORENE</title>
+    <title>compute_and_export_SPH_variables &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -45,7 +45,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -146,7 +146,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">144 statements</a>
+    title=" 0.3% of total for procedures.">142 statements</a>
      </li> 
      
      
@@ -256,317 +256,317 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.1893,-705C198.6864,-705 207.3214,-705 215.8954,-705"/>
 <polygon fill="#000000" stroke="#000000" points="215.9207,-708.5001 225.9206,-705 215.9206,-701.5001 215.9207,-708.5001"/>
 </g>
-<!-- vel_u -->
+<!-- sq_det_g4 -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node3" class="node">
-<title>vel_u</title>
-<polygon fill="#777777" stroke="#777777" points="564,-1410 510,-1410 510,-1386 564,-1386 564,-1410"/>
-<text text-anchor="middle" x="537" y="-1395.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">vel_u</text>
+<title>sq_det_g4</title>
+<polygon fill="#777777" stroke="#777777" points="568.5,-1410 505.5,-1410 505.5,-1386 568.5,-1386 568.5,-1410"/>
+<text text-anchor="middle" x="537" y="-1395.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sq_det_g4</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;vel_u -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;sq_det_g4 -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge2" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;vel_u</title>
-<path fill="none" stroke="#000000" d="M321.6266,-717.0658C326.1358,-799.2418 356.2384,-1276.3585 452,-1377 464.2349,-1389.8584 482.9923,-1395.3558 499.7768,-1397.5321"/>
-<polygon fill="#000000" stroke="#000000" points="499.6102,-1401.032 509.8966,-1398.4941 500.2727,-1394.0634 499.6102,-1401.032"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;sq_det_g4</title>
+<path fill="none" stroke="#000000" d="M321.6266,-717.0658C326.1358,-799.2418 356.2384,-1276.3585 452,-1377 463.174,-1388.7434 479.7883,-1394.3471 495.3715,-1396.8884"/>
+<polygon fill="#000000" stroke="#000000" points="495.0367,-1400.3738 505.3955,-1398.15 495.9108,-1393.4286 495.0367,-1400.3738"/>
 </g>
-<!-- iorig -->
+<!-- av -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node4" class="node">
-<title>iorig</title>
+<title>av</title>
 <polygon fill="#777777" stroke="#777777" points="564,-1368 510,-1368 510,-1344 564,-1344 564,-1368"/>
-<text text-anchor="middle" x="537" y="-1353.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iorig</text>
+<text text-anchor="middle" x="537" y="-1353.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">av</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;iorig -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge4" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;iorig</title>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;av -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge3" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;av</title>
 <path fill="none" stroke="#000000" d="M321.7956,-717.0725C327.2557,-796.2769 361.6991,-1241.2765 452,-1335 464.315,-1347.7817 483.0794,-1353.2724 499.8478,-1355.4641"/>
 <polygon fill="#000000" stroke="#000000" points="499.6654,-1358.9627 509.9551,-1356.4381 500.3369,-1351.9949 499.6654,-1358.9627"/>
 </g>
-<!-- nu -->
+<!-- deallocate_rcb_tree_memory_3d -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node5" class="node">
-<title>nu</title>
-<polygon fill="#777777" stroke="#777777" points="564,-1326 510,-1326 510,-1302 564,-1302 564,-1326"/>
-<text text-anchor="middle" x="537" y="-1311.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">nu</text>
+<title>deallocate_rcb_tree_memory_3d</title>
+<polygon fill="#777777" stroke="#777777" points="622,-1326 452,-1326 452,-1302 622,-1302 622,-1326"/>
+<text text-anchor="middle" x="537" y="-1311.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_rcb_tree_memory_3d</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;nu -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge3" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;nu</title>
-<path fill="none" stroke="#000000" d="M322.0024,-717.2471C328.5123,-793.8132 367.2061,-1206.2331 452,-1293 464.3174,-1305.604 482.9118,-1311.0989 499.5713,-1313.3388"/>
-<polygon fill="#000000" stroke="#000000" points="499.3213,-1316.8312 509.6208,-1314.3472 500.0203,-1309.8661 499.3213,-1316.8312"/>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;deallocate_rcb_tree_memory_3d -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge4" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;deallocate_rcb_tree_memory_3d</title>
+<path fill="none" stroke="#000000" d="M322.0024,-717.2471C328.5123,-793.8132 367.2061,-1206.2331 452,-1293 452.9562,-1293.9784 453.9502,-1294.914 454.9782,-1295.8086"/>
+<polygon fill="#000000" stroke="#000000" points="453.2952,-1298.9086 463.4611,-1301.8928 457.375,-1293.2204 453.2952,-1298.9086"/>
 </g>
-<!-- allocate_metric_on_particles -->
+<!-- deallocate_metric_on_particles -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node6" class="node">
-<title>allocate_metric_on_particles</title>
-<polygon fill="#777777" stroke="#777777" points="611,-1284 463,-1284 463,-1260 611,-1260 611,-1284"/>
-<text text-anchor="middle" x="537" y="-1269.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_metric_on_particles</text>
+<title>deallocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="617,-1284 457,-1284 457,-1260 617,-1260 617,-1284"/>
+<text text-anchor="middle" x="537" y="-1269.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_metric_on_particles</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;allocate_metric_on_particles -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;deallocate_metric_on_particles -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge5" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;allocate_metric_on_particles</title>
+<title>proc~compute_and_export_sph_variables&#45;&gt;deallocate_metric_on_particles</title>
 <path fill="none" stroke="#000000" d="M322.2338,-717.3187C329.8394,-790.8317 372.6542,-1171.1182 452,-1251 452.9641,-1251.9706 453.9655,-1252.8989 455.0003,-1253.7867"/>
 <polygon fill="#000000" stroke="#000000" points="453.3433,-1256.9022 463.5258,-1259.829 457.3909,-1251.1911 453.3433,-1256.9022"/>
 </g>
-<!-- gen_pwp_eos_all -->
+<!-- get_u_pwp -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node7" class="node">
-<title>gen_pwp_eos_all</title>
-<polygon fill="#777777" stroke="#777777" points="585,-1242 489,-1242 489,-1218 585,-1218 585,-1242"/>
-<text text-anchor="middle" x="537" y="-1227.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gen_pwp_eos_all</text>
+<title>get_u_pwp</title>
+<polygon fill="#777777" stroke="#777777" points="569.5,-1242 504.5,-1242 504.5,-1218 569.5,-1218 569.5,-1242"/>
+<text text-anchor="middle" x="537" y="-1227.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_u_pwp</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;gen_pwp_eos_all -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;get_u_pwp -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge6" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;gen_pwp_eos_all</title>
-<path fill="none" stroke="#000000" d="M322.4906,-717.279C331.2351,-787.3337 378.0403,-1135.9287 452,-1209 459.4569,-1216.3673 469.0644,-1221.2893 479.1226,-1224.5488"/>
-<polygon fill="#000000" stroke="#000000" points="478.281,-1227.9469 488.8488,-1227.19 480.1155,-1221.1916 478.281,-1227.9469"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;get_u_pwp</title>
+<path fill="none" stroke="#000000" d="M322.4906,-717.279C331.2351,-787.3337 378.0403,-1135.9287 452,-1209 463.1579,-1220.0239 479.1308,-1225.5727 494.2243,-1228.2691"/>
+<polygon fill="#000000" stroke="#000000" points="494.0724,-1231.7823 504.4631,-1229.7124 495.0496,-1224.8508 494.0724,-1231.7823"/>
 </g>
-<!-- deallocate_metric_on_particles -->
+<!-- h -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node8" class="node">
-<title>deallocate_metric_on_particles</title>
-<polygon fill="#777777" stroke="#777777" points="617,-1200 457,-1200 457,-1176 617,-1176 617,-1200"/>
-<text text-anchor="middle" x="537" y="-1185.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_metric_on_particles</text>
+<title>h</title>
+<polygon fill="#777777" stroke="#777777" points="564,-1200 510,-1200 510,-1176 564,-1176 564,-1200"/>
+<text text-anchor="middle" x="537" y="-1185.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">h</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;deallocate_metric_on_particles -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;h -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge7" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;deallocate_metric_on_particles</title>
-<path fill="none" stroke="#000000" d="M322.7736,-717.1195C332.6968,-783.3205 383.3596,-1100.6605 452,-1167 453.1272,-1168.0894 454.3015,-1169.1251 455.5172,-1170.1096"/>
-<polygon fill="#000000" stroke="#000000" points="453.8374,-1173.1985 464.084,-1175.8925 457.7539,-1167.3966 453.8374,-1173.1985"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;h</title>
+<path fill="none" stroke="#000000" d="M322.7736,-717.1195C332.6968,-783.3205 383.3596,-1100.6605 452,-1167 464.6721,-1179.2473 483.2999,-1184.7086 499.8899,-1187.0185"/>
+<polygon fill="#000000" stroke="#000000" points="499.5705,-1190.5041 509.8847,-1188.0819 500.3111,-1183.5434 499.5705,-1190.5041"/>
 </g>
-<!-- allocate_rcb_tree_memory_3d -->
+<!-- pr -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node9" class="node">
-<title>allocate_rcb_tree_memory_3d</title>
-<polygon fill="#777777" stroke="#777777" points="616,-1158 458,-1158 458,-1134 616,-1134 616,-1158"/>
-<text text-anchor="middle" x="537" y="-1143.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_rcb_tree_memory_3d</text>
+<title>pr</title>
+<polygon fill="#777777" stroke="#777777" points="564,-1158 510,-1158 510,-1134 564,-1134 564,-1158"/>
+<text text-anchor="middle" x="537" y="-1143.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pr</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;allocate_rcb_tree_memory_3d -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;pr -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge8" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;allocate_rcb_tree_memory_3d</title>
-<path fill="none" stroke="#000000" d="M323.1574,-717.2428C334.4602,-780.0485 388.7449,-1065.4387 452,-1125 453.1413,-1126.0746 454.3285,-1127.0967 455.5562,-1128.0688"/>
-<polygon fill="#000000" stroke="#000000" points="453.9168,-1131.1811 464.1867,-1133.7849 457.7821,-1125.345 453.9168,-1131.1811"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;pr</title>
+<path fill="none" stroke="#000000" d="M323.1574,-717.2428C334.4602,-780.0485 388.7449,-1065.4387 452,-1125 464.6187,-1136.8818 482.8592,-1142.3453 499.2103,-1144.7508"/>
+<polygon fill="#000000" stroke="#000000" points="499.2743,-1148.2802 509.6044,-1145.9266 500.0612,-1141.3246 499.2743,-1148.2802"/>
 </g>
-<!-- pos_u -->
+<!-- deallocate_gradient -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node10" class="node">
-<title>pos_u</title>
-<polygon fill="#777777" stroke="#777777" points="564,-1116 510,-1116 510,-1092 564,-1092 564,-1116"/>
-<text text-anchor="middle" x="537" y="-1101.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pos_u</text>
+<title>deallocate_gradient</title>
+<polygon fill="#777777" stroke="#777777" points="590,-1116 484,-1116 484,-1092 590,-1092 590,-1116"/>
+<text text-anchor="middle" x="537" y="-1101.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_gradient</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;pos_u -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;deallocate_gradient -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge9" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;pos_u</title>
-<path fill="none" stroke="#000000" d="M323.587,-717.1769C336.3166,-776.0036 394.0266,-1030.0972 452,-1083 464.8029,-1094.6831 483.0636,-1100.1249 499.3803,-1102.5674"/>
-<polygon fill="#000000" stroke="#000000" points="499.4072,-1106.0941 509.7451,-1103.7748 500.2173,-1099.1412 499.4072,-1106.0941"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;deallocate_gradient</title>
+<path fill="none" stroke="#000000" d="M323.587,-717.1769C336.3166,-776.0036 394.0266,-1030.0972 452,-1083 458.2949,-1088.7443 465.9091,-1092.9798 473.963,-1096.0918"/>
+<polygon fill="#000000" stroke="#000000" points="472.9738,-1099.4509 483.5668,-1099.2521 475.1619,-1092.8016 472.9738,-1099.4509"/>
 </g>
-<!-- sq_det_g4 -->
+<!-- assign_h -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node11" class="node">
-<title>sq_det_g4</title>
-<polygon fill="#777777" stroke="#777777" points="568.5,-1074 505.5,-1074 505.5,-1050 568.5,-1050 568.5,-1074"/>
-<text text-anchor="middle" x="537" y="-1059.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sq_det_g4</text>
+<title>assign_h</title>
+<polygon fill="#777777" stroke="#777777" points="564.5,-1074 509.5,-1074 509.5,-1050 564.5,-1050 564.5,-1074"/>
+<text text-anchor="middle" x="537" y="-1059.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">assign_h</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;sq_det_g4 -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;assign_h -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge10" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;sq_det_g4</title>
-<path fill="none" stroke="#000000" d="M321.8462,-717.0043C325.9426,-765.6288 348.0311,-949.6969 452,-1041 463.8785,-1051.4314 480.1341,-1056.8531 495.2499,-1059.6139"/>
-<polygon fill="#000000" stroke="#000000" points="495.0595,-1063.1239 505.4648,-1061.129 496.0865,-1056.1997 495.0595,-1063.1239"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;assign_h</title>
+<path fill="none" stroke="#000000" d="M321.8462,-717.0043C325.9426,-765.6288 348.0311,-949.6969 452,-1041 464.836,-1052.2722 482.783,-1057.6946 498.88,-1060.2309"/>
+<polygon fill="#000000" stroke="#000000" points="498.761,-1063.7433 509.1185,-1061.5133 499.631,-1056.7975 498.761,-1063.7433"/>
 </g>
-<!-- nlrf -->
+<!-- temp -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node12" class="node">
-<title>nlrf</title>
+<title>temp</title>
 <polygon fill="#777777" stroke="#777777" points="564,-1032 510,-1032 510,-1008 564,-1008 564,-1032"/>
-<text text-anchor="middle" x="537" y="-1017.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">nlrf</text>
+<text text-anchor="middle" x="537" y="-1017.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">temp</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;nlrf -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;temp -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge11" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;nlrf</title>
+<title>proc~compute_and_export_sph_variables&#45;&gt;temp</title>
 <path fill="none" stroke="#000000" d="M322.5823,-717.0327C329.1383,-761.8648 358.3735,-920.6317 452,-999 465.1952,-1010.0448 483.3415,-1015.428 499.48,-1017.9969"/>
 <polygon fill="#000000" stroke="#000000" points="499.3593,-1021.51 509.7231,-1019.3099 500.2493,-1014.5668 499.3593,-1021.51"/>
 </g>
-<!-- read_options -->
+<!-- theta -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node13" class="node">
-<title>read_options</title>
-<polygon fill="#777777" stroke="#777777" points="574.5,-990 499.5,-990 499.5,-966 574.5,-966 574.5,-990"/>
-<text text-anchor="middle" x="537" y="-975.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_options</text>
+<title>theta</title>
+<polygon fill="#777777" stroke="#777777" points="564,-990 510,-990 510,-966 564,-966 564,-990"/>
+<text text-anchor="middle" x="537" y="-975.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">theta</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;read_options -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;theta -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge12" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;read_options</title>
-<path fill="none" stroke="#000000" d="M323.5938,-717.2756C332.9171,-758.2531 368.6949,-891.4333 452,-957 462.6606,-965.3906 476.2193,-970.4832 489.3595,-973.5575"/>
-<polygon fill="#000000" stroke="#000000" points="488.7797,-977.0108 499.2714,-975.5362 490.1502,-970.1462 488.7797,-977.0108"/>
-</g>
-<!-- select_eos_parameters -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node14" class="node">
-<title>select_eos_parameters</title>
-<polygon fill="#777777" stroke="#777777" points="599,-948 475,-948 475,-924 599,-924 599,-948"/>
-<text text-anchor="middle" x="537" y="-933.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">select_eos_parameters</text>
-</g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;select_eos_parameters -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge13" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;select_eos_parameters</title>
-<path fill="none" stroke="#000000" d="M324.9174,-717.2497C337.2064,-753.6212 378.6118,-861.7574 452,-915 456.1237,-917.9917 460.6245,-920.56 465.3331,-922.7644"/>
-<polygon fill="#000000" stroke="#000000" points="464.0195,-926.0086 474.5995,-926.571 466.6795,-919.5337 464.0195,-926.0086"/>
-</g>
-<!-- pr -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node15" class="node">
-<title>pr</title>
-<polygon fill="#777777" stroke="#777777" points="564,-906 510,-906 510,-882 564,-882 564,-906"/>
-<text text-anchor="middle" x="537" y="-891.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pr</text>
-</g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;pr -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge14" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;pr</title>
-<path fill="none" stroke="#000000" d="M326.9518,-717.4339C342.6503,-748.8316 388.3869,-831.743 452,-873 466.2279,-882.2276 484.1976,-887.4008 499.9459,-890.3009"/>
-<polygon fill="#000000" stroke="#000000" points="499.4844,-893.7715 509.9123,-891.8982 500.5922,-886.8597 499.4844,-893.7715"/>
-</g>
-<!-- density -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node16" class="node">
-<title>density</title>
-<polygon fill="#777777" stroke="#777777" points="564,-864 510,-864 510,-840 564,-840 564,-864"/>
-<text text-anchor="middle" x="537" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">density</text>
-</g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;density -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge15" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;density</title>
-<path fill="none" stroke="#000000" d="M329.9935,-717.2084C349.3346,-742.5456 397.5673,-800.9745 452,-831 466.4913,-838.9935 484.0308,-843.9862 499.4046,-847.0847"/>
-<polygon fill="#000000" stroke="#000000" points="499.1739,-850.5999 509.638,-848.9408 500.4232,-843.7123 499.1739,-850.5999"/>
-</g>
-<!-- av -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node17" class="node">
-<title>av</title>
-<polygon fill="#777777" stroke="#777777" points="564,-822 510,-822 510,-798 564,-798 564,-822"/>
-<text text-anchor="middle" x="537" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">av</text>
-</g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;av -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge16" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;av</title>
-<path fill="none" stroke="#000000" d="M336.187,-717.1285C359.6745,-735.3118 406.83,-769.5718 452,-789 467.0896,-795.4902 484.5857,-800.2431 499.7679,-803.5688"/>
-<polygon fill="#000000" stroke="#000000" points="499.3502,-807.0562 509.8509,-805.647 500.7633,-800.2003 499.3502,-807.0562"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;theta</title>
+<path fill="none" stroke="#000000" d="M323.5938,-717.2756C332.9171,-758.2531 368.6949,-891.4333 452,-957 465.5218,-967.6425 483.7058,-972.9792 499.7848,-975.6214"/>
+<polygon fill="#000000" stroke="#000000" points="499.5985,-979.1279 509.9769,-976.9973 500.535,-972.1908 499.5985,-979.1279"/>
 </g>
 <!-- u -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node18" class="node">
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node14" class="node">
 <title>u</title>
-<polygon fill="#777777" stroke="#777777" points="564,-780 510,-780 510,-756 564,-756 564,-780"/>
-<text text-anchor="middle" x="537" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">u</text>
+<polygon fill="#777777" stroke="#777777" points="564,-948 510,-948 510,-924 564,-924 564,-948"/>
+<text text-anchor="middle" x="537" y="-933.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">u</text>
 </g>
 <!-- proc~compute_and_export_sph_variables&#45;&gt;u -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge17" class="edge">
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge13" class="edge">
 <title>proc~compute_and_export_sph_variables&#45;&gt;u</title>
+<path fill="none" stroke="#000000" d="M324.9174,-717.2497C337.2064,-753.6212 378.6118,-861.7574 452,-915 465.8273,-925.0316 483.8953,-930.3026 499.8159,-933.0595"/>
+<polygon fill="#000000" stroke="#000000" points="499.5009,-936.5505 509.9018,-934.5329 500.5128,-929.6241 499.5009,-936.5505"/>
+</g>
+<!-- deallocate_sph_memory -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node15" class="node">
+<title>deallocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="602,-906 472,-906 472,-882 602,-882 602,-906"/>
+<text text-anchor="middle" x="537" y="-891.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_sph_memory</text>
+</g>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;deallocate_sph_memory -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge17" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;deallocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M326.9518,-717.4339C342.6503,-748.8316 388.3869,-831.743 452,-873 455.3477,-875.1712 458.9026,-877.1179 462.587,-878.8634"/>
+<polygon fill="#000000" stroke="#000000" points="461.3925,-882.1578 471.9678,-882.8009 464.1017,-875.7033 461.3925,-882.1578"/>
+</g>
+<!-- write_sphincs_dump -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node16" class="node">
+<title>write_sphincs_dump</title>
+<polygon fill="#777777" stroke="#777777" points="592,-864 482,-864 482,-840 592,-840 592,-864"/>
+<text text-anchor="middle" x="537" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_sphincs_dump</text>
+</g>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;write_sphincs_dump -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge14" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;write_sphincs_dump</title>
+<path fill="none" stroke="#000000" d="M329.9935,-717.2084C349.3346,-742.5456 397.5673,-800.9745 452,-831 458.3139,-834.4828 465.2065,-837.396 472.2466,-839.831"/>
+<polygon fill="#000000" stroke="#000000" points="471.3081,-843.2047 481.8975,-842.8637 473.4067,-836.5267 471.3081,-843.2047"/>
+</g>
+<!-- select_eos_parameters -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node17" class="node">
+<title>select_eos_parameters</title>
+<polygon fill="#777777" stroke="#777777" points="599,-822 475,-822 475,-798 599,-798 599,-822"/>
+<text text-anchor="middle" x="537" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">select_eos_parameters</text>
+</g>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;select_eos_parameters -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge15" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;select_eos_parameters</title>
+<path fill="none" stroke="#000000" d="M336.187,-717.1285C359.6745,-735.3118 406.83,-769.5718 452,-789 457.0619,-791.1772 462.3945,-793.1588 467.8198,-794.9567"/>
+<polygon fill="#000000" stroke="#000000" points="467.0591,-798.385 477.6469,-797.9969 469.128,-791.6977 467.0591,-798.385"/>
+</g>
+<!-- iorig -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node18" class="node">
+<title>iorig</title>
+<polygon fill="#777777" stroke="#777777" points="564,-780 510,-780 510,-756 564,-756 564,-780"/>
+<text text-anchor="middle" x="537" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iorig</text>
+</g>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;iorig -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge16" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;iorig</title>
 <path fill="none" stroke="#000000" d="M356.3856,-717.0658C382.6342,-725.8396 419.3713,-737.7504 452,-747 467.5658,-751.4126 484.8816,-755.7861 499.8014,-759.3903"/>
 <polygon fill="#000000" stroke="#000000" points="499.1572,-762.8348 509.6967,-761.7535 500.7833,-756.0263 499.1572,-762.8348"/>
 </g>
-<!-- assign_h -->
+<!-- nlrf -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node19" class="node">
-<title>assign_h</title>
-<polygon fill="#777777" stroke="#777777" points="564.5,-738 509.5,-738 509.5,-714 564.5,-714 564.5,-738"/>
-<text text-anchor="middle" x="537" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">assign_h</text>
+<title>nlrf</title>
+<polygon fill="#777777" stroke="#777777" points="564,-738 510,-738 510,-714 564,-714 564,-738"/>
+<text text-anchor="middle" x="537" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">nlrf</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;assign_h -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;nlrf -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge18" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;assign_h</title>
-<path fill="none" stroke="#000000" d="M416.0551,-714.2415C445.5006,-717.1042 476.2485,-720.0936 499.373,-722.3418"/>
-<polygon fill="#000000" stroke="#000000" points="499.1374,-725.8353 509.4292,-723.3195 499.8148,-718.8682 499.1374,-725.8353"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;nlrf</title>
+<path fill="none" stroke="#000000" d="M416.0551,-714.2415C445.6969,-717.1233 476.6586,-720.1335 499.8344,-722.3867"/>
+<polygon fill="#000000" stroke="#000000" points="499.6105,-725.8813 509.9022,-723.3655 500.2879,-718.9142 499.6105,-725.8813"/>
 </g>
-<!-- allocate_gradient -->
+<!-- allocate_metric_on_particles -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node20" class="node">
-<title>allocate_gradient</title>
-<polygon fill="#777777" stroke="#777777" points="584,-696 490,-696 490,-672 584,-672 584,-696"/>
-<text text-anchor="middle" x="537" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_gradient</text>
+<title>allocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="611,-696 463,-696 463,-672 611,-672 611,-696"/>
+<text text-anchor="middle" x="537" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_metric_on_particles</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;allocate_gradient -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;allocate_metric_on_particles -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge19" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;allocate_gradient</title>
-<path fill="none" stroke="#000000" d="M416.0551,-695.7585C437.8377,-693.6408 460.333,-691.4537 479.9277,-689.5487"/>
-<polygon fill="#000000" stroke="#000000" points="480.2765,-693.0314 489.8908,-688.5801 479.5991,-686.0642 480.2765,-693.0314"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;allocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M416.0551,-695.7585C428.2577,-694.5722 440.684,-693.3641 452.6988,-692.196"/>
+<polygon fill="#000000" stroke="#000000" points="453.066,-695.6768 462.6804,-691.2255 452.3886,-688.7097 453.066,-695.6768"/>
 </g>
-<!-- set_units -->
+<!-- read_options -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node21" class="node">
-<title>set_units</title>
-<polygon fill="#777777" stroke="#777777" points="564.5,-654 509.5,-654 509.5,-630 564.5,-630 564.5,-654"/>
-<text text-anchor="middle" x="537" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">set_units</text>
+<title>read_options</title>
+<polygon fill="#777777" stroke="#777777" points="574.5,-654 499.5,-654 499.5,-630 574.5,-630 574.5,-654"/>
+<text text-anchor="middle" x="537" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_options</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;set_units -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;read_options -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge20" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;set_units</title>
-<path fill="none" stroke="#000000" d="M356.3856,-692.9342C382.6342,-684.1604 419.3713,-672.2496 452,-663 467.447,-658.6211 484.6173,-654.2807 499.4593,-650.6924"/>
-<polygon fill="#000000" stroke="#000000" points="500.4004,-654.0661 509.3127,-648.3372 498.773,-647.2579 500.4004,-654.0661"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;read_options</title>
+<path fill="none" stroke="#000000" d="M356.3856,-692.9342C382.6342,-684.1604 419.3713,-672.2496 452,-663 463.9966,-659.5992 477.0326,-656.2216 489.2101,-653.2016"/>
+<polygon fill="#000000" stroke="#000000" points="490.3151,-656.5345 499.1956,-650.7562 488.65,-649.7354 490.3151,-656.5345"/>
 </g>
-<!-- deallocate_rcb_tree_memory_3d -->
+<!-- vel_u -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node22" class="node">
-<title>deallocate_rcb_tree_memory_3d</title>
-<polygon fill="#777777" stroke="#777777" points="622,-612 452,-612 452,-588 622,-588 622,-612"/>
-<text text-anchor="middle" x="537" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_rcb_tree_memory_3d</text>
+<title>vel_u</title>
+<polygon fill="#777777" stroke="#777777" points="564,-612 510,-612 510,-588 564,-588 564,-612"/>
+<text text-anchor="middle" x="537" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">vel_u</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;deallocate_rcb_tree_memory_3d -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;vel_u -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge21" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;deallocate_rcb_tree_memory_3d</title>
-<path fill="none" stroke="#000000" d="M336.187,-692.8715C359.6745,-674.6882 406.83,-640.4282 452,-621 457.0619,-618.8228 462.3945,-616.8412 467.8198,-615.0433"/>
-<polygon fill="#000000" stroke="#000000" points="469.128,-618.3023 477.6469,-612.0031 467.0591,-611.615 469.128,-618.3023"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;vel_u</title>
+<path fill="none" stroke="#000000" d="M336.187,-692.8715C359.6745,-674.6882 406.83,-640.4282 452,-621 467.0896,-614.5098 484.5857,-609.7569 499.7679,-606.4312"/>
+<polygon fill="#000000" stroke="#000000" points="500.7633,-609.7997 509.8509,-604.353 499.3502,-602.9438 500.7633,-609.7997"/>
 </g>
-<!-- write_sphincs_dump -->
+<!-- density -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node23" class="node">
-<title>write_sphincs_dump</title>
-<polygon fill="#777777" stroke="#777777" points="592,-570 482,-570 482,-546 592,-546 592,-570"/>
-<text text-anchor="middle" x="537" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_sphincs_dump</text>
+<title>density</title>
+<polygon fill="#777777" stroke="#777777" points="564,-570 510,-570 510,-546 564,-546 564,-570"/>
+<text text-anchor="middle" x="537" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">density</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;write_sphincs_dump -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;density -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge22" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;write_sphincs_dump</title>
-<path fill="none" stroke="#000000" d="M329.9935,-692.7916C349.3346,-667.4544 397.5673,-609.0255 452,-579 458.3139,-575.5172 465.2065,-572.604 472.2466,-570.169"/>
-<polygon fill="#000000" stroke="#000000" points="473.4067,-573.4733 481.8975,-567.1363 471.3081,-566.7953 473.4067,-573.4733"/>
-</g>
-<!-- get_u_pwp -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node24" class="node">
-<title>get_u_pwp</title>
-<polygon fill="#777777" stroke="#777777" points="569.5,-528 504.5,-528 504.5,-504 569.5,-504 569.5,-528"/>
-<text text-anchor="middle" x="537" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_u_pwp</text>
-</g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;get_u_pwp -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge23" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;get_u_pwp</title>
-<path fill="none" stroke="#000000" d="M326.9518,-692.5661C342.6503,-661.1684 388.3869,-578.257 452,-537 464.5201,-528.8799 479.9378,-523.8994 494.1895,-520.8447"/>
-<polygon fill="#000000" stroke="#000000" points="495.1217,-524.2309 504.3028,-518.9434 493.8282,-517.3514 495.1217,-524.2309"/>
-</g>
-<!-- ncand -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node25" class="node">
-<title>ncand</title>
-<polygon fill="#777777" stroke="#777777" points="564,-486 510,-486 510,-462 564,-462 564,-486"/>
-<text text-anchor="middle" x="537" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ncand</text>
-</g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;ncand -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge24" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;ncand</title>
-<path fill="none" stroke="#000000" d="M324.9174,-692.7503C337.2064,-656.3788 378.6118,-548.2426 452,-495 465.8273,-484.9684 483.8953,-479.6974 499.8159,-476.9405"/>
-<polygon fill="#000000" stroke="#000000" points="500.5128,-480.3759 509.9018,-475.4671 499.5009,-473.4495 500.5128,-480.3759"/>
-</g>
-<!-- allocate_sph_memory -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node26" class="node">
-<title>allocate_sph_memory</title>
-<polygon fill="#777777" stroke="#777777" points="596,-444 478,-444 478,-420 596,-420 596,-444"/>
-<text text-anchor="middle" x="537" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_sph_memory</text>
-</g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;allocate_sph_memory -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge25" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;allocate_sph_memory</title>
-<path fill="none" stroke="#000000" d="M323.5938,-692.7244C332.9171,-651.7469 368.6949,-518.5667 452,-453 456.9384,-449.1132 462.4986,-445.934 468.3511,-443.3354"/>
-<polygon fill="#000000" stroke="#000000" points="469.6719,-446.5774 477.741,-439.7114 467.1515,-440.0469 469.6719,-446.5774"/>
-</g>
-<!-- divv -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node27" class="node">
-<title>divv</title>
-<polygon fill="#777777" stroke="#777777" points="564,-402 510,-402 510,-378 564,-378 564,-402"/>
-<text text-anchor="middle" x="537" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">divv</text>
-</g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;divv -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge26" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;divv</title>
-<path fill="none" stroke="#000000" d="M322.5823,-692.9673C329.1383,-648.1352 358.3735,-489.3683 452,-411 465.1952,-399.9552 483.3415,-394.572 499.48,-392.0031"/>
-<polygon fill="#000000" stroke="#000000" points="500.2493,-395.4332 509.7231,-390.6901 499.3593,-388.49 500.2493,-395.4332"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;density</title>
+<path fill="none" stroke="#000000" d="M329.9935,-692.7916C349.3346,-667.4544 397.5673,-609.0255 452,-579 466.4913,-571.0065 484.0308,-566.0138 499.4046,-562.9153"/>
+<polygon fill="#000000" stroke="#000000" points="500.4232,-566.2877 509.638,-561.0592 499.1739,-559.4001 500.4232,-566.2877"/>
 </g>
 <!-- shorten_eos_name -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node28" class="node">
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node24" class="node">
 <title>shorten_eos_name</title>
-<polygon fill="#777777" stroke="#777777" points="589.5,-360 484.5,-360 484.5,-336 589.5,-336 589.5,-360"/>
-<text text-anchor="middle" x="537" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">shorten_eos_name</text>
+<polygon fill="#777777" stroke="#777777" points="589.5,-528 484.5,-528 484.5,-504 589.5,-504 589.5,-528"/>
+<text text-anchor="middle" x="537" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">shorten_eos_name</text>
 </g>
 <!-- proc~compute_and_export_sph_variables&#45;&gt;shorten_eos_name -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge27" class="edge">
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge23" class="edge">
 <title>proc~compute_and_export_sph_variables&#45;&gt;shorten_eos_name</title>
-<path fill="none" stroke="#000000" d="M321.8462,-692.9957C325.9426,-644.3712 348.0311,-460.3031 452,-369 458.4854,-363.3047 466.2754,-359.1028 474.4724,-356.0119"/>
-<polygon fill="#000000" stroke="#000000" points="475.782,-359.2673 484.2281,-352.8709 473.6366,-352.6041 475.782,-359.2673"/>
+<path fill="none" stroke="#000000" d="M326.9518,-692.5661C342.6503,-661.1684 388.3869,-578.257 452,-537 458.8907,-532.5309 466.6592,-529.0129 474.6279,-526.2435"/>
+<polygon fill="#000000" stroke="#000000" points="475.8809,-529.5196 484.4018,-523.2231 473.8141,-522.8317 475.8809,-529.5196"/>
+</g>
+<!-- allocate_sph_memory -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node25" class="node">
+<title>allocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="596,-486 478,-486 478,-462 596,-462 596,-486"/>
+<text text-anchor="middle" x="537" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_sph_memory</text>
+</g>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;allocate_sph_memory -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge24" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;allocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M324.9174,-692.7503C337.2064,-656.3788 378.6118,-548.2426 452,-495 456.8869,-491.4546 462.3035,-488.5038 467.9678,-486.0485"/>
+<polygon fill="#000000" stroke="#000000" points="469.5734,-489.183 477.6844,-482.3667 467.093,-482.6372 469.5734,-489.183"/>
+</g>
+<!-- allocate_gradient -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node26" class="node">
+<title>allocate_gradient</title>
+<polygon fill="#777777" stroke="#777777" points="584,-444 490,-444 490,-420 584,-420 584,-444"/>
+<text text-anchor="middle" x="537" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_gradient</text>
+</g>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;allocate_gradient -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge25" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;allocate_gradient</title>
+<path fill="none" stroke="#000000" d="M323.5938,-692.7244C332.9171,-651.7469 368.6949,-518.5667 452,-453 460.0627,-446.6541 469.783,-442.1947 479.7262,-439.0682"/>
+<polygon fill="#000000" stroke="#000000" points="480.9557,-442.3613 489.6907,-436.3654 479.1232,-435.6054 480.9557,-442.3613"/>
+</g>
+<!-- density_loop -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node27" class="node">
+<title>density_loop</title>
+<polygon fill="#777777" stroke="#777777" points="573.5,-402 500.5,-402 500.5,-378 573.5,-378 573.5,-402"/>
+<text text-anchor="middle" x="537" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">density_loop</text>
+</g>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;density_loop -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge26" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;density_loop</title>
+<path fill="none" stroke="#000000" d="M322.5823,-692.9673C329.1383,-648.1352 358.3735,-489.3683 452,-411 462.6818,-402.059 476.6083,-396.8282 490.0876,-393.7971"/>
+<polygon fill="#000000" stroke="#000000" points="491.0679,-397.174 500.247,-391.8829 489.7718,-390.295 491.0679,-397.174"/>
+</g>
+<!-- nu -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node28" class="node">
+<title>nu</title>
+<polygon fill="#777777" stroke="#777777" points="564,-360 510,-360 510,-336 564,-336 564,-360"/>
+<text text-anchor="middle" x="537" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">nu</text>
+</g>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;nu -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge27" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;nu</title>
+<path fill="none" stroke="#000000" d="M321.8462,-692.9957C325.9426,-644.3712 348.0311,-460.3031 452,-369 465.0234,-357.5632 483.3081,-352.1483 499.5837,-349.6599"/>
+<polygon fill="#000000" stroke="#000000" points="500.4049,-353.0862 509.9135,-348.4133 499.5662,-346.1367 500.4049,-353.0862"/>
 </g>
 <!-- determinant_4x4_matrix -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node29" class="node">
@@ -580,89 +580,89 @@
 <path fill="none" stroke="#000000" d="M323.587,-692.8231C336.3166,-633.9964 394.0266,-379.9028 452,-327 455.4404,-323.8605 459.2749,-321.1717 463.36,-318.8707"/>
 <polygon fill="#000000" stroke="#000000" points="465.1364,-321.9008 472.6472,-314.4283 462.1158,-315.586 465.1364,-321.9008"/>
 </g>
-<!-- temp -->
+<!-- pos_u -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node30" class="node">
-<title>temp</title>
+<title>pos_u</title>
 <polygon fill="#777777" stroke="#777777" points="564,-276 510,-276 510,-252 564,-252 564,-276"/>
-<text text-anchor="middle" x="537" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">temp</text>
+<text text-anchor="middle" x="537" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pos_u</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;temp -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;pos_u -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge29" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;temp</title>
+<title>proc~compute_and_export_sph_variables&#45;&gt;pos_u</title>
 <path fill="none" stroke="#000000" d="M323.1574,-692.7572C334.4602,-629.9515 388.7449,-344.5613 452,-285 464.6187,-273.1182 482.8592,-267.6547 499.2103,-265.2492"/>
 <polygon fill="#000000" stroke="#000000" points="500.0612,-268.6754 509.6044,-264.0734 499.2743,-261.7198 500.0612,-268.6754"/>
 </g>
-<!-- theta -->
+<!-- divv -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node31" class="node">
-<title>theta</title>
+<title>divv</title>
 <polygon fill="#777777" stroke="#777777" points="564,-234 510,-234 510,-210 564,-210 564,-234"/>
-<text text-anchor="middle" x="537" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">theta</text>
+<text text-anchor="middle" x="537" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">divv</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;theta -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;divv -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge30" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;theta</title>
+<title>proc~compute_and_export_sph_variables&#45;&gt;divv</title>
 <path fill="none" stroke="#000000" d="M322.7736,-692.8805C332.6968,-626.6795 383.3596,-309.3395 452,-243 464.6721,-230.7527 483.2999,-225.2914 499.8899,-222.9815"/>
 <polygon fill="#000000" stroke="#000000" points="500.3111,-226.4566 509.8847,-221.9181 499.5705,-219.4959 500.3111,-226.4566"/>
 </g>
-<!-- deallocate_gradient -->
+<!-- allocate_rcb_tree_memory_3d -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_node32" class="node">
-<title>deallocate_gradient</title>
-<polygon fill="#777777" stroke="#777777" points="590,-192 484,-192 484,-168 590,-168 590,-192"/>
-<text text-anchor="middle" x="537" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_gradient</text>
+<title>allocate_rcb_tree_memory_3d</title>
+<polygon fill="#777777" stroke="#777777" points="616,-192 458,-192 458,-168 616,-168 616,-192"/>
+<text text-anchor="middle" x="537" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_rcb_tree_memory_3d</text>
 </g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;deallocate_gradient -->
+<!-- proc~compute_and_export_sph_variables&#45;&gt;allocate_rcb_tree_memory_3d -->
 <g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge31" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;deallocate_gradient</title>
-<path fill="none" stroke="#000000" d="M322.4906,-692.721C331.2351,-622.6663 378.0403,-274.0713 452,-201 458.2852,-194.7903 466.0982,-190.3179 474.4212,-187.1139"/>
-<polygon fill="#000000" stroke="#000000" points="475.55,-190.4273 483.9806,-184.0105 473.3885,-183.7694 475.55,-190.4273"/>
-</g>
-<!-- h -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node33" class="node">
-<title>h</title>
-<polygon fill="#777777" stroke="#777777" points="564,-150 510,-150 510,-126 564,-126 564,-150"/>
-<text text-anchor="middle" x="537" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">h</text>
-</g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;h -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge32" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;h</title>
-<path fill="none" stroke="#000000" d="M322.2338,-692.6813C329.8394,-619.1683 372.6542,-238.8818 452,-159 464.4195,-146.4966 483.0235,-141.0112 499.663,-138.7516"/>
-<polygon fill="#000000" stroke="#000000" points="500.1038,-142.2249 509.6968,-137.7276 499.3931,-135.261 500.1038,-142.2249"/>
-</g>
-<!-- deallocate_sph_memory -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node34" class="node">
-<title>deallocate_sph_memory</title>
-<polygon fill="#777777" stroke="#777777" points="602,-108 472,-108 472,-84 602,-84 602,-108"/>
-<text text-anchor="middle" x="537" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_sph_memory</text>
-</g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;deallocate_sph_memory -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge33" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;deallocate_sph_memory</title>
-<path fill="none" stroke="#000000" d="M322.0024,-692.7529C328.5123,-616.1868 367.2061,-203.7669 452,-117 455.1939,-113.7318 458.8098,-110.9416 462.7046,-108.5622"/>
-<polygon fill="#000000" stroke="#000000" points="464.3242,-111.665 471.6209,-103.9833 461.1265,-105.4381 464.3242,-111.665"/>
-</g>
-<!-- density_loop -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node35" class="node">
-<title>density_loop</title>
-<polygon fill="#777777" stroke="#777777" points="573.5,-66 500.5,-66 500.5,-42 573.5,-42 573.5,-66"/>
-<text text-anchor="middle" x="537" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">density_loop</text>
-</g>
-<!-- proc~compute_and_export_sph_variables&#45;&gt;density_loop -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge34" class="edge">
-<title>proc~compute_and_export_sph_variables&#45;&gt;density_loop</title>
-<path fill="none" stroke="#000000" d="M321.7956,-692.9275C327.2557,-613.7231 361.6991,-168.7235 452,-75 462.0145,-64.606 476.2938,-59.0334 490.2966,-56.1355"/>
-<polygon fill="#000000" stroke="#000000" points="491.0843,-59.5529 500.3789,-54.4675 489.9417,-52.6467 491.0843,-59.5529"/>
+<title>proc~compute_and_export_sph_variables&#45;&gt;allocate_rcb_tree_memory_3d</title>
+<path fill="none" stroke="#000000" d="M322.4906,-692.721C331.2351,-622.6663 378.0403,-274.0713 452,-201 453.1151,-199.8983 454.2783,-198.8512 455.4839,-197.8563"/>
+<polygon fill="#000000" stroke="#000000" points="457.7294,-200.5603 463.9962,-192.0176 453.7699,-194.7877 457.7294,-200.5603"/>
 </g>
 <!-- exact_nei_tree_update -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node36" class="node">
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node33" class="node">
 <title>exact_nei_tree_update</title>
-<polygon fill="#777777" stroke="#777777" points="598,-24 476,-24 476,0 598,0 598,-24"/>
-<text text-anchor="middle" x="537" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">exact_nei_tree_update</text>
+<polygon fill="#777777" stroke="#777777" points="598,-150 476,-150 476,-126 598,-126 598,-150"/>
+<text text-anchor="middle" x="537" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">exact_nei_tree_update</text>
 </g>
 <!-- proc~compute_and_export_sph_variables&#45;&gt;exact_nei_tree_update -->
-<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge35" class="edge">
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge32" class="edge">
 <title>proc~compute_and_export_sph_variables&#45;&gt;exact_nei_tree_update</title>
-<path fill="none" stroke="#000000" d="M321.6266,-692.9342C326.1358,-610.7582 356.2384,-133.6415 452,-33 456.1618,-28.6261 461.0783,-25.1039 466.4151,-22.2745"/>
-<polygon fill="#000000" stroke="#000000" points="468.0139,-25.3942 475.7344,-18.1386 465.1743,-18.996 468.0139,-25.3942"/>
+<path fill="none" stroke="#000000" d="M322.2338,-692.6813C329.8394,-619.1683 372.6542,-238.8818 452,-159 456.2548,-154.7165 461.2354,-151.2567 466.6142,-148.468"/>
+<polygon fill="#000000" stroke="#000000" points="468.2172,-151.5873 475.9844,-144.3817 465.419,-145.1709 468.2172,-151.5873"/>
+</g>
+<!-- ncand -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node34" class="node">
+<title>ncand</title>
+<polygon fill="#777777" stroke="#777777" points="564,-108 510,-108 510,-84 564,-84 564,-108"/>
+<text text-anchor="middle" x="537" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ncand</text>
+</g>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;ncand -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge33" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;ncand</title>
+<path fill="none" stroke="#000000" d="M322.0024,-692.7529C328.5123,-616.1868 367.2061,-203.7669 452,-117 464.3174,-104.396 482.9118,-98.9011 499.5713,-96.6612"/>
+<polygon fill="#000000" stroke="#000000" points="500.0203,-100.1339 509.6208,-95.6528 499.3213,-93.1688 500.0203,-100.1339"/>
+</g>
+<!-- gen_pwp_eos_all -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node35" class="node">
+<title>gen_pwp_eos_all</title>
+<polygon fill="#777777" stroke="#777777" points="585,-66 489,-66 489,-42 585,-42 585,-66"/>
+<text text-anchor="middle" x="537" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gen_pwp_eos_all</text>
+</g>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;gen_pwp_eos_all -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge34" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;gen_pwp_eos_all</title>
+<path fill="none" stroke="#000000" d="M321.7956,-692.9275C327.2557,-613.7231 361.6991,-168.7235 452,-75 459.3531,-67.3682 469.0054,-62.3358 479.1593,-59.0529"/>
+<polygon fill="#000000" stroke="#000000" points="480.239,-62.3871 488.9894,-56.4137 478.4239,-55.6265 480.239,-62.3871"/>
+</g>
+<!-- set_units -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_node36" class="node">
+<title>set_units</title>
+<polygon fill="#777777" stroke="#777777" points="564.5,-24 509.5,-24 509.5,0 564.5,0 564.5,-24"/>
+<text text-anchor="middle" x="537" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">set_units</text>
+</g>
+<!-- proc~compute_and_export_sph_variables&#45;&gt;set_units -->
+<g id="interface~~compute_and_export_sph_variables~~CallsGraph_edge35" class="edge">
+<title>proc~compute_and_export_sph_variables&#45;&gt;set_units</title>
+<path fill="none" stroke="#000000" d="M321.6266,-692.9342C326.1358,-610.7582 356.2384,-133.6415 452,-33 464.1481,-20.2328 482.7266,-14.7225 499.4193,-12.5147"/>
+<polygon fill="#000000" stroke="#000000" points="499.8822,-15.9862 509.4949,-11.5314 499.2022,-9.0193 499.8822,-15.9862"/>
 </g>
 </g>
 </svg>
@@ -764,7 +764,7 @@ public module module subroutine compute_and_export_SPH_variables(THIS, namefile)
   
 <tr>
   
-  <td><span class="anchor" id="variable-this~55"></span>class(<a href='../type/particles.html'>particles</a>),</td>
+  <td><span class="anchor" id="variable-this~56"></span>class(<a href='../type/particles.html'>particles</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -812,14 +812,14 @@ public module module subroutine compute_and_export_SPH_variables(THIS, namefile)
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

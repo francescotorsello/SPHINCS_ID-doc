@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>construct_bssn_id &ndash; SPHINCS_LORENE</title>
+    <title>construct_bssn_id &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -265,7 +265,7 @@ module procedure construct_bssn_id <small>module module function construct_bssn_
 <text text-anchor="middle" x="48.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mesh_refinement</text>
 </g>
 <!-- proc~construct_bssn_id&#45;&gt;mesh_refinement -->
-<g id="proc~~construct_bssn_id~~UsesGraph_edge2" class="edge">
+<g id="proc~~construct_bssn_id~~UsesGraph_edge1" class="edge">
 <title>proc~construct_bssn_id&#45;&gt;mesh_refinement</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.101,-66.0355C129.3827,-70.6487 112.3975,-75.9724 96.8642,-80.8411"/>
 <polygon fill="#000000" stroke="#000000" points="95.4001,-77.632 86.9046,-83.9627 97.4937,-84.3116 95.4001,-77.632"/>
@@ -277,7 +277,7 @@ module procedure construct_bssn_id <small>module module function construct_bssn_
 <text text-anchor="middle" x="48.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">McLachlan_refine</text>
 </g>
 <!-- proc~construct_bssn_id&#45;&gt;McLachlan_refine -->
-<g id="proc~~construct_bssn_id~~UsesGraph_edge1" class="edge">
+<g id="proc~~construct_bssn_id~~UsesGraph_edge2" class="edge">
 <title>proc~construct_bssn_id&#45;&gt;McLachlan_refine</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M132.9841,-54C124.7156,-54 116.0651,-54 107.5861,-54"/>
 <polygon fill="#000000" stroke="#000000" points="107.3658,-50.5001 97.3658,-54 107.3658,-57.5001 107.3658,-50.5001"/>
@@ -390,7 +390,7 @@ module procedure construct_bssn_id <small>module module function construct_bssn_
   
 <tr>
   
-  <td><span class="anchor" id="variable-id~4"></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td><span class="anchor" id="variable-id~5"></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -484,54 +484,54 @@ module procedure construct_bssn_id <small>module module function construct_bssn_
 <polygon fill="none" stroke="#000000" points="99,-87 0,-87 0,-63 99,-63 99,-87"/>
 <text text-anchor="middle" x="49.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">construct_bssn_id</text>
 </g>
-<!-- initialize_bssn -->
-<g id="proc~~construct_bssn_id~~CallsGraph_node2" class="node">
-<title>initialize_bssn</title>
-<polygon fill="#777777" stroke="#777777" points="229,-150 150,-150 150,-126 229,-126 229,-150"/>
-<text text-anchor="middle" x="189.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">initialize_bssn</text>
-</g>
-<!-- proc~construct_bssn_id&#45;&gt;initialize_bssn -->
-<g id="proc~~construct_bssn_id~~CallsGraph_edge1" class="edge">
-<title>proc~construct_bssn_id&#45;&gt;initialize_bssn</title>
-<path fill="none" stroke="#000000" d="M72.8252,-87.1562C89.8672,-95.8657 113.6345,-107.658 135,-117 138.9195,-118.7138 143.0272,-120.433 147.1547,-122.1094"/>
-<polygon fill="#000000" stroke="#000000" points="146.1565,-125.4789 156.7422,-125.9203 148.7422,-118.974 146.1565,-125.4789"/>
-</g>
 <!-- interface~allocate_bssn_fields -->
-<g id="proc~~construct_bssn_id~~CallsGraph_node3" class="node">
+<g id="proc~~construct_bssn_id~~CallsGraph_node2" class="node">
 <title>interface~allocate_bssn_fields</title>
-<g id="a_proc~~construct_bssn_id~~CallsGraph_node3"><a xlink:href=".././interface/allocate_bssn_fields.html" xlink:title="allocate_bssn_fields">
-<polygon fill="#a7506f" stroke="#a7506f" points="244,-108 135,-108 135,-84 244,-84 244,-108"/>
-<text text-anchor="middle" x="189.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn_fields</text>
+<g id="a_proc~~construct_bssn_id~~CallsGraph_node2"><a xlink:href=".././interface/allocate_bssn_fields.html" xlink:title="allocate_bssn_fields">
+<polygon fill="#a7506f" stroke="#a7506f" points="244,-150 135,-150 135,-126 244,-126 244,-150"/>
+<text text-anchor="middle" x="189.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn_fields</text>
 </a>
 </g>
 </g>
 <!-- proc~construct_bssn_id&#45;&gt;interface~allocate_bssn_fields -->
-<g id="proc~~construct_bssn_id~~CallsGraph_edge2" class="edge">
+<g id="proc~~construct_bssn_id~~CallsGraph_edge1" class="edge">
 <title>proc~construct_bssn_id&#45;&gt;interface~allocate_bssn_fields</title>
-<path fill="none" stroke="#000000" d="M99.253,-82.4629C107.5004,-83.7001 116.1581,-84.9987 124.7115,-86.2817"/>
-<polygon fill="#000000" stroke="#000000" points="124.265,-89.7538 134.6736,-87.776 125.3035,-82.8313 124.265,-89.7538"/>
+<path fill="none" stroke="#000000" d="M72.8252,-87.1562C89.8672,-95.8657 113.6345,-107.658 135,-117 138.9195,-118.7138 143.0272,-120.433 147.1547,-122.1094"/>
+<polygon fill="#000000" stroke="#000000" points="146.1565,-125.4789 156.7422,-125.9203 148.7422,-118.974 146.1565,-125.4789"/>
 </g>
 <!-- timer -->
-<g id="proc~~construct_bssn_id~~CallsGraph_node4" class="node">
+<g id="proc~~construct_bssn_id~~CallsGraph_node3" class="node">
 <title>timer</title>
-<polygon fill="#777777" stroke="#777777" points="216.5,-66 162.5,-66 162.5,-42 216.5,-42 216.5,-66"/>
-<text text-anchor="middle" x="189.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
+<polygon fill="#777777" stroke="#777777" points="216.5,-108 162.5,-108 162.5,-84 216.5,-84 216.5,-108"/>
+<text text-anchor="middle" x="189.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
 </g>
 <!-- proc~construct_bssn_id&#45;&gt;timer -->
 <g id="proc~~construct_bssn_id~~CallsGraph_edge3" class="edge">
 <title>proc~construct_bssn_id&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" d="M99.253,-67.5371C116.6603,-64.926 135.8953,-62.0407 152.1192,-59.6071"/>
-<polygon fill="#000000" stroke="#000000" points="152.9263,-63.0253 162.2964,-58.0805 151.8879,-56.1027 152.9263,-63.0253"/>
+<path fill="none" stroke="#000000" d="M99.253,-82.4629C116.6603,-85.074 135.8953,-87.9593 152.1192,-90.3929"/>
+<polygon fill="#000000" stroke="#000000" points="151.8879,-93.8973 162.2964,-91.9195 152.9263,-86.9747 151.8879,-93.8973"/>
 </g>
 <!-- deallocate_bssn -->
-<g id="proc~~construct_bssn_id~~CallsGraph_node5" class="node">
+<g id="proc~~construct_bssn_id~~CallsGraph_node4" class="node">
 <title>deallocate_bssn</title>
-<polygon fill="#777777" stroke="#777777" points="234.5,-24 144.5,-24 144.5,0 234.5,0 234.5,-24"/>
-<text text-anchor="middle" x="189.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn</text>
+<polygon fill="#777777" stroke="#777777" points="234.5,-66 144.5,-66 144.5,-42 234.5,-42 234.5,-66"/>
+<text text-anchor="middle" x="189.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn</text>
 </g>
 <!-- proc~construct_bssn_id&#45;&gt;deallocate_bssn -->
-<g id="proc~~construct_bssn_id~~CallsGraph_edge4" class="edge">
+<g id="proc~~construct_bssn_id~~CallsGraph_edge2" class="edge">
 <title>proc~construct_bssn_id&#45;&gt;deallocate_bssn</title>
+<path fill="none" stroke="#000000" d="M99.253,-67.5371C110.5594,-65.8411 122.6369,-64.0295 134.1596,-62.3011"/>
+<polygon fill="#000000" stroke="#000000" points="134.7393,-65.7533 144.1095,-60.8086 133.7009,-58.8308 134.7393,-65.7533"/>
+</g>
+<!-- initialize_bssn -->
+<g id="proc~~construct_bssn_id~~CallsGraph_node5" class="node">
+<title>initialize_bssn</title>
+<polygon fill="#777777" stroke="#777777" points="229,-24 150,-24 150,0 229,0 229,-24"/>
+<text text-anchor="middle" x="189.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">initialize_bssn</text>
+</g>
+<!-- proc~construct_bssn_id&#45;&gt;initialize_bssn -->
+<g id="proc~~construct_bssn_id~~CallsGraph_edge4" class="edge">
+<title>proc~construct_bssn_id&#45;&gt;initialize_bssn</title>
 <path fill="none" stroke="#000000" d="M72.8252,-62.8438C89.8672,-54.1343 113.6345,-42.342 135,-33 138.9195,-31.2862 143.0272,-29.567 147.1547,-27.8906"/>
 <polygon fill="#000000" stroke="#000000" points="148.7422,-31.026 156.7422,-24.0797 146.1565,-24.5211 148.7422,-31.026"/>
 </g>
@@ -539,28 +539,28 @@ module procedure construct_bssn_id <small>module module function construct_bssn_
 <g id="proc~~construct_bssn_id~~CallsGraph_node6" class="node">
 <title>proc~allocate_bssn_fields</title>
 <g id="a_proc~~construct_bssn_id~~CallsGraph_node6"><a xlink:href=".././proc/allocate_bssn_fields.html" xlink:title="allocate_bssn_fields">
-<polygon fill="#d9534f" stroke="#d9534f" points="389,-108 280,-108 280,-84 389,-84 389,-108"/>
-<text text-anchor="middle" x="334.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn_fields</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="389,-150 280,-150 280,-126 389,-126 389,-150"/>
+<text text-anchor="middle" x="334.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn_fields</text>
 </a>
 </g>
 </g>
 <!-- interface~allocate_bssn_fields&#45;&gt;proc~allocate_bssn_fields -->
 <g id="proc~~construct_bssn_id~~CallsGraph_edge5" class="edge">
 <title>interface~allocate_bssn_fields&#45;&gt;proc~allocate_bssn_fields</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M244.3183,-96C252.5286,-96 261.0611,-96 269.4586,-96"/>
-<polygon fill="#000000" stroke="#000000" points="269.6042,-99.5001 279.6042,-96 269.6042,-92.5001 269.6042,-99.5001"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M244.3183,-138C252.5286,-138 261.0611,-138 269.4586,-138"/>
+<polygon fill="#000000" stroke="#000000" points="269.6042,-141.5001 279.6042,-138 269.6042,-134.5001 269.6042,-141.5001"/>
 </g>
 <!-- allocate_grid_function -->
 <g id="proc~~construct_bssn_id~~CallsGraph_node7" class="node">
 <title>allocate_grid_function</title>
-<polygon fill="#777777" stroke="#777777" points="542,-108 425,-108 425,-84 542,-84 542,-108"/>
-<text text-anchor="middle" x="483.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_grid_function</text>
+<polygon fill="#777777" stroke="#777777" points="542,-150 425,-150 425,-126 542,-126 542,-150"/>
+<text text-anchor="middle" x="483.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_grid_function</text>
 </g>
 <!-- proc~allocate_bssn_fields&#45;&gt;allocate_grid_function -->
 <g id="proc~~construct_bssn_id~~CallsGraph_edge6" class="edge">
 <title>proc~allocate_bssn_fields&#45;&gt;allocate_grid_function</title>
-<path fill="none" stroke="#000000" d="M389.136,-96C397.4935,-96 406.2108,-96 414.8236,-96"/>
-<polygon fill="#000000" stroke="#000000" points="414.8586,-99.5001 424.8585,-96 414.8585,-92.5001 414.8586,-99.5001"/>
+<path fill="none" stroke="#000000" d="M389.136,-138C397.4935,-138 406.2108,-138 414.8236,-138"/>
+<polygon fill="#000000" stroke="#000000" points="414.8586,-141.5001 424.8585,-138 414.8585,-134.5001 414.8586,-141.5001"/>
 </g>
 </g>
 </svg>
@@ -638,76 +638,76 @@ module procedure construct_bssn_id <small>module module function construct_bssn_
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: proc~~construct_bssn_id~~CalledByGraph Pages: 1 -->
-<svg id="procconstruct_bssn_idCalledByGraph" width="476pt" height="74pt"
- viewBox="0.00 0.00 476.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="procconstruct_bssn_idCalledByGraph" width="465pt" height="74pt"
+ viewBox="0.00 0.00 465.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="proc~~construct_bssn_id~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
 <title>proc~~construct_bssn_id~~CalledByGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 472,-70 472,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 461,-70 461,4 -4,4"/>
 <!-- proc~construct_bssn_id -->
 <g id="proc~~construct_bssn_id~~CalledByGraph_node1" class="node">
 <title>proc~construct_bssn_id</title>
-<polygon fill="none" stroke="#000000" points="468,-45 369,-45 369,-21 468,-21 468,-45"/>
-<text text-anchor="middle" x="418.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">construct_bssn_id</text>
+<polygon fill="none" stroke="#000000" points="457,-45 358,-45 358,-21 457,-21 457,-45"/>
+<text text-anchor="middle" x="407.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">construct_bssn_id</text>
 </g>
 <!-- interface~construct_bssn_id -->
 <g id="proc~~construct_bssn_id~~CalledByGraph_node2" class="node">
 <title>interface~construct_bssn_id</title>
 <g id="a_proc~~construct_bssn_id~~CalledByGraph_node2"><a xlink:href=".././interface/construct_bssn_id.html" xlink:title="construct_bssn_id">
-<polygon fill="#a7506f" stroke="#a7506f" points="333,-45 234,-45 234,-21 333,-21 333,-45"/>
-<text text-anchor="middle" x="283.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_bssn_id</text>
+<polygon fill="#a7506f" stroke="#a7506f" points="322,-45 223,-45 223,-21 322,-21 322,-45"/>
+<text text-anchor="middle" x="272.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_bssn_id</text>
 </a>
 </g>
 </g>
 <!-- interface~construct_bssn_id&#45;&gt;proc~construct_bssn_id -->
 <g id="proc~~construct_bssn_id~~CalledByGraph_edge1" class="edge">
 <title>interface~construct_bssn_id&#45;&gt;proc~construct_bssn_id</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M333.0024,-33C341.2413,-33 349.8662,-33 358.3351,-33"/>
-<polygon fill="#000000" stroke="#000000" points="358.5517,-36.5001 368.5516,-33 358.5516,-29.5001 358.5517,-36.5001"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M322.0024,-33C330.2413,-33 338.8662,-33 347.3351,-33"/>
+<polygon fill="#000000" stroke="#000000" points="347.5517,-36.5001 357.5516,-33 347.5516,-29.5001 347.5517,-36.5001"/>
 </g>
 <!-- interface~bssn_id -->
 <g id="proc~~construct_bssn_id~~CalledByGraph_node3" class="node">
 <title>interface~bssn_id</title>
 <g id="a_proc~~construct_bssn_id~~CalledByGraph_node3"><a xlink:href=".././interface/bssn_id.html" xlink:title="bssn_id">
-<polygon fill="#a7506f" stroke="#a7506f" points="198,-45 144,-45 144,-21 198,-21 198,-45"/>
-<text text-anchor="middle" x="171" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id</text>
+<polygon fill="#a7506f" stroke="#a7506f" points="187,-45 133,-45 133,-21 187,-21 187,-45"/>
+<text text-anchor="middle" x="160" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id</text>
 </a>
 </g>
 </g>
 <!-- interface~bssn_id&#45;&gt;interface~construct_bssn_id -->
 <g id="proc~~construct_bssn_id~~CalledByGraph_edge2" class="edge">
 <title>interface~bssn_id&#45;&gt;interface~construct_bssn_id</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M198.2331,-33C205.9817,-33 214.7419,-33 223.6231,-33"/>
-<polygon fill="#000000" stroke="#000000" points="223.6544,-36.5001 233.6543,-33 223.6543,-29.5001 223.6544,-36.5001"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M187.2331,-33C194.9817,-33 203.7419,-33 212.6231,-33"/>
+<polygon fill="#000000" stroke="#000000" points="212.6544,-36.5001 222.6543,-33 212.6543,-29.5001 212.6544,-36.5001"/>
+</g>
+<!-- program~sphincs_id -->
+<g id="proc~~construct_bssn_id~~CalledByGraph_node4" class="node">
+<title>program~sphincs_id</title>
+<g id="a_proc~~construct_bssn_id~~CalledByGraph_node4"><a xlink:href=".././program/sphincs_id.html" xlink:title="sphincs_id">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="80,-66 17,-66 17,-42 80,-42 80,-66"/>
+<text text-anchor="middle" x="48.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_id</text>
+</a>
+</g>
+</g>
+<!-- program~sphincs_id&#45;&gt;interface~bssn_id -->
+<g id="proc~~construct_bssn_id~~CalledByGraph_edge3" class="edge">
+<title>program~sphincs_id&#45;&gt;interface~bssn_id</title>
+<path fill="none" stroke="#000000" d="M80.1532,-48.0384C93.39,-45.5454 108.871,-42.6297 122.6596,-40.0327"/>
+<polygon fill="#000000" stroke="#000000" points="123.6293,-43.4117 132.8087,-38.1212 122.3337,-36.5326 123.6293,-43.4117"/>
 </g>
 <!-- program~convergence_test -->
-<g id="proc~~construct_bssn_id~~CalledByGraph_node4" class="node">
+<g id="proc~~construct_bssn_id~~CalledByGraph_node5" class="node">
 <title>program~convergence_test</title>
-<g id="a_proc~~construct_bssn_id~~CalledByGraph_node4"><a xlink:href=".././program/convergence_test.html" xlink:title="convergence_test">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="102.5,-66 5.5,-66 5.5,-42 102.5,-42 102.5,-66"/>
-<text text-anchor="middle" x="54" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">convergence_test</text>
+<g id="a_proc~~construct_bssn_id~~CalledByGraph_node5"><a xlink:href=".././program/convergence_test.html" xlink:title="convergence_test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="97,-24 0,-24 0,0 97,0 97,-24"/>
+<text text-anchor="middle" x="48.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">convergence_test</text>
 </a>
 </g>
 </g>
 <!-- program~convergence_test&#45;&gt;interface~bssn_id -->
-<g id="proc~~construct_bssn_id~~CalledByGraph_edge3" class="edge">
-<title>program~convergence_test&#45;&gt;interface~bssn_id</title>
-<path fill="none" stroke="#000000" d="M102.6021,-45.2765C113.04,-43.4031 123.9109,-41.4519 133.8331,-39.671"/>
-<polygon fill="#000000" stroke="#000000" points="134.5473,-43.0988 143.7717,-37.8871 133.3106,-36.2089 134.5473,-43.0988"/>
-</g>
-<!-- program~sphincs_lorene_bns -->
-<g id="proc~~construct_bssn_id~~CalledByGraph_node5" class="node">
-<title>program~sphincs_lorene_bns</title>
-<g id="a_proc~~construct_bssn_id~~CalledByGraph_node5"><a xlink:href=".././program/sphincs_lorene_bns.html" xlink:title="sphincs_lorene_bns">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="108,-24 0,-24 0,0 108,0 108,-24"/>
-<text text-anchor="middle" x="54" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene_bns</text>
-</a>
-</g>
-</g>
-<!-- program~sphincs_lorene_bns&#45;&gt;interface~bssn_id -->
 <g id="proc~~construct_bssn_id~~CalledByGraph_edge4" class="edge">
-<title>program~sphincs_lorene_bns&#45;&gt;interface~bssn_id</title>
-<path fill="none" stroke="#000000" d="M108.0478,-21.7009C116.8045,-23.2726 125.6951,-24.8683 133.9285,-26.3461"/>
-<polygon fill="#000000" stroke="#000000" points="133.4855,-29.8225 143.9466,-28.1443 134.7222,-22.9326 133.4855,-29.8225"/>
+<title>program~convergence_test&#45;&gt;interface~bssn_id</title>
+<path fill="none" stroke="#000000" d="M97.0812,-21.1498C105.6639,-22.7663 114.4772,-24.4262 122.6889,-25.9728"/>
+<polygon fill="#000000" stroke="#000000" points="122.2311,-29.448 132.7062,-27.8595 123.5268,-22.569 122.2311,-29.448"/>
 </g>
 </g>
 </svg>
@@ -834,14 +834,14 @@ module procedure construct_bssn_id <small>module module function construct_bssn_
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>destruct_bin_ns &ndash; SPHINCS_LORENE</title>
+    <title>destruct_bin_ns &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -45,7 +45,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -272,25 +272,10 @@
 <path fill="none" stroke="#000000" d="M218.1634,-19.6409C226.5254,-21.0401 235.3257,-22.5127 243.9058,-23.9484"/>
 <polygon fill="#000000" stroke="#000000" points="243.397,-27.4118 253.8375,-25.6103 244.5523,-20.5078 243.397,-27.4118"/>
 </g>
-<!-- interface~construct_binary -->
-<g id="interface~~destruct_bin_ns~~CalledByGraph_node4" class="node">
-<title>interface~construct_binary</title>
-<g id="a_interface~~destruct_bin_ns~~CalledByGraph_node4"><a xlink:href=".././interface/construct_binary.html" xlink:title="construct_binary">
-<polygon fill="#a7506f" stroke="#a7506f" points="91,-24 0,-24 0,0 91,0 91,-24"/>
-<text text-anchor="middle" x="45.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_binary</text>
-</a>
-</g>
-</g>
-<!-- interface~construct_binary&#45;&gt;proc~construct_binary -->
-<g id="interface~~destruct_bin_ns~~CalledByGraph_edge4" class="edge">
-<title>interface~construct_binary&#45;&gt;proc~construct_binary</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M91.3499,-12C99.5329,-12 108.1406,-12 116.568,-12"/>
-<polygon fill="#000000" stroke="#000000" points="116.7174,-15.5001 126.7174,-12 116.7174,-8.5001 116.7174,-15.5001"/>
-</g>
 <!-- interface~destruct_binary -->
-<g id="interface~~destruct_bin_ns~~CalledByGraph_node5" class="node">
+<g id="interface~~destruct_bin_ns~~CalledByGraph_node4" class="node">
 <title>interface~destruct_binary</title>
-<g id="a_interface~~destruct_bin_ns~~CalledByGraph_node5"><a xlink:href=".././interface/destruct_binary.html" xlink:title="destruct_binary">
+<g id="a_interface~~destruct_bin_ns~~CalledByGraph_node4"><a xlink:href=".././interface/destruct_binary.html" xlink:title="destruct_binary">
 <polygon fill="#a7506f" stroke="#a7506f" points="88.5,-66 2.5,-66 2.5,-42 88.5,-42 88.5,-66"/>
 <text text-anchor="middle" x="45.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">destruct_binary</text>
 </a>
@@ -301,6 +286,21 @@
 <title>interface~destruct_binary&#45;&gt;proc~destruct_binary</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M88.851,-54C98.5573,-54 108.9644,-54 119.0268,-54"/>
 <polygon fill="#000000" stroke="#000000" points="119.3444,-57.5001 129.3444,-54 119.3444,-50.5001 119.3444,-57.5001"/>
+</g>
+<!-- interface~construct_binary -->
+<g id="interface~~destruct_bin_ns~~CalledByGraph_node5" class="node">
+<title>interface~construct_binary</title>
+<g id="a_interface~~destruct_bin_ns~~CalledByGraph_node5"><a xlink:href=".././interface/construct_binary.html" xlink:title="construct_binary">
+<polygon fill="#a7506f" stroke="#a7506f" points="91,-24 0,-24 0,0 91,0 91,-24"/>
+<text text-anchor="middle" x="45.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_binary</text>
+</a>
+</g>
+</g>
+<!-- interface~construct_binary&#45;&gt;proc~construct_binary -->
+<g id="interface~~destruct_bin_ns~~CalledByGraph_edge4" class="edge">
+<title>interface~construct_binary&#45;&gt;proc~construct_binary</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M91.3499,-12C99.5329,-12 108.1406,-12 116.568,-12"/>
+<polygon fill="#000000" stroke="#000000" points="116.7174,-15.5001 126.7174,-12 116.7174,-8.5001 116.7174,-15.5001"/>
 </g>
 </g>
 </svg>
@@ -432,14 +432,14 @@ private subroutine destruct_bin_ns(optr) bind(C, NAME= "0")
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

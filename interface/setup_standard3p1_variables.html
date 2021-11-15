@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>setup_standard3p1_variables &ndash; SPHINCS_LORENE</title>
+    <title>setup_standard3p1_variables &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -45,7 +45,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -268,68 +268,68 @@
 <path fill="none" stroke="#000000" d="M280.2531,-129.2515C300.3912,-147.2822 340.5404,-180.9863 380,-201 383.781,-202.9177 387.7701,-204.6986 391.8435,-206.3449"/>
 <polygon fill="#000000" stroke="#000000" points="390.8508,-209.7106 401.4431,-209.9431 393.3077,-203.1559 390.8508,-209.7106"/>
 </g>
-<!-- deallocate_grid_function -->
+<!-- initialize_grid -->
 <g id="interface~~setup_standard3p1_variables~~CallsGraph_node4" class="node">
-<title>deallocate_grid_function</title>
-<polygon fill="#777777" stroke="#777777" points="512.5,-192 383.5,-192 383.5,-168 512.5,-168 512.5,-192"/>
-<text text-anchor="middle" x="448" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_grid_function</text>
+<title>initialize_grid</title>
+<polygon fill="#777777" stroke="#777777" points="485,-192 411,-192 411,-168 485,-168 485,-192"/>
+<text text-anchor="middle" x="448" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">initialize_grid</text>
 </g>
-<!-- proc~setup_standard3p1_variables&#45;&gt;deallocate_grid_function -->
+<!-- proc~setup_standard3p1_variables&#45;&gt;initialize_grid -->
 <g id="interface~~setup_standard3p1_variables~~CallsGraph_edge3" class="edge">
-<title>proc~setup_standard3p1_variables&#45;&gt;deallocate_grid_function</title>
-<path fill="none" stroke="#000000" d="M298.0075,-129.0616C320.618,-137.7253 352.06,-149.5018 380,-159 385.6956,-160.9362 391.6843,-162.8955 397.6487,-164.7991"/>
-<polygon fill="#000000" stroke="#000000" points="397.0177,-168.2698 407.6072,-167.9362 399.1209,-161.5933 397.0177,-168.2698"/>
+<title>proc~setup_standard3p1_variables&#45;&gt;initialize_grid</title>
+<path fill="none" stroke="#000000" d="M298.0075,-129.0616C320.618,-137.7253 352.06,-149.5018 380,-159 386.8361,-161.324 394.0946,-163.6812 401.2264,-165.9354"/>
+<polygon fill="#000000" stroke="#000000" points="400.2327,-169.2917 410.8215,-168.9327 402.32,-162.6102 400.2327,-169.2917"/>
 </g>
-<!-- levels -->
+<!-- timer -->
 <g id="interface~~setup_standard3p1_variables~~CallsGraph_node5" class="node">
-<title>levels</title>
+<title>timer</title>
 <polygon fill="#777777" stroke="#777777" points="475,-150 421,-150 421,-126 475,-126 475,-150"/>
-<text text-anchor="middle" x="448" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">levels</text>
+<text text-anchor="middle" x="448" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
 </g>
-<!-- proc~setup_standard3p1_variables&#45;&gt;levels -->
+<!-- proc~setup_standard3p1_variables&#45;&gt;timer -->
 <g id="interface~~setup_standard3p1_variables~~CallsGraph_edge4" class="edge">
-<title>proc~setup_standard3p1_variables&#45;&gt;levels</title>
+<title>proc~setup_standard3p1_variables&#45;&gt;timer</title>
 <path fill="none" stroke="#000000" d="M344.0227,-125.9363C367.079,-128.6114 391.329,-131.4249 410.6051,-133.6614"/>
 <polygon fill="#000000" stroke="#000000" points="410.4264,-137.164 420.7632,-134.8399 411.2332,-130.2107 410.4264,-137.164"/>
 </g>
-<!-- timer -->
-<g id="interface~~setup_standard3p1_variables~~CallsGraph_node6" class="node">
-<title>timer</title>
-<polygon fill="#777777" stroke="#777777" points="475,-108 421,-108 421,-84 475,-84 475,-108"/>
-<text text-anchor="middle" x="448" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
-</g>
-<!-- proc~setup_standard3p1_variables&#45;&gt;timer -->
-<g id="interface~~setup_standard3p1_variables~~CallsGraph_edge5" class="edge">
-<title>proc~setup_standard3p1_variables&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" d="M344.0227,-108.0637C367.079,-105.3886 391.329,-102.5751 410.6051,-100.3386"/>
-<polygon fill="#000000" stroke="#000000" points="411.2332,-103.7893 420.7632,-99.1601 410.4264,-96.836 411.2332,-103.7893"/>
-</g>
-<!-- initialize_grid -->
-<g id="interface~~setup_standard3p1_variables~~CallsGraph_node7" class="node">
-<title>initialize_grid</title>
-<polygon fill="#777777" stroke="#777777" points="485,-66 411,-66 411,-42 485,-42 485,-66"/>
-<text text-anchor="middle" x="448" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">initialize_grid</text>
-</g>
-<!-- proc~setup_standard3p1_variables&#45;&gt;initialize_grid -->
-<g id="interface~~setup_standard3p1_variables~~CallsGraph_edge6" class="edge">
-<title>proc~setup_standard3p1_variables&#45;&gt;initialize_grid</title>
-<path fill="none" stroke="#000000" d="M298.0075,-104.9384C320.618,-96.2747 352.06,-84.4982 380,-75 386.8361,-72.676 394.0946,-70.3188 401.2264,-68.0646"/>
-<polygon fill="#000000" stroke="#000000" points="402.32,-71.3898 410.8215,-65.0673 400.2327,-64.7083 402.32,-71.3898"/>
-</g>
 <!-- proc~determinant_sym3x3_grid -->
-<g id="interface~~setup_standard3p1_variables~~CallsGraph_node8" class="node">
+<g id="interface~~setup_standard3p1_variables~~CallsGraph_node6" class="node">
 <title>proc~determinant_sym3x3_grid</title>
-<g id="a_interface~~setup_standard3p1_variables~~CallsGraph_node8"><a xlink:href=".././proc/determinant_sym3x3_grid.html" xlink:title="determinant_sym3x3_grid">
-<polygon fill="#d9534f" stroke="#d9534f" points="516,-24 380,-24 380,0 516,0 516,-24"/>
-<text text-anchor="middle" x="448" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">determinant_sym3x3_grid</text>
+<g id="a_interface~~setup_standard3p1_variables~~CallsGraph_node6"><a xlink:href=".././proc/determinant_sym3x3_grid.html" xlink:title="determinant_sym3x3_grid">
+<polygon fill="#d9534f" stroke="#d9534f" points="516,-108 380,-108 380,-84 516,-84 516,-108"/>
+<text text-anchor="middle" x="448" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">determinant_sym3x3_grid</text>
 </a>
 </g>
 </g>
 <!-- proc~setup_standard3p1_variables&#45;&gt;proc~determinant_sym3x3_grid -->
-<g id="interface~~setup_standard3p1_variables~~CallsGraph_edge7" class="edge">
+<g id="interface~~setup_standard3p1_variables~~CallsGraph_edge5" class="edge">
 <title>proc~setup_standard3p1_variables&#45;&gt;proc~determinant_sym3x3_grid</title>
-<path fill="none" stroke="#000000" d="M280.2531,-104.7485C300.3912,-86.7178 340.5404,-53.0137 380,-33 383.781,-31.0823 387.7701,-29.3014 391.8435,-27.6551"/>
-<polygon fill="#000000" stroke="#000000" points="393.3077,-30.8441 401.4431,-24.0569 390.8508,-24.2894 393.3077,-30.8441"/>
+<path fill="none" stroke="#000000" d="M344.0227,-108.0637C352.5982,-107.0687 361.3388,-106.0546 369.9271,-105.0582"/>
+<polygon fill="#000000" stroke="#000000" points="370.3902,-108.528 379.9202,-103.8988 369.5834,-101.5747 370.3902,-108.528"/>
+</g>
+<!-- deallocate_grid_function -->
+<g id="interface~~setup_standard3p1_variables~~CallsGraph_node7" class="node">
+<title>deallocate_grid_function</title>
+<polygon fill="#777777" stroke="#777777" points="512.5,-66 383.5,-66 383.5,-42 512.5,-42 512.5,-66"/>
+<text text-anchor="middle" x="448" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_grid_function</text>
+</g>
+<!-- proc~setup_standard3p1_variables&#45;&gt;deallocate_grid_function -->
+<g id="interface~~setup_standard3p1_variables~~CallsGraph_edge6" class="edge">
+<title>proc~setup_standard3p1_variables&#45;&gt;deallocate_grid_function</title>
+<path fill="none" stroke="#000000" d="M298.0075,-104.9384C320.618,-96.2747 352.06,-84.4982 380,-75 385.6956,-73.0638 391.6843,-71.1045 397.6487,-69.2009"/>
+<polygon fill="#000000" stroke="#000000" points="399.1209,-72.4067 407.6072,-66.0638 397.0177,-65.7302 399.1209,-72.4067"/>
+</g>
+<!-- levels -->
+<g id="interface~~setup_standard3p1_variables~~CallsGraph_node8" class="node">
+<title>levels</title>
+<polygon fill="#777777" stroke="#777777" points="475,-24 421,-24 421,0 475,0 475,-24"/>
+<text text-anchor="middle" x="448" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">levels</text>
+</g>
+<!-- proc~setup_standard3p1_variables&#45;&gt;levels -->
+<g id="interface~~setup_standard3p1_variables~~CallsGraph_edge7" class="edge">
+<title>proc~setup_standard3p1_variables&#45;&gt;levels</title>
+<path fill="none" stroke="#000000" d="M280.2531,-104.7485C300.3912,-86.7178 340.5404,-53.0137 380,-33 389.6867,-28.087 400.739,-24.0719 411.0767,-20.9174"/>
+<polygon fill="#000000" stroke="#000000" points="412.0548,-24.278 420.7014,-18.1554 410.1239,-17.5496 412.0548,-24.278"/>
 </g>
 </g>
 </svg>
@@ -446,7 +446,7 @@ public module module subroutine setup_standard3p1_variables(f3p1, id, dx, dy, dz
   
 <tr>
   
-  <td><span class="anchor" id="variable-id~2"></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td><span class="anchor" id="variable-id~3"></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -517,14 +517,14 @@ public module module subroutine setup_standard3p1_variables(f3p1, id, dx, dy, dz
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

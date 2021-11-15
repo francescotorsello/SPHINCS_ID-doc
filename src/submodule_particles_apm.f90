@@ -25,19 +25,19 @@ SUBMODULE (particles_id) particles_apm
 
     !*****************************************************
     !
-    !#  Compute the particle positions as follows:
+    !# Compute the particle positions as follows:
     !
-    !    - 1. Take initial particle distribution as input
-    !    - 2. Assume that the particles have the same mass
-    !    - 3. Do the APM iteration so that the final
-    !       SPH kernel estimate of the baryon mass
-    !       density matches the baryon density in the
-    !       star as given by |lorene|
-    !    - 4. Correct the particle masses ONCE, in order
-    !       to match the density even better. Since we
-    !       don't want a large mass ratio, we impose a
-    !       maximum mass ratio when performing this
-    !       correction.
+    !   - 1. Take initial particle distribution as input
+    !   - 2. Assume that the particles have the same mass
+    !   - 3. Do the APM iteration so that the final
+    !      SPH kernel estimate of the baryon mass
+    !      density matches the baryon density in the
+    !      star as given by |lorene|
+    !   - 4. Correct the particle masses ONCE, in order
+    !      to match the density even better. Since we
+    !      don't want a large mass ratio, we impose a
+    !      maximum mass ratio when performing this
+    !      correction.
     !
     !  After this procedure, the resulting particle
     !  distribution has positions and baryon numbers
@@ -98,7 +98,7 @@ SUBMODULE (particles_id) particles_apm
     INTEGER,          PARAMETER:: m_max_it    = 50
     INTEGER,          PARAMETER:: search_pos= 10
     DOUBLE PRECISION, PARAMETER:: ellipse_thickness = 1.25D0
-    DOUBLE PRECISION, PARAMETER:: ghost_dist = 0.2D0
+    DOUBLE PRECISION, PARAMETER:: ghost_dist = 0.25D0
     DOUBLE PRECISION, PARAMETER:: tol= 1.0D-3
     DOUBLE PRECISION, PARAMETER:: iter_tol= 2.0D-2
 
@@ -2282,103 +2282,6 @@ SUBMODULE (particles_id) particles_apm
     ENDIF
 
   END SUBROUTINE correct_center_of_mass
-
-
-  SUBROUTINE impose_equatorial_plane_symmetry( npart_real, pos, nu, com_star, &
-                                               verbose )
-
-    !*************************************************************
-    !
-    !# Mirror the particle with z>0 with respect to the xy plane,
-    !  to impose the equatorial-plane symmetry
-    !
-    !  FT 1.09.2021
-    !
-    !*************************************************************
-
-    USE analyze, ONLY: COM
-
-    IMPLICIT NONE
-
-    INTEGER, INTENT(IN):: npart_real
-    DOUBLE PRECISION, INTENT(IN), OPTIONAL:: com_star
-    LOGICAL, INTENT(IN), OPTIONAL:: verbose
-
-    DOUBLE PRECISION, DIMENSION(3,npart_real), INTENT(INOUT):: pos
-    DOUBLE PRECISION, DIMENSION(npart_real),   INTENT(INOUT):: nu
-
-    INTEGER:: a, itr, npart_real_half
-    DOUBLE PRECISION:: com_x, com_y, com_z, com_d
-
-    DOUBLE PRECISION, DIMENSION(3,npart_real):: pos_tmp
-    DOUBLE PRECISION, DIMENSION(npart_real)  :: nu_tmp
-
-    pos_tmp= pos
-    nu_tmp= nu
-    itr= 0
-    DO a= 1, npart_real, 1
-      IF( pos_tmp( 3, a ) > 0.0D0 &
-          .AND. &
-          itr < npart_real/2 )THEN
-        itr= itr + 1
-        pos( 1, itr )= pos_tmp( 1, a )
-        pos( 2, itr )= pos_tmp( 2, a )
-        pos( 3, itr )= pos_tmp( 3, a )
-        nu( itr )    = nu_tmp( a )
-      ENDIF
-    ENDDO
-    npart_real_half= itr
-
-    ! If some of the particles crossed the xy plane top-down in the
-    ! last step, replace them with their previous position
-    ! above the xy plane
-!   IF( npart_real_half < npart_real/2 )THEN
-!
-!     npart_missing= npart_real/2 - npart_real_half
-!
-!     DO a= npart_real_half + 1, npart_real/2, 1
-!
-!       pos( :, a )= all_pos_tmp2( :, a )
-!
-!     ENDDO
-!
-!   ENDIF
-
-    !$OMP PARALLEL DO DEFAULT( NONE ) &
-    !$OMP             SHARED( pos, npart_real_half, nu ) &
-    !$OMP             PRIVATE( a )
-    DO a= 1, npart_real_half, 1
-      pos( 1, npart_real_half + a )=   pos( 1, a )
-      pos( 2, npart_real_half + a )=   pos( 2, a )
-      pos( 3, npart_real_half + a )= - pos( 3, a )
-      nu( npart_real_half + a )    =   nu( a )
-    ENDDO
-    !$OMP END PARALLEL DO
-
-    IF( PRESENT(verbose) .AND. verbose .EQV. .TRUE. )THEN
-
-      CALL COM( npart_real, pos, nu, & ! input
-                com_x, com_y, com_z, com_d ) ! output
-
-      PRINT *, "** After mirroring particles:"
-      IF( PRESENT(com_star) ) PRINT *, &
-               " * x coordinate of the center of mass of the star, ", &
-               "from LORENE: com_star= ", com_star, "Msun_geo"
-      PRINT *, " * x coordinate of the center of mass of the particle ", &
-               "distribution: com_x= ", com_x, "Msun_geo"
-      PRINT *, " * y coordinate of the center of mass of the particle ", &
-               "distribution: com_y= ", com_y, "Msun_geo"
-      PRINT *, " * z coordinate of the center of mass of the particle ", &
-               "distribution: com_z= ", com_z, "Msun_geo"
-      PRINT *, " * Distance of the center of mass of the particle ", &
-               "distribution from the  origin: com_d= ", com_d
-      IF( PRESENT(com_star) ) PRINT *, " * |com_x-com_star/com_star|=", &
-               ABS( com_x-com_star )/ABS( com_star + 1 )
-      PRINT *
-
-    ENDIF
-
-  END SUBROUTINE impose_equatorial_plane_symmetry
 
 
   SUBROUTINE get_neighbours_bf(ipart,npart,pos,h,dimensions,nnei,neilist)

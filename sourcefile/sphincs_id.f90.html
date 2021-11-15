@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
+    
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>sphincs_id.f90 &ndash; SPHINCS_ID</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>More</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+               
+        
+        
+            </ul>
+        
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>sphincs_id.f90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 2.4% of total for source files.">301 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/sphincs_id.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+  
+     <li class="active">sphincs_id.f90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#progs-0">Programs</a></h3></div>
+  <div id="progs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/sphincs_id.html">sphincs_id</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/sphincs_id.f90.html#src">sphincs_id.f90</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      
+      <br>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">This file depends on</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: sourcefile~~sphincs_id.f90~~EfferentGraph Pages: 1 -->
+<svg id="sourcefilesphincs_idf90EfferentGraph" width="641pt" height="296pt"
+ viewBox="0.00 0.00 641.00 295.88" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph" class="graph" transform="scale(.8445 .8445) rotate(0) translate(4 346.3455)">
+<title>sourcefile~~sphincs_id.f90~~EfferentGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-346.3455 755,-346.3455 755,4 -4,4"/>
+<!-- sourcefile~sphincs_id.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_node1" class="node">
+<title>sourcefile~sphincs_id.f90</title>
+<polygon fill="none" stroke="#000000" points="751,-249.5358 670,-249.5358 670,-225.5358 751,-225.5358 751,-249.5358"/>
+<text text-anchor="middle" x="710.5" y="-235.1358" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">sphincs_id.f90</text>
+</g>
+<!-- sourcefile~module_particles_id.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_node2" class="node">
+<title>sourcefile~module_particles_id.f90</title>
+<g id="a_sourcefile~~sphincs_id.f90~~EfferentGraph_node2"><a xlink:href=".././sourcefile/module_particles_id.f90.html" xlink:title="module_particles_id.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="274.5,-62.5358 148.5,-62.5358 148.5,-38.5358 274.5,-38.5358 274.5,-62.5358"/>
+<text text-anchor="middle" x="211.5" y="-48.1358" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_particles_id.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_particles_id.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge1" class="edge">
+<title>sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_particles_id.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M384,-12.5358C340.936,-14.7765 293.1343,-26.0211 258.7931,-35.702"/>
+<polygon fill="#000000" stroke="#000000" points="257.6748,-32.3817 249.0343,-38.5129 259.6124,-39.1082 257.6748,-32.3817"/>
+</g>
+<!-- sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_node3" class="node">
+<title>sourcefile~module_id_base.f90</title>
+<g id="a_sourcefile~~sphincs_id.f90~~EfferentGraph_node3"><a xlink:href=".././sourcefile/module_id_base.f90.html" xlink:title="module_id_base.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="109,-181.5358 0,-181.5358 0,-157.5358 109,-157.5358 109,-181.5358"/>
+<text text-anchor="middle" x="54.5" y="-167.1358" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_id_base.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge2" class="edge">
+<title>sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M701.4953,-249.8042C688.6185,-266.2616 663.2427,-294.8796 634,-307.5358 531.7354,-351.7957 493.1887,-304.2913 384,-326.5358"/>
+</g>
+<!-- sourcefile~module_utility.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_node4" class="node">
+<title>sourcefile~module_utility.f90</title>
+<g id="a_sourcefile~~sphincs_id.f90~~EfferentGraph_node4"><a xlink:href=".././sourcefile/module_utility.f90.html" xlink:title="module_utility.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="102.5,-139.5358 6.5,-139.5358 6.5,-115.5358 102.5,-115.5358 102.5,-139.5358"/>
+<text text-anchor="middle" x="54.5" y="-125.1358" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_utility.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge3" class="edge">
+<title>sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M705.5515,-225.464C695.3826,-201.9794 670.0261,-149.7188 634,-118.5358 542.7491,-39.5522 504.5231,-6.2647 384,-12.5358"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M384,-12.5358C307.7753,-4.2678 285.6018,9.1489 211.5,-10.5358"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M211.5,-10.5358C181.7921,-18.4275 171.1772,-13.424 145,-29.5358 112.4116,-49.5937 84.1889,-84.5859 68.2727,-106.8777"/>
+<polygon fill="#000000" stroke="#000000" points="65.2537,-105.0885 62.4155,-115.2961 70.9998,-109.0864 65.2537,-105.0885"/>
+</g>
+<!-- sourcefile~module_bssn_id.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_node5" class="node">
+<title>sourcefile~module_bssn_id.f90</title>
+<g id="a_sourcefile~~sphincs_id.f90~~EfferentGraph_node5"><a xlink:href=".././sourcefile/module_bssn_id.f90.html" xlink:title="module_bssn_id.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="616.5,-151.5358 507.5,-151.5358 507.5,-127.5358 616.5,-127.5358 616.5,-151.5358"/>
+<text text-anchor="middle" x="562" y="-137.1358" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_bssn_id.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_bssn_id.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge5" class="edge">
+<title>sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_bssn_id.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M692.291,-225.5191C666.4618,-208.4736 619.0014,-177.1529 589.0483,-157.3859"/>
+<polygon fill="#000000" stroke="#000000" points="590.6321,-154.2377 580.358,-151.6508 586.7765,-160.0801 590.6321,-154.2377"/>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_node6" class="node">
+<title>sourcefile~module_sphincs_lorene.f90</title>
+<g id="a_sourcefile~~sphincs_id.f90~~EfferentGraph_node6"><a xlink:href=".././sourcefile/module_sphincs_lorene.f90.html" xlink:title="module_sphincs_lorene.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="634,-298.5358 490,-298.5358 490,-274.5358 634,-274.5358 634,-298.5358"/>
+<text text-anchor="middle" x="562" y="-284.1358" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_sphincs_lorene.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge4" class="edge">
+<title>sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M673.7921,-249.6482C653.9951,-256.1805 629.366,-264.3073 608.2678,-271.269"/>
+<polygon fill="#000000" stroke="#000000" points="606.9423,-268.0207 598.5427,-274.478 609.1358,-274.6681 606.9423,-268.0207"/>
+</g>
+<!-- sourcefile~module_particles_id.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge7" class="edge">
+<title>sourcefile~module_particles_id.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M167.0005,-62.656C159.0595,-66.2218 151.3168,-70.7688 145,-76.5358 118.578,-100.6579 135.4812,-124.4787 109,-148.5358 107.6842,-149.7311 106.2931,-150.8612 104.843,-151.9294"/>
+<polygon fill="#000000" stroke="#000000" points="102.6726,-149.1564 96.0093,-157.3936 106.355,-155.1096 102.6726,-149.1564"/>
+</g>
+<!-- sourcefile~module_particles_id.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge6" class="edge">
+<title>sourcefile~module_particles_id.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M177.9613,-62.5939C167.2904,-66.7095 155.5279,-71.5416 145,-76.5358 123.6314,-86.6726 100.4068,-99.8072 82.8353,-110.2082"/>
+<polygon fill="#000000" stroke="#000000" points="80.9901,-107.2335 74.2016,-115.3677 84.581,-113.2423 80.9901,-107.2335"/>
+</g>
+<!-- sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_particles_id.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge9" class="edge">
+<title>sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_particles_id.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M384,-50.5358C352.4117,-41.1254 316.1012,-39.8063 284.9672,-41.3608"/>
+<polygon fill="#000000" stroke="#000000" points="284.3903,-37.8893 274.6215,-41.9905 284.8157,-44.8764 284.3903,-37.8893"/>
+</g>
+<!-- sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge11" class="edge">
+<title>sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M555.6368,-151.7754C537.2293,-186.7544 483.3697,-286.0205 454,-307.5358 427.9946,-326.5865 415.5879,-320.1006 384,-326.5358"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M384,-326.5358C308.8764,-341.8404 283.9051,-351.7404 211.5,-326.5358"/>
+</g>
+<!-- sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge10" class="edge">
+<title>sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M546.7827,-127.471C526.6346,-112.0313 489.4986,-85.391 454,-69.5358 424.5657,-56.3892 414.895,-59.7397 384,-50.5358"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M384,-50.5358C346.2875,-39.3009 249.5314,-.433 211.5,-10.5358"/>
+</g>
+<!-- sourcefile~module_formul_3p1_id.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_node7" class="node">
+<title>sourcefile~module_formul_3p1_id.f90</title>
+<g id="a_sourcefile~~sphincs_id.f90~~EfferentGraph_node7"><a xlink:href=".././sourcefile/module_formul_3p1_id.f90.html" xlink:title="module_formul_3p1_id.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="454,-102.5358 314,-102.5358 314,-78.5358 454,-78.5358 454,-102.5358"/>
+<text text-anchor="middle" x="384" y="-88.1358" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_formul_3p1_id.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_formul_3p1_id.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge8" class="edge">
+<title>sourcefile~module_bssn_id.f90&#45;&gt;sourcefile~module_formul_3p1_id.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M518,-127.4235C493.7333,-120.7433 463.4097,-112.3958 437.7492,-105.3319"/>
+<polygon fill="#000000" stroke="#000000" points="438.3723,-101.8733 427.802,-102.5937 436.5144,-108.6223 438.3723,-101.8733"/>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge13" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M511.093,-298.5459C475.5589,-306.7892 426.9848,-317.7787 384,-326.5358"/>
+</g>
+<!-- sourcefile~module_diffstar_lorene.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_node8" class="node">
+<title>sourcefile~module_diffstar_lorene.f90</title>
+<g id="a_sourcefile~~sphincs_id.f90~~EfferentGraph_node8"><a xlink:href=".././sourcefile/module_diffstar_lorene.f90.html" xlink:title="module_diffstar_lorene.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="454,-298.5358 314,-298.5358 314,-274.5358 454,-274.5358 454,-298.5358"/>
+<text text-anchor="middle" x="384" y="-284.1358" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_diffstar_lorene.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge14" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M489.8572,-286.5358C481.4986,-286.5358 472.9342,-286.5358 464.4735,-286.5358"/>
+<polygon fill="#000000" stroke="#000000" points="464.2256,-283.0359 454.2255,-286.5358 464.2255,-290.0359 464.2256,-283.0359"/>
+</g>
+<!-- sourcefile~module_bns_lorene.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_node9" class="node">
+<title>sourcefile~module_bns_lorene.f90</title>
+<g id="a_sourcefile~~sphincs_id.f90~~EfferentGraph_node9"><a xlink:href=".././sourcefile/module_bns_lorene.f90.html" xlink:title="module_bns_lorene.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="446.5,-200.5358 321.5,-200.5358 321.5,-176.5358 446.5,-176.5358 446.5,-200.5358"/>
+<text text-anchor="middle" x="384" y="-186.1358" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_bns_lorene.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_bns_lorene.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge12" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_bns_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M540.1737,-274.5191C508.8131,-257.2532 450.8494,-225.3405 415.0394,-205.6249"/>
+<polygon fill="#000000" stroke="#000000" points="416.453,-202.4078 406.0048,-200.6508 413.0769,-208.5399 416.453,-202.4078"/>
+</g>
+<!-- sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_particles_id.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge15" class="edge">
+<title>sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_particles_id.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M332.2443,-78.5345C313.7368,-74.2429 292.6923,-69.363 273.4143,-64.8928"/>
+<polygon fill="#000000" stroke="#000000" points="274.0492,-61.4472 263.517,-62.5977 272.4679,-68.2663 274.0492,-61.4472"/>
+</g>
+<!-- sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge17" class="edge">
+<title>sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M211.5,-90.5358C159.9741,-99.749 156.3271,-126.1764 109,-148.5358 105.2353,-150.3144 101.2761,-152.0627 97.2817,-153.7447"/>
+<polygon fill="#000000" stroke="#000000" points="95.9163,-150.5216 87.9725,-157.5321 98.5542,-157.0056 95.9163,-150.5216"/>
+</g>
+<!-- sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge16" class="edge">
+<title>sourcefile~module_formul_3p1_id.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M313.8417,-84.96C282.3264,-83.8812 244.8128,-84.5792 211.5,-90.5358"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M211.5,-90.5358C177.3219,-96.6471 139.4238,-105.5176 109.4257,-113.0411"/>
+<polygon fill="#000000" stroke="#000000" points="108.4077,-109.6883 99.5721,-115.535 110.1252,-116.4744 108.4077,-109.6883"/>
+</g>
+<!-- sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge20" class="edge">
+<title>sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M351.114,-298.5449C308.5933,-313.3144 236.9771,-335.4045 211.5,-326.5358"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M211.5,-326.5358C182.4703,-316.4304 169.7587,-325.7524 145,-307.5358 103.533,-277.0259 75.6911,-221.3576 62.7768,-190.8799"/>
+<polygon fill="#000000" stroke="#000000" points="65.9986,-189.5113 58.9714,-181.5824 59.5203,-192.163 65.9986,-189.5113"/>
+</g>
+<!-- sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge19" class="edge">
+<title>sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M336.7779,-274.4414C286.1105,-259.9239 204.8606,-232.0808 145,-189.5358 125.234,-175.4875 128.8899,-162.4081 109,-148.5358 106.7765,-146.985 104.4231,-145.5292 101.9911,-144.1652"/>
+<polygon fill="#000000" stroke="#000000" points="103.4406,-140.9767 92.9325,-139.6237 100.3033,-147.2344 103.4406,-140.9767"/>
+</g>
+<!-- sourcefile~module_diffstar_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_node11" class="node">
+<title>sourcefile~module_diffstar_base.f90</title>
+<g id="a_sourcefile~~sphincs_id.f90~~EfferentGraph_node11"><a xlink:href=".././sourcefile/module_diffstar_base.f90.html" xlink:title="module_diffstar_base.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="278,-298.5358 145,-298.5358 145,-274.5358 278,-274.5358 278,-298.5358"/>
+<text text-anchor="middle" x="211.5" y="-284.1358" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_diffstar_base.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_diffstar_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge18" class="edge">
+<title>sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_diffstar_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M313.8376,-286.5358C305.4821,-286.5358 296.9177,-286.5358 288.4734,-286.5358"/>
+<polygon fill="#000000" stroke="#000000" points="288.2547,-283.0359 278.2547,-286.5358 288.2547,-290.0359 288.2547,-283.0359"/>
+</g>
+<!-- sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge22" class="edge">
+<title>sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M321.3992,-192.6431C273.0676,-194.8859 204.6038,-196.0434 145,-189.5358 133.4942,-188.2796 121.3094,-186.1504 109.7355,-183.7379"/>
+<polygon fill="#000000" stroke="#000000" points="110.2705,-180.2724 99.7542,-181.5598 108.778,-187.1114 110.2705,-180.2724"/>
+</g>
+<!-- sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge23" class="edge">
+<title>sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M358.9314,-176.5356C337.8425,-167.0077 306.6312,-154.2142 278,-147.5358 222.9166,-134.6873 158.4235,-129.9797 112.9122,-128.3116"/>
+<polygon fill="#000000" stroke="#000000" points="112.7452,-124.8043 102.6358,-127.9747 112.5157,-131.8005 112.7452,-124.8043"/>
+</g>
+<!-- sourcefile~module_bns_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_node10" class="node">
+<title>sourcefile~module_bns_base.f90</title>
+<g id="a_sourcefile~~sphincs_id.f90~~EfferentGraph_node10"><a xlink:href=".././sourcefile/module_bns_base.f90.html" xlink:title="module_bns_base.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="270.5,-180.5358 152.5,-180.5358 152.5,-156.5358 270.5,-156.5358 270.5,-180.5358"/>
+<text text-anchor="middle" x="211.5" y="-166.1358" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_bns_base.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_bns_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge21" class="edge">
+<title>sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_bns_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M321.2356,-181.2588C308.1088,-179.7368 294.1964,-178.1238 280.8464,-176.576"/>
+<polygon fill="#000000" stroke="#000000" points="281.1061,-173.0827 270.7695,-175.4076 280.2998,-180.0361 281.1061,-173.0827"/>
+</g>
+<!-- sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge24" class="edge">
+<title>sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M152.145,-168.9139C141.4188,-168.9822 130.1848,-169.0537 119.3122,-169.123"/>
+<polygon fill="#000000" stroke="#000000" points="119.0046,-165.6248 109.0271,-169.1885 119.0492,-172.6246 119.0046,-165.6248"/>
+</g>
+<!-- sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge25" class="edge">
+<title>sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M165.244,-156.4562C148.0723,-151.9719 128.4093,-146.837 110.4632,-142.1504"/>
+<polygon fill="#000000" stroke="#000000" points="111.2564,-138.7402 100.6965,-139.5999 109.4876,-145.5131 111.2564,-138.7402"/>
+</g>
+<!-- sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge26" class="edge">
+<title>sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M172.5306,-274.4167C163.1371,-270.6668 153.3965,-266.0421 145,-260.5358 115.0021,-240.8637 86.9411,-209.9428 70.2456,-189.7028"/>
+<polygon fill="#000000" stroke="#000000" points="72.8223,-187.3228 63.8137,-181.7464 67.3785,-191.7235 72.8223,-187.3228"/>
+</g>
+<!-- sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~sphincs_id.f90~~EfferentGraph_edge27" class="edge">
+<title>sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M164.901,-274.5168C157.5226,-270.972 150.5191,-266.4064 145,-260.5358 109.1863,-222.4411 144.9072,-186.5424 109,-148.5358 107.9555,-147.4302 106.8462,-146.3821 105.6835,-145.3885"/>
+<polygon fill="#000000" stroke="#000000" points="107.5584,-142.4292 97.3507,-139.5911 103.5606,-148.1753 107.5584,-142.4292"/>
+</g>
+</g>
+</svg>
+</div><script>var pansourcefilesphincs_idf90EfferentGraph = svgPanZoom('#sourcefilesphincs_idf90EfferentGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="190pt" height="32pt"
+ viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 186,-28 186,4 -4,4"/>
+<!-- Source File -->
+<g id="node1" class="node">
+<title>Source File</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="67,-24 0,-24 0,0 67,0 67,-24"/>
+<text text-anchor="middle" x="33.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Source File</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="182,-24 85,-24 85,0 182,0 182,-24"/>
+<text text-anchor="middle" x="133.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a file to a file which it depends on. A file
+    is dependent upon another if the latter must be compiled before the former
+    can be.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    
+      
+      <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#progs-1">Programs</a></h3></div>
+  <div id="progs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/sphincs_id.html">sphincs_id</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/sphincs_id.f90.html#src">sphincs_id.f90</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="c">! File:         sphincs_id.f90</span>
+<a name="ln-2"></a><span class="c">! Author:       Francesco Torsello (FT)</span>
+<a name="ln-3"></a><span class="c">! Copyright:    GNU General Public License (GPLv3)</span>
+<a name="ln-4"></a>
+<a name="ln-5"></a><span class="k">PROGRAM </span><span class="n">sphincs_id</span>
+<a name="ln-6"></a>
+<a name="ln-7"></a>  <span class="c">!*****************************************************</span>
+<a name="ln-8"></a>  <span class="c">!</span>
+<a name="ln-9"></a>  <span class="c">!# Use the MODULE sphincs_lorene to export binary</span>
+<a name="ln-10"></a>  <span class="c">!  files containing the initial data (|id|) required</span>
+<a name="ln-11"></a>  <span class="c">!  by the evolution code in SPHINCS, and built using</span>
+<a name="ln-12"></a>  <span class="c">!  the binary files produced by LORENE and containing</span>
+<a name="ln-13"></a>  <span class="c">!  the binary neutron stars (BNS) |id|.</span>
+<a name="ln-14"></a>  <span class="c">!</span>
+<a name="ln-15"></a>  <span class="c">!  FT 28.10.2020</span>
+<a name="ln-16"></a>  <span class="c">!</span>
+<a name="ln-17"></a>  <span class="c">!*****************************************************</span>
+<a name="ln-18"></a>
+<a name="ln-19"></a><span class="cp">#ifdef __INTEL_COMPILER</span>
+<a name="ln-20"></a>  <span class="k">USE </span><span class="n">IFPORT</span><span class="p">,</span>          <span class="n">ONLY</span><span class="p">:</span> <span class="n">MAKEDIRQQ</span>
+<a name="ln-21"></a><span class="cp">#endif</span>
+<a name="ln-22"></a>
+<a name="ln-23"></a><span class="cp">#if flavour == 1</span>
+<a name="ln-24"></a>  <span class="k">USE </span><span class="n">sphincs_lorene</span><span class="p">,</span>  <span class="n">ONLY</span><span class="p">:</span> <span class="n">allocate_idbase</span>
+<a name="ln-25"></a><span class="cp">#endif</span>
+<a name="ln-26"></a>
+<a name="ln-27"></a>  <span class="k">USE </span><span class="n">utility</span><span class="p">,</span>         <span class="n">ONLY</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="nb">time</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">run_id</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-28"></a>                             <span class="n">itr4</span><span class="p">,</span> <span class="n">file_exists</span><span class="p">,</span> <span class="n">cnt</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-29"></a>                             <span class="n">test_status</span><span class="p">,</span> <span class="n">show_progress</span><span class="p">,</span> <span class="n">end_time</span>
+<a name="ln-30"></a>  <span class="k">USE </span><span class="n">timing</span><span class="p">,</span>          <span class="n">ONLY</span><span class="p">:</span> <span class="n">timer</span>
+<a name="ln-31"></a>  <span class="k">USE </span><span class="n">id_base</span><span class="p">,</span>         <span class="n">ONLY</span><span class="p">:</span> <span class="n">idbase</span><span class="p">,</span> <span class="n">initialize</span>
+<a name="ln-32"></a>  <span class="k">USE </span><span class="n">particles_id</span><span class="p">,</span>    <span class="n">ONLY</span><span class="p">:</span> <span class="n">particles</span>
+<a name="ln-33"></a>  <span class="k">USE </span><span class="n">formul_bssn_id</span><span class="p">,</span>  <span class="n">ONLY</span><span class="p">:</span> <span class="n">bssn_id</span>
+<a name="ln-34"></a>  <span class="k">USE </span><span class="n">constants</span><span class="p">,</span>       <span class="n">ONLY</span><span class="p">:</span> <span class="n">lorene2hydrobase</span><span class="p">,</span> <span class="n">c_light2</span><span class="p">,</span> <span class="n">k_lorene2hydrobase</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-35"></a>                             <span class="n">k_lorene2hydrobase_piecewisepolytrope</span><span class="p">,</span> <span class="n">MSun_geo</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-36"></a>                             <span class="n">kg2g</span><span class="p">,</span> <span class="n">m2cm</span><span class="p">,</span> <span class="n">m0c2</span>
+<a name="ln-37"></a>
+<a name="ln-38"></a>  <span class="k">IMPLICIT NONE</span>
+<a name="ln-39"></a>
+<a name="ln-40"></a>
+<a name="ln-41"></a><span class="k">  </span><span class="kt">INTEGER</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">max_length</span><span class="o">=</span> <span class="mi">50</span>
+<a name="ln-42"></a>  <span class="c">!! Maximum length for strings</span>
+<a name="ln-43"></a>  <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">max_n_bns</span><span class="o">=</span> <span class="mi">50</span>
+<a name="ln-44"></a>  <span class="c">! Maximum number of physical systems</span>
+<a name="ln-45"></a>  <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">max_n_parts</span><span class="o">=</span> <span class="mi">250</span>
+<a name="ln-46"></a>  <span class="c">!! Maximum number of particle distributions</span>
+<a name="ln-47"></a>
+<a name="ln-48"></a>  <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">test_int</span><span class="o">=</span> <span class="o">-</span> <span class="mi">112</span>
+<a name="ln-49"></a>  <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span> <span class="n">max_n_bns</span><span class="p">,</span> <span class="n">max_n_parts</span> <span class="p">)</span><span class="kd">::</span> <span class="n">placer</span><span class="o">=</span> <span class="n">test_int</span>
+<a name="ln-50"></a>  <span class="c">!# Matrix storing the information on how to place particles for each bns</span>
+<a name="ln-51"></a>  <span class="c">!  object. Row i contains information about the i^th bns object.</span>
+<a name="ln-52"></a>
+<a name="ln-53"></a>  <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">n_bns</span>
+<a name="ln-54"></a>  <span class="c">!! Number of physical systems to set up</span>
+<a name="ln-55"></a>  <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">i_matter</span>
+<a name="ln-56"></a>  <span class="c">!! Index running over the number of physical systems</span>
+<a name="ln-57"></a>  <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">ref_lev</span>
+<a name="ln-58"></a>  <span class="c">!! Number of refinement levels</span>
+<a name="ln-59"></a>  <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">constraints_step</span>
+<a name="ln-60"></a>  <span class="c">!! Export the constraints every constraints_step-th step</span>
+<a name="ln-61"></a>
+<a name="ln-62"></a>
+<a name="ln-63"></a>  <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">numerator_ratio_dx</span>
+<a name="ln-64"></a>  <span class="c">!# Numerator of the rational ratio between the large grid spacing and the</span>
+<a name="ln-65"></a>  <span class="c">!  medium one,equal to the ratio between the medium grid spacing nd the small</span>
+<a name="ln-66"></a>  <span class="c">!  one. Not used in this PROGRAM, but needed since the PROGRAM reads the same</span>
+<a name="ln-67"></a>  <span class="c">!  parameter file as the convergence_test PROGRAM</span>
+<a name="ln-68"></a>  <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">denominator_ratio_dx</span>
+<a name="ln-69"></a>  <span class="c">!# Denominator of the rational ratio between the large grid spacing and the</span>
+<a name="ln-70"></a>  <span class="c">!  medium one,equal to the ratio between the medium grid spacing nd the small</span>
+<a name="ln-71"></a>  <span class="c">!  one. Not used in this PROGRAM, but needed since the PROGRAM reads the same</span>
+<a name="ln-72"></a>  <span class="c">!  parameter file as the convergence_test PROGRAM</span>
+<a name="ln-73"></a>
+<a name="ln-74"></a>
+<a name="ln-75"></a>  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">systems</span><span class="p">,</span> <span class="n">systems_name</span>
+<a name="ln-76"></a>  <span class="c">!! String storing the name of the phyical systems</span>
+<a name="ln-77"></a>  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_parts</span>
+<a name="ln-78"></a>  <span class="c">!# String storing the name for the formatted file containing the |sph|</span>
+<a name="ln-79"></a>  <span class="c">!  particle |id|</span>
+<a name="ln-80"></a>  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_parts_bin</span>
+<a name="ln-81"></a>  <span class="c">!# String storing the name for the binary file containing the |sph|</span>
+<a name="ln-82"></a>  <span class="c">!  particle |id|</span>
+<a name="ln-83"></a>  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_sph</span>
+<a name="ln-84"></a>  <span class="c">!# String storing the name for ??</span>
+<a name="ln-85"></a>  <span class="c">!</span>
+<a name="ln-86"></a>  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_bssn</span>
+<a name="ln-87"></a>  <span class="c">!# String storing the name for the formatted file containing the |bssn| |id|</span>
+<a name="ln-88"></a>  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_bssn_bin</span>
+<a name="ln-89"></a>  <span class="c">!# String storing the name for the binary file containing the |bssn| |id|</span>
+<a name="ln-90"></a>  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">name_logfile</span>
+<a name="ln-91"></a>  <span class="c">!# String storing the name for the formatted file containing a summary about</span>
+<a name="ln-92"></a>  <span class="c">!  the |bssn| constraints violations</span>
+<a name="ln-93"></a>  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">filenames</span><span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+<a name="ln-94"></a>  <span class="c">! Array of strings storing the names of the |id| files</span>
+<a name="ln-95"></a>  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">common_path</span>
+<a name="ln-96"></a>  <span class="c">!# String storing the local path to the directory where the |id| files</span>
+<a name="ln-97"></a>  <span class="c">!  are stored</span>
+<a name="ln-98"></a>  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">sph_path</span>
+<a name="ln-99"></a>  <span class="c">!# String storing the local path to the directory where the</span>
+<a name="ln-100"></a>  <span class="c">!  SPH output is to be saved</span>
+<a name="ln-101"></a>  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">spacetime_path</span>
+<a name="ln-102"></a>  <span class="c">!# String storing the local path to the directory where the</span>
+<a name="ln-103"></a>  <span class="c">!  spacetime output is to be saved</span>
+<a name="ln-104"></a>
+<a name="ln-105"></a>  <span class="kt">LOGICAL</span><span class="kd">::</span> <span class="n">exist</span>
+<a name="ln-106"></a>  <span class="kt">LOGICAL</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="kd">::</span> <span class="n">dir_out</span>
+<a name="ln-107"></a>  <span class="c">! Logical variables to steer the execution</span>
+<a name="ln-108"></a>  <span class="kt">LOGICAL</span><span class="kd">::</span> <span class="n">export_bin</span><span class="p">,</span> <span class="n">export_form</span><span class="p">,</span> <span class="n">export_form_xy</span><span class="p">,</span> <span class="n">export_form_x</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-109"></a>            <span class="n">compute_constraints</span><span class="p">,</span> <span class="n">export_constraints_xy</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-110"></a>            <span class="n">export_constraints_x</span><span class="p">,</span> <span class="n">export_constraints</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-111"></a>            <span class="n">export_constraints_details</span><span class="p">,</span> <span class="n">compute_parts_constraints</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-112"></a>            <span class="n">one_lapse</span><span class="p">,</span> <span class="n">zero_shift</span><span class="p">,</span> <span class="n">run_sph</span><span class="p">,</span> <span class="n">run_spacetime</span>
+<a name="ln-113"></a>
+<a name="ln-114"></a>  <span class="k">TYPE</span><span class="p">(</span> <span class="n">timer</span> <span class="p">)</span><span class="kd">::</span> <span class="n">execution_timer</span>
+<a name="ln-115"></a>
+<a name="ln-116"></a>  <span class="c">! Declaration of the allocatable array storing the bns objects,</span>
+<a name="ln-117"></a>  <span class="c">! containing the LORENE |id| for different BNS</span>
+<a name="ln-118"></a>  <span class="c">!TYPE( bnslorene ), DIMENSION(:), ALLOCATABLE:: binaries</span>
+<a name="ln-119"></a>
+<a name="ln-120"></a>  <span class="k">TYPE </span><span class="n">id</span>
+<a name="ln-121"></a>    <span class="k">CLASS</span><span class="p">(</span> <span class="n">idbase</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">idata</span>
+<a name="ln-122"></a>  <span class="k">END TYPE </span><span class="n">id</span>
+<a name="ln-123"></a>  <span class="k">TYPE</span><span class="p">(</span> <span class="n">id</span> <span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">ids</span>
+<a name="ln-124"></a>  <span class="c">!CLASS(idbase), POINTER:: foo</span>
+<a name="ln-125"></a>  <span class="c">!CLASS( idbase ), DIMENSION(:), ALLOCATABLE:: ids</span>
+<a name="ln-126"></a>  <span class="c">! Declaration of the allocatable array storing the particles objects,</span>
+<a name="ln-127"></a>  <span class="c">! containing the particle distributions for each bns object.</span>
+<a name="ln-128"></a>  <span class="c">! Multiple particle objects can contain different particle distributions</span>
+<a name="ln-129"></a>  <span class="c">! for the same bns object.</span>
+<a name="ln-130"></a>  <span class="k">TYPE</span><span class="p">(</span> <span class="n">particles</span> <span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">particles_dist</span>
+<a name="ln-131"></a>  <span class="c">! Declaration of the allocatable array storing the bssn_id objects,</span>
+<a name="ln-132"></a>  <span class="c">! containing the BSSN variables on the gravity grid ofr each bns object</span>
+<a name="ln-133"></a>  <span class="k">TYPE</span><span class="p">(</span> <span class="n">bssn_id</span> <span class="p">),</span>   <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">bssn_forms</span>
+<a name="ln-134"></a>
+<a name="ln-135"></a>  <span class="c">! Namelist containing parameters read from lorene_bns_id_parameters.par</span>
+<a name="ln-136"></a>  <span class="c">! by the SUBROUTINE read_bns_id_parameters of this PROGRAM</span>
+<a name="ln-137"></a>  <span class="k">NAMELIST</span> <span class="o">/</span><span class="n">bns_parameters</span><span class="o">/</span> <span class="n">n_bns</span><span class="p">,</span> <span class="n">common_path</span><span class="p">,</span> <span class="n">filenames</span><span class="p">,</span> <span class="n">placer</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-138"></a>                            <span class="n">export_bin</span><span class="p">,</span> <span class="n">export_form</span><span class="p">,</span> <span class="n">export_form_xy</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-139"></a>                            <span class="n">export_form_x</span><span class="p">,</span> <span class="n">export_constraints_xy</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-140"></a>                            <span class="n">export_constraints_x</span><span class="p">,</span> <span class="n">compute_constraints</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-141"></a>                            <span class="n">export_constraints</span><span class="p">,</span> <span class="n">export_constraints_details</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-142"></a>                            <span class="n">constraints_step</span><span class="p">,</span> <span class="n">compute_parts_constraints</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-143"></a>                            <span class="n">numerator_ratio_dx</span><span class="p">,</span> <span class="n">denominator_ratio_dx</span><span class="p">,</span> <span class="n">ref_lev</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-144"></a>                            <span class="n">one_lapse</span><span class="p">,</span> <span class="n">zero_shift</span><span class="p">,</span> <span class="n">show_progress</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-145"></a>                            <span class="n">run_sph</span><span class="p">,</span> <span class="n">run_spacetime</span><span class="p">,</span> <span class="n">sph_path</span><span class="p">,</span> <span class="n">spacetime_path</span>
+<a name="ln-146"></a>
+<a name="ln-147"></a>  <span class="c">!---------------------------!</span>
+<a name="ln-148"></a>  <span class="c">!--  End of declarations  --!</span>
+<a name="ln-149"></a>  <span class="c">!---------------------------!</span>
+<a name="ln-150"></a>
+<a name="ln-151"></a>  <span class="c">!PRINT *, lorene2hydrobase</span>
+<a name="ln-152"></a>  <span class="c">!PRINT *, 2.45191D-4/lorene2hydrobase/1000</span>
+<a name="ln-153"></a>  <span class="c">!PRINT *, LOG10(2.45191D-4/lorene2hydrobase/1000)</span>
+<a name="ln-154"></a>  <span class="c">!PRINT *</span>
+<a name="ln-155"></a>  <span class="c">!PRINT *, LOG10(10**(34.616)/c_light2)</span>
+<a name="ln-156"></a>  <span class="c">!STOP</span>
+<a name="ln-157"></a>
+<a name="ln-158"></a>  <span class="c">!PRINT *, &quot;** Polytropic constant used for gamma= 2.75 single polytrope:&quot;</span>
+<a name="ln-159"></a>  <span class="c">!PRINT *, &quot;   k used in LORENE= &quot;, 0.01691726009823966</span>
+<a name="ln-160"></a>  <span class="c">!PRINT *, &quot;   k converted in SPHINCS units= &quot;, &amp;</span>
+<a name="ln-161"></a>  <span class="c">!                               0.01691726009823966*k_lorene2hydrobase(2.75D0)</span>
+<a name="ln-162"></a>  <span class="c">!PRINT *</span>
+<a name="ln-163"></a>  <span class="c">!PRINT *, &quot;** Polytropic constant used for gamma= 2 single polytrope:&quot;</span>
+<a name="ln-164"></a>  <span class="c">!PRINT *, &quot;   k used in LORENE= &quot;, 0.02686965902663748</span>
+<a name="ln-165"></a>  <span class="c">!PRINT *, &quot;   k converted in SPHINCS units= &quot;, &amp;</span>
+<a name="ln-166"></a>  <span class="c">!                               0.02686965902663748*k_lorene2hydrobase(2.0D0)</span>
+<a name="ln-167"></a>  <span class="c">!PRINT *</span>
+<a name="ln-168"></a>  <span class="c">!PRINT *, &quot;** Polytropic constant used for the crust in PWP:&quot;</span>
+<a name="ln-169"></a>  <span class="c">!PRINT *, &quot;   k used in LORENE= &quot;, 3.99874D-8</span>
+<a name="ln-170"></a>  <span class="c">!PRINT *, &quot;   k converted in SPHINCS units= &quot;, &amp;</span>
+<a name="ln-171"></a>  <span class="c">!                3.99874D-8*k_lorene2hydrobase_piecewisepolytrope(1.35692395D0)</span>
+<a name="ln-172"></a>  <span class="c">!PRINT *</span>
+<a name="ln-173"></a>  <span class="c">!PRINT *, &quot;** Polytropic constant used for the crust in PWP:&quot;</span>
+<a name="ln-174"></a>  <span class="c">!PRINT *, &quot;   k used in LORENE= &quot;, 8.948185D-2</span>
+<a name="ln-175"></a>  <span class="c">!PRINT *, &quot;   k converted in SPHINCS units= &quot;, &amp;</span>
+<a name="ln-176"></a>  <span class="c">!                               8.948185D-2*k_lorene2hydrobase(1.35692395D0)</span>
+<a name="ln-177"></a>  <span class="c">!PRINT *</span>
+<a name="ln-178"></a>  <span class="c">!PRINT *, &quot;   k used in LORENE, corresponding to k-100 in SPHINCS units= &quot;, &amp;</span>
+<a name="ln-179"></a>  <span class="c">!         100/k_lorene2hydrobase(2.0D0)</span>
+<a name="ln-180"></a>  <span class="c">! Our testbed cases are gamma= 2.75, k= 30000; and gamma=2, k= 100</span>
+<a name="ln-181"></a>  <span class="c">! in SPHINCS units</span>
+<a name="ln-182"></a>  <span class="c">! 7.901e+14 density for 1.4 GRAVITATIONAL mass, poly 2</span>
+<a name="ln-183"></a>  <span class="c">! 1.4-1.4 systems for both ; 1.6-1.6 ; 1.2-1.8 GRAVIATIONAL masses</span>
+<a name="ln-184"></a>  <span class="c">!STOP</span>
+<a name="ln-185"></a>
+<a name="ln-186"></a>  <span class="k">CALL </span><span class="nb">DATE_AND_TIME</span><span class="p">(</span> <span class="n">date</span><span class="p">,</span> <span class="nb">time</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">values</span> <span class="p">)</span>
+<a name="ln-187"></a>  <span class="n">run_id</span><span class="o">=</span> <span class="n">date</span> <span class="o">//</span> <span class="s2">&quot;-&quot;</span> <span class="o">//</span> <span class="nb">time</span>
+<a name="ln-188"></a>
+<a name="ln-189"></a><span class="nb">  </span><span class="n">execution_timer</span><span class="o">=</span> <span class="n">timer</span><span class="p">(</span> <span class="s2">&quot;execution_timer&quot;</span> <span class="p">)</span>
+<a name="ln-190"></a>  <span class="k">CALL </span><span class="n">execution_timer</span><span class="p">%</span> <span class="n">start_timer</span><span class="p">()</span>
+<a name="ln-191"></a>
+<a name="ln-192"></a>  <span class="k">CALL </span><span class="n">read_bns_id_parameters</span><span class="p">()</span>
+<a name="ln-193"></a>
+<a name="ln-194"></a>  <span class="c">!</span>
+<a name="ln-195"></a>  <span class="c">!-- Check that the specified subdirectories exist. If not, create them</span>
+<a name="ln-196"></a>  <span class="c">!-- TODO: this compils with ifort, but not with gfortran</span>
+<a name="ln-197"></a>  <span class="c">!</span>
+<a name="ln-198"></a>
+<a name="ln-199"></a><span class="cp">#ifdef __INTEL_COMPILER</span>
+<a name="ln-200"></a>
+<a name="ln-201"></a>  <span class="k">INQUIRE</span><span class="p">(</span> <span class="n">DIRECTORY</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+<a name="ln-202"></a>  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-203"></a><span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="n">MAKEDIRQQ</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-204"></a>  <span class="k">ELSE</span>
+<a name="ln-205"></a><span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
+<a name="ln-206"></a>  <span class="n">ENDIF</span>
+<a name="ln-207"></a>  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">dir_out</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-208"></a><span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Failed to create subdirectory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span>
+<a name="ln-209"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Stopping...&quot;</span>
+<a name="ln-210"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-211"></a>    <span class="k">STOP</span>
+<a name="ln-212"></a><span class="k">  </span><span class="n">ENDIF</span>
+<a name="ln-213"></a>
+<a name="ln-214"></a>  <span class="k">INQUIRE</span><span class="p">(</span> <span class="n">DIRECTORY</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+<a name="ln-215"></a>  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-216"></a><span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="n">MAKEDIRQQ</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-217"></a>  <span class="k">ELSE</span>
+<a name="ln-218"></a><span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
+<a name="ln-219"></a>  <span class="n">ENDIF</span>
+<a name="ln-220"></a>  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">dir_out</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-221"></a><span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Failed to create subdirectory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span>
+<a name="ln-222"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Stopping...&quot;</span>
+<a name="ln-223"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-224"></a>    <span class="k">STOP</span>
+<a name="ln-225"></a><span class="k">  </span><span class="n">ENDIF</span>
+<a name="ln-226"></a>
+<a name="ln-227"></a><span class="cp">#endif</span>
+<a name="ln-228"></a>
+<a name="ln-229"></a><span class="cp">#ifdef __GFORTRAN__</span>
+<a name="ln-230"></a>
+<a name="ln-231"></a>  <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span><span class="o">//</span><span class="s2">&quot;/.&quot;</span><span class="p">,</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+<a name="ln-232"></a>  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-233"></a><span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Directory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">),</span> <span class="s2">&quot; does not exist!&quot;</span>
+<a name="ln-234"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Please create it and re-run the executable. Stopping...&quot;</span>
+<a name="ln-235"></a>    <span class="k">STOP</span>
+<a name="ln-236"></a><span class="k">  </span><span class="n">ENDIF</span>
+<a name="ln-237"></a>
+<a name="ln-238"></a>  <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">)</span><span class="o">//</span><span class="s2">&quot;/.&quot;</span><span class="p">,</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+<a name="ln-239"></a>  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-240"></a><span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Directory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">),</span> <span class="s2">&quot; does not exist!&quot;</span>
+<a name="ln-241"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Please create it and re-run the executable. Stopping...&quot;</span>
+<a name="ln-242"></a>    <span class="k">STOP</span>
+<a name="ln-243"></a><span class="k">  </span><span class="n">ENDIF</span>
+<a name="ln-244"></a>
+<a name="ln-245"></a><span class="cp">#endif</span>
+<a name="ln-246"></a>
+<a name="ln-247"></a>  <span class="k">ALLOCATE</span><span class="p">(</span> <span class="kt">CHARACTER</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="kd">::</span> <span class="n">systems</span><span class="p">(</span><span class="n">n_bns</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-248"></a>  <span class="k">ALLOCATE</span><span class="p">(</span> <span class="kt">CHARACTER</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="kd">::</span> <span class="n">systems_name</span><span class="p">(</span><span class="n">n_bns</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-249"></a>
+<a name="ln-250"></a>  <span class="c">!DO itr= 1, n_bns, 1</span>
+<a name="ln-251"></a>  <span class="c">!  systems(itr)= filenames(itr)(1:5)</span>
+<a name="ln-252"></a>  <span class="c">!  IF( systems(itr) /= bnslo .AND. systems(itr) /= drslo )THEN</span>
+<a name="ln-253"></a>  <span class="c">!    PRINT *, &quot;** ERROR! Unrecognized physical system &quot;, systems(itr), &quot;,&quot;,&amp;</span>
+<a name="ln-254"></a>  <span class="c">!             &quot; system number&quot;, itr, &quot;.&quot;</span>
+<a name="ln-255"></a>  <span class="c">!    PRINT *</span>
+<a name="ln-256"></a>  <span class="c">!    PRINT *, &quot;   Please specify the type of physical system in the first 5&quot;,&amp;</span>
+<a name="ln-257"></a>  <span class="c">!             &quot; characters of the name of the file containing the initial&quot;, &amp;</span>
+<a name="ln-258"></a>  <span class="c">!             &quot; data.&quot;</span>
+<a name="ln-259"></a>  <span class="c">!    PRINT *</span>
+<a name="ln-260"></a>  <span class="c">!    PRINT *, &quot;   The 5-character names, and associated physical systems,&quot;, &amp;</span>
+<a name="ln-261"></a>  <span class="c">!             &quot; supported by this version of SPHINCS_ID are:&quot;</span>
+<a name="ln-262"></a>  <span class="c">!    PRINT *</span>
+<a name="ln-263"></a>  <span class="c">!    PRINT *, &quot;   1. BNSLO: Binary Neutron Stars produced with LORENE&quot;</span>
+<a name="ln-264"></a>  <span class="c">!    PRINT *, &quot;   2. DRSLO: Differentially Rotating Star produced with LORENE&quot;</span>
+<a name="ln-265"></a>  <span class="c">!    PRINT *</span>
+<a name="ln-266"></a>  <span class="c">!    STOP</span>
+<a name="ln-267"></a>  <span class="c">!  ENDIF</span>
+<a name="ln-268"></a>  <span class="c">!ENDDO</span>
+<a name="ln-269"></a>
+<a name="ln-270"></a>  <span class="c">! Allocate needed memory</span>
+<a name="ln-271"></a>  <span class="c">!ALLOCATE( binaries      ( n_bns ) )</span>
+<a name="ln-272"></a>  <span class="c">!ALLOCATE( diffrotstars  ( n_bns ) )</span>
+<a name="ln-273"></a>  <span class="c">!IF( TRIM(systems(1)) == bnslo )THEN</span>
+<a name="ln-274"></a>  <span class="c">!  ALLOCATE( bnslorene:: idata( n_bns ) )</span>
+<a name="ln-275"></a>  <span class="c">!ELSEIF( TRIM(systems(1)) == drslo )THEN</span>
+<a name="ln-276"></a>  <span class="c">!  ALLOCATE( diffstarlorene:: idata( n_bns ) )</span>
+<a name="ln-277"></a>  <span class="c">!ELSE</span>
+<a name="ln-278"></a>  <span class="c">!  PRINT *, &quot;** ERROR! Unknown name for the physical system: &quot;, TRIM(systems(1))</span>
+<a name="ln-279"></a>  <span class="c">!  PRINT *, &quot;   Set the variable &#39;system&#39; in the parameter file &quot;, &amp;</span>
+<a name="ln-280"></a>  <span class="c">!           &quot;sphincs_lorene_parameters.par to one of the values listed there.&quot;</span>
+<a name="ln-281"></a>  <span class="c">!  PRINT *, &quot;   Stopping...&quot;</span>
+<a name="ln-282"></a>  <span class="c">!  PRINT *</span>
+<a name="ln-283"></a>  <span class="c">!  STOP</span>
+<a name="ln-284"></a>  <span class="c">!ENDIF</span>
+<a name="ln-285"></a>  <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">ids</span><span class="p">(</span> <span class="n">n_bns</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-286"></a>  <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">particles_dist</span><span class="p">(</span> <span class="n">n_bns</span><span class="p">,</span> <span class="n">max_n_parts</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-287"></a>  <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">bssn_forms</span>    <span class="p">(</span> <span class="n">n_bns</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-288"></a>
+<a name="ln-289"></a>  <span class="c">!</span>
+<a name="ln-290"></a>  <span class="c">!-- Construct the LORENE |id| from the LORENE binary files</span>
+<a name="ln-291"></a>  <span class="c">!</span>
+<a name="ln-292"></a> <span class="c">! build_bns_loop: DO itr= 1, n_bns, 1</span>
+<a name="ln-293"></a> <span class="c">!   binaries( itr )= bnslorene( TRIM(common_path)//TRIM(filenames( itr )) )</span>
+<a name="ln-294"></a> <span class="c">!   ! Set the variables to decide on using the geodesic gauge or not</span>
+<a name="ln-295"></a> <span class="c">!   ! (lapse=1, shift=0)</span>
+<a name="ln-296"></a> <span class="c">!   binaries( itr )% one_lapse = one_lapse</span>
+<a name="ln-297"></a> <span class="c">!   binaries( itr )% zero_shift= zero_shift</span>
+<a name="ln-298"></a> <span class="c">! ENDDO build_bns_loop</span>
+<a name="ln-299"></a>
+<a name="ln-300"></a>  <span class="c">!ALLOCATE(foo, source = bnslorene( TRIM(common_path)//TRIM(filenames( 1 ))) )</span>
+<a name="ln-301"></a>
+<a name="ln-302"></a>  <span class="n">build_drs_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-303"></a>   <span class="c">! IF( systems(itr) == bnslo )THEN</span>
+<a name="ln-304"></a>   <span class="c">!   !idata( itr )=</span>
+<a name="ln-305"></a>   <span class="c">!   !ALLOCATE(foo, source = bnslorene( TRIM(common_path)//TRIM(filenames( 1 ))) )</span>
+<a name="ln-306"></a>   <span class="c">!   ALLOCATE( bnslorene:: ids(itr)% idata )</span>
+<a name="ln-307"></a>   <span class="c">!   !CALL ids(itr)% idata% initialize( TRIM(common_path)//TRIM(filenames(itr)))</span>
+<a name="ln-308"></a>   <span class="c">! ELSEIF( systems(itr) == drslo )THEN</span>
+<a name="ln-309"></a>   <span class="c">!   !idata( itr )=</span>
+<a name="ln-310"></a>   <span class="c">!   ALLOCATE( diffstarlorene:: ids(itr)% idata )</span>
+<a name="ln-311"></a>   <span class="c">!   !CALL ids(itr)% idata% initialize( TRIM(common_path)//TRIM(filenames(itr)))</span>
+<a name="ln-312"></a>   <span class="c">!   !ids(itr)% idata = diffstarlorene( TRIM(common_path)//TRIM(filenames( itr )) )</span>
+<a name="ln-313"></a>   <span class="c">! ELSE</span>
+<a name="ln-314"></a>   <span class="c">!   PRINT *, &quot;** ERROR! Unknown name for the physical system: &quot;, systems(itr)</span>
+<a name="ln-315"></a>   <span class="c">!   PRINT *, &quot;   Set the variable &#39;system&#39; in the parameter file &quot;, &amp;</span>
+<a name="ln-316"></a>   <span class="c">!            &quot;sphincs_lorene_parameters.par to one of the values listed there.&quot;</span>
+<a name="ln-317"></a>   <span class="c">!   PRINT *, &quot;   Stopping...&quot;</span>
+<a name="ln-318"></a>   <span class="c">!   PRINT *</span>
+<a name="ln-319"></a>   <span class="c">!   STOP</span>
+<a name="ln-320"></a>   <span class="c">! ENDIF</span>
+<a name="ln-321"></a>    <span class="k">CALL </span><span class="n">allocate_idbase</span><span class="p">(</span> <span class="n">ids</span><span class="p">(</span><span class="n">itr</span><span class="p">)%</span> <span class="n">idata</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">filenames</span><span class="p">(</span><span class="n">itr</span><span class="p">)),</span> <span class="p">&amp;</span>
+<a name="ln-322"></a>                          <span class="n">systems</span><span class="p">(</span><span class="n">itr</span><span class="p">),</span> <span class="n">systems_name</span><span class="p">(</span><span class="n">itr</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-323"></a>    <span class="k">CALL </span><span class="n">ids</span><span class="p">(</span><span class="n">itr</span><span class="p">)%</span> <span class="n">idata</span><span class="p">%</span> <span class="n">initialize</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">common_path</span><span class="p">)</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="n">filenames</span><span class="p">(</span><span class="n">itr</span><span class="p">))</span> <span class="p">)</span>
+<a name="ln-324"></a>
+<a name="ln-325"></a>    <span class="c">!ids(itr)% idata= initialize( ids(itr)% idata, TRIM(common_path)//TRIM(filenames(itr)) )</span>
+<a name="ln-326"></a>    <span class="c">!ids(itr)% idata= derived_type_constructor( file )</span>
+<a name="ln-327"></a>    <span class="c">! Set the variables to decide on using the geodesic gauge or not</span>
+<a name="ln-328"></a>    <span class="c">! (lapse=1, shift=0)</span>
+<a name="ln-329"></a>    <span class="c">!CALL idata( itr )% set_one_lapse( one_lapse )</span>
+<a name="ln-330"></a>    <span class="c">!CALL idata( itr )% set_zero_shift( zero_shift )</span>
+<a name="ln-331"></a>    <span class="k">CALL </span><span class="n">ids</span><span class="p">(</span><span class="n">itr</span><span class="p">)%</span> <span class="n">idata</span><span class="p">%</span> <span class="n">set_one_lapse</span><span class="p">(</span> <span class="n">one_lapse</span> <span class="p">)</span>
+<a name="ln-332"></a>    <span class="k">CALL </span><span class="n">ids</span><span class="p">(</span><span class="n">itr</span><span class="p">)%</span> <span class="n">idata</span><span class="p">%</span> <span class="n">set_zero_shift</span><span class="p">(</span> <span class="n">zero_shift</span> <span class="p">)</span>
+<a name="ln-333"></a>  <span class="n">ENDDO</span> <span class="n">build_drs_loop</span>
+<a name="ln-334"></a>
+<a name="ln-335"></a>  <span class="c">!STOP</span>
+<a name="ln-336"></a>
+<a name="ln-337"></a>  <span class="k">IF</span><span class="p">(</span> <span class="n">run_sph</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-338"></a>
+<a name="ln-339"></a>    <span class="c">!</span>
+<a name="ln-340"></a>    <span class="c">!-- Construct the particles objects from the bns objects</span>
+<a name="ln-341"></a>    <span class="c">!</span>
+<a name="ln-342"></a>    <span class="n">place_hydro_id_loops</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-343"></a>      <span class="n">part_distribution_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr4</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_n_parts</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-344"></a>        <span class="k">IF</span><span class="p">(</span> <span class="n">placer</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span> <span class="o">==</span> <span class="n">test_int</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-345"></a><span class="k">          EXIT </span><span class="n">part_distribution_loop</span>
+<a name="ln-346"></a>        <span class="k">ELSE</span>
+<a name="ln-347"></a>
+<a name="ln-348"></a><span class="k">          PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-349"></a>                   <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+<a name="ln-350"></a>          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Placing particles for &quot;</span><span class="o">//</span><span class="n">systems</span><span class="p">(</span><span class="n">itr3</span><span class="p">),</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-351"></a>                   <span class="s2">&quot;, distribution&quot;</span><span class="p">,</span> <span class="n">itr4</span>
+<a name="ln-352"></a>          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-353"></a>                   <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+<a name="ln-354"></a>          <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-355"></a>          <span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span><span class="o">=</span> <span class="n">particles</span><span class="p">(</span> <span class="n">ids</span><span class="p">(</span><span class="n">itr3</span><span class="p">)%</span> <span class="n">idata</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-356"></a>                                                   <span class="n">placer</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-357"></a>
+<a name="ln-358"></a>        <span class="n">ENDIF</span>
+<a name="ln-359"></a>      <span class="n">ENDDO</span> <span class="n">part_distribution_loop</span>
+<a name="ln-360"></a>    <span class="n">ENDDO</span> <span class="n">place_hydro_id_loops</span>
+<a name="ln-361"></a>
+<a name="ln-362"></a>    <span class="c">!STOP</span>
+<a name="ln-363"></a>
+<a name="ln-364"></a>    <span class="n">compute_export_sph_loops</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-365"></a>      <span class="n">part_distribution_loop2</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr4</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_n_parts</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-366"></a>        <span class="k">IF</span><span class="p">(</span> <span class="n">placer</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span> <span class="o">==</span> <span class="n">test_int</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-367"></a><span class="k">          EXIT </span><span class="n">part_distribution_loop2</span>
+<a name="ln-368"></a>          <span class="c">! Experimental: empty particles object</span>
+<a name="ln-369"></a>          <span class="c">!particles_dist( itr, itr2 )= particles()</span>
+<a name="ln-370"></a>        <span class="k">ELSE</span>
+<a name="ln-371"></a>
+<a name="ln-372"></a><span class="k">          PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-373"></a>                   <span class="o">//</span> <span class="s2">&quot;=====================&quot;</span>
+<a name="ln-374"></a>          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Computing SPH variables for &quot;</span><span class="o">//</span><span class="n">systems</span><span class="p">(</span><span class="n">itr3</span><span class="p">),</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-375"></a>                   <span class="s2">&quot;, distribution&quot;</span><span class="p">,</span> <span class="n">itr4</span>
+<a name="ln-376"></a>          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-377"></a>                   <span class="o">//</span> <span class="s2">&quot;=====================&quot;</span>
+<a name="ln-378"></a>          <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-379"></a>          <span class="c">!WRITE( namefile_parts_bin, &quot;(A1,I1,A1,I1,A1)&quot; ) &amp;</span>
+<a name="ln-380"></a>          <span class="c">!                            &quot;l&quot;, &amp;</span>
+<a name="ln-381"></a>          <span class="c">!                            itr3, &quot;-&quot;, itr4, &quot;.&quot;</span>
+<a name="ln-382"></a>          <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_parts_bin</span><span class="p">,</span> <span class="s2">&quot;(A5)&quot;</span> <span class="p">)</span> <span class="n">systems_name</span><span class="p">(</span><span class="n">itr3</span><span class="p">)</span>
+<a name="ln-383"></a>          <span class="n">namefile_parts_bin</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">sph_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_parts_bin</span> <span class="p">)</span>
+<a name="ln-384"></a>
+<a name="ln-385"></a>          <span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)%</span> <span class="n">export_bin</span>    <span class="o">=</span> <span class="n">export_bin</span>
+<a name="ln-386"></a>          <span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)%</span> <span class="n">export_form_xy</span><span class="o">=</span> <span class="n">export_form_xy</span>
+<a name="ln-387"></a>          <span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)%</span> <span class="n">export_form_x</span> <span class="o">=</span> <span class="n">export_form_x</span>
+<a name="ln-388"></a>
+<a name="ln-389"></a>          <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)%</span> <span class="p">&amp;</span>
+<a name="ln-390"></a>               <span class="n">compute_and_export_SPH_variables</span><span class="p">(</span> <span class="n">namefile_parts_bin</span> <span class="p">)</span>
+<a name="ln-391"></a>          <span class="c">!IF( particles_dist( itr3, itr4 )% export_bin )THEN</span>
+<a name="ln-392"></a>          <span class="c">!  WRITE( namefile_parts, &quot;(A10,I1,A1,I1,A4)&quot; ) &amp;</span>
+<a name="ln-393"></a>          <span class="c">!                  &quot;sph_vars-&quot;, itr3, &quot;-&quot;, itr4, &quot;.dat&quot;</span>
+<a name="ln-394"></a>          <span class="c">!  CALL particles_dist( itr3, itr4 )% &amp;</span>
+<a name="ln-395"></a>          <span class="c">!                  read_sphincs_dump_print_formatted( &amp;</span>
+<a name="ln-396"></a>          <span class="c">!                                namefile_parts_bin, namefile_parts )</span>
+<a name="ln-397"></a>          <span class="c">!ENDIF</span>
+<a name="ln-398"></a>
+<a name="ln-399"></a>        <span class="n">ENDIF</span>
+<a name="ln-400"></a>      <span class="n">ENDDO</span> <span class="n">part_distribution_loop2</span>
+<a name="ln-401"></a>    <span class="n">ENDDO</span> <span class="n">compute_export_sph_loops</span>
+<a name="ln-402"></a>
+<a name="ln-403"></a>    <span class="c">!</span>
+<a name="ln-404"></a>    <span class="c">!-- Print the particle initial data to a formatted file</span>
+<a name="ln-405"></a>    <span class="c">!</span>
+<a name="ln-406"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">export_form</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-407"></a><span class="k">      </span><span class="n">export_sph_loops</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-408"></a>        <span class="k">DO </span><span class="n">itr4</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_n_parts</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-409"></a>          <span class="k">IF</span><span class="p">(</span> <span class="n">placer</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span> <span class="o">==</span> <span class="n">test_int</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-410"></a><span class="k">            EXIT</span>
+<a name="ln-411"></a>            <span class="c">! Experimental: empty particles object</span>
+<a name="ln-412"></a>            <span class="c">!particles_dist( itr, itr2 )= particles()</span>
+<a name="ln-413"></a>          <span class="k">ELSE</span>
+<a name="ln-414"></a><span class="k">            WRITE</span><span class="p">(</span> <span class="n">namefile_parts</span><span class="p">,</span> <span class="s2">&quot;(A29,I1,A1,I1,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-415"></a>                                   <span class="s2">&quot;lorene-bns-id-particles-form_&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-416"></a>                                   <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">itr4</span><span class="p">,</span> <span class="s2">&quot;.dat&quot;</span>
+<a name="ln-417"></a>            <span class="n">namefile_parts</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">sph_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_parts</span> <span class="p">)</span>
+<a name="ln-418"></a>            <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)%</span> <span class="p">&amp;</span>
+<a name="ln-419"></a>                 <span class="n">print_formatted_lorene_id_particles</span><span class="p">(</span> <span class="n">namefile_parts</span> <span class="p">)</span>
+<a name="ln-420"></a>          <span class="n">ENDIF</span>
+<a name="ln-421"></a>        <span class="n">ENDDO</span>
+<a name="ln-422"></a>      <span class="n">ENDDO</span> <span class="n">export_sph_loops</span>
+<a name="ln-423"></a>    <span class="n">ENDIF</span>
+<a name="ln-424"></a>
+<a name="ln-425"></a>  <span class="n">ENDIF</span>
+<a name="ln-426"></a>
+<a name="ln-427"></a>  <span class="k">IF</span><span class="p">(</span> <span class="n">run_spacetime</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-428"></a>
+<a name="ln-429"></a>    <span class="c">!</span>
+<a name="ln-430"></a>    <span class="c">!-- Construct the bssn_id objects from the bns objects</span>
+<a name="ln-431"></a>    <span class="c">!</span>
+<a name="ln-432"></a>    <span class="n">place_spacetime_id_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-433"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-434"></a>               <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+<a name="ln-435"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Setting up BSSN object for &quot;</span><span class="o">//</span><span class="n">systems</span><span class="p">(</span><span class="n">itr3</span><span class="p">),</span> <span class="n">itr3</span>
+<a name="ln-436"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-437"></a>               <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+<a name="ln-438"></a>      <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-439"></a>      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)</span><span class="o">=</span> <span class="n">bssn_id</span><span class="p">(</span> <span class="n">ids</span><span class="p">(</span><span class="n">itr3</span><span class="p">)%</span> <span class="n">idata</span> <span class="p">)</span>
+<a name="ln-440"></a>    <span class="n">ENDDO</span> <span class="n">place_spacetime_id_loop</span>
+<a name="ln-441"></a>
+<a name="ln-442"></a>    <span class="c">!</span>
+<a name="ln-443"></a>    <span class="c">!-- Compute the BSSN initial data, optionally export it to a binary file</span>
+<a name="ln-444"></a>    <span class="c">!-- readable by SPHINCS_BSSN, and optionally read the content of such binary</span>
+<a name="ln-445"></a>    <span class="c">!-- file and print it to a formatted file (the latter for debugging)</span>
+<a name="ln-446"></a>    <span class="c">!</span>
+<a name="ln-447"></a>    <span class="n">compute_export_bssn_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-448"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-449"></a>               <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+<a name="ln-450"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Computing BSSN variables for &quot;</span><span class="o">//</span><span class="n">systems</span><span class="p">(</span><span class="n">itr3</span><span class="p">),</span> <span class="n">itr3</span>
+<a name="ln-451"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-452"></a>               <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+<a name="ln-453"></a>      <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-454"></a>      <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_bssn_bin</span><span class="p">,</span> <span class="s2">&quot;(A15)&quot;</span> <span class="p">)</span> <span class="s2">&quot;BSSN_vars.00000&quot;</span><span class="c">!&quot;BSSN_l&quot;, itr3, &quot;.bin&quot;&quot;(A6,I1,A4)&quot;</span>
+<a name="ln-455"></a>      <span class="n">namefile_bssn_bin</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn_bin</span> <span class="p">)</span>
+<a name="ln-456"></a>
+<a name="ln-457"></a>      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_form_xy</span><span class="o">=</span> <span class="n">export_form_xy</span>
+<a name="ln-458"></a>      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_form_x</span> <span class="o">=</span> <span class="n">export_form_x</span>
+<a name="ln-459"></a>      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_bin</span><span class="o">=</span> <span class="n">export_bin</span>
+<a name="ln-460"></a>
+<a name="ln-461"></a>      <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
+<a name="ln-462"></a>                          <span class="n">compute_and_export_3p1_variables</span><span class="p">(</span> <span class="n">namefile_bssn_bin</span> <span class="p">)</span>
+<a name="ln-463"></a>      <span class="c">!IF( bssn_forms( itr3 )% export_bin )THEN</span>
+<a name="ln-464"></a>      <span class="c">!  WRITE( namefile_bssn, &quot;(A10,I1,A4)&quot; ) &quot;bssn_vars-&quot;, itr3, &quot;.dat&quot;</span>
+<a name="ln-465"></a>      <span class="c">!  CALL bssn_forms( itr3 )% &amp;</span>
+<a name="ln-466"></a>      <span class="c">!        read_bssn_dump_print_formatted( namefile_bssn_bin, namefile_bssn )</span>
+<a name="ln-467"></a>      <span class="c">!ENDIF</span>
+<a name="ln-468"></a>    <span class="n">ENDDO</span> <span class="n">compute_export_bssn_loop</span>
+<a name="ln-469"></a>
+<a name="ln-470"></a>    <span class="c">!</span>
+<a name="ln-471"></a>    <span class="c">!-- Print the BSSN initial data to a formatted file</span>
+<a name="ln-472"></a>    <span class="c">!</span>
+<a name="ln-473"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">export_form</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-474"></a><span class="k">      </span><span class="n">export_bssn_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-475"></a>        <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_bssn</span><span class="p">,</span> <span class="s2">&quot;(A24,I1,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-476"></a>                              <span class="s2">&quot;lorene-bns-id-bssn-form_&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;.dat&quot;</span>
+<a name="ln-477"></a>
+<a name="ln-478"></a>        <span class="n">namefile_bssn</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+<a name="ln-479"></a>
+<a name="ln-480"></a>        <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
+<a name="ln-481"></a>                    <span class="n">print_formatted_lorene_id_3p1_variables</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+<a name="ln-482"></a>      <span class="n">ENDDO</span> <span class="n">export_bssn_loop</span>
+<a name="ln-483"></a>    <span class="n">ENDIF</span>
+<a name="ln-484"></a>
+<a name="ln-485"></a>    <span class="c">!</span>
+<a name="ln-486"></a>    <span class="c">!-- Compute the BSSN constraints</span>
+<a name="ln-487"></a>    <span class="c">!</span>
+<a name="ln-488"></a>    <span class="n">compute_export_bssn_constraints_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-489"></a>
+<a name="ln-490"></a>        <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">cons_step</span><span class="o">=</span> <span class="n">constraints_step</span>
+<a name="ln-491"></a>        <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_constraints</span><span class="o">=</span> <span class="n">export_constraints</span>
+<a name="ln-492"></a>        <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_constraints_details</span><span class="o">=</span> <span class="p">&amp;</span>
+<a name="ln-493"></a>                            <span class="n">export_constraints_details</span>
+<a name="ln-494"></a>        <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_constraints_xy</span><span class="o">=</span> <span class="n">export_constraints_xy</span>
+<a name="ln-495"></a>        <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_constraints_x</span> <span class="o">=</span> <span class="n">export_constraints_x</span>
+<a name="ln-496"></a>
+<a name="ln-497"></a>        <span class="k">IF</span><span class="p">(</span> <span class="n">compute_constraints</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-498"></a>
+<a name="ln-499"></a><span class="k">          PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-500"></a>                   <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+<a name="ln-501"></a>          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Computing BSSN constraints for BSSN formulation&quot;</span><span class="p">,</span> <span class="n">itr3</span>
+<a name="ln-502"></a>          <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-503"></a>                   <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
+<a name="ln-504"></a>          <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-505"></a>
+<a name="ln-506"></a>          <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_bssn</span><span class="p">,</span> <span class="s2">&quot;(A17,I1,A4)&quot;</span> <span class="p">)</span> <span class="s2">&quot;bssn-constraints-&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-507"></a>                                                <span class="s2">&quot;.dat&quot;</span>
+<a name="ln-508"></a>          <span class="k">WRITE</span><span class="p">(</span> <span class="n">name_logfile</span><span class="p">,</span> <span class="s2">&quot;(A28,I1)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-509"></a>                              <span class="s2">&quot;bssn-constraints-statistics-&quot;</span><span class="p">,</span> <span class="n">itr3</span>
+<a name="ln-510"></a>
+<a name="ln-511"></a>          <span class="n">namefile_bssn</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+<a name="ln-512"></a>          <span class="n">name_logfile</span> <span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">name_logfile</span> <span class="p">)</span>
+<a name="ln-513"></a>
+<a name="ln-514"></a>          <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
+<a name="ln-515"></a>                      <span class="n">compute_and_export_3p1_constraints</span><span class="p">(</span> <span class="n">ids</span><span class="p">(</span><span class="n">itr3</span><span class="p">)%</span> <span class="n">idata</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-516"></a>                                                          <span class="n">namefile_bssn</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-517"></a>                                                          <span class="n">name_logfile</span> <span class="p">)</span>
+<a name="ln-518"></a>
+<a name="ln-519"></a>        <span class="n">ENDIF</span>
+<a name="ln-520"></a>
+<a name="ln-521"></a>        <span class="n">part_distribution_loop3</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr4</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_n_parts</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-522"></a>
+<a name="ln-523"></a>          <span class="k">IF</span><span class="p">(</span> <span class="n">placer</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">)</span> <span class="o">==</span> <span class="n">test_int</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-524"></a><span class="k">            EXIT</span>
+<a name="ln-525"></a>            <span class="c">! Experimental: empty particles object</span>
+<a name="ln-526"></a>            <span class="c">!particles_dist( itr, itr2 )= particles()</span>
+<a name="ln-527"></a>          <span class="k">ELSE</span>
+<a name="ln-528"></a>
+<a name="ln-529"></a><span class="k">          IF</span><span class="p">(</span> <span class="n">compute_parts_constraints</span> <span class="p">.</span><span class="nb">AND</span><span class="p">.</span> <span class="n">run_sph</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-530"></a>
+<a name="ln-531"></a><span class="k">            PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-532"></a>                     <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+<a name="ln-533"></a>            <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Computing BSSN constraints for BSSN&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-534"></a>                     <span class="s2">&quot; formulation&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;with particle distribution&quot;</span><span class="p">,</span> <span class="n">itr4</span>
+<a name="ln-535"></a>            <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-536"></a>                     <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+<a name="ln-537"></a>            <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-538"></a>
+<a name="ln-539"></a>            <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_bssn</span><span class="p">,</span> <span class="s2">&quot;(A23,I1,A1,I1,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-540"></a>                                                  <span class="s2">&quot;bssn-constraints-parts-&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-541"></a>                                                  <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">itr4</span><span class="p">,</span> <span class="s2">&quot;.dat&quot;</span>
+<a name="ln-542"></a>            <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_sph</span><span class="p">,</span> <span class="s2">&quot;(A12,I1,A1,I1,A4)&quot;</span> <span class="p">)</span> <span class="s2">&quot;sph-density-&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-543"></a>                                                  <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">itr4</span><span class="p">,</span> <span class="s2">&quot;.dat&quot;</span>
+<a name="ln-544"></a>            <span class="k">WRITE</span><span class="p">(</span> <span class="n">name_logfile</span><span class="p">,</span> <span class="s2">&quot;(A34,I1,A1,I1,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-545"></a>                                 <span class="s2">&quot;bssn-constraints-parts-statistics-&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-546"></a>                                 <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">itr4</span>
+<a name="ln-547"></a>
+<a name="ln-548"></a>            <span class="n">namefile_bssn</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+<a name="ln-549"></a>            <span class="n">namefile_sph</span> <span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">sph_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_sph</span> <span class="p">)</span>
+<a name="ln-550"></a>            <span class="n">name_logfile</span> <span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">name_logfile</span> <span class="p">)</span>
+<a name="ln-551"></a>
+<a name="ln-552"></a>            <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
+<a name="ln-553"></a>                        <span class="n">compute_and_export_3p1_constraints</span><span class="p">(</span> <span class="p">&amp;</span>
+<a name="ln-554"></a>                                                <span class="n">particles_dist</span><span class="p">(</span> <span class="n">itr3</span><span class="p">,</span> <span class="n">itr4</span> <span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-555"></a>                                                <span class="n">namefile_bssn</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-556"></a>                                                <span class="n">name_logfile</span> <span class="p">)</span>
+<a name="ln-557"></a>
+<a name="ln-558"></a>          <span class="n">ENDIF</span>
+<a name="ln-559"></a>        <span class="n">ENDIF</span>
+<a name="ln-560"></a>
+<a name="ln-561"></a>      <span class="n">ENDDO</span> <span class="n">part_distribution_loop3</span>
+<a name="ln-562"></a>    <span class="n">ENDDO</span> <span class="n">compute_export_bssn_constraints_loop</span>
+<a name="ln-563"></a>
+<a name="ln-564"></a>  <span class="n">ENDIF</span>
+<a name="ln-565"></a>
+<a name="ln-566"></a>  <span class="k">CALL </span><span class="n">execution_timer</span><span class="p">%</span> <span class="n">stop_timer</span><span class="p">()</span>
+<a name="ln-567"></a>
+<a name="ln-568"></a>  <span class="k">CALL </span><span class="nb">DATE_AND_TIME</span><span class="p">(</span> <span class="n">date</span><span class="p">,</span> <span class="nb">time</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">values</span> <span class="p">)</span>
+<a name="ln-569"></a>  <span class="n">end_time</span><span class="o">=</span> <span class="n">date</span> <span class="o">//</span> <span class="s2">&quot;-&quot;</span> <span class="o">//</span> <span class="nb">time</span>
+<a name="ln-570"></a>
+<a name="ln-571"></a>  <span class="c">!</span>
+<a name="ln-572"></a>  <span class="c">!-- Print the timers</span>
+<a name="ln-573"></a>  <span class="c">!</span>
+<a name="ln-574"></a>
+<a name="ln-575"></a>  <span class="k">DO </span><span class="n">itr</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-576"></a>
+<a name="ln-577"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-578"></a>             <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+<a name="ln-579"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Timing for physical system &quot;</span><span class="p">,</span> <span class="n">itr</span>
+<a name="ln-580"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-581"></a>             <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+<a name="ln-582"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-583"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * ID:&quot;</span>
+<a name="ln-584"></a>    <span class="k">CALL </span><span class="n">ids</span><span class="p">(</span><span class="n">itr</span><span class="p">)%</span> <span class="n">idata</span><span class="p">%</span> <span class="n">construction_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+<a name="ln-585"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-586"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">run_sph</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-587"></a><span class="k">      PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * SPH:&quot;</span>
+<a name="ln-588"></a>      <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span><span class="n">itr</span><span class="p">,</span><span class="mi">1</span><span class="p">)%</span> <span class="n">placer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+<a name="ln-589"></a>      <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span><span class="n">itr</span><span class="p">,</span><span class="mi">1</span><span class="p">)%</span> <span class="n">same_particle_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+<a name="ln-590"></a>      <span class="k">DO </span><span class="n">i_matter</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ids</span><span class="p">(</span><span class="n">itr</span><span class="p">)%</span> <span class="n">idata</span><span class="p">%</span> <span class="n">get_n_matter</span><span class="p">(),</span> <span class="mi">1</span>
+<a name="ln-591"></a>        <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span><span class="n">itr</span><span class="p">,</span><span class="mi">1</span><span class="p">)%</span> <span class="n">apm_timers</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+<a name="ln-592"></a>      <span class="n">ENDDO</span>
+<a name="ln-593"></a>      <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span><span class="n">itr</span><span class="p">,</span><span class="mi">1</span><span class="p">)%</span> <span class="n">importer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+<a name="ln-594"></a>      <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">(</span><span class="n">itr</span><span class="p">,</span><span class="mi">1</span><span class="p">)%</span> <span class="n">sph_computer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+<a name="ln-595"></a>      <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-596"></a>    <span class="n">ENDIF</span>
+<a name="ln-597"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">run_spacetime</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-598"></a><span class="k">      PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Spacetime:&quot;</span>
+<a name="ln-599"></a>      <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span><span class="n">itr</span><span class="p">)%</span> <span class="n">grid_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+<a name="ln-600"></a>      <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span><span class="n">itr</span><span class="p">)%</span> <span class="n">importer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+<a name="ln-601"></a>      <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span><span class="n">itr</span><span class="p">)%</span> <span class="n">bssn_computer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+<a name="ln-602"></a>      <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-603"></a>    <span class="n">ENDIF</span>
+<a name="ln-604"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Total:&quot;</span>
+<a name="ln-605"></a>    <span class="k">CALL </span><span class="n">execution_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
+<a name="ln-606"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-607"></a>
+<a name="ln-608"></a>  <span class="n">ENDDO</span>
+<a name="ln-609"></a>
+<a name="ln-610"></a>  <span class="c">!</span>
+<a name="ln-611"></a>  <span class="c">!-- Print a summary</span>
+<a name="ln-612"></a>  <span class="c">!</span>
+<a name="ln-613"></a>  <span class="k">DO </span><span class="n">itr</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-614"></a>
+<a name="ln-615"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-616"></a>             <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+<a name="ln-617"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Summary for physical system &quot;</span><span class="p">,</span> <span class="n">itr</span>
+<a name="ln-618"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+<a name="ln-619"></a>             <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+<a name="ln-620"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-621"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Used ID data file: &quot;</span> <span class="p">&amp;</span>
+<a name="ln-622"></a>             <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">common_path</span><span class="p">)</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="n">filenames</span><span class="p">(</span><span class="n">itr</span><span class="p">))</span>
+<a name="ln-623"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-624"></a>
+<a name="ln-625"></a>    <span class="k">CALL </span><span class="n">ids</span><span class="p">(</span><span class="n">itr</span><span class="p">)%</span> <span class="n">idata</span><span class="p">%</span> <span class="n">print_summary</span><span class="p">()</span>
+<a name="ln-626"></a>
+<a name="ln-627"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">run_sph</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-628"></a>
+<a name="ln-629"></a><span class="k">      CALL </span><span class="n">particles_dist</span><span class="p">(</span><span class="n">itr</span><span class="p">,</span><span class="mi">1</span><span class="p">)%</span> <span class="n">print_summary</span><span class="p">()</span>
+<a name="ln-630"></a>
+<a name="ln-631"></a>    <span class="n">ENDIF</span>
+<a name="ln-632"></a>
+<a name="ln-633"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">run_spacetime</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-634"></a>
+<a name="ln-635"></a><span class="k">      CALL </span><span class="n">bssn_forms</span><span class="p">(</span><span class="n">itr</span><span class="p">)%</span> <span class="n">print_summary</span><span class="p">()</span>
+<a name="ln-636"></a>
+<a name="ln-637"></a>    <span class="n">ENDIF</span>
+<a name="ln-638"></a>
+<a name="ln-639"></a>  <span class="n">ENDDO</span>
+<a name="ln-640"></a>  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** Run started on &quot;</span><span class="p">,</span> <span class="n">run_id</span><span class="p">,</span> <span class="s2">&quot; and ended on &quot;</span><span class="p">,</span> <span class="n">end_time</span>
+<a name="ln-641"></a>  <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-642"></a>
+<a name="ln-643"></a>  <span class="c">!</span>
+<a name="ln-644"></a>  <span class="c">!-- Deallocate memory</span>
+<a name="ln-645"></a>  <span class="c">!</span>
+<a name="ln-646"></a>  <span class="k">DO </span><span class="n">itr</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-647"></a>    <span class="c">!</span>
+<a name="ln-648"></a>    <span class="c">!-- Destruct the LORENE Bin_NS object by hand, since the pointer to it is</span>
+<a name="ln-649"></a>    <span class="c">!-- global (because it is bound to C++) and cannot be nullified by the</span>
+<a name="ln-650"></a>    <span class="c">!-- destructor of bns. In case of multiple bns objects, this would lead</span>
+<a name="ln-651"></a>    <span class="c">!-- to problems...</span>
+<a name="ln-652"></a>    <span class="c">!-- TODO: fix this</span>
+<a name="ln-653"></a>    <span class="c">!</span>
+<a name="ln-654"></a>    <span class="c">!CALL binaries( itr )% destruct_binary()</span>
+<a name="ln-655"></a>  <span class="n">ENDDO</span>
+<a name="ln-656"></a>  <span class="c">!IF( ALLOCATED( binaries ) )THEN</span>
+<a name="ln-657"></a>  <span class="c">!  DEALLOCATE( binaries )</span>
+<a name="ln-658"></a>  <span class="c">!ENDIF</span>
+<a name="ln-659"></a>  <span class="c">!IF( ALLOCATED( idata ) )THEN</span>
+<a name="ln-660"></a>  <span class="c">!  DEALLOCATE( idata )</span>
+<a name="ln-661"></a>  <span class="c">!ENDIF</span>
+<a name="ln-662"></a>  <span class="k">IF</span><span class="p">(</span> <span class="nb">ALLOCATED</span><span class="p">(</span> <span class="n">ids</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-663"></a><span class="k">    DEALLOCATE</span><span class="p">(</span> <span class="n">ids</span> <span class="p">)</span>
+<a name="ln-664"></a>  <span class="n">ENDIF</span>
+<a name="ln-665"></a>  <span class="k">IF</span><span class="p">(</span> <span class="nb">ALLOCATED</span><span class="p">(</span> <span class="n">particles_dist</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-666"></a><span class="k">    DEALLOCATE</span><span class="p">(</span> <span class="n">particles_dist</span> <span class="p">)</span>
+<a name="ln-667"></a>  <span class="n">ENDIF</span>
+<a name="ln-668"></a>  <span class="k">IF</span><span class="p">(</span> <span class="nb">ALLOCATED</span><span class="p">(</span> <span class="n">bssn_forms</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-669"></a><span class="k">    DEALLOCATE</span><span class="p">(</span> <span class="n">bssn_forms</span> <span class="p">)</span>
+<a name="ln-670"></a>  <span class="n">ENDIF</span>
+<a name="ln-671"></a>
+<a name="ln-672"></a>
+<a name="ln-673"></a>  <span class="k">CONTAINS</span>
+<a name="ln-674"></a>
+<a name="ln-675"></a>
+<a name="ln-676"></a><span class="k">  SUBROUTINE </span><span class="n">read_bns_id_parameters</span><span class="p">()</span>
+<a name="ln-677"></a>
+<a name="ln-678"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-679"></a>
+<a name="ln-680"></a><span class="k">    </span><span class="kt">INTEGER</span><span class="kd">::</span> <span class="nb">stat</span>
+<a name="ln-681"></a>
+<a name="ln-682"></a><span class="nb">    </span><span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">lorene_bns_id_parameters</span>
+<a name="ln-683"></a>    <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">100</span> <span class="p">)</span><span class="kd">::</span> <span class="n">msg</span>
+<a name="ln-684"></a>
+<a name="ln-685"></a>    <span class="n">lorene_bns_id_parameters</span><span class="o">=</span> <span class="s1">&#39;sphincs_lorene_bns_parameters.par&#39;</span>
+<a name="ln-686"></a>
+<a name="ln-687"></a>    <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="n">lorene_bns_id_parameters</span><span class="p">,</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">file_exists</span> <span class="p">)</span>
+<a name="ln-688"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">file_exists</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-689"></a><span class="k">     OPEN</span><span class="p">(</span> <span class="mi">17</span><span class="p">,</span> <span class="k">FILE</span><span class="o">=</span> <span class="n">lorene_bns_id_parameters</span><span class="p">,</span> <span class="n">STATUS</span><span class="o">=</span> <span class="s1">&#39;OLD&#39;</span> <span class="p">)</span>
+<a name="ln-690"></a>    <span class="k">ELSE</span>
+<a name="ln-691"></a><span class="k">     PRINT</span><span class="o">*</span>
+<a name="ln-692"></a>     <span class="k">PRINT</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;** ERROR: &#39;</span><span class="p">,</span> <span class="n">lorene_bns_id_parameters</span><span class="p">,</span> <span class="s2">&quot; file not found!&quot;</span>
+<a name="ln-693"></a>     <span class="k">PRINT</span><span class="o">*</span>
+<a name="ln-694"></a>     <span class="k">STOP</span>
+<a name="ln-695"></a><span class="k">    </span><span class="n">ENDIF</span>
+<a name="ln-696"></a>
+<a name="ln-697"></a>    <span class="k">READ</span><span class="p">(</span> <span class="mi">17</span><span class="p">,</span> <span class="n">NML</span><span class="o">=</span> <span class="n">bns_parameters</span><span class="p">,</span> <span class="n">IOSTAT</span><span class="o">=</span> <span class="nb">stat</span><span class="p">,</span> <span class="n">IOMSG</span><span class="o">=</span> <span class="n">msg</span> <span class="p">)</span>
+<a name="ln-698"></a>      <span class="k">IF</span><span class="p">(</span> <span class="nb">stat</span> <span class="o">/=</span> <span class="mi">0</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-699"></a><span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR: Error in reading &quot;</span><span class="p">,</span><span class="n">lorene_bns_id_parameters</span><span class="p">,&amp;</span>
+<a name="ln-700"></a>                 <span class="s2">&quot;. The IOSTAT variable is &quot;</span><span class="p">,</span> <span class="nb">stat</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-701"></a>                 <span class="s2">&quot;The error message is&quot;</span><span class="p">,</span> <span class="n">msg</span>
+<a name="ln-702"></a>        <span class="k">STOP</span>
+<a name="ln-703"></a><span class="k">      </span><span class="n">ENDIF</span>
+<a name="ln-704"></a>    <span class="k">CLOSE</span><span class="p">(</span> <span class="mi">17</span> <span class="p">)</span>
+<a name="ln-705"></a>
+<a name="ln-706"></a>    <span class="k">DO </span><span class="n">itr</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_length</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-707"></a>      <span class="k">IF</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">filenames</span><span class="p">(</span><span class="n">itr</span><span class="p">)).</span><span class="n">NE</span><span class="p">.</span><span class="s2">&quot;0&quot;</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-708"></a><span class="k">        </span><span class="n">cnt</span><span class="o">=</span> <span class="n">cnt</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="ln-709"></a>      <span class="n">ENDIF</span>
+<a name="ln-710"></a>    <span class="n">ENDDO</span>
+<a name="ln-711"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">cnt</span><span class="p">.</span><span class="n">NE</span><span class="p">.</span><span class="n">n_bns</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-712"></a><span class="k">      PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The number of file names is&quot;</span><span class="p">,</span> <span class="n">cnt</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-713"></a>               <span class="s2">&quot;and n_bns=&quot;</span><span class="p">,</span> <span class="n">n_bns</span><span class="p">,</span> <span class="s2">&quot;. The two should be the same.&quot;</span>
+<a name="ln-714"></a>      <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-715"></a>      <span class="k">STOP</span>
+<a name="ln-716"></a><span class="k">    </span><span class="n">ENDIF</span>
+<a name="ln-717"></a>
+<a name="ln-718"></a>   <span class="c">!DO itr= 1, n_bns, 1</span>
+<a name="ln-719"></a>   <span class="c">!  DO itr2= 1, max_n_parts, 1</span>
+<a name="ln-720"></a>   <span class="c">!    IF( placer( itr, itr2 ) == test_int )THEN</span>
+<a name="ln-721"></a>   <span class="c">!      PRINT *</span>
+<a name="ln-722"></a>   <span class="c">!      PRINT *, &quot;** ERROR! The array placer does not have &quot;, &amp;</span>
+<a name="ln-723"></a>   <span class="c">!               &quot;enough components to specify all the desired &quot;, &amp;</span>
+<a name="ln-724"></a>   <span class="c">!               &quot;particle distributions. Specify the &quot;, &amp;</span>
+<a name="ln-725"></a>   <span class="c">!               &quot;components in file lorene_bns_id_particles.par&quot;</span>
+<a name="ln-726"></a>   <span class="c">!      PRINT *</span>
+<a name="ln-727"></a>   <span class="c">!      STOP</span>
+<a name="ln-728"></a>   <span class="c">!    ENDIF</span>
+<a name="ln-729"></a>   <span class="c">!  ENDDO</span>
+<a name="ln-730"></a>   <span class="c">!ENDDO</span>
+<a name="ln-731"></a>
+<a name="ln-732"></a>  <span class="k">END SUBROUTINE</span>
+<a name="ln-733"></a>
+<a name="ln-734"></a><span class="k">END PROGRAM </span><span class="n">sphincs_id</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-11-14 16:41:50 
+            
+          </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

@@ -26,8 +26,21 @@ MODULE particles_id
     CHARACTER( LEN= : ), ALLOCATABLE:: eos_name
     !! The |eos| name
     DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE:: eos_parameters
-    !# The |eos| parameters, in the following order:
-    !  @todo complete the list
+    !# Array containing the |eos| parameters, in the following order:
+    !
+    !  - For a polytropic |eos|:
+    !    [ eos identification number, \(\gamma\),\(\kappa\) ]
+    !  - For a piecewise polytropic |eos|:
+    !    [ eos identification number, number of polytropic pieces, \(\gamma_0\),
+    !   \(\gamma_1\), \(\gamma_2\), \(\gamma_3\), \(\kappa_0\), \(\kappa_1\),
+    !    \(\kappa_2\), \(\kappa_3\), \(\log(p_1)\), \(\log(\rho_0)\),
+    !    \(\log(\rho_1)\), \(\log(\rho_2)\) ]
+    !  - For a tabulated |eos|: [ eos identification number ]
+    !
+    ! \(\gamma\) is the adimensional polytropic exponent, \(\kappa\) is the
+    ! polytropic constant in units of
+    ! \(\left(M_\odot L_\odot^{-3}\right)^{1-\gamma}\). Pressure and baryon
+    ! mass density have the same units \(M_\odot L_\odot^{-3}\) since \(c^2=1\).
   END TYPE
 
 
@@ -36,14 +49,14 @@ MODULE particles_id
   !              Definition of TYPE particles               *
   !                                                         *
   ! This class places the SPH particles, imports            *
-  ! the |lorene| BNS ID on the particle positions, stores     *
+  ! the |lorene| BNS ID on the particle positions, stores   *
   ! it, computes the relevant SPH fields and exports it to  *
   ! both a formatted, and a binary file for evolution       *
   !                                                         *
   !**********************************************************
 
   TYPE:: particles
-  !! TYPE representing a particle distribution
+  !! TYPE representing a |sph| particle distribution
 
 
     PRIVATE
@@ -51,23 +64,15 @@ MODULE particles_id
 
     INTEGER:: npart
     !! Total particle number
-    !INTEGER:: npart1
-    !! Particle number for star 1
-    !INTEGER:: npart2
-    !! Particle number for star 1
     INTEGER:: n_matter
-    !! Particle number for star 1
+    !! Number of matter objects in the physical system
     INTEGER, DIMENSION(:), ALLOCATABLE:: npart_i
-    !! Particle number for star 2
+    !! Array storing the particle numbers for the matter objects
     INTEGER:: distribution_id
     !! Identification number for the particle distribution
-  !  INTEGER:: eos1_id
-    !! |lorene| identification number for the EOS of star 1
-  !  INTEGER:: eos2_id
-    !! |lorene| identification number for the EOS of star 1
     INTEGER:: call_flag= 0
-    ! Flag that is set different than 0 if the SUBROUTINE
-    ! compute_and_export_SPH_variables is called
+    !# Flag that is set different than 0 if the SUBROUTINE
+    !  compute_and_export_SPH_variables is called
 
     INTEGER, DIMENSION(:), ALLOCATABLE:: baryon_density_index
     !# Array storing the indices to use with [[particles:baryon_density_parts]]
@@ -100,20 +105,20 @@ MODULE particles_id
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts
     !& 1-D array storing the pressure on the x axis
     !  \([\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]\) for NS 1
-    DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x1
+    !DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x1
     !& 1-D array storing the pressure on the x axis
     !  \([\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]\) for NS 2
-    DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x2
+    !DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x2
     !& 1-D array storing the first derivative of the pressure
     !  along the x axis \([\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]\) for NS 1
-    DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x_der1
+    !DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x_der1
     !& 1-D array storing the first derivative of the pressure
     !  along the x axis \([\mathrm{kg}\,c^2\,\mathrm{m}^{-3}]\) for NS2
-    DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x_der2
+    !DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_x_der2
     !> 1-D array storing the typical length scale for the pressure change
-    DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_length_scale_x1
+    !DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_length_scale_x1
     !> 1-D array storing the typical length scale for the pressure change
-    DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_length_scale_x2
+    !DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_length_scale_x2
     !& 1-D array storing the pressure in code units
     !  \([\mathrm{amu}\,c^2\,\mathrm{L_\odot}^{-3}]\)
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pressure_parts_cu
@@ -213,38 +218,25 @@ MODULE particles_id
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pmass
     !> Baryonic masses of the matter objects \(M_\odot\)
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: masses
-    !& Ratio of baryonic masses of the stars \(M_\odot\)
-    !  @warning always \(< 1\)
+    !& Ratio between baryonic masses of the matter objects and the maximum
+    !  baryonic mass among them @warning always \(< 1\)
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: mass_ratios
+    !& Ratio between baryonic masses of the matter objects and the total
+    !  baryonic mass of all the matter objects @warning always \(< 1\)
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: mass_fractions
-    !> Total grid volume
-    !DOUBLE PRECISION:: vol, vol1, vol2
-    !> Volume per particle
-    !DOUBLE PRECISION:: vol_a, vol1_a, vol2_a
-    !> Ratio between the max and min of the baryon number per particle
-    DOUBLE PRECISION:: nu_ratio
     !> Total baryon number
     DOUBLE PRECISION:: nbar_tot
-    !> Baryon number on star 1
-    !DOUBLE PRECISION:: nbar1
+    !> Baryon numbers of the matter objects
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: nbar_i
-    !> Baryon number on star 2
-    !DOUBLE PRECISION:: nbar2
-    !> Baryon number ratio on both stars
+    !& Ratio between the max and min of the baryon number per particle, over
+    !  all the matter objects
     DOUBLE PRECISION:: nuratio
-    !> Baryon number ratio on star 1
-    !DOUBLE PRECISION:: nuratio1
-    !> Baryon number ratio on star 2
-    !DOUBLE PRECISION:: nuratio2
+    !& Desired ratio between the max and min of the baryon number per particle,
+    !  over all the matter objects. **Only used when redistribute_nu is .TRUE.**
+    !  @warning Almost deprecated
+    DOUBLE PRECISION:: nu_ratio_des
+    !> Baryon number ratios on the matter objects
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: nuratio_i
-    !> Polytropic index for single polytropic EOS for star 1
-    !DOUBLE PRECISION:: gamma_sp1= 0.0D0
-    !> Polytropic constant for single polytropic EOS for star 1 @todo add units
-    !DOUBLE PRECISION:: kappa_sp1= 0.0D0
-    !> Polytropic index for single polytropic EOS for star 2
-    !DOUBLE PRECISION:: gamma_sp2= 0.0D0
-    !> Polytropic constant for single polytropic EOS for star 2 @todo add units
-    !DOUBLE PRECISION:: kappa_sp2= 0.0D0
 
     !
     !-- Strings
@@ -253,16 +245,16 @@ MODULE particles_id
     !> String containing the name of the particles parameter file
     CHARACTER( LEN= 50 ):: lorene_bns_id_parfile
 
-    !> String storing the local path to the directory containing the CompOSE EOS
+    !& String storing the local path to the directory containing the
+    !  CompOSE |eos|
     CHARACTER( LEN= : ), ALLOCATABLE:: compose_path
     !> String storing the subpath of compose_path to the CompOSE file with
     !  .beta extension
     CHARACTER( LEN= : ), ALLOCATABLE:: compose_filename
 
-    !> String containing the |lorene| name of the EOS for star 1
- !   CHARACTER( LEN= : ), ALLOCATABLE:: eos1
-    !> String containing the |lorene| name of the EOS for star 2
- !   CHARACTER( LEN= : ), ALLOCATABLE:: eos2
+    !
+    !-- Equations of state
+    !
 
     TYPE(eos), DIMENSION(:), ALLOCATABLE:: all_eos
 
@@ -346,11 +338,12 @@ MODULE particles_id
     PROCEDURE:: place_particles_lattice
     !! Places particles on a single lattice that surrounds both stars
 
-  !  PROCEDURE:: place_particles_lattices
-    !! Places particles on two lattices, each one surrounding one star
-
     PROCEDURE:: place_particles_spherical_surfaces
     !! Places particles on spherical surfaces on one star
+
+    PROCEDURE, NOPASS:: impose_equatorial_plane_symmetry
+    !# Reflects the positions of the particles on a matter object with respect
+    !  to the \(xy\) plane
 
     PROCEDURE, NOPASS:: perform_apm
     !! Performs the Artificial Pressure Method (APM) on one star's particles
@@ -394,6 +387,9 @@ MODULE particles_id
     PROCEDURE, PUBLIC:: print_formatted_lorene_id_particles
     !! Prints the SPH ID to a formatted file
 
+    PROCEDURE, PUBLIC:: print_summary
+    !! Prints the SPH ID to a formatted file
+
     PROCEDURE, PUBLIC:: is_empty
     !# Returns `.TRUE` if the [[particles]] object is empty, `.FALSE` otherwise
     !  @warning experimental, not actively used in the code yet
@@ -406,16 +402,12 @@ MODULE particles_id
 
     PROCEDURE, PUBLIC:: get_npart
     !! Returns [[particles:npart]]
-    PROCEDURE, PUBLIC:: get_npart1
-    !! Returns [[particles:npart1]]
-    PROCEDURE, PUBLIC:: get_npart2
-    !! Returns [[particles:npart2]]
+    PROCEDURE, PUBLIC:: get_npart_i
+    !! Returns the number of particles on the object `i_matter`
     PROCEDURE, PUBLIC:: get_nuratio
     !! Returns [[particles:nuratio]]
-    PROCEDURE, PUBLIC:: get_nuratio1
-    !! Returns [[particles:nuratio1]]
-    PROCEDURE, PUBLIC:: get_nuratio2
-    !! Returns [[particles:nuratio2]]
+    PROCEDURE, PUBLIC:: get_nuratio_i
+    !! Returns the baryon number ratio on the object `i_matter`
     PROCEDURE, PUBLIC:: get_pos
     !! Returns [[particles:pos]]
     PROCEDURE, PUBLIC:: get_vel
@@ -576,58 +568,6 @@ MODULE particles_id
     END SUBROUTINE place_particles_lattice
 
 
-  !  MODULE SUBROUTINE place_particles_lattices( THIS, &
-  !                                xmin1, xmax1, ymin1, ymax1, zmin1, zmax1, &
-  !                                xmin2, xmax2, ymin2, ymax2, zmin2, zmax2, &
-  !                                nx, ny, nz, &
-  !                                thres, id )
-  !  !! Places particles on two lattices, each one surrounding one star
-  !
-  !    !> [[particles]] object which this PROCEDURE is a member of
-  !    CLASS(particles), INTENT( IN OUT ):: THIS
-  !    !& [[idbase]] object needed to access the BNS data
-  !    CLASS(idbase),       INTENT( IN OUT ):: id
-  !    !& Number of lattice points on the less massive star
-  !    !  in the \(x\) direction
-  !    INTEGER,          INTENT( IN )    :: nx
-  !    !& Number of lattice points on the less massive star
-  !    !  in the \(y\) direction
-  !    INTEGER,          INTENT( IN )    :: ny
-  !    !& Number of lattice points on the less massive star
-  !    !  in the \(z\) direction
-  !    INTEGER,          INTENT( IN )    :: nz
-  !    !> Left \(x\) boundary of the lattice on star 1
-  !    DOUBLE PRECISION, INTENT( IN )    :: xmin1
-  !    !> Right \(x\) boundary of the lattice on star 1
-  !    DOUBLE PRECISION, INTENT( IN )    :: xmax1
-  !    !> Left \(y\) boundary of the lattice on star 1
-  !    DOUBLE PRECISION, INTENT( IN )    :: ymin1
-  !    !> Right \(y\) boundary of the lattice on star 1
-  !    DOUBLE PRECISION, INTENT( IN )    :: ymax1
-  !    !> Left \(z\) boundary of the lattice on star 1
-  !    DOUBLE PRECISION, INTENT( IN )    :: zmin1
-  !    !> Right \(z\) boundary of the lattice on star 1
-  !    DOUBLE PRECISION, INTENT( IN )    :: zmax1
-  !    !> Left \(x\) boundary of the lattice on star 2
-  !    DOUBLE PRECISION, INTENT( IN )    :: xmin2
-  !    !> Right \(x\) boundary of the lattice on star 2
-  !    DOUBLE PRECISION, INTENT( IN )    :: xmax2
-  !    !> Left \(y\) boundary of the lattice on star 2
-  !    DOUBLE PRECISION, INTENT( IN )    :: ymin2
-  !    !> Right \(y\) boundary of the lattice on star 2
-  !    DOUBLE PRECISION, INTENT( IN )    :: ymax2
-  !    !> Left \(z\) boundary of the lattice on star 2
-  !    DOUBLE PRECISION, INTENT( IN )    :: zmin2
-  !    !> Right \(z\) boundary of the lattice on star 2
-  !    DOUBLE PRECISION, INTENT( IN )    :: zmax2
-  !    !& (~rho_max)/thres is the minimum mass density considered
-  !    ! when placing particles on each star. Used only when redistribute_nu is
-  !    ! .FALSE. . When redistribute_nu is .TRUE. thres= 100*nu_ratio
-  !    DOUBLE PRECISION, INTENT( IN )    :: thres
-  !
-  !  END SUBROUTINE place_particles_lattices
-
-
     MODULE SUBROUTINE place_particles_spherical_surfaces( THIS, &
                                   mass_star, radius, center, &
                                   central_density, npart_approx, &
@@ -761,6 +701,22 @@ MODULE particles_id
 
 
     END SUBROUTINE place_particles_spherical_surfaces
+
+
+    MODULE SUBROUTINE impose_equatorial_plane_symmetry( npart, pos, &
+                                                 nu, com_star, verbose )
+    !# Mirror the particle with z>0 with respect to the xy plane,
+    !  to impose the equatorial-plane symmetry
+
+      !CLASS(particles), INTENT( IN OUT ):: THIS
+      INTEGER, INTENT(INOUT):: npart
+      DOUBLE PRECISION, INTENT(IN), OPTIONAL:: com_star
+      LOGICAL, INTENT(IN), OPTIONAL:: verbose
+
+      DOUBLE PRECISION, DIMENSION(3,npart), INTENT(INOUT):: pos
+      DOUBLE PRECISION, DIMENSION(npart),   INTENT(INOUT), OPTIONAL:: nu
+
+    END SUBROUTINE impose_equatorial_plane_symmetry
 
 
 !    MODULE SUBROUTINE reshape_sph_field_1d( THIS, field, new_size1, new_size2, &
@@ -987,6 +943,7 @@ MODULE particles_id
 
     END SUBROUTINE perform_apm
 
+
     MODULE SUBROUTINE read_sphincs_dump_print_formatted( THIS, namefile_bin, &
                                                                namefile )
     !# Reads the binary ID file printed by
@@ -1002,6 +959,7 @@ MODULE particles_id
 
     END SUBROUTINE read_sphincs_dump_print_formatted
 
+
     MODULE SUBROUTINE print_formatted_lorene_id_particles( THIS, namefile )
     !! Prints the SPH ID to a formatted file
 
@@ -1011,6 +969,7 @@ MODULE particles_id
       CHARACTER( LEN= * ), INTENT( IN OUT ), OPTIONAL :: namefile
 
     END SUBROUTINE print_formatted_lorene_id_particles
+
 
     MODULE SUBROUTINE read_compose_composition( THIS, namefile )
     !! Reads the \(Y_e(n_b)\) table in the CompOSE file with extension .beta
@@ -1023,6 +982,7 @@ MODULE particles_id
 
     END SUBROUTINE read_compose_composition
 
+
     MODULE SUBROUTINE compute_Ye( THIS )!, nlrf, Ye )
     !# Interpolates linearly the electron fraction \(Y_e\) at the particle
     !  densities; that is, assigns \(Y_e\) at the particle positions
@@ -1033,6 +993,20 @@ MODULE particles_id
       !DOUBLE PRECISION, DIMENSION( : ), INTENT( OUT ):: Ye
 
     END SUBROUTINE compute_Ye
+
+
+    MODULE SUBROUTINE print_summary( THIS, filename )
+    !# Prints a summary of the properties of the |sph| particle
+    !  distribution, optionally, to a formatted file whose name
+    !  is given as the optional argument `filename`
+
+
+      CLASS(particles), INTENT( IN OUT ):: THIS
+      CHARACTER( LEN= * ), INTENT( INOUT ), OPTIONAL:: filename
+      !! Name of the formatted file to print the summary to
+
+    END SUBROUTINE print_summary
+
 
     MODULE SUBROUTINE destruct_particles( THIS )
     !> Finalizer (Destructor) of [[particles]] object
@@ -1064,151 +1038,138 @@ MODULE particles_id
    !
    !END SUBROUTINE write_lorene_bns_id_dump
 
-    MODULE FUNCTION get_npart( THIS ) RESULT( n_part )
+    MODULE PURE FUNCTION get_npart( THIS ) RESULT( n_part )
     !! Returns [[particles:npart]]
 
       !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
+      CLASS(particles), INTENT( IN ):: THIS
       !> [[particles:npart]]
       INTEGER:: n_part
 
     END FUNCTION get_npart
 
-    MODULE FUNCTION get_npart1( THIS ) RESULT( n_part )
-    !! Returns [[particles:npart1]]
+    MODULE PURE FUNCTION get_npart_i( THIS, i_matter ) RESULT( n_part )
+    !! Returns the number of particles on the object `i_matter`
 
-      !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
-      !> [[particles:npart1]]
+      CLASS(particles), INTENT( IN ):: THIS
+      !! [[particles]] object which this PROCEDURE is a member of
+      INTEGER, INTENT( IN ):: i_matter
+      !! Index of the matter object
       INTEGER:: n_part
+      !! Number of particles on the object `i_matter`
 
-    END FUNCTION get_npart1
+    END FUNCTION get_npart_i
 
-    MODULE FUNCTION get_npart2( THIS ) RESULT( n_part )
-    !! Returns [[particles:npart2]]
 
-      !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
-      !> [[particles:npart2]]
-      INTEGER:: n_part
-
-    END FUNCTION get_npart2
-
-    MODULE FUNCTION get_nuratio( THIS ) RESULT( nuratio )
+    MODULE PURE FUNCTION get_nuratio( THIS ) RESULT( nuratio )
     !! Returns [[particles:nuratio]]
 
       !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
+      CLASS(particles), INTENT( IN ):: THIS
       !> [[particles:nuratio]]
       DOUBLE PRECISION:: nuratio
 
     END FUNCTION get_nuratio
 
-    MODULE FUNCTION get_nuratio1( THIS ) RESULT( nuratio1 )
-    !! Returns [[particles:nuratio1]]
 
-      !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
-      !> [[particles:nuratio1]]
-      DOUBLE PRECISION:: nuratio1
+    MODULE PURE FUNCTION get_nuratio_i( THIS, i_matter ) RESULT( nuratio )
+    !! Returns the baryon number ratio on the object `i_matter`
 
-    END FUNCTION get_nuratio1
+      CLASS(particles), INTENT( IN ):: THIS
+      !! [[particles]] object which this PROCEDURE is a member of
+      INTEGER, INTENT( IN ):: i_matter
+      !! Index of the matter object
+      INTEGER:: nuratio
+      !! Baryon number ratio on the object `i_matter`
 
-    MODULE FUNCTION get_nuratio2( THIS ) RESULT( nuratio2 )
-    !! Returns [[particles:nuratio2]]
+    END FUNCTION get_nuratio_i
 
-      !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
-      !> [[particles:nuratio2]]
-      DOUBLE PRECISION:: nuratio2
 
-    END FUNCTION get_nuratio2
-
-    MODULE FUNCTION get_pos( THIS ) RESULT( pos_u )
+    MODULE PURE FUNCTION get_pos( THIS ) RESULT( pos_u )
     !! Returns [[particles:pos]]
 
       !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
+      CLASS(particles), INTENT( IN ):: THIS
       !> [[particles:pos]]
       DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE:: pos_u
 
     END FUNCTION get_pos
 
-    MODULE FUNCTION get_vel( THIS ) RESULT( vel )
+    MODULE PURE FUNCTION get_vel( THIS ) RESULT( vel )
     !! Returns [[particles:v]]
 
       !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
+      CLASS(particles), INTENT( IN ):: THIS
       !> [[particles:v]]
       DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE:: vel
 
     END FUNCTION get_vel
 
-    MODULE FUNCTION get_nlrf( THIS ) RESULT( nlrf )
+    MODULE PURE FUNCTION get_nlrf( THIS ) RESULT( nlrf )
     !! Returns [[particles:nlrf]]
 
       !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
+      CLASS(particles), INTENT( IN ):: THIS
       !> [[particles:nlrf]]
       DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE:: nlrf
 
     END FUNCTION get_nlrf
 
-    MODULE FUNCTION get_nu( THIS ) RESULT( nu )
+    MODULE PURE FUNCTION get_nu( THIS ) RESULT( nu )
     !! Returns [[particles:nu]]
 
       !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
+      CLASS(particles), INTENT( IN ):: THIS
       !> [[particles:nu]]
       DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE:: nu
 
     END FUNCTION get_nu
 
-    MODULE FUNCTION get_u( THIS ) RESULT( u )
+    MODULE PURE FUNCTION get_u( THIS ) RESULT( u )
     !! Returns [[particles:specific_energy_parts]]
 
       !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
+      CLASS(particles), INTENT( IN ):: THIS
       !> [[particles:specific_energy_parts]]
       DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE:: u
 
     END FUNCTION get_u
 
-    MODULE FUNCTION get_pressure( THIS ) RESULT( pressure )
+    MODULE PURE FUNCTION get_pressure( THIS ) RESULT( pressure )
     !! Returns [[particles:pressure_parts]]
 
       !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
+      CLASS(particles), INTENT( IN ):: THIS
       !> [[particles:pressure_parts]]
       DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE:: pressure
 
     END FUNCTION get_pressure
 
-    MODULE FUNCTION get_pressure_cu( THIS ) RESULT( pressure_cu )
+    MODULE PURE FUNCTION get_pressure_cu( THIS ) RESULT( pressure_cu )
     !! Returns [[particles:pressure_parts_cu]]
 
       !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
+      CLASS(particles), INTENT( IN ):: THIS
       !> [[particles:pressure_parts_cu]]
       DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE:: pressure_cu
 
     END FUNCTION get_pressure_cu
 
-    MODULE FUNCTION get_theta( THIS ) RESULT( theta )
+    MODULE PURE FUNCTION get_theta( THIS ) RESULT( theta )
     !! Returns [[particles:theta]]
 
       !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
+      CLASS(particles), INTENT( IN ):: THIS
       !> [[particles:theta]]
       DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE:: theta
 
     END FUNCTION get_theta
 
-    MODULE FUNCTION get_h( THIS ) RESULT( h )
+    MODULE PURE FUNCTION get_h( THIS ) RESULT( h )
     !! Returns [[particles:h]]
 
       !> [[particles]] object which this PROCEDURE is a member of
-      CLASS(particles), INTENT( IN OUT ):: THIS
+      CLASS(particles), INTENT( IN ):: THIS
       !> [[particles:h]]
       DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE:: h
 

@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>bnslorene &ndash; SPHINCS_LORENE </title>
+    <title>bnslorene &ndash; SPHINCS_ID </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -144,7 +144,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 9.7% of total for derived types.</p>Including implementation: 64 statements,  8.1% of total for derived types.">55 statements</a>
+    title="<p> 9.3% of total for derived types.</p>Including implementation: 65 statements,  8.2% of total for derived types.">56 statements</a>
      </li> 
      
      
@@ -398,16 +398,6 @@
 
 
 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#cons-0">Constructor</a></h3></div>
-  <div id="cons-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../type/bnslorene.html#interface-bnslorene">bnslorene</a>
-    </div>
-  </div>
-</div>
-
-
 
 
 
@@ -446,6 +436,8 @@
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-construct_binary">construct_binary</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-deallocate_lorene_id_memory">deallocate_lorene_id_memory</a>
+      
+      <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-derived_type_constructor~2">derived_type_constructor</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-destruct_binary">destruct_binary</a>
       
@@ -609,9 +601,13 @@
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-import_spatial_metric">import_spatial_metric</a>
       
+      <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-initialize">initialize</a>
+      
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-integrate_baryon_mass_density">integrate_baryon_mass_density</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-print_id_params">print_id_params</a>
+      
+      <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-print_summary~4">print_summary</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-read_id_full~2">read_id_full</a>
       
@@ -638,6 +634,8 @@
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-return_mass~2">return_mass</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-return_spatial_extent~2">return_spatial_extent</a>
+      
+      <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-sanity_check">sanity_check</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-set_n_matter">set_n_matter</a>
       
@@ -1014,16 +1012,6 @@
 
 
 
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#cons-1">Constructor</a></h3></div>
-  <div id="cons-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../type/bnslorene.html#interface-bnslorene">bnslorene</a>
-    </div>
-  </div>
-</div>
-
-
 
 
 
@@ -1062,6 +1050,8 @@
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-construct_binary">construct_binary</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-deallocate_lorene_id_memory">deallocate_lorene_id_memory</a>
+      
+      <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-derived_type_constructor~2">derived_type_constructor</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-destruct_binary">destruct_binary</a>
       
@@ -1225,9 +1215,13 @@
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-import_spatial_metric">import_spatial_metric</a>
       
+      <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-initialize">initialize</a>
+      
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-integrate_baryon_mass_density">integrate_baryon_mass_density</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-print_id_params">print_id_params</a>
+      
+      <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-print_summary~4">print_summary</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-read_id_full~2">read_id_full</a>
       
@@ -1254,6 +1248,8 @@
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-return_mass~2">return_mass</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-return_spatial_extent~2">return_spatial_extent</a>
+      
+      <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-sanity_check">sanity_check</a>
       
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-set_n_matter">set_n_matter</a>
       
@@ -1642,7 +1638,7 @@ N.B. This variable is global. The pointer to the second \(\texttt{LORENE}\) \(\t
   
   <td>public,</td>
   <td>ALLOCATABLE</td><td>::</td>
-  <td><strong>eos1</strong></td><td></td><td></td><td><p>Name of the equation of state (EoS) of star 1</p></td>
+  <td><strong>eos1</strong></td><td></td><td></td><td><p>Name of the equation of state (\(\mathrm{EOS}\)) of star 1</p></td>
   
 </tr>
 
@@ -1670,7 +1666,7 @@ N.B. This variable is global. The pointer to the second \(\texttt{LORENE}\) \(\t
   
   <td>public,</td>
   <td>ALLOCATABLE</td><td>::</td>
-  <td><strong>eos2</strong></td><td></td><td></td><td><p>Name of the equation of state (EoS) of star 2</p></td>
+  <td><strong>eos2</strong></td><td></td><td></td><td><p>Name of the equation of state (\(\mathrm{EOS}\)) of star 2</p></td>
   
 </tr>
 
@@ -2805,51 +2801,6 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
     
     
     
-   <section>
-   <h2>Constructor</h2>
-     
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-bnslorene"></span><h3>public interface <a href='../interface/bnslorene.html'>bnslorene</a>
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-    <p>Interface of TYPE <a href="../type/bnslorene.html">bnslorene</a></p>
-  </div>
-  
-  <ul class="list-group">
-  
-  
-  
-    <li class="list-group-item">
-    
-    
-    <h3>
-public interface <a href='../interface/construct_bnslorene.html'>construct_bnslorene</a>()
-    
-    
-   
-</h3>
-    
-    
-    <h4>Arguments</h4>
-    
-      <em>None</em>
-    
-    
-
-    </li>
-  
-  
-  </ul>
-</div>
-
-     
-   </section>
-   <br>
-    
     
     
     <section>
@@ -3003,7 +2954,7 @@ public module module subroutine allocate_lorene_id_memory(THIS, d)
     
 
 
-    <p>Checks that the given index is between 1 and <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>,
+    <p>Checks that the given index is between 1 and <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>,
  included. If not, it stops the execution of the program.</p>
   </div>
   
@@ -3032,7 +2983,7 @@ public module module subroutine check_i_matter(THIS, i_matter)
 
 
 <p>Checks that the given index <code>i_matter</code> is between 1 and
- <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, included. If not, it stops the execution of the
+ <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, included. If not, it stops the execution of the
  program.</p>
     
     <h4>Arguments</h4>
@@ -3254,6 +3205,98 @@ public module module subroutine deallocate_lorene_id_memory(THIS)
   
   <td></td><td>::</td>
   <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-derived_type_constructor~2"></span><h3>procedure, public :: <strong>derived_type_constructor</strong>  => <a href='../interface/construct_bnslorene.html'>construct_bnslorene</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine construct_bnslorene(derived_type, filename)
+    
+    
+   
+   <a href='../proc/construct_bnslorene.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Prints a summary of the physical properties the system
+ to the standard output and, optionally, to a formatted file whose name
+ is given as the optional argument <code>filename</code></p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>derived_type</strong></td><td><p>Constructed <a href="../type/bnslorene.html">bnslorene</a> object</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>filename</strong></td><td><p>\(\texttt{LORENE}\) binary file containing the spectral BNS ID</p></td>
   
 </tr>
 
@@ -8185,7 +8228,7 @@ public module module function get_mass2(THIS)
     
 
 
-    <p>Returns <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+    <p>Returns <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system</p>
   </div>
   
@@ -8213,7 +8256,7 @@ public module module function get_n_matter(THIS)
 
 
 
-<p>Returns <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+<p>Returns <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system</p>
     
     <h4>Arguments</h4>
@@ -8257,7 +8300,7 @@ public module module function get_n_matter(THIS)
   
      <h4>Return Value <small>double precision
   </small></h4>
-  <p><a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the</p>
+  <p><a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the</p>
     
 
         
@@ -8643,7 +8686,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           
     
     <h3>
-public module module function get_one_lapse(THIS)
+public pure module module function get_one_lapse(THIS)
     
     
    
@@ -8654,7 +8697,7 @@ public module module function get_one_lapse(THIS)
 
 
 
-<p>Returns <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+<p>Returns <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system</p>
     
     <h4>Arguments</h4>
@@ -8698,7 +8741,7 @@ public module module function get_one_lapse(THIS)
   
      <h4>Return Value <small>logical
   </small></h4>
-  <p><a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the</p>
+  <p><a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the</p>
     
 
         
@@ -10057,7 +10100,7 @@ public module module function get_total_spatial_extent(THIS) result(box)
           
     
     <h3>
-public module module function get_zero_shift(THIS)
+public pure module module function get_zero_shift(THIS)
     
     
    
@@ -10068,7 +10111,7 @@ public module module function get_zero_shift(THIS)
 
 
 
-<p>Returns <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+<p>Returns <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system</p>
     
     <h4>Arguments</h4>
@@ -10112,7 +10155,7 @@ public module module function get_zero_shift(THIS)
   
      <h4>Return Value <small>logical
   </small></h4>
-  <p><a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the</p>
+  <p><a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the</p>
     
 
         
@@ -10494,6 +10537,108 @@ public module module function import_spatial_metric(THIS, x, y, z) result(res)
     
      
 <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-initialize"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>initialize</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p>This PROCEDURE calls the constructor of the <a href="../type/idbase.html">idbase</a>-extended type
+ and the SUBROUTINE <a href="../type/idbase.html#boundprocedure-sanity_check">sanity_check</a> afterwards. It is recommended
+ to use this SUBROUTINE to construct objects of <a href="../type/idbase.html">idbase</a>-extended type
+ since the sanity check is performed automatically.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine initialize(derived_type, filename)
+    
+    
+   
+   <a href='../proc/initialize.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Prints a summary of the physical properties the system
+ to the standard output and, optionally, to a formatted file whose name
+ is given as the optional argument <code>filename</code></p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>derived_type</strong></td><td><p>Constructed <a href="../type/diffstarlorene.html">diffstarlorene</a> object</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>filename</strong></td><td><p>\(\texttt{LORENE}\) binary file containing the spectral DRS ID</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-integrate_baryon_mass_density"></span><h3>procedure, public :: <strong>integrate_baryon_mass_density</strong>  
     
   </h3></div>
@@ -10776,6 +10921,98 @@ public module module subroutine print_id_params(THIS)
   
   <td></td><td>::</td>
   <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_summary~4"></span><h3>procedure, public :: <strong>print_summary</strong>  => <a href='../interface/print_summary_bns.html'>print_summary_bns</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine print_summary_bns(THIS, filename)
+    
+    
+   
+   <a href='../proc/print_summary_bns.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Prints a summary of the physical properties the system
+ to the standard output and, optionally, to a formatted file whose name
+ is given as the optional argument <code>filename</code></p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>filename</strong></td><td><p>Name of the formatted file to print the summary to</p></td>
   
 </tr>
 
@@ -12955,7 +13192,7 @@ public module module subroutine get_eos_parameters(THIS, i_matter, eos_params)
   <td></td>
   
   <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>eos_params</strong></td><td><p>Array containing the parameters of the EoS for the <code>i_matter</code>-th
+  <td><strong>eos_params</strong></td><td><p>Array containing the parameters of the \(\mathrm{EOS}\) for the <code>i_matter</code>-th
  matter object</p></td>
   
 </tr>
@@ -13167,6 +13404,93 @@ public module module function get_radii(THIS, i_matter)
     
      
 <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-sanity_check"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>sanity_check</strong>  
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+
+
+    <p>Checks that <a href="../type/idbase.html#variable-n_matter~3">n_matter</a> and the sizes returned by
+<a href="../type/idbase.html#boundprocedure-return_spatial_extent">return_spatial_extent</a> and <a href="../type/idbase.html#boundprocedure-get_total_spatial_extent">get_total_spatial_extent</a>
+  are acceptable. It is called by initialize, after the constructor of the
+  derived type.</p>
+  </div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine sanity_check(derived_type)
+    
+    
+   
+   <a href='../proc/sanity_check.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Prints a summary of the physical properties the system
+ to the standard output and, optionally, to a formatted file whose name
+ is given as the optional argument <code>filename</code></p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>derived_type</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_n_matter"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>set_n_matter</strong>  
     
   </h3></div>
@@ -13175,7 +13499,7 @@ public module module function get_radii(THIS, i_matter)
     
 
 
-    <p>Sets <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+    <p>Sets <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system, to a value</p>
   </div>
   
@@ -13203,7 +13527,7 @@ public module module subroutine set_n_matter(THIS, value)
 
 
 
-<p>Sets <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+<p>Sets <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system, to the given value</p>
     
     <h4>Arguments</h4>
@@ -13245,7 +13569,7 @@ public module module subroutine set_n_matter(THIS, value)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>value</strong></td><td><p>Value to set <a href="../type/idbase.html#variable-n_matter~2">n_matter</a> to</p></td>
+  <td><strong>value</strong></td><td><p>Value to set <a href="../type/idbase.html#variable-n_matter~3">n_matter</a> to</p></td>
   
 </tr>
 
@@ -13302,7 +13626,7 @@ public module module subroutine set_one_lapse(THIS, logic)
 
 
 
-<p>Sets <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+<p>Sets <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system, to the given value</p>
     
     <h4>Arguments</h4>
@@ -13344,7 +13668,7 @@ public module module subroutine set_one_lapse(THIS, logic)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>logic</strong></td><td><p>Value to set <a href="../type/idbase.html#variable-n_matter~2">n_matter</a> to</p></td>
+  <td><strong>logic</strong></td><td><p>Value to set <a href="../type/idbase.html#variable-n_matter~3">n_matter</a> to</p></td>
   
 </tr>
 
@@ -13402,7 +13726,7 @@ public module module subroutine set_zero_shift(THIS, logic)
 
 
 
-<p>Sets <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+<p>Sets <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system, to the given value</p>
     
     <h4>Arguments</h4>
@@ -13444,7 +13768,7 @@ public module module subroutine set_zero_shift(THIS, logic)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>logic</strong></td><td><p>Value to set <a href="../type/idbase.html#variable-n_matter~2">n_matter</a> to</p></td>
+  <td><strong>logic</strong></td><td><p>Value to set <a href="../type/idbase.html#variable-n_matter~3">n_matter</a> to</p></td>
   
 </tr>
 
@@ -13703,6 +14027,8 @@ public module module function is_hydro_negative(THIS, x, y, z) result(res)
     <span class="c">!--  SUBROUTINES  --!</span>
     <span class="c">!-------------------!</span>
 
+    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">derived_type_constructor</span> <span class="o">=&gt;</span> <span class="n">construct_bnslorene</span>
+
     <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">construct_binary</span>
     <span class="c">!! Constructs the |lorene| |binns| object</span>
 
@@ -13734,6 +14060,7 @@ public module module function is_hydro_negative(THIS, x, y, z) result(res)
     <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">read_id_hydro</span>     <span class="o">=&gt;</span> <span class="n">import_id_hydro</span>
     <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">read_id_mass_b</span>    <span class="o">=&gt;</span> <span class="n">import_id_mass_b</span>
     <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">read_id_k</span>         <span class="o">=&gt;</span> <span class="n">import_id_k</span>
+
 
     <span class="c">!-----------------!</span>
     <span class="c">!--  FUNCTIONS  --!</span>
@@ -13783,6 +14110,9 @@ public module module function is_hydro_negative(THIS, x, y, z) result(res)
 
     <span class="c">!PROCEDURE, PUBLIC:: get_bns_ptr</span>
 
+    <span class="c">!PROCEDURE:: derived_type_destructor =&gt; destruct_bnslorene</span>
+
+    <span class="c">!PROCEDURE:: derived_type_destructor =&gt; destruct_bnslorene</span>
     <span class="k">FINAL</span><span class="kd">::</span> <span class="n">destruct_bnslorene</span>
     <span class="c">!! Finalizer (Destructor) of a [[bnslorene]] object</span>
 
@@ -13801,14 +14131,14 @@ public module module function is_hydro_negative(THIS, x, y, z) result(res)
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

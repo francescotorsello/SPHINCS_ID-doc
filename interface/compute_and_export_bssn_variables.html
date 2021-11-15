@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>compute_and_export_bssn_variables &ndash; SPHINCS_LORENE</title>
+    <title>compute_and_export_bssn_variables &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -45,7 +45,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -256,185 +256,185 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M191.1105,-306C199.6452,-306 208.3184,-306 216.9303,-306"/>
 <polygon fill="#000000" stroke="#000000" points="217,-309.5001 226.9999,-306 216.9999,-302.5001 217,-309.5001"/>
 </g>
-<!-- allocate_gravityacceleration -->
+<!-- deallocate_tmunu -->
 <g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node3" class="node">
-<title>allocate_gravityacceleration</title>
-<polygon fill="#777777" stroke="#777777" points="605,-612 460,-612 460,-588 605,-588 605,-612"/>
-<text text-anchor="middle" x="532.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_gravityacceleration</text>
+<title>deallocate_tmunu</title>
+<polygon fill="#777777" stroke="#777777" points="581,-612 484,-612 484,-588 581,-588 581,-612"/>
+<text text-anchor="middle" x="532.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_tmunu</text>
 </g>
-<!-- proc~compute_and_export_bssn_variables&#45;&gt;allocate_gravityacceleration -->
+<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_tmunu -->
 <g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge2" class="edge">
-<title>proc~compute_and_export_bssn_variables&#45;&gt;allocate_gravityacceleration</title>
-<path fill="none" stroke="#000000" d="M324.6041,-318.0078C332.725,-360.659 366.0757,-506.1885 454,-579 455.5891,-580.316 457.2528,-581.5501 458.9775,-582.7075"/>
-<polygon fill="#000000" stroke="#000000" points="457.6243,-585.9649 468.045,-587.878 461.0918,-579.884 457.6243,-585.9649"/>
-</g>
-<!-- adm_to_bssn -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node4" class="node">
-<title>adm_to_bssn</title>
-<polygon fill="#777777" stroke="#777777" points="571,-570 494,-570 494,-546 571,-546 571,-570"/>
-<text text-anchor="middle" x="532.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">adm_to_bssn</text>
-</g>
-<!-- proc~compute_and_export_bssn_variables&#45;&gt;adm_to_bssn -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge3" class="edge">
-<title>proc~compute_and_export_bssn_variables&#45;&gt;adm_to_bssn</title>
-<path fill="none" stroke="#000000" d="M325.7207,-318.0085C336.6415,-356.3445 376.0065,-476.8007 454,-537 462.7215,-543.7317 473.4269,-548.3105 484.0944,-551.4235"/>
-<polygon fill="#000000" stroke="#000000" points="483.2688,-554.8249 493.8223,-553.8901 484.9892,-548.0396 483.2688,-554.8249"/>
-</g>
-<!-- allocate_grid_function -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node5" class="node">
-<title>allocate_grid_function</title>
-<polygon fill="#777777" stroke="#777777" points="591,-528 474,-528 474,-504 591,-504 591,-528"/>
-<text text-anchor="middle" x="532.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_grid_function</text>
-</g>
-<!-- proc~compute_and_export_bssn_variables&#45;&gt;allocate_grid_function -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge4" class="edge">
-<title>proc~compute_and_export_bssn_variables&#45;&gt;allocate_grid_function</title>
-<path fill="none" stroke="#000000" d="M327.4587,-318.4029C341.6721,-352.3139 385.9537,-447.2225 454,-495 457.2834,-497.3054 460.8059,-499.3577 464.4741,-501.1847"/>
-<polygon fill="#000000" stroke="#000000" points="463.2737,-504.4797 473.8384,-505.278 466.0774,-498.0657 463.2737,-504.4797"/>
+<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_tmunu</title>
+<path fill="none" stroke="#000000" d="M324.6041,-318.0078C332.725,-360.659 366.0757,-506.1885 454,-579 459.8267,-583.8252 466.6568,-587.5504 473.8143,-590.4246"/>
+<polygon fill="#000000" stroke="#000000" points="473.1192,-593.8872 483.714,-593.84 475.4023,-587.2699 473.1192,-593.8872"/>
 </g>
 <!-- allocate_bssn -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node6" class="node">
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node4" class="node">
 <title>allocate_bssn</title>
-<polygon fill="#777777" stroke="#777777" points="571.5,-486 493.5,-486 493.5,-462 571.5,-462 571.5,-486"/>
-<text text-anchor="middle" x="532.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn</text>
+<polygon fill="#777777" stroke="#777777" points="571.5,-570 493.5,-570 493.5,-546 571.5,-546 571.5,-570"/>
+<text text-anchor="middle" x="532.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn</text>
 </g>
 <!-- proc~compute_and_export_bssn_variables&#45;&gt;allocate_bssn -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge5" class="edge">
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge3" class="edge">
 <title>proc~compute_and_export_bssn_variables&#45;&gt;allocate_bssn</title>
-<path fill="none" stroke="#000000" d="M329.7192,-318.0274C347.2666,-346.1928 395.0751,-416.7758 454,-453 462.9255,-458.487 473.2788,-462.5577 483.4804,-465.5722"/>
-<polygon fill="#000000" stroke="#000000" points="482.5993,-468.9594 493.1632,-468.1504 484.4005,-462.1951 482.5993,-468.9594"/>
+<path fill="none" stroke="#000000" d="M325.7207,-318.0085C336.6415,-356.3445 376.0065,-476.8007 454,-537 462.5478,-543.5977 473.0015,-548.1273 483.4572,-551.2359"/>
+<polygon fill="#000000" stroke="#000000" points="482.8634,-554.6971 493.4203,-553.8019 484.6093,-547.9183 482.8634,-554.6971"/>
 </g>
-<!-- deallocate_grid_function -->
+<!-- deallocate_adm -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node5" class="node">
+<title>deallocate_adm</title>
+<polygon fill="#777777" stroke="#777777" points="576.5,-528 488.5,-528 488.5,-504 576.5,-504 576.5,-528"/>
+<text text-anchor="middle" x="532.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_adm</text>
+</g>
+<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_adm -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge4" class="edge">
+<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_adm</title>
+<path fill="none" stroke="#000000" d="M327.4587,-318.4029C341.6721,-352.3139 385.9537,-447.2225 454,-495 461.2983,-500.1244 469.7784,-503.9985 478.4118,-506.9273"/>
+<polygon fill="#000000" stroke="#000000" points="477.5858,-510.3334 488.1695,-509.8487 479.5935,-503.6275 477.5858,-510.3334"/>
+</g>
+<!-- allocate_gravityacceleration -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node6" class="node">
+<title>allocate_gravityacceleration</title>
+<polygon fill="#777777" stroke="#777777" points="605,-486 460,-486 460,-462 605,-462 605,-486"/>
+<text text-anchor="middle" x="532.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_gravityacceleration</text>
+</g>
+<!-- proc~compute_and_export_bssn_variables&#45;&gt;allocate_gravityacceleration -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge5" class="edge">
+<title>proc~compute_and_export_bssn_variables&#45;&gt;allocate_gravityacceleration</title>
+<path fill="none" stroke="#000000" d="M329.7192,-318.0274C347.2666,-346.1928 395.0751,-416.7758 454,-453 456.9745,-454.8286 460.1077,-456.4999 463.3409,-458.0273"/>
+<polygon fill="#000000" stroke="#000000" points="462.0951,-461.3004 472.6693,-461.9615 464.8154,-454.8505 462.0951,-461.3004"/>
+</g>
+<!-- allocate_grid_function -->
 <g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node7" class="node">
-<title>deallocate_grid_function</title>
-<polygon fill="#777777" stroke="#777777" points="597,-444 468,-444 468,-420 597,-420 597,-444"/>
-<text text-anchor="middle" x="532.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_grid_function</text>
+<title>allocate_grid_function</title>
+<polygon fill="#777777" stroke="#777777" points="591,-444 474,-444 474,-420 591,-420 591,-444"/>
+<text text-anchor="middle" x="532.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_grid_function</text>
 </g>
-<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_grid_function -->
+<!-- proc~compute_and_export_bssn_variables&#45;&gt;allocate_grid_function -->
 <g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge6" class="edge">
-<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_grid_function</title>
+<title>proc~compute_and_export_bssn_variables&#45;&gt;allocate_grid_function</title>
 <path fill="none" stroke="#000000" d="M333.9942,-318.0056C355.5055,-339.7787 404.1898,-385.8481 454,-411 458.0043,-413.022 462.2249,-414.8656 466.5463,-416.5441"/>
 <polygon fill="#000000" stroke="#000000" points="465.5282,-419.8969 476.1228,-419.9597 467.8798,-413.3037 465.5282,-419.8969"/>
 </g>
-<!-- deallocate_tmunu -->
+<!-- allocate_adm -->
 <g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node8" class="node">
-<title>deallocate_tmunu</title>
-<polygon fill="#777777" stroke="#777777" points="581,-402 484,-402 484,-378 581,-378 581,-402"/>
-<text text-anchor="middle" x="532.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_tmunu</text>
+<title>allocate_adm</title>
+<polygon fill="#777777" stroke="#777777" points="570.5,-402 494.5,-402 494.5,-378 570.5,-378 570.5,-402"/>
+<text text-anchor="middle" x="532.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_adm</text>
 </g>
-<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_tmunu -->
+<!-- proc~compute_and_export_bssn_variables&#45;&gt;allocate_adm -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge15" class="edge">
+<title>proc~compute_and_export_bssn_variables&#45;&gt;allocate_adm</title>
+<path fill="none" stroke="#000000" d="M344.7522,-318.234C370.4687,-331.9981 414.3472,-354.3417 454,-369 463.6267,-372.5587 474.1214,-375.7906 484.2135,-378.5942"/>
+<polygon fill="#000000" stroke="#000000" points="483.5589,-382.0423 494.1242,-381.2512 485.3716,-375.281 483.5589,-382.0423"/>
+</g>
+<!-- deallocate_bssn -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node9" class="node">
+<title>deallocate_bssn</title>
+<polygon fill="#777777" stroke="#777777" points="577.5,-360 487.5,-360 487.5,-336 577.5,-336 577.5,-360"/>
+<text text-anchor="middle" x="532.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn</text>
+</g>
+<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_bssn -->
 <g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge7" class="edge">
-<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_tmunu</title>
-<path fill="none" stroke="#000000" d="M344.7522,-318.234C370.4687,-331.9981 414.3472,-354.3417 454,-369 460.4012,-371.3663 467.1863,-373.5882 473.9816,-375.6357"/>
-<polygon fill="#000000" stroke="#000000" points="473.3223,-379.0885 483.9012,-378.5074 475.2689,-372.3646 473.3223,-379.0885"/>
+<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_bssn</title>
+<path fill="none" stroke="#000000" d="M382.6776,-318.0355C412.4924,-323.9985 448.2429,-331.1486 477.3429,-336.9686"/>
+<polygon fill="#000000" stroke="#000000" points="476.8457,-340.4384 487.3379,-338.9676 478.2185,-333.5743 476.8457,-340.4384"/>
+</g>
+<!-- deallocate_gravityacceleration -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node10" class="node">
+<title>deallocate_gravityacceleration</title>
+<polygon fill="#777777" stroke="#777777" points="611,-318 454,-318 454,-294 611,-294 611,-318"/>
+<text text-anchor="middle" x="532.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_gravityacceleration</text>
+</g>
+<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_gravityacceleration -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge8" class="edge">
+<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_gravityacceleration</title>
+<path fill="none" stroke="#000000" d="M418.282,-306C426.7416,-306 435.2816,-306 443.6801,-306"/>
+<polygon fill="#000000" stroke="#000000" points="443.8394,-309.5001 453.8394,-306 443.8393,-302.5001 443.8394,-309.5001"/>
+</g>
+<!-- deallocate_ztmp -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node11" class="node">
+<title>deallocate_ztmp</title>
+<polygon fill="#777777" stroke="#777777" points="578,-276 487,-276 487,-252 578,-252 578,-276"/>
+<text text-anchor="middle" x="532.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_ztmp</text>
+</g>
+<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_ztmp -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge9" class="edge">
+<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_ztmp</title>
+<path fill="none" stroke="#000000" d="M382.6776,-293.9645C412.2756,-288.0449 447.7232,-280.9554 476.7069,-275.1586"/>
+<polygon fill="#000000" stroke="#000000" points="477.5497,-278.5595 486.669,-273.1662 476.1768,-271.6954 477.5497,-278.5595"/>
 </g>
 <!-- allocate_tmunu -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node9" class="node">
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node12" class="node">
 <title>allocate_tmunu</title>
-<polygon fill="#777777" stroke="#777777" points="575,-360 490,-360 490,-336 575,-336 575,-360"/>
-<text text-anchor="middle" x="532.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_tmunu</text>
+<polygon fill="#777777" stroke="#777777" points="575,-234 490,-234 490,-210 575,-210 575,-234"/>
+<text text-anchor="middle" x="532.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_tmunu</text>
 </g>
 <!-- proc~compute_and_export_bssn_variables&#45;&gt;allocate_tmunu -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge8" class="edge">
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge11" class="edge">
 <title>proc~compute_and_export_bssn_variables&#45;&gt;allocate_tmunu</title>
-<path fill="none" stroke="#000000" d="M382.6776,-318.0355C413.3597,-324.1719 450.328,-331.5656 479.8653,-337.4731"/>
-<polygon fill="#000000" stroke="#000000" points="479.4884,-340.9669 489.9806,-339.4961 480.8613,-334.1029 479.4884,-340.9669"/>
+<path fill="none" stroke="#000000" d="M344.7522,-293.766C370.4687,-280.0019 414.3472,-257.6583 454,-243 462.2683,-239.9435 471.1769,-237.128 479.9208,-234.6179"/>
+<polygon fill="#000000" stroke="#000000" points="480.9757,-237.9576 489.6799,-231.9172 479.1086,-231.2112 480.9757,-237.9576"/>
+</g>
+<!-- write_bssn_dump -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node13" class="node">
+<title>write_bssn_dump</title>
+<polygon fill="#777777" stroke="#777777" points="581,-192 484,-192 484,-168 581,-168 581,-192"/>
+<text text-anchor="middle" x="532.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_bssn_dump</text>
+</g>
+<!-- proc~compute_and_export_bssn_variables&#45;&gt;write_bssn_dump -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge12" class="edge">
+<title>proc~compute_and_export_bssn_variables&#45;&gt;write_bssn_dump</title>
+<path fill="none" stroke="#000000" d="M333.9942,-293.9944C355.5055,-272.2213 404.1898,-226.1519 454,-201 460.1766,-197.8811 466.8679,-195.1865 473.65,-192.868"/>
+<polygon fill="#000000" stroke="#000000" points="475.1147,-196.0763 483.6021,-189.7347 473.0126,-189.3994 475.1147,-196.0763"/>
 </g>
 <!-- allocate_ztmp -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node10" class="node">
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node14" class="node">
 <title>allocate_ztmp</title>
-<polygon fill="#777777" stroke="#777777" points="572,-318 493,-318 493,-294 572,-294 572,-318"/>
-<text text-anchor="middle" x="532.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_ztmp</text>
+<polygon fill="#777777" stroke="#777777" points="572,-150 493,-150 493,-126 572,-126 572,-150"/>
+<text text-anchor="middle" x="532.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_ztmp</text>
 </g>
 <!-- proc~compute_and_export_bssn_variables&#45;&gt;allocate_ztmp -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge9" class="edge">
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge13" class="edge">
 <title>proc~compute_and_export_bssn_variables&#45;&gt;allocate_ztmp</title>
-<path fill="none" stroke="#000000" d="M418.282,-306C440.5639,-306 463.4037,-306 482.7461,-306"/>
-<polygon fill="#000000" stroke="#000000" points="482.8126,-309.5001 492.8126,-306 482.8126,-302.5001 482.8126,-309.5001"/>
+<path fill="none" stroke="#000000" d="M329.7192,-293.9726C347.2666,-265.8072 395.0751,-195.2242 454,-159 462.7433,-153.625 472.8568,-149.609 482.8556,-146.6137"/>
+<polygon fill="#000000" stroke="#000000" points="484.0154,-149.9262 492.7612,-143.9461 482.1951,-143.167 484.0154,-149.9262"/>
+</g>
+<!-- deallocate_grid_function -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node15" class="node">
+<title>deallocate_grid_function</title>
+<polygon fill="#777777" stroke="#777777" points="597,-108 468,-108 468,-84 597,-84 597,-108"/>
+<text text-anchor="middle" x="532.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_grid_function</text>
+</g>
+<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_grid_function -->
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge14" class="edge">
+<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_grid_function</title>
+<path fill="none" stroke="#000000" d="M327.4587,-293.5971C341.6721,-259.6861 385.9537,-164.7775 454,-117 456.3813,-115.328 458.8885,-113.7891 461.4858,-112.3727"/>
+<polygon fill="#000000" stroke="#000000" points="463.0968,-115.482 470.6116,-108.0136 460.0796,-109.1656 463.0968,-115.482"/>
 </g>
 <!-- levels -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node11" class="node">
+<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node16" class="node">
 <title>levels</title>
-<polygon fill="#777777" stroke="#777777" points="559.5,-276 505.5,-276 505.5,-252 559.5,-252 559.5,-276"/>
-<text text-anchor="middle" x="532.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">levels</text>
+<polygon fill="#777777" stroke="#777777" points="559.5,-66 505.5,-66 505.5,-42 559.5,-42 559.5,-66"/>
+<text text-anchor="middle" x="532.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">levels</text>
 </g>
 <!-- proc~compute_and_export_bssn_variables&#45;&gt;levels -->
 <g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge10" class="edge">
 <title>proc~compute_and_export_bssn_variables&#45;&gt;levels</title>
-<path fill="none" stroke="#000000" d="M382.6776,-293.9645C419.0472,-286.6906 464.2493,-277.6501 495.4376,-271.4125"/>
-<polygon fill="#000000" stroke="#000000" points="496.3249,-274.8044 505.4443,-269.4111 494.952,-267.9404 496.3249,-274.8044"/>
+<path fill="none" stroke="#000000" d="M325.7207,-293.9915C336.6415,-255.6555 376.0065,-135.1993 454,-75 465.8625,-65.844 481.3953,-60.6706 495.5105,-57.7513"/>
+<polygon fill="#000000" stroke="#000000" points="496.2234,-61.1797 505.4653,-55.9992 495.01,-54.2857 496.2234,-61.1797"/>
 </g>
-<!-- allocate_adm -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node12" class="node">
-<title>allocate_adm</title>
-<polygon fill="#777777" stroke="#777777" points="570.5,-234 494.5,-234 494.5,-210 570.5,-210 570.5,-234"/>
-<text text-anchor="middle" x="532.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_adm</text>
-</g>
-<!-- proc~compute_and_export_bssn_variables&#45;&gt;allocate_adm -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge11" class="edge">
-<title>proc~compute_and_export_bssn_variables&#45;&gt;allocate_adm</title>
-<path fill="none" stroke="#000000" d="M344.7522,-293.766C370.4687,-280.0019 414.3472,-257.6583 454,-243 463.6267,-239.4413 474.1214,-236.2094 484.2135,-233.4058"/>
-<polygon fill="#000000" stroke="#000000" points="485.3716,-236.719 494.1242,-230.7488 483.5589,-229.9577 485.3716,-236.719"/>
-</g>
-<!-- deallocate_adm -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node13" class="node">
-<title>deallocate_adm</title>
-<polygon fill="#777777" stroke="#777777" points="576.5,-192 488.5,-192 488.5,-168 576.5,-168 576.5,-192"/>
-<text text-anchor="middle" x="532.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_adm</text>
-</g>
-<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_adm -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge12" class="edge">
-<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_adm</title>
-<path fill="none" stroke="#000000" d="M333.9942,-293.9944C355.5055,-272.2213 404.1898,-226.1519 454,-201 461.6032,-197.1607 469.9863,-193.9643 478.3586,-191.3211"/>
-<polygon fill="#000000" stroke="#000000" points="479.5162,-194.6294 488.1346,-188.467 477.5544,-187.9099 479.5162,-194.6294"/>
-</g>
-<!-- deallocate_ztmp -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node14" class="node">
-<title>deallocate_ztmp</title>
-<polygon fill="#777777" stroke="#777777" points="578,-150 487,-150 487,-126 578,-126 578,-150"/>
-<text text-anchor="middle" x="532.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_ztmp</text>
-</g>
-<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_ztmp -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge13" class="edge">
-<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_ztmp</title>
-<path fill="none" stroke="#000000" d="M329.7192,-293.9726C347.2666,-265.8072 395.0751,-195.2242 454,-159 461.0063,-154.6929 468.8925,-151.2584 476.8944,-148.5225"/>
-<polygon fill="#000000" stroke="#000000" points="478.131,-151.804 486.661,-145.52 476.074,-145.1131 478.131,-151.804"/>
-</g>
-<!-- write_bssn_dump -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node15" class="node">
-<title>write_bssn_dump</title>
-<polygon fill="#777777" stroke="#777777" points="581,-108 484,-108 484,-84 581,-84 581,-108"/>
-<text text-anchor="middle" x="532.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">write_bssn_dump</text>
-</g>
-<!-- proc~compute_and_export_bssn_variables&#45;&gt;write_bssn_dump -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge14" class="edge">
-<title>proc~compute_and_export_bssn_variables&#45;&gt;write_bssn_dump</title>
-<path fill="none" stroke="#000000" d="M327.4587,-293.5971C341.6721,-259.6861 385.9537,-164.7775 454,-117 460.0327,-112.7642 466.873,-109.3827 473.9398,-106.6832"/>
-<polygon fill="#000000" stroke="#000000" points="475.3026,-109.9174 483.6623,-103.4085 473.0682,-103.2836 475.3026,-109.9174"/>
-</g>
-<!-- deallocate_gravityacceleration -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node16" class="node">
-<title>deallocate_gravityacceleration</title>
-<polygon fill="#777777" stroke="#777777" points="611,-66 454,-66 454,-42 611,-42 611,-66"/>
-<text text-anchor="middle" x="532.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_gravityacceleration</text>
-</g>
-<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_gravityacceleration -->
-<g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge15" class="edge">
-<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_gravityacceleration</title>
-<path fill="none" stroke="#000000" d="M325.7207,-293.9915C336.6415,-255.6555 376.0065,-135.1993 454,-75 455.8602,-73.5642 457.8106,-72.2264 459.8316,-70.9798"/>
-<polygon fill="#000000" stroke="#000000" points="461.8863,-73.8522 469.0845,-66.0782 458.6094,-67.6665 461.8863,-73.8522"/>
-</g>
-<!-- deallocate_bssn -->
+<!-- adm_to_bssn -->
 <g id="interface~~compute_and_export_bssn_variables~~CallsGraph_node17" class="node">
-<title>deallocate_bssn</title>
-<polygon fill="#777777" stroke="#777777" points="577.5,-24 487.5,-24 487.5,0 577.5,0 577.5,-24"/>
-<text text-anchor="middle" x="532.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn</text>
+<title>adm_to_bssn</title>
+<polygon fill="#777777" stroke="#777777" points="571,-24 494,-24 494,0 571,0 571,-24"/>
+<text text-anchor="middle" x="532.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">adm_to_bssn</text>
 </g>
-<!-- proc~compute_and_export_bssn_variables&#45;&gt;deallocate_bssn -->
+<!-- proc~compute_and_export_bssn_variables&#45;&gt;adm_to_bssn -->
 <g id="interface~~compute_and_export_bssn_variables~~CallsGraph_edge16" class="edge">
-<title>proc~compute_and_export_bssn_variables&#45;&gt;deallocate_bssn</title>
-<path fill="none" stroke="#000000" d="M324.6041,-293.9922C332.725,-251.341 366.0757,-105.8115 454,-33 460.8683,-27.3123 469.1308,-23.153 477.6802,-20.1142"/>
-<polygon fill="#000000" stroke="#000000" points="478.8597,-23.4134 487.3958,-17.1375 476.8091,-16.7205 478.8597,-23.4134"/>
+<title>proc~compute_and_export_bssn_variables&#45;&gt;adm_to_bssn</title>
+<path fill="none" stroke="#000000" d="M324.6041,-293.9922C332.725,-251.341 366.0757,-105.8115 454,-33 462.5686,-25.9042 473.3071,-21.1873 484.0657,-18.0571"/>
+<polygon fill="#000000" stroke="#000000" points="485.0348,-21.4227 493.8899,-15.6057 483.34,-14.6309 485.0348,-21.4227"/>
 </g>
 </g>
 </svg>
@@ -536,7 +536,7 @@ public module module subroutine compute_and_export_bssn_variables(THIS, namefile
   
 <tr>
   
-  <td><span class="anchor" id="variable-this~46"></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td><span class="anchor" id="variable-this~47"></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -577,14 +577,14 @@ public module module subroutine compute_and_export_bssn_variables(THIS, namefile
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

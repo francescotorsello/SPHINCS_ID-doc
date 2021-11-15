@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>diffstar_lorene &ndash; SPHINCS_LORENE</title>
+    <title>diffstar_lorene &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -144,7 +144,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 3.8% of total for modules and submodules.">427 statements</a>
+    title=" 3.7% of total for modules and submodules.">426 statements</a>
      </li> 
      
      
@@ -209,8 +209,6 @@
       <a class="list-group-item" href="../module/diffstar_lorene.html#interface-destruct_drs">destruct_drs</a>
       
       <a class="list-group-item" href="../module/diffstar_lorene.html#interface-destruct_etdiffrot">destruct_etdiffrot</a>
-      
-      <a class="list-group-item" href="../module/diffstar_lorene.html#interface-diffstarlorene">diffstarlorene</a>
       
       <a class="list-group-item" href="../module/diffstar_lorene.html#interface-get_diffstar_full">get_diffstar_full</a>
       
@@ -304,6 +302,7 @@
    Lorene/Export/C++/Source/Etoile</p>
 <p><a href="https://lorene.obspm.fr/index.html" target="_blank">\(\texttt{LORENE}\) official repository</a></p>
 <hr>
+<p>! Interface of TYPE <a href="../type/diffstarlorene.html">diffstarlorene</a></p>
       <br>
     
   
@@ -318,11 +317,13 @@
     
     <li><a href='../module/diffstar_base.html'>diffstar_base</a></li>
     
-    <li>timing</li>
+    <li><a href='../module/utility.html'>utility</a></li>
     
     <li><a href="http://fortranwiki.org/fortran/show/iso_c_binding">iso_c_binding</a></li>
     
-    <li><a href='../module/utility.html'>utility</a></li>
+    <li>timing</li>
+    
+    <li><a href='../module/id_base.html'>id_base</a></li>
     
   </ul>
       </li>
@@ -344,104 +345,111 @@
 <!-- module~diffstar_lorene -->
 <g id="module~~diffstar_lorene~~UsesGraph_node1" class="node">
 <title>module~diffstar_lorene</title>
-<polygon fill="none" stroke="#000000" points="375,-84 294,-84 294,-60 375,-60 375,-84"/>
-<text text-anchor="middle" x="334.5" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">diffstar_lorene</text>
-</g>
-<!-- module~diffstar_base -->
-<g id="module~~diffstar_lorene~~UsesGraph_node2" class="node">
-<title>module~diffstar_base</title>
-<g id="a_module~~diffstar_lorene~~UsesGraph_node2"><a xlink:href=".././module/diffstar_base.html" xlink:title="diffstar_base">
-<polygon fill="#337ab7" stroke="#337ab7" points="256,-104 182,-104 182,-80 256,-80 256,-104"/>
-<text text-anchor="middle" x="219" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_base</text>
-</a>
-</g>
-</g>
-<!-- module~diffstar_lorene&#45;&gt;module~diffstar_base -->
-<g id="module~~diffstar_lorene~~UsesGraph_edge1" class="edge">
-<title>module~diffstar_lorene&#45;&gt;module~diffstar_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M293.779,-79.0513C284.9076,-80.5874 275.4474,-82.2256 266.3439,-83.8019"/>
-<polygon fill="#000000" stroke="#000000" points="265.524,-80.3917 256.2678,-85.5467 266.7184,-87.2891 265.524,-80.3917"/>
-</g>
-<!-- timing -->
-<g id="module~~diffstar_lorene~~UsesGraph_node3" class="node">
-<title>timing</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-84 0,-84 0,-60 54,-60 54,-84"/>
-<text text-anchor="middle" x="27" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timing</text>
-</g>
-<!-- module~diffstar_lorene&#45;&gt;timing -->
-<g id="module~~diffstar_lorene~~UsesGraph_edge2" class="edge">
-<title>module~diffstar_lorene&#45;&gt;timing</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M293.6084,-71.3667C282.092,-71.2152 269.5554,-71.0755 258,-71 183.3349,-70.512 164.6643,-70.4075 90,-71 81.7705,-71.0653 72.9368,-71.1786 64.5649,-71.306"/>
-<polygon fill="#000000" stroke="#000000" points="64.2296,-67.8109 54.2876,-71.4725 64.343,-74.81 64.2296,-67.8109"/>
-</g>
-<!-- module~utility -->
-<g id="module~~diffstar_lorene~~UsesGraph_node4" class="node">
-<title>module~utility</title>
-<g id="a_module~~diffstar_lorene~~UsesGraph_node4"><a xlink:href=".././module/utility.html" xlink:title="utility">
-<polygon fill="#337ab7" stroke="#337ab7" points="144,-146 90,-146 90,-122 144,-122 144,-146"/>
-<text text-anchor="middle" x="117" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utility</text>
-</a>
-</g>
-</g>
-<!-- module~diffstar_lorene&#45;&gt;module~utility -->
-<g id="module~~diffstar_lorene~~UsesGraph_edge3" class="edge">
-<title>module~diffstar_lorene&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M316.1398,-84.1804C301.1297,-93.5491 279.0267,-106.0338 258,-113 223.8942,-124.2993 183.1273,-129.5365 154.2217,-131.9535"/>
-<polygon fill="#000000" stroke="#000000" points="153.848,-128.4717 144.1432,-132.7223 154.3805,-135.4514 153.848,-128.4717"/>
+<polygon fill="none" stroke="#000000" points="375,-86 294,-86 294,-62 375,-62 375,-86"/>
+<text text-anchor="middle" x="334.5" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">diffstar_lorene</text>
 </g>
 <!-- iso_c_binding -->
-<g id="module~~diffstar_lorene~~UsesGraph_node5" class="node">
+<g id="module~~diffstar_lorene~~UsesGraph_node2" class="node">
 <title>iso_c_binding</title>
-<g id="a_module~~diffstar_lorene~~UsesGraph_node5"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
-<polygon fill="#337ab7" stroke="#337ab7" points="258,-24 180,-24 180,0 258,0 258,-24"/>
-<text text-anchor="middle" x="219" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iso_c_binding</text>
+<g id="a_module~~diffstar_lorene~~UsesGraph_node2"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="258,-146 180,-146 180,-122 258,-122 258,-146"/>
+<text text-anchor="middle" x="219" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iso_c_binding</text>
 </a>
 </g>
 </g>
 <!-- module~diffstar_lorene&#45;&gt;iso_c_binding -->
-<g id="module~~diffstar_lorene~~UsesGraph_edge4" class="edge">
+<g id="module~~diffstar_lorene~~UsesGraph_edge1" class="edge">
 <title>module~diffstar_lorene&#45;&gt;iso_c_binding</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M311.1269,-59.8581C293.9061,-50.9122 270.2732,-38.6354 251.2554,-28.756"/>
-<polygon fill="#000000" stroke="#000000" points="252.8259,-25.6279 242.3384,-24.1238 249.599,-31.8397 252.8259,-25.6279"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M311.1269,-86.1419C293.9061,-95.0878 270.2732,-107.3646 251.2554,-117.244"/>
+<polygon fill="#000000" stroke="#000000" points="249.599,-114.1603 242.3384,-121.8762 252.8259,-120.3721 249.599,-114.1603"/>
 </g>
-<!-- module~diffstar_base&#45;&gt;module~utility -->
-<g id="module~~diffstar_lorene~~UsesGraph_edge6" class="edge">
-<title>module~diffstar_base&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.7709,-104.0355C178.4368,-108.7025 165.3367,-114.0967 153.4014,-119.0112"/>
-<polygon fill="#000000" stroke="#000000" points="152.0494,-115.7827 144.1353,-122.8266 154.7147,-122.2555 152.0494,-115.7827"/>
+<!-- timing -->
+<g id="module~~diffstar_lorene~~UsesGraph_node3" class="node">
+<title>timing</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-86 0,-86 0,-62 54,-62 54,-86"/>
+<text text-anchor="middle" x="27" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timing</text>
 </g>
-<!-- module~id_base -->
-<g id="module~~diffstar_lorene~~UsesGraph_node7" class="node">
-<title>module~id_base</title>
-<g id="a_module~~diffstar_lorene~~UsesGraph_node7"><a xlink:href=".././module/id_base.html" xlink:title="id_base">
-<polygon fill="#337ab7" stroke="#337ab7" points="144,-104 90,-104 90,-80 144,-80 144,-104"/>
-<text text-anchor="middle" x="117" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">id_base</text>
+<!-- module~diffstar_lorene&#45;&gt;timing -->
+<g id="module~~diffstar_lorene~~UsesGraph_edge2" class="edge">
+<title>module~diffstar_lorene&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M219,-94C165.0882,-93.4026 103.1121,-85.6578 64.4975,-79.9847"/>
+<polygon fill="#000000" stroke="#000000" points="64.6605,-76.4701 54.2518,-78.4472 63.6216,-83.3925 64.6605,-76.4701"/>
+</g>
+<!-- module~diffstar_base -->
+<g id="module~~diffstar_lorene~~UsesGraph_node4" class="node">
+<title>module~diffstar_base</title>
+<g id="a_module~~diffstar_lorene~~UsesGraph_node4"><a xlink:href=".././module/diffstar_base.html" xlink:title="diffstar_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="256,-66 182,-66 182,-42 256,-42 256,-66"/>
+<text text-anchor="middle" x="219" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_base</text>
 </a>
 </g>
 </g>
-<!-- module~diffstar_base&#45;&gt;module~id_base -->
-<g id="module~~diffstar_lorene~~UsesGraph_edge5" class="edge">
-<title>module~diffstar_base&#45;&gt;module~id_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M181.8871,-92C172.8801,-92 163.2475,-92 154.2348,-92"/>
-<polygon fill="#000000" stroke="#000000" points="154.0142,-88.5001 144.0141,-92 154.0141,-95.5001 154.0142,-88.5001"/>
+<!-- module~diffstar_lorene&#45;&gt;module~diffstar_base -->
+<g id="module~~diffstar_lorene~~UsesGraph_edge3" class="edge">
+<title>module~diffstar_lorene&#45;&gt;module~diffstar_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M293.779,-66.9487C284.9076,-65.4126 275.4474,-63.7744 266.3439,-62.1981"/>
+<polygon fill="#000000" stroke="#000000" points="266.7184,-58.7109 256.2678,-60.4533 265.524,-65.6083 266.7184,-58.7109"/>
 </g>
-<!-- matrix -->
+<!-- module~id_base -->
+<g id="module~~diffstar_lorene~~UsesGraph_node5" class="node">
+<title>module~id_base</title>
+<g id="a_module~~diffstar_lorene~~UsesGraph_node5"><a xlink:href=".././module/id_base.html" xlink:title="id_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-66 90,-66 90,-42 144,-42 144,-66"/>
+<text text-anchor="middle" x="117" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">id_base</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene&#45;&gt;module~id_base -->
+<g id="module~~diffstar_lorene~~UsesGraph_edge4" class="edge">
+<title>module~diffstar_lorene&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M293.9029,-84.7509C271.8952,-89.6337 244.1313,-94.2785 219,-94"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M219,-94C192.4,-93.7052 164.4222,-81.795 144.5104,-71.0482"/>
+<polygon fill="#000000" stroke="#000000" points="146.1248,-67.9405 135.6945,-66.0806 142.6884,-74.039 146.1248,-67.9405"/>
+</g>
+<!-- module~utility -->
 <g id="module~~diffstar_lorene~~UsesGraph_node6" class="node">
-<title>matrix</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-146 0,-146 0,-122 54,-122 54,-146"/>
-<text text-anchor="middle" x="27" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">matrix</text>
+<title>module~utility</title>
+<g id="a_module~~diffstar_lorene~~UsesGraph_node6"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-24 90,-24 90,0 144,0 144,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utility</text>
+</a>
 </g>
-<!-- module~utility&#45;&gt;matrix -->
+</g>
+<!-- module~diffstar_lorene&#45;&gt;module~utility -->
+<g id="module~~diffstar_lorene~~UsesGraph_edge5" class="edge">
+<title>module~diffstar_lorene&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M316.1398,-61.8196C301.1297,-52.4509 279.0267,-39.9662 258,-33 223.8942,-21.7007 183.1273,-16.4635 154.2217,-14.0465"/>
+<polygon fill="#000000" stroke="#000000" points="154.3805,-10.5486 144.1432,-13.2777 153.848,-17.5283 154.3805,-10.5486"/>
+</g>
+<!-- module~diffstar_base&#45;&gt;module~id_base -->
+<g id="module~~diffstar_lorene~~UsesGraph_edge6" class="edge">
+<title>module~diffstar_base&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M181.8871,-54C172.8801,-54 163.2475,-54 154.2348,-54"/>
+<polygon fill="#000000" stroke="#000000" points="154.0142,-50.5001 144.0141,-54 154.0141,-57.5001 154.0142,-50.5001"/>
+</g>
+<!-- module~diffstar_base&#45;&gt;module~utility -->
 <g id="module~~diffstar_lorene~~UsesGraph_edge7" class="edge">
-<title>module~utility&#45;&gt;matrix</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-134C81.9723,-134 73.0335,-134 64.4691,-134"/>
-<polygon fill="#000000" stroke="#000000" points="64.295,-130.5001 54.295,-134 64.2949,-137.5001 64.295,-130.5001"/>
+<title>module~diffstar_base&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.7709,-41.9645C178.4368,-37.2975 165.3367,-31.9033 153.4014,-26.9888"/>
+<polygon fill="#000000" stroke="#000000" points="154.7147,-23.7445 144.1353,-23.1734 152.0494,-30.2173 154.7147,-23.7445"/>
 </g>
 <!-- module~id_base&#45;&gt;timing -->
 <g id="module~~diffstar_lorene~~UsesGraph_edge8" class="edge">
 <title>module~id_base&#45;&gt;timing</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-85.9993C81.8842,-84.1965 72.8369,-82.186 64.1869,-80.2638"/>
-<polygon fill="#000000" stroke="#000000" points="64.8161,-76.8183 54.295,-78.0655 63.2976,-83.6516 64.8161,-76.8183"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-60.0007C81.8842,-61.8035 72.8369,-63.814 64.1869,-65.7362"/>
+<polygon fill="#000000" stroke="#000000" points="63.2976,-62.3484 54.295,-67.9345 64.8161,-69.1817 63.2976,-62.3484"/>
+</g>
+<!-- matrix -->
+<g id="module~~diffstar_lorene~~UsesGraph_node7" class="node">
+<title>matrix</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">matrix</text>
+</g>
+<!-- module~utility&#45;&gt;matrix -->
+<g id="module~~diffstar_lorene~~UsesGraph_edge9" class="edge">
+<title>module~utility&#45;&gt;matrix</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-12C81.9723,-12 73.0335,-12 64.4691,-12"/>
+<polygon fill="#000000" stroke="#000000" points="64.295,-8.5001 54.295,-12 64.2949,-15.5001 64.295,-8.5001"/>
 </g>
 </g>
 </svg>
@@ -527,6 +535,8 @@
       
       <li><a href='../module/diffstar_lorene_import.html'>diffstar_lorene_import</a></li>
       
+      <li><a href='../module/diffstar_lorene_io.html'>diffstar_lorene_io</a></li>
+      
       <li><a href='../module/diffstar_lorene_memory.html'>diffstar_lorene_memory</a></li>
       
       <li><a href='../module/diffstar_lorene_params.html'>diffstar_lorene_params</a></li>
@@ -542,136 +552,151 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: module~~diffstar_lorene~~UsedByGraph Pages: 1 -->
-<svg id="modulediffstar_loreneUsedByGraph" width="409pt" height="242pt"
- viewBox="0.00 0.00 409.00 242.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~diffstar_lorene~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 238)">
+<svg id="modulediffstar_loreneUsedByGraph" width="398pt" height="305pt"
+ viewBox="0.00 0.00 398.00 305.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~diffstar_lorene~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 301)">
 <title>module~~diffstar_lorene~~UsedByGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-238 405,-238 405,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-301 394,-301 394,4 -4,4"/>
 <!-- module~diffstar_lorene -->
 <g id="module~~diffstar_lorene~~UsedByGraph_node1" class="node">
 <title>module~diffstar_lorene</title>
-<polygon fill="none" stroke="#000000" points="81,-129 0,-129 0,-105 81,-105 81,-129"/>
-<text text-anchor="middle" x="40.5" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">diffstar_lorene</text>
-</g>
-<!-- module~diffstar_lorene_memory -->
-<g id="module~~diffstar_lorene~~UsedByGraph_node2" class="node">
-<title>module~diffstar_lorene_memory</title>
-<g id="a_module~~diffstar_lorene~~UsedByGraph_node2"><a xlink:href=".././module/diffstar_lorene_memory.html" xlink:title="diffstar_lorene_memory">
-<polygon fill="#5bc0de" stroke="#5bc0de" points="250,-234 124,-234 124,-210 250,-210 250,-234"/>
-<text text-anchor="middle" x="187" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_memory</text>
-</a>
-</g>
-</g>
-<!-- module~diffstar_lorene_memory&#45;&gt;module~diffstar_lorene -->
-<g id="module~~diffstar_lorene~~UsedByGraph_edge2" class="edge">
-<title>module~diffstar_lorene_memory&#45;&gt;module~diffstar_lorene</title>
-<path fill="none" stroke="#000000" d="M135.1283,-209.9426C128.7872,-207.4677 122.5837,-204.5145 117,-201 90.772,-184.4915 67.9226,-156.606 54.1841,-137.527"/>
-<polygon fill="#000000" stroke="#000000" points="56.9639,-135.3946 48.3651,-129.2051 51.2272,-139.406 56.9639,-135.3946"/>
+<polygon fill="none" stroke="#000000" points="81,-150 0,-150 0,-126 81,-126 81,-150"/>
+<text text-anchor="middle" x="40.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">diffstar_lorene</text>
 </g>
 <!-- module~sphincs_lorene -->
-<g id="module~~diffstar_lorene~~UsedByGraph_node3" class="node">
+<g id="module~~diffstar_lorene~~UsedByGraph_node2" class="node">
 <title>module~sphincs_lorene</title>
-<g id="a_module~~diffstar_lorene~~UsedByGraph_node3"><a xlink:href=".././module/sphincs_lorene.html" xlink:title="sphincs_lorene">
-<polygon fill="#337ab7" stroke="#337ab7" points="229.5,-192 144.5,-192 144.5,-168 229.5,-168 229.5,-192"/>
-<text text-anchor="middle" x="187" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene</text>
+<g id="a_module~~diffstar_lorene~~UsedByGraph_node2"><a xlink:href=".././module/sphincs_lorene.html" xlink:title="sphincs_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="229.5,-276 144.5,-276 144.5,-252 229.5,-252 229.5,-276"/>
+<text text-anchor="middle" x="187" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene</text>
 </a>
 </g>
 </g>
 <!-- module~sphincs_lorene&#45;&gt;module~diffstar_lorene -->
 <g id="module~~diffstar_lorene~~UsedByGraph_edge1" class="edge">
 <title>module~sphincs_lorene&#45;&gt;module~diffstar_lorene</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.2961,-168.7513C135.1619,-165.9137 125.6596,-162.6283 117,-159 100.3784,-152.0356 82.6877,-142.476 68.5096,-134.2362"/>
-<polygon fill="#000000" stroke="#000000" points="70.1353,-131.1314 59.7464,-129.0526 66.5715,-137.1563 70.1353,-131.1314"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.2482,-255.9574C134.7288,-252.9045 125.0758,-248.7204 117,-243 86.2411,-221.2121 63.0395,-183.122 50.637,-159.3006"/>
+<polygon fill="#000000" stroke="#000000" points="53.6087,-157.4191 45.9923,-150.0542 47.3535,-160.5612 53.6087,-157.4191"/>
 </g>
 <!-- module~diffstar_lorene_access -->
-<g id="module~~diffstar_lorene~~UsedByGraph_node4" class="node">
+<g id="module~~diffstar_lorene~~UsedByGraph_node3" class="node">
 <title>module~diffstar_lorene_access</title>
-<g id="a_module~~diffstar_lorene~~UsedByGraph_node4"><a xlink:href=".././module/diffstar_lorene_access.html" xlink:title="diffstar_lorene_access">
-<polygon fill="#5bc0de" stroke="#5bc0de" points="247,-150 127,-150 127,-126 247,-126 247,-150"/>
-<text text-anchor="middle" x="187" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_access</text>
+<g id="a_module~~diffstar_lorene~~UsedByGraph_node3"><a xlink:href=".././module/diffstar_lorene_access.html" xlink:title="diffstar_lorene_access">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="247,-234 127,-234 127,-210 247,-210 247,-234"/>
+<text text-anchor="middle" x="187" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_access</text>
 </a>
 </g>
 </g>
 <!-- module~diffstar_lorene_access&#45;&gt;module~diffstar_lorene -->
-<g id="module~~diffstar_lorene~~UsedByGraph_edge3" class="edge">
+<g id="module~~diffstar_lorene~~UsedByGraph_edge2" class="edge">
 <title>module~diffstar_lorene_access&#45;&gt;module~diffstar_lorene</title>
-<path fill="none" stroke="#000000" d="M126.9901,-129.3979C115.2533,-127.7155 103.0473,-125.9658 91.6321,-124.3295"/>
-<polygon fill="#000000" stroke="#000000" points="91.8028,-120.8183 81.4073,-122.8638 90.8095,-127.7475 91.8028,-120.8183"/>
+<path fill="none" stroke="#000000" d="M137.8026,-209.9629C130.6361,-207.4372 123.4924,-204.4646 117,-201 95.4835,-189.5181 74.3402,-171.4359 59.7538,-157.5831"/>
+<polygon fill="#000000" stroke="#000000" points="61.9714,-154.8574 52.364,-150.391 57.0892,-159.8738 61.9714,-154.8574"/>
+</g>
+<!-- module~diffstar_lorene_memory -->
+<g id="module~~diffstar_lorene~~UsedByGraph_node4" class="node">
+<title>module~diffstar_lorene_memory</title>
+<g id="a_module~~diffstar_lorene~~UsedByGraph_node4"><a xlink:href=".././module/diffstar_lorene_memory.html" xlink:title="diffstar_lorene_memory">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="250,-192 124,-192 124,-168 250,-168 250,-192"/>
+<text text-anchor="middle" x="187" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_memory</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_memory&#45;&gt;module~diffstar_lorene -->
+<g id="module~~diffstar_lorene~~UsedByGraph_edge3" class="edge">
+<title>module~diffstar_lorene_memory&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M145.019,-167.9645C128.2678,-163.1621 108.8309,-157.5897 91.2947,-152.5623"/>
+<polygon fill="#000000" stroke="#000000" points="91.8014,-149.0666 81.224,-149.6751 89.8722,-155.7956 91.8014,-149.0666"/>
+</g>
+<!-- module~diffstar_lorene_io -->
+<g id="module~~diffstar_lorene~~UsedByGraph_node5" class="node">
+<title>module~diffstar_lorene_io</title>
+<g id="a_module~~diffstar_lorene~~UsedByGraph_node5"><a xlink:href=".././module/diffstar_lorene_io.html" xlink:title="diffstar_lorene_io">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="234.5,-150 139.5,-150 139.5,-126 234.5,-126 234.5,-150"/>
+<text text-anchor="middle" x="187" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_io</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_io&#45;&gt;module~diffstar_lorene -->
+<g id="module~~diffstar_lorene~~UsedByGraph_edge4" class="edge">
+<title>module~diffstar_lorene_io&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M139.4356,-138C124.2297,-138 107.333,-138 91.8688,-138"/>
+<polygon fill="#000000" stroke="#000000" points="91.4302,-134.5001 81.4301,-138 91.4301,-141.5001 91.4302,-134.5001"/>
 </g>
 <!-- module~diffstar_lorene_constructor -->
-<g id="module~~diffstar_lorene~~UsedByGraph_node5" class="node">
+<g id="module~~diffstar_lorene~~UsedByGraph_node6" class="node">
 <title>module~diffstar_lorene_constructor</title>
-<g id="a_module~~diffstar_lorene~~UsedByGraph_node5"><a xlink:href=".././module/diffstar_lorene_constructor.html" xlink:title="diffstar_lorene_constructor">
+<g id="a_module~~diffstar_lorene~~UsedByGraph_node6"><a xlink:href=".././module/diffstar_lorene_constructor.html" xlink:title="diffstar_lorene_constructor">
 <polygon fill="#5bc0de" stroke="#5bc0de" points="257,-108 117,-108 117,-84 257,-84 257,-108"/>
 <text text-anchor="middle" x="187" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_constructor</text>
 </a>
 </g>
 </g>
 <!-- module~diffstar_lorene_constructor&#45;&gt;module~diffstar_lorene -->
-<g id="module~~diffstar_lorene~~UsedByGraph_edge4" class="edge">
-<title>module~diffstar_lorene_constructor&#45;&gt;module~diffstar_lorene</title>
-<path fill="none" stroke="#000000" d="M116.7536,-106.0694C108.1825,-107.2981 99.5564,-108.5346 91.3459,-109.7115"/>
-<polygon fill="#000000" stroke="#000000" points="90.6057,-106.2818 81.2035,-111.1654 91.599,-113.2109 90.6057,-106.2818"/>
-</g>
-<!-- module~diffstar_lorene_import -->
-<g id="module~~diffstar_lorene~~UsedByGraph_node6" class="node">
-<title>module~diffstar_lorene_import</title>
-<g id="a_module~~diffstar_lorene~~UsedByGraph_node6"><a xlink:href=".././module/diffstar_lorene_import.html" xlink:title="diffstar_lorene_import">
-<polygon fill="#5bc0de" stroke="#5bc0de" points="245.5,-66 128.5,-66 128.5,-42 245.5,-42 245.5,-66"/>
-<text text-anchor="middle" x="187" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_import</text>
-</a>
-</g>
-</g>
-<!-- module~diffstar_lorene_import&#45;&gt;module~diffstar_lorene -->
 <g id="module~~diffstar_lorene~~UsedByGraph_edge5" class="edge">
-<title>module~diffstar_lorene_import&#45;&gt;module~diffstar_lorene</title>
-<path fill="none" stroke="#000000" d="M141.6951,-66.0659C133.3717,-68.7109 124.8405,-71.7149 117,-75 100.3784,-81.9644 82.6877,-91.524 68.5096,-99.7638"/>
-<polygon fill="#000000" stroke="#000000" points="66.5715,-96.8437 59.7464,-104.9474 70.1353,-102.8686 66.5715,-96.8437"/>
+<title>module~diffstar_lorene_constructor&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M145.019,-108.0355C128.2678,-112.8379 108.8309,-118.4103 91.2947,-123.4377"/>
+<polygon fill="#000000" stroke="#000000" points="89.8722,-120.2044 81.224,-126.3249 91.8014,-126.9334 89.8722,-120.2044"/>
 </g>
 <!-- module~diffstar_lorene_params -->
 <g id="module~~diffstar_lorene~~UsedByGraph_node7" class="node">
 <title>module~diffstar_lorene_params</title>
 <g id="a_module~~diffstar_lorene~~UsedByGraph_node7"><a xlink:href=".././module/diffstar_lorene_params.html" xlink:title="diffstar_lorene_params">
-<polygon fill="#5bc0de" stroke="#5bc0de" points="248.5,-24 125.5,-24 125.5,0 248.5,0 248.5,-24"/>
-<text text-anchor="middle" x="187" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_params</text>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="248.5,-66 125.5,-66 125.5,-42 248.5,-42 248.5,-66"/>
+<text text-anchor="middle" x="187" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_params</text>
 </a>
 </g>
 </g>
 <!-- module~diffstar_lorene_params&#45;&gt;module~diffstar_lorene -->
 <g id="module~~diffstar_lorene~~UsedByGraph_edge6" class="edge">
 <title>module~diffstar_lorene_params&#45;&gt;module~diffstar_lorene</title>
-<path fill="none" stroke="#000000" d="M135.1283,-24.0574C128.7872,-26.5323 122.5837,-29.4855 117,-33 90.772,-49.5085 67.9226,-77.394 54.1841,-96.473"/>
-<polygon fill="#000000" stroke="#000000" points="51.2272,-94.594 48.3651,-104.7949 56.9639,-98.6054 51.2272,-94.594"/>
+<path fill="none" stroke="#000000" d="M137.8026,-66.0371C130.6361,-68.5628 123.4924,-71.5354 117,-75 95.4835,-86.4819 74.3402,-104.5641 59.7538,-118.4169"/>
+<polygon fill="#000000" stroke="#000000" points="57.0892,-116.1262 52.364,-125.609 61.9714,-121.1426 57.0892,-116.1262"/>
+</g>
+<!-- module~diffstar_lorene_import -->
+<g id="module~~diffstar_lorene~~UsedByGraph_node8" class="node">
+<title>module~diffstar_lorene_import</title>
+<g id="a_module~~diffstar_lorene~~UsedByGraph_node8"><a xlink:href=".././module/diffstar_lorene_import.html" xlink:title="diffstar_lorene_import">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="245.5,-24 128.5,-24 128.5,0 245.5,0 245.5,-24"/>
+<text text-anchor="middle" x="187" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene_import</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene_import&#45;&gt;module~diffstar_lorene -->
+<g id="module~~diffstar_lorene~~UsedByGraph_edge7" class="edge">
+<title>module~diffstar_lorene_import&#45;&gt;module~diffstar_lorene</title>
+<path fill="none" stroke="#000000" d="M133.3023,-24.0902C127.5367,-26.5413 121.9697,-29.4797 117,-33 86.2411,-54.7879 63.0395,-92.878 50.637,-116.6994"/>
+<polygon fill="#000000" stroke="#000000" points="47.3535,-115.4388 45.9923,-125.9458 53.6087,-118.5809 47.3535,-115.4388"/>
+</g>
+<!-- program~sphincs_id -->
+<g id="module~~diffstar_lorene~~UsedByGraph_node9" class="node">
+<title>program~sphincs_id</title>
+<g id="a_module~~diffstar_lorene~~UsedByGraph_node9"><a xlink:href=".././program/sphincs_id.html" xlink:title="sphincs_id">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="373,-297 310,-297 310,-273 373,-273 373,-297"/>
+<text text-anchor="middle" x="341.5" y="-282.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_id</text>
+</a>
+</g>
+</g>
+<!-- program~sphincs_id&#45;&gt;module~sphincs_lorene -->
+<g id="module~~diffstar_lorene~~UsedByGraph_edge8" class="edge">
+<title>program~sphincs_id&#45;&gt;module~sphincs_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M309.8618,-280.6997C289.7132,-277.961 263.115,-274.3457 239.8205,-271.1795"/>
+<polygon fill="#000000" stroke="#000000" points="240.1079,-267.6864 229.7276,-269.8076 239.1651,-274.6227 240.1079,-267.6864"/>
 </g>
 <!-- program~convergence_test -->
-<g id="module~~diffstar_lorene~~UsedByGraph_node8" class="node">
+<g id="module~~diffstar_lorene~~UsedByGraph_node10" class="node">
 <title>program~convergence_test</title>
-<g id="a_module~~diffstar_lorene~~UsedByGraph_node8"><a xlink:href=".././program/convergence_test.html" xlink:title="convergence_test">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="395.5,-213 298.5,-213 298.5,-189 395.5,-189 395.5,-213"/>
-<text text-anchor="middle" x="347" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">convergence_test</text>
+<g id="a_module~~diffstar_lorene~~UsedByGraph_node10"><a xlink:href=".././program/convergence_test.html" xlink:title="convergence_test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="390,-255 293,-255 293,-231 390,-231 390,-255"/>
+<text text-anchor="middle" x="341.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">convergence_test</text>
 </a>
 </g>
 </g>
 <!-- program~convergence_test&#45;&gt;module~sphincs_lorene -->
-<g id="module~~diffstar_lorene~~UsedByGraph_edge7" class="edge">
+<g id="module~~diffstar_lorene~~UsedByGraph_edge9" class="edge">
 <title>program~convergence_test&#45;&gt;module~sphincs_lorene</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M298.1253,-194.5852C279.5851,-192.1518 258.4025,-189.3716 239.5384,-186.8957"/>
-<polygon fill="#000000" stroke="#000000" points="239.9914,-183.4252 229.6209,-185.594 239.0804,-190.3657 239.9914,-183.4252"/>
-</g>
-<!-- program~sphincs_lorene_bns -->
-<g id="module~~diffstar_lorene~~UsedByGraph_node9" class="node">
-<title>program~sphincs_lorene_bns</title>
-<g id="a_module~~diffstar_lorene~~UsedByGraph_node9"><a xlink:href=".././program/sphincs_lorene_bns.html" xlink:title="sphincs_lorene_bns">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="401,-171 293,-171 293,-147 401,-147 401,-171"/>
-<text text-anchor="middle" x="347" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene_bns</text>
-</a>
-</g>
-</g>
-<!-- program~sphincs_lorene_bns&#45;&gt;module~sphincs_lorene -->
-<g id="module~~diffstar_lorene~~UsedByGraph_edge8" class="edge">
-<title>program~sphincs_lorene_bns&#45;&gt;module~sphincs_lorene</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M292.8313,-166.1096C275.7889,-168.3465 256.9944,-170.8132 240.0319,-173.0396"/>
-<polygon fill="#000000" stroke="#000000" points="239.1986,-169.6188 229.7391,-174.3905 240.1096,-176.5593 239.1986,-169.6188"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M292.6152,-249.6445C275.8499,-251.9233 257.0147,-254.4834 239.943,-256.8039"/>
+<polygon fill="#000000" stroke="#000000" points="239.0131,-253.398 229.5756,-258.213 239.9559,-260.3342 239.0131,-253.398"/>
 </g>
 </g>
 </svg>
@@ -775,8 +800,6 @@
       <a class="list-group-item" href="../module/diffstar_lorene.html#interface-destruct_drs">destruct_drs</a>
       
       <a class="list-group-item" href="../module/diffstar_lorene.html#interface-destruct_etdiffrot">destruct_etdiffrot</a>
-      
-      <a class="list-group-item" href="../module/diffstar_lorene.html#interface-diffstarlorene">diffstarlorene</a>
       
       <a class="list-group-item" href="../module/diffstar_lorene.html#interface-get_diffstar_full">get_diffstar_full</a>
       
@@ -965,7 +988,7 @@ public module module subroutine allocate_diffstar_memory(THIS, d)
     
     
     <h3>
-public module module function construct_diffstarlorene(resu_file) result(drs)
+public module module subroutine construct_diffstarlorene(derived_type, filename)
     
     
    
@@ -976,7 +999,9 @@ public module module function construct_diffstarlorene(resu_file) result(drs)
 
 
 
-<p>Constructs a <a href="../type/diffstarlorene.html">diffstarlorene</a> object</p>
+<p>Prints a summary of the physical properties the system
+ to the standard output and, optionally, to a formatted file whose name
+ is given as the optional argument <code>filename</code></p>
     
     <h4>Arguments</h4>
     
@@ -997,12 +1022,27 @@ public module module function construct_diffstarlorene(resu_file) result(drs)
   
 <tr>
   
+  <td><span class="anchor" ></span>class(<a href='../type/diffstarlorene.html'>diffstarlorene</a>),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>derived_type</strong></td><td><p>Constructed <a href="../type/diffstarlorene.html">diffstarlorene</a> object</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
   <td><span class="anchor" ></span>character(len=*),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>resu_file</strong></td><td><p>\(\texttt{LORENE}\) binary file containing the spectral DRS ID</p></td>
+  <td><strong>filename</strong></td><td><p>\(\texttt{LORENE}\) binary file containing the spectral DRS ID</p></td>
   
 </tr>
 
@@ -1011,15 +1051,6 @@ public module module function construct_diffstarlorene(resu_file) result(drs)
 
       
     
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>type(<a href='../type/diffstarlorene.html'>diffstarlorene</a>)
-  </small></h4>
-  <p>Constructed <a href="../type/diffstarlorene.html">diffstarlorene</a> object</p>
     
 
     </li>
@@ -1444,45 +1475,6 @@ private subroutine destruct_etdiffrot(optr) bind(C, NAME= "0")
     
 
     </li>
-  
-  </ul>
-</div>
-
-    
-     
-<div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="interface-diffstarlorene"></span><h3>public interface <a href='../interface/diffstarlorene.html'>diffstarlorene</a>
-    
-  </h3></div>
-  
-  <div class="panel-body">
-    
-    <p>Interface of TYPE <a href="../type/diffstarlorene.html">diffstarlorene</a></p>
-  </div>
-  
-  <ul class="list-group">
-  
-  
-  
-    <li class="list-group-item">
-    
-    
-    <h3>
-public interface <a href='../interface/construct_diffstarlorene.html'>construct_diffstarlorene</a>()
-    
-    
-   
-</h3>
-    
-    
-    <h4>Arguments</h4>
-    
-      <em>None</em>
-    
-    
-
-    </li>
-  
   
   </ul>
 </div>
@@ -4066,7 +4058,7 @@ public module module subroutine get_eos_parameters(THIS, i_matter, eos_params)
   <td></td>
   
   <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>eos_params</strong></td><td><p>Array containing the parameters of the EoS for the DRS</p></td>
+  <td><strong>eos_params</strong></td><td><p>Array containing the parameters of the \(\mathrm{EOS}\) for the DRS</p></td>
   
 </tr>
 
@@ -7776,22 +7768,6 @@ N.B. This variable is global. The pointer to the second \(\texttt{LORENE}\) Etdi
 
      
      
-     <h4>Constructor</h4>
-       
-         <p>Interface of TYPE <a href="../type/diffstarlorene.html">diffstarlorene</a></p>
-       
-       <table class="table table-striped varlist">
-      <tbody>
-        
-             
-             
-             
-             <tr><td>public  interface <strong><a href='../interface/construct_diffstarlorene.html'>construct_diffstarlorene</a></strong>()</td><td></td></tr>
-             
-        
-       </tbody>
-       </table>
-     
      
      <h4>Finalizations Procedures</h4>
       <table class="table table-striped varlist">
@@ -7811,7 +7787,7 @@ N.B. This variable is global. The pointer to the second \(\texttt{LORENE}\) Etdi
        <td><p>Allocates memory for the <a href="../type/diffstarlorene.html">diffstarlorene</a> member arrays</p></td></tr>
       
        <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-check_i_matter'>check_i_matter</a></strong>  </td>
-       <td><p>Checks that the given index is between 1 and <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>,
+       <td><p>Checks that the given index is between 1 and <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>,
  included. If not, it stops the execution of the program.</p></td></tr>
       
        <tr><td>procedure, public :: <strong><a href='../type/diffstarlorene.html#boundprocedure-construct_drs'>construct_drs</a></strong>  </td>
@@ -7819,6 +7795,9 @@ N.B. This variable is global. The pointer to the second \(\texttt{LORENE}\) Etdi
       
        <tr><td>procedure, public :: <strong><a href='../type/diffstarlorene.html#boundprocedure-deallocate_diffstar_memory'>deallocate_diffstar_memory</a></strong>  </td>
        <td><p>Deallocates memory for the <a href="../type/diffstarlorene.html">diffstarlorene</a> member arrays</p></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/diffstarlorene.html#boundprocedure-derived_type_constructor~3'>derived_type_constructor</a></strong>  => construct_diffstarlorene </td>
+       <td></td></tr>
       
        <tr><td>procedure, public :: <strong><a href='../type/diffstarlorene.html#boundprocedure-destruct_drs'>destruct_drs</a></strong>  </td>
        <td><p>Destructs the \(\texttt{LORENE}\) Etdiffrot object</p></td></tr>
@@ -7909,7 +7888,7 @@ N.B. This variable is global. The pointer to the second \(\texttt{LORENE}\) Etdi
        <td><p>Returns <a href="../type/diffstarbase.html#variable-mass_grav~2">mass_grav</a></p></td></tr>
       
        <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-get_n_matter'>get_n_matter</a></strong>  </td>
-       <td><p>Returns <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+       <td><p>Returns <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system</p></td></tr>
       
        <tr><td>procedure, public :: <strong><a href='../type/diffstarbase.html#boundprocedure-get_nbar_center'>get_nbar_center</a></strong>  </td>
@@ -7993,12 +7972,21 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
        <tr><td>procedure, public :: <strong><a href='../type/diffstarlorene.html#boundprocedure-import_spatial_metric~2'>import_spatial_metric</a></strong>  </td>
        <td><p>Returns the \(\texttt{LORENE}\)'s conformally flat spatial ADM metric</p></td></tr>
       
+       <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-initialize'>initialize</a></strong>  </td>
+       <td><p>This PROCEDURE calls the constructor of the <a href="../type/idbase.html">idbase</a>-extended type
+ and the SUBROUTINE <a href="../type/idbase.html#boundprocedure-sanity_check">sanity_check</a> afterwards. It is recommended
+ to use this SUBROUTINE to construct objects of <a href="../type/idbase.html">idbase</a>-extended type
+ since the sanity check is performed automatically.</p></td></tr>
+      
        <tr><td>procedure, public :: <strong><a href='../type/idbase.html#boundprocedure-integrate_baryon_mass_density'>integrate_baryon_mass_density</a></strong>  </td>
        <td><p>Integrates the baryon mass density over a matter object, using spherical
  coordinates, and computes its radial profile inside the star</p></td></tr>
       
        <tr><td>procedure, public :: <strong><a href='../type/diffstarlorene.html#boundprocedure-print_diffstar_params'>print_diffstar_params</a></strong>  </td>
        <td><p>Prints the parameters of the DRS to the standard output</p></td></tr>
+      
+       <tr><td>procedure, public :: <strong><a href='../type/diffstarbase.html#boundprocedure-print_summary~5'>print_summary</a></strong>  => print_summary_drs </td>
+       <td></td></tr>
       
        <tr><td>procedure, public :: <strong><a href='../type/diffstarlorene.html#boundprocedure-read_id_full~3'>read_id_full</a></strong>  => import_id_full </td>
        <td></td></tr>
@@ -8039,8 +8027,14 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
        <tr><td>procedure, public :: <strong><a href='../type/diffstarbase.html#boundprocedure-return_spatial_extent~3'>return_spatial_extent</a></strong>  => get_radii </td>
        <td></td></tr>
       
+       <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-sanity_check'>sanity_check</a></strong>  </td>
+       <td><p>Checks that <a href="../type/idbase.html#variable-n_matter~3">n_matter</a> and the sizes returned by
+<a href="../type/idbase.html#boundprocedure-return_spatial_extent">return_spatial_extent</a> and <a href="../type/idbase.html#boundprocedure-get_total_spatial_extent">get_total_spatial_extent</a>
+  are acceptable. It is called by initialize, after the constructor of the
+  derived type.</p></td></tr>
+      
        <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-set_n_matter'>set_n_matter</a></strong>  </td>
-       <td><p>Sets <a href="../type/idbase.html#variable-n_matter~2">n_matter</a>, the number of matter objects in the
+       <td><p>Sets <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system, to a value</p></td></tr>
       
        <tr><td>procedure, public, NON_OVERRIDABLE :: <strong><a href='../type/idbase.html#boundprocedure-set_one_lapse'>set_one_lapse</a></strong>  </td>
@@ -8081,14 +8075,14 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

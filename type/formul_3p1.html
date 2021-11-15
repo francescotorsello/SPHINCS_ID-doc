@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>formul_3p1 &ndash; SPHINCS_LORENE </title>
+    <title>formul_3p1 &ndash; SPHINCS_ID </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -144,7 +144,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 9.5% of total for derived types.</p>Including implementation: 57 statements,  7.2% of total for derived types.">57 statements</a>
+    title="<p>10.0% of total for derived types.</p>Including implementation: 60 statements,  7.6% of total for derived types.">60 statements</a>
      </li> 
      
      
@@ -237,7 +237,11 @@
       
       <a class="list-group-item" href="../type/formul_3p1.html#variable-levels">levels</a>
       
+      <a class="list-group-item" href="../type/formul_3p1.html#variable-n_matter">n_matter</a>
+      
       <a class="list-group-item" href="../type/formul_3p1.html#variable-nlevels">nlevels</a>
+      
+      <a class="list-group-item" href="../type/formul_3p1.html#variable-npoints_xaxis">npoints_xaxis</a>
       
       <a class="list-group-item" href="../type/formul_3p1.html#variable-rad_coord">rad_coord</a>
       
@@ -321,6 +325,8 @@
       
       <a class="list-group-item" href="../type/formul_3p1.html#boundprocedure-print_formatted_lorene_id_3p1_variables">print_formatted_lorene_id_3p1_variables</a>
       
+      <a class="list-group-item" href="../type/formul_3p1.html#boundprocedure-print_summary~3">print_summary</a>
+      
       <a class="list-group-item" href="../type/formul_3p1.html#boundprocedure-setup_standard3p1_variables">setup_standard3p1_variables</a>
       
     </div>
@@ -371,57 +377,57 @@
 <polygon fill="none" stroke="#000000" points="446,-87 379,-87 379,-63 446,-63 446,-87"/>
 <text text-anchor="middle" x="412.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">formul_3p1</text>
 </g>
-<!-- grid_function -->
-<g id="type~~formul_3p1~~InheritsGraph_node2" class="node">
-<title>grid_function</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="91.5,-150 17.5,-150 17.5,-126 91.5,-126 91.5,-150"/>
-<text text-anchor="middle" x="54.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function</text>
-</g>
-<!-- type~formul_3p1&#45;&gt;grid_function -->
-<g id="type~~formul_3p1~~InheritsGraph_edge2" class="edge">
-<title>type~formul_3p1&#45;&gt;grid_function</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M395.7291,-87.204C386.0559,-93.6004 373.3866,-100.9314 361,-105 272.7989,-133.9709 163.4017,-138.8322 102.0297,-138.9554"/>
-<polygon fill="#000000" stroke="#000000" points="101.8816,-135.4552 91.8739,-138.933 101.8661,-142.4551 101.8816,-135.4552"/>
-<text text-anchor="middle" x="244" y="-140.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">coords, shift_u, g_phys3_ll, K_phys3_ll, MC, MC_parts</text>
-</g>
 <!-- level -->
-<g id="type~~formul_3p1~~InheritsGraph_node3" class="node">
+<g id="type~~formul_3p1~~InheritsGraph_node2" class="node">
 <title>level</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-108 27.5,-108 27.5,-84 81.5,-84 81.5,-108"/>
-<text text-anchor="middle" x="54.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">level</text>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-150 27.5,-150 27.5,-126 81.5,-126 81.5,-150"/>
+<text text-anchor="middle" x="54.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">level</text>
 </g>
 <!-- type~formul_3p1&#45;&gt;level -->
 <g id="type~~formul_3p1~~InheritsGraph_edge1" class="edge">
 <title>type~formul_3p1&#45;&gt;level</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M378.8202,-76.9756C311.7677,-80.9089 162.0192,-89.693 91.9722,-93.8019"/>
-<polygon fill="#000000" stroke="#000000" points="91.6146,-90.3168 81.8368,-94.3964 92.0246,-97.3048 91.6146,-90.3168"/>
-<text text-anchor="middle" x="244" y="-93.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">levels</text>
-</g>
-<!-- timer -->
-<g id="type~~formul_3p1~~InheritsGraph_node4" class="node">
-<title>timer</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-66 27.5,-66 27.5,-42 81.5,-42 81.5,-66"/>
-<text text-anchor="middle" x="54.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
-</g>
-<!-- type~formul_3p1&#45;&gt;timer -->
-<g id="type~~formul_3p1~~InheritsGraph_edge4" class="edge">
-<title>type~formul_3p1&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M378.8481,-66.9157C372.931,-65.7515 366.8081,-64.7093 361,-64 264.4832,-52.2129 149.6843,-52.1544 91.811,-53.0889"/>
-<polygon fill="#000000" stroke="#000000" points="91.6195,-49.5917 81.6845,-53.2723 91.7463,-56.5905 91.6195,-49.5917"/>
-<text text-anchor="middle" x="244" y="-66.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">grid_timer, importer_timer</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M395.7291,-87.204C386.0559,-93.6004 373.3866,-100.9314 361,-105 267.6586,-135.6593 150.5785,-139.3169 91.8026,-138.9325"/>
+<polygon fill="#000000" stroke="#000000" points="91.5632,-135.4297 81.5252,-138.8193 91.486,-142.4293 91.5632,-135.4297"/>
+<text text-anchor="middle" x="244" y="-140.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">levels</text>
 </g>
 <!-- grid_function_scalar -->
-<g id="type~~formul_3p1~~InheritsGraph_node5" class="node">
+<g id="type~~formul_3p1~~InheritsGraph_node3" class="node">
 <title>grid_function_scalar</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="109,-24 0,-24 0,0 109,0 109,-24"/>
-<text text-anchor="middle" x="54.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function_scalar</text>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="109,-108 0,-108 0,-84 109,-84 109,-108"/>
+<text text-anchor="middle" x="54.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function_scalar</text>
 </g>
 <!-- type~formul_3p1&#45;&gt;grid_function_scalar -->
 <g id="type~~formul_3p1~~InheritsGraph_edge3" class="edge">
 <title>type~formul_3p1&#45;&gt;grid_function_scalar</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M399.682,-62.7454C389.9063,-54.2082 375.6648,-43.4165 361,-38 281.6343,-8.6859 183.1137,-5.6969 119.5437,-7.6768"/>
-<polygon fill="#000000" stroke="#000000" points="119.1276,-4.1895 109.2611,-8.05 119.3815,-11.1849 119.1276,-4.1895"/>
-<text text-anchor="middle" x="244" y="-40.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">rad_coord, lapse, HC, HC_parts</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M378.8202,-76.9756C319.6382,-80.4472 196.0341,-87.6977 119.6697,-92.1772"/>
+<polygon fill="#000000" stroke="#000000" points="118.9974,-88.7105 109.2195,-92.7902 119.4073,-95.6985 118.9974,-88.7105"/>
+<text text-anchor="middle" x="244" y="-93.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">rad_coord, lapse, HC, HC_parts</text>
+</g>
+<!-- grid_function -->
+<g id="type~~formul_3p1~~InheritsGraph_node4" class="node">
+<title>grid_function</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="91.5,-66 17.5,-66 17.5,-42 91.5,-42 91.5,-66"/>
+<text text-anchor="middle" x="54.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function</text>
+</g>
+<!-- type~formul_3p1&#45;&gt;grid_function -->
+<g id="type~~formul_3p1~~InheritsGraph_edge2" class="edge">
+<title>type~formul_3p1&#45;&gt;grid_function</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M378.8481,-66.9157C372.931,-65.7515 366.8081,-64.7093 361,-64 270.0161,-52.8887 162.7863,-52.1996 102.3111,-52.94"/>
+<polygon fill="#000000" stroke="#000000" points="101.8868,-49.4455 91.9374,-53.0869 101.986,-56.4448 101.8868,-49.4455"/>
+<text text-anchor="middle" x="244" y="-66.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">coords, shift_u, g_phys3_ll, K_phys3_ll, MC, MC_parts</text>
+</g>
+<!-- timer -->
+<g id="type~~formul_3p1~~InheritsGraph_node5" class="node">
+<title>timer</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-24 27.5,-24 27.5,0 81.5,0 81.5,-24"/>
+<text text-anchor="middle" x="54.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
+</g>
+<!-- type~formul_3p1&#45;&gt;timer -->
+<g id="type~~formul_3p1~~InheritsGraph_edge4" class="edge">
+<title>type~formul_3p1&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M399.682,-62.7454C389.9063,-54.2082 375.6648,-43.4165 361,-38 268.8476,-3.963 150.8709,-5.4172 91.766,-8.9314"/>
+<polygon fill="#000000" stroke="#000000" points="91.5273,-5.4394 81.7749,-9.5794 91.9805,-12.4247 91.5273,-5.4394"/>
+<text text-anchor="middle" x="244" y="-40.4" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">grid_timer, importer_timer</text>
 </g>
 </g>
 </svg>
@@ -603,7 +609,11 @@
       
       <a class="list-group-item" href="../type/formul_3p1.html#variable-levels">levels</a>
       
+      <a class="list-group-item" href="../type/formul_3p1.html#variable-n_matter">n_matter</a>
+      
       <a class="list-group-item" href="../type/formul_3p1.html#variable-nlevels">nlevels</a>
+      
+      <a class="list-group-item" href="../type/formul_3p1.html#variable-npoints_xaxis">npoints_xaxis</a>
       
       <a class="list-group-item" href="../type/formul_3p1.html#variable-rad_coord">rad_coord</a>
       
@@ -686,6 +696,8 @@
       <a class="list-group-item" href="../type/formul_3p1.html#boundprocedure-get_zr">get_zR</a>
       
       <a class="list-group-item" href="../type/formul_3p1.html#boundprocedure-print_formatted_lorene_id_3p1_variables">print_formatted_lorene_id_3p1_variables</a>
+      
+      <a class="list-group-item" href="../type/formul_3p1.html#boundprocedure-print_summary~3">print_summary</a>
       
       <a class="list-group-item" href="../type/formul_3p1.html#boundprocedure-setup_standard3p1_variables">setup_standard3p1_variables</a>
       
@@ -1091,11 +1103,40 @@
   
 <tr>
   
+  <td><span class="anchor" id="variable-n_matter"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>n_matter</strong></td><td></td><td></td><td><p>Number of matter objects in the physical system</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
   <td><span class="anchor" id="variable-nlevels"></span>integer,</td>
   
   <td>public</td>
   <td></td><td>::</td>
   <td><strong>nlevels</strong></td><td></td><td></td><td><p>Number of refinement levels</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-npoints_xaxis"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>npoints_xaxis</strong></td><td></td><td></td><td><p>Array containing the number of mesh points of the highest-resolution
+ refinement level across the x-axis-size of the matter objects</p></td>
   
 </tr>
 
@@ -3859,6 +3900,98 @@ subroutine print_formatted_lorene_id_3p1_variables_interface(THIS, namefile)
     
      
 <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_summary~3"></span><h3>procedure, public :: <strong>print_summary</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine print_summary(THIS, filename)
+    
+    
+   
+   <a href='../proc/print_summary.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Prints a summary of the properties of the refined mesh,
+ and optionally, to a formatted file whose name
+ is given as the optional argument <code>filename</code></p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>filename</strong></td><td><p>Name of the formatted file to print the summary to</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-setup_standard3p1_variables"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>setup_standard3p1_variables</strong>  
     
   </h3></div>
@@ -3998,6 +4131,13 @@ public module module subroutine setup_standard3p1_variables(f3p1, id, dx, dy, dz
   <span class="c">!# ABSTRACT TYPE representing a generic 3+1 formulation of the Einsten</span>
   <span class="c">!  equations</span>
 
+    <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">n_matter</span>
+    <span class="c">!! Number of matter objects in the physical system</span>
+
+    <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">npoints_xaxis</span>
+    <span class="c">!# Array containing the number of mesh points of the highest-resolution</span>
+    <span class="c">!  refinement level across the x-axis-size of the matter objects</span>
+
     <span class="c">!</span>
     <span class="c">!-- Mesh variables</span>
     <span class="c">!</span>
@@ -4128,6 +4268,8 @@ public module module subroutine setup_standard3p1_variables(f3p1, id, dx, dy, dz
 
     <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">NON_OVERRIDABLE</span><span class="kd">::</span> <span class="n">analyze_constraint</span>
 
+    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">print_summary</span>
+
     <span class="k">PROCEDURE</span><span class="p">(</span><span class="n">define_allocate_fields_interface</span><span class="p">),</span> <span class="k">DEFERRED</span><span class="kd">::</span> <span class="p">&amp;</span>
                             <span class="n">define_allocate_fields</span>
 
@@ -4204,14 +4346,14 @@ public module module subroutine setup_standard3p1_variables(f3p1, id, dx, dy, dz
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

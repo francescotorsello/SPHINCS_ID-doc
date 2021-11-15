@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>convergence_test &ndash; SPHINCS_LORENE</title>
+    <title>convergence_test &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -144,7 +144,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="64.5% of total for programs.">664 statements</a>
+    title="67.3% of total for programs.">724 statements</a>
      </li> 
      
      
@@ -187,8 +187,6 @@
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../program/convergence_test.html#variable-binary">binary</a>
-      
       <a class="list-group-item" href="../program/convergence_test.html#variable-bssn_forms">bssn_forms</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-common_path">common_path</a>
@@ -203,7 +201,11 @@
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-denominator_ratio_dx">denominator_ratio_dx</a>
       
+      <a class="list-group-item" href="../program/convergence_test.html#variable-dir_out">dir_out</a>
+      
       <a class="list-group-item" href="../program/convergence_test.html#variable-execution_timer">execution_timer</a>
+      
+      <a class="list-group-item" href="../program/convergence_test.html#variable-exist~18">exist</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-export_bin~3">export_bin</a>
       
@@ -223,6 +225,8 @@
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-filenames">filenames</a>
       
+      <a class="list-group-item" href="../program/convergence_test.html#variable-idata~2">idata</a>
+      
       <a class="list-group-item" href="../program/convergence_test.html#variable-max_bssn">max_bssn</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-max_length~2">max_length</a>
@@ -239,7 +243,11 @@
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-namefile_bssn">namefile_bssn</a>
       
+      <a class="list-group-item" href="../program/convergence_test.html#variable-namefile_bssn_bin">namefile_bssn_bin</a>
+      
       <a class="list-group-item" href="../program/convergence_test.html#variable-namefile_parts">namefile_parts</a>
+      
+      <a class="list-group-item" href="../program/convergence_test.html#variable-namefile_parts_bin">namefile_parts_bin</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-namefile_sph">namefile_sph</a>
       
@@ -264,6 +272,10 @@
       <a class="list-group-item" href="../program/convergence_test.html#variable-spacetime_path">spacetime_path</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-sph_path">sph_path</a>
+      
+      <a class="list-group-item" href="../program/convergence_test.html#variable-systems">systems</a>
+      
+      <a class="list-group-item" href="../program/convergence_test.html#variable-systems_name">systems_name</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-test_int">test_int</a>
       
@@ -333,7 +345,21 @@
       <li class="list-group-item">
   <ul class="list-inline">
     
+    <li><a href='../module/utility.html'>utility</a></li>
+    
+    <li><a href='../module/particles_id.html'>particles_id</a></li>
+    
+    <li><a href='../module/formul_3p1_id.html'>formul_3p1_id</a></li>
+    
+    <li>timing</li>
+    
+    <li>IFPORT</li>
+    
     <li><a href='../module/sphincs_lorene.html'>sphincs_lorene</a></li>
+    
+    <li><a href='../module/id_base.html'>id_base</a></li>
+    
+    <li><a href='../module/formul_bssn_id.html'>formul_bssn_id</a></li>
     
   </ul>
       </li>
@@ -347,366 +373,389 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: program~~convergence_test~~UsesGraph Pages: 1 -->
-<svg id="programconvergence_testUsesGraph" width="641pt" height="369pt"
- viewBox="0.00 0.00 641.00 368.82" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="program~~convergence_test~~UsesGraph" class="graph" transform="scale(.826 .826) rotate(0) translate(4 442.5008)">
+<svg id="programconvergence_testUsesGraph" width="641pt" height="517pt"
+ viewBox="0.00 0.00 641.00 517.48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~convergence_test~~UsesGraph" class="graph" transform="scale(.9786 .9786) rotate(0) translate(4 524.7859)">
 <title>program~~convergence_test~~UsesGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-442.5008 772,-442.5008 772,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-524.7859 651,-524.7859 651,4 -4,4"/>
 <!-- program~convergence_test -->
 <g id="program~~convergence_test~~UsesGraph_node1" class="node">
 <title>program~convergence_test</title>
-<polygon fill="none" stroke="#000000" points="768,-161.8876 671,-161.8876 671,-137.8876 768,-137.8876 768,-161.8876"/>
-<text text-anchor="middle" x="719.5" y="-147.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">convergence_test</text>
+<polygon fill="none" stroke="#000000" points="647,-261.0017 550,-261.0017 550,-237.0017 647,-237.0017 647,-261.0017"/>
+<text text-anchor="middle" x="598.5" y="-246.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">convergence_test</text>
 </g>
 <!-- module~sphincs_lorene -->
 <g id="program~~convergence_test~~UsesGraph_node2" class="node">
 <title>module~sphincs_lorene</title>
 <g id="a_program~~convergence_test~~UsesGraph_node2"><a xlink:href=".././module/sphincs_lorene.html" xlink:title="sphincs_lorene">
-<polygon fill="#337ab7" stroke="#337ab7" points="635,-161.8876 550,-161.8876 550,-137.8876 635,-137.8876 635,-161.8876"/>
-<text text-anchor="middle" x="592.5" y="-147.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="514,-241.0017 429,-241.0017 429,-217.0017 514,-217.0017 514,-241.0017"/>
+<text text-anchor="middle" x="471.5" y="-226.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene</text>
 </a>
 </g>
 </g>
 <!-- program~convergence_test&#45;&gt;module~sphincs_lorene -->
 <g id="program~~convergence_test~~UsesGraph_edge1" class="edge">
 <title>program~convergence_test&#45;&gt;module~sphincs_lorene</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M670.7617,-149.8876C662.407,-149.8876 653.6913,-149.8876 645.2378,-149.8876"/>
-<polygon fill="#000000" stroke="#000000" points="645.0983,-146.3877 635.0983,-149.8876 645.0982,-153.3877 645.0983,-146.3877"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M549.7617,-241.3263C541.407,-240.0106 532.6913,-238.6381 524.2378,-237.3068"/>
+<polygon fill="#000000" stroke="#000000" points="524.521,-233.8084 514.0983,-235.7101 523.432,-240.7232 524.521,-233.8084"/>
 </g>
 <!-- module~formul_3p1_id -->
 <g id="program~~convergence_test~~UsesGraph_node3" class="node">
 <title>module~formul_3p1_id</title>
 <g id="a_program~~convergence_test~~UsesGraph_node3"><a xlink:href=".././module/formul_3p1_id.html" xlink:title="formul_3p1_id">
-<polygon fill="#337ab7" stroke="#337ab7" points="393,-201.8876 312,-201.8876 312,-177.8876 393,-177.8876 393,-201.8876"/>
-<text text-anchor="middle" x="352.5" y="-187.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1_id</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="393,-360.0017 312,-360.0017 312,-336.0017 393,-336.0017 393,-360.0017"/>
+<text text-anchor="middle" x="352.5" y="-345.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1_id</text>
 </a>
 </g>
 </g>
-<!-- module~sphincs_lorene&#45;&gt;module~formul_3p1_id -->
-<g id="program~~convergence_test~~UsesGraph_edge3" class="edge">
-<title>module~sphincs_lorene&#45;&gt;module~formul_3p1_id</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-109.8876C430.0901,-101.0304 426.1655,-137.5573 393,-163.8876 389.4438,-166.7109 385.5724,-169.5072 381.6798,-172.1607"/>
-<polygon fill="#000000" stroke="#000000" points="379.6813,-169.2857 373.2387,-177.6966 383.5203,-175.1392 379.6813,-169.2857"/>
-</g>
-<!-- module~id_base -->
-<g id="program~~convergence_test~~UsesGraph_node4" class="node">
-<title>module~id_base</title>
-<g id="a_program~~convergence_test~~UsesGraph_node4"><a xlink:href=".././module/id_base.html" xlink:title="id_base">
-<polygon fill="#337ab7" stroke="#337ab7" points="144,-281.8876 90,-281.8876 90,-257.8876 144,-257.8876 144,-281.8876"/>
-<text text-anchor="middle" x="117" y="-267.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">id_base</text>
-</a>
-</g>
-</g>
-<!-- module~sphincs_lorene&#45;&gt;module~id_base -->
+<!-- program~convergence_test&#45;&gt;module~formul_3p1_id -->
 <g id="program~~convergence_test~~UsesGraph_edge2" class="edge">
-<title>module~sphincs_lorene&#45;&gt;module~id_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M588.9763,-161.9709C572.1972,-216.7575 495.2341,-438.7163 352.5,-427.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-427.8876C323.9326,-432.4328 253.5516,-403.4474 228,-389.8876"/>
-</g>
-<!-- timing -->
-<g id="program~~convergence_test~~UsesGraph_node5" class="node">
-<title>timing</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-261.8876 0,-261.8876 0,-237.8876 54,-237.8876 54,-261.8876"/>
-<text text-anchor="middle" x="27" y="-247.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timing</text>
-</g>
-<!-- module~sphincs_lorene&#45;&gt;timing -->
-<g id="program~~convergence_test~~UsesGraph_edge4" class="edge">
-<title>module~sphincs_lorene&#45;&gt;timing</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-427.8876C297.854,-436.582 280.3071,-445.9361 228,-427.8876"/>
-</g>
-<!-- module~utility -->
-<g id="program~~convergence_test~~UsesGraph_node6" class="node">
-<title>module~utility</title>
-<g id="a_program~~convergence_test~~UsesGraph_node6"><a xlink:href=".././module/utility.html" xlink:title="utility">
-<polygon fill="#337ab7" stroke="#337ab7" points="144,-120.8876 90,-120.8876 90,-96.8876 144,-96.8876 144,-120.8876"/>
-<text text-anchor="middle" x="117" y="-106.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utility</text>
-</a>
-</g>
-</g>
-<!-- module~sphincs_lorene&#45;&gt;module~utility -->
-<g id="program~~convergence_test~~UsesGraph_edge5" class="edge">
-<title>module~sphincs_lorene&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M562.174,-137.8209C538.002,-128.7042 503.0881,-116.644 471.5,-109.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-109.8876C416.5884,-98.1425 443.5587,-35.3222 393,-10.8876 360.5869,4.7773 347.9977,-10.4786 312,-10.8876 253.322,-11.5543 231.3859,14.4504 180,-13.8876 151.4467,-29.634 133.5509,-64.4641 124.4219,-87.2899"/>
-<polygon fill="#000000" stroke="#000000" points="121.0816,-86.229 120.8376,-96.821 127.6336,-88.693 121.0816,-86.229"/>
+<title>program~convergence_test&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-269.0017C451.7846,-275.2788 446.2085,-276.514 429,-288.0017 410.6959,-300.2207 410.335,-308.4428 393,-322.0017 389.4234,-324.7991 385.5403,-327.5806 381.6419,-330.2267"/>
+<polygon fill="#000000" stroke="#000000" points="379.645,-327.3506 373.1964,-335.757 383.4798,-333.2068 379.645,-327.3506"/>
 </g>
 <!-- module~particles_id -->
-<g id="program~~convergence_test~~UsesGraph_node7" class="node">
+<g id="program~~convergence_test~~UsesGraph_node4" class="node">
 <title>module~particles_id</title>
-<g id="a_program~~convergence_test~~UsesGraph_node7"><a xlink:href=".././module/particles_id.html" xlink:title="particles_id">
-<polygon fill="#337ab7" stroke="#337ab7" points="261.5,-281.8876 194.5,-281.8876 194.5,-257.8876 261.5,-257.8876 261.5,-281.8876"/>
-<text text-anchor="middle" x="228" y="-267.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_id</text>
+<g id="a_program~~convergence_test~~UsesGraph_node4"><a xlink:href=".././module/particles_id.html" xlink:title="particles_id">
+<polygon fill="#337ab7" stroke="#337ab7" points="261.5,-360.0017 194.5,-360.0017 194.5,-336.0017 261.5,-336.0017 261.5,-360.0017"/>
+<text text-anchor="middle" x="228" y="-345.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles_id</text>
 </a>
 </g>
 </g>
-<!-- module~sphincs_lorene&#45;&gt;module~particles_id -->
+<!-- program~convergence_test&#45;&gt;module~particles_id -->
+<g id="program~~convergence_test~~UsesGraph_edge3" class="edge">
+<title>program~convergence_test&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M549.7558,-253.1682C525.7856,-256.0964 496.703,-260.9774 471.5,-269.0017"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-269.0017C418.4663,-285.8869 406.6322,-295.0641 352.5,-308.0017"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-308.0017C324.7479,-314.6344 294.2371,-324.3957 270.3654,-332.615"/>
+<polygon fill="#000000" stroke="#000000" points="269.193,-329.3171 260.9011,-335.9123 271.496,-335.9274 269.193,-329.3171"/>
+</g>
+<!-- module~formul_bssn_id -->
+<g id="program~~convergence_test~~UsesGraph_node5" class="node">
+<title>module~formul_bssn_id</title>
+<g id="a_program~~convergence_test~~UsesGraph_node5"><a xlink:href=".././module/formul_bssn_id.html" xlink:title="formul_bssn_id">
+<polygon fill="#337ab7" stroke="#337ab7" points="514,-321.0017 429,-321.0017 429,-297.0017 514,-297.0017 514,-321.0017"/>
+<text text-anchor="middle" x="471.5" y="-306.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_bssn_id</text>
+</a>
+</g>
+</g>
+<!-- program~convergence_test&#45;&gt;module~formul_bssn_id -->
+<g id="program~~convergence_test~~UsesGraph_edge4" class="edge">
+<title>program~convergence_test&#45;&gt;module~formul_bssn_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M572.7997,-261.1436C553.6921,-270.1707 527.4052,-282.5897 506.3979,-292.5145"/>
+<polygon fill="#000000" stroke="#000000" points="504.7087,-289.4415 497.1621,-296.8778 507.699,-295.7707 504.7087,-289.4415"/>
+</g>
+<!-- timing -->
+<g id="program~~convergence_test~~UsesGraph_node6" class="node">
+<title>timing</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-283.0017 0,-283.0017 0,-259.0017 54,-259.0017 54,-283.0017"/>
+<text text-anchor="middle" x="27" y="-268.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timing</text>
+</g>
+<!-- program~convergence_test&#45;&gt;timing -->
+<g id="program~~convergence_test~~UsesGraph_edge5" class="edge">
+<title>program~convergence_test&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-506.0017C425.4994,-532.1011 402.6093,-489.0816 352.5,-506.0017"/>
+</g>
+<!-- IFPORT -->
+<g id="program~~convergence_test~~UsesGraph_node7" class="node">
+<title>IFPORT</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="498.5,-82.0017 444.5,-82.0017 444.5,-58.0017 498.5,-58.0017 498.5,-82.0017"/>
+<text text-anchor="middle" x="471.5" y="-67.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">IFPORT</text>
+</g>
+<!-- program~convergence_test&#45;&gt;IFPORT -->
 <g id="program~~convergence_test~~UsesGraph_edge6" class="edge">
-<title>module~sphincs_lorene&#45;&gt;module~particles_id</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-109.8876C457.8593,-106.97 364.9571,-143.6106 352.5,-149.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-149.8876C334.7444,-158.8345 326.1212,-154.8911 312,-168.8876 285.7394,-194.9163 301.4979,-217.1113 276,-243.8876 273.0222,-247.0147 269.5839,-249.8523 265.9434,-252.4043"/>
-<polygon fill="#000000" stroke="#000000" points="263.8446,-249.588 257.2032,-257.8428 267.5428,-255.5313 263.8446,-249.588"/>
+<title>program~convergence_test&#45;&gt;IFPORT</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M594.3129,-236.953C584.2071,-209.2602 556.1594,-140.0769 514,-96.0017 511.1881,-93.0619 507.9749,-90.3248 504.6028,-87.8151"/>
+<polygon fill="#000000" stroke="#000000" points="506.2844,-84.7284 496.0313,-82.059 502.3818,-90.5396 506.2844,-84.7284"/>
+</g>
+<!-- module~id_base -->
+<g id="program~~convergence_test~~UsesGraph_node8" class="node">
+<title>module~id_base</title>
+<g id="a_program~~convergence_test~~UsesGraph_node8"><a xlink:href=".././module/id_base.html" xlink:title="id_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-322.0017 90,-322.0017 90,-298.0017 144,-298.0017 144,-322.0017"/>
+<text text-anchor="middle" x="117" y="-307.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">id_base</text>
+</a>
+</g>
+</g>
+<!-- program~convergence_test&#45;&gt;module~id_base -->
+<g id="program~~convergence_test~~UsesGraph_edge7" class="edge">
+<title>program~convergence_test&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M597.3079,-261.0175C592.2131,-304.8551 567.8973,-456.2137 471.5,-506.0017"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-506.0017C440.0124,-522.2646 427.9841,-497.6641 393,-492.0017 356.4235,-486.0815 262.0774,-482.5488 228,-468.0017"/>
+</g>
+<!-- module~utility -->
+<g id="program~~convergence_test~~UsesGraph_node9" class="node">
+<title>module~utility</title>
+<g id="a_program~~convergence_test~~UsesGraph_node9"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<polygon fill="#337ab7" stroke="#337ab7" points="144,-222.0017 90,-222.0017 90,-198.0017 144,-198.0017 144,-222.0017"/>
+<text text-anchor="middle" x="117" y="-207.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utility</text>
+</a>
+</g>
+</g>
+<!-- program~convergence_test&#45;&gt;module~utility -->
+<g id="program~~convergence_test~~UsesGraph_edge8" class="edge">
+<title>program~convergence_test&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M579.2773,-236.9929C543.2885,-214.6874 463.0449,-165.788 393,-129.0017 375.3975,-119.7571 368.5213,-121.7756 352.5,-110.0017"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-110.0017C302.3304,-67.4695 292.8156,-18.8251 228,-30.0017"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-30.0017C205.3898,-33.9005 196.1919,-32.7461 180,-49.0017 159.7668,-69.3144 134.6478,-148.9688 123.2026,-188.086"/>
+<polygon fill="#000000" stroke="#000000" points="119.7628,-187.3827 120.3525,-197.9611 126.4883,-189.3238 119.7628,-187.3827"/>
+</g>
+<!-- module~sphincs_lorene&#45;&gt;module~id_base -->
+<g id="program~~convergence_test~~UsesGraph_edge9" class="edge">
+<title>module~sphincs_lorene&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M433.6103,-241.0266C394.4573,-253.1291 331.4207,-271.7153 276,-284.0017 234.6031,-293.1791 186.4792,-300.6045 154.1113,-305.1348"/>
+<polygon fill="#000000" stroke="#000000" points="153.6131,-301.6703 144.1844,-306.5025 154.5685,-308.6048 153.6131,-301.6703"/>
 </g>
 <!-- module~diffstar_lorene -->
-<g id="program~~convergence_test~~UsesGraph_node8" class="node">
+<g id="program~~convergence_test~~UsesGraph_node11" class="node">
 <title>module~diffstar_lorene</title>
-<g id="a_program~~convergence_test~~UsesGraph_node8"><a xlink:href=".././module/diffstar_lorene.html" xlink:title="diffstar_lorene">
-<polygon fill="#337ab7" stroke="#337ab7" points="393,-79.8876 312,-79.8876 312,-55.8876 393,-55.8876 393,-79.8876"/>
-<text text-anchor="middle" x="352.5" y="-65.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene</text>
+<g id="a_program~~convergence_test~~UsesGraph_node11"><a xlink:href=".././module/diffstar_lorene.html" xlink:title="diffstar_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="393,-241.0017 312,-241.0017 312,-217.0017 393,-217.0017 393,-241.0017"/>
+<text text-anchor="middle" x="352.5" y="-226.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_lorene</text>
 </a>
 </g>
 </g>
 <!-- module~sphincs_lorene&#45;&gt;module~diffstar_lorene -->
-<g id="program~~convergence_test~~UsesGraph_edge7" class="edge">
+<g id="program~~convergence_test~~UsesGraph_edge10" class="edge">
 <title>module~sphincs_lorene&#45;&gt;module~diffstar_lorene</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-109.8876C443.3808,-103.8732 412.8149,-92.9859 389.7023,-83.8033"/>
-<polygon fill="#000000" stroke="#000000" points="390.8649,-80.4981 380.2822,-79.9914 388.2391,-86.987 390.8649,-80.4981"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M428.8744,-229.0017C420.6245,-229.0017 411.9028,-229.0017 403.4188,-229.0017"/>
+<polygon fill="#000000" stroke="#000000" points="403.2359,-225.5018 393.2359,-229.0017 403.2358,-232.5018 403.2359,-225.5018"/>
 </g>
 <!-- module~bns_lorene -->
-<g id="program~~convergence_test~~UsesGraph_node9" class="node">
+<g id="program~~convergence_test~~UsesGraph_node13" class="node">
 <title>module~bns_lorene</title>
-<g id="a_program~~convergence_test~~UsesGraph_node9"><a xlink:href=".././module/bns_lorene.html" xlink:title="bns_lorene">
-<polygon fill="#337ab7" stroke="#337ab7" points="385.5,-121.8876 319.5,-121.8876 319.5,-97.8876 385.5,-97.8876 385.5,-121.8876"/>
-<text text-anchor="middle" x="352.5" y="-107.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene</text>
+<g id="a_program~~convergence_test~~UsesGraph_node13"><a xlink:href=".././module/bns_lorene.html" xlink:title="bns_lorene">
+<polygon fill="#337ab7" stroke="#337ab7" points="385.5,-162.0017 319.5,-162.0017 319.5,-138.0017 385.5,-138.0017 385.5,-162.0017"/>
+<text text-anchor="middle" x="352.5" y="-147.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_lorene</text>
 </a>
 </g>
 </g>
 <!-- module~sphincs_lorene&#45;&gt;module~bns_lorene -->
-<g id="program~~convergence_test~~UsesGraph_edge8" class="edge">
-<title>module~sphincs_lorene&#45;&gt;module~bns_lorene</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M471.5,-109.8876C446.7974,-104.6039 418.5446,-104.3675 395.7685,-105.5623"/>
-<polygon fill="#000000" stroke="#000000" points="395.4802,-102.0735 385.7216,-106.199 395.9229,-109.0595 395.4802,-102.0735"/>
-</g>
-<!-- module~formul_bssn_id -->
-<g id="program~~convergence_test~~UsesGraph_node10" class="node">
-<title>module~formul_bssn_id</title>
-<g id="a_program~~convergence_test~~UsesGraph_node10"><a xlink:href=".././module/formul_bssn_id.html" xlink:title="formul_bssn_id">
-<polygon fill="#337ab7" stroke="#337ab7" points="514,-161.8876 429,-161.8876 429,-137.8876 514,-137.8876 514,-161.8876"/>
-<text text-anchor="middle" x="471.5" y="-147.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_bssn_id</text>
-</a>
-</g>
-</g>
-<!-- module~sphincs_lorene&#45;&gt;module~formul_bssn_id -->
-<g id="program~~convergence_test~~UsesGraph_edge9" class="edge">
-<title>module~sphincs_lorene&#45;&gt;module~formul_bssn_id</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M549.8399,-149.8876C541.6166,-149.8876 532.9104,-149.8876 524.4075,-149.8876"/>
-<polygon fill="#000000" stroke="#000000" points="524.1827,-146.3877 514.1827,-149.8876 524.1826,-153.3877 524.1827,-146.3877"/>
-</g>
-<!-- module~formul_3p1_id&#45;&gt;module~id_base -->
-<g id="program~~convergence_test~~UsesGraph_edge10" class="edge">
-<title>module~formul_3p1_id&#45;&gt;module~id_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M346.1446,-202.1849C334.7499,-223.1268 308.9278,-265.8695 276,-290.8876 257.7311,-304.7681 249.957,-303.2309 228,-309.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-309.8876C197.5046,-319.133 163.0825,-302.3708 140.7672,-287.7956"/>
-<polygon fill="#000000" stroke="#000000" points="142.501,-284.7406 132.275,-281.9695 138.541,-290.5128 142.501,-284.7406"/>
-</g>
-<!-- module~formul_3p1_id&#45;&gt;timing -->
 <g id="program~~convergence_test~~UsesGraph_edge11" class="edge">
-<title>module~formul_3p1_id&#45;&gt;timing</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-309.8876C180.7886,-324.2008 159.3572,-335.1788 117,-309.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M117,-309.8876C94.7572,-296.6066 70.3516,-280.2159 52.5733,-267.9236"/>
-<polygon fill="#000000" stroke="#000000" points="54.1345,-264.746 43.927,-261.9073 50.1363,-270.4919 54.1345,-264.746"/>
-</g>
-<!-- module~formul_3p1_id&#45;&gt;module~utility -->
-<g id="program~~convergence_test~~UsesGraph_edge12" class="edge">
-<title>module~formul_3p1_id&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M322.8838,-177.8854C298.0117,-168.4146 261.2991,-155.8409 228,-149.8876"/>
+<title>module~sphincs_lorene&#45;&gt;module~bns_lorene</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M453.167,-216.831C433.3678,-203.687 401.6398,-182.6239 379.0996,-167.6602"/>
+<polygon fill="#000000" stroke="#000000" points="380.9256,-164.6714 370.6585,-162.0565 377.054,-170.5033 380.9256,-164.6714"/>
 </g>
 <!-- module~formul_3p1_id&#45;&gt;module~particles_id -->
-<g id="program~~convergence_test~~UsesGraph_edge13" class="edge">
+<g id="program~~convergence_test~~UsesGraph_edge12" class="edge">
 <title>module~formul_3p1_id&#45;&gt;module~particles_id</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M336.4639,-202.0468C321.2407,-213.3859 297.5467,-230.5123 276,-243.8876 271.1688,-246.8866 265.9654,-249.9081 260.8299,-252.7767"/>
-<polygon fill="#000000" stroke="#000000" points="258.8501,-249.8701 251.7539,-257.7374 262.2074,-256.0124 258.8501,-249.8701"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M311.734,-348.0017C298.9757,-348.0017 284.8449,-348.0017 271.8815,-348.0017"/>
+<polygon fill="#000000" stroke="#000000" points="271.7839,-344.5018 261.7838,-348.0017 271.7838,-351.5018 271.7839,-344.5018"/>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;timing -->
+<g id="program~~convergence_test~~UsesGraph_edge13" class="edge">
+<title>module~formul_3p1_id&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-388.0017C179.3969,-379.5451 158.4646,-414.7311 117,-388.0017"/>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;module~id_base -->
+<g id="program~~convergence_test~~UsesGraph_edge15" class="edge">
+<title>module~formul_3p1_id&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-388.0017C205.3958,-384.0687 199.381,-381.2816 180,-369.0017 162.971,-358.212 146.4416,-342.4688 134.5895,-329.9582"/>
+<polygon fill="#000000" stroke="#000000" points="136.8698,-327.268 127.5182,-322.2883 131.7233,-332.0129 136.8698,-327.268"/>
+</g>
+<!-- module~formul_3p1_id&#45;&gt;module~utility -->
+<g id="program~~convergence_test~~UsesGraph_edge16" class="edge">
+<title>module~formul_3p1_id&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M333.9271,-360.0124C309.9476,-374.1001 266.6944,-394.7342 228,-388.0017"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-388.0017C205.3958,-384.0687 196.2265,-385.2227 180,-369.0017 169.8342,-358.8393 139.0008,-273.0757 124.5832,-231.8981"/>
+<polygon fill="#000000" stroke="#000000" points="127.8123,-230.5282 121.2157,-222.2375 121.2024,-232.8324 127.8123,-230.5282"/>
 </g>
 <!-- mesh_refinement -->
-<g id="program~~convergence_test~~UsesGraph_node14" class="node">
+<g id="program~~convergence_test~~UsesGraph_node10" class="node">
 <title>mesh_refinement</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="276,-361.8876 180,-361.8876 180,-337.8876 276,-337.8876 276,-361.8876"/>
-<text text-anchor="middle" x="228" y="-347.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mesh_refinement</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="276,-440.0017 180,-440.0017 180,-416.0017 276,-416.0017 276,-440.0017"/>
+<text text-anchor="middle" x="228" y="-425.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mesh_refinement</text>
 </g>
 <!-- module~formul_3p1_id&#45;&gt;mesh_refinement -->
 <g id="program~~convergence_test~~UsesGraph_edge14" class="edge">
 <title>module~formul_3p1_id&#45;&gt;mesh_refinement</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M348.195,-202.08C338.6928,-227.5285 313.7299,-286.9906 276,-323.8876 272.7486,-327.0672 269.0298,-329.9683 265.1328,-332.5836"/>
-<polygon fill="#000000" stroke="#000000" points="263.1736,-329.6782 256.4298,-337.8495 266.7974,-335.6672 263.1736,-329.6782"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M336.4639,-360.1609C321.2407,-371.5 297.5467,-388.6264 276,-402.0017 271.1688,-405.0007 265.9654,-408.0221 260.8299,-410.8908"/>
+<polygon fill="#000000" stroke="#000000" points="258.8501,-407.9841 251.7539,-415.8514 262.2074,-414.1265 258.8501,-407.9841"/>
 </g>
-<!-- module~id_base&#45;&gt;timing -->
-<g id="program~~convergence_test~~UsesGraph_edge15" class="edge">
-<title>module~id_base&#45;&gt;timing</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-263.887C81.8842,-262.0841 72.8369,-260.0736 64.1869,-258.1514"/>
-<polygon fill="#000000" stroke="#000000" points="64.8161,-254.7059 54.295,-255.9532 63.2976,-261.5392 64.8161,-254.7059"/>
-</g>
-<!-- matrix -->
-<g id="program~~convergence_test~~UsesGraph_node11" class="node">
-<title>matrix</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-120.8876 0,-120.8876 0,-96.8876 54,-96.8876 54,-120.8876"/>
-<text text-anchor="middle" x="27" y="-106.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">matrix</text>
-</g>
-<!-- module~utility&#45;&gt;matrix -->
-<g id="program~~convergence_test~~UsesGraph_edge16" class="edge">
-<title>module~utility&#45;&gt;matrix</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-108.8876C81.9723,-108.8876 73.0335,-108.8876 64.4691,-108.8876"/>
-<polygon fill="#000000" stroke="#000000" points="64.295,-105.3877 54.295,-108.8876 64.2949,-112.3877 64.295,-105.3877"/>
+<!-- module~particles_id&#45;&gt;timing -->
+<g id="program~~convergence_test~~UsesGraph_edge19" class="edge">
+<title>module~particles_id&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M206.694,-360.1403C178.934,-375.1996 132.1507,-397.7683 117,-388.0017"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M117,-388.0017C79.5922,-363.8873 51.5186,-318.6442 37.3309,-292.0383"/>
+<polygon fill="#000000" stroke="#000000" points="40.44,-290.4309 32.7405,-283.153 34.2209,-293.6439 40.44,-290.4309"/>
 </g>
 <!-- module~particles_id&#45;&gt;module~id_base -->
 <g id="program~~convergence_test~~UsesGraph_edge17" class="edge">
 <title>module~particles_id&#45;&gt;module~id_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M194.3951,-269.8876C181.7071,-269.8876 167.2009,-269.8876 154.2025,-269.8876"/>
-<polygon fill="#000000" stroke="#000000" points="154.1648,-266.3877 144.1648,-269.8876 154.1647,-273.3877 154.1648,-266.3877"/>
-</g>
-<!-- module~particles_id&#45;&gt;timing -->
-<g id="program~~convergence_test~~UsesGraph_edge18" class="edge">
-<title>module~particles_id&#45;&gt;timing</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M208.3099,-257.8397C186.6949,-245.8159 150.5867,-229.209 117,-229.8876"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M194.3951,-336.4973C181.5815,-332.1106 166.9135,-327.0892 153.8168,-322.6056"/>
+<polygon fill="#000000" stroke="#000000" points="154.7593,-319.2289 144.1648,-319.3013 152.4921,-325.8516 154.7593,-319.2289"/>
 </g>
 <!-- module~particles_id&#45;&gt;module~utility -->
-<g id="program~~convergence_test~~UsesGraph_edge19" class="edge">
+<g id="program~~convergence_test~~UsesGraph_edge18" class="edge">
 <title>module~particles_id&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M198.7542,-257.8831C192.0016,-254.1305 185.2635,-249.4757 180,-243.8876 149.0221,-210.9997 130.9867,-160.1368 122.6546,-131.1427"/>
-<polygon fill="#000000" stroke="#000000" points="125.9449,-129.9058 119.9296,-121.1842 119.1931,-131.7534 125.9449,-129.9058"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M218.1495,-335.7551C198.9295,-311.86 156.2744,-258.8292 132.9658,-229.851"/>
+<polygon fill="#000000" stroke="#000000" points="135.6648,-227.6222 126.6699,-222.0238 130.2103,-232.0096 135.6648,-227.6222"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~formul_3p1_id -->
+<g id="program~~convergence_test~~UsesGraph_edge20" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~formul_3p1_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M434.8251,-321.0212C423.5144,-324.728 410.9066,-328.86 399.0245,-332.7541"/>
+<polygon fill="#000000" stroke="#000000" points="397.6713,-329.5144 389.2587,-335.9547 399.8514,-336.1663 397.6713,-329.5144"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~particles_id -->
+<g id="program~~convergence_test~~UsesGraph_edge21" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~particles_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M428.8078,-303.7087C405.8842,-302.0947 377.3167,-302.0705 352.5,-308.0017"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;timing -->
+<g id="program~~convergence_test~~UsesGraph_edge22" class="edge">
+<title>module~formul_bssn_id&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M469.3859,-321.0973C461.9172,-359.3839 432.7608,-477.0936 352.5,-506.0017"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-506.0017C279.6746,-532.2316 245.611,-523.0718 180,-482.0017 137.3701,-455.3169 159.2712,-415.2511 117,-388.0017"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~id_base -->
+<g id="program~~convergence_test~~UsesGraph_edge24" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-430.0017C326.6923,-443.0675 254.604,-479.3585 228,-468.0017"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-468.0017C206.8984,-458.9937 196.6134,-464.8261 180,-449.0017 175.4211,-444.6403 142.6262,-369.4602 126.2523,-331.5279"/>
+<polygon fill="#000000" stroke="#000000" points="129.4597,-330.1267 122.2879,-322.3282 123.0311,-332.8969 129.4597,-330.1267"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;module~utility -->
+<g id="program~~convergence_test~~UsesGraph_edge25" class="edge">
+<title>module~formul_bssn_id&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M444.6038,-296.985C438.7228,-293.2528 433.0527,-288.6105 429,-283.0017 387.8334,-226.0284 437.2465,-183.6175 393,-129.0017 380.4843,-113.5528 368.5213,-121.7756 352.5,-110.0017"/>
+</g>
+<!-- module~formul_bssn_id&#45;&gt;mesh_refinement -->
+<g id="program~~convergence_test~~UsesGraph_edge23" class="edge">
+<title>module~formul_bssn_id&#45;&gt;mesh_refinement</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M463.703,-321.1425C446.8389,-346.2634 404.2852,-403.784 352.5,-430.0017"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-430.0017C332.4372,-440.159 308.122,-441.7313 286.323,-440.0184"/>
+<polygon fill="#000000" stroke="#000000" points="286.4872,-436.5169 276.1823,-438.9784 285.7731,-443.4804 286.4872,-436.5169"/>
+</g>
+<!-- module~id_base&#45;&gt;timing -->
+<g id="program~~convergence_test~~UsesGraph_edge26" class="edge">
+<title>module~id_base&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-298.3004C81.7078,-294.7084 72.4431,-290.6937 63.6234,-286.8718"/>
+<polygon fill="#000000" stroke="#000000" points="64.8622,-283.5942 54.295,-282.8295 62.0789,-290.0171 64.8622,-283.5942"/>
+</g>
+<!-- matrix -->
+<g id="program~~convergence_test~~UsesGraph_node12" class="node">
+<title>matrix</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-222.0017 0,-222.0017 0,-198.0017 54,-198.0017 54,-222.0017"/>
+<text text-anchor="middle" x="27" y="-207.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">matrix</text>
+</g>
+<!-- module~utility&#45;&gt;matrix -->
+<g id="program~~convergence_test~~UsesGraph_edge27" class="edge">
+<title>module~utility&#45;&gt;matrix</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.997,-210.0017C81.9723,-210.0017 73.0335,-210.0017 64.4691,-210.0017"/>
+<polygon fill="#000000" stroke="#000000" points="64.295,-206.5018 54.295,-210.0017 64.2949,-213.5018 64.295,-206.5018"/>
 </g>
 <!-- module~diffstar_lorene&#45;&gt;timing -->
-<g id="program~~convergence_test~~UsesGraph_edge21" class="edge">
+<g id="program~~convergence_test~~UsesGraph_edge29" class="edge">
 <title>module~diffstar_lorene&#45;&gt;timing</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M340.5732,-55.8236C326.5472,-42.578 301.8767,-22.1006 276,-13.8876 235.3325,-.9803 220.1659,.5049 180,-13.8876 131.2503,-31.3559 120.3736,-45.9457 90,-87.8876 58.0368,-132.0247 39.8188,-194.5046 31.8591,-227.4857"/>
-<polygon fill="#000000" stroke="#000000" points="28.3932,-226.9389 29.5479,-237.4706 35.2129,-228.5175 28.3932,-226.9389"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M320.1012,-241.0554C295.1871,-249.9852 259.7651,-261.9516 228,-270.0017"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-270.0017C172.2986,-284.1178 105.0926,-280.4879 64.2281,-276.101"/>
+<polygon fill="#000000" stroke="#000000" points="64.5137,-272.611 54.1802,-274.9494 63.7166,-279.5654 64.5137,-272.611"/>
+</g>
+<!-- module~diffstar_lorene&#45;&gt;module~id_base -->
+<g id="program~~convergence_test~~UsesGraph_edge31" class="edge">
+<title>module~diffstar_lorene&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-270.0017C202.688,-276.4164 175.061,-286.361 153.7009,-294.7294"/>
+<polygon fill="#000000" stroke="#000000" points="152.3571,-291.4972 144.3586,-298.4451 154.9441,-298.0016 152.3571,-291.4972"/>
 </g>
 <!-- module~diffstar_lorene&#45;&gt;module~utility -->
-<g id="program~~convergence_test~~UsesGraph_edge22" class="edge">
+<g id="program~~convergence_test~~UsesGraph_edge32" class="edge">
 <title>module~diffstar_lorene&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M335.0071,-55.8782C311.1291,-40.9655 266.8534,-18.5622 228,-27.8876"/>
-</g>
-<!-- iso_c_binding -->
-<g id="program~~convergence_test~~UsesGraph_node12" class="node">
-<title>iso_c_binding</title>
-<g id="a_program~~convergence_test~~UsesGraph_node12"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
-<polygon fill="#337ab7" stroke="#337ab7" points="267,-121.8876 189,-121.8876 189,-97.8876 267,-97.8876 267,-121.8876"/>
-<text text-anchor="middle" x="228" y="-107.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iso_c_binding</text>
-</a>
-</g>
-</g>
-<!-- module~diffstar_lorene&#45;&gt;iso_c_binding -->
-<g id="program~~convergence_test~~UsesGraph_edge23" class="edge">
-<title>module~diffstar_lorene&#45;&gt;iso_c_binding</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M316.8233,-79.9231C303.2787,-84.4924 287.6679,-89.7587 273.3481,-94.5895"/>
-<polygon fill="#000000" stroke="#000000" points="272.0385,-91.3374 263.6819,-97.8503 274.2761,-97.9701 272.0385,-91.3374"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M314.3531,-216.9822C302.2208,-213.7141 288.6625,-210.6295 276,-209.0017 233.6816,-203.5613 222.6653,-208.6631 180,-209.0017 171.7705,-209.067 162.9368,-209.1803 154.5649,-209.3077"/>
+<polygon fill="#000000" stroke="#000000" points="154.2296,-205.8126 144.2876,-209.4741 154.343,-212.8116 154.2296,-205.8126"/>
 </g>
 <!-- module~diffstar_base -->
-<g id="program~~convergence_test~~UsesGraph_node13" class="node">
+<g id="program~~convergence_test~~UsesGraph_node15" class="node">
 <title>module~diffstar_base</title>
-<g id="a_program~~convergence_test~~UsesGraph_node13"><a xlink:href=".././module/diffstar_base.html" xlink:title="diffstar_base">
-<polygon fill="#337ab7" stroke="#337ab7" points="265,-79.8876 191,-79.8876 191,-55.8876 265,-55.8876 265,-79.8876"/>
-<text text-anchor="middle" x="228" y="-65.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_base</text>
+<g id="a_program~~convergence_test~~UsesGraph_node15"><a xlink:href=".././module/diffstar_base.html" xlink:title="diffstar_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="265,-242.0017 191,-242.0017 191,-218.0017 265,-218.0017 265,-242.0017"/>
+<text text-anchor="middle" x="228" y="-227.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstar_base</text>
 </a>
 </g>
 </g>
 <!-- module~diffstar_lorene&#45;&gt;module~diffstar_base -->
-<g id="program~~convergence_test~~UsesGraph_edge20" class="edge">
+<g id="program~~convergence_test~~UsesGraph_edge30" class="edge">
 <title>module~diffstar_lorene&#45;&gt;module~diffstar_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M311.734,-67.8876C300.1059,-67.8876 287.3378,-67.8876 275.3524,-67.8876"/>
-<polygon fill="#000000" stroke="#000000" points="275.0697,-64.3877 265.0696,-67.8876 275.0696,-71.3877 275.0697,-64.3877"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M311.734,-229.3291C300.1059,-229.4225 287.3378,-229.5251 275.3524,-229.6213"/>
+<polygon fill="#000000" stroke="#000000" points="275.0412,-226.1236 265.0696,-229.7039 275.0975,-233.1234 275.0412,-226.1236"/>
 </g>
-<!-- module~bns_lorene&#45;&gt;module~id_base -->
-<g id="program~~convergence_test~~UsesGraph_edge24" class="edge">
-<title>module~bns_lorene&#45;&gt;module~id_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-229.8876C214.7209,-236.6769 180.6342,-248.6846 153.7078,-257.7774"/>
-<polygon fill="#000000" stroke="#000000" points="152.5302,-254.4807 144.1633,-260.9804 154.7573,-261.1169 152.5302,-254.4807"/>
+<!-- iso_c_binding -->
+<g id="program~~convergence_test~~UsesGraph_node16" class="node">
+<title>iso_c_binding</title>
+<g id="a_program~~convergence_test~~UsesGraph_node16"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="267,-162.0017 189,-162.0017 189,-138.0017 267,-138.0017 267,-162.0017"/>
+<text text-anchor="middle" x="228" y="-147.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">iso_c_binding</text>
+</a>
+</g>
+</g>
+<!-- module~diffstar_lorene&#45;&gt;iso_c_binding -->
+<g id="program~~convergence_test~~UsesGraph_edge28" class="edge">
+<title>module~diffstar_lorene&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M336.1359,-216.8862C320.8792,-205.7794 297.3353,-189.1163 276,-176.0017 271.1556,-173.0239 265.9454,-170.0137 260.8068,-167.1499"/>
+<polygon fill="#000000" stroke="#000000" points="262.1833,-163.9137 251.7293,-162.1917 258.8277,-170.0571 262.1833,-163.9137"/>
 </g>
 <!-- module~bns_lorene&#45;&gt;timing -->
-<g id="program~~convergence_test~~UsesGraph_edge25" class="edge">
+<g id="program~~convergence_test~~UsesGraph_edge35" class="edge">
 <title>module~bns_lorene&#45;&gt;timing</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M328.9363,-121.9335C322.8907,-125.8025 316.7586,-130.5034 312,-135.8876 287.5141,-163.5923 303.0515,-185.6819 276,-210.8876 259.2137,-226.5286 248.4286,-219.4429 228,-229.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-229.8876C184.0749,-252.3457 166.3233,-228.8911 117,-229.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M117,-229.8876C99.4093,-230.243 80.3317,-233.9806 64.2872,-238.1303"/>
-<polygon fill="#000000" stroke="#000000" points="62.948,-234.8681 54.2278,-240.8854 64.7972,-241.6195 62.948,-234.8681"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M349.872,-137.8475C343.1683,-110.2253 322.5648,-43.0368 276,-16.0017 239.1015,5.4213 217.0195,5.2115 180,-16.0017 83.9032,-71.0677 113.0123,-137.2765 54,-231.0017 49.9809,-237.385 45.4493,-244.2257 41.2627,-250.4127"/>
+<polygon fill="#000000" stroke="#000000" points="38.2287,-248.6491 35.4758,-258.8801 44.0079,-252.5989 38.2287,-248.6491"/>
+</g>
+<!-- module~bns_lorene&#45;&gt;module~id_base -->
+<g id="program~~convergence_test~~UsesGraph_edge36" class="edge">
+<title>module~bns_lorene&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M329.1046,-137.9143C293.4361,-121.3579 224.8773,-97.1039 180,-129.0017 179.151,-129.6051 141.0449,-240.1221 124.5171,-288.1445"/>
+<polygon fill="#000000" stroke="#000000" points="121.1068,-287.2987 121.1629,-297.8934 127.726,-289.5762 121.1068,-287.2987"/>
 </g>
 <!-- module~bns_lorene&#45;&gt;module~utility -->
-<g id="program~~convergence_test~~UsesGraph_edge26" class="edge">
+<g id="program~~convergence_test~~UsesGraph_edge37" class="edge">
 <title>module~bns_lorene&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M333.9171,-121.955C309.9271,-136.1025 266.6628,-156.7998 228,-149.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-149.8876C201.3439,-145.122 172.7101,-134.3942 151.2022,-125.1075"/>
-<polygon fill="#000000" stroke="#000000" points="152.4152,-121.8169 141.8543,-120.9686 149.5812,-128.2176 152.4152,-121.8169"/>
-</g>
-<!-- module~bns_lorene&#45;&gt;iso_c_binding -->
-<g id="program~~convergence_test~~UsesGraph_edge27" class="edge">
-<title>module~bns_lorene&#45;&gt;iso_c_binding</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M319.4631,-109.8876C306.5941,-109.8876 291.5709,-109.8876 277.4634,-109.8876"/>
-<polygon fill="#000000" stroke="#000000" points="277.3966,-106.3877 267.3966,-109.8876 277.3966,-113.3877 277.3966,-106.3877"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M328.9363,-137.9558C322.8907,-134.0867 316.7586,-129.3859 312,-124.0017 287.5141,-96.2969 303.0515,-74.2074 276,-49.0017 259.2137,-33.3607 250.6102,-26.1028 228,-30.0017"/>
 </g>
 <!-- module~bns_base -->
-<g id="program~~convergence_test~~UsesGraph_node15" class="node">
+<g id="program~~convergence_test~~UsesGraph_node14" class="node">
 <title>module~bns_base</title>
-<g id="a_program~~convergence_test~~UsesGraph_node15"><a xlink:href=".././module/bns_base.html" xlink:title="bns_base">
-<polygon fill="#337ab7" stroke="#337ab7" points="257.5,-201.8876 198.5,-201.8876 198.5,-177.8876 257.5,-177.8876 257.5,-201.8876"/>
-<text text-anchor="middle" x="228" y="-187.4876" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_base</text>
+<g id="a_program~~convergence_test~~UsesGraph_node14"><a xlink:href=".././module/bns_base.html" xlink:title="bns_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="257.5,-82.0017 198.5,-82.0017 198.5,-58.0017 257.5,-58.0017 257.5,-82.0017"/>
+<text text-anchor="middle" x="228" y="-67.6017" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bns_base</text>
 </a>
 </g>
 </g>
 <!-- module~bns_lorene&#45;&gt;module~bns_base -->
-<g id="program~~convergence_test~~UsesGraph_edge28" class="edge">
-<title>module~bns_lorene&#45;&gt;module~bns_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M332.8993,-121.9687C326.1855,-126.2386 318.6839,-131.1574 312,-135.8876 295.4545,-147.597 292.969,-152.8008 276,-163.8876 271.3388,-166.9331 266.289,-169.95 261.2745,-172.7912"/>
-<polygon fill="#000000" stroke="#000000" points="259.4538,-169.798 252.3779,-177.6836 262.8269,-175.9317 259.4538,-169.798"/>
-</g>
-<!-- module~formul_bssn_id&#45;&gt;module~formul_3p1_id -->
-<g id="program~~convergence_test~~UsesGraph_edge30" class="edge">
-<title>module~formul_bssn_id&#45;&gt;module~formul_3p1_id</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M435.7961,-161.8889C424.0197,-165.8474 410.7542,-170.3064 398.3296,-174.4827"/>
-<polygon fill="#000000" stroke="#000000" points="396.9537,-171.2527 388.59,-177.7565 399.184,-177.8879 396.9537,-171.2527"/>
-</g>
-<!-- module~formul_bssn_id&#45;&gt;module~id_base -->
-<g id="program~~convergence_test~~UsesGraph_edge29" class="edge">
-<title>module~formul_bssn_id&#45;&gt;module~id_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-389.8876C305.4014,-418.9306 276.8772,-415.8259 228,-389.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-389.8876C207.7332,-379.1324 196.7863,-386.5286 180,-370.8876 152.9485,-345.6819 165.6604,-325.8532 144,-295.8876 142.4322,-293.7187 140.6714,-291.5757 138.8199,-289.5062"/>
-<polygon fill="#000000" stroke="#000000" points="140.9485,-286.6779 131.4473,-281.9897 135.9511,-291.5797 140.9485,-286.6779"/>
-</g>
-<!-- module~formul_bssn_id&#45;&gt;timing -->
-<g id="program~~convergence_test~~UsesGraph_edge31" class="edge">
-<title>module~formul_bssn_id&#45;&gt;timing</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-389.8876C327.8782,-405.0705 255.3446,-437.3229 228,-427.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-427.8876C205.4531,-420.1078 197.9002,-419.6506 180,-403.8876 142.2557,-370.6498 160.1812,-335.6707 117,-309.8876"/>
-</g>
-<!-- module~formul_bssn_id&#45;&gt;module~utility -->
-<g id="program~~convergence_test~~UsesGraph_edge32" class="edge">
-<title>module~formul_bssn_id&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M446.283,-137.7837C440.0834,-133.9652 433.8429,-129.304 429,-123.8876 403.8197,-95.7254 423.6573,-68.9623 393,-46.8876 333.0955,-3.7537 299.7794,-10.6594 228,-27.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228,-27.8876C205.6588,-33.1116 199.2274,-34.3685 180,-46.8876 162.3215,-58.3982 145.4629,-75.4247 133.6413,-88.7241"/>
-<polygon fill="#000000" stroke="#000000" points="130.8624,-86.5869 126.9693,-96.4406 136.1575,-91.1653 130.8624,-86.5869"/>
-</g>
-<!-- module~formul_bssn_id&#45;&gt;module~particles_id -->
 <g id="program~~convergence_test~~UsesGraph_edge33" class="edge">
-<title>module~formul_bssn_id&#45;&gt;module~particles_id</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M428.8711,-140.8595C405.1694,-137.9895 375.839,-138.1274 352.5,-149.8876"/>
+<title>module~bns_lorene&#45;&gt;module~bns_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M332.8993,-137.9205C326.1855,-133.6507 318.6839,-128.7319 312,-124.0017 295.4545,-112.2923 292.969,-107.0885 276,-96.0017 271.3388,-92.9562 266.289,-89.9392 261.2745,-87.0981"/>
+<polygon fill="#000000" stroke="#000000" points="262.8269,-83.9575 252.3779,-82.2057 259.4538,-90.0912 262.8269,-83.9575"/>
 </g>
-<!-- module~formul_bssn_id&#45;&gt;mesh_refinement -->
+<!-- module~bns_lorene&#45;&gt;iso_c_binding -->
 <g id="program~~convergence_test~~UsesGraph_edge34" class="edge">
-<title>module~formul_bssn_id&#45;&gt;mesh_refinement</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M469.9126,-162.0576C463.8181,-203.1739 437.8082,-337.283 352.5,-389.8876"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M352.5,-389.8876C337.0014,-399.4447 292.0452,-381.3206 260.6317,-366.4525"/>
-<polygon fill="#000000" stroke="#000000" points="261.8921,-363.1744 251.3651,-361.977 258.8478,-369.4778 261.8921,-363.1744"/>
-</g>
-<!-- module~diffstar_base&#45;&gt;module~id_base -->
-<g id="program~~convergence_test~~UsesGraph_edge35" class="edge">
-<title>module~diffstar_base&#45;&gt;module~id_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.8953,-79.7098C186.798,-82.2232 183.0228,-85.2497 180,-88.8876 134.8028,-143.2833 178.9095,-182.3815 144,-243.8876 142.7352,-246.116 141.2207,-248.274 139.5633,-250.3306"/>
-<polygon fill="#000000" stroke="#000000" points="136.9548,-247.9958 132.6884,-257.6937 142.0713,-252.7731 136.9548,-247.9958"/>
-</g>
-<!-- module~diffstar_base&#45;&gt;module~utility -->
-<g id="program~~convergence_test~~UsesGraph_edge36" class="edge">
-<title>module~diffstar_base&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M195.2967,-79.9672C182.226,-84.7951 167.1135,-90.3772 153.6724,-95.342"/>
-<polygon fill="#000000" stroke="#000000" points="152.4014,-92.0802 144.2336,-98.8284 154.8269,-98.6466 152.4014,-92.0802"/>
+<title>module~bns_lorene&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M319.4631,-150.0017C306.5941,-150.0017 291.5709,-150.0017 277.4634,-150.0017"/>
+<polygon fill="#000000" stroke="#000000" points="277.3966,-146.5018 267.3966,-150.0017 277.3966,-153.5018 277.3966,-146.5018"/>
 </g>
 <!-- module~bns_base&#45;&gt;module~id_base -->
-<g id="program~~convergence_test~~UsesGraph_edge37" class="edge">
+<g id="program~~convergence_test~~UsesGraph_edge38" class="edge">
 <title>module~bns_base&#45;&gt;module~id_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M202.9866,-202.1436C195.4034,-206.1986 187.1838,-210.9463 180,-215.8876 164.7634,-226.3681 148.9656,-239.9166 137.001,-250.8207"/>
-<polygon fill="#000000" stroke="#000000" points="134.3414,-248.5133 129.3842,-257.8769 139.0986,-253.6485 134.3414,-248.5133"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M198.2866,-81.2488C191.4642,-85.0371 184.8106,-89.8982 180,-96.0017 141.5612,-144.7711 162.0519,-171.5868 144,-231.0017 138.1116,-250.3825 130.606,-272.1458 125.0036,-287.9148"/>
+<polygon fill="#000000" stroke="#000000" points="121.5503,-287.1767 121.4724,-297.7712 128.1401,-289.5376 121.5503,-287.1767"/>
 </g>
 <!-- module~bns_base&#45;&gt;module~utility -->
-<g id="program~~convergence_test~~UsesGraph_edge38" class="edge">
+<g id="program~~convergence_test~~UsesGraph_edge39" class="edge">
 <title>module~bns_base&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M202.9589,-177.6717C195.3746,-173.6183 187.1613,-168.8615 180,-163.8876 164.6914,-153.2549 148.8938,-139.4554 136.9473,-128.3389"/>
-<polygon fill="#000000" stroke="#000000" points="139.0138,-125.4757 129.3452,-121.1434 134.2019,-130.5595 139.0138,-125.4757"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M199.2675,-82.124C192.4263,-85.8956 185.5183,-90.5297 180,-96.0017 153.0243,-122.7507 134.3223,-163.4873 124.6523,-188.333"/>
+<polygon fill="#000000" stroke="#000000" points="121.2911,-187.3287 121.0632,-197.9211 127.8469,-189.7828 121.2911,-187.3287"/>
+</g>
+<!-- module~diffstar_base&#45;&gt;module~id_base -->
+<g id="program~~convergence_test~~UsesGraph_edge40" class="edge">
+<title>module~diffstar_base&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M202.9866,-242.2576C195.4034,-246.3127 187.1838,-251.0603 180,-256.0017 164.7634,-266.4822 148.9656,-280.0307 137.001,-290.9347"/>
+<polygon fill="#000000" stroke="#000000" points="134.3414,-288.6274 129.3842,-297.9909 139.0986,-293.7625 134.3414,-288.6274"/>
+</g>
+<!-- module~diffstar_base&#45;&gt;module~utility -->
+<g id="program~~convergence_test~~UsesGraph_edge41" class="edge">
+<title>module~diffstar_base&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.7298,-223.2863C178.9414,-221.1623 165.9186,-218.8158 154.1394,-216.6934"/>
+<polygon fill="#000000" stroke="#000000" points="154.6325,-213.226 144.1703,-214.8972 153.3912,-220.1151 154.6325,-213.226"/>
 </g>
 </g>
 </svg>
@@ -788,502 +837,415 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: program~~convergence_test~~CallsGraph Pages: 1 -->
-<svg id="programconvergence_testCallsGraph" width="641pt" height="186pt"
- viewBox="0.00 0.00 641.00 186.44" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="program~~convergence_test~~CallsGraph" class="graph" transform="scale(.4125 .4125) rotate(0) translate(4 448)">
+<svg id="programconvergence_testCallsGraph" width="641pt" height="242pt"
+ viewBox="0.00 0.00 641.00 241.85" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~convergence_test~~CallsGraph" class="graph" transform="scale(.5351 .5351) rotate(0) translate(4 448)">
 <title>program~~convergence_test~~CallsGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-448 1550,-448 1550,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-448 1194,-448 1194,4 -4,4"/>
 <!-- program~convergence_test -->
 <g id="program~~convergence_test~~CallsGraph_node1" class="node">
 <title>program~convergence_test</title>
-<polygon fill="none" stroke="#000000" points="97,-152 0,-152 0,-128 97,-128 97,-152"/>
-<text text-anchor="middle" x="48.5" y="-137.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">convergence_test</text>
-</g>
-<!-- proc~cauchy_convergence_test_unknown -->
-<g id="program~~convergence_test~~CallsGraph_node2" class="node">
-<title>proc~cauchy_convergence_test_unknown</title>
-<g id="a_program~~convergence_test~~CallsGraph_node2"><a xlink:href=".././proc/cauchy_convergence_test_unknown.html" xlink:title="cauchy_convergence_test_unknown">
-<polygon fill="#d9534f" stroke="#d9534f" points="319,-274 133,-274 133,-250 319,-250 319,-274"/>
-<text text-anchor="middle" x="226" y="-259.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">cauchy_convergence_test_unknown</text>
-</a>
-</g>
-</g>
-<!-- program~convergence_test&#45;&gt;proc~cauchy_convergence_test_unknown -->
-<g id="program~~convergence_test~~CallsGraph_edge1" class="edge">
-<title>program~convergence_test&#45;&gt;proc~cauchy_convergence_test_unknown</title>
-<path fill="none" stroke="#000000" d="M55.0606,-152.1648C67.3369,-173.6942 95.9248,-218.3659 133,-241 135.9867,-242.8233 139.1143,-244.4888 142.3392,-246.0099"/>
-<polygon fill="#000000" stroke="#000000" points="141.0742,-249.2747 151.649,-249.926 143.7884,-242.8224 141.0742,-249.2747"/>
-</g>
-<!-- interface~bnslorene -->
-<g id="program~~convergence_test~~CallsGraph_node3" class="node">
-<title>interface~bnslorene</title>
-<g id="a_program~~convergence_test~~CallsGraph_node3"><a xlink:href=".././interface/bnslorene.html" xlink:title="bnslorene">
-<polygon fill="#a7506f" stroke="#a7506f" points="256,-152 196,-152 196,-128 256,-128 256,-152"/>
-<text text-anchor="middle" x="226" y="-137.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bnslorene</text>
-</a>
-</g>
-</g>
-<!-- program~convergence_test&#45;&gt;interface~bnslorene -->
-<g id="program~~convergence_test~~CallsGraph_edge2" class="edge">
-<title>program~convergence_test&#45;&gt;interface~bnslorene</title>
-<path fill="none" stroke="#000000" d="M97.0027,-140C124.9126,-140 159.5598,-140 185.917,-140"/>
-<polygon fill="#000000" stroke="#000000" points="185.9398,-143.5001 195.9398,-140 185.9397,-136.5001 185.9398,-143.5001"/>
+<polygon fill="none" stroke="#000000" points="97,-190 0,-190 0,-166 97,-166 97,-190"/>
+<text text-anchor="middle" x="48.5" y="-175.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">convergence_test</text>
 </g>
 <!-- proc~read_bns_id_parameters -->
-<g id="program~~convergence_test~~CallsGraph_node4" class="node">
+<g id="program~~convergence_test~~CallsGraph_node2" class="node">
 <title>proc~read_bns_id_parameters</title>
-<g id="a_program~~convergence_test~~CallsGraph_node4"><a xlink:href=".././proc/read_bns_id_parameters.html" xlink:title="read_bns_id_parameters">
-<polygon fill="#d9534f" stroke="#d9534f" points="292.5,-68 159.5,-68 159.5,-44 292.5,-44 292.5,-68"/>
-<text text-anchor="middle" x="226" y="-53.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_bns_id_parameters</text>
+<g id="a_program~~convergence_test~~CallsGraph_node2"><a xlink:href=".././proc/read_bns_id_parameters.html" xlink:title="read_bns_id_parameters">
+<polygon fill="#d9534f" stroke="#d9534f" points="292.5,-336 159.5,-336 159.5,-312 292.5,-312 292.5,-336"/>
+<text text-anchor="middle" x="226" y="-321.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_bns_id_parameters</text>
 </a>
 </g>
 </g>
 <!-- program~convergence_test&#45;&gt;proc~read_bns_id_parameters -->
-<g id="program~~convergence_test~~CallsGraph_edge3" class="edge">
+<g id="program~~convergence_test~~CallsGraph_edge1" class="edge">
 <title>program~convergence_test&#45;&gt;proc~read_bns_id_parameters</title>
-<path fill="none" stroke="#000000" d="M61.1343,-127.851C76.7513,-113.5205 104.7419,-90.0066 133,-77 138.2979,-74.5615 143.8991,-72.3965 149.6199,-70.4758"/>
-<polygon fill="#000000" stroke="#000000" points="150.8111,-73.7709 159.3278,-67.4689 148.74,-67.0843 150.8111,-73.7709"/>
+<path fill="none" stroke="#000000" d="M53.1058,-190.2203C63.319,-215.5624 90.387,-273.8956 133,-303 138.2026,-306.5533 143.914,-309.5143 149.8679,-311.9804"/>
+<polygon fill="#000000" stroke="#000000" points="148.7916,-315.3135 159.3854,-315.4625 151.1968,-308.7396 148.7916,-315.3135"/>
+</g>
+<!-- proc~allocate_idbase -->
+<g id="program~~convergence_test~~CallsGraph_node3" class="node">
+<title>proc~allocate_idbase</title>
+<g id="a_program~~convergence_test~~CallsGraph_node3"><a xlink:href=".././proc/allocate_idbase.html" xlink:title="allocate_idbase">
+<polygon fill="#d9534f" stroke="#d9534f" points="269.5,-294 182.5,-294 182.5,-270 269.5,-270 269.5,-294"/>
+<text text-anchor="middle" x="226" y="-279.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_idbase</text>
+</a>
+</g>
+</g>
+<!-- program~convergence_test&#45;&gt;proc~allocate_idbase -->
+<g id="program~~convergence_test~~CallsGraph_edge2" class="edge">
+<title>program~convergence_test&#45;&gt;proc~allocate_idbase</title>
+<path fill="none" stroke="#000000" d="M57.1352,-190.003C70.9786,-208.3116 99.9624,-242.9831 133,-261 144.9275,-267.5046 158.7667,-271.9969 172.0656,-275.0987"/>
+<polygon fill="#000000" stroke="#000000" points="171.5827,-278.5737 182.0894,-277.2099 173.0254,-271.724 171.5827,-278.5737"/>
+</g>
+<!-- proc~cauchy_convergence_test_unknown -->
+<g id="program~~convergence_test~~CallsGraph_node4" class="node">
+<title>proc~cauchy_convergence_test_unknown</title>
+<g id="a_program~~convergence_test~~CallsGraph_node4"><a xlink:href=".././proc/cauchy_convergence_test_unknown.html" xlink:title="cauchy_convergence_test_unknown">
+<polygon fill="#d9534f" stroke="#d9534f" points="319,-252 133,-252 133,-228 319,-228 319,-252"/>
+<text text-anchor="middle" x="226" y="-237.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">cauchy_convergence_test_unknown</text>
+</a>
+</g>
+</g>
+<!-- program~convergence_test&#45;&gt;proc~cauchy_convergence_test_unknown -->
+<g id="program~~convergence_test~~CallsGraph_edge3" class="edge">
+<title>program~convergence_test&#45;&gt;proc~cauchy_convergence_test_unknown</title>
+<path fill="none" stroke="#000000" d="M69.7971,-190.0318C86.5405,-199.0687 110.6858,-211.1841 133,-219 139.5074,-221.2793 146.3595,-223.3729 153.2718,-225.2809"/>
+<polygon fill="#000000" stroke="#000000" points="152.8479,-228.7882 163.409,-227.9434 154.6262,-222.0178 152.8479,-228.7882"/>
+</g>
+<!-- timer -->
+<g id="program~~convergence_test~~CallsGraph_node5" class="node">
+<title>timer</title>
+<polygon fill="#777777" stroke="#777777" points="750.5,-150 696.5,-150 696.5,-126 750.5,-126 750.5,-150"/>
+<text text-anchor="middle" x="723.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
+</g>
+<!-- program~convergence_test&#45;&gt;timer -->
+<g id="program~~convergence_test~~CallsGraph_edge4" class="edge">
+<title>program~convergence_test&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" d="M97.0443,-175.1233C225.4382,-167.5148 571.9275,-146.9821 686.302,-140.2043"/>
+<polygon fill="#000000" stroke="#000000" points="686.546,-143.6961 696.3215,-139.6106 686.1319,-136.7084 686.546,-143.6961"/>
 </g>
 <!-- interface~particles -->
-<g id="program~~convergence_test~~CallsGraph_node5" class="node">
+<g id="program~~convergence_test~~CallsGraph_node6" class="node">
 <title>interface~particles</title>
-<g id="a_program~~convergence_test~~CallsGraph_node5"><a xlink:href=".././interface/particles.html" xlink:title="particles">
-<polygon fill="#a7506f" stroke="#a7506f" points="253,-232 199,-232 199,-208 253,-208 253,-232"/>
-<text text-anchor="middle" x="226" y="-217.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles</text>
+<g id="a_program~~convergence_test~~CallsGraph_node6"><a xlink:href=".././interface/particles.html" xlink:title="particles">
+<polygon fill="#a7506f" stroke="#a7506f" points="253,-210 199,-210 199,-186 253,-186 253,-210"/>
+<text text-anchor="middle" x="226" y="-195.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles</text>
 </a>
 </g>
 </g>
 <!-- program~convergence_test&#45;&gt;interface~particles -->
-<g id="program~~convergence_test~~CallsGraph_edge4" class="edge">
-<title>program~convergence_test&#45;&gt;interface~particles</title>
-<path fill="none" stroke="#000000" d="M64.2025,-152.0614C80.5882,-164.1471 107.4134,-182.5545 133,-194 150.7821,-201.9543 171.5813,-208.0443 188.9955,-212.3236"/>
-<polygon fill="#000000" stroke="#000000" points="188.2731,-215.7491 198.8091,-214.6344 189.8775,-208.9355 188.2731,-215.7491"/>
-</g>
-<!-- timer -->
-<g id="program~~convergence_test~~CallsGraph_node6" class="node">
-<title>timer</title>
-<polygon fill="#777777" stroke="#777777" points="759.5,-192 705.5,-192 705.5,-168 759.5,-168 759.5,-192"/>
-<text text-anchor="middle" x="732.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
-</g>
-<!-- program~convergence_test&#45;&gt;timer -->
 <g id="program~~convergence_test~~CallsGraph_edge5" class="edge">
-<title>program~convergence_test&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" d="M89.4186,-152.0223C103.1491,-155.5581 118.6255,-159.009 133,-161 344.0542,-190.2331 600.7123,-184.8736 695.2445,-181.5442"/>
-<polygon fill="#000000" stroke="#000000" points="695.5748,-185.0346 705.4398,-181.1704 695.3183,-178.0393 695.5748,-185.0346"/>
+<title>program~convergence_test&#45;&gt;interface~particles</title>
+<path fill="none" stroke="#000000" d="M97.0027,-183.4651C125.9094,-186.7222 162.0432,-190.7936 188.7085,-193.7981"/>
+<polygon fill="#000000" stroke="#000000" points="188.4588,-197.2921 198.7879,-194.9338 189.2427,-190.3361 188.4588,-197.2921"/>
 </g>
 <!-- proc~cauchy_convergence_test_known -->
 <g id="program~~convergence_test~~CallsGraph_node7" class="node">
 <title>proc~cauchy_convergence_test_known</title>
 <g id="a_program~~convergence_test~~CallsGraph_node7"><a xlink:href=".././proc/cauchy_convergence_test_known.html" xlink:title="cauchy_convergence_test_known">
-<polygon fill="#d9534f" stroke="#d9534f" points="313,-26 139,-26 139,-2 313,-2 313,-26"/>
-<text text-anchor="middle" x="226" y="-11.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">cauchy_convergence_test_known</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="313,-130 139,-130 139,-106 313,-106 313,-130"/>
+<text text-anchor="middle" x="226" y="-115.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">cauchy_convergence_test_known</text>
 </a>
 </g>
 </g>
 <!-- program~convergence_test&#45;&gt;proc~cauchy_convergence_test_known -->
 <g id="program~~convergence_test~~CallsGraph_edge6" class="edge">
 <title>program~convergence_test&#45;&gt;proc~cauchy_convergence_test_known</title>
-<path fill="none" stroke="#000000" d="M54.7421,-127.7039C66.7053,-105.4585 95.0779,-58.6497 133,-35 135.809,-33.2482 138.7467,-31.642 141.7759,-30.1692"/>
-<polygon fill="#000000" stroke="#000000" points="143.3096,-33.3193 151.1005,-26.1394 140.5326,-26.8937 143.3096,-33.3193"/>
+<path fill="none" stroke="#000000" d="M76.3766,-165.8844C92.7105,-159.0125 113.8355,-150.5125 133,-144 144.5331,-140.0808 157.0108,-136.292 168.968,-132.8752"/>
+<polygon fill="#000000" stroke="#000000" points="170.1763,-136.1713 178.8575,-130.0979 168.2836,-129.4321 170.1763,-136.1713"/>
 </g>
 <!-- interface~bssn_id -->
 <g id="program~~convergence_test~~CallsGraph_node8" class="node">
 <title>interface~bssn_id</title>
 <g id="a_program~~convergence_test~~CallsGraph_node8"><a xlink:href=".././interface/bssn_id.html" xlink:title="bssn_id">
-<polygon fill="#a7506f" stroke="#a7506f" points="253,-110 199,-110 199,-86 253,-86 253,-110"/>
-<text text-anchor="middle" x="226" y="-95.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id</text>
+<polygon fill="#a7506f" stroke="#a7506f" points="253,-88 199,-88 199,-64 253,-64 253,-88"/>
+<text text-anchor="middle" x="226" y="-73.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id</text>
 </a>
 </g>
 </g>
 <!-- program~convergence_test&#45;&gt;interface~bssn_id -->
 <g id="program~~convergence_test~~CallsGraph_edge7" class="edge">
 <title>program~convergence_test&#45;&gt;interface~bssn_id</title>
-<path fill="none" stroke="#000000" d="M96.2726,-127.9373C108.252,-124.9649 121.0861,-121.8252 133,-119 151.2724,-114.667 171.6147,-110.05 188.6035,-106.2518"/>
-<polygon fill="#000000" stroke="#000000" points="189.6999,-109.5935 198.6995,-104.0026 188.1777,-102.761 189.6999,-109.5935"/>
+<path fill="none" stroke="#000000" d="M57.4335,-165.9976C71.4568,-148.0627 100.422,-114.5095 133,-97 150.0631,-87.8292 170.9613,-82.6546 188.6221,-79.739"/>
+<polygon fill="#000000" stroke="#000000" points="189.2098,-83.1902 198.593,-78.2702 188.1896,-76.265 189.2098,-83.1902"/>
 </g>
-<!-- interface~construct_bnslorene -->
+<!-- makedirqq -->
 <g id="program~~convergence_test~~CallsGraph_node9" class="node">
-<title>interface~construct_bnslorene</title>
-<g id="a_program~~convergence_test~~CallsGraph_node9"><a xlink:href=".././interface/construct_bnslorene.html" xlink:title="construct_bnslorene">
-<polygon fill="#a7506f" stroke="#a7506f" points="464,-152 355,-152 355,-128 464,-128 464,-152"/>
-<text text-anchor="middle" x="409.5" y="-137.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_bnslorene</text>
-</a>
+<title>makedirqq</title>
+<polygon fill="#777777" stroke="#777777" points="257.5,-46 194.5,-46 194.5,-22 257.5,-22 257.5,-46"/>
+<text text-anchor="middle" x="226" y="-31.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">makedirqq</text>
 </g>
-</g>
-<!-- interface~bnslorene&#45;&gt;interface~construct_bnslorene -->
+<!-- program~convergence_test&#45;&gt;makedirqq -->
 <g id="program~~convergence_test~~CallsGraph_edge8" class="edge">
-<title>interface~bnslorene&#45;&gt;interface~construct_bnslorene</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M256.3013,-140C280.2629,-140 314.5732,-140 344.6519,-140"/>
-<polygon fill="#000000" stroke="#000000" points="344.6693,-143.5001 354.6692,-140 344.6692,-136.5001 344.6693,-143.5001"/>
+<title>program~convergence_test&#45;&gt;makedirqq</title>
+<path fill="none" stroke="#000000" d="M53.163,-165.9733C63.4845,-141.0333 90.7461,-83.6272 133,-55 147.9796,-44.8513 167.1233,-39.5406 184.1437,-36.7868"/>
+<polygon fill="#000000" stroke="#000000" points="184.9775,-40.2054 194.4107,-35.3821 184.0286,-33.27 184.9775,-40.2054"/>
 </g>
 <!-- interface~construct_particles -->
-<g id="program~~convergence_test~~CallsGraph_node10" class="node">
+<g id="program~~convergence_test~~CallsGraph_node11" class="node">
 <title>interface~construct_particles</title>
-<g id="a_program~~convergence_test~~CallsGraph_node10"><a xlink:href=".././interface/construct_particles.html" xlink:title="construct_particles">
-<polygon fill="#a7506f" stroke="#a7506f" points="460.5,-264 358.5,-264 358.5,-240 460.5,-240 460.5,-264"/>
-<text text-anchor="middle" x="409.5" y="-249.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_particles</text>
+<g id="a_program~~convergence_test~~CallsGraph_node11"><a xlink:href=".././interface/construct_particles.html" xlink:title="construct_particles">
+<polygon fill="#a7506f" stroke="#a7506f" points="457,-233 355,-233 355,-209 457,-209 457,-233"/>
+<text text-anchor="middle" x="406" y="-218.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_particles</text>
 </a>
 </g>
 </g>
 <!-- interface~particles&#45;&gt;interface~construct_particles -->
 <g id="program~~convergence_test~~CallsGraph_edge9" class="edge">
 <title>interface~particles&#45;&gt;interface~construct_particles</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M253.0761,-224.7217C277.9946,-229.0672 315.8628,-235.6709 348.0985,-241.2924"/>
-<polygon fill="#000000" stroke="#000000" points="347.8905,-244.8088 358.3431,-243.0789 349.0931,-237.9129 347.8905,-244.8088"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M253.3381,-201.4932C277.4604,-204.5755 313.5053,-209.1812 344.514,-213.1435"/>
+<polygon fill="#000000" stroke="#000000" points="344.4494,-216.6636 354.8124,-214.4594 345.3367,-209.72 344.4494,-216.6636"/>
 </g>
 <!-- interface~construct_bssn_id -->
-<g id="program~~convergence_test~~CallsGraph_node11" class="node">
+<g id="program~~convergence_test~~CallsGraph_node10" class="node">
 <title>interface~construct_bssn_id</title>
-<g id="a_program~~convergence_test~~CallsGraph_node11"><a xlink:href=".././interface/construct_bssn_id.html" xlink:title="construct_bssn_id">
-<polygon fill="#a7506f" stroke="#a7506f" points="459,-109 360,-109 360,-85 459,-85 459,-109"/>
-<text text-anchor="middle" x="409.5" y="-94.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_bssn_id</text>
+<g id="a_program~~convergence_test~~CallsGraph_node10"><a xlink:href=".././interface/construct_bssn_id.html" xlink:title="construct_bssn_id">
+<polygon fill="#a7506f" stroke="#a7506f" points="455.5,-88 356.5,-88 356.5,-64 455.5,-64 455.5,-88"/>
+<text text-anchor="middle" x="406" y="-73.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_bssn_id</text>
 </a>
 </g>
 </g>
 <!-- interface~bssn_id&#45;&gt;interface~construct_bssn_id -->
 <g id="program~~convergence_test~~CallsGraph_edge10" class="edge">
 <title>interface~bssn_id&#45;&gt;interface~construct_bssn_id</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M253.0761,-97.8524C278.3545,-97.7147 316.9592,-97.5043 349.4914,-97.327"/>
-<polygon fill="#000000" stroke="#000000" points="349.8351,-100.8253 359.8158,-97.2708 349.7968,-93.8254 349.8351,-100.8253"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M253.3381,-76C277.8138,-76 314.5641,-76 345.8737,-76"/>
+<polygon fill="#000000" stroke="#000000" points="346.2576,-79.5001 356.2576,-76 346.2575,-72.5001 346.2576,-79.5001"/>
 </g>
-<!-- proc~construct_bnslorene -->
+<!-- proc~construct_bssn_id -->
 <g id="program~~convergence_test~~CallsGraph_node13" class="node">
-<title>proc~construct_bnslorene</title>
-<g id="a_program~~convergence_test~~CallsGraph_node13"><a xlink:href=".././proc/construct_bnslorene.html" xlink:title="construct_bnslorene">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="609,-152 500,-152 500,-128 609,-128 609,-152"/>
-<text text-anchor="middle" x="554.5" y="-137.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_bnslorene</text>
+<title>proc~construct_bssn_id</title>
+<g id="a_program~~convergence_test~~CallsGraph_node13"><a xlink:href=".././proc/construct_bssn_id.html" xlink:title="construct_bssn_id">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="593.5,-88 494.5,-88 494.5,-64 593.5,-64 593.5,-88"/>
+<text text-anchor="middle" x="544" y="-73.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_bssn_id</text>
 </a>
 </g>
 </g>
-<!-- interface~construct_bnslorene&#45;&gt;proc~construct_bnslorene -->
+<!-- interface~construct_bssn_id&#45;&gt;proc~construct_bssn_id -->
 <g id="program~~convergence_test~~CallsGraph_edge11" class="edge">
-<title>interface~construct_bnslorene&#45;&gt;proc~construct_bnslorene</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M464.3183,-140C472.5286,-140 481.0611,-140 489.4586,-140"/>
-<polygon fill="#000000" stroke="#000000" points="489.6042,-143.5001 499.6042,-140 489.6042,-136.5001 489.6042,-143.5001"/>
+<title>interface~construct_bssn_id&#45;&gt;proc~construct_bssn_id</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M455.8212,-76C465.006,-76 474.6834,-76 484.1285,-76"/>
+<polygon fill="#000000" stroke="#000000" points="484.252,-79.5001 494.252,-76 484.2519,-72.5001 484.252,-79.5001"/>
 </g>
 <!-- proc~construct_particles -->
 <g id="program~~convergence_test~~CallsGraph_node12" class="node">
 <title>proc~construct_particles</title>
 <g id="a_program~~convergence_test~~CallsGraph_node12"><a xlink:href=".././proc/construct_particles.html" xlink:title="construct_particles">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="605.5,-297 503.5,-297 503.5,-273 605.5,-273 605.5,-297"/>
-<text text-anchor="middle" x="554.5" y="-282.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_particles</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="595,-276 493,-276 493,-252 595,-252 595,-276"/>
+<text text-anchor="middle" x="544" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_particles</text>
 </a>
 </g>
 </g>
 <!-- interface~construct_particles&#45;&gt;proc~construct_particles -->
 <g id="program~~convergence_test~~CallsGraph_edge12" class="edge">
 <title>interface~construct_particles&#45;&gt;proc~construct_particles</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M460.6216,-263.6346C471.234,-266.0498 482.5175,-268.6178 493.4452,-271.1048"/>
-<polygon fill="#000000" stroke="#000000" points="492.8239,-274.5528 503.3513,-273.3593 494.3774,-267.7273 492.8239,-274.5528"/>
-</g>
-<!-- proc~construct_bssn_id -->
-<g id="program~~convergence_test~~CallsGraph_node14" class="node">
-<title>proc~construct_bssn_id</title>
-<g id="a_program~~convergence_test~~CallsGraph_node14"><a xlink:href=".././proc/construct_bssn_id.html" xlink:title="construct_bssn_id">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="604,-108 505,-108 505,-84 604,-84 604,-108"/>
-<text text-anchor="middle" x="554.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">construct_bssn_id</text>
-</a>
-</g>
-</g>
-<!-- interface~construct_bssn_id&#45;&gt;proc~construct_bssn_id -->
-<g id="program~~convergence_test~~CallsGraph_edge13" class="edge">
-<title>interface~construct_bssn_id&#45;&gt;proc~construct_bssn_id</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M459.4008,-96.6559C470.8057,-96.5772 483.0395,-96.4928 494.8084,-96.4117"/>
-<polygon fill="#000000" stroke="#000000" points="495.0229,-99.9104 504.9984,-96.3414 494.9745,-92.9105 495.0229,-99.9104"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M444.8079,-233.0923C460.6686,-238.0344 479.1805,-243.8026 495.8882,-249.0086"/>
+<polygon fill="#000000" stroke="#000000" points="494.8949,-252.365 505.4834,-251.9984 496.9773,-245.682 494.8949,-252.365"/>
 </g>
 <!-- proc~construct_particles&#45;&gt;timer -->
-<g id="program~~convergence_test~~CallsGraph_edge15" class="edge">
+<g id="program~~convergence_test~~CallsGraph_edge18" class="edge">
 <title>proc~construct_particles&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" d="M563.9446,-272.9237C579.0335,-254.49 610.4211,-219.5265 645,-201 660.3627,-192.7691 678.953,-187.7239 695.0402,-184.651"/>
-<polygon fill="#000000" stroke="#000000" points="695.9303,-188.0493 705.1912,-182.9028 694.7422,-181.1508 695.9303,-188.0493"/>
-</g>
-<!-- proc~check_particle_positions -->
-<g id="program~~convergence_test~~CallsGraph_node16" class="node">
-<title>proc~check_particle_positions</title>
-<g id="a_program~~convergence_test~~CallsGraph_node16"><a xlink:href=".././proc/check_particle_positions.html" xlink:title="check_particle_positions">
-<polygon fill="#d9534f" stroke="#d9534f" points="797,-318 668,-318 668,-294 797,-294 797,-318"/>
-<text text-anchor="middle" x="732.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">check_particle_positions</text>
-</a>
-</g>
-</g>
-<!-- proc~construct_particles&#45;&gt;proc~check_particle_positions -->
-<g id="program~~convergence_test~~CallsGraph_edge14" class="edge">
-<title>proc~construct_particles&#45;&gt;proc~check_particle_positions</title>
-<path fill="none" stroke="#000000" d="M605.5077,-291.0178C621.7385,-292.9326 640.0446,-295.0923 657.5998,-297.1635"/>
-<polygon fill="#000000" stroke="#000000" points="657.4866,-300.6743 667.8279,-298.3701 658.3069,-293.7225 657.4866,-300.6743"/>
+<path fill="none" stroke="#000000" d="M550.5275,-251.7088C563.0084,-229.4713 592.4768,-182.6749 631,-159 647.5367,-148.8371 668.4545,-143.5809 686.2135,-140.8675"/>
+<polygon fill="#000000" stroke="#000000" points="686.7904,-144.3218 696.2477,-139.5459 685.8763,-137.3818 686.7904,-144.3218"/>
 </g>
 <!-- read_options -->
-<g id="program~~convergence_test~~CallsGraph_node20" class="node">
+<g id="program~~convergence_test~~CallsGraph_node14" class="node">
 <title>read_options</title>
-<polygon fill="#777777" stroke="#777777" points="770,-276 695,-276 695,-252 770,-252 770,-276"/>
-<text text-anchor="middle" x="732.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_options</text>
+<polygon fill="#777777" stroke="#777777" points="761,-318 686,-318 686,-294 761,-294 761,-318"/>
+<text text-anchor="middle" x="723.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_options</text>
 </g>
 <!-- proc~construct_particles&#45;&gt;read_options -->
-<g id="program~~convergence_test~~CallsGraph_edge16" class="edge">
+<g id="program~~convergence_test~~CallsGraph_edge13" class="edge">
 <title>proc~construct_particles&#45;&gt;read_options</title>
-<path fill="none" stroke="#000000" d="M605.5077,-278.9822C630.4073,-276.0446 660.1911,-272.5308 684.6549,-269.6446"/>
-<polygon fill="#000000" stroke="#000000" points="685.2629,-273.0973 694.7839,-268.4496 684.4427,-266.1455 685.2629,-273.0973"/>
-</g>
-<!-- set_units -->
-<g id="program~~convergence_test~~CallsGraph_node21" class="node">
-<title>set_units</title>
-<polygon fill="#777777" stroke="#777777" points="760,-234 705,-234 705,-210 760,-210 760,-234"/>
-<text text-anchor="middle" x="732.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">set_units</text>
-</g>
-<!-- proc~construct_particles&#45;&gt;set_units -->
-<g id="program~~convergence_test~~CallsGraph_edge17" class="edge">
-<title>proc~construct_particles&#45;&gt;set_units</title>
-<path fill="none" stroke="#000000" d="M577.4103,-272.8166C595.3968,-263.6355 621.2804,-251.258 645,-243 661.0966,-237.396 679.3656,-232.7544 695.0317,-229.2727"/>
-<polygon fill="#000000" stroke="#000000" points="695.8592,-232.6749 704.9018,-227.1539 694.3899,-225.8309 695.8592,-232.6749"/>
-</g>
-<!-- ktable -->
-<g id="program~~convergence_test~~CallsGraph_node22" class="node">
-<title>ktable</title>
-<polygon fill="#777777" stroke="#777777" points="759.5,-444 705.5,-444 705.5,-420 759.5,-420 759.5,-444"/>
-<text text-anchor="middle" x="732.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ktable</text>
-</g>
-<!-- proc~construct_particles&#45;&gt;ktable -->
-<g id="program~~convergence_test~~CallsGraph_edge18" class="edge">
-<title>proc~construct_particles&#45;&gt;ktable</title>
-<path fill="none" stroke="#000000" d="M559.6881,-297.2769C571.1098,-322.7438 600.9635,-381.4044 645,-411 659.8179,-420.9587 678.8433,-426.2109 695.3667,-428.9742"/>
-<polygon fill="#000000" stroke="#000000" points="694.8763,-432.4396 705.2715,-430.3929 695.8688,-425.5103 694.8763,-432.4396"/>
-</g>
-<!-- alive -->
-<g id="program~~convergence_test~~CallsGraph_node23" class="node">
-<title>alive</title>
-<polygon fill="#777777" stroke="#777777" points="759.5,-402 705.5,-402 705.5,-378 759.5,-378 759.5,-402"/>
-<text text-anchor="middle" x="732.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alive</text>
-</g>
-<!-- proc~construct_particles&#45;&gt;alive -->
-<g id="program~~convergence_test~~CallsGraph_edge19" class="edge">
-<title>proc~construct_particles&#45;&gt;alive</title>
-<path fill="none" stroke="#000000" d="M563.9446,-297.0763C579.0335,-315.51 610.4211,-350.4735 645,-369 660.3627,-377.2309 678.953,-382.2761 695.0402,-385.349"/>
-<polygon fill="#000000" stroke="#000000" points="694.7422,-388.8492 705.1912,-387.0972 695.9303,-381.9507 694.7422,-388.8492"/>
+<path fill="none" stroke="#000000" d="M593.2031,-276.0001C605.5364,-278.974 618.7458,-282.1302 631,-285 645.4505,-288.3842 661.1908,-291.9883 675.5218,-295.2381"/>
+<polygon fill="#000000" stroke="#000000" points="675.1435,-298.7408 685.6693,-297.5335 676.688,-291.9133 675.1435,-298.7408"/>
 </g>
 <!-- interface~allocate_lorene_id_parts_memory -->
-<g id="program~~convergence_test~~CallsGraph_node24" class="node">
+<g id="program~~convergence_test~~CallsGraph_node15" class="node">
 <title>interface~allocate_lorene_id_parts_memory</title>
-<g id="a_program~~convergence_test~~CallsGraph_node24"><a xlink:href=".././interface/allocate_lorene_id_parts_memory.html" xlink:title="allocate_lorene_id_parts_memory">
-<polygon fill="#a7506f" stroke="#a7506f" points="820,-360 645,-360 645,-336 820,-336 820,-360"/>
-<text text-anchor="middle" x="732.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_lorene_id_parts_memory</text>
+<g id="a_program~~convergence_test~~CallsGraph_node15"><a xlink:href=".././interface/allocate_lorene_id_parts_memory.html" xlink:title="allocate_lorene_id_parts_memory">
+<polygon fill="#a7506f" stroke="#a7506f" points="811,-276 636,-276 636,-252 811,-252 811,-276"/>
+<text text-anchor="middle" x="723.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_lorene_id_parts_memory</text>
 </a>
 </g>
 </g>
 <!-- proc~construct_particles&#45;&gt;interface~allocate_lorene_id_parts_memory -->
-<g id="program~~convergence_test~~CallsGraph_edge20" class="edge">
+<g id="program~~convergence_test~~CallsGraph_edge14" class="edge">
 <title>proc~construct_particles&#45;&gt;interface~allocate_lorene_id_parts_memory</title>
-<path fill="none" stroke="#000000" d="M577.4103,-297.1834C595.3968,-306.3645 621.2804,-318.742 645,-327 651.4432,-329.2432 658.2346,-331.3322 665.0677,-333.2544"/>
-<polygon fill="#000000" stroke="#000000" points="664.5071,-336.728 675.0733,-335.9496 666.3279,-329.969 664.5071,-336.728"/>
+<path fill="none" stroke="#000000" d="M595.4375,-264C605.0154,-264 615.31,-264 625.7501,-264"/>
+<polygon fill="#000000" stroke="#000000" points="625.7856,-267.5001 635.7856,-264 625.7855,-260.5001 625.7856,-267.5001"/>
 </g>
-<!-- proc~construct_bnslorene&#45;&gt;timer -->
-<g id="program~~convergence_test~~CallsGraph_edge21" class="edge">
-<title>proc~construct_bnslorene&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" d="M607.9059,-152.0013C636.1671,-158.3521 670.1612,-165.9913 695.497,-171.6847"/>
-<polygon fill="#000000" stroke="#000000" points="694.9143,-175.141 705.4384,-173.9187 696.4491,-168.3113 694.9143,-175.141"/>
+<!-- ktable -->
+<g id="program~~convergence_test~~CallsGraph_node16" class="node">
+<title>ktable</title>
+<polygon fill="#777777" stroke="#777777" points="750.5,-234 696.5,-234 696.5,-210 750.5,-210 750.5,-234"/>
+<text text-anchor="middle" x="723.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ktable</text>
 </g>
-<!-- interface~import_id_params -->
+<!-- proc~construct_particles&#45;&gt;ktable -->
+<g id="program~~convergence_test~~CallsGraph_edge15" class="edge">
+<title>proc~construct_particles&#45;&gt;ktable</title>
+<path fill="none" stroke="#000000" d="M593.2031,-251.9999C605.5364,-249.026 618.7458,-245.8698 631,-243 649.1909,-238.7398 669.4257,-234.1312 686.3201,-230.3196"/>
+<polygon fill="#000000" stroke="#000000" points="687.3722,-233.6704 696.3594,-228.0596 685.8348,-226.8413 687.3722,-233.6704"/>
+</g>
+<!-- alive -->
+<g id="program~~convergence_test~~CallsGraph_node17" class="node">
+<title>alive</title>
+<polygon fill="#777777" stroke="#777777" points="750.5,-192 696.5,-192 696.5,-168 750.5,-168 750.5,-192"/>
+<text text-anchor="middle" x="723.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">alive</text>
+</g>
+<!-- proc~construct_particles&#45;&gt;alive -->
+<g id="program~~convergence_test~~CallsGraph_edge16" class="edge">
+<title>proc~construct_particles&#45;&gt;alive</title>
+<path fill="none" stroke="#000000" d="M557.0798,-251.873C573.2296,-237.564 602.1178,-214.0713 631,-201 648.2696,-193.1842 668.7105,-188.1513 685.9793,-184.9788"/>
+<polygon fill="#000000" stroke="#000000" points="686.9903,-188.3575 696.2649,-183.2357 685.8207,-181.4559 686.9903,-188.3575"/>
+</g>
+<!-- interface~impose_equatorial_plane_symmetry -->
 <g id="program~~convergence_test~~CallsGraph_node18" class="node">
-<title>interface~import_id_params</title>
-<g id="a_program~~convergence_test~~CallsGraph_node18"><a xlink:href=".././interface/import_id_params.html" xlink:title="import_id_params">
-<polygon fill="#a7506f" stroke="#a7506f" points="782,-150 683,-150 683,-126 782,-126 782,-150"/>
-<text text-anchor="middle" x="732.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">import_id_params</text>
+<title>interface~impose_equatorial_plane_symmetry</title>
+<g id="a_program~~convergence_test~~CallsGraph_node18"><a xlink:href=".././interface/impose_equatorial_plane_symmetry.html" xlink:title="impose_equatorial_plane_symmetry">
+<polygon fill="#a7506f" stroke="#a7506f" points="816,-444 631,-444 631,-420 816,-420 816,-444"/>
+<text text-anchor="middle" x="723.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">impose_equatorial_plane_symmetry</text>
 </a>
 </g>
 </g>
-<!-- proc~construct_bnslorene&#45;&gt;interface~import_id_params -->
-<g id="program~~convergence_test~~CallsGraph_edge22" class="edge">
-<title>proc~construct_bnslorene&#45;&gt;interface~import_id_params</title>
-<path fill="none" stroke="#000000" d="M609.3583,-139.3836C629.457,-139.1578 652.2939,-138.9012 672.7961,-138.6708"/>
-<polygon fill="#000000" stroke="#000000" points="673.0033,-142.1688 682.9633,-138.5566 672.9245,-135.1693 673.0033,-142.1688"/>
+<!-- proc~construct_particles&#45;&gt;interface~impose_equatorial_plane_symmetry -->
+<g id="program~~convergence_test~~CallsGraph_edge17" class="edge">
+<title>proc~construct_particles&#45;&gt;interface~impose_equatorial_plane_symmetry</title>
+<path fill="none" stroke="#000000" d="M547.518,-276.153C556.4089,-304.5897 582.5895,-375.7164 631,-411 633.096,-412.5277 635.2843,-413.9468 637.5454,-415.2651"/>
+<polygon fill="#000000" stroke="#000000" points="636.0879,-418.4505 646.5878,-419.8654 639.262,-412.2114 636.0879,-418.4505"/>
+</g>
+<!-- proc~check_particle_positions -->
+<g id="program~~convergence_test~~CallsGraph_node22" class="node">
+<title>proc~check_particle_positions</title>
+<g id="a_program~~convergence_test~~CallsGraph_node22"><a xlink:href=".././proc/check_particle_positions.html" xlink:title="check_particle_positions">
+<polygon fill="#d9534f" stroke="#d9534f" points="788,-402 659,-402 659,-378 788,-378 788,-402"/>
+<text text-anchor="middle" x="723.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">check_particle_positions</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_particles&#45;&gt;proc~check_particle_positions -->
+<g id="program~~convergence_test~~CallsGraph_edge19" class="edge">
+<title>proc~construct_particles&#45;&gt;proc~check_particle_positions</title>
+<path fill="none" stroke="#000000" d="M550.5275,-276.2912C563.0084,-298.5287 592.4768,-345.3251 631,-369 636.5243,-372.395 642.5375,-375.2425 648.7586,-377.6305"/>
+<polygon fill="#000000" stroke="#000000" points="648.0706,-381.0942 658.6651,-381.0176 650.3352,-374.4706 648.0706,-381.0942"/>
+</g>
+<!-- set_units -->
+<g id="program~~convergence_test~~CallsGraph_node23" class="node">
+<title>set_units</title>
+<polygon fill="#777777" stroke="#777777" points="751,-360 696,-360 696,-336 751,-336 751,-360"/>
+<text text-anchor="middle" x="723.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">set_units</text>
+</g>
+<!-- proc~construct_particles&#45;&gt;set_units -->
+<g id="program~~convergence_test~~CallsGraph_edge20" class="edge">
+<title>proc~construct_particles&#45;&gt;set_units</title>
+<path fill="none" stroke="#000000" d="M557.0798,-276.127C573.2296,-290.436 602.1178,-313.9287 631,-327 648.1453,-334.7595 668.4166,-339.7761 685.6061,-342.9524"/>
+<polygon fill="#000000" stroke="#000000" points="685.4092,-346.4693 695.8553,-344.7003 686.586,-339.5689 685.4092,-346.4693"/>
 </g>
 <!-- proc~construct_bssn_id&#45;&gt;timer -->
-<g id="program~~convergence_test~~CallsGraph_edge25" class="edge">
-<title>proc~construct_bssn_id&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" d="M589.4426,-108.0487C596.2225,-111.119 603.0599,-114.7713 609,-119 628.4846,-132.8709 624.446,-146.7696 645,-159 660.0878,-167.9778 678.7914,-173.1202 695.0284,-176.0645"/>
-<polygon fill="#000000" stroke="#000000" points="694.853,-179.5807 705.2795,-177.7002 695.956,-172.6682 694.853,-179.5807"/>
-</g>
-<!-- initialize_bssn -->
-<g id="program~~convergence_test~~CallsGraph_node15" class="node">
-<title>initialize_bssn</title>
-<polygon fill="#777777" stroke="#777777" points="772,-24 693,-24 693,0 772,0 772,-24"/>
-<text text-anchor="middle" x="732.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">initialize_bssn</text>
-</g>
-<!-- proc~construct_bssn_id&#45;&gt;initialize_bssn -->
 <g id="program~~convergence_test~~CallsGraph_edge23" class="edge">
-<title>proc~construct_bssn_id&#45;&gt;initialize_bssn</title>
-<path fill="none" stroke="#000000" d="M568.2253,-83.9588C585.1422,-69.7344 615.3082,-46.3249 645,-33 656.8087,-27.7005 670.1389,-23.6317 682.7688,-20.552"/>
-<polygon fill="#000000" stroke="#000000" points="683.7317,-23.9224 692.7051,-18.2896 682.1776,-17.0971 683.7317,-23.9224"/>
+<title>proc~construct_bssn_id&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" d="M566.3327,-88.1786C583.5816,-97.1737 608.2674,-109.1673 631,-117 648.7929,-123.1307 669.1336,-127.9727 686.2015,-131.4549"/>
+<polygon fill="#000000" stroke="#000000" points="685.8669,-134.9559 696.3537,-133.4466 687.2146,-128.0868 685.8669,-134.9559"/>
 </g>
 <!-- interface~allocate_bssn_fields -->
-<g id="program~~convergence_test~~CallsGraph_node17" class="node">
+<g id="program~~convergence_test~~CallsGraph_node19" class="node">
 <title>interface~allocate_bssn_fields</title>
-<g id="a_program~~convergence_test~~CallsGraph_node17"><a xlink:href=".././interface/allocate_bssn_fields.html" xlink:title="allocate_bssn_fields">
-<polygon fill="#a7506f" stroke="#a7506f" points="787,-108 678,-108 678,-84 787,-84 787,-108"/>
-<text text-anchor="middle" x="732.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn_fields</text>
+<g id="a_program~~convergence_test~~CallsGraph_node19"><a xlink:href=".././interface/allocate_bssn_fields.html" xlink:title="allocate_bssn_fields">
+<polygon fill="#a7506f" stroke="#a7506f" points="778,-24 669,-24 669,0 778,0 778,-24"/>
+<text text-anchor="middle" x="723.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn_fields</text>
 </a>
 </g>
 </g>
 <!-- proc~construct_bssn_id&#45;&gt;interface~allocate_bssn_fields -->
-<g id="program~~convergence_test~~CallsGraph_edge24" class="edge">
+<g id="program~~convergence_test~~CallsGraph_edge21" class="edge">
 <title>proc~construct_bssn_id&#45;&gt;interface~allocate_bssn_fields</title>
-<path fill="none" stroke="#000000" d="M604.0829,-96C623.7967,-96 646.744,-96 667.7422,-96"/>
-<polygon fill="#000000" stroke="#000000" points="667.8712,-99.5001 677.8712,-96 667.8712,-92.5001 667.8712,-99.5001"/>
+<path fill="none" stroke="#000000" d="M564.8409,-63.9524C582.0952,-54.4108 607.5014,-41.3425 631,-33 639.8687,-29.8514 649.3874,-27.0621 658.824,-24.6285"/>
+<polygon fill="#000000" stroke="#000000" points="659.7249,-28.0113 668.5976,-22.2211 658.0507,-21.2144 659.7249,-28.0113"/>
 </g>
 <!-- deallocate_bssn -->
-<g id="program~~convergence_test~~CallsGraph_node19" class="node">
+<g id="program~~convergence_test~~CallsGraph_node20" class="node">
 <title>deallocate_bssn</title>
-<polygon fill="#777777" stroke="#777777" points="777.5,-66 687.5,-66 687.5,-42 777.5,-42 777.5,-66"/>
-<text text-anchor="middle" x="732.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn</text>
+<polygon fill="#777777" stroke="#777777" points="768.5,-108 678.5,-108 678.5,-84 768.5,-84 768.5,-108"/>
+<text text-anchor="middle" x="723.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn</text>
 </g>
 <!-- proc~construct_bssn_id&#45;&gt;deallocate_bssn -->
-<g id="program~~convergence_test~~CallsGraph_edge26" class="edge">
+<g id="program~~convergence_test~~CallsGraph_edge22" class="edge">
 <title>proc~construct_bssn_id&#45;&gt;deallocate_bssn</title>
-<path fill="none" stroke="#000000" d="M604.0829,-84.3007C626.9455,-78.9061 654.1569,-72.4855 677.6336,-66.946"/>
-<polygon fill="#000000" stroke="#000000" points="678.514,-70.3345 687.4429,-64.6314 676.9064,-63.5216 678.514,-70.3345"/>
+<path fill="none" stroke="#000000" d="M593.5243,-81.518C616.7691,-84.108 644.5529,-87.2037 668.4548,-89.8668"/>
+<polygon fill="#000000" stroke="#000000" points="668.1102,-93.35 678.4363,-90.979 668.8854,-86.3931 668.1102,-93.35"/>
 </g>
-<!-- indexx -->
-<g id="program~~convergence_test~~CallsGraph_node28" class="node">
-<title>indexx</title>
-<polygon fill="#777777" stroke="#777777" points="970.5,-318 916.5,-318 916.5,-294 970.5,-294 970.5,-318"/>
-<text text-anchor="middle" x="943.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">indexx</text>
+<!-- initialize_bssn -->
+<g id="program~~convergence_test~~CallsGraph_node21" class="node">
+<title>initialize_bssn</title>
+<polygon fill="#777777" stroke="#777777" points="763,-66 684,-66 684,-42 763,-42 763,-66"/>
+<text text-anchor="middle" x="723.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">initialize_bssn</text>
 </g>
-<!-- proc~check_particle_positions&#45;&gt;indexx -->
-<g id="program~~convergence_test~~CallsGraph_edge27" class="edge">
-<title>proc~check_particle_positions&#45;&gt;indexx</title>
-<path fill="none" stroke="#000000" d="M797.2409,-306C833.0013,-306 876.1447,-306 906.2704,-306"/>
-<polygon fill="#000000" stroke="#000000" points="906.35,-309.5001 916.3499,-306 906.3499,-302.5001 906.35,-309.5001"/>
-</g>
-<!-- proc~allocate_bssn_fields -->
-<g id="program~~convergence_test~~CallsGraph_node26" class="node">
-<title>proc~allocate_bssn_fields</title>
-<g id="a_program~~convergence_test~~CallsGraph_node26"><a xlink:href=".././proc/allocate_bssn_fields.html" xlink:title="allocate_bssn_fields">
-<polygon fill="#d9534f" stroke="#d9534f" points="998,-99 889,-99 889,-75 998,-75 998,-99"/>
-<text text-anchor="middle" x="943.5" y="-84.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn_fields</text>
-</a>
-</g>
-</g>
-<!-- interface~allocate_bssn_fields&#45;&gt;proc~allocate_bssn_fields -->
-<g id="program~~convergence_test~~CallsGraph_edge28" class="edge">
-<title>interface~allocate_bssn_fields&#45;&gt;proc~allocate_bssn_fields</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M787.1121,-93.6706C815.0745,-92.4779 849.3085,-91.0176 878.6102,-89.7678"/>
-<polygon fill="#000000" stroke="#000000" points="878.9088,-93.2584 888.7505,-89.3353 878.6104,-86.2647 878.9088,-93.2584"/>
-</g>
-<!-- proc~import_id_params -->
-<g id="program~~convergence_test~~CallsGraph_node25" class="node">
-<title>proc~import_id_params</title>
-<g id="a_program~~convergence_test~~CallsGraph_node25"><a xlink:href=".././proc/import_id_params.html" xlink:title="import_id_params">
-<polygon fill="#d9534f" stroke="#d9534f" points="993,-160 894,-160 894,-136 993,-136 993,-160"/>
-<text text-anchor="middle" x="943.5" y="-145.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">import_id_params</text>
-</a>
-</g>
-</g>
-<!-- interface~import_id_params&#45;&gt;proc~import_id_params -->
-<g id="program~~convergence_test~~CallsGraph_edge29" class="edge">
-<title>interface~import_id_params&#45;&gt;proc~import_id_params</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M782.2369,-140.3572C812.5801,-141.7953 851.5598,-143.6426 883.5947,-145.1609"/>
-<polygon fill="#000000" stroke="#000000" points="883.5773,-148.6639 893.7318,-145.6413 883.9088,-141.6717 883.5773,-148.6639"/>
+<!-- proc~construct_bssn_id&#45;&gt;initialize_bssn -->
+<g id="program~~convergence_test~~CallsGraph_edge24" class="edge">
+<title>proc~construct_bssn_id&#45;&gt;initialize_bssn</title>
+<path fill="none" stroke="#000000" d="M593.5243,-69.9302C618.5146,-66.8673 648.7511,-63.1614 673.77,-60.095"/>
+<polygon fill="#000000" stroke="#000000" points="674.2868,-63.558 683.7867,-58.8674 673.4351,-56.61 674.2868,-63.558"/>
 </g>
 <!-- proc~allocate_lorene_id_parts_memory -->
-<g id="program~~convergence_test~~CallsGraph_node27" class="node">
+<g id="program~~convergence_test~~CallsGraph_node24" class="node">
 <title>proc~allocate_lorene_id_parts_memory</title>
-<g id="a_program~~convergence_test~~CallsGraph_node27"><a xlink:href=".././proc/allocate_lorene_id_parts_memory.html" xlink:title="allocate_lorene_id_parts_memory">
-<polygon fill="#d9534f" stroke="#d9534f" points="1031,-360 856,-360 856,-336 1031,-336 1031,-360"/>
-<text text-anchor="middle" x="943.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_lorene_id_parts_memory</text>
+<g id="a_program~~convergence_test~~CallsGraph_node24"><a xlink:href=".././proc/allocate_lorene_id_parts_memory.html" xlink:title="allocate_lorene_id_parts_memory">
+<polygon fill="#d9534f" stroke="#d9534f" points="1032,-276 857,-276 857,-252 1032,-252 1032,-276"/>
+<text text-anchor="middle" x="944.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_lorene_id_parts_memory</text>
 </a>
 </g>
 </g>
 <!-- interface~allocate_lorene_id_parts_memory&#45;&gt;proc~allocate_lorene_id_parts_memory -->
-<g id="program~~convergence_test~~CallsGraph_edge30" class="edge">
+<g id="program~~convergence_test~~CallsGraph_edge25" class="edge">
 <title>interface~allocate_lorene_id_parts_memory&#45;&gt;proc~allocate_lorene_id_parts_memory</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M820.1499,-348C828.5216,-348 837.0477,-348 845.5091,-348"/>
-<polygon fill="#000000" stroke="#000000" points="845.7834,-351.5001 855.7833,-348 845.7833,-344.5001 845.7834,-351.5001"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M811.1625,-264C822.8135,-264 834.8187,-264 846.6289,-264"/>
+<polygon fill="#000000" stroke="#000000" points="846.9436,-267.5001 856.9436,-264 846.9435,-260.5001 846.9436,-267.5001"/>
 </g>
-<!-- interface~print_id_params -->
+<!-- proc~impose_equatorial_plane_symmetry -->
+<g id="program~~convergence_test~~CallsGraph_node25" class="node">
+<title>proc~impose_equatorial_plane_symmetry</title>
+<g id="a_program~~convergence_test~~CallsGraph_node25"><a xlink:href=".././proc/impose_equatorial_plane_symmetry.html" xlink:title="impose_equatorial_plane_symmetry">
+<polygon fill="#d9534f" stroke="#d9534f" points="1037,-444 852,-444 852,-420 1037,-420 1037,-444"/>
+<text text-anchor="middle" x="944.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">impose_equatorial_plane_symmetry</text>
+</a>
+</g>
+</g>
+<!-- interface~impose_equatorial_plane_symmetry&#45;&gt;proc~impose_equatorial_plane_symmetry -->
+<g id="program~~convergence_test~~CallsGraph_edge26" class="edge">
+<title>interface~impose_equatorial_plane_symmetry&#45;&gt;proc~impose_equatorial_plane_symmetry</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M816.2633,-432C824.7534,-432 833.3869,-432 841.9563,-432"/>
+<polygon fill="#000000" stroke="#000000" points="841.9742,-435.5001 851.9741,-432 841.9741,-428.5001 841.9742,-435.5001"/>
+</g>
+<!-- proc~allocate_bssn_fields -->
+<g id="program~~convergence_test~~CallsGraph_node27" class="node">
+<title>proc~allocate_bssn_fields</title>
+<g id="a_program~~convergence_test~~CallsGraph_node27"><a xlink:href=".././proc/allocate_bssn_fields.html" xlink:title="allocate_bssn_fields">
+<polygon fill="#d9534f" stroke="#d9534f" points="999,-24 890,-24 890,0 999,0 999,-24"/>
+<text text-anchor="middle" x="944.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn_fields</text>
+</a>
+</g>
+</g>
+<!-- interface~allocate_bssn_fields&#45;&gt;proc~allocate_bssn_fields -->
+<g id="program~~convergence_test~~CallsGraph_edge27" class="edge">
+<title>interface~allocate_bssn_fields&#45;&gt;proc~allocate_bssn_fields</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M778.1292,-12C808.8093,-12 847.2872,-12 879.5092,-12"/>
+<polygon fill="#000000" stroke="#000000" points="879.7333,-15.5001 889.7333,-12 879.7333,-8.5001 879.7333,-15.5001"/>
+</g>
+<!-- indexx -->
+<g id="program~~convergence_test~~CallsGraph_node26" class="node">
+<title>indexx</title>
+<polygon fill="#777777" stroke="#777777" points="971.5,-402 917.5,-402 917.5,-378 971.5,-378 971.5,-402"/>
+<text text-anchor="middle" x="944.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">indexx</text>
+</g>
+<!-- proc~check_particle_positions&#45;&gt;indexx -->
+<g id="program~~convergence_test~~CallsGraph_edge28" class="edge">
+<title>proc~check_particle_positions&#45;&gt;indexx</title>
+<path fill="none" stroke="#000000" d="M788.0164,-390C826.7057,-390 874.5486,-390 907.0768,-390"/>
+<polygon fill="#000000" stroke="#000000" points="907.4858,-393.5001 917.4857,-390 907.4857,-386.5001 907.4858,-393.5001"/>
+</g>
+<!-- com -->
 <g id="program~~convergence_test~~CallsGraph_node29" class="node">
-<title>interface~print_id_params</title>
-<g id="a_program~~convergence_test~~CallsGraph_node29"><a xlink:href=".././interface/print_id_params.html" xlink:title="print_id_params">
-<polygon fill="#a7506f" stroke="#a7506f" points="1215.5,-244 1125.5,-244 1125.5,-220 1215.5,-220 1215.5,-244"/>
-<text text-anchor="middle" x="1170.5" y="-229.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">print_id_params</text>
-</a>
+<title>com</title>
+<polygon fill="#777777" stroke="#777777" points="1158.5,-444 1104.5,-444 1104.5,-420 1158.5,-420 1158.5,-444"/>
+<text text-anchor="middle" x="1131.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">com</text>
 </g>
-</g>
-<!-- proc~import_id_params&#45;&gt;interface~print_id_params -->
-<g id="program~~convergence_test~~CallsGraph_edge31" class="edge">
-<title>proc~import_id_params&#45;&gt;interface~print_id_params</title>
-<path fill="none" stroke="#000000" d="M963.2896,-160.2366C987.0754,-174.4297 1028.5964,-197.5901 1067,-211 1082.3355,-216.3549 1099.4523,-220.5185 1115.2808,-223.674"/>
-<polygon fill="#000000" stroke="#000000" points="1114.9878,-227.1808 1125.4647,-225.6045 1116.2916,-220.3032 1114.9878,-227.1808"/>
-</g>
-<!-- k_lorene2hydrobase -->
-<g id="program~~convergence_test~~CallsGraph_node30" class="node">
-<title>k_lorene2hydrobase</title>
-<polygon fill="#777777" stroke="#777777" points="1546,-140 1436,-140 1436,-116 1546,-116 1546,-140"/>
-<text text-anchor="middle" x="1491" y="-125.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">k_lorene2hydrobase</text>
-</g>
-<!-- proc~import_id_params&#45;&gt;k_lorene2hydrobase -->
-<g id="program~~convergence_test~~CallsGraph_edge34" class="edge">
-<title>proc~import_id_params&#45;&gt;k_lorene2hydrobase</title>
-<path fill="none" stroke="#000000" d="M993.1311,-137.5978C1015.5786,-133.4011 1042.511,-129.0672 1067,-127 1193.7444,-116.3009 1342.5601,-120.5006 1425.9088,-124.3609"/>
-<polygon fill="#000000" stroke="#000000" points="1425.8348,-127.8613 1435.99,-124.8411 1426.1679,-120.8692 1425.8348,-127.8613"/>
-</g>
-<!-- interface~get_lorene_id_params -->
-<g id="program~~convergence_test~~CallsGraph_node32" class="node">
-<title>interface~get_lorene_id_params</title>
-<g id="a_program~~convergence_test~~CallsGraph_node32"><a xlink:href=".././interface/get_lorene_id_params.html" xlink:title="get_lorene_id_params">
-<polygon fill="#a7506f" stroke="#a7506f" points="1230.5,-202 1110.5,-202 1110.5,-178 1230.5,-178 1230.5,-202"/>
-<text text-anchor="middle" x="1170.5" y="-187.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_lorene_id_params</text>
-</a>
-</g>
-</g>
-<!-- proc~import_id_params&#45;&gt;interface~get_lorene_id_params -->
-<g id="program~~convergence_test~~CallsGraph_edge32" class="edge">
-<title>proc~import_id_params&#45;&gt;interface~get_lorene_id_params</title>
-<path fill="none" stroke="#000000" d="M993.0356,-157.1652C1024.3812,-162.9648 1065.3909,-170.5525 1100.0905,-176.9727"/>
-<polygon fill="#000000" stroke="#000000" points="1099.6966,-180.4591 1110.1665,-178.837 1100.9702,-173.576 1099.6966,-180.4591"/>
-</g>
-<!-- k_lorene2hydrobase_piecewisepolytrope -->
-<g id="program~~convergence_test~~CallsGraph_node33" class="node">
-<title>k_lorene2hydrobase_piecewisepolytrope</title>
-<polygon fill="#777777" stroke="#777777" points="1274,-160 1067,-160 1067,-136 1274,-136 1274,-160"/>
-<text text-anchor="middle" x="1170.5" y="-145.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">k_lorene2hydrobase_piecewisepolytrope</text>
-</g>
-<!-- proc~import_id_params&#45;&gt;k_lorene2hydrobase_piecewisepolytrope -->
-<g id="program~~convergence_test~~CallsGraph_edge33" class="edge">
-<title>proc~import_id_params&#45;&gt;k_lorene2hydrobase_piecewisepolytrope</title>
-<path fill="none" stroke="#000000" d="M993.0356,-148C1011.8148,-148 1034.0628,-148 1056.3444,-148"/>
-<polygon fill="#000000" stroke="#000000" points="1056.5719,-151.5001 1066.5719,-148 1056.5719,-144.5001 1056.5719,-151.5001"/>
+<!-- proc~impose_equatorial_plane_symmetry&#45;&gt;com -->
+<g id="program~~convergence_test~~CallsGraph_edge29" class="edge">
+<title>proc~impose_equatorial_plane_symmetry&#45;&gt;com</title>
+<path fill="none" stroke="#000000" d="M1037.1782,-432C1057.3688,-432 1077.6104,-432 1094.1368,-432"/>
+<polygon fill="#000000" stroke="#000000" points="1094.4226,-435.5001 1104.4226,-432 1094.4225,-428.5001 1094.4226,-435.5001"/>
 </g>
 <!-- allocate_grid_function -->
-<g id="program~~convergence_test~~CallsGraph_node31" class="node">
+<g id="program~~convergence_test~~CallsGraph_node28" class="node">
 <title>allocate_grid_function</title>
-<polygon fill="#777777" stroke="#777777" points="1229,-80 1112,-80 1112,-56 1229,-56 1229,-80"/>
-<text text-anchor="middle" x="1170.5" y="-65.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_grid_function</text>
+<polygon fill="#777777" stroke="#777777" points="1190,-24 1073,-24 1073,0 1190,0 1190,-24"/>
+<text text-anchor="middle" x="1131.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_grid_function</text>
 </g>
 <!-- proc~allocate_bssn_fields&#45;&gt;allocate_grid_function -->
-<g id="program~~convergence_test~~CallsGraph_edge35" class="edge">
+<g id="program~~convergence_test~~CallsGraph_edge30" class="edge">
 <title>proc~allocate_bssn_fields&#45;&gt;allocate_grid_function</title>
-<path fill="none" stroke="#000000" d="M998.161,-82.4248C1029.3104,-79.8176 1068.6321,-76.5264 1101.8475,-73.7462"/>
-<polygon fill="#000000" stroke="#000000" points="1102.2707,-77.2232 1111.9439,-72.9012 1101.6868,-70.2475 1102.2707,-77.2232"/>
-</g>
-<!-- proc~print_id_params -->
-<g id="program~~convergence_test~~CallsGraph_node34" class="node">
-<title>proc~print_id_params</title>
-<g id="a_program~~convergence_test~~CallsGraph_node34"><a xlink:href=".././proc/print_id_params.html" xlink:title="print_id_params">
-<polygon fill="#d9534f" stroke="#d9534f" points="1400,-202 1310,-202 1310,-178 1400,-178 1400,-202"/>
-<text text-anchor="middle" x="1355" y="-187.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">print_id_params</text>
-</a>
-</g>
-</g>
-<!-- interface~print_id_params&#45;&gt;proc~print_id_params -->
-<g id="program~~convergence_test~~CallsGraph_edge36" class="edge">
-<title>interface~print_id_params&#45;&gt;proc~print_id_params</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1215.7002,-223.3741C1233.8655,-219.7656 1254.974,-215.3932 1274,-211 1282.5361,-209.029 1291.5454,-206.8212 1300.3312,-204.5977"/>
-<polygon fill="#000000" stroke="#000000" points="1301.2989,-207.9629 1310.1186,-202.0923 1299.563,-201.1816 1301.2989,-207.9629"/>
-</g>
-<!-- proc~print_id_params&#45;&gt;k_lorene2hydrobase -->
-<g id="program~~convergence_test~~CallsGraph_edge37" class="edge">
-<title>proc~print_id_params&#45;&gt;k_lorene2hydrobase</title>
-<path fill="none" stroke="#000000" d="M1381.545,-177.8986C1402.6067,-168.2969 1432.2483,-154.7838 1455.3739,-144.2413"/>
-<polygon fill="#000000" stroke="#000000" points="1456.8747,-147.4037 1464.5219,-140.0709 1453.971,-141.0344 1456.8747,-147.4037"/>
+<path fill="none" stroke="#000000" d="M999.0908,-12C1019.0093,-12 1041.7951,-12 1062.7848,-12"/>
+<polygon fill="#000000" stroke="#000000" points="1062.9242,-15.5001 1072.9242,-12 1062.9241,-8.5001 1062.9242,-15.5001"/>
 </g>
 </g>
 </svg>
@@ -1363,8 +1325,6 @@
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
       
-      <a class="list-group-item" href="../program/convergence_test.html#variable-binary">binary</a>
-      
       <a class="list-group-item" href="../program/convergence_test.html#variable-bssn_forms">bssn_forms</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-common_path">common_path</a>
@@ -1379,7 +1339,11 @@
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-denominator_ratio_dx">denominator_ratio_dx</a>
       
+      <a class="list-group-item" href="../program/convergence_test.html#variable-dir_out">dir_out</a>
+      
       <a class="list-group-item" href="../program/convergence_test.html#variable-execution_timer">execution_timer</a>
+      
+      <a class="list-group-item" href="../program/convergence_test.html#variable-exist~18">exist</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-export_bin~3">export_bin</a>
       
@@ -1399,6 +1363,8 @@
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-filenames">filenames</a>
       
+      <a class="list-group-item" href="../program/convergence_test.html#variable-idata~2">idata</a>
+      
       <a class="list-group-item" href="../program/convergence_test.html#variable-max_bssn">max_bssn</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-max_length~2">max_length</a>
@@ -1415,7 +1381,11 @@
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-namefile_bssn">namefile_bssn</a>
       
+      <a class="list-group-item" href="../program/convergence_test.html#variable-namefile_bssn_bin">namefile_bssn_bin</a>
+      
       <a class="list-group-item" href="../program/convergence_test.html#variable-namefile_parts">namefile_parts</a>
+      
+      <a class="list-group-item" href="../program/convergence_test.html#variable-namefile_parts_bin">namefile_parts_bin</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-namefile_sph">namefile_sph</a>
       
@@ -1440,6 +1410,10 @@
       <a class="list-group-item" href="../program/convergence_test.html#variable-spacetime_path">spacetime_path</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-sph_path">sph_path</a>
+      
+      <a class="list-group-item" href="../program/convergence_test.html#variable-systems">systems</a>
+      
+      <a class="list-group-item" href="../program/convergence_test.html#variable-systems_name">systems_name</a>
       
       <a class="list-group-item" href="../program/convergence_test.html#variable-test_int">test_int</a>
       
@@ -1517,20 +1491,6 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-binary"></span>type(<a href='../type/bnslorene.html'>bnslorene</a>)</td>
-  
-  
-  <td></td><td>::</td>
-  <td><strong>binary</strong></td><td></td><td></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
   <td><span class="anchor" id="variable-bssn_forms"></span>type(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
   
   
@@ -1549,7 +1509,8 @@
   
   
   <td></td><td>::</td>
-  <td><strong>common_path</strong></td><td></td><td></td><td></td>
+  <td><strong>common_path</strong></td><td></td><td></td><td><p>String storing the local path to the directory where the \(\mathrm{ID}\) files
+ are stored</p></td>
   
 </tr>
 
@@ -1629,11 +1590,39 @@
   
 <tr>
   
+  <td><span class="anchor" id="variable-dir_out"></span>logical(kind=4)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>dir_out</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
   <td><span class="anchor" id="variable-execution_timer"></span>type(timer)</td>
   
   
   <td></td><td>::</td>
   <td><strong>execution_timer</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-exist~18"></span>logical</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>exist</strong></td><td></td><td></td><td></td>
   
 </tr>
 
@@ -1769,6 +1758,20 @@
   
 <tr>
   
+  <td><span class="anchor" id="variable-idata~2"></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+  
+  
+  <td>ALLOCATABLE</td><td>::</td>
+  <td><strong>idata</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
   <td><span class="anchor" id="variable-max_bssn"></span>integer,</td>
   
   
@@ -1857,7 +1860,8 @@
   
   
   <td></td><td>::</td>
-  <td><strong>name_logfile</strong></td><td></td><td></td><td></td>
+  <td><strong>name_logfile</strong></td><td></td><td></td><td><p>String storing the name for the formatted file containing a summary about
+ the |bssn| constraints violations</p></td>
   
 </tr>
 
@@ -1871,7 +1875,21 @@
   
   
   <td></td><td>::</td>
-  <td><strong>namefile_bssn</strong></td><td></td><td></td><td></td>
+  <td><strong>namefile_bssn</strong></td><td></td><td></td><td><p>String storing the name for the formatted file containing the |bssn| \(\mathrm{ID}\)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile_bssn_bin"></span>character(len=500)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_bssn_bin</strong></td><td></td><td></td><td><p>String storing the name for the binary file containing the |bssn| \(\mathrm{ID}\)</p></td>
   
 </tr>
 
@@ -1885,7 +1903,23 @@
   
   
   <td></td><td>::</td>
-  <td><strong>namefile_parts</strong></td><td></td><td></td><td></td>
+  <td><strong>namefile_parts</strong></td><td></td><td></td><td><p>String storing the name for the formatted file containing the \(\mathrm{SPH}\)
+ particle \(\mathrm{ID}\)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-namefile_parts_bin"></span>character(len=500)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>namefile_parts_bin</strong></td><td></td><td></td><td><p>String storing the name for the binary file containing the \(\mathrm{SPH}\)
+ particle \(\mathrm{ID}\)</p></td>
   
 </tr>
 
@@ -1899,7 +1933,7 @@
   
   
   <td></td><td>::</td>
-  <td><strong>namefile_sph</strong></td><td></td><td></td><td></td>
+  <td><strong>namefile_sph</strong></td><td></td><td></td><td><p>String storing the name for ??</p></td>
   
 </tr>
 
@@ -2039,7 +2073,8 @@
   
   
   <td></td><td>::</td>
-  <td><strong>spacetime_path</strong></td><td></td><td></td><td></td>
+  <td><strong>spacetime_path</strong></td><td></td><td></td><td><p>String storing the local path to the directory where the
+ spacetime output is to be saved</p></td>
   
 </tr>
 
@@ -2053,7 +2088,36 @@
   
   
   <td></td><td>::</td>
-  <td><strong>sph_path</strong></td><td></td><td></td><td></td>
+  <td><strong>sph_path</strong></td><td></td><td></td><td><p>String storing the local path to the directory where the
+ SPH output is to be saved</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-systems"></span>character(len=:),</td>
+  
+  
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>systems</strong></td><td></td><td></td><td><p>String storing the name of the phyical systems</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-systems_name"></span>character(len=:),</td>
+  
+  
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>systems_name</strong></td><td></td><td></td><td><p>String storing the name of the phyical systems</p></td>
   
 </tr>
 
@@ -2353,7 +2417,22 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
   <span class="c">!                                                    *</span>
   <span class="c">!*****************************************************</span>
 
-  <span class="k">USE </span><span class="n">sphincs_lorene</span>
+<span class="cp">#ifdef __INTEL_COMPILER</span>
+  <span class="k">USE </span><span class="n">IFPORT</span><span class="p">,</span>          <span class="n">ONLY</span><span class="p">:</span> <span class="n">MAKEDIRQQ</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#if flavour == 1</span>
+  <span class="k">USE </span><span class="n">sphincs_lorene</span><span class="p">,</span>  <span class="n">ONLY</span><span class="p">:</span> <span class="n">allocate_idbase</span>
+<span class="cp">#endif</span>
+
+  <span class="k">USE </span><span class="n">utility</span><span class="p">,</span>         <span class="n">ONLY</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="nb">time</span><span class="p">,</span> <span class="n">zone</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">run_id</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="p">&amp;</span>
+                             <span class="n">file_exists</span><span class="p">,</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">ios</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">,</span> <span class="p">&amp;</span>
+                             <span class="n">test_status</span><span class="p">,</span> <span class="n">show_progress</span><span class="p">,</span> <span class="n">end_time</span>
+  <span class="k">USE </span><span class="n">timing</span><span class="p">,</span>          <span class="n">ONLY</span><span class="p">:</span> <span class="n">timer</span>
+  <span class="k">USE </span><span class="n">id_base</span><span class="p">,</span>         <span class="n">ONLY</span><span class="p">:</span> <span class="n">idbase</span><span class="p">,</span> <span class="n">initialize</span>
+  <span class="k">USE </span><span class="n">particles_id</span><span class="p">,</span>    <span class="n">ONLY</span><span class="p">:</span> <span class="n">particles</span>
+  <span class="k">USE </span><span class="n">formul_bssn_id</span><span class="p">,</span>  <span class="n">ONLY</span><span class="p">:</span> <span class="n">bssn_id</span>
+  <span class="k">USE </span><span class="n">formul_3p1_id</span><span class="p">,</span>   <span class="n">ONLY</span><span class="p">:</span> <span class="n">formul_3p1</span>
 
   <span class="k">IMPLICIT NONE</span>
 
@@ -2387,22 +2466,39 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
   <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">denominator_ratio_dx</span>
   <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">ratio_dx</span>
 
-  <span class="c">! Strings storing different names for output files</span>
-  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_parts</span><span class="p">,</span> <span class="n">namefile_sph</span>
-  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_bssn</span><span class="p">,</span> <span class="n">name_logfile</span>
-  <span class="c">! Array of strings storing the names of the LORENE BNS ID binary files</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">systems</span><span class="p">,</span> <span class="n">systems_name</span>
+  <span class="c">!! String storing the name of the phyical systems</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_parts</span>
+  <span class="c">!# String storing the name for the formatted file containing the |sph|</span>
+  <span class="c">!  particle |id|</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_parts_bin</span>
+  <span class="c">!# String storing the name for the binary file containing the |sph|</span>
+  <span class="c">!  particle |id|</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_sph</span>
+  <span class="c">!# String storing the name for ??</span>
+  <span class="c">!</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_bssn</span>
+  <span class="c">!# String storing the name for the formatted file containing the |bssn| |id|</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">namefile_bssn_bin</span>
+  <span class="c">!# String storing the name for the binary file containing the |bssn| |id|</span>
+  <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">500</span> <span class="p">)</span><span class="kd">::</span> <span class="n">name_logfile</span>
+  <span class="c">!# String storing the name for the formatted file containing a summary about</span>
+  <span class="c">!  the |bssn| constraints violations</span>
   <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">),</span> <span class="k">DIMENSION</span><span class="p">(</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">filenames</span><span class="o">=</span> <span class="s2">&quot;0&quot;</span>
-  <span class="c">! String storing the local path to the directory where the</span>
-  <span class="c">! LORENE BNS ID files are stored</span>
+  <span class="c">! Array of strings storing the names of the |id| files</span>
   <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">common_path</span>
-  <span class="c">! String storing the local path to the directory where the</span>
-  <span class="c">! SPH output is to be saved</span>
+  <span class="c">!# String storing the local path to the directory where the |id| files</span>
+  <span class="c">!  are stored</span>
   <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">sph_path</span>
-  <span class="c">! String storing the local path to the directory where the</span>
-  <span class="c">! spacetime output is to be saved</span>
+  <span class="c">!# String storing the local path to the directory where the</span>
+  <span class="c">!  SPH output is to be saved</span>
   <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="n">max_length</span> <span class="p">)</span><span class="kd">::</span> <span class="n">spacetime_path</span>
+  <span class="c">!# String storing the local path to the directory where the</span>
+  <span class="c">!  spacetime output is to be saved</span>
 
   <span class="kt">LOGICAL</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">debug</span><span class="o">=</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.</span>
+  <span class="kt">LOGICAL</span><span class="kd">::</span> <span class="n">exist</span>
+  <span class="kt">LOGICAL</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="kd">::</span> <span class="n">dir_out</span>
 
   <span class="c">! Logical variables to steer the execution</span>
   <span class="kt">LOGICAL</span><span class="kd">::</span> <span class="n">export_bin</span><span class="p">,</span> <span class="n">export_form</span><span class="p">,</span> <span class="n">export_form_xy</span><span class="p">,</span> <span class="n">export_form_x</span><span class="p">,</span> <span class="p">&amp;</span>
@@ -2415,7 +2511,8 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
 
   <span class="c">! Declaration of the bns (binary neutron star) object containing the</span>
   <span class="c">! LORENE ID</span>
-  <span class="k">TYPE</span><span class="p">(</span> <span class="n">bnslorene</span> <span class="p">)</span><span class="kd">::</span> <span class="n">binary</span>
+  <span class="c">!TYPE( bnslorene ):: binary</span>
+  <span class="k">CLASS</span><span class="p">(</span> <span class="n">idbase</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">idata</span>
   <span class="c">! Declaration of the particles object containing the particle distribution</span>
   <span class="k">TYPE</span><span class="p">(</span> <span class="n">particles</span> <span class="p">)</span><span class="kd">::</span> <span class="n">particles_dist</span>
   <span class="c">! Declaration of the 3-component array storing the 3 bssn_id objects,</span>
@@ -2471,14 +2568,87 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
     <span class="k">STOP</span>
 <span class="k">  </span><span class="n">ENDIF</span>
 
+<span class="cp">#ifdef __INTEL_COMPILER</span>
+
+  <span class="k">INQUIRE</span><span class="p">(</span> <span class="n">DIRECTORY</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="n">MAKEDIRQQ</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span> <span class="p">)</span>
+  <span class="k">ELSE</span>
+<span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
+  <span class="n">ENDIF</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">dir_out</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Failed to create subdirectory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Stopping...&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+    <span class="k">STOP</span>
+<span class="k">  </span><span class="n">ENDIF</span>
+
+  <span class="k">INQUIRE</span><span class="p">(</span> <span class="n">DIRECTORY</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="n">MAKEDIRQQ</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">)</span> <span class="p">)</span>
+  <span class="k">ELSE</span>
+<span class="k">    </span><span class="n">dir_out</span><span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
+  <span class="n">ENDIF</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">dir_out</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Failed to create subdirectory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;Stopping...&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span>
+    <span class="k">STOP</span>
+<span class="k">  </span><span class="n">ENDIF</span>
+
+<span class="cp">#endif</span>
+
+<span class="cp">#ifdef __GFORTRAN__</span>
+
+  <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">)</span><span class="o">//</span><span class="s2">&quot;/.&quot;</span><span class="p">,</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Directory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">sph_path</span><span class="p">),</span> <span class="s2">&quot; does not exist!&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Please create it and re-run the executable. Stopping...&quot;</span>
+    <span class="k">STOP</span>
+<span class="k">  </span><span class="n">ENDIF</span>
+
+  <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">)</span><span class="o">//</span><span class="s2">&quot;/.&quot;</span><span class="p">,</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+  <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! Directory &quot;</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">),</span> <span class="s2">&quot; does not exist!&quot;</span>
+    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;   Please create it and re-run the executable. Stopping...&quot;</span>
+    <span class="k">STOP</span>
+<span class="k">  </span><span class="n">ENDIF</span>
+
+<span class="cp">#endif</span>
+
+  <span class="k">ALLOCATE</span><span class="p">(</span> <span class="kt">CHARACTER</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="kd">::</span> <span class="n">systems</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+  <span class="k">ALLOCATE</span><span class="p">(</span> <span class="kt">CHARACTER</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="kd">::</span> <span class="n">systems_name</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+
+  <span class="c">!DO itr= 1, n_bns, 1</span>
+  <span class="c">!  systems(1)= filenames(1)(1:5)</span>
+  <span class="c">!  IF( systems(1) /= bnslo .AND. systems(1) /= drslo )THEN</span>
+  <span class="c">!    PRINT *, &quot;** ERROR! Unrecognized physical system &quot;, systems(1), &quot;,&quot;,&amp;</span>
+  <span class="c">!             &quot; system number&quot;, 1, &quot;.&quot;</span>
+  <span class="c">!    PRINT *</span>
+  <span class="c">!    PRINT *, &quot;   Please specify the type of physical system in the first 5&quot;,&amp;</span>
+  <span class="c">!             &quot; characters of the name of the file containing the initial&quot;, &amp;</span>
+  <span class="c">!             &quot; data.&quot;</span>
+  <span class="c">!    PRINT *</span>
+  <span class="c">!    PRINT *, &quot;   The 5-character names, and associated physical systems,&quot;, &amp;</span>
+  <span class="c">!             &quot; supported by this version of SPHINCS_ID are:&quot;</span>
+  <span class="c">!    PRINT *</span>
+  <span class="c">!    PRINT *, &quot;   1. BNSLO: Binary Neutron Stars produced with LORENE&quot;</span>
+  <span class="c">!    PRINT *, &quot;   2. DRSLO: Differentially Rotating Star produced with LORENE&quot;</span>
+  <span class="c">!    PRINT *</span>
+  <span class="c">!    STOP</span>
+  <span class="c">!  ENDIF</span>
+  <span class="c">!ENDDO</span>
+
   <span class="c">!</span>
   <span class="c">!-- Construct the bns object from the LORENE binary file</span>
   <span class="c">!</span>
-  <span class="n">binary</span><span class="o">=</span> <span class="n">bnslorene</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">common_path</span><span class="p">)</span><span class="o">//</span><span class="s2">&quot;/&quot;</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="n">filenames</span><span class="p">(</span> <span class="mi">1</span> <span class="p">))</span> <span class="p">)</span>
+  <span class="c">!binary= bnslorene( TRIM(common_path)//&quot;/&quot;//TRIM(filenames( 1 )) )</span>
+  <span class="k">CALL </span><span class="n">allocate_idbase</span><span class="p">(</span> <span class="n">idata</span><span class="p">,</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">filenames</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span> <span class="n">systems</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">systems_name</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+  <span class="k">CALL </span><span class="n">idata</span><span class="p">%</span> <span class="n">initialize</span><span class="p">(</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">common_path</span><span class="p">)</span><span class="o">//</span><span class="nb">TRIM</span><span class="p">(</span><span class="n">filenames</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="p">)</span>
   <span class="c">! Set the variables to decide on using the geodesic gauge or not</span>
   <span class="c">! (lapse=1, shift=0)</span>
-  <span class="k">CALL </span><span class="n">binary</span><span class="p">%</span> <span class="n">set_one_lapse</span> <span class="p">(</span> <span class="n">one_lapse</span> <span class="p">)</span>
-  <span class="k">CALL </span><span class="n">binary</span><span class="p">%</span> <span class="n">set_zero_shift</span><span class="p">(</span> <span class="n">zero_shift</span> <span class="p">)</span>
+  <span class="k">CALL </span><span class="n">idata</span><span class="p">%</span> <span class="n">set_one_lapse</span> <span class="p">(</span> <span class="n">one_lapse</span> <span class="p">)</span>
+  <span class="k">CALL </span><span class="n">idata</span><span class="p">%</span> <span class="n">set_zero_shift</span><span class="p">(</span> <span class="n">zero_shift</span> <span class="p">)</span>
 
   <span class="c">!</span>
   <span class="c">!-- Construct the particles object from the bns object</span>
@@ -2491,7 +2661,7 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
     <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
              <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
     <span class="k">PRINT</span> <span class="o">*</span>
-    <span class="n">particles_dist</span><span class="o">=</span> <span class="n">particles</span><span class="p">(</span> <span class="n">binary</span><span class="p">,</span> <span class="n">placer</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="n">particles_dist</span><span class="o">=</span> <span class="n">particles</span><span class="p">(</span> <span class="n">idata</span><span class="p">,</span> <span class="n">placer</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">)</span>
 
     <span class="c">!</span>
     <span class="c">!-- Compute the SPH variables</span>
@@ -2505,7 +2675,12 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
     <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_parts</span><span class="p">,</span> <span class="s2">&quot;(A1,I1,A1,I1,A1)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
                                 <span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
                                 <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span>
-    <span class="n">particles_dist</span><span class="p">%</span> <span class="n">export_bin</span><span class="o">=</span> <span class="n">export_bin</span>
+    <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_parts_bin</span><span class="p">,</span> <span class="s2">&quot;(A5)&quot;</span> <span class="p">)</span> <span class="n">systems_name</span><span class="p">(</span><span class="n">itr3</span><span class="p">)</span>
+    <span class="n">namefile_parts_bin</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">sph_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_parts_bin</span> <span class="p">)</span>
+
+    <span class="n">particles_dist</span><span class="p">%</span> <span class="n">export_bin</span>    <span class="o">=</span> <span class="n">export_bin</span>
+    <span class="n">particles_dist</span><span class="p">%</span> <span class="n">export_form_xy</span><span class="o">=</span> <span class="n">export_form_xy</span>
+    <span class="n">particles_dist</span><span class="p">%</span> <span class="n">export_form_x</span> <span class="o">=</span> <span class="n">export_form_x</span>
     <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">%</span> <span class="n">compute_and_export_SPH_variables</span><span class="p">(</span> <span class="n">namefile_parts</span> <span class="p">)</span>
 
     <span class="c">!</span>
@@ -2514,8 +2689,7 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
     <span class="k">IF</span><span class="p">(</span> <span class="n">export_form</span> <span class="p">)</span><span class="k">THEN</span>
 <span class="k">      WRITE</span><span class="p">(</span> <span class="n">namefile_parts</span><span class="p">,</span> <span class="s2">&quot;(A34)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
                              <span class="s2">&quot;lorene-bns-id-particles-form_1.dat&quot;</span>
-      <span class="n">particles_dist</span><span class="p">%</span> <span class="n">export_form_xy</span><span class="o">=</span> <span class="n">export_form_xy</span>
-      <span class="n">particles_dist</span><span class="p">%</span> <span class="n">export_form_x</span> <span class="o">=</span> <span class="n">export_form_x</span>
+      <span class="n">namefile_parts</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">sph_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_parts</span> <span class="p">)</span>
       <span class="k">CALL </span><span class="n">particles_dist</span><span class="p">%</span> <span class="n">print_formatted_lorene_id_particles</span><span class="p">(</span> <span class="n">namefile_parts</span> <span class="p">)</span>
     <span class="n">ENDIF</span>
 
@@ -2535,17 +2709,17 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
 
     <span class="k">IF</span><span class="p">(</span> <span class="n">itr3</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span><span class="k">THEN</span>
 
-<span class="k">      </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)</span><span class="o">=</span> <span class="n">bssn_id</span><span class="p">(</span> <span class="n">binary</span> <span class="p">)</span>
+<span class="k">      </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)</span><span class="o">=</span> <span class="n">bssn_id</span><span class="p">(</span> <span class="n">idata</span> <span class="p">)</span>
       <span class="n">original_dx</span><span class="o">=</span> <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">get_dx</span><span class="p">(</span><span class="n">ref_lev</span><span class="p">)</span>
 
     <span class="k">ELSE</span>
 <span class="k">      IF</span><span class="p">(</span> <span class="n">itr3</span> <span class="o">==</span> <span class="n">min_bssn</span> <span class="p">)</span><span class="k">THEN</span>
 
-<span class="k">        </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)</span><span class="o">=</span> <span class="n">bssn_id</span><span class="p">(</span> <span class="n">binary</span> <span class="p">)</span>
+<span class="k">        </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)</span><span class="o">=</span> <span class="n">bssn_id</span><span class="p">(</span> <span class="n">idata</span> <span class="p">)</span>
         <span class="n">original_dx</span><span class="o">=</span> <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_dx</span><span class="p">(</span><span class="n">ref_lev</span><span class="p">)</span>
 
       <span class="n">ENDIF</span>
-      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)</span><span class="o">=</span> <span class="n">bssn_id</span><span class="p">(</span> <span class="n">binary</span><span class="p">,</span> <span class="p">&amp;</span>
+      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)</span><span class="o">=</span> <span class="n">bssn_id</span><span class="p">(</span> <span class="n">idata</span><span class="p">,</span> <span class="p">&amp;</span>
                                    <span class="n">original_dx</span><span class="o">/</span><span class="p">(</span> <span class="n">ratio_dx</span><span class="o">**</span><span class="p">(</span> <span class="n">itr3</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">),</span> <span class="p">&amp;</span>
                                    <span class="n">original_dx</span><span class="o">/</span><span class="p">(</span> <span class="n">ratio_dx</span><span class="o">**</span><span class="p">(</span> <span class="n">itr3</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">),</span> <span class="p">&amp;</span>
                                    <span class="n">original_dx</span><span class="o">/</span><span class="p">(</span> <span class="n">ratio_dx</span><span class="o">**</span><span class="p">(</span> <span class="n">itr3</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
@@ -2595,12 +2769,14 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
     <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
              <span class="o">//</span> <span class="s2">&quot;===============&quot;</span>
     <span class="k">PRINT</span> <span class="o">*</span>
-    <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_bssn</span><span class="p">,</span> <span class="s2">&quot;(A6,I1,A4)&quot;</span> <span class="p">)</span> <span class="s2">&quot;BSSN_l&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;.bin&quot;</span>
+    <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_bssn_bin</span><span class="p">,</span> <span class="s2">&quot;(A6,I1,A4)&quot;</span> <span class="p">)</span> <span class="s2">&quot;BSSN_l&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;.bin&quot;</span>
+    <span class="n">namefile_bssn_bin</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn_bin</span> <span class="p">)</span>
+
     <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_bin</span><span class="o">=</span> <span class="n">export_bin</span>
     <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_form_xy</span><span class="o">=</span> <span class="n">export_form_xy</span>
     <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_form_x</span> <span class="o">=</span> <span class="n">export_form_x</span>
     <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
-                        <span class="n">compute_and_export_3p1_variables</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+                        <span class="n">compute_and_export_3p1_variables</span><span class="p">(</span> <span class="n">namefile_bssn_bin</span> <span class="p">)</span>
   <span class="n">ENDDO</span> <span class="n">compute_export_bssn_loop</span>
 
   <span class="c">!</span>
@@ -2610,8 +2786,8 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
 <span class="k">    </span><span class="n">export_bssn_loop</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr3</span> <span class="o">=</span> <span class="n">min_bssn</span><span class="p">,</span> <span class="n">max_bssn</span><span class="p">,</span> <span class="mi">1</span>
       <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_bssn</span><span class="p">,</span> <span class="s2">&quot;(A24,I1,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
                             <span class="s2">&quot;lorene-bns-id-bssn-form_&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;.dat&quot;</span>
-      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_form_xy</span><span class="o">=</span> <span class="n">export_form_xy</span>
-      <span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="n">export_form_x</span> <span class="o">=</span> <span class="n">export_form_x</span>
+      <span class="n">namefile_bssn</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+
       <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
                   <span class="n">print_formatted_lorene_id_3p1_variables</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
     <span class="n">ENDDO</span> <span class="n">export_bssn_loop</span>
@@ -2645,8 +2821,11 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
       <span class="k">WRITE</span><span class="p">(</span> <span class="n">name_logfile</span><span class="p">,</span> <span class="s2">&quot;(A28,I1,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
                           <span class="s2">&quot;bssn-constraints-statistics-&quot;</span><span class="p">,</span> <span class="n">itr3</span>
 
+      <span class="n">namefile_bssn</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+      <span class="n">name_logfile</span> <span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">name_logfile</span> <span class="p">)</span>
+
       <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
-                  <span class="n">compute_and_export_3p1_constraints</span><span class="p">(</span> <span class="n">binary</span><span class="p">,</span> <span class="p">&amp;</span>
+                  <span class="n">compute_and_export_3p1_constraints</span><span class="p">(</span> <span class="n">idata</span><span class="p">,</span> <span class="p">&amp;</span>
                                                       <span class="n">namefile_bssn</span><span class="p">,</span> <span class="p">&amp;</span>
                                                       <span class="n">name_logfile</span> <span class="p">)</span>
 
@@ -2667,6 +2846,10 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
       <span class="k">WRITE</span><span class="p">(</span> <span class="n">namefile_sph</span><span class="p">,</span> <span class="s2">&quot;(A12,I1,A4)&quot;</span> <span class="p">)</span> <span class="s2">&quot;sph-density-&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;.dat&quot;</span>
       <span class="k">WRITE</span><span class="p">(</span> <span class="n">name_logfile</span><span class="p">,</span> <span class="s2">&quot;(A34,I1,A4)&quot;</span> <span class="p">)</span> <span class="p">&amp;</span>
                            <span class="s2">&quot;bssn-constraints-parts-statistics-&quot;</span><span class="p">,</span> <span class="n">itr3</span><span class="p">,</span> <span class="s2">&quot;.log&quot;</span>
+
+      <span class="n">namefile_bssn</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_bssn</span> <span class="p">)</span>
+      <span class="n">namefile_sph</span> <span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">sph_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">namefile_sph</span> <span class="p">)</span>
+      <span class="n">name_logfile</span> <span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">spacetime_path</span> <span class="p">)</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span> <span class="n">name_logfile</span> <span class="p">)</span>
 
       <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="n">itr3</span> <span class="p">)%</span> <span class="p">&amp;</span>
                   <span class="n">compute_and_export_3p1_constraints</span><span class="p">(</span> <span class="n">particles_dist</span><span class="p">,</span> <span class="p">&amp;</span>
@@ -2711,20 +2894,25 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
   <span class="c">!-- Perform the convergence test with the appropriate constraints</span>
   <span class="c">!</span>
   <span class="k">IF</span><span class="p">(</span> <span class="n">compute_constraints</span> <span class="p">)</span><span class="k">THEN</span>
+
 <span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** Performing convergence test with constraints computed &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
              <span class="s2">&quot;without particle data.&quot;</span>
     <span class="k">PRINT</span> <span class="o">*</span>
     <span class="k">CALL </span><span class="n">cauchy_convergence_test_unknown</span><span class="p">(</span> <span class="n">bssn_forms</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">bssn_forms</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="p">&amp;</span>
                                           <span class="n">bssn_forms</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ref_lev</span> <span class="p">)</span>
     <span class="k">CALL </span><span class="n">cauchy_convergence_test_known</span><span class="p">(</span> <span class="n">bssn_forms</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">bssn_forms</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ref_lev</span> <span class="p">)</span>
+
   <span class="n">ENDIF</span>
+
   <span class="k">IF</span><span class="p">(</span> <span class="n">compute_parts_constraints</span> <span class="p">)</span><span class="k">THEN</span>
+
 <span class="k">    PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** Performing convergence test with constraints computed &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
              <span class="s2">&quot;with particle data.&quot;</span>
     <span class="k">PRINT</span> <span class="o">*</span>
     <span class="k">CALL </span><span class="n">cauchy_convergence_test_unknown</span><span class="p">(</span> <span class="n">bssn_forms</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">bssn_forms</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="p">&amp;</span>
                                           <span class="n">bssn_forms</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ref_lev</span> <span class="p">)</span>
     <span class="k">CALL </span><span class="n">cauchy_convergence_test_known</span><span class="p">(</span> <span class="n">bssn_forms</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">bssn_forms</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ref_lev</span> <span class="p">)</span>
+
   <span class="n">ENDIF</span>
 
   <span class="k">CALL </span><span class="n">execution_timer</span><span class="p">%</span> <span class="n">stop_timer</span><span class="p">()</span>
@@ -2737,32 +2925,40 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
   <span class="c">!</span>
   <span class="c">!-- Print the timers</span>
   <span class="c">!</span>
-  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** Timing.&quot;</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+           <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; Timing and summaries&quot;</span>
+  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;===================================================&quot;</span> <span class="p">&amp;</span>
+           <span class="o">//</span> <span class="s2">&quot;================================================&quot;</span>
   <span class="k">PRINT</span> <span class="o">*</span>
   <span class="k">PRINT</span> <span class="o">*</span>
-  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * BSSN formulation with uniform resolution:&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-           <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_dx</span><span class="p">(</span><span class="n">ref_lev</span><span class="p">)</span>
-  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;    and number of points:&quot;</span><span class="p">,</span> <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">get_ngrid_x</span><span class="p">(</span><span class="n">ref_lev</span><span class="p">),</span> <span class="p">&amp;</span>
-           <span class="s2">&quot;**3&quot;</span>
+  <span class="k">CALL </span><span class="n">idata</span><span class="p">%</span> <span class="n">print_summary</span><span class="p">()</span>
+  <span class="c">!PRINT *, &quot; * BSSN formulation with uniform resolution:&quot;, &amp;</span>
+  <span class="c">!         bssn_forms( 1 )% get_dx(ref_lev)</span>
+  <span class="c">!PRINT *, &quot;    and number of points:&quot;, bssn_forms( 1 )% get_ngrid_x(ref_lev), &amp;</span>
+  <span class="c">!         &quot;**3&quot;</span>
   <span class="c">!original_dx</span>
+  <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">print_summary</span><span class="p">()</span>
   <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">grid_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
   <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">importer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
   <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)%</span> <span class="n">bssn_computer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
   <span class="k">PRINT</span> <span class="o">*</span>
-  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * BSSN formulation with uniform resolution:&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-           <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)%</span> <span class="n">get_dx</span><span class="p">(</span><span class="n">ref_lev</span><span class="p">)</span>
-  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;    and number of points:&quot;</span><span class="p">,</span> <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)%</span> <span class="n">get_ngrid_x</span><span class="p">(</span><span class="n">ref_lev</span><span class="p">),</span> <span class="p">&amp;</span>
-           <span class="s2">&quot;**3&quot;</span>
+  <span class="c">!PRINT *, &quot; * BSSN formulation with uniform resolution:&quot;, &amp;</span>
+  <span class="c">!         bssn_forms( 2 )% get_dx(ref_lev)</span>
+  <span class="c">!PRINT *, &quot;    and number of points:&quot;, bssn_forms( 2 )% get_ngrid_x(ref_lev), &amp;</span>
+  <span class="c">!         &quot;**3&quot;</span>
   <span class="c">!original_dx/2</span>
+  <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)%</span> <span class="n">print_summary</span><span class="p">()</span>
   <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)%</span> <span class="n">grid_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
   <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)%</span> <span class="n">importer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
   <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)%</span> <span class="n">bssn_computer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
   <span class="k">PRINT</span> <span class="o">*</span>
-  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * BSSN formulation with uniform resolution:&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-           <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">3</span> <span class="p">)%</span> <span class="n">get_dx</span><span class="p">(</span><span class="n">ref_lev</span><span class="p">)</span>
-  <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;    and number of points:&quot;</span><span class="p">,</span> <span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">3</span> <span class="p">)%</span> <span class="n">get_ngrid_x</span><span class="p">(</span><span class="n">ref_lev</span><span class="p">),</span> <span class="p">&amp;</span>
-           <span class="s2">&quot;**3&quot;</span>
+  <span class="c">!PRINT *, &quot; * BSSN formulation with uniform resolution:&quot;, &amp;</span>
+  <span class="c">!         bssn_forms( 3 )% get_dx(ref_lev)</span>
+  <span class="c">!PRINT *, &quot;    and number of points:&quot;, bssn_forms( 3 )% get_ngrid_x(ref_lev), &amp;</span>
+  <span class="c">!         &quot;**3&quot;</span>
   <span class="c">!original_dx/4</span>
+  <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">3</span> <span class="p">)%</span> <span class="n">print_summary</span><span class="p">()</span>
   <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">3</span> <span class="p">)%</span> <span class="n">grid_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
   <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">3</span> <span class="p">)%</span> <span class="n">importer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
   <span class="k">CALL </span><span class="n">bssn_forms</span><span class="p">(</span> <span class="mi">3</span> <span class="p">)%</span> <span class="n">bssn_computer_timer</span><span class="p">%</span> <span class="n">print_timer</span><span class="p">(</span> <span class="mi">2</span> <span class="p">)</span>
@@ -2782,7 +2978,7 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
   <span class="c">!-- to problems...</span>
   <span class="c">!-- TODO: fix this</span>
   <span class="c">!</span>
-  <span class="k">CALL </span><span class="n">binary</span><span class="p">%</span> <span class="n">destruct_binary</span><span class="p">()</span>
+  <span class="c">!CALL binary% destruct_binary()</span>
 
 
   <span class="k">CONTAINS</span>
@@ -2881,7 +3077,7 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
       <span class="k">PRINT</span> <span class="o">*</span>
 
       <span class="n">unit_cauchy_ct</span><span class="o">=</span> <span class="mi">3109</span>
-      <span class="n">name_cauchy_ct</span><span class="o">=</span> <span class="s2">&quot;cauchy_convergence_test_known.dat&quot;</span>
+      <span class="n">name_cauchy_ct</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">)</span><span class="o">//</span><span class="s2">&quot;cauchy_convergence_test_known.dat&quot;</span>
 
       <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">name_cauchy_ct</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
 
@@ -3036,7 +3232,8 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
       <span class="k">PRINT</span> <span class="o">*</span>
 
       <span class="n">unit_cauchy_parts_ct</span><span class="o">=</span> <span class="mi">3111</span>
-      <span class="n">name_cauchy_parts_ct</span><span class="o">=</span> <span class="s2">&quot;cauchy_convergence_test_known_parts.dat&quot;</span>
+      <span class="n">name_cauchy_parts_ct</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">)</span> <span class="p">&amp;</span>
+                            <span class="o">//</span> <span class="s2">&quot;cauchy_convergence_test_known_parts.dat&quot;</span>
 
       <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">name_cauchy_parts_ct</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
 
@@ -3321,7 +3518,8 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
       <span class="k">PRINT</span> <span class="o">*</span>
 
       <span class="n">unit_cauchy_ct</span><span class="o">=</span> <span class="mi">3108</span>
-      <span class="n">name_cauchy_ct</span><span class="o">=</span> <span class="s2">&quot;cauchy_convergence_test_unknown.dat&quot;</span>
+      <span class="n">name_cauchy_ct</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">)</span> <span class="p">&amp;</span>
+                      <span class="o">//</span><span class="s2">&quot;cauchy_convergence_test_unknown.dat&quot;</span>
 
       <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">name_cauchy_ct</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
 
@@ -3522,7 +3720,8 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
       <span class="k">PRINT</span> <span class="o">*</span>
 
       <span class="n">unit_cauchy_parts_ct</span><span class="o">=</span> <span class="mi">3110</span>
-      <span class="n">name_cauchy_parts_ct</span><span class="o">=</span> <span class="s2">&quot;cauchy_convergence_test_unknown_parts.dat&quot;</span>
+      <span class="n">name_cauchy_parts_ct</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">spacetime_path</span><span class="p">)</span> <span class="p">&amp;</span>
+                            <span class="o">//</span><span class="s2">&quot;cauchy_convergence_test_unknown_parts.dat&quot;</span>
 
       <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">name_cauchy_parts_ct</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
 
@@ -3725,14 +3924,14 @@ subroutine <a href='../proc/read_bns_id_parameters.html'>read_bns_id_parameters<
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

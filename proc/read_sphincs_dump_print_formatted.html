@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>read_sphincs_dump_print_formatted &ndash; SPHINCS_LORENE</title>
+    <title>read_sphincs_dump_print_formatted &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -149,16 +149,16 @@
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/submodule_particles_sph_variables.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/submodule_particles_io.f90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/submodule_particles_sph_variables.f90.html'>submodule_particles_sph_variables.f90</a></li>
+     <li><a href='../sourcefile/submodule_particles_io.f90.html'>submodule_particles_io.f90</a></li>
     
-     <li><a href='../module/particles_sph_variables.html'>particles_sph_variables</a></li>
+     <li><a href='../module/particles_io.html'>particles_io</a></li>
     
   
      <li class="active">read_sphincs_dump_print_formatted</li>
@@ -191,11 +191,11 @@
       
       <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-abs_pos~2">abs_pos</a>
       
-      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-exist~13">exist</a>
+      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-exist~14">exist</a>
       
-      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-finalnamefile~6">finalnamefile</a>
+      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-finalnamefile~7">finalnamefile</a>
       
-      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-itr~5">itr</a>
+      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-itr~6">itr</a>
       
       <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-min_abs_y~7">min_abs_y</a>
       
@@ -255,9 +255,9 @@ module procedure read_sphincs_dump_print_formatted <small>module module subrouti
     
     <li>metric_on_particles</li>
     
-    <li>input_output</li>
-    
     <li>sph_variables</li>
+    
+    <li>input_output</li>
     
   </ul>
       </li>
@@ -294,29 +294,29 @@ module procedure read_sphincs_dump_print_formatted <small>module module subrouti
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M183.5595,-66.0355C162.3106,-70.9123 137.6019,-76.5832 115.4334,-81.671"/>
 <polygon fill="#000000" stroke="#000000" points="114.4118,-78.3144 105.4481,-83.9627 115.9777,-85.137 114.4118,-78.3144"/>
 </g>
-<!-- input_output -->
-<g id="proc~~read_sphincs_dump_print_formatted~~UsesGraph_node3" class="node">
-<title>input_output</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="89,-66 17,-66 17,-42 89,-42 89,-66"/>
-<text text-anchor="middle" x="53" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">input_output</text>
-</g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;input_output -->
-<g id="proc~~read_sphincs_dump_print_formatted~~UsesGraph_edge2" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;input_output</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.8197,-54C127.0315,-54 112.3368,-54 99.2824,-54"/>
-<polygon fill="#000000" stroke="#000000" points="99.1942,-50.5001 89.1942,-54 99.1942,-57.5001 99.1942,-50.5001"/>
-</g>
 <!-- sph_variables -->
-<g id="proc~~read_sphincs_dump_print_formatted~~UsesGraph_node4" class="node">
+<g id="proc~~read_sphincs_dump_print_formatted~~UsesGraph_node3" class="node">
 <title>sph_variables</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="92.5,-24 13.5,-24 13.5,0 92.5,0 92.5,-24"/>
-<text text-anchor="middle" x="53" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sph_variables</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="92.5,-66 13.5,-66 13.5,-42 92.5,-42 92.5,-66"/>
+<text text-anchor="middle" x="53" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sph_variables</text>
 </g>
 <!-- proc~read_sphincs_dump_print_formatted&#45;&gt;sph_variables -->
-<g id="proc~~read_sphincs_dump_print_formatted~~UsesGraph_edge3" class="edge">
+<g id="proc~~read_sphincs_dump_print_formatted~~UsesGraph_edge2" class="edge">
 <title>proc~read_sphincs_dump_print_formatted&#45;&gt;sph_variables</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M183.5595,-41.9645C158.1247,-36.127 127.7327,-29.1518 102.6737,-23.4005"/>
-<polygon fill="#000000" stroke="#000000" points="103.1762,-19.9249 92.6466,-21.0992 101.6103,-26.7475 103.1762,-19.9249"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M141.8197,-54C128.4081,-54 115.0734,-54 102.9694,-54"/>
+<polygon fill="#000000" stroke="#000000" points="102.6784,-50.5001 92.6783,-54 102.6783,-57.5001 102.6784,-50.5001"/>
+</g>
+<!-- input_output -->
+<g id="proc~~read_sphincs_dump_print_formatted~~UsesGraph_node4" class="node">
+<title>input_output</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="89,-24 17,-24 17,0 89,0 89,-24"/>
+<text text-anchor="middle" x="53" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">input_output</text>
+</g>
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;input_output -->
+<g id="proc~~read_sphincs_dump_print_formatted~~UsesGraph_edge3" class="edge">
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;input_output</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M183.5595,-41.9645C156.8928,-35.8442 124.777,-28.4734 99.0712,-22.5737"/>
+<polygon fill="#000000" stroke="#000000" points="99.7306,-19.1341 89.201,-20.3084 98.1647,-25.9567 99.7306,-19.1341"/>
 </g>
 </g>
 </svg>
@@ -481,27 +481,27 @@ module procedure read_sphincs_dump_print_formatted <small>module module subrouti
 <polygon fill="none" stroke="#000000" points="188,-381 0,-381 0,-357 188,-357 188,-381"/>
 <text text-anchor="middle" x="94" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">read_sphincs_dump_print_formatted</text>
 </g>
-<!-- vel_u -->
+<!-- h -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node2" class="node">
-<title>vel_u</title>
+<title>h</title>
 <polygon fill="#777777" stroke="#777777" points="331,-738 277,-738 277,-714 331,-714 331,-738"/>
-<text text-anchor="middle" x="304" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">vel_u</text>
+<text text-anchor="middle" x="304" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">h</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;vel_u -->
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;h -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge1" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;vel_u</title>
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;h</title>
 <path fill="none" stroke="#000000" d="M94.873,-381.2908C99.0305,-430.242 121.1516,-613.113 224,-705 235.7456,-715.4938 252.1127,-720.8503 266.9847,-723.5455"/>
 <polygon fill="#000000" stroke="#000000" points="266.5632,-727.0211 276.9666,-725.0165 267.5838,-720.0959 266.5632,-727.0211"/>
 </g>
-<!-- nu -->
+<!-- vel_u -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node3" class="node">
-<title>nu</title>
+<title>vel_u</title>
 <polygon fill="#777777" stroke="#777777" points="331,-696 277,-696 277,-672 331,-672 331,-696"/>
-<text text-anchor="middle" x="304" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">nu</text>
+<text text-anchor="middle" x="304" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">vel_u</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;nu -->
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;vel_u -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge2" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;nu</title>
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;vel_u</title>
 <path fill="none" stroke="#000000" d="M95.6209,-381.2954C102.2346,-426.381 131.3861,-584.1036 224,-663 235.901,-673.1382 252.149,-678.4514 266.8941,-681.2099"/>
 <polygon fill="#000000" stroke="#000000" points="266.3729,-684.6708 276.7902,-682.7393 267.4421,-677.7529 266.3729,-684.6708"/>
 </g>
@@ -517,17 +517,17 @@ module procedure read_sphincs_dump_print_formatted <small>module module subrouti
 <path fill="none" stroke="#000000" d="M96.5801,-381.2276C105.8515,-422.0531 141.41,-554.8089 224,-621 235.9919,-630.6108 251.9391,-635.8561 266.4386,-638.7062"/>
 <polygon fill="#000000" stroke="#000000" points="266.2281,-642.2185 276.6633,-640.3864 267.3632,-635.3112 266.2281,-642.2185"/>
 </g>
-<!-- allocate_metric_on_particles -->
+<!-- av -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node5" class="node">
-<title>allocate_metric_on_particles</title>
-<polygon fill="#777777" stroke="#777777" points="378,-612 230,-612 230,-588 378,-588 378,-612"/>
-<text text-anchor="middle" x="304" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_metric_on_particles</text>
+<title>av</title>
+<polygon fill="#777777" stroke="#777777" points="331,-612 277,-612 277,-588 331,-588 331,-612"/>
+<text text-anchor="middle" x="304" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">av</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;allocate_metric_on_particles -->
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;av -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge4" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;allocate_metric_on_particles</title>
-<path fill="none" stroke="#000000" d="M97.8945,-381.1996C110.1092,-417.431 151.2476,-525.2164 224,-579 226.0712,-580.5312 228.2449,-581.9509 230.4966,-583.2672"/>
-<polygon fill="#000000" stroke="#000000" points="229.0155,-586.4405 239.5163,-587.8491 232.1858,-580.1996 229.0155,-586.4405"/>
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;av</title>
+<path fill="none" stroke="#000000" d="M97.8945,-381.1996C110.1092,-417.431 151.2476,-525.2164 224,-579 236.3577,-588.1357 252.3649,-593.3031 266.8102,-596.2235"/>
+<polygon fill="#000000" stroke="#000000" points="266.5287,-599.7266 276.9782,-597.9775 267.7187,-592.8285 266.5287,-599.7266"/>
 </g>
 <!-- temp -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node6" class="node">
@@ -541,161 +541,161 @@ module procedure read_sphincs_dump_print_formatted <small>module module subrouti
 <path fill="none" stroke="#000000" d="M99.9153,-381.3795C115.5149,-412.6494 160.9473,-495.2859 224,-537 236.6242,-545.3519 252.4164,-550.3863 266.627,-553.4192"/>
 <polygon fill="#000000" stroke="#000000" points="266.1536,-556.8913 276.6272,-555.2927 267.4427,-550.011 266.1536,-556.8913"/>
 </g>
-<!-- theta -->
+<!-- read_sphincs_dump -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node7" class="node">
-<title>theta</title>
-<polygon fill="#777777" stroke="#777777" points="331,-528 277,-528 277,-504 331,-504 331,-528"/>
-<text text-anchor="middle" x="304" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">theta</text>
+<title>read_sphincs_dump</title>
+<polygon fill="#777777" stroke="#777777" points="358.5,-528 249.5,-528 249.5,-504 358.5,-504 358.5,-528"/>
+<text text-anchor="middle" x="304" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_sphincs_dump</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;theta -->
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;read_sphincs_dump -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge6" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;theta</title>
-<path fill="none" stroke="#000000" d="M102.937,-381.1484C122.1534,-406.372 170.0591,-464.5977 224,-495 237.0859,-502.3755 252.8355,-507.2299 266.8868,-510.3919"/>
-<polygon fill="#000000" stroke="#000000" points="266.2578,-513.8356 276.7559,-512.4072 267.6583,-506.9772 266.2578,-513.8356"/>
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;read_sphincs_dump</title>
+<path fill="none" stroke="#000000" d="M102.937,-381.1484C122.1534,-406.372 170.0591,-464.5977 224,-495 228.8474,-497.7321 234.0602,-500.1182 239.4169,-502.2005"/>
+<polygon fill="#000000" stroke="#000000" points="238.5714,-505.6133 249.1662,-505.6297 240.8941,-499.0099 238.5714,-505.6133"/>
 </g>
-<!-- ye -->
+<!-- nu -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node8" class="node">
-<title>ye</title>
+<title>nu</title>
 <polygon fill="#777777" stroke="#777777" points="331,-486 277,-486 277,-462 331,-462 331,-486"/>
-<text text-anchor="middle" x="304" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ye</text>
+<text text-anchor="middle" x="304" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">nu</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;ye -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge7" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;ye</title>
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;nu -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge8" class="edge">
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;nu</title>
 <path fill="none" stroke="#000000" d="M109.0898,-381.0538C132.4225,-399.1393 179.2496,-433.2735 224,-453 237.507,-458.954 253.0659,-463.5125 266.8509,-466.8361"/>
 <polygon fill="#000000" stroke="#000000" points="266.4562,-470.3356 276.9833,-469.1396 268.0081,-463.5098 266.4562,-470.3356"/>
 </g>
-<!-- deallocate_metric_on_particles -->
+<!-- theta -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node9" class="node">
-<title>deallocate_metric_on_particles</title>
-<polygon fill="#777777" stroke="#777777" points="384,-444 224,-444 224,-420 384,-420 384,-444"/>
-<text text-anchor="middle" x="304" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_metric_on_particles</text>
+<title>theta</title>
+<polygon fill="#777777" stroke="#777777" points="331,-444 277,-444 277,-420 331,-420 331,-444"/>
+<text text-anchor="middle" x="304" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">theta</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;deallocate_metric_on_particles -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge8" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;deallocate_metric_on_particles</title>
-<path fill="none" stroke="#000000" d="M129.4238,-381.0349C155.4692,-389.7391 191.7889,-401.5769 224,-411 231.3647,-413.1545 239.1405,-415.3245 246.835,-417.4097"/>
-<polygon fill="#000000" stroke="#000000" points="245.9357,-420.7922 256.5008,-419.9981 247.7465,-414.0304 245.9357,-420.7922"/>
-</g>
-<!-- h -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node10" class="node">
-<title>h</title>
-<polygon fill="#777777" stroke="#777777" points="331,-402 277,-402 277,-378 331,-378 331,-402"/>
-<text text-anchor="middle" x="304" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">h</text>
-</g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;h -->
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;theta -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge9" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;h</title>
-<path fill="none" stroke="#000000" d="M188.2502,-378.425C215.9864,-381.1986 244.7337,-384.0734 266.6411,-386.2641"/>
-<polygon fill="#000000" stroke="#000000" points="266.5132,-389.7687 276.8118,-387.2812 267.2097,-382.8034 266.5132,-389.7687"/>
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;theta</title>
+<path fill="none" stroke="#000000" d="M129.4238,-381.0349C155.4692,-389.7391 191.7889,-401.5769 224,-411 237.9476,-415.0803 253.3701,-419.2164 266.9216,-422.7265"/>
+<polygon fill="#000000" stroke="#000000" points="266.3082,-426.1825 276.8643,-425.2774 268.0479,-419.402 266.3082,-426.1825"/>
 </g>
-<!-- u -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node11" class="node">
-<title>u</title>
-<polygon fill="#777777" stroke="#777777" points="331,-360 277,-360 277,-336 331,-336 331,-360"/>
-<text text-anchor="middle" x="304" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">u</text>
+<!-- allocate_sph_memory -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node10" class="node">
+<title>allocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="363,-402 245,-402 245,-378 363,-378 363,-402"/>
+<text text-anchor="middle" x="304" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_sph_memory</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;u -->
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;allocate_sph_memory -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge10" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;u</title>
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;allocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M188.2502,-378.425C203.931,-379.9931 219.935,-381.5935 234.8435,-383.0844"/>
+<polygon fill="#000000" stroke="#000000" points="234.6736,-386.5847 244.9723,-384.0972 235.3702,-379.6195 234.6736,-386.5847"/>
+</g>
+<!-- pos_u -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node11" class="node">
+<title>pos_u</title>
+<polygon fill="#777777" stroke="#777777" points="331,-360 277,-360 277,-336 331,-336 331,-360"/>
+<text text-anchor="middle" x="304" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pos_u</text>
+</g>
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;pos_u -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge11" class="edge">
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;pos_u</title>
 <path fill="none" stroke="#000000" d="M188.2502,-359.575C215.9864,-356.8014 244.7337,-353.9266 266.6411,-351.7359"/>
 <polygon fill="#000000" stroke="#000000" points="267.2097,-355.1966 276.8118,-350.7188 266.5132,-348.2313 267.2097,-355.1966"/>
 </g>
-<!-- av -->
+<!-- divv -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node12" class="node">
-<title>av</title>
+<title>divv</title>
 <polygon fill="#777777" stroke="#777777" points="331,-318 277,-318 277,-294 331,-294 331,-318"/>
-<text text-anchor="middle" x="304" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">av</text>
+<text text-anchor="middle" x="304" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">divv</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;av -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge11" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;av</title>
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;divv -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge12" class="edge">
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;divv</title>
 <path fill="none" stroke="#000000" d="M129.4238,-356.9651C155.4692,-348.2609 191.7889,-336.4231 224,-327 237.9476,-322.9197 253.3701,-318.7836 266.9216,-315.2735"/>
 <polygon fill="#000000" stroke="#000000" points="268.0479,-318.598 276.8643,-312.7226 266.3082,-311.8175 268.0479,-318.598"/>
 </g>
-<!-- allocate_sph_memory -->
+<!-- deallocate_metric_on_particles -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node13" class="node">
-<title>allocate_sph_memory</title>
-<polygon fill="#777777" stroke="#777777" points="363,-276 245,-276 245,-252 363,-252 363,-276"/>
-<text text-anchor="middle" x="304" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_sph_memory</text>
+<title>deallocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="384,-276 224,-276 224,-252 384,-252 384,-276"/>
+<text text-anchor="middle" x="304" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_metric_on_particles</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;allocate_sph_memory -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge12" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;allocate_sph_memory</title>
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;deallocate_metric_on_particles -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge13" class="edge">
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;deallocate_metric_on_particles</title>
 <path fill="none" stroke="#000000" d="M109.0898,-356.9462C132.4225,-338.8607 179.2496,-304.7265 224,-285 228.724,-282.9176 233.6991,-281.0059 238.7615,-279.258"/>
 <polygon fill="#000000" stroke="#000000" points="240.1187,-282.4979 248.5614,-276.0969 237.9697,-275.8359 240.1187,-282.4979"/>
 </g>
-<!-- deallocate_sph_memory -->
+<!-- u -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node14" class="node">
+<title>u</title>
+<polygon fill="#777777" stroke="#777777" points="331,-234 277,-234 277,-210 331,-210 331,-234"/>
+<text text-anchor="middle" x="304" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">u</text>
+</g>
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;u -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge14" class="edge">
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;u</title>
+<path fill="none" stroke="#000000" d="M102.937,-356.8516C122.1534,-331.628 170.0591,-273.4023 224,-243 237.0859,-235.6245 252.8355,-230.7701 266.8868,-227.6081"/>
+<polygon fill="#000000" stroke="#000000" points="267.6583,-231.0228 276.7559,-225.5928 266.2578,-224.1644 267.6583,-231.0228"/>
+</g>
+<!-- deallocate_sph_memory -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node15" class="node">
 <title>deallocate_sph_memory</title>
-<polygon fill="#777777" stroke="#777777" points="369,-234 239,-234 239,-210 369,-210 369,-234"/>
-<text text-anchor="middle" x="304" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_sph_memory</text>
+<polygon fill="#777777" stroke="#777777" points="369,-192 239,-192 239,-168 369,-168 369,-192"/>
+<text text-anchor="middle" x="304" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_sph_memory</text>
 </g>
 <!-- proc~read_sphincs_dump_print_formatted&#45;&gt;deallocate_sph_memory -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge13" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;deallocate_sph_memory</title>
-<path fill="none" stroke="#000000" d="M102.937,-356.8516C122.1534,-331.628 170.0591,-273.4023 224,-243 227.4205,-241.0721 231.023,-239.3165 234.7296,-237.7183"/>
-<polygon fill="#000000" stroke="#000000" points="236.0666,-240.9538 244.1133,-234.0616 233.5249,-234.4315 236.0666,-240.9538"/>
-</g>
-<!-- pos_u -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node15" class="node">
-<title>pos_u</title>
-<polygon fill="#777777" stroke="#777777" points="331,-192 277,-192 277,-168 331,-168 331,-192"/>
-<text text-anchor="middle" x="304" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pos_u</text>
-</g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;pos_u -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge14" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;pos_u</title>
-<path fill="none" stroke="#000000" d="M99.9153,-356.6205C115.5149,-325.3506 160.9473,-242.7141 224,-201 236.6242,-192.6481 252.4164,-187.6137 266.627,-184.5808"/>
-<polygon fill="#000000" stroke="#000000" points="267.4427,-187.989 276.6272,-182.7073 266.1536,-181.1087 267.4427,-187.989"/>
-</g>
-<!-- nlrf -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node16" class="node">
-<title>nlrf</title>
-<polygon fill="#777777" stroke="#777777" points="331,-150 277,-150 277,-126 331,-126 331,-150"/>
-<text text-anchor="middle" x="304" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">nlrf</text>
-</g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;nlrf -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge15" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;nlrf</title>
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;deallocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M99.9153,-356.6205C115.5149,-325.3506 160.9473,-242.7141 224,-201 226.6104,-199.2731 229.3562,-197.6879 232.1954,-196.233"/>
+<polygon fill="#000000" stroke="#000000" points="233.8581,-199.3225 241.5298,-192.0153 230.9757,-192.9435 233.8581,-199.3225"/>
+</g>
+<!-- ye -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node16" class="node">
+<title>ye</title>
+<polygon fill="#777777" stroke="#777777" points="331,-150 277,-150 277,-126 331,-126 331,-150"/>
+<text text-anchor="middle" x="304" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ye</text>
+</g>
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;ye -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge16" class="edge">
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;ye</title>
 <path fill="none" stroke="#000000" d="M97.8945,-356.8004C110.1092,-320.569 151.2476,-212.7836 224,-159 236.3577,-149.8643 252.3649,-144.6969 266.8102,-141.7765"/>
 <polygon fill="#000000" stroke="#000000" points="267.7187,-145.1715 276.9782,-140.0225 266.5287,-138.2734 267.7187,-145.1715"/>
 </g>
-<!-- set_units -->
+<!-- allocate_metric_on_particles -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node17" class="node">
-<title>set_units</title>
-<polygon fill="#777777" stroke="#777777" points="331.5,-108 276.5,-108 276.5,-84 331.5,-84 331.5,-108"/>
-<text text-anchor="middle" x="304" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">set_units</text>
+<title>allocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="378,-108 230,-108 230,-84 378,-84 378,-108"/>
+<text text-anchor="middle" x="304" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_metric_on_particles</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;set_units -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge16" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;set_units</title>
-<path fill="none" stroke="#000000" d="M96.5801,-356.7724C105.8515,-315.9469 141.41,-183.1911 224,-117 235.9018,-107.4614 251.6995,-102.223 266.1113,-99.3585"/>
-<polygon fill="#000000" stroke="#000000" points="266.9954,-102.7595 276.2848,-97.6646 265.8458,-95.8546 266.9954,-102.7595"/>
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;allocate_metric_on_particles -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge18" class="edge">
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;allocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M96.5801,-356.7724C105.8515,-315.9469 141.41,-183.1911 224,-117 225.7753,-115.5772 227.6373,-114.2501 229.5684,-113.0123"/>
+<polygon fill="#000000" stroke="#000000" points="231.3517,-116.0259 238.424,-108.137 227.9758,-109.8937 231.3517,-116.0259"/>
 </g>
-<!-- divv -->
+<!-- nlrf -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node18" class="node">
-<title>divv</title>
+<title>nlrf</title>
 <polygon fill="#777777" stroke="#777777" points="331,-66 277,-66 277,-42 331,-42 331,-66"/>
-<text text-anchor="middle" x="304" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">divv</text>
+<text text-anchor="middle" x="304" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">nlrf</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;divv -->
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;nlrf -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge17" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;divv</title>
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;nlrf</title>
 <path fill="none" stroke="#000000" d="M95.6209,-356.7046C102.2346,-311.619 131.3861,-153.8964 224,-75 235.901,-64.8618 252.149,-59.5486 266.8941,-56.7901"/>
 <polygon fill="#000000" stroke="#000000" points="267.4421,-60.2471 276.7902,-55.2607 266.3729,-53.3292 267.4421,-60.2471"/>
 </g>
-<!-- read_sphincs_dump -->
+<!-- set_units -->
 <g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_node19" class="node">
-<title>read_sphincs_dump</title>
-<polygon fill="#777777" stroke="#777777" points="358.5,-24 249.5,-24 249.5,0 358.5,0 358.5,-24"/>
-<text text-anchor="middle" x="304" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_sphincs_dump</text>
+<title>set_units</title>
+<polygon fill="#777777" stroke="#777777" points="331.5,-24 276.5,-24 276.5,0 331.5,0 331.5,-24"/>
+<text text-anchor="middle" x="304" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">set_units</text>
 </g>
-<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;read_sphincs_dump -->
-<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge18" class="edge">
-<title>proc~read_sphincs_dump_print_formatted&#45;&gt;read_sphincs_dump</title>
-<path fill="none" stroke="#000000" d="M94.873,-356.7092C99.0305,-307.758 121.1516,-124.887 224,-33 228.7083,-28.7935 234.1592,-25.4125 239.9587,-22.6975"/>
-<polygon fill="#000000" stroke="#000000" points="241.32,-25.9227 249.3025,-18.9564 238.718,-19.4242 241.32,-25.9227"/>
+<!-- proc~read_sphincs_dump_print_formatted&#45;&gt;set_units -->
+<g id="proc~~read_sphincs_dump_print_formatted~~CallsGraph_edge7" class="edge">
+<title>proc~read_sphincs_dump_print_formatted&#45;&gt;set_units</title>
+<path fill="none" stroke="#000000" d="M94.873,-356.7092C99.0305,-307.758 121.1516,-124.887 224,-33 235.4603,-22.7611 251.3204,-17.4129 265.8985,-14.6557"/>
+<polygon fill="#000000" stroke="#000000" points="266.8529,-18.0502 276.2058,-13.073 265.7905,-11.1313 266.8529,-18.0502"/>
 </g>
 </g>
 </svg>
@@ -879,11 +879,11 @@ module procedure read_sphincs_dump_print_formatted <small>module module subrouti
       
       <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-abs_pos~2">abs_pos</a>
       
-      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-exist~13">exist</a>
+      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-exist~14">exist</a>
       
-      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-finalnamefile~6">finalnamefile</a>
+      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-finalnamefile~7">finalnamefile</a>
       
-      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-itr~5">itr</a>
+      <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-itr~6">itr</a>
       
       <a class="list-group-item" href="../proc/read_sphincs_dump_print_formatted.html#variable-min_abs_y~7">min_abs_y</a>
       
@@ -955,7 +955,7 @@ module procedure read_sphincs_dump_print_formatted <small>module module subrouti
   
 <tr>
   
-  <td><span class="anchor" id="variable-exist~13"></span>logical,</td>
+  <td><span class="anchor" id="variable-exist~14"></span>logical,</td>
   
   <td>private</td>
   <td></td><td>::</td>
@@ -969,7 +969,7 @@ module procedure read_sphincs_dump_print_formatted <small>module module subrouti
   
 <tr>
   
-  <td><span class="anchor" id="variable-finalnamefile~6"></span>character(len=:),</td>
+  <td><span class="anchor" id="variable-finalnamefile~7"></span>character(len=:),</td>
   
   <td>private,</td>
   <td>ALLOCATABLE</td><td>::</td>
@@ -983,7 +983,7 @@ module procedure read_sphincs_dump_print_formatted <small>module module subrouti
   
 <tr>
   
-  <td><span class="anchor" id="variable-itr~5"></span>integer,</td>
+  <td><span class="anchor" id="variable-itr~6"></span>integer,</td>
   
   <td>private</td>
   <td></td><td>::</td>
@@ -1078,14 +1078,14 @@ module procedure read_sphincs_dump_print_formatted <small>module module subrouti
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

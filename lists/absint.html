@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
     <title>
-All Abstract Interfaces &ndash; SPHINCS_LORENE
+All Abstract Interfaces &ndash; SPHINCS_ID
 </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -46,7 +46,7 @@ All Abstract Interfaces &ndash; SPHINCS_LORENE
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -141,6 +141,10 @@ All Abstract Interfaces &ndash; SPHINCS_LORENE
 			 
 			   <tr><td><a href='../interface/define_allocate_fields_interface.html'>define_allocate_fields_interface</a></td><td><a href='../module/formul_3p1_id.html'>formul_3p1_id</a></td><td></td></tr>
 			 
+			   <tr><td><a href='../interface/derived_type_constructor_int.html'>derived_type_constructor_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>Prints a summary of the physical properties the system
+ to the standard output and, optionally, to a formatted file whose name
+ is given as the optional argument <code>filename</code></p></td></tr>
+			 
 			   <tr><td><a href='../interface/get_eos_id_int.html'>get_eos_id_int</a></td><td><a href='../module/bns_base.html'>bns_base</a></td><td></td></tr>
 			 
 			   <tr><td><a href='../interface/get_eos_id_int~2.html'>get_eos_id_int</a></td><td><a href='../module/diffstar_base.html'>diffstar_base</a></td><td></td></tr>
@@ -150,31 +154,35 @@ All Abstract Interfaces &ndash; SPHINCS_LORENE
 			 
 			   <tr><td><a href='../interface/print_formatted_lorene_id_3p1_variables_interface.html'>print_formatted_lorene_id_3p1_variables_interface</a></td><td><a href='../module/formul_3p1_id.html'>formul_3p1_id</a></td><td></td></tr>
 			 
+			   <tr><td><a href='../interface/print_summary_int.html'>print_summary_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>Prints a summary of the physical properties the system
+ to the standard output and, optionally, to a formatted file whose name
+ is given as the optional argument <code>filename</code></p></td></tr>
+			 
 			   <tr><td><a href='../interface/read_double_at_pos.html'>read_double_at_pos</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE for a PROCEDURE that returns a DOUBLE PRECISION at a given
  position</p></td></tr>
 			 
-			   <tr><td><a href='../interface/read_id_full_int.html'>read_id_full_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE or the SUBROUTINE reading the full ID</p></td></tr>
+			   <tr><td><a href='../interface/read_id_full_int.html'>read_id_full_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE or the SUBROUTINE reading the full \(\mathrm{ID}\)</p></td></tr>
 			 
-			   <tr><td><a href='../interface/read_id_hydro_int.html'>read_id_hydro_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE or the SUBROUTINE reading the the hydro ID needed to compute
+			   <tr><td><a href='../interface/read_id_hydro_int.html'>read_id_hydro_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE or the SUBROUTINE reading the the hydro \(\mathrm{ID}\) needed to compute
  the constraints on the refined mesh</p></td></tr>
 			 
 			   <tr><td><a href='../interface/read_id_k_int.html'>read_id_k_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE or the SUBROUTINE reading the components of the extrinsic
  curvature</p></td></tr>
 			 
-			   <tr><td><a href='../interface/read_id_mass_b_int.html'>read_id_mass_b_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE or the SUBROUTINE reading the hydro ID needed to compute the
- baryon mass</p></td></tr>
+			   <tr><td><a href='../interface/read_id_mass_b_int.html'>read_id_mass_b_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE or the SUBROUTINE reading the hydro \(\mathrm{ID}\) needed to compute
+ the baryon mass</p></td></tr>
 			 
-			   <tr><td><a href='../interface/read_id_particles_int.html'>read_id_particles_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE or the SUBROUTINE reading the hydro ID needed to compute the
- SPH ID</p></td></tr>
+			   <tr><td><a href='../interface/read_id_particles_int.html'>read_id_particles_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE or the SUBROUTINE reading the hydro \(\mathrm{ID}\) needed to compute the
+ SPH \(\mathrm{ID}\)</p></td></tr>
 			 
-			   <tr><td><a href='../interface/read_id_spacetime_int.html'>read_id_spacetime_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE or the SUBROUTINE reading the spacetime ID</p></td></tr>
+			   <tr><td><a href='../interface/read_id_spacetime_int.html'>read_id_spacetime_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE or the SUBROUTINE reading the spacetime \(\mathrm{ID}\)</p></td></tr>
 			 
 			   <tr><td><a href='../interface/read_integer_at_pos.html'>read_integer_at_pos</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE for a PROCEDURE that returns an INTEGER at a given position</p></td></tr>
 			 
 			   <tr><td><a href='../interface/return_double_parameter.html'>return_double_parameter</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE for a PROCEDURE that returns a DOUBLE PRECISION</p></td></tr>
 			 
 			   <tr><td><a href='../interface/return_eos_parameters_int.html'>return_eos_parameters_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE for a PROCEDURE that returns an array containing the
- parametersf the EoS for the matter objects</p></td></tr>
+ parametersf the \(\mathrm{EOS}\) for the matter objects</p></td></tr>
 			 
 			   <tr><td><a href='../interface/return_integer_parameter.html'>return_integer_parameter</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE for a PROCEDURE that returns an INTEGER</p></td></tr>
 			 
@@ -189,13 +197,6 @@ All Abstract Interfaces &ndash; SPHINCS_LORENE
 			 
 			   <tr><td><a href='../interface/return_string_parameter.html'>return_string_parameter</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE for a PROCEDURE that returns a CHARACTER( LEN= : )</p></td></tr>
 			 
-			   <tr><td><a href='../interface/return_total_spatial_extent_int.html'>return_total_spatial_extent_int</a></td><td><a href='../module/id_base.html'>id_base</a></td><td><p>INTERFACE to the SUBROUTINE that detects the spatial extent of the
-  physical system considered, and returns a 6-dimensional array
-  containing the coordinates
-<script type="math/tex">x_{\rm min},x_{\rm max},y_{\rm min},y_{\rm max},z_{\rm min},z_{\rm max}</script>
-  of a box <strong>centered at the center of the object</strong> and containing the
-  system.</p></td></tr>
-			 
 			 </tbody></table>
         </div>
       </div>
@@ -205,14 +206,14 @@ All Abstract Interfaces &ndash; SPHINCS_LORENE
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

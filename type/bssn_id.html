@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>bssn_id &ndash; SPHINCS_LORENE </title>
+    <title>bssn_id &ndash; SPHINCS_ID </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -233,7 +233,7 @@
       
       <a class="list-group-item" href="../type/bssn_id.html#variable-bssn_computer_timer">bssn_computer_timer</a>
       
-      <a class="list-group-item" href="../type/bssn_id.html#variable-call_flag">call_flag</a>
+      <a class="list-group-item" href="../type/bssn_id.html#variable-call_flag~2">call_flag</a>
       
       <a class="list-group-item" href="../type/bssn_id.html#variable-cons_step">cons_step</a>
       
@@ -265,7 +265,11 @@
       
       <a class="list-group-item" href="../type/bssn_id.html#variable-levels">levels</a>
       
+      <a class="list-group-item" href="../type/bssn_id.html#variable-n_matter">n_matter</a>
+      
       <a class="list-group-item" href="../type/bssn_id.html#variable-nlevels">nlevels</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-npoints_xaxis">npoints_xaxis</a>
       
       <a class="list-group-item" href="../type/bssn_id.html#variable-phi">phi</a>
       
@@ -377,6 +381,8 @@
       
       <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-print_formatted_lorene_id_3p1_variables~2">print_formatted_lorene_id_3p1_variables</a>
       
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-print_summary~3">print_summary</a>
+      
       <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-read_bssn_dump_print_formatted">read_bssn_dump_print_formatted</a>
       
       <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-setup_standard3p1_variables">setup_standard3p1_variables</a>
@@ -419,103 +425,103 @@
 <!-- Title: type~~bssn_id~~InheritsGraph Pages: 1 -->
 <svg id="typebssn_idInheritsGraph" width="641pt" height="209pt"
  viewBox="0.00 0.00 641.00 208.71" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="type~~bssn_id~~InheritsGraph" class="graph" transform="scale(.9105 .9105) rotate(0) translate(4 225.2236)">
+<g id="type~~bssn_id~~InheritsGraph" class="graph" transform="scale(.9105 .9105) rotate(0) translate(4 225.2204)">
 <title>type~~bssn_id~~InheritsGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-225.2236 700,-225.2236 700,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-225.2204 700,-225.2204 700,4 -4,4"/>
 <!-- type~bssn_id -->
 <g id="type~~bssn_id~~InheritsGraph_node1" class="node">
 <title>type~bssn_id</title>
-<polygon fill="none" stroke="#000000" points="696,-93.2236 642,-93.2236 642,-69.2236 696,-69.2236 696,-93.2236"/>
-<text text-anchor="middle" x="669" y="-78.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">bssn_id</text>
+<polygon fill="none" stroke="#000000" points="696,-93.2204 642,-93.2204 642,-69.2204 696,-69.2204 696,-93.2204"/>
+<text text-anchor="middle" x="669" y="-78.8204" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">bssn_id</text>
+</g>
+<!-- grid_function_scalar -->
+<g id="type~~bssn_id~~InheritsGraph_node2" class="node">
+<title>grid_function_scalar</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="109,-119.2204 0,-119.2204 0,-95.2204 109,-95.2204 109,-119.2204"/>
+<text text-anchor="middle" x="54.5" y="-104.8204" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function_scalar</text>
+</g>
+<!-- type~bssn_id&#45;&gt;grid_function_scalar -->
+<g id="type~~bssn_id~~InheritsGraph_edge2" class="edge">
+<title>type~bssn_id&#45;&gt;grid_function_scalar</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M623.5,-81.2204C403.4708,-98.268 342.6745,-27.4447 127,-74.2204 112.2453,-77.4204 96.8899,-83.8926 84.1296,-90.2641"/>
+<polygon fill="#000000" stroke="#000000" points="82.1791,-87.3338 74.9304,-95.0609 85.4156,-93.5407 82.1791,-87.3338"/>
+<text text-anchor="middle" x="492" y="-85.6204" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">phi, trK</text>
 </g>
 <!-- grid_function -->
-<g id="type~~bssn_id~~InheritsGraph_node2" class="node">
+<g id="type~~bssn_id~~InheritsGraph_node3" class="node">
 <title>grid_function</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="91.5,-221.2236 17.5,-221.2236 17.5,-197.2236 91.5,-197.2236 91.5,-221.2236"/>
-<text text-anchor="middle" x="54.5" y="-206.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function</text>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="91.5,-221.2204 17.5,-221.2204 17.5,-197.2204 91.5,-197.2204 91.5,-221.2204"/>
+<text text-anchor="middle" x="54.5" y="-206.8204" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function</text>
 </g>
 <!-- type~bssn_id&#45;&gt;grid_function -->
 <g id="type~~bssn_id~~InheritsGraph_edge1" class="edge">
 <title>type~bssn_id&#45;&gt;grid_function</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M623.5,-81.2236C595.3018,-83.9584 625.5222,-122.6926 605,-142.2236 524.027,-219.2857 471.8055,-188.4806 361,-203.2236 269.923,-215.3416 162.3002,-213.8445 101.8648,-211.5843"/>
-<polygon fill="#000000" stroke="#000000" points="101.6344,-208.0725 91.503,-211.1718 101.3558,-215.0669 101.6344,-208.0725"/>
-<text text-anchor="middle" x="492" y="-202.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">Gamma_u, A_BSSN3_ll, g_BSSN3_ll, GC, GC_parts</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M623.5,-81.2204C595.3018,-83.9553 625.5222,-122.6894 605,-142.2204 524.027,-219.2826 471.8055,-188.4774 361,-203.2204 269.923,-215.3385 162.3002,-213.8413 101.8648,-211.5812"/>
+<polygon fill="#000000" stroke="#000000" points="101.6344,-208.0693 91.503,-211.1686 101.3558,-215.0638 101.6344,-208.0693"/>
+<text text-anchor="middle" x="492" y="-202.6204" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">Gamma_u, A_BSSN3_ll, g_BSSN3_ll, GC, GC_parts</text>
 </g>
 <!-- timer -->
-<g id="type~~bssn_id~~InheritsGraph_node3" class="node">
+<g id="type~~bssn_id~~InheritsGraph_node4" class="node">
 <title>timer</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-119.2236 27.5,-119.2236 27.5,-95.2236 81.5,-95.2236 81.5,-119.2236"/>
-<text text-anchor="middle" x="54.5" y="-104.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-57.2204 27.5,-57.2204 27.5,-33.2204 81.5,-33.2204 81.5,-57.2204"/>
+<text text-anchor="middle" x="54.5" y="-42.8204" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
 </g>
 <!-- type~bssn_id&#45;&gt;timer -->
 <g id="type~~bssn_id~~InheritsGraph_edge3" class="edge">
 <title>type~bssn_id&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M623.5,-81.2236C403.4708,-98.2712 342.6745,-27.4478 127,-74.2236 112.2453,-77.4236 96.8899,-83.8957 84.1296,-90.2672"/>
-<polygon fill="#000000" stroke="#000000" points="82.1791,-87.337 74.9304,-95.0641 85.4156,-93.5439 82.1791,-87.337"/>
-<text text-anchor="middle" x="492" y="-85.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">bssn_computer_timer</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M641.5433,-80.5193C635.5874,-80.563 629.3272,-80.758 623.5,-81.2204"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M623.5,-81.2204C608.9989,-82.371 617.8129,-61.1077 605,-54.2204 432.7566,38.3647 184.2414,-11.2801 91.3587,-34.9583"/>
+<polygon fill="#000000" stroke="#000000" points="90.3773,-31.597 81.5812,-37.5028 92.1404,-38.3713 90.3773,-31.597"/>
+<text text-anchor="middle" x="492" y="-56.6204" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">bssn_computer_timer</text>
 </g>
 <!-- type~formul_3p1 -->
-<g id="type~~bssn_id~~InheritsGraph_node4" class="node">
+<g id="type~~bssn_id~~InheritsGraph_node5" class="node">
 <title>type~formul_3p1</title>
-<g id="a_type~~bssn_id~~InheritsGraph_node4"><a xlink:href=".././type/formul_3p1.html" xlink:title="formul_3p1">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="525.5,-133.2236 458.5,-133.2236 458.5,-109.2236 525.5,-109.2236 525.5,-133.2236"/>
-<text text-anchor="middle" x="492" y="-118.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1</text>
+<g id="a_type~~bssn_id~~InheritsGraph_node5"><a xlink:href=".././type/formul_3p1.html" xlink:title="formul_3p1">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="525.5,-133.2204 458.5,-133.2204 458.5,-109.2204 525.5,-109.2204 525.5,-133.2204"/>
+<text text-anchor="middle" x="492" y="-118.8204" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1</text>
 </a>
 </g>
 </g>
 <!-- type~bssn_id&#45;&gt;type~formul_3p1 -->
 <g id="type~~bssn_id~~InheritsGraph_edge4" class="edge">
 <title>type~bssn_id&#45;&gt;type~formul_3p1</title>
-<path fill="none" stroke="#000000" d="M623.5,-81.2236C613.2196,-82.0201 614.3423,-90.8598 605,-95.2236 583.1926,-105.4098 557.1062,-111.7526 535.4948,-115.6201"/>
-<polygon fill="#000000" stroke="#000000" points="534.8833,-112.1737 525.5985,-117.2768 536.0391,-119.0776 534.8833,-112.1737"/>
-</g>
-<!-- grid_function_scalar -->
-<g id="type~~bssn_id~~InheritsGraph_node5" class="node">
-<title>grid_function_scalar</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="109,-57.2236 0,-57.2236 0,-33.2236 109,-33.2236 109,-57.2236"/>
-<text text-anchor="middle" x="54.5" y="-42.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function_scalar</text>
-</g>
-<!-- type~bssn_id&#45;&gt;grid_function_scalar -->
-<g id="type~~bssn_id~~InheritsGraph_edge2" class="edge">
-<title>type~bssn_id&#45;&gt;grid_function_scalar</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M641.5433,-80.5225C635.5874,-80.5662 629.3272,-80.7612 623.5,-81.2236"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M623.5,-81.2236C608.9989,-82.3742 617.8129,-61.1108 605,-54.2236 442.4473,33.1526 211.9636,-6.1473 108.4724,-30.7483"/>
-<polygon fill="#000000" stroke="#000000" points="107.4565,-27.3931 98.5634,-33.1518 109.1066,-34.1959 107.4565,-27.3931"/>
-<text text-anchor="middle" x="492" y="-56.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">phi, trK</text>
-</g>
-<!-- type~formul_3p1&#45;&gt;grid_function -->
-<g id="type~~bssn_id~~InheritsGraph_edge6" class="edge">
-<title>type~formul_3p1&#45;&gt;grid_function</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.4933,-123.7859C434.969,-126.7728 403.4677,-133.2375 379,-147.2236 368.9012,-152.9962 371.4042,-161.0215 361,-166.2236 267.3624,-213.0424 230.2502,-175.9204 127,-193.2236 118.6853,-194.617 109.8867,-196.3428 101.3943,-198.1402"/>
-<polygon fill="#000000" stroke="#000000" points="100.6406,-194.7223 91.6129,-200.2675 102.1283,-201.5624 100.6406,-194.7223"/>
-<text text-anchor="middle" x="244" y="-195.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">coords, shift_u, g_phys3_ll, K_phys3_ll, MC, MC_parts</text>
-</g>
-<!-- type~formul_3p1&#45;&gt;timer -->
-<g id="type~~bssn_id~~InheritsGraph_edge8" class="edge">
-<title>type~formul_3p1&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.3966,-120.1483C378.0935,-117.5786 175.5156,-111.0961 91.6957,-108.4138"/>
-<polygon fill="#000000" stroke="#000000" points="91.7183,-104.9129 81.6114,-108.0911 91.4943,-111.9093 91.7183,-104.9129"/>
-<text text-anchor="middle" x="244" y="-118.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">grid_timer, importer_timer</text>
+<path fill="none" stroke="#000000" d="M623.5,-81.2204C613.2196,-82.0169 614.3423,-90.8566 605,-95.2204 583.1926,-105.4066 557.1062,-111.7494 535.4948,-115.6169"/>
+<polygon fill="#000000" stroke="#000000" points="534.8833,-112.1705 525.5985,-117.2736 536.0391,-119.0745 534.8833,-112.1705"/>
 </g>
 <!-- type~formul_3p1&#45;&gt;grid_function_scalar -->
 <g id="type~~bssn_id~~InheritsGraph_edge7" class="edge">
 <title>type~formul_3p1&#45;&gt;grid_function_scalar</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.405,-114.227C431.977,-108.8026 394.1987,-101.2242 361,-95.2236 277.6979,-80.1669 181.2846,-64.7713 119.1774,-55.1163"/>
-<polygon fill="#000000" stroke="#000000" points="119.5504,-51.6324 109.1321,-53.5582 118.4774,-58.5496 119.5504,-51.6324"/>
-<text text-anchor="middle" x="244" y="-97.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">rad_coord, lapse, HC, HC_parts</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.3966,-120.1451C385.9042,-117.8253 213.7666,-112.3169 119.3029,-109.2941"/>
+<polygon fill="#000000" stroke="#000000" points="119.4017,-105.7956 109.2949,-108.9738 119.1778,-112.792 119.4017,-105.7956"/>
+<text text-anchor="middle" x="244" y="-118.6204" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">rad_coord, lapse, HC, HC_parts</text>
+</g>
+<!-- type~formul_3p1&#45;&gt;grid_function -->
+<g id="type~~bssn_id~~InheritsGraph_edge6" class="edge">
+<title>type~formul_3p1&#45;&gt;grid_function</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.4933,-123.7827C434.969,-126.7697 403.4677,-133.2343 379,-147.2204 368.9012,-152.993 371.4042,-161.0183 361,-166.2204 267.3624,-213.0392 230.2502,-175.9172 127,-193.2204 118.6853,-194.6138 109.8867,-196.3396 101.3943,-198.1371"/>
+<polygon fill="#000000" stroke="#000000" points="100.6406,-194.7191 91.6129,-200.2644 102.1283,-201.5592 100.6406,-194.7191"/>
+<text text-anchor="middle" x="244" y="-195.6204" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">coords, shift_u, g_phys3_ll, K_phys3_ll, MC, MC_parts</text>
+</g>
+<!-- type~formul_3p1&#45;&gt;timer -->
+<g id="type~~bssn_id~~InheritsGraph_edge8" class="edge">
+<title>type~formul_3p1&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.405,-114.2238C431.977,-108.7994 394.1987,-101.221 361,-95.2204 264.1032,-77.7065 149.4665,-59.7341 91.7174,-50.8712"/>
+<polygon fill="#000000" stroke="#000000" points="92.028,-47.378 81.6135,-49.3244 90.9687,-54.2974 92.028,-47.378"/>
+<text text-anchor="middle" x="244" y="-97.6204" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">grid_timer, importer_timer</text>
 </g>
 <!-- level -->
 <g id="type~~bssn_id~~InheritsGraph_node6" class="node">
 <title>level</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-171.2236 27.5,-171.2236 27.5,-147.2236 81.5,-147.2236 81.5,-171.2236"/>
-<text text-anchor="middle" x="54.5" y="-156.8236" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">level</text>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-171.2204 27.5,-171.2204 27.5,-147.2204 81.5,-147.2204 81.5,-171.2204"/>
+<text text-anchor="middle" x="54.5" y="-156.8204" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">level</text>
 </g>
 <!-- type~formul_3p1&#45;&gt;level -->
 <g id="type~~bssn_id~~InheritsGraph_edge5" class="edge">
 <title>type~formul_3p1&#45;&gt;level</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.3966,-124.1423C378.0935,-131.1172 175.5156,-148.7125 91.6957,-155.9929"/>
-<polygon fill="#000000" stroke="#000000" points="91.271,-152.5165 81.6114,-156.8687 91.8768,-159.4902 91.271,-152.5165"/>
-<text text-anchor="middle" x="244" y="-154.6236" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">levels</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M458.3966,-124.1391C378.0935,-131.114 175.5156,-148.7093 91.6957,-155.9897"/>
+<polygon fill="#000000" stroke="#000000" points="91.271,-152.5133 81.6114,-156.8656 91.8768,-159.487 91.271,-152.5133"/>
+<text text-anchor="middle" x="244" y="-154.6204" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">levels</text>
 </g>
 </g>
 </svg>
@@ -616,7 +622,7 @@
       
       <a class="list-group-item" href="../type/bssn_id.html#variable-bssn_computer_timer">bssn_computer_timer</a>
       
-      <a class="list-group-item" href="../type/bssn_id.html#variable-call_flag">call_flag</a>
+      <a class="list-group-item" href="../type/bssn_id.html#variable-call_flag~2">call_flag</a>
       
       <a class="list-group-item" href="../type/bssn_id.html#variable-cons_step">cons_step</a>
       
@@ -648,7 +654,11 @@
       
       <a class="list-group-item" href="../type/bssn_id.html#variable-levels">levels</a>
       
+      <a class="list-group-item" href="../type/bssn_id.html#variable-n_matter">n_matter</a>
+      
       <a class="list-group-item" href="../type/bssn_id.html#variable-nlevels">nlevels</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#variable-npoints_xaxis">npoints_xaxis</a>
       
       <a class="list-group-item" href="../type/bssn_id.html#variable-phi">phi</a>
       
@@ -759,6 +769,8 @@
       <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-get_zr">get_zR</a>
       
       <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-print_formatted_lorene_id_3p1_variables~2">print_formatted_lorene_id_3p1_variables</a>
+      
+      <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-print_summary~3">print_summary</a>
       
       <a class="list-group-item" href="../type/bssn_id.html#boundprocedure-read_bssn_dump_print_formatted">read_bssn_dump_print_formatted</a>
       
@@ -1132,7 +1144,7 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-call_flag"></span>integer,</td>
+  <td><span class="anchor" id="variable-call_flag~2"></span>integer,</td>
   
   <td>public</td>
   <td></td><td>::</td>
@@ -1362,11 +1374,40 @@
   
 <tr>
   
+  <td><span class="anchor" id="variable-n_matter"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>n_matter</strong></td><td></td><td></td><td><p>Number of matter objects in the physical system</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
   <td><span class="anchor" id="variable-nlevels"></span>integer,</td>
   
   <td>public</td>
   <td></td><td>::</td>
   <td><strong>nlevels</strong></td><td></td><td></td><td><p>Number of refinement levels</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-npoints_xaxis"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>npoints_xaxis</strong></td><td></td><td></td><td><p>Array containing the number of mesh points of the highest-resolution
+ refinement level across the x-axis-size of the matter objects</p></td>
   
 </tr>
 
@@ -4359,6 +4400,98 @@ public module module subroutine print_formatted_lorene_id_bssn_variables(THIS, n
     
      
 <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_summary~3"></span><h3>procedure, public :: <strong>print_summary</strong>  
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          <h3>interface
+          
+          </h3>
+  
+          
+          
+    
+    <h3>
+public module module subroutine print_summary(THIS, filename)
+    
+    
+   
+   <a href='../proc/print_summary.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+    
+</h3>
+    
+
+
+
+<p>Prints a summary of the properties of the refined mesh,
+ and optionally, to a formatted file whose name
+ is given as the optional argument <code>filename</code></p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/formul_3p1.html'>formul_3p1</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(inout),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>filename</strong></td><td><p>Name of the formatted file to print the summary to</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-read_bssn_dump_print_formatted"></span><h3>procedure, public :: <strong>read_bssn_dump_print_formatted</strong>  
     
   </h3></div>
@@ -4689,14 +4822,14 @@ public module module subroutine setup_standard3p1_variables(f3p1, id, dx, dy, dz
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

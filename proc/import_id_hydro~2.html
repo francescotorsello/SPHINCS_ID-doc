@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>import_id_hydro &ndash; SPHINCS_LORENE</title>
+    <title>import_id_hydro &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -243,9 +243,9 @@ module procedure import_id_hydro <small>module module subroutine import_id_hydro
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li>tensor</li>
-    
     <li>constants</li>
+    
+    <li>tensor</li>
     
   </ul>
       </li>
@@ -270,29 +270,29 @@ module procedure import_id_hydro <small>module module subroutine import_id_hydro
 <polygon fill="none" stroke="#000000" points="184,-45 94,-45 94,-21 184,-21 184,-45"/>
 <text text-anchor="middle" x="139" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">import_id_hydro</text>
 </g>
-<!-- tensor -->
-<g id="proc~~import_id_hydro~2~~UsesGraph_node2" class="node">
-<title>tensor</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="56,-66 2,-66 2,-42 56,-42 56,-66"/>
-<text text-anchor="middle" x="29" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">tensor</text>
-</g>
-<!-- proc~import_id_hydro~2&#45;&gt;tensor -->
-<g id="proc~~import_id_hydro~2~~UsesGraph_edge1" class="edge">
-<title>proc~import_id_hydro~2&#45;&gt;tensor</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M93.9414,-41.6021C84.7301,-43.3606 75.134,-45.1926 66.2333,-46.8918"/>
-<polygon fill="#000000" stroke="#000000" points="65.3352,-43.5 56.169,-48.8132 66.6479,-50.3758 65.3352,-43.5"/>
-</g>
 <!-- constants -->
-<g id="proc~~import_id_hydro~2~~UsesGraph_node3" class="node">
+<g id="proc~~import_id_hydro~2~~UsesGraph_node2" class="node">
 <title>constants</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="58,-24 0,-24 0,0 58,0 58,-24"/>
-<text text-anchor="middle" x="29" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">constants</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="58,-66 0,-66 0,-42 58,-42 58,-66"/>
+<text text-anchor="middle" x="29" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">constants</text>
 </g>
 <!-- proc~import_id_hydro~2&#45;&gt;constants -->
-<g id="proc~~import_id_hydro~2~~UsesGraph_edge2" class="edge">
+<g id="proc~~import_id_hydro~2~~UsesGraph_edge1" class="edge">
 <title>proc~import_id_hydro~2&#45;&gt;constants</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M93.9414,-24.3979C85.3364,-22.7551 76.3956,-21.0482 67.9996,-19.4454"/>
-<polygon fill="#000000" stroke="#000000" points="68.5668,-15.9905 58.0878,-17.5531 67.2541,-22.8664 68.5668,-15.9905"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M93.9414,-41.6021C85.3364,-43.2449 76.3956,-44.9518 67.9996,-46.5546"/>
+<polygon fill="#000000" stroke="#000000" points="67.2541,-43.1336 58.0878,-48.4469 68.5668,-50.0095 67.2541,-43.1336"/>
+</g>
+<!-- tensor -->
+<g id="proc~~import_id_hydro~2~~UsesGraph_node3" class="node">
+<title>tensor</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="56,-24 2,-24 2,0 56,0 56,-24"/>
+<text text-anchor="middle" x="29" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">tensor</text>
+</g>
+<!-- proc~import_id_hydro~2&#45;&gt;tensor -->
+<g id="proc~~import_id_hydro~2~~UsesGraph_edge2" class="edge">
+<title>proc~import_id_hydro~2&#45;&gt;tensor</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M93.9414,-24.3979C84.7301,-22.6394 75.134,-20.8074 66.2333,-19.1082"/>
+<polygon fill="#000000" stroke="#000000" points="66.6479,-15.6242 56.169,-17.1868 65.3352,-22.5 66.6479,-15.6242"/>
 </g>
 </g>
 </svg>
@@ -386,7 +386,7 @@ module procedure import_id_hydro <small>module module subroutine import_id_hydro
   
 <tr>
   
-  <td><span class="anchor" id="variable-this~239"></span>class(<a href='../type/diffstarlorene.html'>diffstarlorene</a>),</td>
+  <td><span class="anchor" id="variable-this~241"></span>class(<a href='../type/diffstarlorene.html'>diffstarlorene</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -877,14 +877,14 @@ module procedure import_id_hydro <small>module module subroutine import_id_hydro
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

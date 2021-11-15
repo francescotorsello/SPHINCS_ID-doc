@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>place_particles_spherical_surfaces &ndash; SPHINCS_LORENE</title>
+    <title>place_particles_spherical_surfaces &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -45,7 +45,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -146,7 +146,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">100 statements</a>
+    title=" 0.2% of total for procedures.">107 statements</a>
      </li> 
      
      
@@ -256,20 +256,20 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M179.1225,-180C187.4779,-180 195.9815,-180 204.4238,-180"/>
 <polygon fill="#000000" stroke="#000000" points="204.677,-183.5001 214.677,-180 204.677,-176.5001 204.677,-183.5001"/>
 </g>
-<!-- proc~place_surfaces -->
+<!-- proc~assign_surfaces_mass -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node3" class="node">
-<title>proc~place_surfaces</title>
-<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node3"><a xlink:href=".././proc/place_surfaces.html" xlink:title="place_surfaces">
-<polygon fill="#d9534f" stroke="#d9534f" points="560,-360 475,-360 475,-336 560,-336 560,-360"/>
-<text text-anchor="middle" x="517.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">place_surfaces</text>
+<title>proc~assign_surfaces_mass</title>
+<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node3"><a xlink:href=".././proc/assign_surfaces_mass.html" xlink:title="assign_surfaces_mass">
+<polygon fill="#d9534f" stroke="#d9534f" points="578,-360 457,-360 457,-336 578,-336 578,-360"/>
+<text text-anchor="middle" x="517.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">assign_surfaces_mass</text>
 </a>
 </g>
 </g>
-<!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~place_surfaces -->
+<!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~assign_surfaces_mass -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge2" class="edge">
-<title>proc~place_particles_spherical_surfaces&#45;&gt;proc~place_surfaces</title>
-<path fill="none" stroke="#000000" d="M311.182,-192.1347C327.4797,-220.5318 372.2067,-291.5794 430,-327 440.5101,-333.4415 452.8541,-337.9072 464.9029,-341.0031"/>
-<polygon fill="#000000" stroke="#000000" points="464.3787,-344.4736 474.9078,-343.2948 465.9417,-337.6503 464.3787,-344.4736"/>
+<title>proc~place_particles_spherical_surfaces&#45;&gt;proc~assign_surfaces_mass</title>
+<path fill="none" stroke="#000000" d="M311.182,-192.1347C327.4797,-220.5318 372.2067,-291.5794 430,-327 435.3321,-330.2679 441.1361,-333.0273 447.1342,-335.3573"/>
+<polygon fill="#000000" stroke="#000000" points="446.0846,-338.6979 456.6794,-338.6767 448.3839,-332.0863 446.0846,-338.6979"/>
 </g>
 <!-- proc~print_mass_profile_surface_radii -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node4" class="node">
@@ -286,119 +286,119 @@
 <path fill="none" stroke="#000000" d="M315.2892,-192.1538C335.5254,-214.1678 381.5288,-260.6144 430,-285 434.0341,-287.0295 438.2728,-288.8685 442.6184,-290.534"/>
 <polygon fill="#000000" stroke="#000000" points="441.6699,-293.9101 452.2647,-293.9098 443.9821,-287.303 441.6699,-293.9101"/>
 </g>
-<!-- proc~particle_volume -->
+<!-- none~validate_position_final~2 -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node5" class="node">
-<title>proc~particle_volume</title>
-<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node5"><a xlink:href=".././proc/particle_volume.html" xlink:title="particle_volume">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="561.5,-276 473.5,-276 473.5,-252 561.5,-252 561.5,-276"/>
-<text text-anchor="middle" x="517.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particle_volume</text>
-</a>
+<title>none~validate_position_final~2</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="576.5,-276 458.5,-276 458.5,-252 576.5,-252 576.5,-276"/>
+<text text-anchor="middle" x="517.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">validate_position_final</text>
 </g>
-</g>
-<!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~particle_volume -->
+<!-- proc~place_particles_spherical_surfaces&#45;&gt;none~validate_position_final~2 -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge4" class="edge">
-<title>proc~place_particles_spherical_surfaces&#45;&gt;proc~particle_volume</title>
-<path fill="none" stroke="#000000" d="M325.1566,-192.2311C349.5044,-206.2024 391.5313,-228.9407 430,-243 440.6678,-246.8988 452.3336,-250.2768 463.5701,-253.1155"/>
-<polygon fill="#000000" stroke="#000000" points="462.7555,-256.5193 473.2983,-255.4707 464.4027,-249.7158 462.7555,-256.5193"/>
+<title>proc~place_particles_spherical_surfaces&#45;&gt;none~validate_position_final~2</title>
+<path fill="none" stroke="#000000" d="M325.1566,-192.2311C349.5044,-206.2024 391.5313,-228.9407 430,-243 436.2108,-245.2699 442.76,-247.3633 449.3657,-249.2765"/>
+<polygon fill="#000000" stroke="#000000" points="448.4808,-252.663 459.0516,-251.9501 450.3435,-245.9154 448.4808,-252.663"/>
 </g>
-<!-- proc~reallocate_array_1d -->
+<!-- proc~place_surfaces -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node6" class="node">
-<title>proc~reallocate_array_1d</title>
-<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node6"><a xlink:href=".././proc/reallocate_array_1d.html" xlink:title="reallocate_array_1d">
-<polygon fill="#d9534f" stroke="#d9534f" points="571.5,-234 463.5,-234 463.5,-210 571.5,-210 571.5,-234"/>
-<text text-anchor="middle" x="517.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reallocate_array_1d</text>
+<title>proc~place_surfaces</title>
+<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node6"><a xlink:href=".././proc/place_surfaces.html" xlink:title="place_surfaces">
+<polygon fill="#d9534f" stroke="#d9534f" points="560,-234 475,-234 475,-210 560,-210 560,-234"/>
+<text text-anchor="middle" x="517.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">place_surfaces</text>
 </a>
 </g>
 </g>
-<!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~reallocate_array_1d -->
+<!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~place_surfaces -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge5" class="edge">
-<title>proc~place_particles_spherical_surfaces&#45;&gt;proc~reallocate_array_1d</title>
-<path fill="none" stroke="#000000" d="M365.5373,-192.0355C393.0183,-197.4543 425.4711,-203.8535 453.3154,-209.3439"/>
-<polygon fill="#000000" stroke="#000000" points="452.8594,-212.8213 463.3476,-211.3221 454.2137,-205.9535 452.8594,-212.8213"/>
-</g>
-<!-- proc~compute_colatitudes_uniformly_in -->
-<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node7" class="node">
-<title>proc~compute_colatitudes_uniformly_in</title>
-<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node7"><a xlink:href=".././proc/compute_colatitudes_uniformly_in.html" xlink:title="compute_colatitudes_uniformly_in">
-<polygon fill="#d9534f" stroke="#d9534f" points="605,-192 430,-192 430,-168 605,-168 605,-192"/>
-<text text-anchor="middle" x="517.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_colatitudes_uniformly_in</text>
-</a>
-</g>
-</g>
-<!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~compute_colatitudes_uniformly_in -->
-<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge6" class="edge">
-<title>proc~place_particles_spherical_surfaces&#45;&gt;proc~compute_colatitudes_uniformly_in</title>
-<path fill="none" stroke="#000000" d="M394.2138,-180C402.7125,-180 411.3574,-180 419.9248,-180"/>
-<polygon fill="#000000" stroke="#000000" points="419.9331,-183.5001 429.933,-180 419.933,-176.5001 419.9331,-183.5001"/>
+<title>proc~place_particles_spherical_surfaces&#45;&gt;proc~place_surfaces</title>
+<path fill="none" stroke="#000000" d="M365.5373,-192.0355C396.9041,-198.2205 434.7481,-205.6827 464.8234,-211.6131"/>
+<polygon fill="#000000" stroke="#000000" points="464.2163,-215.0607 474.7045,-213.5614 465.5705,-208.1929 464.2163,-215.0607"/>
 </g>
 <!-- proc~number_surfaces -->
-<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node8" class="node">
+<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node7" class="node">
 <title>proc~number_surfaces</title>
-<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node8"><a xlink:href=".././proc/number_surfaces.html" xlink:title="number_surfaces">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="565.5,-150 469.5,-150 469.5,-126 565.5,-126 565.5,-150"/>
-<text text-anchor="middle" x="517.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">number_surfaces</text>
+<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node7"><a xlink:href=".././proc/number_surfaces.html" xlink:title="number_surfaces">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="565.5,-192 469.5,-192 469.5,-168 565.5,-168 565.5,-192"/>
+<text text-anchor="middle" x="517.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">number_surfaces</text>
 </a>
 </g>
 </g>
 <!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~number_surfaces -->
-<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge7" class="edge">
+<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge6" class="edge">
 <title>proc~place_particles_spherical_surfaces&#45;&gt;proc~number_surfaces</title>
-<path fill="none" stroke="#000000" d="M365.5373,-167.9645C395.0082,-162.1533 430.1971,-155.2146 459.2881,-149.4784"/>
-<polygon fill="#000000" stroke="#000000" points="460.1703,-152.8719 469.3042,-147.5034 458.816,-146.0042 460.1703,-152.8719"/>
+<path fill="none" stroke="#000000" d="M394.2138,-180C416.1915,-180 439.1474,-180 459.2102,-180"/>
+<polygon fill="#000000" stroke="#000000" points="459.4175,-183.5001 469.4175,-180 459.4174,-176.5001 459.4175,-183.5001"/>
 </g>
 <!-- proc~reallocate_array_2d -->
-<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node9" class="node">
+<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node8" class="node">
 <title>proc~reallocate_array_2d</title>
-<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node9"><a xlink:href=".././proc/reallocate_array_2d.html" xlink:title="reallocate_array_2d">
-<polygon fill="#d9534f" stroke="#d9534f" points="571.5,-108 463.5,-108 463.5,-84 571.5,-84 571.5,-108"/>
-<text text-anchor="middle" x="517.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reallocate_array_2d</text>
+<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node8"><a xlink:href=".././proc/reallocate_array_2d.html" xlink:title="reallocate_array_2d">
+<polygon fill="#d9534f" stroke="#d9534f" points="571.5,-150 463.5,-150 463.5,-126 571.5,-126 571.5,-150"/>
+<text text-anchor="middle" x="517.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reallocate_array_2d</text>
 </a>
 </g>
 </g>
 <!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~reallocate_array_2d -->
-<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge8" class="edge">
+<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge7" class="edge">
 <title>proc~place_particles_spherical_surfaces&#45;&gt;proc~reallocate_array_2d</title>
-<path fill="none" stroke="#000000" d="M325.1566,-167.7689C349.5044,-153.7976 391.5313,-131.0593 430,-117 437.5108,-114.255 445.5163,-111.7681 453.5184,-109.546"/>
-<polygon fill="#000000" stroke="#000000" points="454.4751,-112.9133 463.244,-106.9671 452.6809,-106.1471 454.4751,-112.9133"/>
+<path fill="none" stroke="#000000" d="M365.5373,-167.9645C393.0183,-162.5457 425.4711,-156.1465 453.3154,-150.6561"/>
+<polygon fill="#000000" stroke="#000000" points="454.2137,-154.0465 463.3476,-148.6779 452.8594,-147.1787 454.2137,-154.0465"/>
 </g>
-<!-- proc~assign_surfaces_mass -->
-<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node10" class="node">
-<title>proc~assign_surfaces_mass</title>
-<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node10"><a xlink:href=".././proc/assign_surfaces_mass.html" xlink:title="assign_surfaces_mass">
-<polygon fill="#d9534f" stroke="#d9534f" points="578,-66 457,-66 457,-42 578,-42 578,-66"/>
-<text text-anchor="middle" x="517.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">assign_surfaces_mass</text>
+<!-- proc~reallocate_array_1d -->
+<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node9" class="node">
+<title>proc~reallocate_array_1d</title>
+<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node9"><a xlink:href=".././proc/reallocate_array_1d.html" xlink:title="reallocate_array_1d">
+<polygon fill="#d9534f" stroke="#d9534f" points="571.5,-108 463.5,-108 463.5,-84 571.5,-84 571.5,-108"/>
+<text text-anchor="middle" x="517.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">reallocate_array_1d</text>
 </a>
 </g>
 </g>
-<!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~assign_surfaces_mass -->
+<!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~reallocate_array_1d -->
+<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge8" class="edge">
+<title>proc~place_particles_spherical_surfaces&#45;&gt;proc~reallocate_array_1d</title>
+<path fill="none" stroke="#000000" d="M325.1566,-167.7689C349.5044,-153.7976 391.5313,-131.0593 430,-117 437.5108,-114.255 445.5163,-111.7681 453.5184,-109.546"/>
+<polygon fill="#000000" stroke="#000000" points="454.4751,-112.9133 463.244,-106.9671 452.6809,-106.1471 454.4751,-112.9133"/>
+</g>
+<!-- proc~compute_colatitudes_uniformly_in -->
+<g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node10" class="node">
+<title>proc~compute_colatitudes_uniformly_in</title>
+<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node10"><a xlink:href=".././proc/compute_colatitudes_uniformly_in.html" xlink:title="compute_colatitudes_uniformly_in">
+<polygon fill="#d9534f" stroke="#d9534f" points="605,-66 430,-66 430,-42 605,-42 605,-66"/>
+<text text-anchor="middle" x="517.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">compute_colatitudes_uniformly_in</text>
+</a>
+</g>
+</g>
+<!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~compute_colatitudes_uniformly_in -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge9" class="edge">
-<title>proc~place_particles_spherical_surfaces&#45;&gt;proc~assign_surfaces_mass</title>
-<path fill="none" stroke="#000000" d="M315.2892,-167.8462C335.5254,-145.8322 381.5288,-99.3856 430,-75 435.3642,-72.3013 441.0902,-69.9396 446.9484,-67.8744"/>
-<polygon fill="#000000" stroke="#000000" points="448.4461,-71.0692 456.8916,-64.6719 446.3001,-64.4063 448.4461,-71.0692"/>
+<title>proc~place_particles_spherical_surfaces&#45;&gt;proc~compute_colatitudes_uniformly_in</title>
+<path fill="none" stroke="#000000" d="M315.2892,-167.8462C335.5254,-145.8322 381.5288,-99.3856 430,-75 434.0341,-72.9705 438.2728,-71.1315 442.6184,-69.466"/>
+<polygon fill="#000000" stroke="#000000" points="443.9821,-72.697 452.2647,-66.0902 441.6699,-66.0899 443.9821,-72.697"/>
 </g>
-<!-- none~validate_position_final~2 -->
+<!-- proc~particle_volume -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node11" class="node">
-<title>none~validate_position_final~2</title>
-<polygon fill="#d94e8f" stroke="#d94e8f" points="576.5,-24 458.5,-24 458.5,0 576.5,0 576.5,-24"/>
-<text text-anchor="middle" x="517.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">validate_position_final</text>
+<title>proc~particle_volume</title>
+<g id="a_interface~~place_particles_spherical_surfaces~~CallsGraph_node11"><a xlink:href=".././proc/particle_volume.html" xlink:title="particle_volume">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="561.5,-24 473.5,-24 473.5,0 561.5,0 561.5,-24"/>
+<text text-anchor="middle" x="517.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particle_volume</text>
+</a>
 </g>
-<!-- proc~place_particles_spherical_surfaces&#45;&gt;none~validate_position_final~2 -->
+</g>
+<!-- proc~place_particles_spherical_surfaces&#45;&gt;proc~particle_volume -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge10" class="edge">
-<title>proc~place_particles_spherical_surfaces&#45;&gt;none~validate_position_final~2</title>
-<path fill="none" stroke="#000000" d="M311.182,-167.8653C327.4797,-139.4682 372.2067,-68.4206 430,-33 435.7275,-29.4897 441.9996,-26.5662 448.4717,-24.1313"/>
-<polygon fill="#000000" stroke="#000000" points="449.6979,-27.4116 458.0572,-20.9022 447.4631,-20.7779 449.6979,-27.4116"/>
+<title>proc~place_particles_spherical_surfaces&#45;&gt;proc~particle_volume</title>
+<path fill="none" stroke="#000000" d="M311.182,-167.8653C327.4797,-139.4682 372.2067,-68.4206 430,-33 439.9929,-26.8755 451.6437,-22.5371 463.1223,-19.464"/>
+<polygon fill="#000000" stroke="#000000" points="464.2062,-22.8036 473.1193,-17.0759 462.5798,-15.9952 464.2062,-22.8036"/>
 </g>
 <!-- validate_position -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_node12" class="node">
 <title>validate_position</title>
-<polygon fill="#777777" stroke="#777777" points="733,-24 641,-24 641,0 733,0 733,-24"/>
-<text text-anchor="middle" x="687" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">validate_position</text>
+<polygon fill="#777777" stroke="#777777" points="733,-276 641,-276 641,-252 733,-252 733,-276"/>
+<text text-anchor="middle" x="687" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">validate_position</text>
 </g>
 <!-- none~validate_position_final~2&#45;&gt;validate_position -->
 <g id="interface~~place_particles_spherical_surfaces~~CallsGraph_edge11" class="edge">
 <title>none~validate_position_final~2&#45;&gt;validate_position</title>
-<path fill="none" stroke="#000000" d="M576.7829,-12C594.1757,-12 613.1461,-12 630.3691,-12"/>
-<polygon fill="#000000" stroke="#000000" points="630.8374,-15.5001 640.8373,-12 630.8373,-8.5001 630.8374,-15.5001"/>
+<path fill="none" stroke="#000000" d="M576.7829,-264C594.1757,-264 613.1461,-264 630.3691,-264"/>
+<polygon fill="#000000" stroke="#000000" points="630.8374,-267.5001 640.8373,-264 630.8373,-260.5001 630.8374,-267.5001"/>
 </g>
 </g>
 </svg>
@@ -500,7 +500,7 @@ public module module subroutine place_particles_spherical_surfaces(THIS, mass_st
   
 <tr>
   
-  <td><span class="anchor" id="variable-this~75"></span>class(<a href='../type/particles.html'>particles</a>),</td>
+  <td><span class="anchor" id="variable-this~74"></span>class(<a href='../type/particles.html'>particles</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -609,7 +609,7 @@ CLASS(idbase),       INTENT( IN OUT ):: id
   
 <tr>
   
-  <td><span class="anchor" id="variable-pos~7"></span>double precision,</td>
+  <td><span class="anchor" id="variable-pos~8"></span>double precision,</td>
   <td>intent(out),</td>
   <td></td>
   
@@ -1246,14 +1246,14 @@ subroutine get_id(x, y, z, g_xx, baryon_density, gamma_euler)
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

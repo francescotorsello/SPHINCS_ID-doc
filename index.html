@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="./favicon.png">
 
-    <title> SPHINCS_LORENE </title>
+    <title> SPHINCS_ID </title>
 
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="./index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -123,7 +123,7 @@
     
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <p>Documentation of the FORTRAN 2018 code SPHINCS_LORENE</p>
+        <p>Documentation of <script type="math/tex">\mathrm{SPHINCS\_ID}</script> <br /><br /> <img _="," alt="SPHINCS_ID" src="./media/binary-tr.PNG" style="text-align: center" width="100%"> <font size="2"> <strong>Image caption:</strong> Projection of the SPH particles on the <script type="math/tex">xy</script> plane, for a binary neutron star system with gravitational masses of <script type="math/tex">1.2M_\odot</script> (left) and <script type="math/tex">1.8M_\odot</script> (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with <script type="math/tex">\texttt{LORENE}</script>, and the particles placed with <script type="math/tex">\texttt{SPHINCS_ID}</script> using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with <script type="math/tex">\texttt{SPLASH}</script> and <script type="math/tex">\texttt{GIMP}</script>. </font></p>
         	 
 	<p> Find us on&hellip;</p>
         <p>
@@ -143,11 +143,11 @@
 		  
         <div class="col-md-8">
 		  
-          <h1>SPHINCS_LORENE</h1>
-          <h4><strong>S</strong>moothed <strong>P</strong>article <strong>H</strong>ydrodynamics <strong>IN</strong> <strong>C</strong>urved <strong>S</strong>pacetime &mdash; Interface to <strong>LORENE</strong></h4>
+          <h1>SPHINCS_ID</h1>
+          <h4><strong>S</strong>moothed <strong>P</strong>article <strong>H</strong>ydrodynamics <strong>IN</strong> <strong>C</strong>urved <strong>S</strong>pacetime &mdash; <strong>I</strong>nitial <strong>D</strong>ata builder</h4>
 <hr>
-<p>SPHINCS_LORENE is a modular, object-oriented, OMP parallelized FORTRAN 2018 code to produce binary neutron stars initial data to be evolved in time with the FORTRAN 2018 code SPHINCS_BSSN (<a href="https://iopscience.iop.org/article/10.1088/1361-6382/abee65" target="_blank">1</a>), using the C++ code LORENE (<a href="https://lorene.obspm.fr/" target="_blank">2</a>,<a href="https://arxiv.org/abs/gr-qc/0007028" target="_blank">3</a>).</p>
-<p>SPHINCS_LORENE acts as an interface between LORENE and SPHINCS_BSSN; it reads the spectral ID produced by LORENE and produces the SPH and BSSN ID to be read and evolved in time with SPHINCS_BSSN.</p>
+<p>SPHINCS_ID is a modular, object-oriented, OMP parallelized FORTRAN 2018 code to produce initial data to be evolved in time with the FORTRAN 2018 code SPHINCS_BSSN (<a href="https://iopscience.iop.org/article/10.1088/1361-6382/abee65" target="_blank">1</a>). Currently, it produces initial data for binary neutron star mergers and differentially rotating stars, using the data computed by the solvers within the C++ library LORENE (<a href="https://lorene.obspm.fr/" target="_blank">2</a>,<a href="https://arxiv.org/abs/gr-qc/0007028" target="_blank">3</a>).</p>
+<p>Currently, SPHINCS_ID does not solve any equations for the initial data, but acts as an interface between an initial data solver and SPHINCS_BSSN. It reads the data computed by the solver and produces the SPH and BSSN ID to be read and evolved in time with SPHINCS_BSSN.</p>
 <hr>
         </div>
 		  
@@ -249,6 +249,8 @@
                   
                     <li><a href='./interface/allocate_diffstar_memory.html'>allocate_diffstar_memory</a></li>
                   
+                    <li><a href='./proc/allocate_idbase.html'>allocate_idbase</a></li>
+                  
                     <li><a href='./interface/allocate_lorene_id_memory.html'>allocate_lorene_id_memory</a></li>
                   
                     <li><a href='./interface/allocate_lorene_id_parts_memory.html'>allocate_lorene_id_parts_memory</a></li>
@@ -258,8 +260,6 @@
                     <li><a href='./interface/analyze_hydro.html'>analyze_hydro</a></li>
                   
                     <li><a href='./proc/assign_surfaces_mass.html'>assign_surfaces_mass</a></li>
-                  
-                    <li><a href='./interface/bnslorene.html'>bnslorene</a></li>
                   
                     <li><a href='./interface/bssn_id.html'>bssn_id</a></li>
                   </ul>
@@ -283,6 +283,8 @@
                   
                     <li><a href='./type/formul_3p1.html'>formul_3p1</a></li>
                   
+                    <li><a href='./type/id.html'>id</a></li>
+                  
                     <li><a href='./type/idbase.html'>idbase</a></li>
                   
                     <li><a href='./type/particles.html'>particles</a></li>
@@ -297,14 +299,14 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>read_bssn_dump_print_formatted &ndash; SPHINCS_LORENE</title>
+    <title>read_bssn_dump_print_formatted &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -199,7 +199,7 @@
       
       <a class="list-group-item" href="../proc/read_bssn_dump_print_formatted.html#variable-k~11">k</a>
       
-      <a class="list-group-item" href="../proc/read_bssn_dump_print_formatted.html#variable-l~21">l</a>
+      <a class="list-group-item" href="../proc/read_bssn_dump_print_formatted.html#variable-l~22">l</a>
       
       <a class="list-group-item" href="../proc/read_bssn_dump_print_formatted.html#variable-min_abs_y~4">min_abs_y</a>
       
@@ -265,13 +265,13 @@ module procedure read_bssn_dump_print_formatted <small>module module subroutine 
       <li class="list-group-item">
   <ul class="list-inline">
     
-    <li>tensor</li>
-    
-    <li>BSSN_refine</li>
-    
     <li>mesh_refinement</li>
     
     <li>ADM_refine</li>
+    
+    <li>BSSN_refine</li>
+    
+    <li>tensor</li>
     
   </ul>
       </li>
@@ -296,53 +296,53 @@ module procedure read_bssn_dump_print_formatted <small>module module subroutine 
 <polygon fill="none" stroke="#000000" points="307,-87 132,-87 132,-63 307,-63 307,-87"/>
 <text text-anchor="middle" x="219.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">read_bssn_dump_print_formatted</text>
 </g>
-<!-- tensor -->
-<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_node2" class="node">
-<title>tensor</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="75,-150 21,-150 21,-126 75,-126 75,-150"/>
-<text text-anchor="middle" x="48" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">tensor</text>
-</g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;tensor -->
-<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_edge1" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;tensor</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M186.4331,-87.147C157.3122,-97.8445 114.9564,-113.4038 84.7761,-124.4904"/>
-<polygon fill="#000000" stroke="#000000" points="83.2244,-121.3317 75.0446,-128.0653 85.6382,-127.9024 83.2244,-121.3317"/>
-</g>
-<!-- BSSN_refine -->
-<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_node3" class="node">
-<title>BSSN_refine</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="84.5,-108 11.5,-108 11.5,-84 84.5,-84 84.5,-108"/>
-<text text-anchor="middle" x="48" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">BSSN_refine</text>
-</g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;BSSN_refine -->
-<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_edge2" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;BSSN_refine</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M131.9916,-85.7153C119.2201,-87.2792 106.5006,-88.8367 94.967,-90.2489"/>
-<polygon fill="#000000" stroke="#000000" points="94.2413,-86.8116 84.7409,-91.5011 95.0922,-93.7597 94.2413,-86.8116"/>
-</g>
 <!-- mesh_refinement -->
-<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_node4" class="node">
+<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_node2" class="node">
 <title>mesh_refinement</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="96,-66 0,-66 0,-42 96,-42 96,-66"/>
-<text text-anchor="middle" x="48" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mesh_refinement</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="96,-150 0,-150 0,-126 96,-126 96,-150"/>
+<text text-anchor="middle" x="48" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mesh_refinement</text>
 </g>
 <!-- proc~read_bssn_dump_print_formatted&#45;&gt;mesh_refinement -->
-<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_edge3" class="edge">
+<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_edge1" class="edge">
 <title>proc~read_bssn_dump_print_formatted&#45;&gt;mesh_refinement</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M131.9916,-64.2847C123.1852,-63.2063 114.4036,-62.131 106.0184,-61.1043"/>
-<polygon fill="#000000" stroke="#000000" points="106.3632,-57.6205 96.0119,-59.879 105.5124,-64.5686 106.3632,-57.6205"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M186.4331,-87.147C159.0612,-97.202 119.9964,-111.5523 90.3403,-122.4464"/>
+<polygon fill="#000000" stroke="#000000" points="88.854,-119.2637 80.6742,-125.9972 91.2677,-125.8344 88.854,-119.2637"/>
 </g>
 <!-- ADM_refine -->
-<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_node5" class="node">
+<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_node3" class="node">
 <title>ADM_refine</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="82.5,-24 13.5,-24 13.5,0 82.5,0 82.5,-24"/>
-<text text-anchor="middle" x="48" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ADM_refine</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="82.5,-108 13.5,-108 13.5,-84 82.5,-84 82.5,-108"/>
+<text text-anchor="middle" x="48" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ADM_refine</text>
 </g>
 <!-- proc~read_bssn_dump_print_formatted&#45;&gt;ADM_refine -->
 <g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_edge4" class="edge">
 <title>proc~read_bssn_dump_print_formatted&#45;&gt;ADM_refine</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M186.4331,-62.853C159.0612,-52.798 119.9964,-38.4477 90.3403,-27.5536"/>
-<polygon fill="#000000" stroke="#000000" points="91.2677,-24.1656 80.6742,-24.0028 88.854,-30.7363 91.2677,-24.1656"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M131.9916,-85.7153C118.451,-87.3733 104.969,-89.0242 92.8967,-90.5024"/>
+<polygon fill="#000000" stroke="#000000" points="92.1851,-87.0634 82.6846,-91.7529 93.0359,-94.0115 92.1851,-87.0634"/>
+</g>
+<!-- BSSN_refine -->
+<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_node4" class="node">
+<title>BSSN_refine</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="84.5,-66 11.5,-66 11.5,-42 84.5,-42 84.5,-66"/>
+<text text-anchor="middle" x="48" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">BSSN_refine</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;BSSN_refine -->
+<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_edge2" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;BSSN_refine</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M131.9916,-64.2847C119.2201,-62.7208 106.5006,-61.1633 94.967,-59.7511"/>
+<polygon fill="#000000" stroke="#000000" points="95.0922,-56.2403 84.7409,-58.4989 94.2413,-63.1884 95.0922,-56.2403"/>
+</g>
+<!-- tensor -->
+<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_node5" class="node">
+<title>tensor</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="75,-24 21,-24 21,0 75,0 75,-24"/>
+<text text-anchor="middle" x="48" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">tensor</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;tensor -->
+<g id="proc~~read_bssn_dump_print_formatted~~UsesGraph_edge3" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;tensor</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M186.4331,-62.853C157.3122,-52.1555 114.9564,-36.5962 84.7761,-25.5096"/>
+<polygon fill="#000000" stroke="#000000" points="85.6382,-22.0976 75.0446,-21.9347 83.2244,-28.6683 85.6382,-22.0976"/>
 </g>
 </g>
 </svg>
@@ -431,7 +431,7 @@ module procedure read_bssn_dump_print_formatted <small>module module subroutine 
   
 <tr>
   
-  <td><span class="anchor" id="variable-this~51"></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
+  <td><span class="anchor" id="variable-this~52"></span>class(<a href='../type/bssn_id.html'>bssn_id</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -501,89 +501,89 @@ module procedure read_bssn_dump_print_formatted <small>module module subroutine 
 <polygon fill="none" stroke="#000000" points="175,-255 0,-255 0,-231 175,-231 175,-255"/>
 <text text-anchor="middle" x="87.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">read_bssn_dump_print_formatted</text>
 </g>
-<!-- a_bssn3_ll -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node2" class="node">
-<title>a_bssn3_ll</title>
-<polygon fill="#777777" stroke="#777777" points="291,-486 227,-486 227,-462 291,-462 291,-486"/>
-<text text-anchor="middle" x="259" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">a_bssn3_ll</text>
-</g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;a_bssn3_ll -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge1" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;a_bssn3_ll</title>
-<path fill="none" stroke="#000000" d="M91.5944,-255.1941C104.02,-290.5021 144.5643,-394.047 211,-453 213.1686,-454.9244 215.5414,-456.6951 218.0338,-458.3206"/>
-<polygon fill="#000000" stroke="#000000" points="216.418,-461.4277 226.8461,-463.3 219.8617,-455.3333 216.418,-461.4277"/>
-</g>
 <!-- allocate_bssn -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node3" class="node">
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node2" class="node">
 <title>allocate_bssn</title>
-<polygon fill="#777777" stroke="#777777" points="298,-444 220,-444 220,-420 298,-420 298,-444"/>
-<text text-anchor="middle" x="259" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn</text>
+<polygon fill="#777777" stroke="#777777" points="298,-486 220,-486 220,-462 298,-462 298,-486"/>
+<text text-anchor="middle" x="259" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_bssn</text>
 </g>
 <!-- proc~read_bssn_dump_print_formatted&#45;&gt;allocate_bssn -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge3" class="edge">
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge1" class="edge">
 <title>proc~read_bssn_dump_print_formatted&#45;&gt;allocate_bssn</title>
-<path fill="none" stroke="#000000" d="M93.5784,-255.2694C109.1482,-285.5794 153.3308,-364.8734 211,-411 212.7314,-412.3849 214.5683,-413.6964 216.4748,-414.936"/>
-<polygon fill="#000000" stroke="#000000" points="214.7519,-417.9826 225.1691,-419.9147 218.2304,-411.9081 214.7519,-417.9826"/>
+<path fill="none" stroke="#000000" d="M91.5944,-255.1941C104.02,-290.5021 144.5643,-394.047 211,-453 212.3097,-454.1622 213.6938,-455.2683 215.1338,-456.3203"/>
+<polygon fill="#000000" stroke="#000000" points="213.5251,-459.4419 223.862,-461.7656 217.2303,-453.5029 213.5251,-459.4419"/>
 </g>
-<!-- read_bssn_dump -->
+<!-- phi -->
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node3" class="node">
+<title>phi</title>
+<polygon fill="#777777" stroke="#777777" points="286,-444 232,-444 232,-420 286,-420 286,-444"/>
+<text text-anchor="middle" x="259" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">phi</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;phi -->
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge2" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;phi</title>
+<path fill="none" stroke="#000000" d="M93.5784,-255.2694C109.1482,-285.5794 153.3308,-364.8734 211,-411 214.5727,-413.8576 218.5944,-416.403 222.7508,-418.6485"/>
+<polygon fill="#000000" stroke="#000000" points="221.416,-421.8907 231.9428,-423.0901 224.4616,-415.5879 221.416,-421.8907"/>
+</g>
+<!-- deallocate_adm -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node4" class="node">
-<title>read_bssn_dump</title>
-<polygon fill="#777777" stroke="#777777" points="307,-402 211,-402 211,-378 307,-378 307,-402"/>
-<text text-anchor="middle" x="259" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_bssn_dump</text>
+<title>deallocate_adm</title>
+<polygon fill="#777777" stroke="#777777" points="303,-402 215,-402 215,-378 303,-378 303,-402"/>
+<text text-anchor="middle" x="259" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_adm</text>
 </g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;read_bssn_dump -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge4" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;read_bssn_dump</title>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_adm -->
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge3" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_adm</title>
 <path fill="none" stroke="#000000" d="M96.8201,-255.2752C115.9134,-279.7285 161.8354,-335.0814 211,-369 213.1291,-370.4689 215.3775,-371.8706 217.6925,-373.2018"/>
 <polygon fill="#000000" stroke="#000000" points="216.3551,-376.452 226.8391,-377.9809 219.5968,-370.2478 216.3551,-376.452"/>
 </g>
-<!-- lapse -->
+<!-- gamma_u -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node5" class="node">
-<title>lapse</title>
-<polygon fill="#777777" stroke="#777777" points="286,-360 232,-360 232,-336 286,-336 286,-360"/>
-<text text-anchor="middle" x="259" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">lapse</text>
+<title>gamma_u</title>
+<polygon fill="#777777" stroke="#777777" points="289.5,-360 228.5,-360 228.5,-336 289.5,-336 289.5,-360"/>
+<text text-anchor="middle" x="259" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gamma_u</text>
 </g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;lapse -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge8" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;lapse</title>
-<path fill="none" stroke="#000000" d="M103.2717,-255.1336C126.1815,-272.4267 170.3749,-304.55 211,-327 214.7169,-329.054 218.6745,-331.0573 222.6615,-332.96"/>
-<polygon fill="#000000" stroke="#000000" points="221.3684,-336.2173 231.9181,-337.1938 224.28,-329.8515 221.3684,-336.2173"/>
-</g>
-<!-- allocate_adm -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node6" class="node">
-<title>allocate_adm</title>
-<polygon fill="#777777" stroke="#777777" points="297,-318 221,-318 221,-294 297,-294 297,-318"/>
-<text text-anchor="middle" x="259" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_adm</text>
-</g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;allocate_adm -->
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;gamma_u -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge5" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;allocate_adm</title>
-<path fill="none" stroke="#000000" d="M120.5669,-255.147C147.9388,-265.202 187.0036,-279.5523 216.6597,-290.4464"/>
-<polygon fill="#000000" stroke="#000000" points="215.7323,-293.8344 226.3258,-293.9972 218.146,-287.2637 215.7323,-293.8344"/>
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;gamma_u</title>
+<path fill="none" stroke="#000000" d="M103.2717,-255.1336C126.1815,-272.4267 170.3749,-304.55 211,-327 213.866,-328.5838 216.8752,-330.1375 219.9306,-331.6381"/>
+<polygon fill="#000000" stroke="#000000" points="218.5987,-334.8793 229.1385,-335.9582 221.572,-328.5421 218.5987,-334.8793"/>
 </g>
-<!-- shift_u -->
+<!-- g_bssn3_ll -->
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node6" class="node">
+<title>g_bssn3_ll</title>
+<polygon fill="#777777" stroke="#777777" points="291,-318 227,-318 227,-294 291,-294 291,-318"/>
+<text text-anchor="middle" x="259" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">g_bssn3_ll</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;g_bssn3_ll -->
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge4" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;g_bssn3_ll</title>
+<path fill="none" stroke="#000000" d="M120.5669,-255.147C148.1137,-265.2663 187.5033,-279.7359 217.2271,-290.6548"/>
+<polygon fill="#000000" stroke="#000000" points="216.3121,-294.0473 226.9057,-294.2102 218.7258,-287.4767 216.3121,-294.0473"/>
+</g>
+<!-- read_bssn_dump -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node7" class="node">
-<title>shift_u</title>
-<polygon fill="#777777" stroke="#777777" points="286,-276 232,-276 232,-252 286,-252 286,-276"/>
-<text text-anchor="middle" x="259" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">shift_u</text>
+<title>read_bssn_dump</title>
+<polygon fill="#777777" stroke="#777777" points="307,-276 211,-276 211,-252 307,-252 307,-276"/>
+<text text-anchor="middle" x="259" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">read_bssn_dump</text>
 </g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;shift_u -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge10" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;shift_u</title>
-<path fill="none" stroke="#000000" d="M175.0084,-253.7153C191.4599,-255.7298 207.825,-257.7337 221.6803,-259.4302"/>
-<polygon fill="#000000" stroke="#000000" points="221.3948,-262.9213 231.7461,-260.6628 222.2457,-255.9732 221.3948,-262.9213"/>
-</g>
-<!-- deallocate_adm -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node8" class="node">
-<title>deallocate_adm</title>
-<polygon fill="#777777" stroke="#777777" points="303,-234 215,-234 215,-210 303,-210 303,-234"/>
-<text text-anchor="middle" x="259" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_adm</text>
-</g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_adm -->
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;read_bssn_dump -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge6" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_adm</title>
-<path fill="none" stroke="#000000" d="M175.0084,-232.2847C185.1967,-231.0371 195.3519,-229.7936 204.8984,-228.6247"/>
-<polygon fill="#000000" stroke="#000000" points="205.4907,-232.0784 214.9911,-227.3888 204.6398,-225.1303 205.4907,-232.0784"/>
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;read_bssn_dump</title>
+<path fill="none" stroke="#000000" d="M175.0084,-253.7153C183.8148,-254.7937 192.5964,-255.869 200.9816,-256.8957"/>
+<polygon fill="#000000" stroke="#000000" points="200.6368,-260.3795 210.9881,-258.121 201.4876,-253.4314 200.6368,-260.3795"/>
+</g>
+<!-- deallocate_bssn -->
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node8" class="node">
+<title>deallocate_bssn</title>
+<polygon fill="#777777" stroke="#777777" points="304,-234 214,-234 214,-210 304,-210 304,-234"/>
+<text text-anchor="middle" x="259" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_bssn -->
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge7" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_bssn</title>
+<path fill="none" stroke="#000000" d="M175.0084,-232.2847C184.7283,-231.0945 194.4181,-229.908 203.5779,-228.7864"/>
+<polygon fill="#000000" stroke="#000000" points="204.1674,-232.2404 213.6678,-227.5509 203.3165,-225.2923 204.1674,-232.2404"/>
 </g>
 <!-- trk -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node9" class="node">
@@ -592,56 +592,56 @@ module procedure read_bssn_dump_print_formatted <small>module module subroutine 
 <text text-anchor="middle" x="259" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">trk</text>
 </g>
 <!-- proc~read_bssn_dump_print_formatted&#45;&gt;trk -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge7" class="edge">
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge8" class="edge">
 <title>proc~read_bssn_dump_print_formatted&#45;&gt;trk</title>
 <path fill="none" stroke="#000000" d="M120.5669,-230.853C149.6878,-220.1555 192.0436,-204.5962 222.2239,-193.5096"/>
 <polygon fill="#000000" stroke="#000000" points="223.7756,-196.6683 231.9554,-189.9347 221.3618,-190.0976 223.7756,-196.6683"/>
 </g>
-<!-- gamma_u -->
+<!-- lapse -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node10" class="node">
-<title>gamma_u</title>
-<polygon fill="#777777" stroke="#777777" points="289.5,-150 228.5,-150 228.5,-126 289.5,-126 289.5,-150"/>
-<text text-anchor="middle" x="259" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">gamma_u</text>
+<title>lapse</title>
+<polygon fill="#777777" stroke="#777777" points="286,-150 232,-150 232,-126 286,-126 286,-150"/>
+<text text-anchor="middle" x="259" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">lapse</text>
 </g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;gamma_u -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge2" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;gamma_u</title>
-<path fill="none" stroke="#000000" d="M103.2717,-230.8664C126.1815,-213.5733 170.3749,-181.45 211,-159 213.866,-157.4162 216.8752,-155.8625 219.9306,-154.3619"/>
-<polygon fill="#000000" stroke="#000000" points="221.572,-157.4579 229.1385,-150.0418 218.5987,-151.1207 221.572,-157.4579"/>
-</g>
-<!-- phi -->
-<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node11" class="node">
-<title>phi</title>
-<polygon fill="#777777" stroke="#777777" points="286,-108 232,-108 232,-84 286,-84 286,-108"/>
-<text text-anchor="middle" x="259" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">phi</text>
-</g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;phi -->
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;lapse -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge9" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;phi</title>
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;lapse</title>
+<path fill="none" stroke="#000000" d="M103.2717,-230.8664C126.1815,-213.5733 170.3749,-181.45 211,-159 214.7169,-156.946 218.6745,-154.9427 222.6615,-153.04"/>
+<polygon fill="#000000" stroke="#000000" points="224.28,-156.1485 231.9181,-148.8062 221.3684,-149.7827 224.28,-156.1485"/>
+</g>
+<!-- shift_u -->
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node11" class="node">
+<title>shift_u</title>
+<polygon fill="#777777" stroke="#777777" points="286,-108 232,-108 232,-84 286,-84 286,-108"/>
+<text text-anchor="middle" x="259" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">shift_u</text>
+</g>
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;shift_u -->
+<g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge10" class="edge">
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;shift_u</title>
 <path fill="none" stroke="#000000" d="M96.8201,-230.7248C115.9134,-206.2715 161.8354,-150.9186 211,-117 214.6792,-114.4617 218.7145,-112.1241 222.8338,-110.0037"/>
 <polygon fill="#000000" stroke="#000000" points="224.3432,-113.1616 231.8797,-105.7151 221.3444,-106.8365 224.3432,-113.1616"/>
 </g>
-<!-- g_bssn3_ll -->
+<!-- a_bssn3_ll -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node12" class="node">
-<title>g_bssn3_ll</title>
+<title>a_bssn3_ll</title>
 <polygon fill="#777777" stroke="#777777" points="291,-66 227,-66 227,-42 291,-42 291,-66"/>
-<text text-anchor="middle" x="259" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">g_bssn3_ll</text>
+<text text-anchor="middle" x="259" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">a_bssn3_ll</text>
 </g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;g_bssn3_ll -->
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;a_bssn3_ll -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge11" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;g_bssn3_ll</title>
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;a_bssn3_ll</title>
 <path fill="none" stroke="#000000" d="M93.5784,-230.7306C109.1482,-200.4206 153.3308,-121.1266 211,-75 213.2309,-73.2156 215.6368,-71.553 218.1413,-70.0092"/>
 <polygon fill="#000000" stroke="#000000" points="219.8252,-73.0775 226.9247,-65.2131 216.4705,-66.9337 219.8252,-73.0775"/>
 </g>
-<!-- deallocate_bssn -->
+<!-- allocate_adm -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_node13" class="node">
-<title>deallocate_bssn</title>
-<polygon fill="#777777" stroke="#777777" points="304,-24 214,-24 214,0 304,0 304,-24"/>
-<text text-anchor="middle" x="259" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">deallocate_bssn</text>
+<title>allocate_adm</title>
+<polygon fill="#777777" stroke="#777777" points="297,-24 221,-24 221,0 297,0 297,-24"/>
+<text text-anchor="middle" x="259" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">allocate_adm</text>
 </g>
-<!-- proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_bssn -->
+<!-- proc~read_bssn_dump_print_formatted&#45;&gt;allocate_adm -->
 <g id="proc~~read_bssn_dump_print_formatted~~CallsGraph_edge12" class="edge">
-<title>proc~read_bssn_dump_print_formatted&#45;&gt;deallocate_bssn</title>
+<title>proc~read_bssn_dump_print_formatted&#45;&gt;allocate_adm</title>
 <path fill="none" stroke="#000000" d="M91.5944,-230.8059C104.02,-195.4979 144.5643,-91.953 211,-33 212.3097,-31.8378 213.6938,-30.7317 215.1338,-29.6797"/>
 <polygon fill="#000000" stroke="#000000" points="217.2303,-32.4971 223.862,-24.2344 213.5251,-26.5581 217.2303,-32.4971"/>
 </g>
@@ -835,7 +835,7 @@ module procedure read_bssn_dump_print_formatted <small>module module subroutine 
       
       <a class="list-group-item" href="../proc/read_bssn_dump_print_formatted.html#variable-k~11">k</a>
       
-      <a class="list-group-item" href="../proc/read_bssn_dump_print_formatted.html#variable-l~21">l</a>
+      <a class="list-group-item" href="../proc/read_bssn_dump_print_formatted.html#variable-l~22">l</a>
       
       <a class="list-group-item" href="../proc/read_bssn_dump_print_formatted.html#variable-min_abs_y~4">min_abs_y</a>
       
@@ -971,7 +971,7 @@ module procedure read_bssn_dump_print_formatted <small>module module subroutine 
   
 <tr>
   
-  <td><span class="anchor" id="variable-l~21"></span>integer,</td>
+  <td><span class="anchor" id="variable-l~22"></span>integer,</td>
   
   <td>private</td>
   <td></td><td>::</td>
@@ -1122,14 +1122,14 @@ module procedure read_bssn_dump_print_formatted <small>module module subroutine 
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>

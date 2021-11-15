@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="Documentation of the FORTRAN 2018 code SPHINCS_LORENE">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>module_diffstar_base.f90 &ndash; SPHINCS_LORENE</title>
+    <title>module_diffstar_base.f90 &ndash; SPHINCS_ID</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_LORENE <small>2.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -144,7 +144,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.5% of total for source files.">302 statements</a>
+    title=" 2.5% of total for source files.">307 statements</a>
      </li> 
      
      
@@ -247,35 +247,35 @@
 <polygon fill="none" stroke="#000000" points="278,-45 145,-45 145,-21 278,-21 278,-45"/>
 <text text-anchor="middle" x="211.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">module_diffstar_base.f90</text>
 </g>
-<!-- sourcefile~module_utility.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~EfferentGraph_node2" class="node">
-<title>sourcefile~module_utility.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~EfferentGraph_node2"><a xlink:href=".././sourcefile/module_utility.f90.html" xlink:title="module_utility.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="102.5,-66 6.5,-66 6.5,-42 102.5,-42 102.5,-66"/>
-<text text-anchor="middle" x="54.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_utility.f90</text>
-</a>
-</g>
-</g>
-<!-- sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_utility.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~EfferentGraph_edge1" class="edge">
-<title>sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_utility.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.9179,-41.9059C134.1511,-43.346 123.078,-44.8271 112.5345,-46.2374"/>
-<polygon fill="#000000" stroke="#000000" points="112.063,-42.7692 102.6153,-47.5642 112.9911,-49.7074 112.063,-42.7692"/>
-</g>
 <!-- sourcefile~module_id_base.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~EfferentGraph_node3" class="node">
+<g id="sourcefile~~module_diffstar_base.f90~~EfferentGraph_node2" class="node">
 <title>sourcefile~module_id_base.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~EfferentGraph_node3"><a xlink:href=".././sourcefile/module_id_base.f90.html" xlink:title="module_id_base.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="109,-24 0,-24 0,0 109,0 109,-24"/>
-<text text-anchor="middle" x="54.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_id_base.f90</text>
+<g id="a_sourcefile~~module_diffstar_base.f90~~EfferentGraph_node2"><a xlink:href=".././sourcefile/module_id_base.f90.html" xlink:title="module_id_base.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="109,-66 0,-66 0,-42 109,-42 109,-66"/>
+<text text-anchor="middle" x="54.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_id_base.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_id_base.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~EfferentGraph_edge2" class="edge">
+<g id="sourcefile~~module_diffstar_base.f90~~EfferentGraph_edge1" class="edge">
 <title>sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_id_base.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.9179,-24.0941C136.4807,-22.9656 127.8555,-21.8119 119.4444,-20.6868"/>
-<polygon fill="#000000" stroke="#000000" points="119.6938,-17.1891 109.318,-19.3323 118.7657,-24.1273 119.6938,-17.1891"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.9179,-41.9059C136.4807,-43.0344 127.8555,-44.1881 119.4444,-45.3132"/>
+<polygon fill="#000000" stroke="#000000" points="118.7657,-41.8727 109.318,-46.6677 119.6938,-48.8109 118.7657,-41.8727"/>
+</g>
+<!-- sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~EfferentGraph_node3" class="node">
+<title>sourcefile~module_utility.f90</title>
+<g id="a_sourcefile~~module_diffstar_base.f90~~EfferentGraph_node3"><a xlink:href=".././sourcefile/module_utility.f90.html" xlink:title="module_utility.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="102.5,-24 6.5,-24 6.5,0 102.5,0 102.5,-24"/>
+<text text-anchor="middle" x="54.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_utility.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_utility.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~EfferentGraph_edge2" class="edge">
+<title>sourcefile~module_diffstar_base.f90&#45;&gt;sourcefile~module_utility.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.9179,-24.0941C134.1511,-22.654 123.078,-21.1729 112.5345,-19.7626"/>
+<polygon fill="#000000" stroke="#000000" points="112.9911,-16.2926 102.6153,-18.4358 112.063,-23.2308 112.9911,-16.2926"/>
 </g>
 </g>
 </svg>
@@ -328,166 +328,196 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: sourcefile~~module_diffstar_base.f90~~AfferentGraph Pages: 1 -->
-<svg id="sourcefilemodule_diffstar_basef90AfferentGraph" width="641pt" height="198pt"
- viewBox="0.00 0.00 641.00 198.37" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph" class="graph" transform="scale(.8197 .8197) rotate(0) translate(4 238)">
+<svg id="sourcefilemodule_diffstar_basef90AfferentGraph" width="641pt" height="236pt"
+ viewBox="0.00 0.00 641.00 236.11" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph" class="graph" transform="scale(.8314 .8314) rotate(0) translate(4 280)">
 <title>sourcefile~~module_diffstar_base.f90~~AfferentGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-238 778,-238 778,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-280 767,-280 767,4 -4,4"/>
 <!-- sourcefile~module_diffstar_base.f90 -->
 <g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node1" class="node">
 <title>sourcefile~module_diffstar_base.f90</title>
-<polygon fill="none" stroke="#000000" points="133,-108 0,-108 0,-84 133,-84 133,-108"/>
-<text text-anchor="middle" x="66.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">module_diffstar_base.f90</text>
+<polygon fill="none" stroke="#000000" points="133,-150 0,-150 0,-126 133,-126 133,-150"/>
+<text text-anchor="middle" x="66.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">module_diffstar_base.f90</text>
+</g>
+<!-- sourcefile~submodule_diffstar_base_io.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node2" class="node">
+<title>sourcefile~submodule_diffstar_base_io.f90</title>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node2"><a xlink:href=".././sourcefile/submodule_diffstar_base_io.f90.html" xlink:title="submodule_diffstar_base_io.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="346.5,-192 181.5,-192 181.5,-168 346.5,-168 346.5,-192"/>
+<text text-anchor="middle" x="264" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_base_io.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_diffstar_base_io.f90&#45;&gt;sourcefile~module_diffstar_base.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge1" class="edge">
+<title>sourcefile~submodule_diffstar_base_io.f90&#45;&gt;sourcefile~module_diffstar_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M207.4044,-167.9645C184.162,-163.0218 157.0839,-157.2634 132.9119,-152.123"/>
+<polygon fill="#000000" stroke="#000000" points="133.6132,-148.694 123.1038,-150.0373 132.1571,-155.5409 133.6132,-148.694"/>
 </g>
 <!-- sourcefile~module_diffstar_lorene.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node2" class="node">
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node3" class="node">
 <title>sourcefile~module_diffstar_lorene.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node2"><a xlink:href=".././sourcefile/module_diffstar_lorene.f90.html" xlink:title="module_diffstar_lorene.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="334,-129 194,-129 194,-105 334,-105 334,-129"/>
-<text text-anchor="middle" x="264" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_diffstar_lorene.f90</text>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node3"><a xlink:href=".././sourcefile/module_diffstar_lorene.f90.html" xlink:title="module_diffstar_lorene.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="334,-150 194,-150 194,-126 334,-126 334,-150"/>
+<text text-anchor="middle" x="264" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_diffstar_lorene.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_diffstar_base.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge1" class="edge">
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge2" class="edge">
 <title>sourcefile~module_diffstar_lorene.f90&#45;&gt;sourcefile~module_diffstar_base.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M193.8128,-109.5371C177.4694,-107.7993 159.9839,-105.9401 143.3686,-104.1734"/>
-<polygon fill="#000000" stroke="#000000" points="143.4677,-100.6643 133.1537,-103.0872 142.7275,-107.625 143.4677,-100.6643"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M193.8128,-138C177.4694,-138 159.9839,-138 143.3686,-138"/>
+<polygon fill="#000000" stroke="#000000" points="143.1537,-134.5001 133.1537,-138 143.1536,-141.5001 143.1537,-134.5001"/>
 </g>
 <!-- sourcefile~submodule_diffstar_base_access.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node3" class="node">
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node4" class="node">
 <title>sourcefile~submodule_diffstar_base_access.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node3"><a xlink:href=".././sourcefile/submodule_diffstar_base_access.f90.html" xlink:title="submodule_diffstar_base_access.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="359,-87 169,-87 169,-63 359,-63 359,-87"/>
-<text text-anchor="middle" x="264" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_base_access.f90</text>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node4"><a xlink:href=".././sourcefile/submodule_diffstar_base_access.f90.html" xlink:title="submodule_diffstar_base_access.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="359,-108 169,-108 169,-84 359,-84 359,-108"/>
+<text text-anchor="middle" x="264" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_base_access.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~submodule_diffstar_base_access.f90&#45;&gt;sourcefile~module_diffstar_base.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge2" class="edge">
-<title>sourcefile~submodule_diffstar_base_access.f90&#45;&gt;sourcefile~module_diffstar_base.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M168.721,-85.1309C160.1654,-86.0406 151.575,-86.954 143.2072,-87.8438"/>
-<polygon fill="#000000" stroke="#000000" points="142.7017,-84.3777 133.1279,-88.9155 143.4419,-91.3385 142.7017,-84.3777"/>
-</g>
-<!-- sourcefile~submodule_diffstar_lorene_access.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node4" class="node">
-<title>sourcefile~submodule_diffstar_lorene_access.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node4"><a xlink:href=".././sourcefile/submodule_diffstar_lorene_access.f90.html" xlink:title="submodule_diffstar_lorene_access.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="601.5,-234 405.5,-234 405.5,-210 601.5,-210 601.5,-234"/>
-<text text-anchor="middle" x="503.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_lorene_access.f90</text>
-</a>
-</g>
-</g>
-<!-- sourcefile~submodule_diffstar_lorene_access.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
 <g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge3" class="edge">
-<title>sourcefile~submodule_diffstar_lorene_access.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M422.8126,-209.9399C413.2815,-207.478 403.8174,-204.5287 395,-201 353.9394,-184.5674 311.8258,-154.8032 286.7954,-135.4764"/>
-<polygon fill="#000000" stroke="#000000" points="288.7126,-132.5319 278.684,-129.1145 284.3926,-138.0399 288.7126,-132.5319"/>
-</g>
-<!-- sourcefile~submodule_diffstar_lorene_memory.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node5" class="node">
-<title>sourcefile~submodule_diffstar_lorene_memory.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node5"><a xlink:href=".././sourcefile/submodule_diffstar_lorene_memory.f90.html" xlink:title="submodule_diffstar_lorene_memory.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="604.5,-192 402.5,-192 402.5,-168 604.5,-168 604.5,-192"/>
-<text text-anchor="middle" x="503.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_lorene_memory.f90</text>
-</a>
-</g>
-</g>
-<!-- sourcefile~submodule_diffstar_lorene_memory.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge4" class="edge">
-<title>sourcefile~submodule_diffstar_lorene_memory.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M434.6374,-167.9536C421.4184,-165.28 407.7318,-162.2607 395,-159 365.4854,-151.441 332.857,-140.9864 307.5467,-132.399"/>
-<polygon fill="#000000" stroke="#000000" points="308.4732,-129.0168 297.8786,-129.0891 306.2058,-135.6395 308.4732,-129.0168"/>
+<title>sourcefile~submodule_diffstar_base_access.f90&#45;&gt;sourcefile~module_diffstar_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M207.4044,-108.0355C184.162,-112.9782 157.0839,-118.7366 132.9119,-123.877"/>
+<polygon fill="#000000" stroke="#000000" points="132.1571,-120.4591 123.1038,-125.9627 133.6132,-127.306 132.1571,-120.4591"/>
 </g>
 <!-- sourcefile~submodule_diffstar_lorene_params.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node6" class="node">
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node5" class="node">
 <title>sourcefile~submodule_diffstar_lorene_params.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node6"><a xlink:href=".././sourcefile/submodule_diffstar_lorene_params.f90.html" xlink:title="submodule_diffstar_lorene_params.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="603,-150 404,-150 404,-126 603,-126 603,-150"/>
-<text text-anchor="middle" x="503.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_lorene_params.f90</text>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node5"><a xlink:href=".././sourcefile/submodule_diffstar_lorene_params.f90.html" xlink:title="submodule_diffstar_lorene_params.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="603,-276 404,-276 404,-252 603,-252 603,-276"/>
+<text text-anchor="middle" x="503.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_lorene_params.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~submodule_diffstar_lorene_params.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge5" class="edge">
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge4" class="edge">
 <title>sourcefile~submodule_diffstar_lorene_params.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M403.6647,-129.2462C383.8634,-127.5099 363.3147,-125.7082 344.2668,-124.038"/>
-<polygon fill="#000000" stroke="#000000" points="344.4227,-120.5383 334.1552,-123.1514 343.8112,-127.5116 344.4227,-120.5383"/>
-</g>
-<!-- sourcefile~module_sphincs_lorene.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node7" class="node">
-<title>sourcefile~module_sphincs_lorene.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node7"><a xlink:href=".././sourcefile/module_sphincs_lorene.f90.html" xlink:title="module_sphincs_lorene.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="575.5,-108 431.5,-108 431.5,-84 575.5,-84 575.5,-108"/>
-<text text-anchor="middle" x="503.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_sphincs_lorene.f90</text>
-</a>
-</g>
-</g>
-<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge6" class="edge">
-<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M431.3173,-102.3292C403.9623,-104.7277 372.6531,-107.473 344.5735,-109.9351"/>
-<polygon fill="#000000" stroke="#000000" points="344.0438,-106.468 334.3878,-110.8282 344.6553,-113.4413 344.0438,-106.468"/>
-</g>
-<!-- sourcefile~submodule_diffstar_lorene_constructor.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node8" class="node">
-<title>sourcefile~submodule_diffstar_lorene_constructor.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node8"><a xlink:href=".././sourcefile/submodule_diffstar_lorene_constructor.f90.html" xlink:title="submodule_diffstar_lorene_constructor.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="612,-66 395,-66 395,-42 612,-42 612,-66"/>
-<text text-anchor="middle" x="503.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_lorene_constructor.f90</text>
-</a>
-</g>
-</g>
-<!-- sourcefile~submodule_diffstar_lorene_constructor.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge7" class="edge">
-<title>sourcefile~submodule_diffstar_lorene_constructor.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M424.4018,-66.0638C414.3602,-68.5376 404.3387,-71.4888 395,-75 377.6617,-81.5188 376.2508,-89.2531 359,-96 353.1673,-98.2812 347.0313,-100.3421 340.8022,-102.1987"/>
-<polygon fill="#000000" stroke="#000000" points="339.6544,-98.8854 330.9672,-104.9504 341.5405,-105.6265 339.6544,-98.8854"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M409.0789,-251.9852C404.0741,-249.4629 399.3315,-246.4923 395,-243 363.3798,-217.506 390.2813,-184.9087 359,-159 354.3331,-155.1347 349.1086,-151.9403 343.5744,-149.3047"/>
+<polygon fill="#000000" stroke="#000000" points="344.5921,-145.939 334.0122,-145.377 341.9324,-152.4141 344.5921,-145.939"/>
 </g>
 <!-- sourcefile~submodule_diffstar_lorene_import.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node9" class="node">
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node6" class="node">
 <title>sourcefile~submodule_diffstar_lorene_import.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node9"><a xlink:href=".././sourcefile/submodule_diffstar_lorene_import.f90.html" xlink:title="submodule_diffstar_lorene_import.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="600,-24 407,-24 407,0 600,0 600,-24"/>
-<text text-anchor="middle" x="503.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_lorene_import.f90</text>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node6"><a xlink:href=".././sourcefile/submodule_diffstar_lorene_import.f90.html" xlink:title="submodule_diffstar_lorene_import.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="600,-234 407,-234 407,-210 600,-210 600,-234"/>
+<text text-anchor="middle" x="503.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_lorene_import.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~submodule_diffstar_lorene_import.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge8" class="edge">
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge5" class="edge">
 <title>sourcefile~submodule_diffstar_lorene_import.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M410.8609,-24.0065C405.2612,-26.5108 399.9139,-29.4814 395,-33 368.7798,-51.775 384.9704,-76.8809 359,-96 354.2943,-99.4642 349.1257,-102.3757 343.7051,-104.8205"/>
-<polygon fill="#000000" stroke="#000000" points="342.3928,-101.5757 334.3821,-108.5096 344.9684,-108.0846 342.3928,-101.5757"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M414.3402,-209.9228C407.5873,-207.4634 401.054,-204.5202 395,-201 373.7463,-188.6418 380.0889,-171.6374 359,-159 354.2911,-156.1782 349.2467,-153.7345 344.0279,-151.6182"/>
+<polygon fill="#000000" stroke="#000000" points="345.0745,-148.2747 334.4804,-148.1517 342.6855,-154.8545 345.0745,-148.2747"/>
+</g>
+<!-- sourcefile~submodule_diffstar_lorene_io.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node7" class="node">
+<title>sourcefile~submodule_diffstar_lorene_io.f90</title>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node7"><a xlink:href=".././sourcefile/submodule_diffstar_lorene_io.f90.html" xlink:title="submodule_diffstar_lorene_io.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="589.5,-192 417.5,-192 417.5,-168 589.5,-168 589.5,-192"/>
+<text text-anchor="middle" x="503.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_lorene_io.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_diffstar_lorene_io.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge6" class="edge">
+<title>sourcefile~submodule_diffstar_lorene_io.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M434.8689,-167.9645C406.0574,-162.9119 372.3857,-157.0071 342.586,-151.7813"/>
+<polygon fill="#000000" stroke="#000000" points="343.0954,-148.3173 332.6411,-150.0373 341.8862,-155.212 343.0954,-148.3173"/>
+</g>
+<!-- sourcefile~submodule_diffstar_lorene_access.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node8" class="node">
+<title>sourcefile~submodule_diffstar_lorene_access.f90</title>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node8"><a xlink:href=".././sourcefile/submodule_diffstar_lorene_access.f90.html" xlink:title="submodule_diffstar_lorene_access.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="601.5,-150 405.5,-150 405.5,-126 601.5,-126 601.5,-150"/>
+<text text-anchor="middle" x="503.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_lorene_access.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_diffstar_lorene_access.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge7" class="edge">
+<title>sourcefile~submodule_diffstar_lorene_access.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M405.3951,-138C385.0439,-138 363.83,-138 344.2109,-138"/>
+<polygon fill="#000000" stroke="#000000" points="344.1099,-134.5001 334.1098,-138 344.1098,-141.5001 344.1099,-134.5001"/>
+</g>
+<!-- sourcefile~submodule_diffstar_lorene_memory.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node9" class="node">
+<title>sourcefile~submodule_diffstar_lorene_memory.f90</title>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node9"><a xlink:href=".././sourcefile/submodule_diffstar_lorene_memory.f90.html" xlink:title="submodule_diffstar_lorene_memory.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="604.5,-108 402.5,-108 402.5,-84 604.5,-84 604.5,-108"/>
+<text text-anchor="middle" x="503.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_lorene_memory.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_diffstar_lorene_memory.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge8" class="edge">
+<title>sourcefile~submodule_diffstar_lorene_memory.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M434.8689,-108.0355C406.0574,-113.0881 372.3857,-118.9929 342.586,-124.2187"/>
+<polygon fill="#000000" stroke="#000000" points="341.8862,-120.788 332.6411,-125.9627 343.0954,-127.6827 341.8862,-120.788"/>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node10" class="node">
+<title>sourcefile~module_sphincs_lorene.f90</title>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node10"><a xlink:href=".././sourcefile/module_sphincs_lorene.f90.html" xlink:title="module_sphincs_lorene.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="575.5,-66 431.5,-66 431.5,-42 575.5,-42 575.5,-66"/>
+<text text-anchor="middle" x="503.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">module_sphincs_lorene.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge9" class="edge">
+<title>sourcefile~module_sphincs_lorene.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M431.2918,-60.9424C418.6508,-64.088 406.0299,-68.5865 395,-75 373.7463,-87.3582 380.0889,-104.3626 359,-117 354.2911,-119.8218 349.2467,-122.2655 344.0279,-124.3818"/>
+<polygon fill="#000000" stroke="#000000" points="342.6855,-121.1455 334.4804,-127.8483 345.0745,-127.7253 342.6855,-121.1455"/>
+</g>
+<!-- sourcefile~submodule_diffstar_lorene_constructor.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node11" class="node">
+<title>sourcefile~submodule_diffstar_lorene_constructor.f90</title>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node11"><a xlink:href=".././sourcefile/submodule_diffstar_lorene_constructor.f90.html" xlink:title="submodule_diffstar_lorene_constructor.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="612,-24 395,-24 395,0 612,0 612,-24"/>
+<text text-anchor="middle" x="503.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">submodule_diffstar_lorene_constructor.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~submodule_diffstar_lorene_constructor.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge10" class="edge">
+<title>sourcefile~submodule_diffstar_lorene_constructor.f90&#45;&gt;sourcefile~module_diffstar_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M409.0789,-24.0148C404.0741,-26.5371 399.3315,-29.5077 395,-33 363.3798,-58.494 390.2813,-91.0913 359,-117 354.3331,-120.8653 349.1086,-124.0597 343.5744,-126.6953"/>
+<polygon fill="#000000" stroke="#000000" points="341.9324,-123.5859 334.0122,-130.623 344.5921,-130.061 341.9324,-123.5859"/>
 </g>
 <!-- sourcefile~convergence_test.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node10" class="node">
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node12" class="node">
 <title>sourcefile~convergence_test.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node10"><a xlink:href=".././sourcefile/convergence_test.f90.html" xlink:title="convergence_test.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="768.5,-129 653.5,-129 653.5,-105 768.5,-105 768.5,-129"/>
-<text text-anchor="middle" x="711" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">convergence_test.f90</text>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node12"><a xlink:href=".././sourcefile/convergence_test.f90.html" xlink:title="convergence_test.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="763,-87 648,-87 648,-63 763,-63 763,-87"/>
+<text text-anchor="middle" x="705.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">convergence_test.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~convergence_test.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge10" class="edge">
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge11" class="edge">
 <title>sourcefile~convergence_test.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M653.4752,-111.1782C632.4752,-109.0529 608.2992,-106.6062 585.5752,-104.3064"/>
-<polygon fill="#000000" stroke="#000000" points="585.899,-100.8214 575.5974,-103.2966 585.1941,-107.7858 585.899,-100.8214"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M647.8852,-69.0103C628.5439,-66.9996 606.5819,-64.7164 585.7267,-62.5483"/>
+<polygon fill="#000000" stroke="#000000" points="585.9023,-59.0478 575.5939,-61.4949 585.1784,-66.0103 585.9023,-59.0478"/>
 </g>
-<!-- sourcefile~sphincs_lorene_bns.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node11" class="node">
-<title>sourcefile~sphincs_lorene_bns.f90</title>
-<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node11"><a xlink:href=".././sourcefile/sphincs_lorene_bns.f90.html" xlink:title="sphincs_lorene_bns.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="774,-87 648,-87 648,-63 774,-63 774,-87"/>
-<text text-anchor="middle" x="711" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_lorene_bns.f90</text>
+<!-- sourcefile~sphincs_id.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_node13" class="node">
+<title>sourcefile~sphincs_id.f90</title>
+<g id="a_sourcefile~~module_diffstar_base.f90~~AfferentGraph_node13"><a xlink:href=".././sourcefile/sphincs_id.f90.html" xlink:title="sphincs_id.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="746,-45 665,-45 665,-21 746,-21 746,-45"/>
+<text text-anchor="middle" x="705.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">sphincs_id.f90</text>
 </a>
 </g>
 </g>
-<!-- sourcefile~sphincs_lorene_bns.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90 -->
-<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge9" class="edge">
-<title>sourcefile~sphincs_lorene_bns.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M647.898,-81.3862C628.3269,-83.3669 606.4637,-85.5796 585.7893,-87.6719"/>
-<polygon fill="#000000" stroke="#000000" points="585.3476,-84.1987 575.7509,-88.6879 586.0525,-91.1631 585.3476,-84.1987"/>
+<!-- sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90 -->
+<g id="sourcefile~~module_diffstar_base.f90~~AfferentGraph_edge12" class="edge">
+<title>sourcefile~sphincs_id.f90&#45;&gt;sourcefile~module_sphincs_lorene.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M664.6223,-37.2497C642.0308,-39.5983 613.1296,-42.6029 586.0581,-45.4172"/>
+<polygon fill="#000000" stroke="#000000" points="585.3737,-41.9694 575.7893,-46.4848 586.0976,-48.9319 585.3737,-41.9694"/>
 </g>
 </g>
 </svg>
@@ -839,635 +869,654 @@
 <a name="ln-256"></a>    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">return_barycenter</span>           <span class="o">=&gt;</span> <span class="n">get_barycenter</span>
 <a name="ln-257"></a>    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">return_eos_name</span>             <span class="o">=&gt;</span> <span class="n">get_eos</span>
 <a name="ln-258"></a>    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">return_spatial_extent</span>       <span class="o">=&gt;</span> <span class="n">get_radii</span>
-<a name="ln-259"></a>
+<a name="ln-259"></a>    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">print_summary</span>               <span class="o">=&gt;</span> <span class="n">print_summary_drs</span>
 <a name="ln-260"></a>
-<a name="ln-261"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_omega_c</span>
-<a name="ln-262"></a>    <span class="c">!! Returns [[diffstarbase:omega_c]]</span>
-<a name="ln-263"></a>    <span class="c">!PROCEDURE, PUBLIC:: get_mass</span>
-<a name="ln-264"></a>    <span class="c">!! Returns [[diffstarbase:mass]]</span>
-<a name="ln-265"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_mass_grav</span>
-<a name="ln-266"></a>    <span class="c">!! Returns [[diffstarbase:mass_grav]]</span>
-<a name="ln-267"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_angular_momentum</span>
-<a name="ln-268"></a>    <span class="c">!! Returns [[diffstarbase:angular_momentum]]</span>
-<a name="ln-269"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_tsw</span>
-<a name="ln-270"></a>    <span class="c">!! Returns [[diffstarbase:tsw]]</span>
-<a name="ln-271"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_grv2</span>
-<a name="ln-272"></a>    <span class="c">!! Returns [[diffstarbase:grv2]]</span>
-<a name="ln-273"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_grv3</span>
-<a name="ln-274"></a>    <span class="c">!! Returns [[diffstarbase:grv3]]</span>
-<a name="ln-275"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_circ</span>
-<a name="ln-276"></a>    <span class="c">!! Returns [[diffstarbase:r_circ]]</span>
-<a name="ln-277"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_mean</span>
-<a name="ln-278"></a>    <span class="c">!! Returns [[diffstarbase:r_mean]]</span>
-<a name="ln-279"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_eq</span>
-<a name="ln-280"></a>    <span class="c">!! Returns [[diffstarbase:r_eq]]</span>
-<a name="ln-281"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_eq_pi2</span>
-<a name="ln-282"></a>    <span class="c">!! Returns [[diffstarbase:r_eq_pi2]]</span>
-<a name="ln-283"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_eq_pi</span>
-<a name="ln-284"></a>    <span class="c">!! Returns [[diffstarbase:r_eq_pi]]</span>
-<a name="ln-285"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_eq_3pi2</span>
-<a name="ln-286"></a>    <span class="c">!! Returns [[diffstarbase:r_eq_3pi2]]</span>
-<a name="ln-287"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_pole</span>
-<a name="ln-288"></a>    <span class="c">!! Returns [[diffstarbase:r_pole]]</span>
-<a name="ln-289"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_ratio</span>
-<a name="ln-290"></a>    <span class="c">!! Returns [[diffstarbase:r_ratio]]</span>
-<a name="ln-291"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_isco</span>
-<a name="ln-292"></a>    <span class="c">!! Returns [[diffstarbase:r_isco]]</span>
-<a name="ln-293"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_f_isco</span>
-<a name="ln-294"></a>    <span class="c">!! Returns [[diffstarbase:f_isco]]</span>
-<a name="ln-295"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_specific_energy_isco</span>
-<a name="ln-296"></a>    <span class="c">!! Returns [[diffstarbase:specific_energy_isco]]</span>
-<a name="ln-297"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_specific_angular_momentum_isco</span>
-<a name="ln-298"></a>    <span class="c">!! Returns [[diffstarbase:specific_angular_momentum_isco]]</span>
-<a name="ln-299"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_surface_area</span>
-<a name="ln-300"></a>    <span class="c">!! Returns [[diffstarbase:surface_area]]</span>
-<a name="ln-301"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_area_radius</span>
-<a name="ln-302"></a>    <span class="c">!! Returns [[diffstarbase:area_radius]]</span>
-<a name="ln-303"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_ent_center</span>
-<a name="ln-304"></a>    <span class="c">!! Returns [[diffstarbase:ent_center]]</span>
-<a name="ln-305"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_nbar_center</span>
-<a name="ln-306"></a>    <span class="c">!! Returns [[diffstarbase:nbar_center]]</span>
-<a name="ln-307"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_rho_center</span>
-<a name="ln-308"></a>    <span class="c">!! Returns [[diffstarbase:rho_center]]</span>
-<a name="ln-309"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_energy_density_center</span>
-<a name="ln-310"></a>    <span class="c">!! Returns [[diffstarbase:energy_density_center]]</span>
-<a name="ln-311"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_specific_energy_center</span>
-<a name="ln-312"></a>    <span class="c">!! Returns [[diffstarbase:specific_energy_center]]</span>
-<a name="ln-313"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_pressure_center</span>
-<a name="ln-314"></a>    <span class="c">!! Returns [[diffstarbase:pressure_center]]</span>
-<a name="ln-315"></a>    <span class="c">!PROCEDURE, PUBLIC:: get_eos</span>
-<a name="ln-316"></a>    <span class="c">!! Returns [[diffstarbase:eos]]</span>
-<a name="ln-317"></a>
-<a name="ln-318"></a>    <span class="c">!</span>
-<a name="ln-319"></a>    <span class="c">!-- PROCEDURES to be used for single polytropic EOS</span>
-<a name="ln-320"></a>    <span class="c">!</span>
-<a name="ln-321"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma</span>
-<a name="ln-322"></a>    <span class="c">!! Returns [[diffstarbase:gamma]]</span>
-<a name="ln-323"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa</span>
-<a name="ln-324"></a>    <span class="c">!! Returns [[diffstarbase:kappa]]</span>
-<a name="ln-325"></a>
-<a name="ln-326"></a>    <span class="c">!</span>
-<a name="ln-327"></a>    <span class="c">!-- PROCEDURES to be used for piecewise polytropic EOS</span>
-<a name="ln-328"></a>    <span class="c">!</span>
-<a name="ln-329"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_npeos</span>
-<a name="ln-330"></a>    <span class="c">!! Returns [[diffstarbase:npeos]]</span>
-<a name="ln-331"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma0</span>
-<a name="ln-332"></a>    <span class="c">!! Returns [[diffstarbase:gamma0]]</span>
-<a name="ln-333"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma1</span>
-<a name="ln-334"></a>    <span class="c">!! Returns [[diffstarbase:gamma1]]</span>
-<a name="ln-335"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma2</span>
-<a name="ln-336"></a>    <span class="c">!! Returns [[diffstarbase:gamma2]]</span>
-<a name="ln-337"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma3</span>
-<a name="ln-338"></a>    <span class="c">!! Returns [[diffstarbase:gamma3]]</span>
-<a name="ln-339"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa0</span>
-<a name="ln-340"></a>    <span class="c">!! Returns [[diffstarbase:kappa0]]</span>
-<a name="ln-341"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa1</span>
-<a name="ln-342"></a>    <span class="c">!! Returns [[diffstarbase:kappa1]]</span>
-<a name="ln-343"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa2</span>
-<a name="ln-344"></a>    <span class="c">!! Returns [[diffstarbase:kappa2]]</span>
-<a name="ln-345"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa3</span>
-<a name="ln-346"></a>    <span class="c">!! Returns [[diffstarbase:kappa3]]</span>
-<a name="ln-347"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logP1</span>
-<a name="ln-348"></a>    <span class="c">!! Returns [[diffstarbase:logP1]]</span>
-<a name="ln-349"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho0</span>
-<a name="ln-350"></a>    <span class="c">!! Returns [[diffstarbase:logRho0]]</span>
-<a name="ln-351"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho1</span>
-<a name="ln-352"></a>    <span class="c">!! Returns [[diffstarbase:logRho1]]</span>
-<a name="ln-353"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho2</span>
-<a name="ln-354"></a>    <span class="c">!! Returns [[diffstarbase:logRho2]]</span>
-<a name="ln-355"></a>
+<a name="ln-261"></a>
+<a name="ln-262"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_omega_c</span>
+<a name="ln-263"></a>    <span class="c">!! Returns [[diffstarbase:omega_c]]</span>
+<a name="ln-264"></a>    <span class="c">!PROCEDURE, PUBLIC:: get_mass</span>
+<a name="ln-265"></a>    <span class="c">!! Returns [[diffstarbase:mass]]</span>
+<a name="ln-266"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_mass_grav</span>
+<a name="ln-267"></a>    <span class="c">!! Returns [[diffstarbase:mass_grav]]</span>
+<a name="ln-268"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_angular_momentum</span>
+<a name="ln-269"></a>    <span class="c">!! Returns [[diffstarbase:angular_momentum]]</span>
+<a name="ln-270"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_tsw</span>
+<a name="ln-271"></a>    <span class="c">!! Returns [[diffstarbase:tsw]]</span>
+<a name="ln-272"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_grv2</span>
+<a name="ln-273"></a>    <span class="c">!! Returns [[diffstarbase:grv2]]</span>
+<a name="ln-274"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_grv3</span>
+<a name="ln-275"></a>    <span class="c">!! Returns [[diffstarbase:grv3]]</span>
+<a name="ln-276"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_circ</span>
+<a name="ln-277"></a>    <span class="c">!! Returns [[diffstarbase:r_circ]]</span>
+<a name="ln-278"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_mean</span>
+<a name="ln-279"></a>    <span class="c">!! Returns [[diffstarbase:r_mean]]</span>
+<a name="ln-280"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_eq</span>
+<a name="ln-281"></a>    <span class="c">!! Returns [[diffstarbase:r_eq]]</span>
+<a name="ln-282"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_eq_pi2</span>
+<a name="ln-283"></a>    <span class="c">!! Returns [[diffstarbase:r_eq_pi2]]</span>
+<a name="ln-284"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_eq_pi</span>
+<a name="ln-285"></a>    <span class="c">!! Returns [[diffstarbase:r_eq_pi]]</span>
+<a name="ln-286"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_eq_3pi2</span>
+<a name="ln-287"></a>    <span class="c">!! Returns [[diffstarbase:r_eq_3pi2]]</span>
+<a name="ln-288"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_pole</span>
+<a name="ln-289"></a>    <span class="c">!! Returns [[diffstarbase:r_pole]]</span>
+<a name="ln-290"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_ratio</span>
+<a name="ln-291"></a>    <span class="c">!! Returns [[diffstarbase:r_ratio]]</span>
+<a name="ln-292"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_r_isco</span>
+<a name="ln-293"></a>    <span class="c">!! Returns [[diffstarbase:r_isco]]</span>
+<a name="ln-294"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_f_isco</span>
+<a name="ln-295"></a>    <span class="c">!! Returns [[diffstarbase:f_isco]]</span>
+<a name="ln-296"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_specific_energy_isco</span>
+<a name="ln-297"></a>    <span class="c">!! Returns [[diffstarbase:specific_energy_isco]]</span>
+<a name="ln-298"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_specific_angular_momentum_isco</span>
+<a name="ln-299"></a>    <span class="c">!! Returns [[diffstarbase:specific_angular_momentum_isco]]</span>
+<a name="ln-300"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_surface_area</span>
+<a name="ln-301"></a>    <span class="c">!! Returns [[diffstarbase:surface_area]]</span>
+<a name="ln-302"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_area_radius</span>
+<a name="ln-303"></a>    <span class="c">!! Returns [[diffstarbase:area_radius]]</span>
+<a name="ln-304"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_ent_center</span>
+<a name="ln-305"></a>    <span class="c">!! Returns [[diffstarbase:ent_center]]</span>
+<a name="ln-306"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_nbar_center</span>
+<a name="ln-307"></a>    <span class="c">!! Returns [[diffstarbase:nbar_center]]</span>
+<a name="ln-308"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_rho_center</span>
+<a name="ln-309"></a>    <span class="c">!! Returns [[diffstarbase:rho_center]]</span>
+<a name="ln-310"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_energy_density_center</span>
+<a name="ln-311"></a>    <span class="c">!! Returns [[diffstarbase:energy_density_center]]</span>
+<a name="ln-312"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_specific_energy_center</span>
+<a name="ln-313"></a>    <span class="c">!! Returns [[diffstarbase:specific_energy_center]]</span>
+<a name="ln-314"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_pressure_center</span>
+<a name="ln-315"></a>    <span class="c">!! Returns [[diffstarbase:pressure_center]]</span>
+<a name="ln-316"></a>    <span class="c">!PROCEDURE, PUBLIC:: get_eos</span>
+<a name="ln-317"></a>    <span class="c">!! Returns [[diffstarbase:eos]]</span>
+<a name="ln-318"></a>
+<a name="ln-319"></a>    <span class="c">!</span>
+<a name="ln-320"></a>    <span class="c">!-- PROCEDURES to be used for single polytropic EOS</span>
+<a name="ln-321"></a>    <span class="c">!</span>
+<a name="ln-322"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma</span>
+<a name="ln-323"></a>    <span class="c">!! Returns [[diffstarbase:gamma]]</span>
+<a name="ln-324"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa</span>
+<a name="ln-325"></a>    <span class="c">!! Returns [[diffstarbase:kappa]]</span>
+<a name="ln-326"></a>
+<a name="ln-327"></a>    <span class="c">!</span>
+<a name="ln-328"></a>    <span class="c">!-- PROCEDURES to be used for piecewise polytropic EOS</span>
+<a name="ln-329"></a>    <span class="c">!</span>
+<a name="ln-330"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_npeos</span>
+<a name="ln-331"></a>    <span class="c">!! Returns [[diffstarbase:npeos]]</span>
+<a name="ln-332"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma0</span>
+<a name="ln-333"></a>    <span class="c">!! Returns [[diffstarbase:gamma0]]</span>
+<a name="ln-334"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma1</span>
+<a name="ln-335"></a>    <span class="c">!! Returns [[diffstarbase:gamma1]]</span>
+<a name="ln-336"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma2</span>
+<a name="ln-337"></a>    <span class="c">!! Returns [[diffstarbase:gamma2]]</span>
+<a name="ln-338"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_gamma3</span>
+<a name="ln-339"></a>    <span class="c">!! Returns [[diffstarbase:gamma3]]</span>
+<a name="ln-340"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa0</span>
+<a name="ln-341"></a>    <span class="c">!! Returns [[diffstarbase:kappa0]]</span>
+<a name="ln-342"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa1</span>
+<a name="ln-343"></a>    <span class="c">!! Returns [[diffstarbase:kappa1]]</span>
+<a name="ln-344"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa2</span>
+<a name="ln-345"></a>    <span class="c">!! Returns [[diffstarbase:kappa2]]</span>
+<a name="ln-346"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_kappa3</span>
+<a name="ln-347"></a>    <span class="c">!! Returns [[diffstarbase:kappa3]]</span>
+<a name="ln-348"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logP1</span>
+<a name="ln-349"></a>    <span class="c">!! Returns [[diffstarbase:logP1]]</span>
+<a name="ln-350"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho0</span>
+<a name="ln-351"></a>    <span class="c">!! Returns [[diffstarbase:logRho0]]</span>
+<a name="ln-352"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho1</span>
+<a name="ln-353"></a>    <span class="c">!! Returns [[diffstarbase:logRho1]]</span>
+<a name="ln-354"></a>    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">get_logRho2</span>
+<a name="ln-355"></a>    <span class="c">!! Returns [[diffstarbase:logRho2]]</span>
 <a name="ln-356"></a>
-<a name="ln-357"></a>  <span class="k">END TYPE </span><span class="n">diffstarbase</span>
-<a name="ln-358"></a>
+<a name="ln-357"></a>
+<a name="ln-358"></a>  <span class="k">END TYPE </span><span class="n">diffstarbase</span>
 <a name="ln-359"></a>
-<a name="ln-360"></a>  <span class="k">ABSTRACT INTERFACE</span>
-<a name="ln-361"></a>
-<a name="ln-362"></a><span class="k">    FUNCTION </span><span class="n">get_eos_id_int</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-363"></a>
-<a name="ln-364"></a>      <span class="k">IMPORT</span><span class="kd">::</span> <span class="n">diffstarbase</span>
-<a name="ln-365"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-366"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-367"></a>      <span class="c">! Result</span>
-<a name="ln-368"></a>      <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">get_eos_id_int</span>
-<a name="ln-369"></a>
-<a name="ln-370"></a>    <span class="k">END FUNCTION </span><span class="n">get_eos_id_int</span>
-<a name="ln-371"></a>
-<a name="ln-372"></a>  <span class="k">END INTERFACE</span>
-<a name="ln-373"></a>
+<a name="ln-360"></a>
+<a name="ln-361"></a>  <span class="k">ABSTRACT INTERFACE</span>
+<a name="ln-362"></a>
+<a name="ln-363"></a><span class="k">    FUNCTION </span><span class="n">get_eos_id_int</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-364"></a>
+<a name="ln-365"></a>      <span class="k">IMPORT</span><span class="kd">::</span> <span class="n">diffstarbase</span>
+<a name="ln-366"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-367"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-368"></a>      <span class="c">! Result</span>
+<a name="ln-369"></a>      <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">get_eos_id_int</span>
+<a name="ln-370"></a>
+<a name="ln-371"></a>    <span class="k">END FUNCTION </span><span class="n">get_eos_id_int</span>
+<a name="ln-372"></a>
+<a name="ln-373"></a>  <span class="k">END INTERFACE</span>
 <a name="ln-374"></a>
-<a name="ln-375"></a><span class="k">  INTERFACE</span>
-<a name="ln-376"></a>
+<a name="ln-375"></a>
+<a name="ln-376"></a><span class="k">  INTERFACE</span>
 <a name="ln-377"></a>
-<a name="ln-378"></a> <span class="c">!   MODULE SUBROUTINE integrate_baryon_mass_density( THIS, center, radius, &amp;</span>
-<a name="ln-379"></a> <span class="c">!                                                    central_density, &amp;</span>
-<a name="ln-380"></a> <span class="c">!                                                    dr, dth, dphi, &amp;</span>
-<a name="ln-381"></a> <span class="c">!                                                    mass, mass_profile, &amp;</span>
-<a name="ln-382"></a> <span class="c">!                                                    mass_profile_idx )</span>
-<a name="ln-383"></a> <span class="c">!   !# Integrates the |lorene| baryon mass density to compute the radial mass</span>
-<a name="ln-384"></a> <span class="c">!   !  profile. TODO: Improve integration algorithm.</span>
-<a name="ln-385"></a> <span class="c">!</span>
-<a name="ln-386"></a> <span class="c">!     !&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-387"></a> <span class="c">!     CLASS(diffstarbase), INTENT( IN OUT )      :: THIS</span>
-<a name="ln-388"></a> <span class="c">!     !&amp; Array to store the indices for array mass_profile, sorted so that</span>
-<a name="ln-389"></a> <span class="c">!     !  mass_profile[mass_profile_idx] is in increasing order</span>
-<a name="ln-390"></a> <span class="c">!     INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT ):: mass_profile_idx</span>
-<a name="ln-391"></a> <span class="c">!     !&gt; Center of the star</span>
-<a name="ln-392"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: center</span>
-<a name="ln-393"></a> <span class="c">!     !&gt; Central density of the star</span>
-<a name="ln-394"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: central_density</span>
-<a name="ln-395"></a> <span class="c">!     !&gt; Radius of the star</span>
-<a name="ln-396"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: radius</span>
-<a name="ln-397"></a> <span class="c">!     !&gt; Integration steps</span>
-<a name="ln-398"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: dr, dth, dphi</span>
-<a name="ln-399"></a> <span class="c">!     !&gt; Integrated mass of the star</span>
-<a name="ln-400"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN OUT ):: mass</span>
-<a name="ln-401"></a> <span class="c">!     !&gt; Array storing the radial mass profile of the star</span>
-<a name="ln-402"></a> <span class="c">!     DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE, INTENT( IN OUT ):: &amp;</span>
-<a name="ln-403"></a> <span class="c">!                                      mass_profile</span>
-<a name="ln-404"></a> <span class="c">!</span>
-<a name="ln-405"></a> <span class="c">!   END SUBROUTINE integrate_baryon_mass_density</span>
-<a name="ln-406"></a>
+<a name="ln-378"></a>
+<a name="ln-379"></a> <span class="c">!   MODULE SUBROUTINE integrate_baryon_mass_density( THIS, center, radius, &amp;</span>
+<a name="ln-380"></a> <span class="c">!                                                    central_density, &amp;</span>
+<a name="ln-381"></a> <span class="c">!                                                    dr, dth, dphi, &amp;</span>
+<a name="ln-382"></a> <span class="c">!                                                    mass, mass_profile, &amp;</span>
+<a name="ln-383"></a> <span class="c">!                                                    mass_profile_idx )</span>
+<a name="ln-384"></a> <span class="c">!   !# Integrates the |lorene| baryon mass density to compute the radial mass</span>
+<a name="ln-385"></a> <span class="c">!   !  profile. TODO: Improve integration algorithm.</span>
+<a name="ln-386"></a> <span class="c">!</span>
+<a name="ln-387"></a> <span class="c">!     !&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-388"></a> <span class="c">!     CLASS(diffstarbase), INTENT( IN OUT )      :: THIS</span>
+<a name="ln-389"></a> <span class="c">!     !&amp; Array to store the indices for array mass_profile, sorted so that</span>
+<a name="ln-390"></a> <span class="c">!     !  mass_profile[mass_profile_idx] is in increasing order</span>
+<a name="ln-391"></a> <span class="c">!     INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT ):: mass_profile_idx</span>
+<a name="ln-392"></a> <span class="c">!     !&gt; Center of the star</span>
+<a name="ln-393"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: center</span>
+<a name="ln-394"></a> <span class="c">!     !&gt; Central density of the star</span>
+<a name="ln-395"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: central_density</span>
+<a name="ln-396"></a> <span class="c">!     !&gt; Radius of the star</span>
+<a name="ln-397"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: radius</span>
+<a name="ln-398"></a> <span class="c">!     !&gt; Integration steps</span>
+<a name="ln-399"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN )    :: dr, dth, dphi</span>
+<a name="ln-400"></a> <span class="c">!     !&gt; Integrated mass of the star</span>
+<a name="ln-401"></a> <span class="c">!     DOUBLE PRECISION, INTENT( IN OUT ):: mass</span>
+<a name="ln-402"></a> <span class="c">!     !&gt; Array storing the radial mass profile of the star</span>
+<a name="ln-403"></a> <span class="c">!     DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE, INTENT( IN OUT ):: &amp;</span>
+<a name="ln-404"></a> <span class="c">!                                      mass_profile</span>
+<a name="ln-405"></a> <span class="c">!</span>
+<a name="ln-406"></a> <span class="c">!   END SUBROUTINE integrate_baryon_mass_density</span>
 <a name="ln-407"></a>
-<a name="ln-408"></a>    <span class="c">!----------------------------!</span>
-<a name="ln-409"></a>    <span class="c">!--  OVERRIDING FUNCTIONS  --!</span>
-<a name="ln-410"></a>    <span class="c">!----------------------------!</span>
-<a name="ln-411"></a>
+<a name="ln-408"></a>
+<a name="ln-409"></a>    <span class="c">!------------------------------!</span>
+<a name="ln-410"></a>    <span class="c">!--  OVERRIDING SUBROUTINES  --!</span>
+<a name="ln-411"></a>    <span class="c">!------------------------------!</span>
 <a name="ln-412"></a>
-<a name="ln-413"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_mass</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
-<a name="ln-414"></a>    <span class="c">!! Returns [[diffstarbase:mass]]</span>
-<a name="ln-415"></a>
-<a name="ln-416"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-417"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-418"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
-<a name="ln-419"></a>      <span class="c">! Result</span>
-<a name="ln-420"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_mass</span>
-<a name="ln-421"></a>
-<a name="ln-422"></a>    <span class="k">END FUNCTION </span><span class="n">get_mass</span>
+<a name="ln-413"></a>
+<a name="ln-414"></a>    <span class="k">MODULE SUBROUTINE </span><span class="n">print_summary_drs</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">filename</span> <span class="p">)</span>
+<a name="ln-415"></a>    <span class="c">!# Prints a summary of the physical properties the system</span>
+<a name="ln-416"></a>    <span class="c">!  to the standard output and, optionally, to a formatted file whose name</span>
+<a name="ln-417"></a>    <span class="c">!  is given as the optional argument `filename`</span>
+<a name="ln-418"></a>
+<a name="ln-419"></a>
+<a name="ln-420"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-421"></a>      <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="o">*</span> <span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">INOUT</span> <span class="p">),</span> <span class="k">OPTIONAL</span><span class="kd">::</span> <span class="n">filename</span>
+<a name="ln-422"></a>      <span class="c">!! Name of the formatted file to print the summary to</span>
 <a name="ln-423"></a>
-<a name="ln-424"></a>
-<a name="ln-425"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_center</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
+<a name="ln-424"></a>    <span class="k">END SUBROUTINE </span><span class="n">print_summary_drs</span>
+<a name="ln-425"></a>
 <a name="ln-426"></a>
-<a name="ln-427"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-428"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-429"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
-<a name="ln-430"></a>      <span class="c">!! Index of the matter object whose parameter is to return</span>
-<a name="ln-431"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">get_center</span>
-<a name="ln-432"></a>
-<a name="ln-433"></a>    <span class="k">END FUNCTION </span><span class="n">get_center</span>
+<a name="ln-427"></a>    <span class="c">!----------------------------!</span>
+<a name="ln-428"></a>    <span class="c">!--  OVERRIDING FUNCTIONS  --!</span>
+<a name="ln-429"></a>    <span class="c">!----------------------------!</span>
+<a name="ln-430"></a>
+<a name="ln-431"></a>
+<a name="ln-432"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_mass</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
+<a name="ln-433"></a>    <span class="c">!! Returns [[diffstarbase:mass]]</span>
 <a name="ln-434"></a>
-<a name="ln-435"></a>
-<a name="ln-436"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_barycenter</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
-<a name="ln-437"></a>
-<a name="ln-438"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-439"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-440"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
-<a name="ln-441"></a>      <span class="c">!! Index of the matter object whose parameter is to return</span>
-<a name="ln-442"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">get_barycenter</span>
+<a name="ln-435"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-436"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-437"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
+<a name="ln-438"></a>      <span class="c">! Result</span>
+<a name="ln-439"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_mass</span>
+<a name="ln-440"></a>
+<a name="ln-441"></a>    <span class="k">END FUNCTION </span><span class="n">get_mass</span>
+<a name="ln-442"></a>
 <a name="ln-443"></a>
-<a name="ln-444"></a>    <span class="k">END FUNCTION </span><span class="n">get_barycenter</span>
+<a name="ln-444"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_center</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
 <a name="ln-445"></a>
-<a name="ln-446"></a>
-<a name="ln-447"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_radii</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
-<a name="ln-448"></a>
-<a name="ln-449"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-450"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-451"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
-<a name="ln-452"></a>      <span class="c">!! Index of the matter object whose string is to return</span>
-<a name="ln-453"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="kd">::</span> <span class="n">get_radii</span>
+<a name="ln-446"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-447"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-448"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
+<a name="ln-449"></a>      <span class="c">!! Index of the matter object whose parameter is to return</span>
+<a name="ln-450"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">get_center</span>
+<a name="ln-451"></a>
+<a name="ln-452"></a>    <span class="k">END FUNCTION </span><span class="n">get_center</span>
+<a name="ln-453"></a>
 <a name="ln-454"></a>
-<a name="ln-455"></a>    <span class="k">END FUNCTION </span><span class="n">get_radii</span>
+<a name="ln-455"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_barycenter</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
 <a name="ln-456"></a>
-<a name="ln-457"></a>
-<a name="ln-458"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_eos</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
-<a name="ln-459"></a>
-<a name="ln-460"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-461"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-462"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
-<a name="ln-463"></a>      <span class="c">!! Index of the matter object whose string is to return</span>
-<a name="ln-464"></a>      <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">get_eos</span>
+<a name="ln-457"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-458"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-459"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
+<a name="ln-460"></a>      <span class="c">!! Index of the matter object whose parameter is to return</span>
+<a name="ln-461"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">get_barycenter</span>
+<a name="ln-462"></a>
+<a name="ln-463"></a>    <span class="k">END FUNCTION </span><span class="n">get_barycenter</span>
+<a name="ln-464"></a>
 <a name="ln-465"></a>
-<a name="ln-466"></a>    <span class="k">END FUNCTION </span><span class="n">get_eos</span>
+<a name="ln-466"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_radii</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
 <a name="ln-467"></a>
-<a name="ln-468"></a>
-<a name="ln-469"></a>    <span class="c">!-----------------!</span>
-<a name="ln-470"></a>    <span class="c">!--  FUNCTIONS  --!</span>
-<a name="ln-471"></a>    <span class="c">!-----------------!</span>
-<a name="ln-472"></a>
+<a name="ln-468"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-469"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-470"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
+<a name="ln-471"></a>      <span class="c">!! Index of the matter object whose string is to return</span>
+<a name="ln-472"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="kd">::</span> <span class="n">get_radii</span>
 <a name="ln-473"></a>
-<a name="ln-474"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-474"></a>    <span class="k">END FUNCTION </span><span class="n">get_radii</span>
 <a name="ln-475"></a>
-<a name="ln-476"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-477"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-478"></a>      <span class="c">! Result</span>
-<a name="ln-479"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma</span>
-<a name="ln-480"></a>
-<a name="ln-481"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma</span>
-<a name="ln-482"></a>
-<a name="ln-483"></a>
-<a name="ln-484"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-485"></a>
-<a name="ln-486"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-487"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-488"></a>      <span class="c">! Result</span>
-<a name="ln-489"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa</span>
-<a name="ln-490"></a>
-<a name="ln-491"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa</span>
+<a name="ln-476"></a>
+<a name="ln-477"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_eos</span><span class="p">(</span> <span class="n">THIS</span><span class="p">,</span> <span class="n">i_matter</span> <span class="p">)</span>
+<a name="ln-478"></a>
+<a name="ln-479"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-480"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="n">OUT</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-481"></a>      <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">i_matter</span>
+<a name="ln-482"></a>      <span class="c">!! Index of the matter object whose string is to return</span>
+<a name="ln-483"></a>      <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">get_eos</span>
+<a name="ln-484"></a>
+<a name="ln-485"></a>    <span class="k">END FUNCTION </span><span class="n">get_eos</span>
+<a name="ln-486"></a>
+<a name="ln-487"></a>
+<a name="ln-488"></a>    <span class="c">!-----------------!</span>
+<a name="ln-489"></a>    <span class="c">!--  FUNCTIONS  --!</span>
+<a name="ln-490"></a>    <span class="c">!-----------------!</span>
+<a name="ln-491"></a>
 <a name="ln-492"></a>
-<a name="ln-493"></a>
-<a name="ln-494"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_omega_c</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-495"></a>    <span class="c">!! Returns [[diffstarbase:omega_c]]</span>
-<a name="ln-496"></a>
-<a name="ln-497"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-498"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-499"></a>      <span class="c">! Result</span>
-<a name="ln-500"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_omega_c</span>
+<a name="ln-493"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-494"></a>
+<a name="ln-495"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-496"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-497"></a>      <span class="c">! Result</span>
+<a name="ln-498"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma</span>
+<a name="ln-499"></a>
+<a name="ln-500"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma</span>
 <a name="ln-501"></a>
-<a name="ln-502"></a>    <span class="k">END FUNCTION </span><span class="n">get_omega_c</span>
-<a name="ln-503"></a>
+<a name="ln-502"></a>
+<a name="ln-503"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
 <a name="ln-504"></a>
-<a name="ln-505"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_mass_grav</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-506"></a>
-<a name="ln-507"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-508"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-509"></a>      <span class="c">! Result</span>
-<a name="ln-510"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_mass_grav</span>
+<a name="ln-505"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-506"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-507"></a>      <span class="c">! Result</span>
+<a name="ln-508"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa</span>
+<a name="ln-509"></a>
+<a name="ln-510"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa</span>
 <a name="ln-511"></a>
-<a name="ln-512"></a>    <span class="k">END FUNCTION </span><span class="n">get_mass_grav</span>
-<a name="ln-513"></a>
-<a name="ln-514"></a>
-<a name="ln-515"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_angular_momentum</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-516"></a>
-<a name="ln-517"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-518"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-519"></a>      <span class="c">! Result</span>
-<a name="ln-520"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_angular_momentum</span>
-<a name="ln-521"></a>
-<a name="ln-522"></a>    <span class="k">END FUNCTION </span><span class="n">get_angular_momentum</span>
+<a name="ln-512"></a>
+<a name="ln-513"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_omega_c</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-514"></a>    <span class="c">!! Returns [[diffstarbase:omega_c]]</span>
+<a name="ln-515"></a>
+<a name="ln-516"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-517"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-518"></a>      <span class="c">! Result</span>
+<a name="ln-519"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_omega_c</span>
+<a name="ln-520"></a>
+<a name="ln-521"></a>    <span class="k">END FUNCTION </span><span class="n">get_omega_c</span>
+<a name="ln-522"></a>
 <a name="ln-523"></a>
-<a name="ln-524"></a>
-<a name="ln-525"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_tsw</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-526"></a>
-<a name="ln-527"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-528"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-529"></a>      <span class="c">! Result</span>
-<a name="ln-530"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_tsw</span>
-<a name="ln-531"></a>
-<a name="ln-532"></a>    <span class="k">END FUNCTION </span><span class="n">get_tsw</span>
+<a name="ln-524"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_mass_grav</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-525"></a>
+<a name="ln-526"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-527"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-528"></a>      <span class="c">! Result</span>
+<a name="ln-529"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_mass_grav</span>
+<a name="ln-530"></a>
+<a name="ln-531"></a>    <span class="k">END FUNCTION </span><span class="n">get_mass_grav</span>
+<a name="ln-532"></a>
 <a name="ln-533"></a>
-<a name="ln-534"></a>
-<a name="ln-535"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_grv2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-536"></a>
-<a name="ln-537"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-538"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-539"></a>      <span class="c">! Result</span>
-<a name="ln-540"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_grv2</span>
-<a name="ln-541"></a>
-<a name="ln-542"></a>    <span class="k">END FUNCTION </span><span class="n">get_grv2</span>
+<a name="ln-534"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_angular_momentum</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-535"></a>
+<a name="ln-536"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-537"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-538"></a>      <span class="c">! Result</span>
+<a name="ln-539"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_angular_momentum</span>
+<a name="ln-540"></a>
+<a name="ln-541"></a>    <span class="k">END FUNCTION </span><span class="n">get_angular_momentum</span>
+<a name="ln-542"></a>
 <a name="ln-543"></a>
-<a name="ln-544"></a>
-<a name="ln-545"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_grv3</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-546"></a>
-<a name="ln-547"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-548"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-549"></a>      <span class="c">! Result</span>
-<a name="ln-550"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_grv3</span>
-<a name="ln-551"></a>
-<a name="ln-552"></a>    <span class="k">END FUNCTION </span><span class="n">get_grv3</span>
+<a name="ln-544"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_tsw</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-545"></a>
+<a name="ln-546"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-547"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-548"></a>      <span class="c">! Result</span>
+<a name="ln-549"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_tsw</span>
+<a name="ln-550"></a>
+<a name="ln-551"></a>    <span class="k">END FUNCTION </span><span class="n">get_tsw</span>
+<a name="ln-552"></a>
 <a name="ln-553"></a>
-<a name="ln-554"></a>
-<a name="ln-555"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_circ</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-556"></a>
-<a name="ln-557"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-558"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-559"></a>      <span class="c">! Result</span>
-<a name="ln-560"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_circ</span>
-<a name="ln-561"></a>
-<a name="ln-562"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_circ</span>
+<a name="ln-554"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_grv2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-555"></a>
+<a name="ln-556"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-557"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-558"></a>      <span class="c">! Result</span>
+<a name="ln-559"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_grv2</span>
+<a name="ln-560"></a>
+<a name="ln-561"></a>    <span class="k">END FUNCTION </span><span class="n">get_grv2</span>
+<a name="ln-562"></a>
 <a name="ln-563"></a>
-<a name="ln-564"></a>
-<a name="ln-565"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_mean</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-566"></a>
-<a name="ln-567"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-568"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-569"></a>      <span class="c">! Result</span>
-<a name="ln-570"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_mean</span>
-<a name="ln-571"></a>
-<a name="ln-572"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_mean</span>
+<a name="ln-564"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_grv3</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-565"></a>
+<a name="ln-566"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-567"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-568"></a>      <span class="c">! Result</span>
+<a name="ln-569"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_grv3</span>
+<a name="ln-570"></a>
+<a name="ln-571"></a>    <span class="k">END FUNCTION </span><span class="n">get_grv3</span>
+<a name="ln-572"></a>
 <a name="ln-573"></a>
-<a name="ln-574"></a>
-<a name="ln-575"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_eq</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-576"></a>
-<a name="ln-577"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-578"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-579"></a>      <span class="c">! Result</span>
-<a name="ln-580"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_eq</span>
-<a name="ln-581"></a>
-<a name="ln-582"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_eq</span>
+<a name="ln-574"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_circ</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-575"></a>
+<a name="ln-576"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-577"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-578"></a>      <span class="c">! Result</span>
+<a name="ln-579"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_circ</span>
+<a name="ln-580"></a>
+<a name="ln-581"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_circ</span>
+<a name="ln-582"></a>
 <a name="ln-583"></a>
-<a name="ln-584"></a>
-<a name="ln-585"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_eq_pi2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-586"></a>
-<a name="ln-587"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-588"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-589"></a>      <span class="c">! Result</span>
-<a name="ln-590"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_eq_pi2</span>
-<a name="ln-591"></a>
-<a name="ln-592"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_eq_pi2</span>
+<a name="ln-584"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_mean</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-585"></a>
+<a name="ln-586"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-587"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-588"></a>      <span class="c">! Result</span>
+<a name="ln-589"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_mean</span>
+<a name="ln-590"></a>
+<a name="ln-591"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_mean</span>
+<a name="ln-592"></a>
 <a name="ln-593"></a>
-<a name="ln-594"></a>
-<a name="ln-595"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_eq_pi</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-596"></a>
-<a name="ln-597"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-598"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-599"></a>      <span class="c">! Result</span>
-<a name="ln-600"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_eq_pi</span>
-<a name="ln-601"></a>
-<a name="ln-602"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_eq_pi</span>
+<a name="ln-594"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_eq</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-595"></a>
+<a name="ln-596"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-597"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-598"></a>      <span class="c">! Result</span>
+<a name="ln-599"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_eq</span>
+<a name="ln-600"></a>
+<a name="ln-601"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_eq</span>
+<a name="ln-602"></a>
 <a name="ln-603"></a>
-<a name="ln-604"></a>
-<a name="ln-605"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_eq_3pi2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-606"></a>
-<a name="ln-607"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-608"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-609"></a>      <span class="c">! Result</span>
-<a name="ln-610"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_eq_3pi2</span>
-<a name="ln-611"></a>
-<a name="ln-612"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_eq_3pi2</span>
+<a name="ln-604"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_eq_pi2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-605"></a>
+<a name="ln-606"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-607"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-608"></a>      <span class="c">! Result</span>
+<a name="ln-609"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_eq_pi2</span>
+<a name="ln-610"></a>
+<a name="ln-611"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_eq_pi2</span>
+<a name="ln-612"></a>
 <a name="ln-613"></a>
-<a name="ln-614"></a>
-<a name="ln-615"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_pole</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-616"></a>
-<a name="ln-617"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-618"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-619"></a>      <span class="c">! Result</span>
-<a name="ln-620"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_pole</span>
-<a name="ln-621"></a>
-<a name="ln-622"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_pole</span>
+<a name="ln-614"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_eq_pi</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-615"></a>
+<a name="ln-616"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-617"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-618"></a>      <span class="c">! Result</span>
+<a name="ln-619"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_eq_pi</span>
+<a name="ln-620"></a>
+<a name="ln-621"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_eq_pi</span>
+<a name="ln-622"></a>
 <a name="ln-623"></a>
-<a name="ln-624"></a>
-<a name="ln-625"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_ratio</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-626"></a>
-<a name="ln-627"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-628"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-629"></a>      <span class="c">! Result</span>
-<a name="ln-630"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_ratio</span>
-<a name="ln-631"></a>
-<a name="ln-632"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_ratio</span>
+<a name="ln-624"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_eq_3pi2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-625"></a>
+<a name="ln-626"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-627"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-628"></a>      <span class="c">! Result</span>
+<a name="ln-629"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_eq_3pi2</span>
+<a name="ln-630"></a>
+<a name="ln-631"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_eq_3pi2</span>
+<a name="ln-632"></a>
 <a name="ln-633"></a>
-<a name="ln-634"></a>
-<a name="ln-635"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_isco</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-636"></a>
-<a name="ln-637"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-638"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-639"></a>      <span class="c">! Result</span>
-<a name="ln-640"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_isco</span>
-<a name="ln-641"></a>
-<a name="ln-642"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_isco</span>
+<a name="ln-634"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_pole</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-635"></a>
+<a name="ln-636"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-637"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-638"></a>      <span class="c">! Result</span>
+<a name="ln-639"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_pole</span>
+<a name="ln-640"></a>
+<a name="ln-641"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_pole</span>
+<a name="ln-642"></a>
 <a name="ln-643"></a>
-<a name="ln-644"></a>
-<a name="ln-645"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_f_isco</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-646"></a>
-<a name="ln-647"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-648"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-649"></a>      <span class="c">! Result</span>
-<a name="ln-650"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_f_isco</span>
-<a name="ln-651"></a>
-<a name="ln-652"></a>    <span class="k">END FUNCTION </span><span class="n">get_f_isco</span>
+<a name="ln-644"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_ratio</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-645"></a>
+<a name="ln-646"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-647"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-648"></a>      <span class="c">! Result</span>
+<a name="ln-649"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_ratio</span>
+<a name="ln-650"></a>
+<a name="ln-651"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_ratio</span>
+<a name="ln-652"></a>
 <a name="ln-653"></a>
-<a name="ln-654"></a>
-<a name="ln-655"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_specific_energy_isco</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-656"></a>
-<a name="ln-657"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-658"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-659"></a>      <span class="c">! Result</span>
-<a name="ln-660"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_specific_energy_isco</span>
-<a name="ln-661"></a>
-<a name="ln-662"></a>    <span class="k">END FUNCTION </span><span class="n">get_specific_energy_isco</span>
+<a name="ln-654"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_r_isco</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-655"></a>
+<a name="ln-656"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-657"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-658"></a>      <span class="c">! Result</span>
+<a name="ln-659"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_r_isco</span>
+<a name="ln-660"></a>
+<a name="ln-661"></a>    <span class="k">END FUNCTION </span><span class="n">get_r_isco</span>
+<a name="ln-662"></a>
 <a name="ln-663"></a>
-<a name="ln-664"></a>
-<a name="ln-665"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_specific_angular_momentum_isco</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-666"></a>
-<a name="ln-667"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-668"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-669"></a>      <span class="c">! Result</span>
-<a name="ln-670"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_specific_angular_momentum_isco</span>
-<a name="ln-671"></a>
-<a name="ln-672"></a>    <span class="k">END FUNCTION </span><span class="n">get_specific_angular_momentum_isco</span>
+<a name="ln-664"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_f_isco</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-665"></a>
+<a name="ln-666"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-667"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-668"></a>      <span class="c">! Result</span>
+<a name="ln-669"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_f_isco</span>
+<a name="ln-670"></a>
+<a name="ln-671"></a>    <span class="k">END FUNCTION </span><span class="n">get_f_isco</span>
+<a name="ln-672"></a>
 <a name="ln-673"></a>
-<a name="ln-674"></a>
-<a name="ln-675"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_surface_area</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-676"></a>
-<a name="ln-677"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-678"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-679"></a>      <span class="c">! Result</span>
-<a name="ln-680"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_surface_area</span>
-<a name="ln-681"></a>
-<a name="ln-682"></a>    <span class="k">END FUNCTION </span><span class="n">get_surface_area</span>
+<a name="ln-674"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_specific_energy_isco</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-675"></a>
+<a name="ln-676"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-677"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-678"></a>      <span class="c">! Result</span>
+<a name="ln-679"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_specific_energy_isco</span>
+<a name="ln-680"></a>
+<a name="ln-681"></a>    <span class="k">END FUNCTION </span><span class="n">get_specific_energy_isco</span>
+<a name="ln-682"></a>
 <a name="ln-683"></a>
-<a name="ln-684"></a>
-<a name="ln-685"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_area_radius</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-686"></a>
-<a name="ln-687"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-688"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-689"></a>      <span class="c">! Result</span>
-<a name="ln-690"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_area_radius</span>
-<a name="ln-691"></a>
-<a name="ln-692"></a>    <span class="k">END FUNCTION </span><span class="n">get_area_radius</span>
+<a name="ln-684"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_specific_angular_momentum_isco</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-685"></a>
+<a name="ln-686"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-687"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-688"></a>      <span class="c">! Result</span>
+<a name="ln-689"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_specific_angular_momentum_isco</span>
+<a name="ln-690"></a>
+<a name="ln-691"></a>    <span class="k">END FUNCTION </span><span class="n">get_specific_angular_momentum_isco</span>
+<a name="ln-692"></a>
 <a name="ln-693"></a>
-<a name="ln-694"></a>
-<a name="ln-695"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_ent_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-696"></a>
-<a name="ln-697"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-698"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-699"></a>      <span class="c">! Result</span>
-<a name="ln-700"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_ent_center</span>
-<a name="ln-701"></a>
-<a name="ln-702"></a>    <span class="k">END FUNCTION </span><span class="n">get_ent_center</span>
+<a name="ln-694"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_surface_area</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-695"></a>
+<a name="ln-696"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-697"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-698"></a>      <span class="c">! Result</span>
+<a name="ln-699"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_surface_area</span>
+<a name="ln-700"></a>
+<a name="ln-701"></a>    <span class="k">END FUNCTION </span><span class="n">get_surface_area</span>
+<a name="ln-702"></a>
 <a name="ln-703"></a>
-<a name="ln-704"></a>
-<a name="ln-705"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_nbar_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-706"></a>
-<a name="ln-707"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-708"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-709"></a>      <span class="c">! Result</span>
-<a name="ln-710"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_nbar_center</span>
-<a name="ln-711"></a>
-<a name="ln-712"></a>    <span class="k">END FUNCTION </span><span class="n">get_nbar_center</span>
+<a name="ln-704"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_area_radius</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-705"></a>
+<a name="ln-706"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-707"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-708"></a>      <span class="c">! Result</span>
+<a name="ln-709"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_area_radius</span>
+<a name="ln-710"></a>
+<a name="ln-711"></a>    <span class="k">END FUNCTION </span><span class="n">get_area_radius</span>
+<a name="ln-712"></a>
 <a name="ln-713"></a>
-<a name="ln-714"></a>
-<a name="ln-715"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_rho_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-716"></a>
-<a name="ln-717"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-718"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-719"></a>      <span class="c">! Result</span>
-<a name="ln-720"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_rho_center</span>
-<a name="ln-721"></a>
-<a name="ln-722"></a>    <span class="k">END FUNCTION </span><span class="n">get_rho_center</span>
+<a name="ln-714"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_ent_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-715"></a>
+<a name="ln-716"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-717"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-718"></a>      <span class="c">! Result</span>
+<a name="ln-719"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_ent_center</span>
+<a name="ln-720"></a>
+<a name="ln-721"></a>    <span class="k">END FUNCTION </span><span class="n">get_ent_center</span>
+<a name="ln-722"></a>
 <a name="ln-723"></a>
-<a name="ln-724"></a>
-<a name="ln-725"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_energy_density_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-726"></a>
-<a name="ln-727"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-728"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-729"></a>      <span class="c">! Result</span>
-<a name="ln-730"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_energy_density_center</span>
-<a name="ln-731"></a>
-<a name="ln-732"></a>    <span class="k">END FUNCTION </span><span class="n">get_energy_density_center</span>
+<a name="ln-724"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_nbar_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-725"></a>
+<a name="ln-726"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-727"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-728"></a>      <span class="c">! Result</span>
+<a name="ln-729"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_nbar_center</span>
+<a name="ln-730"></a>
+<a name="ln-731"></a>    <span class="k">END FUNCTION </span><span class="n">get_nbar_center</span>
+<a name="ln-732"></a>
 <a name="ln-733"></a>
-<a name="ln-734"></a>
-<a name="ln-735"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_specific_energy_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-736"></a>
-<a name="ln-737"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-738"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-739"></a>      <span class="c">! Result</span>
-<a name="ln-740"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_specific_energy_center</span>
-<a name="ln-741"></a>
-<a name="ln-742"></a>    <span class="k">END FUNCTION </span><span class="n">get_specific_energy_center</span>
+<a name="ln-734"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_rho_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-735"></a>
+<a name="ln-736"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-737"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-738"></a>      <span class="c">! Result</span>
+<a name="ln-739"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_rho_center</span>
+<a name="ln-740"></a>
+<a name="ln-741"></a>    <span class="k">END FUNCTION </span><span class="n">get_rho_center</span>
+<a name="ln-742"></a>
 <a name="ln-743"></a>
-<a name="ln-744"></a>
-<a name="ln-745"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_pressure_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-746"></a>
-<a name="ln-747"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-748"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-749"></a>      <span class="c">! Result</span>
-<a name="ln-750"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_pressure_center</span>
-<a name="ln-751"></a>
-<a name="ln-752"></a>    <span class="k">END FUNCTION </span><span class="n">get_pressure_center</span>
+<a name="ln-744"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_energy_density_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-745"></a>
+<a name="ln-746"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-747"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-748"></a>      <span class="c">! Result</span>
+<a name="ln-749"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_energy_density_center</span>
+<a name="ln-750"></a>
+<a name="ln-751"></a>    <span class="k">END FUNCTION </span><span class="n">get_energy_density_center</span>
+<a name="ln-752"></a>
 <a name="ln-753"></a>
-<a name="ln-754"></a>
-<a name="ln-755"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_npeos</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-756"></a>
-<a name="ln-757"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-758"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-759"></a>      <span class="c">! Result</span>
-<a name="ln-760"></a>      <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">get_npeos</span>
-<a name="ln-761"></a>
-<a name="ln-762"></a>    <span class="k">END FUNCTION </span><span class="n">get_npeos</span>
+<a name="ln-754"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_specific_energy_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-755"></a>
+<a name="ln-756"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-757"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-758"></a>      <span class="c">! Result</span>
+<a name="ln-759"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_specific_energy_center</span>
+<a name="ln-760"></a>
+<a name="ln-761"></a>    <span class="k">END FUNCTION </span><span class="n">get_specific_energy_center</span>
+<a name="ln-762"></a>
 <a name="ln-763"></a>
-<a name="ln-764"></a>
-<a name="ln-765"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma0</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-766"></a>
-<a name="ln-767"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-768"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-769"></a>      <span class="c">! Result</span>
-<a name="ln-770"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma0</span>
-<a name="ln-771"></a>
-<a name="ln-772"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma0</span>
+<a name="ln-764"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_pressure_center</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-765"></a>
+<a name="ln-766"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-767"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-768"></a>      <span class="c">! Result</span>
+<a name="ln-769"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_pressure_center</span>
+<a name="ln-770"></a>
+<a name="ln-771"></a>    <span class="k">END FUNCTION </span><span class="n">get_pressure_center</span>
+<a name="ln-772"></a>
 <a name="ln-773"></a>
-<a name="ln-774"></a>
-<a name="ln-775"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-776"></a>
-<a name="ln-777"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-778"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-779"></a>      <span class="c">! Result</span>
-<a name="ln-780"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma1</span>
-<a name="ln-781"></a>
-<a name="ln-782"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma1</span>
+<a name="ln-774"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_npeos</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-775"></a>
+<a name="ln-776"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-777"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-778"></a>      <span class="c">! Result</span>
+<a name="ln-779"></a>      <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">get_npeos</span>
+<a name="ln-780"></a>
+<a name="ln-781"></a>    <span class="k">END FUNCTION </span><span class="n">get_npeos</span>
+<a name="ln-782"></a>
 <a name="ln-783"></a>
-<a name="ln-784"></a>
-<a name="ln-785"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-786"></a>
-<a name="ln-787"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-788"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-789"></a>      <span class="c">! Result</span>
-<a name="ln-790"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma2</span>
-<a name="ln-791"></a>
-<a name="ln-792"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma2</span>
+<a name="ln-784"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma0</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-785"></a>
+<a name="ln-786"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-787"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-788"></a>      <span class="c">! Result</span>
+<a name="ln-789"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma0</span>
+<a name="ln-790"></a>
+<a name="ln-791"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma0</span>
+<a name="ln-792"></a>
 <a name="ln-793"></a>
-<a name="ln-794"></a>
-<a name="ln-795"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma3</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-796"></a>
-<a name="ln-797"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-798"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-799"></a>      <span class="c">! Result</span>
-<a name="ln-800"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma3</span>
-<a name="ln-801"></a>
-<a name="ln-802"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma3</span>
+<a name="ln-794"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-795"></a>
+<a name="ln-796"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-797"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-798"></a>      <span class="c">! Result</span>
+<a name="ln-799"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma1</span>
+<a name="ln-800"></a>
+<a name="ln-801"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma1</span>
+<a name="ln-802"></a>
 <a name="ln-803"></a>
-<a name="ln-804"></a>
-<a name="ln-805"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa0</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-806"></a>
-<a name="ln-807"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-808"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-809"></a>      <span class="c">! Result</span>
-<a name="ln-810"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa0</span>
-<a name="ln-811"></a>
-<a name="ln-812"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa0</span>
+<a name="ln-804"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-805"></a>
+<a name="ln-806"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-807"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-808"></a>      <span class="c">! Result</span>
+<a name="ln-809"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma2</span>
+<a name="ln-810"></a>
+<a name="ln-811"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma2</span>
+<a name="ln-812"></a>
 <a name="ln-813"></a>
-<a name="ln-814"></a>
-<a name="ln-815"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-816"></a>
-<a name="ln-817"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-818"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-819"></a>      <span class="c">! Result</span>
-<a name="ln-820"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa1</span>
-<a name="ln-821"></a>
-<a name="ln-822"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa1</span>
+<a name="ln-814"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_gamma3</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-815"></a>
+<a name="ln-816"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-817"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-818"></a>      <span class="c">! Result</span>
+<a name="ln-819"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_gamma3</span>
+<a name="ln-820"></a>
+<a name="ln-821"></a>    <span class="k">END FUNCTION </span><span class="n">get_gamma3</span>
+<a name="ln-822"></a>
 <a name="ln-823"></a>
-<a name="ln-824"></a>
-<a name="ln-825"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-826"></a>
-<a name="ln-827"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-828"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-829"></a>      <span class="c">! Result</span>
-<a name="ln-830"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa2</span>
-<a name="ln-831"></a>
-<a name="ln-832"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa2</span>
+<a name="ln-824"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa0</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-825"></a>
+<a name="ln-826"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-827"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-828"></a>      <span class="c">! Result</span>
+<a name="ln-829"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa0</span>
+<a name="ln-830"></a>
+<a name="ln-831"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa0</span>
+<a name="ln-832"></a>
 <a name="ln-833"></a>
-<a name="ln-834"></a>
-<a name="ln-835"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa3</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-836"></a>
-<a name="ln-837"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-838"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-839"></a>      <span class="c">! Result</span>
-<a name="ln-840"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa3</span>
-<a name="ln-841"></a>
-<a name="ln-842"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa3</span>
+<a name="ln-834"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-835"></a>
+<a name="ln-836"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-837"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-838"></a>      <span class="c">! Result</span>
+<a name="ln-839"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa1</span>
+<a name="ln-840"></a>
+<a name="ln-841"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa1</span>
+<a name="ln-842"></a>
 <a name="ln-843"></a>
-<a name="ln-844"></a>
-<a name="ln-845"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logP1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-846"></a>
-<a name="ln-847"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-848"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-849"></a>      <span class="c">! Result</span>
-<a name="ln-850"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logP1</span>
-<a name="ln-851"></a>
-<a name="ln-852"></a>    <span class="k">END FUNCTION </span><span class="n">get_logP1</span>
+<a name="ln-844"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-845"></a>
+<a name="ln-846"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-847"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-848"></a>      <span class="c">! Result</span>
+<a name="ln-849"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa2</span>
+<a name="ln-850"></a>
+<a name="ln-851"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa2</span>
+<a name="ln-852"></a>
 <a name="ln-853"></a>
-<a name="ln-854"></a>
-<a name="ln-855"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho0</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-856"></a>
-<a name="ln-857"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-858"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-859"></a>      <span class="c">! Result</span>
-<a name="ln-860"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho0</span>
-<a name="ln-861"></a>
-<a name="ln-862"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho0</span>
+<a name="ln-854"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_kappa3</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-855"></a>
+<a name="ln-856"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-857"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-858"></a>      <span class="c">! Result</span>
+<a name="ln-859"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_kappa3</span>
+<a name="ln-860"></a>
+<a name="ln-861"></a>    <span class="k">END FUNCTION </span><span class="n">get_kappa3</span>
+<a name="ln-862"></a>
 <a name="ln-863"></a>
-<a name="ln-864"></a>
-<a name="ln-865"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-866"></a>
-<a name="ln-867"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-868"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-869"></a>      <span class="c">! Result</span>
-<a name="ln-870"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho1</span>
-<a name="ln-871"></a>
-<a name="ln-872"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho1</span>
+<a name="ln-864"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logP1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-865"></a>
+<a name="ln-866"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-867"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-868"></a>      <span class="c">! Result</span>
+<a name="ln-869"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logP1</span>
+<a name="ln-870"></a>
+<a name="ln-871"></a>    <span class="k">END FUNCTION </span><span class="n">get_logP1</span>
+<a name="ln-872"></a>
 <a name="ln-873"></a>
-<a name="ln-874"></a>
-<a name="ln-875"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
-<a name="ln-876"></a>
-<a name="ln-877"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
-<a name="ln-878"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
-<a name="ln-879"></a>      <span class="c">! Result</span>
-<a name="ln-880"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho2</span>
-<a name="ln-881"></a>
-<a name="ln-882"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho2</span>
+<a name="ln-874"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho0</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-875"></a>
+<a name="ln-876"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-877"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-878"></a>      <span class="c">! Result</span>
+<a name="ln-879"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho0</span>
+<a name="ln-880"></a>
+<a name="ln-881"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho0</span>
+<a name="ln-882"></a>
 <a name="ln-883"></a>
-<a name="ln-884"></a>  <span class="k">END INTERFACE</span>
+<a name="ln-884"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho1</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
 <a name="ln-885"></a>
-<a name="ln-886"></a>
-<a name="ln-887"></a><span class="k">END MODULE </span><span class="n">diffstar_base</span>
+<a name="ln-886"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-887"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-888"></a>      <span class="c">! Result</span>
+<a name="ln-889"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho1</span>
+<a name="ln-890"></a>
+<a name="ln-891"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho1</span>
+<a name="ln-892"></a>
+<a name="ln-893"></a>
+<a name="ln-894"></a>    <span class="k">MODULE FUNCTION </span><span class="n">get_logRho2</span><span class="p">(</span> <span class="n">THIS</span> <span class="p">)</span>
+<a name="ln-895"></a>
+<a name="ln-896"></a>      <span class="c">!&gt; [[diffstarbase]] object which this PROCEDURE is a member of</span>
+<a name="ln-897"></a>      <span class="k">CLASS</span><span class="p">(</span><span class="n">diffstarbase</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">THIS</span>
+<a name="ln-898"></a>      <span class="c">! Result</span>
+<a name="ln-899"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">get_logRho2</span>
+<a name="ln-900"></a>
+<a name="ln-901"></a>    <span class="k">END FUNCTION </span><span class="n">get_logRho2</span>
+<a name="ln-902"></a>
+<a name="ln-903"></a>  <span class="k">END INTERFACE</span>
+<a name="ln-904"></a>
+<a name="ln-905"></a>
+<a name="ln-906"></a><span class="k">END MODULE </span><span class="n">diffstar_base</span>
 </pre></div>
 
     </section>
@@ -1480,14 +1529,14 @@
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_LORENE was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
                                           </p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-04 13:48:13 
+             on 2021-11-14 16:41:50 
             
           </p>
         </div>
