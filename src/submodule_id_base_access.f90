@@ -1,8 +1,27 @@
 ! File:         submodule_id_base_access.f90
 ! Authors:      Francesco Torsello (FT)
-! Copyright:    GNU General Public License (GPLv3)
+!************************************************************************
+! Copyright (C) 2020, 2021, 2022 Francesco Torsello                     *
+!                                                                       *
+! This file is part of SPHINCS_ID                                       *
+!                                                                       *
+! SPHINCS_ID is free software: you can redistribute it and/or modify    *
+! it under the terms of the GNU General Public License as published by  *
+! the Free Software Foundation, either version 3 of the License, or     *
+! (at your option) any later version.                                   *
+!                                                                       *
+! SPHINCS_ID is distributed in the hope that it will be useful,         *
+! but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+! GNU General Public License for more details.                          *
+!                                                                       *
+! You should have received a copy of the GNU General Public License     *
+! along with SPHINCS_ID. If not, see <https://www.gnu.org/licenses/>.   *
+! The copy of the GNU General Public License should be in the file      *
+! 'COPYING'.                                                            *
+!************************************************************************
 
-SUBMODULE (id_base) id_base_access
+SUBMODULE (id_base) access
 
   !********************************************
   !
@@ -32,7 +51,7 @@ SUBMODULE (id_base) id_base_access
 
     IMPLICIT NONE
 
-    THIS% n_matter= value
+    this% n_matter= value
 
   END PROCEDURE set_n_matter
 
@@ -50,7 +69,7 @@ SUBMODULE (id_base) id_base_access
 
     IMPLICIT NONE
 
-    get_n_matter= THIS% n_matter
+    get_n_matter= this% n_matter
 
   END PROCEDURE get_n_matter
 
@@ -67,7 +86,7 @@ SUBMODULE (id_base) id_base_access
 
     IMPLICIT NONE
 
-    THIS% one_lapse= logic
+    this% one_lapse= logic
 
   END PROCEDURE set_one_lapse
 
@@ -84,7 +103,7 @@ SUBMODULE (id_base) id_base_access
 
     IMPLICIT NONE
 
-    get_one_lapse= THIS% one_lapse
+    get_one_lapse= this% one_lapse
 
   END PROCEDURE get_one_lapse
 
@@ -101,7 +120,7 @@ SUBMODULE (id_base) id_base_access
 
     IMPLICIT NONE
 
-    THIS% zero_shift= logic
+    this% zero_shift= logic
 
   END PROCEDURE set_zero_shift
 
@@ -118,9 +137,107 @@ SUBMODULE (id_base) id_base_access
 
     IMPLICIT NONE
 
-    get_zero_shift= THIS% zero_shift
+    get_zero_shift= this% zero_shift
 
   END PROCEDURE get_zero_shift
+
+
+  MODULE PROCEDURE set_cold_system
+
+    !************************************************
+    !
+    !# Sets [[idbase:cold_system]] to the given value
+    !
+    !  FT 19.01.2021
+    !
+    !************************************************
+
+    IMPLICIT NONE
+
+    IF( .NOT.(value .EQV. .TRUE.) .AND. .NOT.(value .EQV. .FALSE.) )THEN
+
+      PRINT *, "** ERROR in SUBROUTINE set_cold_system! The LOGICAL ", &
+               "variable cold_system should be .TRUE. or .FALSE. ."
+      PRINT *, " * Stopping..."
+      PRINT *
+      STOP
+
+    ELSE
+
+      this% cold_system= value
+
+    ENDIF
+
+  END PROCEDURE set_cold_system
+
+
+  MODULE PROCEDURE get_cold_system
+
+    !************************************************
+    !
+    !# Returns [[idbase:cold_system]], the `LOGICAL`
+    !  variable at specifies if the system is cold
+    !  (no thermal component)
+    !
+    !  FT 19.01.2021
+    !
+    !************************************************
+
+    IMPLICIT NONE
+
+    get_cold_system= this% cold_system
+
+  END PROCEDURE get_cold_system
+
+
+  MODULE PROCEDURE set_estimate_length_scale
+
+    !************************************************
+    !
+    !# Sets [[idbase:estimate_length_scale]] to the
+    !  given value
+    !
+    !  FT 18.02.2021
+    !
+    !************************************************
+
+    IMPLICIT NONE
+
+    IF( .NOT.(value .EQV. .TRUE.) .AND. .NOT.(value .EQV. .FALSE.) )THEN
+
+      PRINT *, "** ERROR in SUBROUTINE set_estimate_length_scale! The ", &
+               "LOGICAL variable cold_system should be .TRUE. or .FALSE. ."
+      PRINT *, " * Stopping..."
+      PRINT *
+      STOP
+
+    ELSE
+
+      this% estimate_length_scale= value
+
+    ENDIF
+
+  END PROCEDURE set_estimate_length_scale
+
+
+  MODULE PROCEDURE get_estimate_length_scale
+
+    !************************************************
+    !
+    !# Returns [[idbase:estimate_length_scale]], the
+    !  `LOGICAL` variable that specifies if a typical
+    !  length scale, equal to the ratio of a field over
+    !  its gradient, should be computed
+    !
+    !  FT 18.02.2021
+    !
+    !************************************************
+
+    IMPLICIT NONE
+
+    get_estimate_length_scale= this% estimate_length_scale
+
+  END PROCEDURE get_estimate_length_scale
 
 
   MODULE PROCEDURE check_i_matter
@@ -140,17 +257,17 @@ SUBMODULE (id_base) id_base_access
     IF( i_matter < 1 )THEN
 
       PRINT *, "** ERROR! The index of the matter object is lower than 1. "
-      PRINT *, "   It should be between 1 and n_matter= ", THIS% n_matter
+      PRINT *, "   It should be between 1 and n_matter= ", this% n_matter
       PRINT *, "   The index is ", i_matter
       PRINT *, "   Stopping..."
       PRINT *
       STOP
 
-    ELSEIF( i_matter > THIS% n_matter )THEN
+    ELSEIF( i_matter > this% n_matter )THEN
 
       PRINT *, "** ERROR! The index of the matter object is larger than ", &
-               THIS% n_matter
-      PRINT *, "   It should be between 1 and n_matter= ", THIS% n_matter
+               this% n_matter
+      PRINT *, "   It should be between 1 and n_matter= ", this% n_matter
       PRINT *, "   The index is ", i_matter
       PRINT *, "   Stopping..."
       PRINT *
@@ -173,7 +290,11 @@ SUBMODULE (id_base) id_base_access
     !
     !************************************************
 
+    USE constants, ONLY: one, five, ten
+
     IMPLICIT NONE
+
+    DOUBLE PRECISION, PARAMETER:: stretch= five/(ten*ten*ten)
 
     INTEGER:: i_matter
     DOUBLE PRECISION, DIMENSION(3):: center_matter
@@ -186,10 +307,10 @@ SUBMODULE (id_base) id_base_access
     box(4)= - HUGE(1.0D0)
     box(6)= - HUGE(1.0D0)
 
-    DO i_matter= 1, THIS% get_n_matter(), 1
+    DO i_matter= 1, this% get_n_matter(), 1
 
-      size_matter  = THIS% return_spatial_extent( i_matter )
-      center_matter= THIS% return_center( i_matter )
+      size_matter  = this% return_spatial_extent( i_matter )*(one + stretch)
+      center_matter= this% return_center( i_matter )
 
       IF( center_matter(1) - size_matter(1) < box(1) ) &
                           box(1) = center_matter(1) - size_matter(1)
@@ -210,4 +331,4 @@ SUBMODULE (id_base) id_base_access
 
 
 
-END SUBMODULE id_base_access
+END SUBMODULE access

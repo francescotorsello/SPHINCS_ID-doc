@@ -1,6 +1,25 @@
 ! File:         module_bns_base.f90
 ! Authors:      Francesco Torsello (FT)
-! Copyright:    GNU General Public License (GPLv3)
+!************************************************************************
+! Copyright (C) 2020, 2021, 2022 Francesco Torsello                     *
+!                                                                       *
+! This file is part of SPHINCS_ID                                       *
+!                                                                       *
+! SPHINCS_ID is free software: you can redistribute it and/or modify    *
+! it under the terms of the GNU General Public License as published by  *
+! the Free Software Foundation, either version 3 of the License, or     *
+! (at your option) any later version.                                   *
+!                                                                       *
+! SPHINCS_ID is distributed in the hope that it will be useful,         *
+! but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+! GNU General Public License for more details.                          *
+!                                                                       *
+! You should have received a copy of the GNU General Public License     *
+! along with SPHINCS_ID. If not, see <https://www.gnu.org/licenses/>.   *
+! The copy of the GNU General Public License should be in the file      *
+! 'COPYING'.                                                            *
+!************************************************************************
 
 MODULE bns_base
 
@@ -10,12 +29,12 @@ MODULE bns_base
   !  which is an ABSTRACT TYPE representing any possible
   !  type of binary neutron star (BNS) initial data (ID)
   !  to be set up for |sphincsbssn|. That is, BNS ID
-  !  produced with LORENE, with |fuka|, etc.
+  !  produced with |lorene|, with |fuka|, etc.
   !
   !  PROCEDURES and variables shared by all the types
   !  of BNS ID should belong to TYPE bnsbase, as
   !  they are inherited by its EXTENDED TYPES that
-  !  represent more specific typesof BNS ID.
+  !  represent more specific types of BNS ID.
   !
   !  FT 24.09.2021
   !
@@ -36,9 +55,9 @@ MODULE bns_base
   !*******************************************************
 
   TYPE, ABSTRACT, EXTENDS(idbase):: bnsbase
-  !# Represents a generic BNS ID for |sphincsbssn| (produced with LORENE, or with
-  !  |fuka|, etc.; or produced with the same tool, but read in different ways,
-  !  for example by linking to the LORENE library, or reading the ID from
+  !# ABSTRACT Base TYPE for BNS ID for |sphincsbssn| (produced with |lorene|, or
+  !  with |fuka|, etc.; or produced with the same tool, but read in different
+  !  ways, for example by linking to the LORENE library, or reading the ID from
   !  a lattice, etc.)
 
 
@@ -95,8 +114,25 @@ MODULE bns_base
     !  Masses", Phys. Rev. 136, B1224 (1964)](http://gravity.psu.edu/numrel/jclub/jc/Peters_PR_136_B1224_1964.pdf){:target="_blank"}
     DOUBLE PRECISION:: t_merger
 
-    !> Angular momentum of the BNS system \([G M_\odot^2/c]\)
-    DOUBLE PRECISION:: angular_momentum= 0.0D0
+    DOUBLE PRECISION:: linear_momentum_x= 0.0D0
+    !! \(x\) component of the ADM linear momentum of the system
+    !  \([G M_\odot^2/c]\)
+    DOUBLE PRECISION:: linear_momentum_y= 0.0D0
+    !! \(y\) component of the ADM linear momentum of the system
+    !  \([G M_\odot^2/c]\)
+    DOUBLE PRECISION:: linear_momentum_z= 0.0D0
+    !! \(z\) component of the ADM linear momentum of the system
+    !  \([G M_\odot^2/c]\)
+
+    DOUBLE PRECISION:: angular_momentum_x= 0.0D0
+    !! \(x\) component of the angular momentum of the BNS system
+    !  \([G M_\odot^2/c]\)
+    DOUBLE PRECISION:: angular_momentum_y= 0.0D0
+    !! \(y\) component of the angular momentum of the BNS system
+    !  \([G M_\odot^2/c]\)
+    DOUBLE PRECISION:: angular_momentum_z= 0.0D0
+    !! \(z\) component of the angular momentum of the BNS system
+    !  \([G M_\odot^2/c]\)
 
     !& Areal (or circumferential) radius of star 1 \([L_\odot]\)
     ! Note that these is the areal radius of the star in the binary system,
@@ -337,30 +373,21 @@ MODULE bns_base
     PROCEDURE(get_eos_id_int), DEFERRED:: get_eos2_id
     !! Returns an integer that identifies the equation of state of star 2
 
+    PROCEDURE:: print_summary               => print_summary_bnsbase
 
-    !PROCEDURE:: integrate_field_on_star => integrate_baryon_mass_density
-    !# Integrates the LORENE baryon mass density and computes the
-    !  radial mass profile
-
+    PROCEDURE(print_summary_derived_int),  DEFERRED:: print_summary_derived
+    !# Prints a summary of the physical properties the system
+    !  to the standard output and, optionally, to a formatted file whose name
+    !  is given as optional argument. Printse information relative to
+    !  the derived type oly
 
     !-----------------!
     !--  FUNCTIONS  --!
     !-----------------!
 
-    !
-    !-- Overloaded FUNCTION to access the fields as arrays and as values
-    !
-
-  !     GENERIC, PUBLIC:: get_field => get_fa, get_fv
-  !     !# GENERIC PROCEDURE, overloded to access the bns member variables as arrays
-  !     !  and as values
-  !     PROCEDURE::       get_fa    => get_field_array
-  !     !! Access the bns member arrays
-  !     PROCEDURE::       get_fv    => get_field_value
-    !! Access the components of the bns member arrays
 
     !
-    !-- FUNCTIONS that access member variables
+    !-- FUNCTIONS that access PRIVATE member variables
     !
 
     !PROCEDURE, PUBLIC:: get_bns_identifier
@@ -370,7 +397,6 @@ MODULE bns_base
     PROCEDURE:: return_barycenter           => get_barycenter
     PROCEDURE:: return_eos_name             => get_eos
     PROCEDURE:: return_spatial_extent       => get_radii
-    PROCEDURE:: print_summary               => print_summary_bns
 
     PROCEDURE, PUBLIC:: get_angular_vel
     !! Returns [[bnsbase:angular_vel]]
@@ -388,8 +414,14 @@ MODULE bns_base
     !! Returns [[bnsbase:mass_grav2]]
     PROCEDURE, PUBLIC:: get_adm_mass
     !! Returns [[bnsbase:adm_mass]]
+    PROCEDURE, PUBLIC:: get_linear_momentum
+    !# Returns the linear momentum vector
+    !  \((\)[[bnsbase:linear_momentum_x]], [[bnsbase:linear_momentum_y]],
+    !  [[bnsbase:linear_momentum_z]]\()\)
     PROCEDURE, PUBLIC:: get_angular_momentum
-    !! Returns [[bnsbase:angular_momentum]]
+    !# Returns the angular momentum vector
+    !  \((\)[[bnsbase:angular_momentum_x]], [[bnsbase:angular_momentum_y]],
+    !  [[bnsbase:angular_momentum_z]]\()\)
     PROCEDURE, PUBLIC:: get_radius1_x_comp
     !! Returns [[bnsbase:radius1_x_comp]]
     PROCEDURE, PUBLIC:: get_radius1_y
@@ -517,6 +549,18 @@ MODULE bns_base
 
   ABSTRACT INTERFACE
 
+    SUBROUTINE print_summary_derived_int( THIS, filename )
+    !# Prints a summary of the physical properties the system
+    !  to the standard output and, optionally, to a formatted file whose name
+    !  is given as the optional argument `filename`
+
+      IMPORT:: bnsbase
+      CLASS(bnsbase), INTENT( IN ):: THIS
+      CHARACTER( LEN= * ), INTENT( INOUT ), OPTIONAL:: filename
+      !! Name of the formatted file to print the summary to
+
+    END SUBROUTINE print_summary_derived_int
+
     FUNCTION get_eos_id_int( THIS )
 
       IMPORT:: bnsbase
@@ -532,111 +576,22 @@ MODULE bns_base
 
   INTERFACE
 
-  !  MODULE FUNCTION get_field_array( THIS, field ) RESULT( field_array )
-  !  !! Returns the [[bnsbase]] member arrays named field
-  !
-  !    !> [[bnsbase]] object which this PROCEDURE is a member of
-  !    CLASS(bnsbase),          INTENT( IN )             :: THIS
-  !    !> Name of the desired [[bnsbase]] member array
-  !    CHARACTER( LEN= : ), INTENT( IN ), ALLOCATABLE:: field
-  !    !> Desired [[bnsbase]] member array
-  !    DOUBLE PRECISION, DIMENSION(:),    ALLOCATABLE:: field_array
-  !
-  !  END FUNCTION get_field_array
-  !
-  !
-  !  MODULE FUNCTION get_field_value( THIS, field, n ) RESULT( field_value )
-  !  !! Returns the component n of the [[bnsbase]] member arrays named field
-  !
-  !    !> [[bnsbase]] object which this PROCEDURE is a member of
-  !    CLASS(bnsbase),          INTENT( IN )             :: THIS
-  !    !> Name of the desired [[bnsbase]] member array
-  !    CHARACTER( LEN= : ), INTENT( IN ), ALLOCATABLE:: field
-  !    !> Component of the desired [[bnsbase]] member array
-  !    INTEGER,             INTENT( IN )             :: n
-  !    !> Component n of the desired [[bnsbase]] member array
-  !    DOUBLE PRECISION                              :: field_value
-  !
-  !  END FUNCTION get_field_value
-  !
-  !
-  !  MODULE FUNCTION get_bns_identifier( THIS )
-  !
-  !    !> [[bnsbase]] object which this PROCEDURE is a member of
-  !    CLASS(bnsbase), INTENT( IN ):: THIS
-  !    ! Result
-  !    DOUBLE PRECISION:: get_bns_identifier
-  !
-  !  END FUNCTION get_bns_identifier
-
- !   SUBROUTINE read_bns_id_spacetime_int( THIS, nx, ny, nz, &
- !                                             pos, &
- !                                             lapse, &
- !                                             shift, &
- !                                             g, &
- !                                             ek )
- !   !# Stores the spacetime ID in multi-dimensional arrays needed to compute
- !   !  the BSSN variables and constraints
- !     IMPORT:: bnsbase
- !     !> [[bnsbase]] object which this PROCEDURE is a member of
- !     CLASS(bnsbase),                        INTENT( IN OUT ):: THIS
- !     INTEGER,                              INTENT( IN )    :: nx
- !     INTEGER,                              INTENT( IN )    :: ny
- !     INTEGER,                              INTENT( IN )    :: nz
- !     DOUBLE PRECISION, DIMENSION(:,:,:,:), INTENT( IN )    :: pos
- !     DOUBLE PRECISION, DIMENSION(:,:,:),   INTENT( IN OUT ):: lapse
- !     DOUBLE PRECISION, DIMENSION(:,:,:,:), INTENT( IN OUT ):: shift
- !     DOUBLE PRECISION, DIMENSION(:,:,:,:), INTENT( IN OUT ):: g
- !     DOUBLE PRECISION, DIMENSION(:,:,:,:), INTENT( IN OUT ):: ek
- !
- !   END SUBROUTINE read_bns_id_spacetime_int
-
-
- !   MODULE SUBROUTINE integrate_baryon_mass_density( THIS, center, radius, &
- !                                                    central_density, &
- !                                                    dr, dth, dphi, &
- !                                                    mass, mass_profile, &
- !                                                    mass_profile_idx )
- !   !# Integrates the LORENE baryon mass density to compute the radial mass
- !   !  profile. TODO: Improve integration algorithm.
- !
- !     !> [[bnsbase]] object which this PROCEDURE is a member of
- !     CLASS(bnsbase), INTENT( IN OUT )      :: THIS
- !     !& Array to store the indices for array mass_profile, sorted so that
- !     !  mass_profile[mass_profile_idx] is in increasing order
- !     INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT ):: mass_profile_idx
- !     !> Center of the star
- !     DOUBLE PRECISION, INTENT( IN )    :: center
- !     !> Central density of the star
- !     DOUBLE PRECISION, INTENT( IN )    :: central_density
- !     !> Radius of the star
- !     DOUBLE PRECISION, INTENT( IN )    :: radius
- !     !> Integration steps
- !     DOUBLE PRECISION, INTENT( IN )    :: dr, dth, dphi
- !     !> Integrated mass of the star
- !     DOUBLE PRECISION, INTENT( IN OUT ):: mass
- !     !> Array storing the radial mass profile of the star
- !     DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE, INTENT( IN OUT ):: &
- !                                      mass_profile
- !
- !   END SUBROUTINE integrate_baryon_mass_density
-
     !------------------------------!
     !--  OVERRIDING SUBROUTINES  --!
     !------------------------------!
 
 
-    MODULE SUBROUTINE print_summary_bns( THIS, filename )
-    !# Prints a summary of the physical properties the system
+    MODULE SUBROUTINE print_summary_bnsbase( THIS, filename )
+    !# Prints a summary of the physical properties the |bns| system
     !  to the standard output and, optionally, to a formatted file whose name
     !  is given as the optional argument `filename`
 
 
-      CLASS(bnsbase), INTENT( IN OUT ):: THIS
+      CLASS(bnsbase), INTENT( IN ):: THIS
       CHARACTER( LEN= * ), INTENT( INOUT ), OPTIONAL:: filename
       !! Name of the formatted file to print the summary to
 
-    END SUBROUTINE print_summary_bns
+    END SUBROUTINE print_summary_bnsbase
 
 
     !----------------------------!
@@ -647,7 +602,7 @@ MODULE bns_base
     MODULE FUNCTION get_mass( THIS, i_matter )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
-      CLASS(bnsbase), INTENT( IN OUT ):: THIS
+      CLASS(bnsbase), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       ! Result
       DOUBLE PRECISION:: get_mass
@@ -658,7 +613,7 @@ MODULE bns_base
     MODULE FUNCTION get_radii( THIS, i_matter )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
-      CLASS(bnsbase), INTENT( IN OUT ):: THIS
+      CLASS(bnsbase), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       !! Index of the matter object whose string is to return
       DOUBLE PRECISION, DIMENSION(6):: get_radii
@@ -668,7 +623,7 @@ MODULE bns_base
     MODULE FUNCTION get_center( THIS, i_matter )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
-      CLASS(bnsbase), INTENT( IN OUT ):: THIS
+      CLASS(bnsbase), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       !! Index of the matter object whose parameter is to return
       DOUBLE PRECISION, DIMENSION(3):: get_center
@@ -679,7 +634,7 @@ MODULE bns_base
     MODULE FUNCTION get_barycenter( THIS, i_matter )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
-      CLASS(bnsbase), INTENT( IN OUT ):: THIS
+      CLASS(bnsbase), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       !! Index of the matter object whose parameter is to return
       DOUBLE PRECISION, DIMENSION(3):: get_barycenter
@@ -690,7 +645,7 @@ MODULE bns_base
     MODULE FUNCTION get_eos( THIS, i_matter )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
-      CLASS(bnsbase), INTENT( IN OUT ):: THIS
+      CLASS(bnsbase), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       !! Index of the matter object whose string is to return
       CHARACTER( LEN= : ), ALLOCATABLE:: get_eos
@@ -703,7 +658,7 @@ MODULE bns_base
     !-----------------!
 
 
-    MODULE FUNCTION get_gamma_1( THIS )
+    MODULE PURE FUNCTION get_gamma_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -713,7 +668,7 @@ MODULE bns_base
     END FUNCTION get_gamma_1
 
 
-    MODULE FUNCTION get_gamma_2( THIS )
+    MODULE PURE FUNCTION get_gamma_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -723,7 +678,7 @@ MODULE bns_base
     END FUNCTION get_gamma_2
 
 
-    MODULE FUNCTION get_kappa_1( THIS )
+    MODULE PURE FUNCTION get_kappa_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -733,7 +688,7 @@ MODULE bns_base
     END FUNCTION get_kappa_1
 
 
-    MODULE FUNCTION get_kappa_2( THIS )
+    MODULE PURE FUNCTION get_kappa_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -743,7 +698,7 @@ MODULE bns_base
     END FUNCTION get_kappa_2
 
 
-    MODULE FUNCTION get_angular_vel( THIS )
+    MODULE PURE FUNCTION get_angular_vel( THIS )
     !! Returns angular_vel
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
@@ -754,7 +709,7 @@ MODULE bns_base
     END FUNCTION get_angular_vel
 
 
-    MODULE FUNCTION get_distance( THIS )
+    MODULE PURE FUNCTION get_distance( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -764,7 +719,7 @@ MODULE bns_base
     END FUNCTION get_distance
 
 
-    MODULE FUNCTION get_distance_com( THIS )
+    MODULE PURE FUNCTION get_distance_com( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -774,7 +729,7 @@ MODULE bns_base
     END FUNCTION get_distance_com
 
 
-    MODULE FUNCTION get_mass1( THIS )
+    MODULE PURE FUNCTION get_mass1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -784,7 +739,7 @@ MODULE bns_base
     END FUNCTION get_mass1
 
 
-    MODULE FUNCTION get_mass2( THIS )
+    MODULE PURE FUNCTION get_mass2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -794,7 +749,7 @@ MODULE bns_base
     END FUNCTION get_mass2
 
 
-    MODULE FUNCTION get_grav_mass1( THIS )
+    MODULE PURE FUNCTION get_grav_mass1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -804,7 +759,7 @@ MODULE bns_base
     END FUNCTION get_grav_mass1
 
 
-    MODULE FUNCTION get_grav_mass2( THIS )
+    MODULE PURE FUNCTION get_grav_mass2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -814,7 +769,7 @@ MODULE bns_base
     END FUNCTION get_grav_mass2
 
 
-    MODULE FUNCTION get_adm_mass( THIS )
+    MODULE PURE FUNCTION get_adm_mass( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -824,17 +779,27 @@ MODULE bns_base
     END FUNCTION get_adm_mass
 
 
-    MODULE FUNCTION get_angular_momentum( THIS )
+    MODULE PURE FUNCTION get_linear_momentum( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
       ! Result
-      DOUBLE PRECISION:: get_angular_momentum
+      DOUBLE PRECISION:: get_linear_momentum(3)
+
+    END FUNCTION get_linear_momentum
+
+
+    MODULE PURE FUNCTION get_angular_momentum( THIS )
+
+      !> [[bnsbase]] object which this PROCEDURE is a member of
+      CLASS(bnsbase), INTENT( IN ):: THIS
+      ! Result
+      DOUBLE PRECISION:: get_angular_momentum(3)
 
     END FUNCTION get_angular_momentum
 
 
-    MODULE FUNCTION get_radius1_x_comp( THIS )
+    MODULE PURE FUNCTION get_radius1_x_comp( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -844,7 +809,7 @@ MODULE bns_base
     END FUNCTION get_radius1_x_comp
 
 
-    MODULE FUNCTION get_radius1_y( THIS )
+    MODULE PURE FUNCTION get_radius1_y( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -854,7 +819,7 @@ MODULE bns_base
     END FUNCTION get_radius1_y
 
 
-    MODULE FUNCTION get_radius1_z( THIS )
+    MODULE PURE FUNCTION get_radius1_z( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -864,7 +829,7 @@ MODULE bns_base
     END FUNCTION get_radius1_z
 
 
-    MODULE FUNCTION get_radius1_x_opp( THIS )
+    MODULE PURE FUNCTION get_radius1_x_opp( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -874,7 +839,7 @@ MODULE bns_base
     END FUNCTION get_radius1_x_opp
 
 
-    MODULE FUNCTION get_center1_x( THIS )
+    MODULE PURE FUNCTION get_center1_x( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -884,7 +849,7 @@ MODULE bns_base
     END FUNCTION get_center1_x
 
 
-    MODULE FUNCTION get_barycenter1_x( THIS )
+    MODULE PURE FUNCTION get_barycenter1_x( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -894,7 +859,7 @@ MODULE bns_base
     END FUNCTION get_barycenter1_x
 
 
-    MODULE FUNCTION get_radius2_x_comp( THIS )
+    MODULE PURE FUNCTION get_radius2_x_comp( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -904,7 +869,7 @@ MODULE bns_base
     END FUNCTION get_radius2_x_comp
 
 
-    MODULE FUNCTION get_radius2_y( THIS )
+    MODULE PURE FUNCTION get_radius2_y( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -914,7 +879,7 @@ MODULE bns_base
     END FUNCTION get_radius2_y
 
 
-    MODULE FUNCTION get_radius2_z( THIS )
+    MODULE PURE FUNCTION get_radius2_z( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -924,7 +889,7 @@ MODULE bns_base
     END FUNCTION get_radius2_z
 
 
-    MODULE FUNCTION get_radius2_x_opp( THIS )
+    MODULE PURE FUNCTION get_radius2_x_opp( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -934,7 +899,7 @@ MODULE bns_base
     END FUNCTION get_radius2_x_opp
 
 
-    MODULE FUNCTION get_center2_x( THIS )
+    MODULE PURE FUNCTION get_center2_x( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -944,7 +909,7 @@ MODULE bns_base
     END FUNCTION get_center2_x
 
 
-    MODULE FUNCTION get_barycenter2_x( THIS )
+    MODULE PURE FUNCTION get_barycenter2_x( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -954,7 +919,7 @@ MODULE bns_base
     END FUNCTION get_barycenter2_x
 
 
-    MODULE FUNCTION get_ent_center1( THIS )
+    MODULE PURE FUNCTION get_ent_center1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -964,7 +929,7 @@ MODULE bns_base
     END FUNCTION get_ent_center1
 
 
-    MODULE FUNCTION get_nbar_center1( THIS )
+    MODULE PURE FUNCTION get_nbar_center1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -974,7 +939,7 @@ MODULE bns_base
     END FUNCTION get_nbar_center1
 
 
-    MODULE FUNCTION get_rho_center1( THIS )
+    MODULE PURE FUNCTION get_rho_center1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -984,7 +949,7 @@ MODULE bns_base
     END FUNCTION get_rho_center1
 
 
-    MODULE FUNCTION get_energy_density_center1( THIS )
+    MODULE PURE FUNCTION get_energy_density_center1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -994,7 +959,7 @@ MODULE bns_base
     END FUNCTION get_energy_density_center1
 
 
-    MODULE FUNCTION get_specific_energy_center1( THIS )
+    MODULE PURE FUNCTION get_specific_energy_center1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1004,7 +969,7 @@ MODULE bns_base
     END FUNCTION get_specific_energy_center1
 
 
-    MODULE FUNCTION get_pressure_center1( THIS )
+    MODULE PURE FUNCTION get_pressure_center1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1014,7 +979,7 @@ MODULE bns_base
     END FUNCTION get_pressure_center1
 
 
-    MODULE FUNCTION get_ent_center2( THIS )
+    MODULE PURE FUNCTION get_ent_center2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1024,7 +989,7 @@ MODULE bns_base
     END FUNCTION get_ent_center2
 
 
-    MODULE FUNCTION get_nbar_center2( THIS )
+    MODULE PURE FUNCTION get_nbar_center2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1034,7 +999,7 @@ MODULE bns_base
     END FUNCTION get_nbar_center2
 
 
-    MODULE FUNCTION get_rho_center2( THIS )
+    MODULE PURE FUNCTION get_rho_center2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1044,7 +1009,7 @@ MODULE bns_base
     END FUNCTION get_rho_center2
 
 
-    MODULE FUNCTION get_energy_density_center2( THIS )
+    MODULE PURE FUNCTION get_energy_density_center2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1054,7 +1019,7 @@ MODULE bns_base
     END FUNCTION get_energy_density_center2
 
 
-    MODULE FUNCTION get_specific_energy_center2( THIS )
+    MODULE PURE FUNCTION get_specific_energy_center2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1064,7 +1029,7 @@ MODULE bns_base
     END FUNCTION get_specific_energy_center2
 
 
-    MODULE FUNCTION get_pressure_center2( THIS )
+    MODULE PURE FUNCTION get_pressure_center2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1074,7 +1039,7 @@ MODULE bns_base
     END FUNCTION get_pressure_center2
 
 
-    MODULE FUNCTION get_eos1( THIS )
+    MODULE PURE FUNCTION get_eos1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1084,7 +1049,7 @@ MODULE bns_base
     END FUNCTION get_eos1
 
 
-    MODULE FUNCTION get_eos2( THIS )
+    MODULE PURE FUNCTION get_eos2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1094,7 +1059,7 @@ MODULE bns_base
     END FUNCTION get_eos2
 
 
-    MODULE FUNCTION get_npeos_1( THIS )
+    MODULE PURE FUNCTION get_npeos_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1104,7 +1069,7 @@ MODULE bns_base
     END FUNCTION get_npeos_1
 
 
-    MODULE FUNCTION get_npeos_2( THIS )
+    MODULE PURE FUNCTION get_npeos_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1114,7 +1079,7 @@ MODULE bns_base
     END FUNCTION get_npeos_2
 
 
-    MODULE FUNCTION get_gamma0_1( THIS )
+    MODULE PURE FUNCTION get_gamma0_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1124,7 +1089,7 @@ MODULE bns_base
     END FUNCTION get_gamma0_1
 
 
-    MODULE FUNCTION get_gamma1_1( THIS )
+    MODULE PURE FUNCTION get_gamma1_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1134,7 +1099,7 @@ MODULE bns_base
     END FUNCTION get_gamma1_1
 
 
-    MODULE FUNCTION get_gamma2_1( THIS )
+    MODULE PURE FUNCTION get_gamma2_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1144,7 +1109,7 @@ MODULE bns_base
     END FUNCTION get_gamma2_1
 
 
-    MODULE FUNCTION get_gamma3_1( THIS )
+    MODULE PURE FUNCTION get_gamma3_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1154,7 +1119,7 @@ MODULE bns_base
     END FUNCTION get_gamma3_1
 
 
-    MODULE FUNCTION get_kappa0_1( THIS )
+    MODULE PURE FUNCTION get_kappa0_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1164,7 +1129,7 @@ MODULE bns_base
     END FUNCTION get_kappa0_1
 
 
-    MODULE FUNCTION get_kappa1_1( THIS )
+    MODULE PURE FUNCTION get_kappa1_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1174,7 +1139,7 @@ MODULE bns_base
     END FUNCTION get_kappa1_1
 
 
-    MODULE FUNCTION get_kappa2_1( THIS )
+    MODULE PURE FUNCTION get_kappa2_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1184,7 +1149,7 @@ MODULE bns_base
     END FUNCTION get_kappa2_1
 
 
-    MODULE FUNCTION get_kappa3_1( THIS )
+    MODULE PURE FUNCTION get_kappa3_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1194,7 +1159,7 @@ MODULE bns_base
     END FUNCTION get_kappa3_1
 
 
-    MODULE FUNCTION get_logP1_1( THIS )
+    MODULE PURE FUNCTION get_logP1_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1204,7 +1169,7 @@ MODULE bns_base
     END FUNCTION get_logP1_1
 
 
-    MODULE FUNCTION get_logRho0_1( THIS )
+    MODULE PURE FUNCTION get_logRho0_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1214,7 +1179,7 @@ MODULE bns_base
     END FUNCTION get_logRho0_1
 
 
-    MODULE FUNCTION get_logRho1_1( THIS )
+    MODULE PURE FUNCTION get_logRho1_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1224,7 +1189,7 @@ MODULE bns_base
     END FUNCTION get_logRho1_1
 
 
-    MODULE FUNCTION get_logRho2_1( THIS )
+    MODULE PURE FUNCTION get_logRho2_1( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1234,7 +1199,7 @@ MODULE bns_base
     END FUNCTION get_logRho2_1
 
 
-    MODULE FUNCTION get_gamma0_2( THIS )
+    MODULE PURE FUNCTION get_gamma0_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1244,7 +1209,7 @@ MODULE bns_base
     END FUNCTION get_gamma0_2
 
 
-    MODULE FUNCTION get_gamma1_2( THIS )
+    MODULE PURE FUNCTION get_gamma1_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1254,7 +1219,7 @@ MODULE bns_base
     END FUNCTION get_gamma1_2
 
 
-    MODULE FUNCTION get_gamma2_2( THIS )
+    MODULE PURE FUNCTION get_gamma2_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1264,7 +1229,7 @@ MODULE bns_base
     END FUNCTION get_gamma2_2
 
 
-    MODULE FUNCTION get_gamma3_2( THIS )
+    MODULE PURE FUNCTION get_gamma3_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1274,7 +1239,7 @@ MODULE bns_base
     END FUNCTION get_gamma3_2
 
 
-    MODULE FUNCTION get_kappa0_2( THIS )
+    MODULE PURE FUNCTION get_kappa0_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1284,7 +1249,7 @@ MODULE bns_base
     END FUNCTION get_kappa0_2
 
 
-    MODULE FUNCTION get_kappa1_2( THIS )
+    MODULE PURE FUNCTION get_kappa1_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1294,7 +1259,7 @@ MODULE bns_base
     END FUNCTION get_kappa1_2
 
 
-    MODULE FUNCTION get_kappa2_2( THIS )
+    MODULE PURE FUNCTION get_kappa2_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1304,7 +1269,7 @@ MODULE bns_base
     END FUNCTION get_kappa2_2
 
 
-    MODULE FUNCTION get_kappa3_2( THIS )
+    MODULE PURE FUNCTION get_kappa3_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1314,7 +1279,7 @@ MODULE bns_base
     END FUNCTION get_kappa3_2
 
 
-    MODULE FUNCTION get_logP1_2( THIS )
+    MODULE PURE FUNCTION get_logP1_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1324,7 +1289,7 @@ MODULE bns_base
     END FUNCTION get_logP1_2
 
 
-    MODULE FUNCTION get_logRho0_2( THIS )
+    MODULE PURE FUNCTION get_logRho0_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1334,7 +1299,7 @@ MODULE bns_base
     END FUNCTION get_logRho0_2
 
 
-    MODULE FUNCTION get_logRho1_2( THIS )
+    MODULE PURE FUNCTION get_logRho1_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS
@@ -1344,7 +1309,7 @@ MODULE bns_base
     END FUNCTION get_logRho1_2
 
 
-    MODULE FUNCTION get_logRho2_2( THIS )
+    MODULE PURE FUNCTION get_logRho2_2( THIS )
 
       !> [[bnsbase]] object which this PROCEDURE is a member of
       CLASS(bnsbase), INTENT( IN ):: THIS

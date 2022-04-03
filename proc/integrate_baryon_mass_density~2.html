@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
-    
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Figure caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state 'BBKF(DD2-SF) quark-hadron model RDF 1.8 (with electrons)' from the \texttt{CompOSE} database. The solution was computed with \texttt{LORENE} and the \texttt{CompOSE} software, and the particles were placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,64 +43,30 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li><a href='../page/index.html'>More</a></li>
-      
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../lists/files.html">Source Files</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-        
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
             <li><a href="../lists/programs.html">Programs</a></li>
-               
-        
-        
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
-
-
-
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -114,53 +75,29 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>integrate_baryon_mass_density
       <small>Procedure</small>
-    
     </h1>
-    
-<div class="row">
+    <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
-     
-     
-    <li><i class="fa fa-legal"></i> <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a></li> 
-     
-     
-     
-    
-    
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
     title=" 0.1% of total for procedures.">60 statements</a>
      </li> 
-     
-     
-     
     <li><i class="fa fa-code"></i><a href="../src/submodule_bns_base_mass_profile.f90"> Source File</a></li>
-     
-     
   </ul>
   <ol class="breadcrumb in-well text-right">
-  
-    
      <li><a href='../sourcefile/submodule_bns_base_mass_profile.f90.html'>submodule_bns_base_mass_profile.f90</a></li>
-    
-     <li><a href='../module/bns_base_mass_profile.html'>bns_base_mass_profile</a></li>
-    
-  
+     <li><a href='../module/mass_profile~2.html'>mass_profile</a></li>
      <li class="active">integrate_baryon_mass_density</li>
   </ol>
 </div>
@@ -176,139 +113,87 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
-  
-<h3>Contents</h3>
+    <div id="sidebar">
+  <h3>Contents</h3>
  
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-baryon_density~27">baryon_density</a>
-      
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-baryon_density~46">baryon_density</a>
       <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-colat~2">colat</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-debug~9">debug</a>
-      
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-debug~10">debug</a>
       <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-g_xx~15">g_xx</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-gamma_euler~8">gamma_euler</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-long~3">long</a>
-      
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-gamma_euler~12">gamma_euler</a>
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-long~4">long</a>
       <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-mass_element~2">mass_element</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-phi~4">phi</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-r~4">r</a>
-      
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-phi~9">phi</a>
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-r~6">r</a>
       <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-rad_coord~3">rad_coord</a>
-      
       <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-sq_g~3">sq_g</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-th~4">th</a>
-      
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-th~5">th</a>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>
-module procedure integrate_baryon_mass_density <small>module procedure integrate_baryon_mass_density()</small>
-    
-    
-   
-</h2>
-    
-  
-    <div class="panel panel-default">
+    <h2>module procedure integrate_baryon_mass_density <small>module procedure integrate_baryon_mass_density()</small></h2>
+        <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
       </div>
       <ul class="list-group">
-      
       <li class="list-group-item">
   <ul class="list-inline">
-    
     <li>NR</li>
-    
     <li>constants</li>
-    
   </ul>
       </li>
-      
-      
-      
       <li class="list-group-item">
   <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+<!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~integrate_baryon_mass_density~2~~UsesGraph Pages: 1 -->
-<svg id="procintegrate_baryon_mass_density2UsesGraph" width="267pt" height="74pt"
- viewBox="0.00 0.00 267.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="procintegrate_baryon_mass_density2UsesGraph" width="289pt" height="74pt"
+ viewBox="0.00 0.00 289.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="proc~~integrate_baryon_mass_density~2~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
 <title>proc~~integrate_baryon_mass_density~2~~UsesGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-70 263,-70 263,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 285,-70 285,4 -4,4"/>
 <!-- proc~integrate_baryon_mass_density~2 -->
 <g id="proc~~integrate_baryon_mass_density~2~~UsesGraph_node1" class="node">
 <title>proc~integrate_baryon_mass_density~2</title>
-<polygon fill="none" stroke="#000000" points="259,-45 94,-45 94,-21 259,-21 259,-45"/>
-<text text-anchor="middle" x="176.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">integrate_baryon_mass_density</text>
+<polygon fill="none" stroke="black" points="281,-45 100,-45 100,-21 281,-21 281,-45"/>
+<text text-anchor="middle" x="190.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">integrate_baryon_mass_density</text>
 </g>
 <!-- NR -->
 <g id="proc~~integrate_baryon_mass_density~2~~UsesGraph_node2" class="node">
 <title>NR</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="56,-66 2,-66 2,-42 56,-42 56,-66"/>
-<text text-anchor="middle" x="29" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">NR</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="59,-66 5,-66 5,-42 59,-42 59,-66"/>
+<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NR</text>
 </g>
 <!-- proc~integrate_baryon_mass_density~2&#45;&gt;NR -->
 <g id="proc~~integrate_baryon_mass_density~2~~UsesGraph_edge1" class="edge">
 <title>proc~integrate_baryon_mass_density~2&#45;&gt;NR</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M93.6956,-44.7891C84.0783,-46.1583 74.6695,-47.4979 66.1368,-48.7127"/>
-<polygon fill="#000000" stroke="#000000" points="65.615,-45.2516 56.2082,-50.1263 66.6017,-52.1817 65.615,-45.2516"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M99.82,-45.03C89.01,-46.48 78.49,-47.9 69.12,-49.15"/>
+<polygon fill="#000000" stroke="#000000" points="68.51,-45.7 59.07,-50.5 69.45,-52.64 68.51,-45.7"/>
 </g>
 <!-- constants -->
 <g id="proc~~integrate_baryon_mass_density~2~~UsesGraph_node3" class="node">
 <title>constants</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="58,-24 0,-24 0,0 58,0 58,-24"/>
-<text text-anchor="middle" x="29" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">constants</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
 </g>
 <!-- proc~integrate_baryon_mass_density~2&#45;&gt;constants -->
 <g id="proc~~integrate_baryon_mass_density~2~~UsesGraph_edge2" class="edge">
 <title>proc~integrate_baryon_mass_density~2&#45;&gt;constants</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M93.6956,-21.2109C84.8376,-19.9498 76.1564,-18.7138 68.1738,-17.5773"/>
-<polygon fill="#000000" stroke="#000000" points="68.5196,-14.0913 58.1261,-16.1468 67.5329,-21.0214 68.5196,-14.0913"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M99.82,-20.97C90.99,-19.78 82.36,-18.62 74.39,-17.55"/>
+<polygon fill="#000000" stroke="#000000" points="74.7,-14.06 64.32,-16.2 73.77,-21 74.7,-14.06"/>
 </g>
 </g>
 </svg>
@@ -317,49 +202,49 @@ module procedure integrate_baryon_mass_density <small>module procedure integrate
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+<!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: Graph Key Pages: 1 -->
-<svg width="490pt" height="32pt"
- viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="516pt" height="32pt"
+ viewBox="0.00 0.00 516.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>Graph Key</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 512,-28 512,4 -4,4"/>
 <!-- Module -->
 <g id="node1" class="node">
 <title>Module</title>
 <polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
-<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
 </g>
 <!-- Submodule -->
 <g id="node2" class="node">
 <title>Submodule</title>
-<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
-<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
 </g>
 <!-- Subroutine -->
 <g id="node3" class="node">
 <title>Subroutine</title>
-<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
-<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
 </g>
 <!-- Function -->
 <g id="node4" class="node">
 <title>Function</title>
-<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
-<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
 </g>
 <!-- Program -->
 <g id="node5" class="node">
 <title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
-<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="385.5,-24 328.5,-24 328.5,0 385.5,0 385.5,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
 </g>
 <!-- This Page&#39;s Entity -->
 <g id="node6" class="node">
 <title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
-<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+<polygon fill="none" stroke="black" points="508,-24 404,-24 404,0 508,0 508,-24"/>
+<text text-anchor="middle" x="456" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
 </g>
 </g>
 </svg>
@@ -371,30 +256,20 @@ module procedure integrate_baryon_mass_density <small>module procedure integrate
     </p>
     </div></div></div></div>
       </li>
-      
       </ul>
     </div>
-    
 
 
-    
     <p>Perform 3D integration over a spherical grid
   of the baryon mass density. Output baryon
   mass and radial mass profile.</p>
 <p>FT 19.02.2021</p>
 <hr>
-    
 
     <h3>Arguments</h3>
-    
     <em>None</em>
     <br>
-    
-    
-    
     <br>
-    
-    
     <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Calls</h3>
@@ -403,55 +278,55 @@ module procedure integrate_baryon_mass_density <small>module procedure integrate
   <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+<!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~integrate_baryon_mass_density~2~~CallsGraph Pages: 1 -->
-<svg id="procintegrate_baryon_mass_density2CallsGraph" width="302pt" height="116pt"
- viewBox="0.00 0.00 302.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg id="procintegrate_baryon_mass_density2CallsGraph" width="325pt" height="116pt"
+ viewBox="0.00 0.00 325.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="proc~~integrate_baryon_mass_density~2~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
 <title>proc~~integrate_baryon_mass_density~2~~CallsGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-112 298,-112 298,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 321,-112 321,4 -4,4"/>
 <!-- proc~integrate_baryon_mass_density~2 -->
 <g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_node1" class="node">
 <title>proc~integrate_baryon_mass_density~2</title>
-<polygon fill="none" stroke="#000000" points="165,-66 0,-66 0,-42 165,-42 165,-66"/>
-<text text-anchor="middle" x="82.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">integrate_baryon_mass_density</text>
-</g>
-<!-- mass_profile_idx -->
-<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_node2" class="node">
-<title>mass_profile_idx</title>
-<polygon fill="#777777" stroke="#777777" points="294,-108 201,-108 201,-84 294,-84 294,-108"/>
-<text text-anchor="middle" x="247.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mass_profile_idx</text>
-</g>
-<!-- proc~integrate_baryon_mass_density~2&#45;&gt;mass_profile_idx -->
-<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_edge1" class="edge">
-<title>proc~integrate_baryon_mass_density~2&#45;&gt;mass_profile_idx</title>
-<path fill="none" stroke="#000000" d="M129.7824,-66.0355C148.8453,-70.8879 170.9965,-76.5264 190.9071,-81.5945"/>
-<polygon fill="#000000" stroke="#000000" points="190.2268,-85.0329 200.7812,-84.1079 191.9536,-78.2492 190.2268,-85.0329"/>
+<polygon fill="none" stroke="black" points="181,-66 0,-66 0,-42 181,-42 181,-66"/>
+<text text-anchor="middle" x="90.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">integrate_baryon_mass_density</text>
 </g>
 <!-- indexx -->
-<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_node3" class="node">
+<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_node2" class="node">
 <title>indexx</title>
-<polygon fill="#777777" stroke="#777777" points="274.5,-66 220.5,-66 220.5,-42 274.5,-42 274.5,-66"/>
-<text text-anchor="middle" x="247.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">indexx</text>
+<polygon fill="#777777" stroke="#777777" points="294,-108 240,-108 240,-84 294,-84 294,-108"/>
+<text text-anchor="middle" x="267" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">indexx</text>
 </g>
 <!-- proc~integrate_baryon_mass_density~2&#45;&gt;indexx -->
-<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_edge2" class="edge">
+<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_edge1" class="edge">
 <title>proc~integrate_baryon_mass_density~2&#45;&gt;indexx</title>
-<path fill="none" stroke="#000000" d="M165.4834,-54C181.1874,-54 196.8681,-54 210.2492,-54"/>
-<polygon fill="#000000" stroke="#000000" points="210.4442,-57.5001 220.4441,-54 210.4441,-50.5001 210.4442,-57.5001"/>
+<path fill="none" stroke="#000000" d="M141.5,-66.04C169.65,-72.81 204.17,-81.12 229.71,-87.27"/>
+<polygon fill="#000000" stroke="#000000" points="229.18,-90.74 239.72,-89.67 230.81,-83.93 229.18,-90.74"/>
 </g>
 <!-- mass_profile -->
-<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_node4" class="node">
+<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_node3" class="node">
 <title>mass_profile</title>
-<polygon fill="#777777" stroke="#777777" points="284,-24 211,-24 211,0 284,0 284,-24"/>
-<text text-anchor="middle" x="247.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mass_profile</text>
+<polygon fill="#777777" stroke="#777777" points="306.5,-66 227.5,-66 227.5,-42 306.5,-42 306.5,-66"/>
+<text text-anchor="middle" x="267" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mass_profile</text>
 </g>
 <!-- proc~integrate_baryon_mass_density~2&#45;&gt;mass_profile -->
-<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_edge3" class="edge">
+<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_edge2" class="edge">
 <title>proc~integrate_baryon_mass_density~2&#45;&gt;mass_profile</title>
-<path fill="none" stroke="#000000" d="M129.7824,-41.9645C152.1619,-36.2679 178.7979,-29.4878 201.0679,-23.8191"/>
-<polygon fill="#000000" stroke="#000000" points="202.1344,-27.1593 210.9619,-21.3006 200.4076,-20.3756 202.1344,-27.1593"/>
+<path fill="none" stroke="#000000" d="M181.05,-54C193.48,-54 205.85,-54 217.14,-54"/>
+<polygon fill="#000000" stroke="#000000" points="217.18,-57.5 227.18,-54 217.18,-50.5 217.18,-57.5"/>
+</g>
+<!-- mass_profile_idx -->
+<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_node4" class="node">
+<title>mass_profile_idx</title>
+<polygon fill="#777777" stroke="#777777" points="317,-24 217,-24 217,0 317,0 317,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">mass_profile_idx</text>
+</g>
+<!-- proc~integrate_baryon_mass_density~2&#45;&gt;mass_profile_idx -->
+<g id="proc~~integrate_baryon_mass_density~2~~CallsGraph_edge3" class="edge">
+<title>proc~integrate_baryon_mass_density~2&#45;&gt;mass_profile_idx</title>
+<path fill="none" stroke="#000000" d="M141.5,-41.96C161.94,-37.05 185.72,-31.32 207,-26.2"/>
+<polygon fill="#000000" stroke="#000000" points="207.99,-29.56 216.89,-23.82 206.35,-22.76 207.99,-29.56"/>
 </g>
 </g>
 </svg>
@@ -460,49 +335,49 @@ module procedure integrate_baryon_mass_density <small>module procedure integrate
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+<!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: Graph Key Pages: 1 -->
-<svg width="560pt" height="32pt"
- viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="594pt" height="32pt"
+ viewBox="0.00 0.00 594.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>Graph Key</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 590,-28 590,4 -4,4"/>
 <!-- Subroutine -->
 <g id="node1" class="node">
 <title>Subroutine</title>
-<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
-<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
 </g>
 <!-- Function -->
 <g id="node2" class="node">
 <title>Function</title>
-<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
-<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
 </g>
 <!-- Interface -->
 <g id="node3" class="node">
 <title>Interface</title>
-<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
-<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
 </g>
 <!-- Unknown Procedure Type -->
 <g id="node4" class="node">
 <title>Unknown Procedure Type</title>
-<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
-<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+<polygon fill="#777777" stroke="#777777" points="388,-24 244,-24 244,0 388,0 388,-24"/>
+<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
 </g>
 <!-- Program -->
 <g id="node5" class="node">
 <title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
-<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="463.5,-24 406.5,-24 406.5,0 463.5,0 463.5,-24"/>
+<text text-anchor="middle" x="435" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
 </g>
 <!-- This Page&#39;s Entity -->
 <g id="node6" class="node">
 <title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
-<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+<polygon fill="none" stroke="black" points="586,-24 482,-24 482,0 586,0 586,-24"/>
+<text text-anchor="middle" x="534" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
 </g>
 </g>
 </svg>
@@ -516,256 +391,100 @@ module procedure integrate_baryon_mass_density <small>module procedure integrate
     </div></div></div></div>
       </div>
     </div>
-     
-     
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
+      <h3>Contents</h3>
  
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-baryon_density~27">baryon_density</a>
-      
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-baryon_density~46">baryon_density</a>
       <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-colat~2">colat</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-debug~9">debug</a>
-      
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-debug~10">debug</a>
       <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-g_xx~15">g_xx</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-gamma_euler~8">gamma_euler</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-long~3">long</a>
-      
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-gamma_euler~12">gamma_euler</a>
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-long~4">long</a>
       <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-mass_element~2">mass_element</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-phi~4">phi</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-r~4">r</a>
-      
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-phi~9">phi</a>
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-r~6">r</a>
       <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-rad_coord~3">rad_coord</a>
-      
       <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-sq_g~3">sq_g</a>
-      
-      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-th~4">th</a>
-      
+      <a class="list-group-item" href="../proc/integrate_baryon_mass_density~2.html#variable-th~5">th</a>
     </div>
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
 
-    
     <section>    
       <h2>Variables</h2>
-    
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th>
-
-<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-
-
-
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-baryon_density~27"></span>double precision,</td>
-  
-  <td>private</td>
-  <td></td><td>::</td>
+  <td><span class="anchor" id="variable-baryon_density~46"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
   <td><strong>baryon_density</strong></td><td></td><td></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-colat~2"></span>double precision,</td>
-  
-  <td>private</td>
-  <td></td><td>::</td>
+<td>private</td>  <td></td><td>::</td>
   <td><strong>colat</strong></td><td></td><td></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-debug~9"></span>logical,</td>
-  
-  <td>private,</td>
-  <td>parameter</td><td>::</td>
+  <td><span class="anchor" id="variable-debug~10"></span>logical,</td>
+<td>private,</td>  <td>parameter</td><td>::</td>
   <td><strong>debug</strong></td><td> =</td><td>.TRUE.</td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-g_xx~15"></span>double precision,</td>
-  
-  <td>private</td>
-  <td></td><td>::</td>
+<td>private</td>  <td></td><td>::</td>
   <td><strong>g_xx</strong></td><td></td><td></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-gamma_euler~8"></span>double precision,</td>
-  
-  <td>private</td>
-  <td></td><td>::</td>
+  <td><span class="anchor" id="variable-gamma_euler~12"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
   <td><strong>gamma_euler</strong></td><td></td><td></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-long~3"></span>double precision,</td>
-  
-  <td>private</td>
-  <td></td><td>::</td>
+  <td><span class="anchor" id="variable-long~4"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
   <td><strong>long</strong></td><td></td><td></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-mass_element~2"></span>double precision,</td>
-  
-  <td>private</td>
-  <td></td><td>::</td>
+<td>private</td>  <td></td><td>::</td>
   <td><strong>mass_element</strong></td><td></td><td></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-phi~4"></span>integer,</td>
-  
-  <td>private</td>
-  <td></td><td>::</td>
+  <td><span class="anchor" id="variable-phi~9"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
   <td><strong>phi</strong></td><td></td><td></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-r~4"></span>integer,</td>
-  
-  <td>private</td>
-  <td></td><td>::</td>
+  <td><span class="anchor" id="variable-r~6"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
   <td><strong>r</strong></td><td></td><td></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-rad_coord~3"></span>double precision,</td>
-  
-  <td>private</td>
-  <td></td><td>::</td>
+<td>private</td>  <td></td><td>::</td>
   <td><strong>rad_coord</strong></td><td></td><td></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-sq_g~3"></span>double precision,</td>
-  
-  <td>private</td>
-  <td></td><td>::</td>
+<td>private</td>  <td></td><td>::</td>
   <td><strong>sq_g</strong></td><td></td><td></td><td></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-th~4"></span>integer,</td>
-  
-  <td>private</td>
-  <td></td><td>::</td>
+  <td><span class="anchor" id="variable-th~5"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
   <td><strong>th</strong></td><td></td><td></td><td></td>
-  
 </tr>
-
 </tbody>
 </table>
 
@@ -773,40 +492,29 @@ module procedure integrate_baryon_mass_density <small>module procedure integrate
     <br>
     
     
-    
-    
-    
 
-    
-    
-    
     
     
 
 
-    
-    
     
     
     </div>
   </div>
-
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2022 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-14 16:41:50 
-            
-          </p>
+ on 2022-04-02 15:56:56           </p>
         </div>
       </div>
       <br>
@@ -833,14 +541,11 @@ module procedure integrate_baryon_mass_density <small>module procedure integrate
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>

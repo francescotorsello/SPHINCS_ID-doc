@@ -1,8 +1,27 @@
 ! File:         submodule_bns_base_access.f90
 ! Authors:      Francesco Torsello (FT)
-! Copyright:    GNU General Public License (GPLv3)
+!************************************************************************
+! Copyright (C) 2020, 2021, 2022 Francesco Torsello                     *
+!                                                                       *
+! This file is part of SPHINCS_ID                                       *
+!                                                                       *
+! SPHINCS_ID is free software: you can redistribute it and/or modify    *
+! it under the terms of the GNU General Public License as published by  *
+! the Free Software Foundation, either version 3 of the License, or     *
+! (at your option) any later version.                                   *
+!                                                                       *
+! SPHINCS_ID is distributed in the hope that it will be useful,         *
+! but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+! GNU General Public License for more details.                          *
+!                                                                       *
+! You should have received a copy of the GNU General Public License     *
+! along with SPHINCS_ID. If not, see <https://www.gnu.org/licenses/>.   *
+! The copy of the GNU General Public License should be in the file      *
+! 'COPYING'.                                                            *
+!************************************************************************
 
-SUBMODULE (bns_base) bns_base_access
+SUBMODULE (bns_base) access
 
   !***************************************************
   !
@@ -345,6 +364,25 @@ SUBMODULE (bns_base) bns_base_access
   END PROCEDURE get_adm_mass
 
 
+  MODULE PROCEDURE get_linear_momentum
+
+    !************************************************
+    !
+    !# Returns the linear momentum of the system
+    !
+    !  FT 04.02.2022
+    !
+    !************************************************
+
+    IMPLICIT NONE
+
+    get_linear_momentum= [ THIS% linear_momentum_x, &
+                           THIS% linear_momentum_y, &
+                           THIS% linear_momentum_z ]
+
+  END PROCEDURE get_linear_momentum
+
+
   MODULE PROCEDURE get_angular_momentum
 
     !************************************************
@@ -357,7 +395,9 @@ SUBMODULE (bns_base) bns_base_access
 
     IMPLICIT NONE
 
-    get_angular_momentum= THIS% angular_momentum
+    get_angular_momentum= [ THIS% angular_momentum_x, &
+                            THIS% angular_momentum_y, &
+                            THIS% angular_momentum_z ]
 
   END PROCEDURE get_angular_momentum
 
@@ -1312,4 +1352,4 @@ SUBMODULE (bns_base) bns_base_access
   END PROCEDURE get_logRho2_2
 
 
-END SUBMODULE bns_base_access
+END SUBMODULE access

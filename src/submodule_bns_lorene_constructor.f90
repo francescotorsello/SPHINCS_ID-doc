@@ -1,8 +1,27 @@
-! File:         submodule_bns_constructor.f90
+! File:         submodule_bnslorene_constructor.f90
 ! Authors:      Francesco Torsello (FT)
-! Copyright:    GNU General Public License (GPLv3)
+!************************************************************************
+! Copyright (C) 2020, 2021, 2022 Francesco Torsello                     *
+!                                                                       *
+! This file is part of SPHINCS_ID                                       *
+!                                                                       *
+! SPHINCS_ID is free software: you can redistribute it and/or modify    *
+! it under the terms of the GNU General Public License as published by  *
+! the Free Software Foundation, either version 3 of the License, or     *
+! (at your option) any later version.                                   *
+!                                                                       *
+! SPHINCS_ID is distributed in the hope that it will be useful,         *
+! but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+! GNU General Public License for more details.                          *
+!                                                                       *
+! You should have received a copy of the GNU General Public License     *
+! along with SPHINCS_ID. If not, see <https://www.gnu.org/licenses/>.   *
+! The copy of the GNU General Public License should be in the file      *
+! 'COPYING'.                                                            *
+!************************************************************************
 
-SUBMODULE (bns_lorene) bns_lorene_constructor
+SUBMODULE (bns_lorene) constructor
 
   !*********************************************************
   !
@@ -56,13 +75,16 @@ SUBMODULE (bns_lorene) bns_lorene_constructor
     !
     !****************************************************
 
+    USE constants, ONLY: ten, Msun_geo
+
     IMPLICIT NONE
 
     INTEGER, SAVE:: bns_counter= 1
 
-    !DOUBLE PRECISION:: tmp
+    DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE:: length_scale_pressure
 
     CALL derived_type% set_n_matter(2)
+    CALL derived_type% set_cold_system(.TRUE.)
 
     derived_type% construction_timer= timer( "binary_construction_timer" )
 
@@ -72,7 +94,6 @@ SUBMODULE (bns_lorene) bns_lorene_constructor
     ELSE
         CALL derived_type% construct_binary()
     ENDIF
-
     ! Import the parameters of the binary system
     CALL import_id_params( derived_type )
 
@@ -84,7 +105,38 @@ SUBMODULE (bns_lorene) bns_lorene_constructor
     CALL derived_type% set_one_lapse ( .FALSE. )
     CALL derived_type% set_zero_shift( .FALSE. )
 
-    !foo= derived_type
+    IF( derived_type% get_estimate_length_scale() )THEN
+
+      ALLOCATE( length_scale_pressure(derived_type% get_n_matter()) )
+      length_scale_pressure= derived_type% estimate_lengthscale_field( &
+                                                get_pressure, &
+                                                derived_type% get_n_matter() )
+
+      PRINT *, " * Minimum length scale to resolve on star 1, based on ", &
+               "pressure= ", length_scale_pressure(1)*Msun_geo*ten*ten*ten, "m"
+      PRINT *, " * Minimum length scale to resolve on star 2, based on ", &
+               "pressure= ", length_scale_pressure(1)*Msun_geo*ten*ten*ten, "m"
+      PRINT *
+
+    ENDIF
+
+    CONTAINS
+
+    FUNCTION get_pressure( x, y, z ) RESULT( val )
+    !! Returns the value of the pressure at the desired point
+
+      DOUBLE PRECISION, INTENT(IN):: x
+      !! \(x\) coordinate of the desired point
+      DOUBLE PRECISION, INTENT(IN):: y
+      !! \(y\) coordinate of the desired point
+      DOUBLE PRECISION, INTENT(IN):: z
+      !! \(z\) coordinate of the desired point
+      DOUBLE PRECISION:: val
+      !! Pressure at \((x,y,z)\)
+
+      val= derived_type% import_pressure( x, y, z )
+
+    END FUNCTION get_pressure
 
   END PROCEDURE construct_bnslorene
 
@@ -208,4 +260,4 @@ SUBMODULE (bns_lorene) bns_lorene_constructor
   END PROCEDURE destruct_binary
 
 
-END SUBMODULE bns_lorene_constructor
+END SUBMODULE constructor

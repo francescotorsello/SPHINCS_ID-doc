@@ -1,6 +1,25 @@
 ! File:         module_bns_lorene.f90
 ! Authors:      Francesco Torsello (FT)
-! Copyright:    GNU General Public License (GPLv3)
+!************************************************************************
+! Copyright (C) 2020, 2021, 2022 Francesco Torsello                     *
+!                                                                       *
+! This file is part of SPHINCS_ID                                       *
+!                                                                       *
+! SPHINCS_ID is free software: you can redistribute it and/or modify    *
+! it under the terms of the GNU General Public License as published by  *
+! the Free Software Foundation, either version 3 of the License, or     *
+! (at your option) any later version.                                   *
+!                                                                       *
+! SPHINCS_ID is distributed in the hope that it will be useful,         *
+! but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+! GNU General Public License for more details.                          *
+!                                                                       *
+! You should have received a copy of the GNU General Public License     *
+! along with SPHINCS_ID. If not, see <https://www.gnu.org/licenses/>.   *
+! The copy of the GNU General Public License should be in the file      *
+! 'COPYING'.                                                            *
+!************************************************************************
 
 MODULE bns_lorene
 
@@ -20,9 +39,9 @@ MODULE bns_lorene
                                          C_PTR, C_NULL_PTR, C_ASSOCIATED
   USE bns_base,                    ONLY: bnsbase
   USE id_base,                     ONLY: idbase
-  USE utility,                     ONLY: itr, ios, err_msg, test_status, &
+  USE utility,                     ONLY: itr, ios, err_msg, &
                                          perc, creturn, compute_g4, &
-                                         determinant_sym4x4_grid, show_progress
+                                         determinant_sym4x4, show_progress
   USE timing,                      ONLY: timer
 
 
@@ -38,7 +57,8 @@ MODULE bns_lorene
   !*******************************************************
 
   TYPE, EXTENDS(bnsbase):: bnslorene
-  !! TYPE representing a binary system of neutron stars (bns)
+  !# TYPE representing a binary system of neutron stars (|bns|) produced with
+  !  |lorene|
 
 
     PRIVATE
@@ -163,20 +183,25 @@ MODULE bns_lorene
     PROCEDURE:: read_id_mass_b    => import_id_mass_b
     PROCEDURE:: read_id_k         => import_id_k
 
+    PROCEDURE:: print_summary_derived => print_summary_bnslorene
 
     !-----------------!
     !--  FUNCTIONS  --!
     !-----------------!
 
-    !> Returns the |lorene|'s mass density at the given point
+    !> Returns the |lorene|'s mass density at the desired point
     PROCEDURE:: read_mass_density => import_mass_density
+
+    !> Returns the |lorene|'s pressure at the desired point
+    !PROCEDURE:: read_pressure => import_pressure
+    PROCEDURE:: import_pressure
 
     !> Returns the |lorene|'s conformally flat spatial ADM metric
     PROCEDURE:: import_spatial_metric
 
     !& Returns 1 if the energy density or the specific energy or the pressure
     !  are negative
-    PROCEDURE:: test_position => is_hydro_negative
+    PROCEDURE:: test_position => is_hydro_positive
 
     !PROCEDURE, NOPASS:: derived_type_constructor => construct_bnslorene2
 
@@ -281,6 +306,23 @@ MODULE bns_lorene
   !
   INTERFACE
 
+
+    !------------------------------!
+    !--  OVERRIDING SUBROUTINES  --!
+    !------------------------------!
+
+
+    MODULE SUBROUTINE print_summary_bnslorene( THIS, filename )
+    !# Prints a summary of the physical properties of the |bns| produced by
+    !  |lorene| to the standard output and, optionally, to a formatted file
+    !  whose name is given as the optional argument `filename`
+
+
+      CLASS(bnslorene), INTENT( IN ):: THIS
+      CHARACTER( LEN= * ), INTENT( INOUT ), OPTIONAL:: filename
+      !! Name of the formatted file to print the summary to
+
+    END SUBROUTINE print_summary_bnslorene
 
     !
     !-- SUBROUTINES
@@ -538,7 +580,7 @@ MODULE bns_lorene
 
 
     MODULE SUBROUTINE import_id_mass_b( THIS, x, y, z, &
-                                        g_xx, &
+                                        g, &
                                         baryon_density, &
                                         gamma_euler )
     !! Stores the hydro ID in the arrays needed to compute the baryon mass
@@ -547,10 +589,10 @@ MODULE bns_lorene
       CLASS(bnslorene),       INTENT( IN OUT ):: THIS
       DOUBLE PRECISION, INTENT( IN )    :: x
       DOUBLE PRECISION, INTENT( IN )    :: y
-      DOUBLE PRECISION, INTENT( IN)     :: z
-      DOUBLE PRECISION, INTENT( IN OUT ):: g_xx
-      DOUBLE PRECISION, INTENT( IN OUT ):: baryon_density
-      DOUBLE PRECISION, INTENT( IN OUT ):: gamma_euler
+      DOUBLE PRECISION, INTENT( IN )    :: z
+      DOUBLE PRECISION, DIMENSION(6), INTENT( OUT ):: g
+      DOUBLE PRECISION, INTENT( OUT ):: baryon_density
+      DOUBLE PRECISION, INTENT( OUT ):: gamma_euler
 
     END SUBROUTINE import_id_mass_b
 
@@ -596,6 +638,23 @@ MODULE bns_lorene
     END FUNCTION import_mass_density
 
 
+    MODULE FUNCTION import_pressure( THIS, x, y, z ) RESULT( res )
+    !! Returns the |lorene| pressure at a point \((x,y,z)\)
+
+      !> [[bnslorene]] object which this PROCEDURE is a member of
+      CLASS(bnslorene),     INTENT( IN )         :: THIS
+      !> \(x\) coordinate of the desired point
+      DOUBLE PRECISION, INTENT( IN ), VALUE:: x
+      !> \(y\) coordinate of the desired point
+      DOUBLE PRECISION, INTENT( IN ), VALUE:: y
+      !> \(z\) coordinate of the desired point
+      DOUBLE PRECISION, INTENT( IN ), VALUE:: z
+      !> Pressure at \((x,y,z)\)
+      DOUBLE PRECISION:: res
+
+    END FUNCTION import_pressure
+
+
     MODULE FUNCTION import_spatial_metric( THIS, x, y, z ) RESULT( res )
     !# Returns the |lorene| conformally flat spatial metric component
     !  \(g_{xx}=g_{yy}=g_{zz}\) at a point \((x,y,z)\)
@@ -614,7 +673,7 @@ MODULE bns_lorene
     END FUNCTION import_spatial_metric
 
 
-    MODULE FUNCTION is_hydro_negative( THIS, x, y, z ) RESULT( res )
+    MODULE FUNCTION is_hydro_positive( THIS, x, y, z ) RESULT( res )
     !# Returns 1 if the energy density or the specific energy or the pressure
     !  are negative, 0 otherwise
 
@@ -626,11 +685,11 @@ MODULE bns_lorene
       DOUBLE PRECISION, INTENT( IN ), VALUE:: y
       !> \(z\) coordinate of the desired point
       DOUBLE PRECISION, INTENT( IN ), VALUE:: z
-      !& 1 if the energy density or the specific energy or the pressure
-      !  are negative, 0 otherwise
-      INTEGER:: res
+      !& `.TRUE.` if the energy density or the specific energy or the pressure
+      !  are negative, `.FALSE.` otherwise
+      LOGICAL:: res
 
-    END FUNCTION is_hydro_negative
+    END FUNCTION is_hydro_positive
 
 
     MODULE FUNCTION get_field_array( THIS, field ) RESULT( field_array )
@@ -650,7 +709,7 @@ MODULE bns_lorene
     !! Returns the component n of the [[bnslorene]] member arrays named field
 
       !> [[bnslorene]] object which this PROCEDURE is a member of
-      CLASS(bnslorene),          INTENT( IN )             :: THIS
+      CLASS(bnslorene),    INTENT( IN )             :: THIS
       !> Name of the desired [[bnslorene]] member array
       CHARACTER( LEN= : ), INTENT( IN ), ALLOCATABLE:: field
       !> Component of the desired [[bnslorene]] member array
@@ -694,7 +753,7 @@ MODULE bns_lorene
     MODULE SUBROUTINE get_eos_parameters( THIS, i_matter, eos_params )
 
       !> [[bnslorene]] object which this PROCEDURE is a member of
-      CLASS(bnslorene), INTENT( IN OUT ):: THIS
+      CLASS(bnslorene), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       !! Index of the matter object whose parameter is to return
       DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE, INTENT(OUT):: eos_params
@@ -717,16 +776,16 @@ MODULE bns_lorene
   END INTERFACE
 
 
-  !------------------------------------------------------------------!
+  !---------------------------------------------------------------------!
   !--  PRIVATE interfaces to the methods of |lorene|'s class |binns|  --!
-  !------------------------------------------------------------------!
+  !---------------------------------------------------------------------!
 
 
   PRIVATE:: construct_bin_ns, get_lorene_id, get_lorene_id_spacetime, &
             get_lorene_id_particles, get_lorene_id_mass_b, &
             get_lorene_id_hydro, get_lorene_id_k, get_lorene_mass_density, &
-            get_lorene_spatial_metric, negative_hydro, get_lorene_id_params, &
-            destruct_bin_ns
+            get_lorene_pressure, get_lorene_spatial_metric, &
+            positive_hydro, get_lorene_id_params, destruct_bin_ns
 
 
   INTERFACE
@@ -1105,6 +1164,40 @@ MODULE bns_lorene
     END FUNCTION get_lorene_mass_density
 
 
+    FUNCTION get_lorene_pressure( optr, x, y, z ) RESULT( res ) &
+      BIND(C, NAME= "get_bns_pressure")
+
+      !********************************************
+      !
+      !# Interface to the |lorene| method of class
+      !  |binns| with the same name, that returns
+      !  the pressure \([\mathrm{kg}\,
+      !  c^2 \mathrm{m}^{-3}]\) from |lorene|,
+      !  at the specified point
+      !
+      !  FT 11.02.2022
+      !
+      !********************************************
+
+      IMPORT :: C_DOUBLE, C_PTR
+
+      IMPLICIT NONE
+
+      !> C pointer pointing to a |lorene| |binns| object
+      TYPE(C_PTR),    INTENT(IN),  VALUE :: optr
+      !> \(x\) coordinate of the desired point
+      REAL(C_DOUBLE), INTENT(IN),  VALUE :: x
+      !> \(y\) coordinate of the desired point
+      REAL(C_DOUBLE), INTENT(IN),  VALUE :: y
+      !> \(z\) coordinate of the desired point
+      REAL(C_DOUBLE), INTENT(IN),  VALUE :: z
+      !& Pressure \([\mathrm{kg}\,c^2\, \mathrm{m}^{-3}]\) at the desired
+      !  point \((x,y,z)\)
+      REAL(C_DOUBLE) :: res
+
+    END FUNCTION get_lorene_pressure
+
+
     FUNCTION get_lorene_spatial_metric( optr, x, y, z ) RESULT( res ) &
       BIND(C, NAME= "get_lorene_id_g")
 
@@ -1139,16 +1232,16 @@ MODULE bns_lorene
     END FUNCTION get_lorene_spatial_metric
 
 
-    FUNCTION negative_hydro( optr, x, y, z ) RESULT( res ) &
-      BIND(C, NAME= "negative_hydro")
+    FUNCTION positive_hydro( optr, x, y, z ) RESULT( res ) &
+      BIND(C, NAME= "is_hydro_positive")
 
       !************************************************
       !
       !# Interface to the |lorene| method of class
       !  |binns| with the same name, that returns 1
-      !  if the energy density is nonpositive,
-      !  or if the specific energy is nonpositive,
-      !  or if the pressure is nonpositive,
+      !  if the energy density is positive,
+      !  and if the specific energy is positive,
+      !  and if the pressure is positive,
       !  at the specified point; it returns 0 otherwise
       !
       !  FT 12.03.2021
@@ -1168,10 +1261,10 @@ MODULE bns_lorene
       !> \(z\) coordinate of the desired point
       REAL(C_DOUBLE), INTENT(IN),  VALUE :: z
       !& 1 if the energy density or the specific energy or the pressure
-      !  are negative, 0 otherwise
+      !  are positve, 0 otherwise
       INTEGER(C_INT) :: res
 
-    END FUNCTION negative_hydro
+    END FUNCTION positive_hydro
 
 
     SUBROUTINE get_lorene_id_params( optr, &
@@ -1183,7 +1276,12 @@ MODULE bns_lorene
                                      mass_grav1, &
                                      mass_grav2, &
                                      adm_mass, &
-                                     angular_momentum, &
+                                     linear_momentum_x, &
+                                     linear_momentum_y, &
+                                     linear_momentum_z, &
+                                     angular_momentum_x, &
+                                     angular_momentum_y, &
+                                     angular_momentum_z, &
                                      area_radius1, &
                                      radius1_x_comp, &
                                      radius1_y, &
@@ -1271,7 +1369,12 @@ MODULE bns_lorene
       REAL(C_DOUBLE), INTENT(OUT)       :: mass_grav1
       REAL(C_DOUBLE), INTENT(OUT)       :: mass_grav2
       REAL(C_DOUBLE), INTENT(OUT)       :: adm_mass
-      REAL(C_DOUBLE), INTENT(OUT)       :: angular_momentum
+      REAL(C_DOUBLE), INTENT(OUT)       :: linear_momentum_x
+      REAL(C_DOUBLE), INTENT(OUT)       :: linear_momentum_y
+      REAL(C_DOUBLE), INTENT(OUT)       :: linear_momentum_z
+      REAL(C_DOUBLE), INTENT(OUT)       :: angular_momentum_x
+      REAL(C_DOUBLE), INTENT(OUT)       :: angular_momentum_y
+      REAL(C_DOUBLE), INTENT(OUT)       :: angular_momentum_z
       REAL(C_DOUBLE), INTENT(OUT)       :: area_radius1
       REAL(C_DOUBLE), INTENT(OUT)       :: radius1_x_comp
       REAL(C_DOUBLE), INTENT(OUT)       :: radius1_y

@@ -1,13 +1,32 @@
-! File:         submodule_bns_methods.f90
+! File:         submodule_bnslorene_import.f90
 ! Authors:      Francesco Torsello (FT)
-! Copyright:    GNU General Public License (GPLv3)
+!************************************************************************
+! Copyright (C) 2020, 2021, 2022 Francesco Torsello                     *
+!                                                                       *
+! This file is part of SPHINCS_ID                                       *
+!                                                                       *
+! SPHINCS_ID is free software: you can redistribute it and/or modify    *
+! it under the terms of the GNU General Public License as published by  *
+! the Free Software Foundation, either version 3 of the License, or     *
+! (at your option) any later version.                                   *
+!                                                                       *
+! SPHINCS_ID is distributed in the hope that it will be useful,         *
+! but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+! GNU General Public License for more details.                          *
+!                                                                       *
+! You should have received a copy of the GNU General Public License     *
+! along with SPHINCS_ID. If not, see <https://www.gnu.org/licenses/>.   *
+! The copy of the GNU General Public License should be in the file      *
+! 'COPYING'.                                                            *
+!************************************************************************
 
-SUBMODULE (bns_lorene) bns_lorene_import
+SUBMODULE (bns_lorene) import
 
   !****************************************************
   !
-  !# Implementation of the methods of TYPE bns that
-  !  import BNS data using |lorene|
+  !# Implementation of the methods of TYPE bnslorene that
+  !  import |bns| data using |lorene|
   !
   !  FT 23.10.2020
   !
@@ -81,8 +100,8 @@ SUBMODULE (bns_lorene) bns_lorene_import
         import_id_loop: DO itr= 1, n, 1
 
           ! The coordinates need to be converted from |sphincs| units (Msun_geo)
-          ! to |lorene| units (\(\mathrm{km}\)). See MODULE constants for the definition of
-          ! Msun_geo
+          ! to |lorene| units (\(\mathrm{km}\)). See MODULE constants for the
+          ! definition of Msun_geo
           CALL get_lorene_id( THIS% bns_ptr, &
                               x( itr )*Msun_geo, &
                               y( itr )*Msun_geo, &
@@ -299,8 +318,7 @@ SUBMODULE (bns_lorene) bns_lorene_import
 
     USE constants, ONLY: Msun_geo
 
-    USE tensor,    ONLY: itt, itx, ity, itz, ixx, ixy, &
-                         ixz, iyy, iyz, izz, jxx, jxy, jxz, &
+    USE tensor,    ONLY: jxx, jxy, jxz, &
                          jyy, jyz, jzz, jx, jy, jz, n_sym4x4
 
     IMPLICIT NONE
@@ -419,9 +437,10 @@ SUBMODULE (bns_lorene) bns_lorene_import
               STOP
             ENDIF
 
-            CALL compute_g4( i, j, k, lapse, shift, g, g4 )
+            CALL compute_g4( lapse(i,j,k), shift(i,j,k,:), &
+                             g(i,j,k,:), g4(i,j,k,:) )
 
-            CALL determinant_sym4x4_grid( i, j, k, g4, detg4 )
+            CALL determinant_sym4x4( g4(i,j,k,:), detg4 )
 
             IF( ABS( detg4 ) < 1D-10 )THEN
               PRINT *, "The determinant of the spacetime metric "&
@@ -545,7 +564,7 @@ SUBMODULE (bns_lorene) bns_lorene_import
     !
     !****************************************************
 
-    USE constants, ONLY: Msun_geo
+    USE constants, ONLY: Msun_geo, km2m, g2kg, amu
 
     IMPLICIT NONE
 
@@ -649,6 +668,10 @@ SUBMODULE (bns_lorene) bns_lorene_import
       ENDDO
       IF( show_progress ) WRITE( *, "(A1)", ADVANCE= "NO" ) creturn
 
+      ! Convert the baryon density and pressure to units of amu (SPH code units)
+      baryon_density= baryon_density*((Msun_geo*km2m)**3)/(amu*g2kg)
+      pressure      = pressure*((Msun_geo*km2m)**3)/(amu*g2kg)
+
       PRINT *, "** Subroutine import_id_particles executed."
       PRINT *
 
@@ -671,21 +694,28 @@ SUBMODULE (bns_lorene) bns_lorene_import
     !****************************************************
 
     USE constants, ONLY: Msun_geo, lorene2hydrobase
+    USE tensor,    ONLY: jxx, jxy, jxz, jyy, jyz, jzz
 
     IMPLICIT NONE
 
     IF ( C_ASSOCIATED( THIS% bns_ptr ) ) THEN
 
       ! The coordinates need to be converted from |sphincs| units (Msun_geo)
-      ! to |lorene| units (\(\mathrm{km}\)). See MODULE constants for the definition of
-      ! Msun_geo
+      ! to |lorene| units (\(\mathrm{km}\)).
+      ! See MODULE constants for the definition of Msun_geo
       CALL get_lorene_id_mass_b( THIS% bns_ptr, &
                                     x*Msun_geo, &
                                     y*Msun_geo, &
                                     z*Msun_geo, &
-                                    g_xx, &
+                                    g(jxx), &
                                     baryon_density, &
                                     gamma_euler )
+
+      g(jxy)= 0.0D0
+      g(jxz)= 0.0D0
+      g(jyy)= g(jxx)
+      g(jyz)= 0.0D0
+      g(jzz)= g(jxx)
 
       baryon_density= baryon_density*lorene2hydrobase
 
@@ -790,16 +820,16 @@ SUBMODULE (bns_lorene) bns_lorene_import
     !
     !***********************************************
 
-    USE, INTRINSIC :: ISO_C_BINDING, ONLY: C_ASSOCIATED
-    USE constants,                   ONLY: Msun_geo, lorene2hydrobase
+    USE, INTRINSIC:: ISO_C_BINDING, ONLY: C_ASSOCIATED
+    USE constants,                  ONLY: Msun_geo, lorene2hydrobase
 
     IMPLICIT NONE
 
     IF ( C_ASSOCIATED( THIS% bns_ptr ) )THEN
 
       ! The coordinates need to be converted from |sphincs| units (Msun_geo)
-      ! to |lorene| units (\(\mathrm{km}\)). See MODULE constants for the definition of
-      ! Msun_geo
+      ! to |lorene| units (\(\mathrm{km}\)). See MODULE constants for the
+      ! definition of Msun_geo
       res= get_lorene_mass_density( THIS% bns_ptr, &
                                     x*Msun_geo, &
                                     y*Msun_geo, &
@@ -808,6 +838,38 @@ SUBMODULE (bns_lorene) bns_lorene_import
     ENDIF
 
   END PROCEDURE import_mass_density
+
+
+  MODULE PROCEDURE import_pressure
+
+    !***********************************************
+    !
+    !# Returns the |lorene| pressure at the point
+    !  given as argument, in units of
+    !  \([\mathrm{kg}\,c^2\, \mathrm{m}^{-3}]\).
+    !
+    !  FT 11.02.2022
+    !
+    !***********************************************
+
+    USE, INTRINSIC:: ISO_C_BINDING, ONLY: C_ASSOCIATED
+    USE constants,                  ONLY: Msun_geo
+
+    IMPLICIT NONE
+
+    IF ( C_ASSOCIATED( THIS% bns_ptr ) )THEN
+
+      ! The coordinates need to be converted from |sphincs| units (Msun_geo)
+      ! to |lorene| units (\(\mathrm{km}\)). See MODULE constants for the
+      ! definition of Msun_geo
+      res= get_lorene_pressure( THIS% bns_ptr, &
+                                x*Msun_geo, &
+                                y*Msun_geo, &
+                                z*Msun_geo )
+
+    ENDIF
+
+  END PROCEDURE import_pressure
 
 
   MODULE PROCEDURE import_spatial_metric
@@ -842,14 +904,14 @@ SUBMODULE (bns_lorene) bns_lorene_import
   END PROCEDURE import_spatial_metric
 
 
-  MODULE PROCEDURE is_hydro_negative
+  MODULE PROCEDURE is_hydro_positive
 
     !************************************************
     !
-    !# Return 1 if the energy density is nonpositive
+    !# Return .FALSE. if the energy density is nonpositive
     !  or if the specific energy is nonpositive,
     !  or if the pressure is nonpositive
-    !  at the specified point
+    !  at the specified point; .TRUE. otherwise
     !
     !  FT 12.03.2021
     !
@@ -860,19 +922,26 @@ SUBMODULE (bns_lorene) bns_lorene_import
 
     IMPLICIT NONE
 
+    INTEGER:: tmp
+
     IF ( C_ASSOCIATED( THIS% bns_ptr ) )THEN
 
       ! The coordinates need to be converted from |sphincs| units (Msun_geo)
-      ! to |lorene| units (\(\mathrm{km}\)). See MODULE constants for the definition of
-      ! Msun_geo
-      res= negative_hydro( THIS% bns_ptr, &
-                                    x*Msun_geo, &
-                                    y*Msun_geo, &
-                                    z*Msun_geo )
+      ! to |lorene| units (\(\mathrm{km}\)). See MODULE constants for the
+      ! definition  of Msun_geo
+      tmp= positive_hydro( THIS% bns_ptr, x*Msun_geo, &
+                                          y*Msun_geo, &
+                                          z*Msun_geo )
+
+      IF( tmp == 1 )THEN
+        res= .TRUE.
+      ELSE
+        res= .FALSE.
+      ENDIF
 
     ENDIF
 
-  END PROCEDURE is_hydro_negative
+  END PROCEDURE is_hydro_positive
 
 
-END SUBMODULE bns_lorene_import
+END SUBMODULE import

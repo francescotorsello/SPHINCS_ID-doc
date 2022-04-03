@@ -1,0 +1,523 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Figure caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state 'BBKF(DD2-SF) quark-hadron model RDF 1.8 (with electrons)' from the \texttt{CompOSE} database. The solution was computed with \texttt{LORENE} and the \texttt{CompOSE} software, and the particles were placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>test_recovery &ndash; SPHINCS_ID</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href='../page/index.html'>More</a></li>
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../lists/modules.html">Modules</a></li>
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+            <li><a href="../lists/programs.html">Programs</a></li>
+       
+            </ul>
+        
+            </li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+          </ul>
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>test_recovery
+   <small>Interface</small>
+    </h1>
+    <div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.3% of total for procedures.">189 statements</a>
+     </li> 
+    <li><i class="fa fa-code"></i><a href="../src/module_sph_particles.f90"> Source File</a></li>
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+     <li><a href='../sourcefile/module_sph_particles.f90.html'>module_sph_particles.f90</a></li>
+     <li><a href='../module/sph_particles.html'>sph_particles</a></li>
+     <li class="active">test_recovery</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    <div id="sidebar">
+  <h3>Contents</h3>
+ 
+<em>None</em>
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2>interface</h2>
+      
+      <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: interface~~test_recovery~~CallsGraph Pages: 1 -->
+<svg id="interfacetest_recoveryCallsGraph" width="426pt" height="536pt"
+ viewBox="0.00 0.00 426.00 536.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="interface~~test_recovery~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 532)">
+<title>interface~~test_recovery~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-532 422,-532 422,4 -4,4"/>
+<!-- interface~test_recovery -->
+<g id="interface~~test_recovery~~CallsGraph_node1" class="node">
+<title>interface~test_recovery</title>
+<polygon fill="none" stroke="black" points="84,-276 0,-276 0,-252 84,-252 84,-276"/>
+<text text-anchor="middle" x="42" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50">test_recovery</text>
+</g>
+<!-- proc~test_recovery -->
+<g id="interface~~test_recovery~~CallsGraph_node2" class="node">
+<title>proc~test_recovery</title>
+<g id="a_interface~~test_recovery~~CallsGraph_node2"><a xlink:href=".././proc/test_recovery.html" xlink:title="test_recovery">
+<polygon fill="#d9534f" stroke="#d9534f" points="204,-276 120,-276 120,-252 204,-252 204,-276"/>
+<text text-anchor="middle" x="162" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_recovery</text>
+</a>
+</g>
+</g>
+<!-- interface~test_recovery&#45;&gt;proc~test_recovery -->
+<g id="interface~~test_recovery~~CallsGraph_edge1" class="edge">
+<title>interface~test_recovery&#45;&gt;proc~test_recovery</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M84.27,-264C92.49,-264 101.22,-264 109.73,-264"/>
+<polygon fill="#000000" stroke="#000000" points="109.95,-267.5 119.95,-264 109.95,-260.5 109.95,-267.5"/>
+</g>
+<!-- u_fb -->
+<g id="interface~~test_recovery~~CallsGraph_node3" class="node">
+<title>u_fb</title>
+<polygon fill="#777777" stroke="#777777" points="356,-528 302,-528 302,-504 356,-504 356,-528"/>
+<text text-anchor="middle" x="329" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">u_fb</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;u_fb -->
+<g id="interface~~test_recovery~~CallsGraph_edge2" class="edge">
+<title>proc~test_recovery&#45;&gt;u_fb</title>
+<path fill="none" stroke="#000000" d="M163.17,-276.21C164.39,-314.65 173.61,-434.18 240,-495 253.94,-507.77 274.23,-513.18 291.81,-515.32"/>
+<polygon fill="#000000" stroke="#000000" points="291.51,-518.8 301.78,-516.23 292.14,-511.83 291.51,-518.8"/>
+</g>
+<!-- proc~determinant_sym4x4 -->
+<g id="interface~~test_recovery~~CallsGraph_node4" class="node">
+<title>proc~determinant_sym4x4</title>
+<g id="a_interface~~test_recovery~~CallsGraph_node4"><a xlink:href=".././proc/determinant_sym4x4.html" xlink:title="determinant_sym4x4">
+<polygon fill="#d9534f" stroke="#d9534f" points="391.5,-486 266.5,-486 266.5,-462 391.5,-462 391.5,-486"/>
+<text text-anchor="middle" x="329" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym4x4</text>
+</a>
+</g>
+</g>
+<!-- proc~test_recovery&#45;&gt;proc~determinant_sym4x4 -->
+<g id="interface~~test_recovery~~CallsGraph_edge3" class="edge">
+<title>proc~test_recovery&#45;&gt;proc~determinant_sym4x4</title>
+<path fill="none" stroke="#000000" d="M164.21,-276.38C168.19,-310.24 184.07,-405.01 240,-453 244.93,-457.23 250.56,-460.64 256.54,-463.38"/>
+<polygon fill="#000000" stroke="#000000" points="255.58,-466.77 266.17,-467.18 258.15,-460.26 255.58,-466.77"/>
+</g>
+<!-- cs_fb -->
+<g id="interface~~test_recovery~~CallsGraph_node5" class="node">
+<title>cs_fb</title>
+<polygon fill="#777777" stroke="#777777" points="356,-444 302,-444 302,-420 356,-420 356,-444"/>
+<text text-anchor="middle" x="329" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cs_fb</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;cs_fb -->
+<g id="interface~~test_recovery~~CallsGraph_edge4" class="edge">
+<title>proc~test_recovery&#45;&gt;cs_fb</title>
+<path fill="none" stroke="#000000" d="M165.7,-276.09C172.68,-304.4 194.07,-375.26 240,-411 254.58,-422.34 274.33,-427.7 291.43,-430.17"/>
+<polygon fill="#000000" stroke="#000000" points="291.32,-433.68 301.66,-431.36 292.14,-426.73 291.32,-433.68"/>
+</g>
+<!-- theta_fb -->
+<g id="interface~~test_recovery~~CallsGraph_node6" class="node">
+<title>theta_fb</title>
+<polygon fill="#777777" stroke="#777777" points="357,-402 301,-402 301,-378 357,-378 357,-402"/>
+<text text-anchor="middle" x="329" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">theta_fb</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;theta_fb -->
+<g id="interface~~test_recovery~~CallsGraph_edge5" class="edge">
+<title>proc~test_recovery&#45;&gt;theta_fb</title>
+<path fill="none" stroke="#000000" d="M168.41,-276.25C178.87,-298.42 204.03,-345.12 240,-369 254.95,-378.93 274.09,-384.18 290.7,-386.95"/>
+<polygon fill="#000000" stroke="#000000" points="290.26,-390.42 300.66,-388.37 291.25,-383.49 290.26,-390.42"/>
+</g>
+<!-- phys_2_cons -->
+<g id="interface~~test_recovery~~CallsGraph_node7" class="node">
+<title>phys_2_cons</title>
+<polygon fill="#777777" stroke="#777777" points="368.5,-360 289.5,-360 289.5,-336 368.5,-336 368.5,-360"/>
+<text text-anchor="middle" x="329" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">phys_2_cons</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;phys_2_cons -->
+<g id="interface~~test_recovery~~CallsGraph_edge6" class="edge">
+<title>proc~test_recovery&#45;&gt;phys_2_cons</title>
+<path fill="none" stroke="#000000" d="M174.32,-276.14C188.37,-290.46 213.69,-313.96 240,-327 252.22,-333.06 266.28,-337.42 279.53,-340.54"/>
+<polygon fill="#000000" stroke="#000000" points="278.94,-344 289.45,-342.7 280.42,-337.16 278.94,-344"/>
+</g>
+<!-- vel_u_fb -->
+<g id="interface~~test_recovery~~CallsGraph_node8" class="node">
+<title>vel_u_fb</title>
+<polygon fill="#777777" stroke="#777777" points="357,-318 301,-318 301,-294 357,-294 357,-318"/>
+<text text-anchor="middle" x="329" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">vel_u_fb</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;vel_u_fb -->
+<g id="interface~~test_recovery~~CallsGraph_edge7" class="edge">
+<title>proc~test_recovery&#45;&gt;vel_u_fb</title>
+<path fill="none" stroke="#000000" d="M204.1,-275.47C215.69,-278.63 228.32,-282.01 240,-285 256.73,-289.28 275.31,-293.75 291.08,-297.47"/>
+<polygon fill="#000000" stroke="#000000" points="290.45,-300.91 300.98,-299.79 292.05,-294.1 290.45,-300.91"/>
+</g>
+<!-- pr_fb -->
+<g id="interface~~test_recovery~~CallsGraph_node9" class="node">
+<title>pr_fb</title>
+<polygon fill="#777777" stroke="#777777" points="356,-276 302,-276 302,-252 356,-252 356,-276"/>
+<text text-anchor="middle" x="329" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pr_fb</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;pr_fb -->
+<g id="interface~~test_recovery~~CallsGraph_edge8" class="edge">
+<title>proc~test_recovery&#45;&gt;pr_fb</title>
+<path fill="none" stroke="#000000" d="M204.21,-264C231.06,-264 265.76,-264 291.59,-264"/>
+<polygon fill="#000000" stroke="#000000" points="291.72,-267.5 301.72,-264 291.72,-260.5 291.72,-267.5"/>
+</g>
+<!-- cons_2_phys -->
+<g id="interface~~test_recovery~~CallsGraph_node10" class="node">
+<title>cons_2_phys</title>
+<polygon fill="#777777" stroke="#777777" points="368.5,-234 289.5,-234 289.5,-210 368.5,-210 368.5,-234"/>
+<text text-anchor="middle" x="329" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cons_2_phys</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;cons_2_phys -->
+<g id="interface~~test_recovery~~CallsGraph_edge9" class="edge">
+<title>proc~test_recovery&#45;&gt;cons_2_phys</title>
+<path fill="none" stroke="#000000" d="M204.1,-252.53C215.69,-249.37 228.32,-245.99 240,-243 252.73,-239.75 266.53,-236.38 279.35,-233.32"/>
+<polygon fill="#000000" stroke="#000000" points="280.46,-236.65 289.38,-230.93 278.84,-229.84 280.46,-236.65"/>
+</g>
+<!-- allocate_metric_on_particles -->
+<g id="interface~~test_recovery~~CallsGraph_node11" class="node">
+<title>allocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="411.5,-192 246.5,-192 246.5,-168 411.5,-168 411.5,-192"/>
+<text text-anchor="middle" x="329" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_metric_on_particles</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;allocate_metric_on_particles -->
+<g id="interface~~test_recovery~~CallsGraph_edge10" class="edge">
+<title>proc~test_recovery&#45;&gt;allocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M174.32,-251.86C188.37,-237.54 213.69,-214.04 240,-201 244.07,-198.98 248.34,-197.16 252.72,-195.5"/>
+<polygon fill="#000000" stroke="#000000" points="254.12,-198.72 262.43,-192.14 251.83,-192.1 254.12,-198.72"/>
+</g>
+<!-- g4_ll -->
+<g id="interface~~test_recovery~~CallsGraph_node12" class="node">
+<title>g4_ll</title>
+<polygon fill="#777777" stroke="#777777" points="356,-150 302,-150 302,-126 356,-126 356,-150"/>
+<text text-anchor="middle" x="329" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">g4_ll</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;g4_ll -->
+<g id="interface~~test_recovery~~CallsGraph_edge11" class="edge">
+<title>proc~test_recovery&#45;&gt;g4_ll</title>
+<path fill="none" stroke="#000000" d="M168.41,-251.75C178.87,-229.58 204.03,-182.88 240,-159 255.28,-148.86 274.93,-143.6 291.78,-140.88"/>
+<polygon fill="#000000" stroke="#000000" points="292.42,-144.32 301.85,-139.49 291.47,-137.39 292.42,-144.32"/>
+</g>
+<!-- nlrf_fb -->
+<g id="interface~~test_recovery~~CallsGraph_node13" class="node">
+<title>nlrf_fb</title>
+<polygon fill="#777777" stroke="#777777" points="356,-108 302,-108 302,-84 356,-84 356,-108"/>
+<text text-anchor="middle" x="329" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nlrf_fb</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;nlrf_fb -->
+<g id="interface~~test_recovery~~CallsGraph_edge12" class="edge">
+<title>proc~test_recovery&#45;&gt;nlrf_fb</title>
+<path fill="none" stroke="#000000" d="M165.7,-251.91C172.68,-223.6 194.07,-152.74 240,-117 254.58,-105.66 274.33,-100.3 291.43,-97.83"/>
+<polygon fill="#000000" stroke="#000000" points="292.14,-101.27 301.66,-96.64 291.32,-94.32 292.14,-101.27"/>
+</g>
+<!-- deallocate_metric_on_particles -->
+<g id="interface~~test_recovery~~CallsGraph_node14" class="node">
+<title>deallocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="418,-66 240,-66 240,-42 418,-42 418,-66"/>
+<text text-anchor="middle" x="329" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_metric_on_particles</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;deallocate_metric_on_particles -->
+<g id="interface~~test_recovery~~CallsGraph_edge13" class="edge">
+<title>proc~test_recovery&#45;&gt;deallocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M164.21,-251.62C168.19,-217.76 184.07,-122.99 240,-75 241.52,-73.7 243.11,-72.47 244.75,-71.32"/>
+<polygon fill="#000000" stroke="#000000" points="246.61,-74.28 253.39,-66.14 243.01,-68.28 246.61,-74.28"/>
+</g>
+<!-- proc~compute_g4 -->
+<g id="interface~~test_recovery~~CallsGraph_node15" class="node">
+<title>proc~compute_g4</title>
+<g id="a_interface~~test_recovery~~CallsGraph_node15"><a xlink:href=".././proc/compute_g4.html" xlink:title="compute_g4">
+<polygon fill="#d9534f" stroke="#d9534f" points="368.5,-24 289.5,-24 289.5,0 368.5,0 368.5,-24"/>
+<text text-anchor="middle" x="329" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_g4</text>
+</a>
+</g>
+</g>
+<!-- proc~test_recovery&#45;&gt;proc~compute_g4 -->
+<g id="interface~~test_recovery~~CallsGraph_edge14" class="edge">
+<title>proc~test_recovery&#45;&gt;proc~compute_g4</title>
+<path fill="none" stroke="#000000" d="M163.17,-251.79C164.39,-213.35 173.61,-93.82 240,-33 250.72,-23.18 265.19,-17.72 279.29,-14.74"/>
+<polygon fill="#000000" stroke="#000000" points="280.18,-18.14 289.44,-12.99 278.99,-11.24 280.18,-18.14"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="594pt" height="32pt"
+ viewBox="0.00 0.00 594.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 590,-28 590,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="388,-24 244,-24 244,0 388,0 388,-24"/>
+<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="463.5,-24 406.5,-24 406.5,0 463.5,0 463.5,-24"/>
+<text text-anchor="middle" x="435" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="586,-24 482,-24 482,0 586,0 586,-24"/>
+<text text-anchor="middle" x="534" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    <br>
+      <h2>public module module subroutine test_recovery(this, npart, pos, nlrf, u, pr, vel_u, theta, nstar, namefile)   <a href='../proc/test_recovery.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h2>
+
+    
+
+    <h3>Arguments</h3>
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-this~54"></span>class(<a href='../type/particles.html'>particles</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td><p><a href="../type/particles.html">particles</a> object which this PROCEDURE is a member of</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-npart~9"></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>npart</strong></td><td><p>Particle number</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-pos~15"></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(3,npart)</td><td>::</td>
+  <td><strong>pos</strong></td><td><p>Particle positions</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nlrf~3"></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>nlrf</strong></td><td><p>Baryon density in the local rest frame on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-u~2"></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>u</strong></td><td><p>Specific internal energy on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-pr"></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>pr</strong></td><td><p>Pressure on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-vel_u"></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(3,npart)</td><td>::</td>
+  <td><strong>vel_u</strong></td><td><p>Spatial velocity in the computing frame on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-theta~3"></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>theta</strong></td><td><p>Generalized Lorentz factor on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nstar~3"></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>nstar</strong></td><td><p>Proper baryon density in the local rest frame on the particles</p>
+<p>Canonical momentum on the particles</p>
+<p>Canonical energy on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-namefile~11"></span>character(len=*),</td>
+<td>intent(inout),</td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td><p>Name of the formatted file where the data is printed</p></td>
+</tr>
+</tbody>
+</table>
+
+    <h3>Description</h3>
+    <p>Tests the recovery. Computes the conserved variables from the physical
+ ones, and then the physical ones from the conserved ones. It then
+ compares the variables computed with the recovery PROCEDURES, with
+ those computed with \(\texttt{SPHINCS_ID}\). </p><div class="alert alert-success" role="alert"><h4>Todo</h4><p>add reference for recovery</p></div>
+    <br>
+
+ </div>
+</div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2022 
+</p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2022-04-02 15:56:56           </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+  </body>
+</html>

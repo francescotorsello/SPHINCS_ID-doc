@@ -1,8 +1,27 @@
 ! File:         submodule_diffstar_base_io.f90
 ! Authors:      Francesco Torsello (FT)
-! Copyright:    GNU General Public License (GPLv3)
+!************************************************************************
+! Copyright (C) 2020, 2021, 2022 Francesco Torsello                     *
+!                                                                       *
+! This file is part of SPHINCS_ID                                       *
+!                                                                       *
+! SPHINCS_ID is free software: you can redistribute it and/or modify    *
+! it under the terms of the GNU General Public License as published by  *
+! the Free Software Foundation, either version 3 of the License, or     *
+! (at your option) any later version.                                   *
+!                                                                       *
+! SPHINCS_ID is distributed in the hope that it will be useful,         *
+! but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+! GNU General Public License for more details.                          *
+!                                                                       *
+! You should have received a copy of the GNU General Public License     *
+! along with SPHINCS_ID. If not, see <https://www.gnu.org/licenses/>.   *
+! The copy of the GNU General Public License should be in the file      *
+! 'COPYING'.                                                            *
+!************************************************************************
 
-SUBMODULE (diffstar_base) diffstar_base_io
+SUBMODULE (diffstar_base) io
 
   !***************************************************
   !
@@ -37,7 +56,7 @@ SUBMODULE (diffstar_base) diffstar_base_io
     !
     !************************************************
 
-    USE constants,      ONLY: lorene2hydrobase, MSun_geo, kg2g, m2cm
+    USE constants,      ONLY: lorene2hydrobase, kg2g, m2cm
 
     IMPLICIT NONE
 
@@ -64,9 +83,23 @@ SUBMODULE (diffstar_base) diffstar_base_io
                  THIS% rho_center, "Msun/Msun_geo**3= ", &
                  THIS% rho_center/lorene2hydrobase*kg2g/(m2cm**3), "g cm^{-3}"
     PRINT *
+    PRINT *, "   Ratio T/|W| between the rotaional kinetic energy and ", &
+             "the gravitational binding energy: ", THIS% tsw
+    PRINT *, "   For axisymmetric configurations as this one, the ", &
+             "threshold for dynamical bar-mode instability is T/|W|~0.25 ", &
+             " [Masaru Shibata et al 2000 ApJ 542 453, ", &
+             "https://arxiv.org/pdf/astro-ph/0005378.pdf]. See also ", &
+             "[Manca et al., Classical and Quantum Gravity, 24, 171, ", &
+             "https://arxiv.org/abs/0705.1826], ", &
+             "Sec.3.3 in [Galeazzi et al., Astron Astrophys 541:A156, ", &
+             "arXiv:1101.2664], and Sec.5.1.3 in ", &
+             "[Paschalidis, V., Stergioulas, N., Rotating stars in ", &
+             "relativity. Living Rev Relativ 20, 7 (2017), ", &
+             "https://link.springer.com/article/10.1007%2Fs41114-017-0008-x]."
+    PRINT *
 
 
   END PROCEDURE print_summary_drs
 
 
-END SUBMODULE diffstar_base_io
+END SUBMODULE io

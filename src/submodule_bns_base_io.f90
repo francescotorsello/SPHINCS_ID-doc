@@ -1,8 +1,27 @@
 ! File:         submodule_bns_base_io.f90
 ! Authors:      Francesco Torsello (FT)
-! Copyright:    GNU General Public License (GPLv3)
+!************************************************************************
+! Copyright (C) 2020, 2021, 2022 Francesco Torsello                     *
+!                                                                       *
+! This file is part of SPHINCS_ID                                       *
+!                                                                       *
+! SPHINCS_ID is free software: you can redistribute it and/or modify    *
+! it under the terms of the GNU General Public License as published by  *
+! the Free Software Foundation, either version 3 of the License, or     *
+! (at your option) any later version.                                   *
+!                                                                       *
+! SPHINCS_ID is distributed in the hope that it will be useful,         *
+! but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+! GNU General Public License for more details.                          *
+!                                                                       *
+! You should have received a copy of the GNU General Public License     *
+! along with SPHINCS_ID. If not, see <https://www.gnu.org/licenses/>.   *
+! The copy of the GNU General Public License should be in the file      *
+! 'COPYING'.                                                            *
+!************************************************************************
 
-SUBMODULE (bns_base) bns_base_io
+SUBMODULE (bns_base) io
 
   !***************************************************
   !
@@ -25,11 +44,11 @@ SUBMODULE (bns_base) bns_base_io
   !------------------------------!
 
 
-  MODULE PROCEDURE print_summary_bns
+  MODULE PROCEDURE print_summary_bnsbase
 
     !************************************************
     !
-    !# Prints a summary of the physical properties the system
+    !# Prints a summary of the physical properties the |bns| system
     !  to the standard output and, optionally, to a formatted
     !  file whose name is given as the optional argument `filename`
     !
@@ -37,7 +56,7 @@ SUBMODULE (bns_base) bns_base_io
     !
     !************************************************
 
-    USE constants,      ONLY: lorene2hydrobase, MSun_geo, kg2g, m2cm
+    USE constants,      ONLY: lorene2hydrobase, kg2g, m2cm
 
     IMPLICIT NONE
 
@@ -84,8 +103,10 @@ SUBMODULE (bns_base) bns_base_io
                  /lorene2hydrobase*kg2g/(m2cm**3), "g cm^{-3}"
     PRINT *
 
+    CALL THIS% print_summary_derived( filename )
 
-  END PROCEDURE print_summary_bns
+
+  END PROCEDURE print_summary_bnsbase
 
 
-END SUBMODULE bns_base_io
+END SUBMODULE io

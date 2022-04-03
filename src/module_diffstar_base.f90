@@ -1,6 +1,25 @@
 ! File:         module_diffstar_base.f90
 ! Authors:      Francesco Torsello (FT)
-! Copyright:    GNU General Public License (GPLv3)
+!************************************************************************
+! Copyright (C) 2020, 2021, 2022 Francesco Torsello                     *
+!                                                                       *
+! This file is part of SPHINCS_ID                                       *
+!                                                                       *
+! SPHINCS_ID is free software: you can redistribute it and/or modify    *
+! it under the terms of the GNU General Public License as published by  *
+! the Free Software Foundation, either version 3 of the License, or     *
+! (at your option) any later version.                                   *
+!                                                                       *
+! SPHINCS_ID is distributed in the hope that it will be useful,         *
+! but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+! GNU General Public License for more details.                          *
+!                                                                       *
+! You should have received a copy of the GNU General Public License     *
+! along with SPHINCS_ID. If not, see <https://www.gnu.org/licenses/>.   *
+! The copy of the GNU General Public License should be in the file      *
+! 'COPYING'.                                                            *
+!************************************************************************
 
 MODULE diffstar_base
 
@@ -15,7 +34,7 @@ MODULE diffstar_base
   !  PROCEDURES and variables shared by all the types
   !  of DRS ID should belong to TYPE diffstarbase, as
   !  they are inherited by its EXTENDED TYPES that
-  !  represent more specific typesof DRS ID.
+  !  represent more specific types of DRS ID.
   !
   !  FT 22.10.2021
   !
@@ -59,10 +78,16 @@ MODULE diffstar_base
     !! Angular momentum of the DRS \([G M_\odot^2/c]\)
 
     DOUBLE PRECISION:: tsw
-    !# Ratio between the kinetic and gravitatial potential energy \(T/W\).
+    !# Ratio between the rotational kinetic and gravitatial potential energy
+    !  \(T/|W|\).
     !
     !  See Section 6 in
     !  [Gourgoulhon et al, Astron.Astrophys.349:851,1999](https://arxiv.org/abs/astro-ph/9907225v1){:target="_blank"}
+    !
+    !  For axisymmetric configurations as those considered here, the
+    !  threshold for dynamical bar-mode instability is \(T/|W|\sim 0.25\)
+    !  [[Masaru Shibata et al 2000 ApJ 542 453](https://arxiv.org/pdf/astro-ph/0005378.pdf){:target="_blank"}].
+    !  See also [Manca et al., Classical and Quantum Gravity, 24, 171](https://arxiv.org/abs/0705.1826){:target="_blank"}, Sec.3.3 in [Galeazzi et al., Astron Astrophys 541:A156](https://arxiv.org/abs/1101.2664){:target="_blank"}, and Sec.5.1.3 in [Paschalidis, V., Stergioulas, N., _Rotating stars in relativity_. Living Rev Relativ 20, 7 (2017)](https://link.springer.com/article/10.1007%2Fs41114-017-0008-x){:target="_blank"}.
 
     DOUBLE PRECISION:: grv2
     !# Error on the virial identity \({\rm GRV2}\).
@@ -239,17 +264,19 @@ MODULE diffstar_base
     !--  SUBROUTINES  --!
     !-------------------!
 
+
     PROCEDURE(get_eos_id_int), DEFERRED:: get_eos_id
     !! Returns an integer that identifies the equation of state
-
-    !PROCEDURE:: integrate_field_on_star => integrate_baryon_mass_density
-    !# Integrates the baryon mass density over the starand computes the radial
-    !  mass profile
 
 
     !-----------------!
     !--  FUNCTIONS  --!
     !-----------------!
+
+
+    !
+    !-- FUNCTIONS that access PRIVATE member variables
+    !
 
     PROCEDURE:: return_mass                 => get_mass
     PROCEDURE:: return_center               => get_center
@@ -376,36 +403,6 @@ MODULE diffstar_base
   INTERFACE
 
 
- !   MODULE SUBROUTINE integrate_baryon_mass_density( THIS, center, radius, &
- !                                                    central_density, &
- !                                                    dr, dth, dphi, &
- !                                                    mass, mass_profile, &
- !                                                    mass_profile_idx )
- !   !# Integrates the |lorene| baryon mass density to compute the radial mass
- !   !  profile. TODO: Improve integration algorithm.
- !
- !     !> [[diffstarbase]] object which this PROCEDURE is a member of
- !     CLASS(diffstarbase), INTENT( IN OUT )      :: THIS
- !     !& Array to store the indices for array mass_profile, sorted so that
- !     !  mass_profile[mass_profile_idx] is in increasing order
- !     INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT ):: mass_profile_idx
- !     !> Center of the star
- !     DOUBLE PRECISION, INTENT( IN )    :: center
- !     !> Central density of the star
- !     DOUBLE PRECISION, INTENT( IN )    :: central_density
- !     !> Radius of the star
- !     DOUBLE PRECISION, INTENT( IN )    :: radius
- !     !> Integration steps
- !     DOUBLE PRECISION, INTENT( IN )    :: dr, dth, dphi
- !     !> Integrated mass of the star
- !     DOUBLE PRECISION, INTENT( IN OUT ):: mass
- !     !> Array storing the radial mass profile of the star
- !     DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE, INTENT( IN OUT ):: &
- !                                      mass_profile
- !
- !   END SUBROUTINE integrate_baryon_mass_density
-
-
     !------------------------------!
     !--  OVERRIDING SUBROUTINES  --!
     !------------------------------!
@@ -417,7 +414,7 @@ MODULE diffstar_base
     !  is given as the optional argument `filename`
 
 
-      CLASS(diffstarbase), INTENT( IN OUT ):: THIS
+      CLASS(diffstarbase), INTENT( IN ):: THIS
       CHARACTER( LEN= * ), INTENT( INOUT ), OPTIONAL:: filename
       !! Name of the formatted file to print the summary to
 
@@ -433,7 +430,7 @@ MODULE diffstar_base
     !! Returns [[diffstarbase:mass]]
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
-      CLASS(diffstarbase), INTENT( IN OUT ):: THIS
+      CLASS(diffstarbase), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       ! Result
       DOUBLE PRECISION:: get_mass
@@ -444,7 +441,7 @@ MODULE diffstar_base
     MODULE FUNCTION get_center( THIS, i_matter )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
-      CLASS(diffstarbase), INTENT( IN OUT ):: THIS
+      CLASS(diffstarbase), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       !! Index of the matter object whose parameter is to return
       DOUBLE PRECISION, DIMENSION(3):: get_center
@@ -455,7 +452,7 @@ MODULE diffstar_base
     MODULE FUNCTION get_barycenter( THIS, i_matter )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
-      CLASS(diffstarbase), INTENT( IN OUT ):: THIS
+      CLASS(diffstarbase), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       !! Index of the matter object whose parameter is to return
       DOUBLE PRECISION, DIMENSION(3):: get_barycenter
@@ -466,7 +463,7 @@ MODULE diffstar_base
     MODULE FUNCTION get_radii( THIS, i_matter )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
-      CLASS(diffstarbase), INTENT( IN OUT ):: THIS
+      CLASS(diffstarbase), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       !! Index of the matter object whose string is to return
       DOUBLE PRECISION, DIMENSION(6):: get_radii
@@ -477,7 +474,7 @@ MODULE diffstar_base
     MODULE FUNCTION get_eos( THIS, i_matter )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
-      CLASS(diffstarbase), INTENT( IN OUT ):: THIS
+      CLASS(diffstarbase), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       !! Index of the matter object whose string is to return
       CHARACTER( LEN= : ), ALLOCATABLE:: get_eos
@@ -490,7 +487,7 @@ MODULE diffstar_base
     !-----------------!
 
 
-    MODULE FUNCTION get_gamma( THIS )
+    MODULE PURE FUNCTION get_gamma( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -500,7 +497,7 @@ MODULE diffstar_base
     END FUNCTION get_gamma
 
 
-    MODULE FUNCTION get_kappa( THIS )
+    MODULE PURE FUNCTION get_kappa( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -510,7 +507,7 @@ MODULE diffstar_base
     END FUNCTION get_kappa
 
 
-    MODULE FUNCTION get_omega_c( THIS )
+    MODULE PURE FUNCTION get_omega_c( THIS )
     !! Returns [[diffstarbase:omega_c]]
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
@@ -521,7 +518,7 @@ MODULE diffstar_base
     END FUNCTION get_omega_c
 
 
-    MODULE FUNCTION get_mass_grav( THIS )
+    MODULE PURE FUNCTION get_mass_grav( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -531,7 +528,7 @@ MODULE diffstar_base
     END FUNCTION get_mass_grav
 
 
-    MODULE FUNCTION get_angular_momentum( THIS )
+    MODULE PURE FUNCTION get_angular_momentum( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -541,7 +538,7 @@ MODULE diffstar_base
     END FUNCTION get_angular_momentum
 
 
-    MODULE FUNCTION get_tsw( THIS )
+    MODULE PURE FUNCTION get_tsw( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -551,7 +548,7 @@ MODULE diffstar_base
     END FUNCTION get_tsw
 
 
-    MODULE FUNCTION get_grv2( THIS )
+    MODULE PURE FUNCTION get_grv2( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -561,7 +558,7 @@ MODULE diffstar_base
     END FUNCTION get_grv2
 
 
-    MODULE FUNCTION get_grv3( THIS )
+    MODULE PURE FUNCTION get_grv3( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -571,7 +568,7 @@ MODULE diffstar_base
     END FUNCTION get_grv3
 
 
-    MODULE FUNCTION get_r_circ( THIS )
+    MODULE PURE FUNCTION get_r_circ( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -581,7 +578,7 @@ MODULE diffstar_base
     END FUNCTION get_r_circ
 
 
-    MODULE FUNCTION get_r_mean( THIS )
+    MODULE PURE FUNCTION get_r_mean( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -591,7 +588,7 @@ MODULE diffstar_base
     END FUNCTION get_r_mean
 
 
-    MODULE FUNCTION get_r_eq( THIS )
+    MODULE PURE FUNCTION get_r_eq( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -601,7 +598,7 @@ MODULE diffstar_base
     END FUNCTION get_r_eq
 
 
-    MODULE FUNCTION get_r_eq_pi2( THIS )
+    MODULE PURE FUNCTION get_r_eq_pi2( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -611,7 +608,7 @@ MODULE diffstar_base
     END FUNCTION get_r_eq_pi2
 
 
-    MODULE FUNCTION get_r_eq_pi( THIS )
+    MODULE PURE FUNCTION get_r_eq_pi( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -621,7 +618,7 @@ MODULE diffstar_base
     END FUNCTION get_r_eq_pi
 
 
-    MODULE FUNCTION get_r_eq_3pi2( THIS )
+    MODULE PURE FUNCTION get_r_eq_3pi2( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -631,7 +628,7 @@ MODULE diffstar_base
     END FUNCTION get_r_eq_3pi2
 
 
-    MODULE FUNCTION get_r_pole( THIS )
+    MODULE PURE FUNCTION get_r_pole( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -641,7 +638,7 @@ MODULE diffstar_base
     END FUNCTION get_r_pole
 
 
-    MODULE FUNCTION get_r_ratio( THIS )
+    MODULE PURE FUNCTION get_r_ratio( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -651,7 +648,7 @@ MODULE diffstar_base
     END FUNCTION get_r_ratio
 
 
-    MODULE FUNCTION get_r_isco( THIS )
+    MODULE PURE FUNCTION get_r_isco( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -661,7 +658,7 @@ MODULE diffstar_base
     END FUNCTION get_r_isco
 
 
-    MODULE FUNCTION get_f_isco( THIS )
+    MODULE PURE FUNCTION get_f_isco( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -671,7 +668,7 @@ MODULE diffstar_base
     END FUNCTION get_f_isco
 
 
-    MODULE FUNCTION get_specific_energy_isco( THIS )
+    MODULE PURE FUNCTION get_specific_energy_isco( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -681,7 +678,7 @@ MODULE diffstar_base
     END FUNCTION get_specific_energy_isco
 
 
-    MODULE FUNCTION get_specific_angular_momentum_isco( THIS )
+    MODULE PURE FUNCTION get_specific_angular_momentum_isco( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -691,7 +688,7 @@ MODULE diffstar_base
     END FUNCTION get_specific_angular_momentum_isco
 
 
-    MODULE FUNCTION get_surface_area( THIS )
+    MODULE PURE FUNCTION get_surface_area( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -701,7 +698,7 @@ MODULE diffstar_base
     END FUNCTION get_surface_area
 
 
-    MODULE FUNCTION get_area_radius( THIS )
+    MODULE PURE FUNCTION get_area_radius( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -711,7 +708,7 @@ MODULE diffstar_base
     END FUNCTION get_area_radius
 
 
-    MODULE FUNCTION get_ent_center( THIS )
+    MODULE PURE FUNCTION get_ent_center( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -721,7 +718,7 @@ MODULE diffstar_base
     END FUNCTION get_ent_center
 
 
-    MODULE FUNCTION get_nbar_center( THIS )
+    MODULE PURE FUNCTION get_nbar_center( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -731,7 +728,7 @@ MODULE diffstar_base
     END FUNCTION get_nbar_center
 
 
-    MODULE FUNCTION get_rho_center( THIS )
+    MODULE PURE FUNCTION get_rho_center( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -741,7 +738,7 @@ MODULE diffstar_base
     END FUNCTION get_rho_center
 
 
-    MODULE FUNCTION get_energy_density_center( THIS )
+    MODULE PURE FUNCTION get_energy_density_center( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -751,7 +748,7 @@ MODULE diffstar_base
     END FUNCTION get_energy_density_center
 
 
-    MODULE FUNCTION get_specific_energy_center( THIS )
+    MODULE PURE FUNCTION get_specific_energy_center( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -761,7 +758,7 @@ MODULE diffstar_base
     END FUNCTION get_specific_energy_center
 
 
-    MODULE FUNCTION get_pressure_center( THIS )
+    MODULE PURE FUNCTION get_pressure_center( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -771,7 +768,7 @@ MODULE diffstar_base
     END FUNCTION get_pressure_center
 
 
-    MODULE FUNCTION get_npeos( THIS )
+    MODULE PURE FUNCTION get_npeos( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -781,7 +778,7 @@ MODULE diffstar_base
     END FUNCTION get_npeos
 
 
-    MODULE FUNCTION get_gamma0( THIS )
+    MODULE PURE FUNCTION get_gamma0( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -791,7 +788,7 @@ MODULE diffstar_base
     END FUNCTION get_gamma0
 
 
-    MODULE FUNCTION get_gamma1( THIS )
+    MODULE PURE FUNCTION get_gamma1( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -801,7 +798,7 @@ MODULE diffstar_base
     END FUNCTION get_gamma1
 
 
-    MODULE FUNCTION get_gamma2( THIS )
+    MODULE PURE FUNCTION get_gamma2( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -811,7 +808,7 @@ MODULE diffstar_base
     END FUNCTION get_gamma2
 
 
-    MODULE FUNCTION get_gamma3( THIS )
+    MODULE PURE FUNCTION get_gamma3( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -821,7 +818,7 @@ MODULE diffstar_base
     END FUNCTION get_gamma3
 
 
-    MODULE FUNCTION get_kappa0( THIS )
+    MODULE PURE FUNCTION get_kappa0( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -831,7 +828,7 @@ MODULE diffstar_base
     END FUNCTION get_kappa0
 
 
-    MODULE FUNCTION get_kappa1( THIS )
+    MODULE PURE FUNCTION get_kappa1( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -841,7 +838,7 @@ MODULE diffstar_base
     END FUNCTION get_kappa1
 
 
-    MODULE FUNCTION get_kappa2( THIS )
+    MODULE PURE FUNCTION get_kappa2( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -851,7 +848,7 @@ MODULE diffstar_base
     END FUNCTION get_kappa2
 
 
-    MODULE FUNCTION get_kappa3( THIS )
+    MODULE PURE FUNCTION get_kappa3( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -861,7 +858,7 @@ MODULE diffstar_base
     END FUNCTION get_kappa3
 
 
-    MODULE FUNCTION get_logP1( THIS )
+    MODULE PURE FUNCTION get_logP1( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -871,7 +868,7 @@ MODULE diffstar_base
     END FUNCTION get_logP1
 
 
-    MODULE FUNCTION get_logRho0( THIS )
+    MODULE PURE FUNCTION get_logRho0( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -881,7 +878,7 @@ MODULE diffstar_base
     END FUNCTION get_logRho0
 
 
-    MODULE FUNCTION get_logRho1( THIS )
+    MODULE PURE FUNCTION get_logRho1( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS
@@ -891,7 +888,7 @@ MODULE diffstar_base
     END FUNCTION get_logRho1
 
 
-    MODULE FUNCTION get_logRho2( THIS )
+    MODULE PURE FUNCTION get_logRho2( THIS )
 
       !> [[diffstarbase]] object which this PROCEDURE is a member of
       CLASS(diffstarbase), INTENT( IN ):: THIS

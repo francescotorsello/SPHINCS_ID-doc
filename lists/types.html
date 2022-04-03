@@ -4,24 +4,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Image caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state DD2-SF RDF 1.8 from the CompOSE database. The solution was computed with \texttt{LORENE}, and the particles placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
-    
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Figure caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state 'BBKF(DD2-SF) quark-hadron model RDF 1.8 (with electrons)' from the \texttt{CompOSE} database. The solution was computed with \texttt{LORENE} and the \texttt{CompOSE} software, and the particles were placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
     <meta name="author" content="Francesco Torsello" >
     <link rel="icon" href="../favicon.png">
 
-    <title>
-All Types &ndash; SPHINCS_ID
+    <title>All Types &ndash; SPHINCS_ID
 </title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -50,64 +44,30 @@ All Types &ndash; SPHINCS_ID
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li><a href='../page/index.html'>More</a></li>
-      
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../lists/files.html">Source Files</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-        
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
             <li><a href="../lists/programs.html">Programs</a></li>
-               
-        
-        
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
-
-
-
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -116,13 +76,11 @@ All Types &ndash; SPHINCS_ID
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
       <div class="row">
         <div class="col-lg-12" id='text'>
 			 <h1>Derived Types</h1>
@@ -130,288 +88,357 @@ All Types &ndash; SPHINCS_ID
 			 <thead>
 			 <tr><th>Type</th><th>Location</th><th>Extends</th><th>Description</th></tr>
 			 </thead><tbody>
-			 
-			   <tr><td><a href='../type/bnsbase.html'>bnsbase</a></td><td><a href='../module/bns_base.html'>bns_base</a></td><td><a href='../type/idbase.html'>idbase</a></td><td><p>Represents a generic BNS ID for \(\texttt{SPHINCS_BSSN}\) (produced with LORENE, or with
- \(\texttt{FUKA}\), etc.; or produced with the same tool, but read in different ways,
- for example by linking to the LORENE library, or reading the ID from
+			   <tr><td><a href='../type/apm_fields.html'>apm_fields</a></td><td><a href='../module/apm.html'>apm</a></td><td>None</td><td><p>Data structure containing the fields used during the APM iteration</p></td></tr>
+			   <tr><td><a href='../type/bnsbase.html'>bnsbase</a></td><td><a href='../module/bns_base.html'>bns_base</a></td><td><a href='../type/idbase.html'>idbase</a></td><td><p>ABSTRACT Base TYPE for BNS ID for \(\texttt{SPHINCS_BSSN}\) (produced with \(\texttt{LORENE}\), or
+ with \(\texttt{FUKA}\), etc.; or produced with the same tool, but read in different
+ ways, for example by linking to the LORENE library, or reading the ID from
  a lattice, etc.)</p></td></tr>
-			 
-			   <tr><td><a href='../type/bnslorene.html'>bnslorene</a></td><td><a href='../module/bns_lorene.html'>bns_lorene</a></td><td><a href='../type/bnsbase.html'>bnsbase</a></td><td><p>TYPE representing a binary system of neutron stars (bns)</p></td></tr>
-			 
-			   <tr><td><a href='../type/bssn_id.html'>bssn_id</a></td><td><a href='../module/formul_bssn_id.html'>formul_bssn_id</a></td><td><a href='../type/formul_3p1.html'>formul_3p1</a></td><td></td></tr>
-			 
+			   <tr><td><a href='../type/bnsfuka.html'>bnsfuka</a></td><td><a href='../module/bns_fuka.html'>bns_fuka</a></td><td><a href='../type/bnsbase.html'>bnsbase</a></td><td><p>TYPE representing a binary system of neutron stars (\(\mathrm{BNS}\)) produced with
+ \(\texttt{FUKA}\)</p></td></tr>
+			   <tr><td><a href='../type/bnslorene.html'>bnslorene</a></td><td><a href='../module/bns_lorene.html'>bns_lorene</a></td><td><a href='../type/bnsbase.html'>bnsbase</a></td><td><p>TYPE representing a binary system of neutron stars (\(\mathrm{BNS}\)) produced with
+ \(\texttt{LORENE}\)</p></td></tr>
+			   <tr><td><a href='../type/bssn.html'>bssn</a></td><td><a href='../module/bssn_formulation.html'>bssn_formulation</a></td><td><a href='../type/tpo.html'>tpo</a></td><td><p>TYPE representing the \(\mathrm{ID}\) for the \(\mathrm{BSSNOK}\) formulation
+ of the Einstein equations</p></td></tr>
 			   <tr><td><a href='../type/diffstarbase.html'>diffstarbase</a></td><td><a href='../module/diffstar_base.html'>diffstar_base</a></td><td><a href='../type/idbase.html'>idbase</a></td><td><p>Base TYPE for DRS ID for \(\texttt{SPHINCS_BSSN}\) (produced with \(\texttt{LORENE}\), or with
  \(\texttt{FUKA}\), etc.; or produced with the same tool, but read in different ways,
  for example by linking to the \(\texttt{LORENE}\) library, or reading the ID from
  a lattice, etc.)</p></td></tr>
-			 
 			   <tr><td><a href='../type/diffstarlorene.html'>diffstarlorene</a></td><td><a href='../module/diffstar_lorene.html'>diffstar_lorene</a></td><td><a href='../type/diffstarbase.html'>diffstarbase</a></td><td><p>TYPE representing a differentially rotating star (DRS)</p></td></tr>
-			 
-			   <tr><td><a href='../type/eos.html'>eos</a></td><td><a href='../module/particles_id.html'>particles_id</a></td><td>None</td><td><p>Data structure representing an \(\mathrm{EOS}\)</p></td></tr>
-			 
-			   <tr><td><a href='../type/formul_3p1.html'>formul_3p1</a></td><td><a href='../module/formul_3p1_id.html'>formul_3p1_id</a></td><td>None</td><td><p>ABSTRACT TYPE representing a generic 3+1 formulation of the Einsten
- equations</p></td></tr>
-			 
+			   <tr><td><a href='../type/ejecta.html'>ejecta</a></td><td><a href='../module/ejecta_generic.html'>ejecta_generic</a></td><td><a href='../type/idbase.html'>idbase</a></td><td><p>TYPE for \(\mathrm{ID}\) for \(\texttt{SPHINCS_BSSN}\) prepared on a Cartesian, uniform grid</p></td></tr>
+			   <tr><td><a href='../type/eos.html'>eos</a></td><td><a href='../module/sph_particles.html'>sph_particles</a></td><td>None</td><td><p>Data structure representing an \(\mathrm{EOS}\)</p></td></tr>
 			   <tr><td><a href='../type/id.html'>id</a></td><td><a href='../program/sphincs_id.html'>sphincs_id</a></td><td>None</td><td></td></tr>
-			 
 			   <tr><td><a href='../type/idbase.html'>idbase</a></td><td><a href='../module/id_base.html'>id_base</a></td><td>None</td><td><p>Represents a generic \(\mathrm{ID}\) for \(\texttt{SPHINCS_BSSN}\) (binary neutron star, rotating
  star, etc.)</p></td></tr>
-			 
-			   <tr><td><a href='../type/particles.html'>particles</a></td><td><a href='../module/particles_id.html'>particles_id</a></td><td>None</td><td><p>TYPE representing a \(\mathrm{SPH}\) particle distribution</p></td></tr>
-			 
+			   <tr><td><a href='../type/lorentz_boost.html'>lorentz_boost</a></td><td><a href='../module/lorentz_group.html'>lorentz_group</a></td><td>None</td><td></td></tr>
+			   <tr><td><a href='../type/lorentz_transformation.html'>lorentz_transformation</a></td><td><a href='../module/lorentz_group.html'>lorentz_group</a></td><td>None</td><td></td></tr>
+			   <tr><td><a href='../type/particles.html'>particles</a></td><td><a href='../module/sph_particles.html'>sph_particles</a></td><td>None</td><td><p>TYPE representing a \(\mathrm{SPH}\) particle distribution</p></td></tr>
+			   <tr><td><a href='../type/spatial_rotation.html'>spatial_rotation</a></td><td><a href='../module/lorentz_group.html'>lorentz_group</a></td><td>None</td><td></td></tr>
+			   <tr><td><a href='../type/tpo.html'>tpo</a></td><td><a href='../module/standard_tpo_formulation.html'>standard_tpo_formulation</a></td><td>None</td><td><p>ABSTRACT TYPE representing a generic <script type="math/tex">3+1</script> formulation of the Einstein equations</p></td></tr>
 			 </tbody></table>
              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+<!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: type~~graph~~TypeGraph Pages: 1 -->
-<svg id="typegraphTypeGraph" width="855pt" height="338pt"
- viewBox="0.00 0.00 855.00 338.07" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="type~~graph~~TypeGraph" class="graph" transform="scale(.8341 .8341) rotate(0) translate(4 401.2831)">
+<svg id="typegraphTypeGraph" width="855pt" height="392pt"
+ viewBox="0.00 0.00 855.00 391.67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~graph~~TypeGraph" class="graph" transform="scale(1.41 1.41) rotate(0) translate(4 548)">
 <title>type~~graph~~TypeGraph</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-401.2831 1021,-401.2831 1021,4 -4,4"/>
-<!-- type~eos -->
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-548 1201,-548 1201,4 -4,4"/>
+<!-- type~bnsbase -->
 <g id="type~~graph~~TypeGraph_node1" class="node">
-<title>type~eos</title>
-<g id="a_type~~graph~~TypeGraph_node1"><a xlink:href=".././type/eos.html" xlink:title="eos">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-222.2831 27.5,-222.2831 27.5,-198.2831 81.5,-198.2831 81.5,-222.2831"/>
-<text text-anchor="middle" x="54.5" y="-207.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">eos</text>
-</a>
-</g>
-</g>
-<!-- type~id -->
-<g id="type~~graph~~TypeGraph_node2" class="node">
-<title>type~id</title>
-<g id="a_type~~graph~~TypeGraph_node2"><a xlink:href=".././type/id.html" xlink:title="id">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="853,-313.2831 799,-313.2831 799,-289.2831 853,-289.2831 853,-313.2831"/>
-<text text-anchor="middle" x="826" y="-298.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">id</text>
+<title>type~bnsbase</title>
+<g id="a_type~~graph~~TypeGraph_node1"><a xlink:href=".././type/bnsbase.html" xlink:title="bnsbase">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="966.5,-296 909.5,-296 909.5,-272 966.5,-272 966.5,-296"/>
+<text text-anchor="middle" x="938" y="-281.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">bnsbase</text>
 </a>
 </g>
 </g>
 <!-- type~idbase -->
-<g id="type~~graph~~TypeGraph_node6" class="node">
-<title>type~idbase</title>
-<g id="a_type~~graph~~TypeGraph_node6"><a xlink:href=".././type/idbase.html" xlink:title="idbase">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="648,-313.2831 594,-313.2831 594,-289.2831 648,-289.2831 648,-313.2831"/>
-<text text-anchor="middle" x="621" y="-298.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">idbase</text>
-</a>
-</g>
-</g>
-<!-- type~id&#45;&gt;type~idbase -->
-<g id="type~~graph~~TypeGraph_edge1" class="edge">
-<title>type~id&#45;&gt;type~idbase</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M798.7776,-301.2831C762.6081,-301.2831 698.5672,-301.2831 658.0272,-301.2831"/>
-<polygon fill="#000000" stroke="#000000" points="658.0085,-297.7832 648.0085,-301.2831 658.0085,-304.7832 658.0085,-297.7832"/>
-<text text-anchor="middle" x="763" y="-303.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">idata</text>
-</g>
-<!-- type~bssn_id -->
-<g id="type~~graph~~TypeGraph_node3" class="node">
-<title>type~bssn_id</title>
-<g id="a_type~~graph~~TypeGraph_node3"><a xlink:href=".././type/bssn_id.html" xlink:title="bssn_id">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="853,-78.2831 799,-78.2831 799,-54.2831 853,-54.2831 853,-78.2831"/>
-<text text-anchor="middle" x="826" y="-63.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bssn_id</text>
-</a>
-</g>
-</g>
-<!-- type~formul_3p1 -->
 <g id="type~~graph~~TypeGraph_node4" class="node">
-<title>type~formul_3p1</title>
-<g id="a_type~~graph~~TypeGraph_node4"><a xlink:href=".././type/formul_3p1.html" xlink:title="formul_3p1">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="654.5,-121.2831 587.5,-121.2831 587.5,-97.2831 654.5,-97.2831 654.5,-121.2831"/>
-<text text-anchor="middle" x="621" y="-106.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">formul_3p1</text>
+<title>type~idbase</title>
+<g id="a_type~~graph~~TypeGraph_node4"><a xlink:href=".././type/idbase.html" xlink:title="idbase">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="728,-234 674,-234 674,-210 728,-210 728,-234"/>
+<text text-anchor="middle" x="701" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">idbase</text>
 </a>
 </g>
 </g>
-<!-- type~bssn_id&#45;&gt;type~formul_3p1 -->
+<!-- type~bnsbase&#45;&gt;type~idbase -->
+<g id="type~~graph~~TypeGraph_edge1" class="edge">
+<title>type~bnsbase&#45;&gt;type~idbase</title>
+<path fill="none" stroke="#000000" d="M909.35,-287.36C897.22,-287.98 882.94,-287.54 870.5,-284"/>
+</g>
+<!-- type~bssn -->
+<g id="type~~graph~~TypeGraph_node2" class="node">
+<title>type~bssn</title>
+<g id="a_type~~graph~~TypeGraph_node2"><a xlink:href=".././type/bssn.html" xlink:title="bssn">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="965,-148 911,-148 911,-124 965,-124 965,-148"/>
+<text text-anchor="middle" x="938" y="-133.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">bssn</text>
+</a>
+</g>
+</g>
+<!-- type~tpo -->
+<g id="type~~graph~~TypeGraph_node10" class="node">
+<title>type~tpo</title>
+<g id="a_type~~graph~~TypeGraph_node10"><a xlink:href=".././type/tpo.html" xlink:title="tpo">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="728,-100 674,-100 674,-76 728,-76 728,-100"/>
+<text text-anchor="middle" x="701" y="-85.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tpo</text>
+</a>
+</g>
+</g>
+<!-- type~bssn&#45;&gt;type~tpo -->
 <g id="type~~graph~~TypeGraph_edge5" class="edge">
-<title>type~bssn_id&#45;&gt;type~formul_3p1</title>
-<path fill="none" stroke="#000000" d="M763,-66.2831C748.872,-68.572 747.4421,-75.369 734,-80.2831 711.604,-88.4707 685.9074,-95.2611 664.6831,-100.2077"/>
-<polygon fill="#000000" stroke="#000000" points="663.633,-96.857 654.6572,-102.4859 665.1842,-103.6829 663.633,-96.857"/>
-</g>
-<!-- grid_function -->
-<g id="type~~graph~~TypeGraph_node13" class="node">
-<title>grid_function</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="91.5,-42.2831 17.5,-42.2831 17.5,-18.2831 91.5,-18.2831 91.5,-42.2831"/>
-<text text-anchor="middle" x="54.5" y="-27.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function</text>
-</g>
-<!-- type~bssn_id&#45;&gt;grid_function -->
-<g id="type~~graph~~TypeGraph_edge2" class="edge">
-<title>type~bssn_id&#45;&gt;grid_function</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M798.8569,-64.3152C787.681,-64.0138 774.6483,-64.3205 763,-66.2831"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M763,-66.2831C747.5608,-68.8845 748.8905,-51.1215 734,-46.2831 507.093,27.4454 214.749,-5.3067 101.8717,-22.3336"/>
-<polygon fill="#000000" stroke="#000000" points="101.1836,-18.8983 91.8323,-23.8786 102.2483,-25.8168 101.1836,-18.8983"/>
-<text text-anchor="middle" x="621" y="-48.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">Gamma_u, A_BSSN3_ll, g_BSSN3_ll, GC, GC_parts</text>
-</g>
-<!-- grid_function_scalar -->
-<g id="type~~graph~~TypeGraph_node14" class="node">
-<title>grid_function_scalar</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="109,-104.2831 0,-104.2831 0,-80.2831 109,-80.2831 109,-104.2831"/>
-<text text-anchor="middle" x="54.5" y="-89.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">grid_function_scalar</text>
-</g>
-<!-- type~bssn_id&#45;&gt;grid_function_scalar -->
-<g id="type~~graph~~TypeGraph_edge3" class="edge">
-<title>type~bssn_id&#45;&gt;grid_function_scalar</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M763,-66.2831C643.1889,-85.6933 611.3632,-60.8388 490,-59.2831 328.6799,-57.2153 284.6678,-25.088 127,-59.2831 112.2453,-62.4832 96.8899,-68.9553 84.1296,-75.3268"/>
-<polygon fill="#000000" stroke="#000000" points="82.1791,-72.3966 74.9304,-80.1236 85.4156,-78.6034 82.1791,-72.3966"/>
-<text text-anchor="middle" x="621" y="-76.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">phi, trK</text>
+<title>type~bssn&#45;&gt;type~tpo</title>
+<path fill="none" stroke="#000000" d="M868.5,-136C852.2,-134.63 853.97,-120.58 839,-114 806.67,-99.79 766.71,-93.33 738.3,-90.41"/>
+<polygon fill="#000000" stroke="#000000" points="738.3,-86.89 728.02,-89.45 737.65,-93.86 738.3,-86.89"/>
 </g>
 <!-- timer -->
-<g id="type~~graph~~TypeGraph_node15" class="node">
+<g id="type~~graph~~TypeGraph_node17" class="node">
 <title>timer</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-272.2831 27.5,-272.2831 27.5,-248.2831 81.5,-248.2831 81.5,-272.2831"/>
-<text text-anchor="middle" x="54.5" y="-257.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">timer</text>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="87,-219 33,-219 33,-195 87,-195 87,-219"/>
+<text text-anchor="middle" x="60" y="-204.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
 </g>
-<!-- type~bssn_id&#45;&gt;timer -->
+<!-- type~bssn&#45;&gt;timer -->
 <g id="type~~graph~~TypeGraph_edge4" class="edge">
-<title>type~bssn_id&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M763,-66.2831C689.8415,-80.1299 788.7125,-180.7812 734,-231.2831 686.7459,-274.9006 227.8472,-265.2838 92.1245,-261.4489"/>
-<polygon fill="#000000" stroke="#000000" points="91.9204,-257.9417 81.8235,-261.1513 91.7182,-264.9388 91.9204,-257.9417"/>
-<text text-anchor="middle" x="621" y="-265.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">bssn_computer_timer</text>
+<title>type~bssn&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M868.5,-136C852.46,-134.73 854.16,-151.61 839,-157 803.66,-169.56 246.14,-197.86 97.29,-205.22"/>
+<polygon fill="#000000" stroke="#000000" points="97.11,-201.73 87.3,-205.72 97.46,-208.72 97.11,-201.73"/>
+<text text-anchor="middle" x="701" y="-182.4" font-family="Helvetica,sans-Serif" font-size="9.50">bssn_computer_timer</text>
 </g>
-<!-- level -->
-<g id="type~~graph~~TypeGraph_node12" class="node">
-<title>level</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="81.5,-156.2831 27.5,-156.2831 27.5,-132.2831 81.5,-132.2831 81.5,-156.2831"/>
-<text text-anchor="middle" x="54.5" y="-141.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">level</text>
+<!-- grid_function_scalar -->
+<g id="type~~graph~~TypeGraph_node19" class="node">
+<title>grid_function_scalar</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="120,-24 0,-24 0,0 120,0 120,-24"/>
+<text text-anchor="middle" x="60" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grid_function_scalar</text>
 </g>
-<!-- type~formul_3p1&#45;&gt;level -->
+<!-- type~bssn&#45;&gt;grid_function_scalar -->
+<g id="type~~graph~~TypeGraph_edge3" class="edge">
+<title>type~bssn&#45;&gt;grid_function_scalar</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M910.75,-136.97C898.5,-137.17 883.73,-137.06 870.5,-136"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M868.5,-136C831.14,-133 868.16,-80.55 839,-57 736.26,25.97 676.69,-23.85 545,-14 397.8,-2.99 224.72,-6.15 130.59,-9.21"/>
+<polygon fill="#000000" stroke="#000000" points="130.22,-5.72 120.34,-9.56 130.45,-12.72 130.22,-5.72"/>
+<text text-anchor="middle" x="701" y="-59.4" font-family="Helvetica,sans-Serif" font-size="9.50">phi, trK, Ricci_scalar</text>
+</g>
+<!-- grid_function -->
+<g id="type~~graph~~TypeGraph_node20" class="node">
+<title>grid_function</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="101,-145 19,-145 19,-121 101,-121 101,-145"/>
+<text text-anchor="middle" x="60" y="-130.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grid_function</text>
+</g>
+<!-- type~bssn&#45;&gt;grid_function -->
+<g id="type~~graph~~TypeGraph_edge2" class="edge">
+<title>type~bssn&#45;&gt;grid_function</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M868.5,-136C725.19,-123.97 688.8,-141.44 545,-143 364.12,-144.96 318.51,-154.67 138,-143 129.39,-142.44 120.28,-141.54 111.45,-140.5"/>
+<polygon fill="#000000" stroke="#000000" points="111.62,-136.99 101.27,-139.23 110.76,-143.94 111.62,-136.99"/>
+<text text-anchor="middle" x="701" y="-145.4" font-family="Helvetica,sans-Serif" font-size="9.50">Gamma_u, A_BSSN3_ll, g_BSSN3_ll, Ricci_ll, GC, GC_parts</text>
+</g>
+<!-- type~ejecta -->
+<g id="type~~graph~~TypeGraph_node3" class="node">
+<title>type~ejecta</title>
+<g id="a_type~~graph~~TypeGraph_node3"><a xlink:href=".././type/ejecta.html" xlink:title="ejecta">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="965,-254 911,-254 911,-230 965,-230 965,-254"/>
+<text text-anchor="middle" x="938" y="-239.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ejecta</text>
+</a>
+</g>
+</g>
+<!-- type~ejecta&#45;&gt;type~idbase -->
 <g id="type~~graph~~TypeGraph_edge6" class="edge">
-<title>type~formul_3p1&#45;&gt;level</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M587.3574,-112.0266C560.9035,-114.1414 523.1135,-117.069 490,-119.2831 342.7163,-129.1312 167.2501,-138.4756 91.8977,-142.3743"/>
-<polygon fill="#000000" stroke="#000000" points="91.3282,-138.8989 81.5218,-142.9094 91.6888,-145.8896 91.3282,-138.8989"/>
-<text text-anchor="middle" x="308.5" y="-143.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">levels</text>
-</g>
-<!-- type~formul_3p1&#45;&gt;grid_function -->
-<g id="type~~graph~~TypeGraph_edge7" class="edge">
-<title>type~formul_3p1&#45;&gt;grid_function</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M587.238,-101.1531C560.8801,-95.0282 523.2722,-86.7747 490,-81.2831 349.6526,-58.119 182.1617,-41.5988 101.9281,-34.3649"/>
-<polygon fill="#000000" stroke="#000000" points="101.9311,-30.8513 91.6591,-33.447 101.3077,-37.8235 101.9311,-30.8513"/>
-<text text-anchor="middle" x="308.5" y="-83.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">coords, shift_u, g_phys3_ll, K_phys3_ll, MC, MC_parts</text>
-</g>
-<!-- type~formul_3p1&#45;&gt;grid_function_scalar -->
-<g id="type~~graph~~TypeGraph_edge8" class="edge">
-<title>type~formul_3p1&#45;&gt;grid_function_scalar</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M587.2594,-108.2706C495.4889,-105.5167 240.1655,-97.8547 119.3938,-94.2305"/>
-<polygon fill="#000000" stroke="#000000" points="119.2847,-90.7258 109.1841,-93.9241 119.0746,-97.7226 119.2847,-90.7258"/>
-<text text-anchor="middle" x="308.5" y="-107.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">rad_coord, lapse, HC, HC_parts</text>
-</g>
-<!-- type~formul_3p1&#45;&gt;timer -->
-<g id="type~~graph~~TypeGraph_edge9" class="edge">
-<title>type~formul_3p1&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M592.6702,-121.3228C566.5006,-131.9375 526.302,-146.9713 490,-155.2831 410.8681,-173.4014 193.8106,-150.1695 127,-196.2831 112.604,-206.2195 121.282,-218.8281 109,-231.2831 103.7227,-236.6348 97.2472,-241.2305 90.6259,-245.083"/>
-<polygon fill="#000000" stroke="#000000" points="88.7933,-242.0932 81.6052,-249.8767 92.0782,-248.2746 88.7933,-242.0932"/>
-<text text-anchor="middle" x="308.5" y="-198.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">grid_timer, importer_timer</text>
-</g>
-<!-- type~bnslorene -->
-<g id="type~~graph~~TypeGraph_node5" class="node">
-<title>type~bnslorene</title>
-<g id="a_type~~graph~~TypeGraph_node5"><a xlink:href=".././type/bnslorene.html" xlink:title="bnslorene">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="1009.5,-319.2831 949.5,-319.2831 949.5,-295.2831 1009.5,-295.2831 1009.5,-319.2831"/>
-<text text-anchor="middle" x="979.5" y="-304.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bnslorene</text>
-</a>
-</g>
-</g>
-<!-- type~bnsbase -->
-<g id="type~~graph~~TypeGraph_node10" class="node">
-<title>type~bnsbase</title>
-<g id="a_type~~graph~~TypeGraph_node10"><a xlink:href=".././type/bnsbase.html" xlink:title="bnsbase">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="853,-271.2831 799,-271.2831 799,-247.2831 853,-247.2831 853,-271.2831"/>
-<text text-anchor="middle" x="826" y="-256.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">bnsbase</text>
-</a>
-</g>
-</g>
-<!-- type~bnslorene&#45;&gt;type~bnsbase -->
-<g id="type~~graph~~TypeGraph_edge11" class="edge">
-<title>type~bnslorene&#45;&gt;type~bnsbase</title>
-<path fill="none" stroke="#000000" d="M949.1733,-297.7999C924.3815,-290.0474 889.2378,-279.0578 862.8308,-270.8002"/>
-<polygon fill="#000000" stroke="#000000" points="863.7664,-267.4258 853.1776,-267.7817 861.6772,-274.1067 863.7664,-267.4258"/>
-</g>
-<!-- C_PTR -->
-<g id="type~~graph~~TypeGraph_node11" class="node">
-<title>C_PTR</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="853,-355.2831 799,-355.2831 799,-331.2831 853,-331.2831 853,-355.2831"/>
-<text text-anchor="middle" x="826" y="-340.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">C_PTR</text>
-</g>
-<!-- type~bnslorene&#45;&gt;C_PTR -->
-<g id="type~~graph~~TypeGraph_edge10" class="edge">
-<title>type~bnslorene&#45;&gt;C_PTR</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M949.1733,-314.3956C924.4907,-320.1843 889.5472,-328.3796 863.1803,-334.5633"/>
-<polygon fill="#000000" stroke="#000000" points="862.1142,-331.2183 853.1776,-336.9092 863.7126,-338.0334 862.1142,-331.2183"/>
-<text text-anchor="middle" x="901" y="-332.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">bns_ptr</text>
+<title>type~ejecta&#45;&gt;type~idbase</title>
+<path fill="none" stroke="#000000" d="M914.87,-254.07C909.92,-256.91 904.73,-259.98 900,-263 886.43,-271.65 885.98,-288.4 870.5,-284"/>
+<path fill="none" stroke="#000000" d="M868.5,-284C849.58,-278.62 856.02,-260.86 839,-251 807.99,-233.04 767.27,-226.15 738.31,-223.53"/>
+<polygon fill="#000000" stroke="#000000" points="738.45,-220.03 728.2,-222.75 737.9,-227.01 738.45,-220.03"/>
 </g>
 <!-- type~idbase&#45;&gt;timer -->
-<g id="type~~graph~~TypeGraph_edge12" class="edge">
+<g id="type~~graph~~TypeGraph_edge7" class="edge">
 <title>type~idbase&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M593.7616,-302.0812C518.8047,-303.8453 303.3376,-306.007 127,-279.2831 115.3773,-277.5217 102.9287,-274.6372 91.6847,-271.6417"/>
-<polygon fill="#000000" stroke="#000000" points="92.3271,-268.1878 81.7554,-268.8886 90.4566,-274.9333 92.3271,-268.1878"/>
-<text text-anchor="middle" x="308.5" y="-304.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">construction_timer</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M673.95,-220.83C643.16,-219.49 590.36,-217.3 545,-216 377.77,-211.21 177.97,-208.43 97.36,-207.43"/>
+<polygon fill="#000000" stroke="#000000" points="97.28,-203.93 87.24,-207.3 97.19,-210.92 97.28,-203.93"/>
+<text text-anchor="middle" x="341.5" y="-218.4" font-family="Helvetica,sans-Serif" font-size="9.50">construction_timer</text>
 </g>
-<!-- type~diffstarbase -->
-<g id="type~~graph~~TypeGraph_node7" class="node">
-<title>type~diffstarbase</title>
-<g id="a_type~~graph~~TypeGraph_node7"><a xlink:href=".././type/diffstarbase.html" xlink:title="diffstarbase">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="860,-397.2831 792,-397.2831 792,-373.2831 860,-373.2831 860,-397.2831"/>
-<text text-anchor="middle" x="826" y="-382.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstarbase</text>
+<!-- type~eos -->
+<g id="type~~graph~~TypeGraph_node5" class="node">
+<title>type~eos</title>
+<g id="a_type~~graph~~TypeGraph_node5"><a xlink:href=".././type/eos.html" xlink:title="eos">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="87,-293 33,-293 33,-269 87,-269 87,-293"/>
+<text text-anchor="middle" x="60" y="-278.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">eos</text>
 </a>
 </g>
 </g>
-<!-- type~diffstarbase&#45;&gt;type~idbase -->
-<g id="type~~graph~~TypeGraph_edge13" class="edge">
-<title>type~diffstarbase&#45;&gt;type~idbase</title>
-<path fill="none" stroke="#000000" d="M796.6285,-373.248C759.9105,-358.2026 697.0686,-332.4527 657.3536,-316.1793"/>
-<polygon fill="#000000" stroke="#000000" points="658.6095,-312.9115 648.0291,-312.3585 655.9554,-319.3888 658.6095,-312.9115"/>
-</g>
 <!-- type~particles -->
-<g id="type~~graph~~TypeGraph_node8" class="node">
+<g id="type~~graph~~TypeGraph_node6" class="node">
 <title>type~particles</title>
-<g id="a_type~~graph~~TypeGraph_node8"><a xlink:href=".././type/particles.html" xlink:title="particles">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="648,-222.2831 594,-222.2831 594,-198.2831 648,-198.2831 648,-222.2831"/>
-<text text-anchor="middle" x="621" y="-207.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">particles</text>
+<g id="a_type~~graph~~TypeGraph_node6"><a xlink:href=".././type/particles.html" xlink:title="particles">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="730,-284 672,-284 672,-260 730,-260 730,-284"/>
+<text text-anchor="middle" x="701" y="-269.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">particles</text>
 </a>
 </g>
 </g>
 <!-- type~particles&#45;&gt;type~eos -->
-<g id="type~~graph~~TypeGraph_edge14" class="edge">
+<g id="type~~graph~~TypeGraph_edge8" class="edge">
 <title>type~particles&#45;&gt;type~eos</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M593.6765,-210.2831C500.9402,-210.2831 198.0904,-210.2831 91.7896,-210.2831"/>
-<polygon fill="#000000" stroke="#000000" points="91.5493,-206.7832 81.5493,-210.2831 91.5493,-213.7832 91.5493,-206.7832"/>
-<text text-anchor="middle" x="308.5" y="-212.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">all_eos</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M671.72,-272.4C568.54,-273.85 212.43,-278.87 97.25,-280.49"/>
+<polygon fill="#000000" stroke="#000000" points="97.13,-276.99 87.18,-280.63 97.23,-283.99 97.13,-276.99"/>
+<text text-anchor="middle" x="341.5" y="-281.4" font-family="Helvetica,sans-Serif" font-size="9.50">all_eos</text>
 </g>
 <!-- type~particles&#45;&gt;timer -->
-<g id="type~~graph~~TypeGraph_edge15" class="edge">
+<g id="type~~graph~~TypeGraph_edge9" class="edge">
 <title>type~particles&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M593.9164,-212.7204C567.4348,-215.0649 525.9631,-218.6342 490,-221.2831 328.7799,-233.1582 287.0697,-221.6863 127,-244.2831 115.3716,-245.9247 102.8372,-248.4244 91.5146,-250.9635"/>
-<polygon fill="#000000" stroke="#000000" points="90.4679,-247.6133 81.5177,-253.2829 92.05,-254.4322 90.4679,-247.6133"/>
-<text text-anchor="middle" x="308.5" y="-246.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">placer_timer, same_particle_timer, apm_timers, importer_timer, sph_computer_timer</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M671.74,-269.81C561.42,-261.26 164.6,-230.34 138,-226 124.49,-223.79 109.86,-220.44 97.02,-217.15"/>
+<polygon fill="#000000" stroke="#000000" points="97.72,-213.72 87.16,-214.56 95.94,-220.49 97.72,-213.72"/>
+<text text-anchor="middle" x="341.5" y="-261.4" font-family="Helvetica,sans-Serif" font-size="9.50">placer_timer, same_particle_timer, apm_timers, importer_timer, sph_computer_timer</text>
+</g>
+<!-- type~id -->
+<g id="type~~graph~~TypeGraph_node7" class="node">
+<title>type~id</title>
+<g id="a_type~~graph~~TypeGraph_node7"><a xlink:href=".././type/id.html" xlink:title="id">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="965,-212 911,-212 911,-188 965,-188 965,-212"/>
+<text text-anchor="middle" x="938" y="-197.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">id</text>
+</a>
+</g>
+</g>
+<!-- type~id&#45;&gt;type~idbase -->
+<g id="type~~graph~~TypeGraph_edge10" class="edge">
+<title>type~id&#45;&gt;type~idbase</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M910.95,-202.44C868.96,-206.37 786.17,-214.12 738.38,-218.59"/>
+<polygon fill="#000000" stroke="#000000" points="737.79,-215.13 728.16,-219.55 738.45,-222.1 737.79,-215.13"/>
+<text text-anchor="middle" x="869.5" y="-209.4" font-family="Helvetica,sans-Serif" font-size="9.50">idata</text>
+</g>
+<!-- type~spatial_rotation -->
+<g id="type~~graph~~TypeGraph_node8" class="node">
+<title>type~spatial_rotation</title>
+<g id="a_type~~graph~~TypeGraph_node8"><a xlink:href=".././type/spatial_rotation.html" xlink:title="spatial_rotation">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1177.5,-418 1083.5,-418 1083.5,-394 1177.5,-394 1177.5,-418"/>
+<text text-anchor="middle" x="1130.5" y="-403.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spatial_rotation</text>
+</a>
+</g>
+</g>
+<!-- type~lorentz_transformation -->
+<g id="type~~graph~~TypeGraph_node9" class="node">
+<title>type~lorentz_transformation</title>
+<g id="a_type~~graph~~TypeGraph_node9"><a xlink:href=".././type/lorentz_transformation.html" xlink:title="lorentz_transformation">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1197,-460 1064,-460 1064,-436 1197,-436 1197,-460"/>
+<text text-anchor="middle" x="1130.5" y="-445.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lorentz_transformation</text>
+</a>
+</g>
+</g>
+<!-- type~tpo&#45;&gt;timer -->
+<g id="type~~graph~~TypeGraph_edge14" class="edge">
+<title>type~tpo&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M673.97,-91.89C643.2,-96.44 590.42,-104.1 545,-110 364.38,-133.47 309.59,-96.9 138,-158 118.16,-165.06 98.16,-178 83.52,-188.81"/>
+<polygon fill="#000000" stroke="#000000" points="81.4,-186.03 75.56,-194.87 85.64,-191.6 81.4,-186.03"/>
+<text text-anchor="middle" x="341.5" y="-160.4" font-family="Helvetica,sans-Serif" font-size="9.50">grid_timer, importer_timer</text>
+</g>
+<!-- level -->
+<g id="type~~graph~~TypeGraph_node18" class="node">
+<title>level</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="87,-78 33,-78 33,-54 87,-54 87,-78"/>
+<text text-anchor="middle" x="60" y="-63.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">level</text>
+</g>
+<!-- type~tpo&#45;&gt;level -->
+<g id="type~~graph~~TypeGraph_edge11" class="edge">
+<title>type~tpo&#45;&gt;level</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M673.78,-83.37C643.04,-78.19 590.51,-70.12 545,-67 377.92,-55.56 177.64,-61.33 97.12,-64.44"/>
+<polygon fill="#000000" stroke="#000000" points="96.87,-60.95 87.01,-64.84 97.14,-67.94 96.87,-60.95"/>
+<text text-anchor="middle" x="341.5" y="-69.4" font-family="Helvetica,sans-Serif" font-size="9.50">levels</text>
+</g>
+<!-- type~tpo&#45;&gt;grid_function_scalar -->
+<g id="type~~graph~~TypeGraph_edge13" class="edge">
+<title>type~tpo&#45;&gt;grid_function_scalar</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M674,-79.53C643.46,-69.95 591.13,-54.7 545,-47 398.83,-22.6 225.01,-15.21 130.56,-12.97"/>
+<polygon fill="#000000" stroke="#000000" points="130.35,-9.46 120.28,-12.74 130.2,-16.46 130.35,-9.46"/>
+<text text-anchor="middle" x="341.5" y="-49.4" font-family="Helvetica,sans-Serif" font-size="9.50">rad_coord, lapse, HC, HC_parts, rho, rho_parts</text>
+</g>
+<!-- type~tpo&#45;&gt;grid_function -->
+<g id="type~~graph~~TypeGraph_edge12" class="edge">
+<title>type~tpo&#45;&gt;grid_function</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M673.73,-87.24C577.17,-84.63 242.09,-77.47 138,-100 122.18,-103.42 105.56,-110.11 91.82,-116.57"/>
+<polygon fill="#000000" stroke="#000000" points="90.27,-113.44 82.82,-120.97 93.34,-119.73 90.27,-113.44"/>
+<text text-anchor="middle" x="341.5" y="-102.4" font-family="Helvetica,sans-Serif" font-size="9.50">coords, shift_u, g_phys3_ll, K_phys3_ll, S, MC, MC_parts, S_parts</text>
+</g>
+<!-- type~bnslorene -->
+<g id="type~~graph~~TypeGraph_node11" class="node">
+<title>type~bnslorene</title>
+<g id="a_type~~graph~~TypeGraph_node11"><a xlink:href=".././type/bnslorene.html" xlink:title="bnslorene">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1163,-259 1098,-259 1098,-235 1163,-235 1163,-259"/>
+<text text-anchor="middle" x="1130.5" y="-244.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">bnslorene</text>
+</a>
+</g>
+</g>
+<!-- type~bnslorene&#45;&gt;type~bnsbase -->
+<g id="type~~graph~~TypeGraph_edge16" class="edge">
+<title>type~bnslorene&#45;&gt;type~bnsbase</title>
+<path fill="none" stroke="#000000" d="M1097.96,-239.13C1069.56,-233.68 1027.29,-229.68 994,-244 983.31,-248.6 985.16,-255.83 976,-263 974.47,-264.2 972.87,-265.37 971.22,-266.51"/>
+<polygon fill="#000000" stroke="#000000" points="969.32,-263.57 962.77,-271.9 973.08,-269.47 969.32,-263.57"/>
+</g>
+<!-- C_PTR -->
+<g id="type~~graph~~TypeGraph_node21" class="node">
+<title>C_PTR</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="965,-338 911,-338 911,-314 965,-314 965,-338"/>
+<text text-anchor="middle" x="938" y="-323.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">C_PTR</text>
+</g>
+<!-- type~bnslorene&#45;&gt;C_PTR -->
+<g id="type~~graph~~TypeGraph_edge15" class="edge">
+<title>type~bnslorene&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1100.15,-259.09C1072.69,-270.41 1030.55,-287.81 994,-303 987.64,-305.64 980.88,-308.46 974.34,-311.19"/>
+<polygon fill="#000000" stroke="#000000" points="972.89,-308.01 965.01,-315.1 975.59,-314.47 972.89,-308.01"/>
+<text text-anchor="middle" x="1020" y="-305.4" font-family="Helvetica,sans-Serif" font-size="9.50">bns_ptr</text>
+</g>
+<!-- type~diffstarbase -->
+<g id="type~~graph~~TypeGraph_node12" class="node">
+<title>type~diffstarbase</title>
+<g id="a_type~~graph~~TypeGraph_node12"><a xlink:href=".././type/diffstarbase.html" xlink:title="diffstarbase">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="976,-380 900,-380 900,-356 976,-356 976,-380"/>
+<text text-anchor="middle" x="938" y="-365.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">diffstarbase</text>
+</a>
+</g>
+</g>
+<!-- type~diffstarbase&#45;&gt;type~idbase -->
+<g id="type~~graph~~TypeGraph_edge17" class="edge">
+<title>type~diffstarbase&#45;&gt;type~idbase</title>
+<path fill="none" stroke="#000000" d="M910.82,-355.89C906.88,-353.33 903.11,-350.36 900,-347 879.01,-324.3 900.24,-292.46 870.5,-284"/>
+</g>
+<!-- type~apm_fields -->
+<g id="type~~graph~~TypeGraph_node13" class="node">
+<title>type~apm_fields</title>
+<g id="a_type~~graph~~TypeGraph_node13"><a xlink:href=".././type/apm_fields.html" xlink:title="apm_fields">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1165.5,-502 1095.5,-502 1095.5,-478 1165.5,-478 1165.5,-502"/>
+<text text-anchor="middle" x="1130.5" y="-487.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">apm_fields</text>
+</a>
+</g>
 </g>
 <!-- type~diffstarlorene -->
-<g id="type~~graph~~TypeGraph_node9" class="node">
+<g id="type~~graph~~TypeGraph_node14" class="node">
 <title>type~diffstarlorene</title>
-<g id="a_type~~graph~~TypeGraph_node9"><a xlink:href=".././type/diffstarlorene.html" xlink:title="diffstarlorene">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="1017,-373.2831 942,-373.2831 942,-349.2831 1017,-349.2831 1017,-373.2831"/>
-<text text-anchor="middle" x="979.5" y="-358.8831" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">diffstarlorene</text>
+<g id="a_type~~graph~~TypeGraph_node14"><a xlink:href=".././type/diffstarlorene.html" xlink:title="diffstarlorene">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1172.5,-376 1088.5,-376 1088.5,-352 1172.5,-352 1172.5,-376"/>
+<text text-anchor="middle" x="1130.5" y="-361.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">diffstarlorene</text>
 </a>
 </g>
 </g>
 <!-- type~diffstarlorene&#45;&gt;type~diffstarbase -->
-<g id="type~~graph~~TypeGraph_edge17" class="edge">
+<g id="type~~graph~~TypeGraph_edge19" class="edge">
 <title>type~diffstarlorene&#45;&gt;type~diffstarbase</title>
-<path fill="none" stroke="#000000" d="M941.9497,-367.1542C920.2445,-370.5478 892.8217,-374.8354 870.0948,-378.3888"/>
-<polygon fill="#000000" stroke="#000000" points="869.3598,-374.9611 860.0205,-379.964 870.4411,-381.8771 869.3598,-374.9611"/>
+<path fill="none" stroke="#000000" d="M1088.16,-364.87C1058.18,-365.5 1017.56,-366.35 986.28,-367.01"/>
+<polygon fill="#000000" stroke="#000000" points="985.99,-363.51 976.06,-367.22 986.14,-370.51 985.99,-363.51"/>
 </g>
 <!-- type~diffstarlorene&#45;&gt;C_PTR -->
-<g id="type~~graph~~TypeGraph_edge16" class="edge">
-<title>type~diffstarlorene&#45;&gt;C_PTR</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M941.9497,-356.8798C917.9819,-354.0693 887.0423,-350.4412 863.1523,-347.6398"/>
-<polygon fill="#000000" stroke="#000000" points="863.3946,-344.1443 853.055,-346.4557 862.5792,-351.0966 863.3946,-344.1443"/>
-<text text-anchor="middle" x="901" y="-356.6831" font-family="Helvetica,sans-Serif" font-size="9.50" fill="#000000">diffstar_ptr</text>
-</g>
-<!-- type~bnsbase&#45;&gt;type~idbase -->
 <g id="type~~graph~~TypeGraph_edge18" class="edge">
-<title>type~bnsbase&#45;&gt;type~idbase</title>
-<path fill="none" stroke="#000000" d="M798.7776,-264.8604C762.6081,-272.2707 698.5672,-285.3913 658.0272,-293.6971"/>
-<polygon fill="#000000" stroke="#000000" points="657.1025,-290.3137 648.0085,-295.7497 658.5075,-297.1713 657.1025,-290.3137"/>
+<title>type~diffstarlorene&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1088.16,-355.75C1054.39,-349.02 1007.14,-339.59 974.93,-333.17"/>
+<polygon fill="#000000" stroke="#000000" points="975.53,-329.72 965.04,-331.19 974.16,-336.58 975.53,-329.72"/>
+<text text-anchor="middle" x="1020" y="-349.4" font-family="Helvetica,sans-Serif" font-size="9.50">diffstar_ptr</text>
+</g>
+<!-- type~bnsfuka -->
+<g id="type~~graph~~TypeGraph_node15" class="node">
+<title>type~bnsfuka</title>
+<g id="a_type~~graph~~TypeGraph_node15"><a xlink:href=".././type/bnsfuka.html" xlink:title="bnsfuka">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1157.5,-323 1103.5,-323 1103.5,-299 1157.5,-299 1157.5,-323"/>
+<text text-anchor="middle" x="1130.5" y="-308.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">bnsfuka</text>
+</a>
+</g>
+</g>
+<!-- type~bnsfuka&#45;&gt;type~bnsbase -->
+<g id="type~~graph~~TypeGraph_edge21" class="edge">
+<title>type~bnsfuka&#45;&gt;type~bnsbase</title>
+<path fill="none" stroke="#000000" d="M1103.41,-307.3C1070.62,-302.66 1014.12,-294.65 976.65,-289.34"/>
+<polygon fill="#000000" stroke="#000000" points="977.02,-285.85 966.62,-287.92 976.03,-292.78 977.02,-285.85"/>
+</g>
+<!-- type~bnsfuka&#45;&gt;C_PTR -->
+<g id="type~~graph~~TypeGraph_edge20" class="edge">
+<title>type~bnsfuka&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M1103.41,-313.05C1070.16,-315.67 1012.51,-320.21 975.07,-323.16"/>
+<polygon fill="#000000" stroke="#000000" points="974.77,-319.67 965.08,-323.95 975.32,-326.65 974.77,-319.67"/>
+<text text-anchor="middle" x="1020" y="-323.4" font-family="Helvetica,sans-Serif" font-size="9.50">bns_ptr</text>
+</g>
+<!-- type~lorentz_boost -->
+<g id="type~~graph~~TypeGraph_node16" class="node">
+<title>type~lorentz_boost</title>
+<g id="a_type~~graph~~TypeGraph_node16"><a xlink:href=".././type/lorentz_boost.html" xlink:title="lorentz_boost">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="1172,-544 1089,-544 1089,-520 1172,-520 1172,-544"/>
+<text text-anchor="middle" x="1130.5" y="-529.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lorentz_boost</text>
+</a>
+</g>
 </g>
 </g>
 </svg>
@@ -420,25 +447,25 @@ All Types &ndash; SPHINCS_ID
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+<!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: Graph Key Pages: 1 -->
-<svg width="178pt" height="32pt"
- viewBox="0.00 0.00 177.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="184pt" height="32pt"
+ viewBox="0.00 0.00 184.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>Graph Key</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 173.5,-28 173.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 180,-28 180,4 -4,4"/>
 <!-- Type -->
 <g id="node1" class="node">
 <title>Type</title>
 <polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
-<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Type</text>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
 </g>
 <!-- This Page&#39;s Entity -->
 <g id="node2" class="node">
 <title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="#000000" points="169.5,-24 72.5,-24 72.5,0 169.5,0 169.5,-24"/>
-<text text-anchor="middle" x="121" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+<polygon fill="none" stroke="black" points="176,-24 72,-24 72,0 176,0 176,-24"/>
+<text text-anchor="middle" x="124" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
 </g>
 </g>
 </svg>
@@ -452,22 +479,19 @@ All Types &ndash; SPHINCS_ID
     </div></div></div></div>
         </div>
       </div>
-
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2021 <a rel="license" href="http://www.gnu.org/licenses/old-licenses/fdl-1.2.en.html">GNU Free Documentation License</a>
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2022 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-11-14 16:41:50 
-            
-          </p>
+ on 2022-04-02 15:56:56           </p>
         </div>
       </div>
       <br>
@@ -494,14 +518,11 @@ All Types &ndash; SPHINCS_ID
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>

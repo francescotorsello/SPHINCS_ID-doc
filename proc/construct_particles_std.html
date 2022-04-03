@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Figure caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state 'BBKF(DD2-SF) quark-hadron model RDF 1.8 (with electrons)' from the \texttt{CompOSE} database. The solution was computed with \texttt{LORENE} and the \texttt{CompOSE} software, and the particles were placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>construct_particles_std &ndash; SPHINCS_ID</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href='../page/index.html'>More</a></li>
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../lists/modules.html">Modules</a></li>
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+            <li><a href="../lists/programs.html">Programs</a></li>
+       
+            </ul>
+        
+            </li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+          </ul>
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>construct_particles_std
+      <small>Module Procedure</small>
+    </h1>
+    <div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 1.0% of total for procedures.">760 statements</a>
+     </li> 
+    <li><i class="fa fa-code"></i><a href="../src/submodule_sph_particles_constructor_std.f90"> Source File</a></li>
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+     <li><a href='../sourcefile/submodule_sph_particles_constructor_std.f90.html'>submodule_sph_particles_constructor_std.f90</a></li>
+     <li><a href='../module/constructor_std.html'>constructor_std</a></li>
+     <li class="active">construct_particles_std</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    <div id="sidebar">
+  <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-a~6">a</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-apm_iterate~2">apm_iterate</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-apm_max_it~2">apm_max_it</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-barycenter~4">barycenter</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-center~8">center</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-central_density~4">central_density</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-column_nu">column_nu</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-columns">columns</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-compose_eos~2">compose_eos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-compose_filename~2">compose_filename</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-compose_path~2">compose_path</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-correct_nu~3">correct_nu</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-counter">counter</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-debug~3">debug</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-exist~10">exist</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-file_exists">file_exists</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_apm_pos">filename_apm_pos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_apm_pos_id">filename_apm_pos_id</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_apm_results">filename_apm_results</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_mass_profile~3">filename_mass_profile</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_shells_pos~2">filename_shells_pos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_shells_radii~3">filename_shells_radii</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-g00_lengthscales">g00_lengthscales</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-ghost_dist~2">ghost_dist</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-header_lines">header_lines</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-i_matter~30">i_matter</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-lapse_lengthscales">lapse_lengthscales</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-last_r~3">last_r</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-lower_bound~3">lower_bound</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-lower_factor~2">lower_factor</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-mass_it~2">mass_it</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-max_inc~2">max_inc</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-max_length">max_length</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-max_mass">max_mass</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-max_steps~2">max_steps</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-min_eps">min_eps</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-min_g00_abs">min_g00_abs</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-min_lapse">min_lapse</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-min_vel">min_vel</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-n_cols">n_cols</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-n_matter_tmp">n_matter_tmp</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nlines">nlines</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-npart_des~3">npart_des</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-npart_des_i">npart_des_i</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-npart_i_tmp">npart_i_tmp</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-npart_tmp">npart_tmp</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nu_ratio_des~2">nu_ratio_des</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nuratio_des~2">nuratio_des</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nuratio_thres~2">nuratio_thres</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nx_gh~2">nx_gh</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-ny_gh~2">ny_gh</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nz_gh~2">nz_gh</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-parts_all">parts_all</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-parts_pos">parts_pos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-parts_pos_namefile">parts_pos_namefile</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-parts_pos_path">parts_pos_path</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-phi_a">phi_a</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-print_step~2">print_step</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-pvol_tmp~2">pvol_tmp</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-r_a">r_a</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-randomize_phi~2">randomize_phi</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-randomize_r~2">randomize_r</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-randomize_theta~2">randomize_theta</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-read_nu~2">read_nu</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-redistribute_nu~2">redistribute_nu</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-reflect_particles_x~2">reflect_particles_x</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-remove_atmosphere~2">remove_atmosphere</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-shift_norm">shift_norm</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-sizes~3">sizes</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-str_i">str_i</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-stretch~2">stretch</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-theta_a">theta_a</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-thres~2">thres</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-tmp~2">tmp</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-tmp_pos">tmp_pos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-tol_equal_mass">tol_equal_mass</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-total_mass">total_mass</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-unit_pos">unit_pos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-upper_bound~3">upper_bound</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-upper_factor~2">upper_factor</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-use_atmosphere~3">use_atmosphere</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-use_thres~2">use_thres</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-xmax~3">xmax</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-xmin~3">xmin</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-ymax~3">ymax</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-ymin~3">ymin</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-zmax~3">zmax</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-zmin~3">zmin</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-0">Derived Types</a></h3></div>
+  <div id="types-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../proc/construct_particles_std.html#type-parts_i">parts_i</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
+  <div id="funcs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-import_density">import_density</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-validate_position~4">validate_position</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-compute_nstar_id">compute_nstar_id</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-get_nstar_id">get_nstar_id</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-import_id">import_id</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-integrate_mass_density">integrate_mass_density</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-reflect_particles_yz_plane">reflect_particles_yz_plane</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>module procedure construct_particles_std <small>module module function construct_particles_std(id, dist) result(parts)</small>   <a href='../interface/construct_particles_std.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+</h2>
+        <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      <li class="list-group-item">
+  <ul class="list-inline">
+    <li>NR</li>
+    <li>input_output</li>
+    <li>units</li>
+    <li>pwp_EOS</li>
+    <li><a href='../module/utility.html'>utility</a></li>
+    <li>kernel_table</li>
+    <li>alive_flag</li>
+    <li>constants</li>
+    <li>options</li>
+  </ul>
+      </li>
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~construct_particles_std~~UsesGraph Pages: 1 -->
+<svg id="procconstruct_particles_stdUsesGraph" width="347pt" height="368pt"
+ viewBox="0.00 0.00 347.00 368.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~construct_particles_std~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 364)">
+<title>proc~~construct_particles_std~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-364 343,-364 343,4 -4,4"/>
+<!-- proc~construct_particles_std -->
+<g id="proc~~construct_particles_std~~UsesGraph_node1" class="node">
+<title>proc~construct_particles_std</title>
+<polygon fill="none" stroke="black" points="339,-192 205,-192 205,-168 339,-168 339,-192"/>
+<text text-anchor="middle" x="272" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50">construct_particles_std</text>
+</g>
+<!-- NR -->
+<g id="proc~~construct_particles_std~~UsesGraph_node2" class="node">
+<title>NR</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="156.5,-360 102.5,-360 102.5,-336 156.5,-336 156.5,-360"/>
+<text text-anchor="middle" x="129.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NR</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;NR -->
+<g id="proc~~construct_particles_std~~UsesGraph_edge1" class="edge">
+<title>proc~construct_particles_std&#45;&gt;NR</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M265.13,-192.07C251.48,-219.12 215.22,-285.49 169,-327 167.87,-328.02 166.68,-329 165.44,-329.96"/>
+<polygon fill="#000000" stroke="#000000" points="163.18,-327.27 156.87,-335.78 167.11,-333.06 163.18,-327.27"/>
+</g>
+<!-- input_output -->
+<g id="proc~~construct_particles_std~~UsesGraph_node3" class="node">
+<title>input_output</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="169,-318 90,-318 90,-294 169,-294 169,-318"/>
+<text text-anchor="middle" x="129.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">input_output</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;input_output -->
+<g id="proc~~construct_particles_std~~UsesGraph_edge2" class="edge">
+<title>proc~construct_particles_std&#45;&gt;input_output</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M261.29,-192.17C244.22,-213.02 207.05,-256.1 169,-285 167.41,-286.21 165.74,-287.39 164.02,-288.54"/>
+<polygon fill="#000000" stroke="#000000" points="161.9,-285.74 155.22,-293.96 165.57,-291.7 161.9,-285.74"/>
+</g>
+<!-- units -->
+<g id="proc~~construct_particles_std~~UsesGraph_node4" class="node">
+<title>units</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="156.5,-276 102.5,-276 102.5,-252 156.5,-252 156.5,-276"/>
+<text text-anchor="middle" x="129.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">units</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;units -->
+<g id="proc~~construct_particles_std~~UsesGraph_edge3" class="edge">
+<title>proc~construct_particles_std&#45;&gt;units</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M252.01,-192.15C231.67,-205.08 198.33,-225.96 169,-243 166.67,-244.35 164.26,-245.73 161.82,-247.1"/>
+<polygon fill="#000000" stroke="#000000" points="160.06,-244.08 153.01,-251.99 163.45,-250.2 160.06,-244.08"/>
+</g>
+<!-- pwp_EOS -->
+<g id="proc~~construct_particles_std~~UsesGraph_node5" class="node">
+<title>pwp_EOS</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="160,-234 99,-234 99,-210 160,-210 160,-234"/>
+<text text-anchor="middle" x="129.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pwp_EOS</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;pwp_EOS -->
+<g id="proc~~construct_particles_std~~UsesGraph_edge4" class="edge">
+<title>proc~construct_particles_std&#45;&gt;pwp_EOS</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M230.74,-192.04C211.63,-197.75 188.88,-204.55 169.88,-210.23"/>
+<polygon fill="#000000" stroke="#000000" points="168.63,-206.95 160.05,-213.17 170.63,-213.66 168.63,-206.95"/>
+</g>
+<!-- kernel_table -->
+<g id="proc~~construct_particles_std~~UsesGraph_node6" class="node">
+<title>kernel_table</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="168.5,-192 90.5,-192 90.5,-168 168.5,-168 168.5,-192"/>
+<text text-anchor="middle" x="129.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kernel_table</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;kernel_table -->
+<g id="proc~~construct_particles_std~~UsesGraph_edge5" class="edge">
+<title>proc~construct_particles_std&#45;&gt;kernel_table</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M204.86,-180C196.06,-180 187.17,-180 178.75,-180"/>
+<polygon fill="#000000" stroke="#000000" points="178.74,-176.5 168.74,-180 178.74,-183.5 178.74,-176.5"/>
+</g>
+<!-- module~utility -->
+<g id="proc~~construct_particles_std~~UsesGraph_node7" class="node">
+<title>module~utility</title>
+<g id="a_proc~~construct_particles_std~~UsesGraph_node7"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<polygon fill="#337ab7" stroke="#337ab7" points="156.5,-150 102.5,-150 102.5,-126 156.5,-126 156.5,-150"/>
+<text text-anchor="middle" x="129.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">utility</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;module~utility -->
+<g id="proc~~construct_particles_std~~UsesGraph_edge6" class="edge">
+<title>proc~construct_particles_std&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M230.74,-167.96C210.44,-161.9 186.02,-154.6 166.37,-148.72"/>
+<polygon fill="#000000" stroke="#000000" points="167.16,-145.31 156.58,-145.79 165.15,-152.01 167.16,-145.31"/>
+</g>
+<!-- alive_flag -->
+<g id="proc~~construct_particles_std~~UsesGraph_node8" class="node">
+<title>alive_flag</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="161.5,-108 97.5,-108 97.5,-84 161.5,-84 161.5,-108"/>
+<text text-anchor="middle" x="129.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">alive_flag</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;alive_flag -->
+<g id="proc~~construct_particles_std~~UsesGraph_edge7" class="edge">
+<title>proc~construct_particles_std&#45;&gt;alive_flag</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M252.01,-167.85C231.67,-154.92 198.33,-134.04 169,-117 166.67,-115.65 164.26,-114.27 161.82,-112.9"/>
+<polygon fill="#000000" stroke="#000000" points="163.45,-109.8 153.01,-108.01 160.06,-115.92 163.45,-109.8"/>
+</g>
+<!-- constants -->
+<g id="proc~~construct_particles_std~~UsesGraph_node9" class="node">
+<title>constants</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="161.5,-66 97.5,-66 97.5,-42 161.5,-42 161.5,-66"/>
+<text text-anchor="middle" x="129.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;constants -->
+<g id="proc~~construct_particles_std~~UsesGraph_edge8" class="edge">
+<title>proc~construct_particles_std&#45;&gt;constants</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M261.29,-167.83C244.22,-146.98 207.05,-103.9 169,-75 167.41,-73.79 165.74,-72.61 164.02,-71.46"/>
+<polygon fill="#000000" stroke="#000000" points="165.57,-68.3 155.22,-66.04 161.9,-74.26 165.57,-68.3"/>
+</g>
+<!-- options -->
+<g id="proc~~construct_particles_std~~UsesGraph_node10" class="node">
+<title>options</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="156.5,-24 102.5,-24 102.5,0 156.5,0 156.5,-24"/>
+<text text-anchor="middle" x="129.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">options</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;options -->
+<g id="proc~~construct_particles_std~~UsesGraph_edge9" class="edge">
+<title>proc~construct_particles_std&#45;&gt;options</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M265.13,-167.93C251.48,-140.88 215.22,-74.51 169,-33 167.87,-31.98 166.68,-31 165.44,-30.04"/>
+<polygon fill="#000000" stroke="#000000" points="167.11,-26.94 156.87,-24.22 163.18,-32.73 167.11,-26.94"/>
+</g>
+<!-- matrix -->
+<g id="proc~~construct_particles_std~~UsesGraph_node11" class="node">
+<title>matrix</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-150 0,-150 0,-126 54,-126 54,-150"/>
+<text text-anchor="middle" x="27" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
+</g>
+<!-- module~utility&#45;&gt;matrix -->
+<g id="proc~~construct_particles_std~~UsesGraph_edge10" class="edge">
+<title>module~utility&#45;&gt;matrix</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M102.36,-138C90.73,-138 76.83,-138 64.23,-138"/>
+<polygon fill="#000000" stroke="#000000" points="64.01,-134.5 54.01,-138 64.01,-141.5 64.01,-134.5"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="516pt" height="32pt"
+ viewBox="0.00 0.00 516.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 512,-28 512,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="385.5,-24 328.5,-24 328.5,0 385.5,0 385.5,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="508,-24 404,-24 404,0 508,0 508,-24"/>
+<text text-anchor="middle" x="456" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses.
+    </p>
+    </div></div></div></div>
+      </li>
+      </ul>
+    </div>
+
+
+    <p>The constructor performs all the tasks needed
+  to set up the particle distribution with the
+  \(\mathrm{ID}\) evaluated on it. It calls all the PROCEDURES
+  that rely on an object of STATIC TYPE idbase.</p>
+<p></p><div class="alert alert-success" role="alert"><h4>Todo</h4><p>assign sub-tasks to separate SUBROUTINES
+        CONTAINED in this SUBMODULE</p></div>
+<p>FT 17.10.2020</p>
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>Last updated: FT 17.01.2022</p></div>
+<hr>
+
+    <h3>Arguments</h3>
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-id~3"></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>id</strong></td><td><p><a href="../type/idbase.html">idbase</a> object representing the BNS for which we want to place
+ particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dist~2"></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dist</strong></td><td><p>Identifier of the desired particle distribution:</p>
+<ul>
+<li>
+<p>0: Read particle positions (and optionally the baryon number per
+      particle <script type="math/tex">\nu</script>) from a formatted file</p>
+</li>
+<li>
+<p>1: Place particles on several lattices, each one surrounding a
+      matter object</p>
+</li>
+<li>
+<p>3: Place particles on spherical surfaces inside each matter object</p>
+</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+
+   <h3>Return Value <small><span class="anchor" id="variable-parts~2"></span>type(<a href='../type/particles.html'>particles</a>)</small></h3>
+    <p>Constructed <a href="../type/particles.html">particles</a> object</p>
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~construct_particles_std~~CallsGraph Pages: 1 -->
+<svg id="procconstruct_particles_stdCallsGraph" width="641pt" height="319pt"
+ viewBox="0.00 0.00 641.00 318.66" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~construct_particles_std~~CallsGraph" class="graph" transform="scale(1.63 1.63) rotate(0) translate(4 516)">
+<title>proc~~construct_particles_std~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-516 1042,-516 1042,4 -4,4"/>
+<!-- proc~construct_particles_std -->
+<g id="proc~~construct_particles_std~~CallsGraph_node1" class="node">
+<title>proc~construct_particles_std</title>
+<polygon fill="none" stroke="black" points="134,-281 0,-281 0,-257 134,-257 134,-281"/>
+<text text-anchor="middle" x="67" y="-266.6" font-family="Helvetica,sans-Serif" font-size="10.50">construct_particles_std</text>
+</g>
+<!-- timer -->
+<g id="proc~~construct_particles_std~~CallsGraph_node2" class="node">
+<title>timer</title>
+<polygon fill="#777777" stroke="#777777" points="299.5,-512 245.5,-512 245.5,-488 299.5,-488 299.5,-512"/>
+<text text-anchor="middle" x="272.5" y="-497.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;timer -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge1" class="edge">
+<title>proc~construct_particles_std&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" d="M70.04,-281.06C76.86,-317.36 102.35,-426.35 170,-479 188.34,-493.28 214.02,-498.49 234.96,-500.16"/>
+<polygon fill="#000000" stroke="#000000" points="234.92,-503.66 245.1,-500.72 235.31,-496.67 234.92,-503.66"/>
+</g>
+<!-- read_options -->
+<g id="proc~~construct_particles_std~~CallsGraph_node3" class="node">
+<title>read_options</title>
+<polygon fill="#777777" stroke="#777777" points="313,-470 232,-470 232,-446 313,-446 313,-470"/>
+<text text-anchor="middle" x="272.5" y="-455.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">read_options</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;read_options -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge2" class="edge">
+<title>proc~construct_particles_std&#45;&gt;read_options</title>
+<path fill="none" stroke="#000000" d="M71.58,-281.08C81.52,-312.38 112.57,-396.47 170,-437 184.99,-447.58 204.15,-453.07 221.77,-455.83"/>
+<polygon fill="#000000" stroke="#000000" points="221.56,-459.34 231.93,-457.17 222.47,-452.39 221.56,-459.34"/>
+</g>
+<!-- interface~allocate_particles_memory -->
+<g id="proc~~construct_particles_std~~CallsGraph_node4" class="node">
+<title>interface~allocate_particles_memory</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node4"><a xlink:href=".././interface/allocate_particles_memory.html" xlink:title="allocate_particles_memory">
+<polygon fill="#a7506f" stroke="#a7506f" points="351,-428 194,-428 194,-404 351,-404 351,-428"/>
+<text text-anchor="middle" x="272.5" y="-413.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_particles_memory</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;interface~allocate_particles_memory -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge3" class="edge">
+<title>proc~construct_particles_std&#45;&gt;interface~allocate_particles_memory</title>
+<path fill="none" stroke="#000000" d="M74.01,-281.01C87.42,-306.49 122.41,-366.01 170,-395 174.5,-397.74 179.29,-400.13 184.25,-402.2"/>
+<polygon fill="#000000" stroke="#000000" points="183.38,-405.62 193.98,-405.84 185.83,-399.06 183.38,-405.62"/>
+</g>
+<!-- ktable -->
+<g id="proc~~construct_particles_std~~CallsGraph_node5" class="node">
+<title>ktable</title>
+<polygon fill="#777777" stroke="#777777" points="299.5,-386 245.5,-386 245.5,-362 299.5,-362 299.5,-386"/>
+<text text-anchor="middle" x="272.5" y="-371.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ktable</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;ktable -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge4" class="edge">
+<title>proc~construct_particles_std&#45;&gt;ktable</title>
+<path fill="none" stroke="#000000" d="M78.91,-281.17C96.28,-299.74 132.13,-334.87 170,-353 190.46,-362.79 215.37,-368.03 235.4,-370.83"/>
+<polygon fill="#000000" stroke="#000000" points="235.02,-374.31 245.37,-372.08 235.89,-367.36 235.02,-374.31"/>
+</g>
+<!-- set_units -->
+<g id="proc~~construct_particles_std~~CallsGraph_node6" class="node">
+<title>set_units</title>
+<polygon fill="#777777" stroke="#777777" points="302,-344 243,-344 243,-320 302,-320 302,-344"/>
+<text text-anchor="middle" x="272.5" y="-329.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_units</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;set_units -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge5" class="edge">
+<title>proc~construct_particles_std&#45;&gt;set_units</title>
+<path fill="none" stroke="#000000" d="M93.51,-281.06C113.85,-290.3 143.27,-302.81 170,-311 190.42,-317.26 213.72,-322.22 232.84,-325.75"/>
+<polygon fill="#000000" stroke="#000000" points="232.24,-329.2 242.7,-327.52 233.47,-322.31 232.24,-329.2"/>
+</g>
+<!-- proc~spherical_from_cartesian -->
+<g id="proc~~construct_particles_std~~CallsGraph_node7" class="node">
+<title>proc~spherical_from_cartesian</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node7"><a xlink:href=".././proc/spherical_from_cartesian.html" xlink:title="spherical_from_cartesian">
+<polygon fill="#d9534f" stroke="#d9534f" points="345.5,-302 199.5,-302 199.5,-278 345.5,-278 345.5,-302"/>
+<text text-anchor="middle" x="272.5" y="-287.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spherical_from_cartesian</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;proc~spherical_from_cartesian -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge6" class="edge">
+<title>proc~construct_particles_std&#45;&gt;proc~spherical_from_cartesian</title>
+<path fill="none" stroke="#000000" d="M134.07,-275.82C151.7,-277.64 170.96,-279.62 189.33,-281.52"/>
+<polygon fill="#000000" stroke="#000000" points="189.13,-285.02 199.44,-282.56 189.85,-278.06 189.13,-285.02"/>
+</g>
+<!-- proc~spatial_vector_norm_sym3x3 -->
+<g id="proc~~construct_particles_std~~CallsGraph_node8" class="node">
+<title>proc~spatial_vector_norm_sym3x3</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node8"><a xlink:href=".././proc/spatial_vector_norm_sym3x3.html" xlink:title="spatial_vector_norm_sym3x3">
+<polygon fill="#d9534f" stroke="#d9534f" points="356,-260 189,-260 189,-236 356,-236 356,-260"/>
+<text text-anchor="middle" x="272.5" y="-245.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spatial_vector_norm_sym3x3</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;proc~spatial_vector_norm_sym3x3 -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge7" class="edge">
+<title>proc~construct_particles_std&#45;&gt;proc~spatial_vector_norm_sym3x3</title>
+<path fill="none" stroke="#000000" d="M134.07,-262.18C148.21,-260.72 163.41,-259.15 178.36,-257.61"/>
+<polygon fill="#000000" stroke="#000000" points="179.07,-261.06 188.65,-256.55 178.35,-254.09 179.07,-261.06"/>
+</g>
+<!-- shorten_eos_name -->
+<g id="proc~~construct_particles_std~~CallsGraph_node9" class="node">
+<title>shorten_eos_name</title>
+<polygon fill="#777777" stroke="#777777" points="329,-218 216,-218 216,-194 329,-194 329,-218"/>
+<text text-anchor="middle" x="272.5" y="-203.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">shorten_eos_name</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;shorten_eos_name -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge8" class="edge">
+<title>proc~construct_particles_std&#45;&gt;shorten_eos_name</title>
+<path fill="none" stroke="#000000" d="M93.51,-256.94C113.85,-247.7 143.27,-235.19 170,-227 181.49,-223.48 193.9,-220.37 205.96,-217.69"/>
+<polygon fill="#000000" stroke="#000000" points="206.93,-221.06 215.98,-215.54 205.47,-214.21 206.93,-221.06"/>
+</g>
+<!-- alive -->
+<g id="proc~~construct_particles_std~~CallsGraph_node10" class="node">
+<title>alive</title>
+<polygon fill="#777777" stroke="#777777" points="299.5,-176 245.5,-176 245.5,-152 299.5,-152 299.5,-176"/>
+<text text-anchor="middle" x="272.5" y="-161.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">alive</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;alive -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge9" class="edge">
+<title>proc~construct_particles_std&#45;&gt;alive</title>
+<path fill="none" stroke="#000000" d="M78.91,-256.83C96.28,-238.26 132.13,-203.13 170,-185 190.46,-175.21 215.37,-169.97 235.4,-167.17"/>
+<polygon fill="#000000" stroke="#000000" points="235.89,-170.64 245.37,-165.92 235.02,-163.69 235.89,-170.64"/>
+</g>
+<!-- interface~check_particle_positions -->
+<g id="proc~~construct_particles_std~~CallsGraph_node11" class="node">
+<title>interface~check_particle_positions</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node11"><a xlink:href=".././interface/check_particle_positions.html" xlink:title="check_particle_positions">
+<polygon fill="#a7506f" stroke="#a7506f" points="343.5,-134 201.5,-134 201.5,-110 343.5,-110 343.5,-134"/>
+<text text-anchor="middle" x="272.5" y="-119.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">check_particle_positions</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;interface~check_particle_positions -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge10" class="edge">
+<title>proc~construct_particles_std&#45;&gt;interface~check_particle_positions</title>
+<path fill="none" stroke="#000000" d="M74.01,-256.99C87.42,-231.51 122.41,-171.99 170,-143 176.7,-138.92 184.06,-135.62 191.66,-132.95"/>
+<polygon fill="#000000" stroke="#000000" points="192.9,-136.23 201.39,-129.9 190.8,-129.55 192.9,-136.23"/>
+</g>
+<!-- interface~impose_equatorial_plane_symmetry -->
+<g id="proc~~construct_particles_std~~CallsGraph_node12" class="node">
+<title>interface~impose_equatorial_plane_symmetry</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node12"><a xlink:href=".././interface/impose_equatorial_plane_symmetry.html" xlink:title="impose_equatorial_plane_symmetry">
+<polygon fill="#a7506f" stroke="#a7506f" points="375,-92 170,-92 170,-68 375,-68 375,-92"/>
+<text text-anchor="middle" x="272.5" y="-77.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">impose_equatorial_plane_symmetry</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;interface~impose_equatorial_plane_symmetry -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge11" class="edge">
+<title>proc~construct_particles_std&#45;&gt;interface~impose_equatorial_plane_symmetry</title>
+<path fill="none" stroke="#000000" d="M71.58,-256.92C81.52,-225.62 112.57,-141.53 170,-101 172.27,-99.4 174.63,-97.92 177.06,-96.55"/>
+<polygon fill="#000000" stroke="#000000" points="178.77,-99.61 186.17,-92.03 175.66,-93.33 178.77,-99.61"/>
+</g>
+<!-- none~reflect_particles_yz_plane -->
+<g id="proc~~construct_particles_std~~CallsGraph_node13" class="node">
+<title>none~reflect_particles_yz_plane</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="347,-50 198,-50 198,-26 347,-26 347,-50"/>
+<text text-anchor="middle" x="272.5" y="-35.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">reflect_particles_yz_plane</text>
+</g>
+<!-- proc~construct_particles_std&#45;&gt;none~reflect_particles_yz_plane -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge12" class="edge">
+<title>proc~construct_particles_std&#45;&gt;none~reflect_particles_yz_plane</title>
+<path fill="none" stroke="#000000" d="M70.04,-256.94C76.86,-220.64 102.35,-111.65 170,-59 175.49,-54.73 181.63,-51.27 188.1,-48.48"/>
+<polygon fill="#000000" stroke="#000000" points="189.66,-51.63 197.79,-44.84 187.2,-45.08 189.66,-51.63"/>
+</g>
+<!-- proc~allocate_particles_memory -->
+<g id="proc~~construct_particles_std~~CallsGraph_node15" class="node">
+<title>proc~allocate_particles_memory</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node15"><a xlink:href=".././proc/allocate_particles_memory.html" xlink:title="allocate_particles_memory">
+<polygon fill="#d9534f" stroke="#d9534f" points="592,-428 435,-428 435,-404 592,-404 592,-428"/>
+<text text-anchor="middle" x="513.5" y="-413.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_particles_memory</text>
+</a>
+</g>
+</g>
+<!-- interface~allocate_particles_memory&#45;&gt;proc~allocate_particles_memory -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge13" class="edge">
+<title>interface~allocate_particles_memory&#45;&gt;proc~allocate_particles_memory</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M351.1,-416C374.59,-416 400.56,-416 424.68,-416"/>
+<polygon fill="#000000" stroke="#000000" points="424.88,-419.5 434.88,-416 424.88,-412.5 424.88,-419.5"/>
+</g>
+<!-- proc~check_particle_positions -->
+<g id="proc~~construct_particles_std~~CallsGraph_node14" class="node">
+<title>proc~check_particle_positions</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node14"><a xlink:href=".././proc/check_particle_positions.html" xlink:title="check_particle_positions">
+<polygon fill="#d9534f" stroke="#d9534f" points="584.5,-140 442.5,-140 442.5,-116 584.5,-116 584.5,-140"/>
+<text text-anchor="middle" x="513.5" y="-125.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">check_particle_positions</text>
+</a>
+</g>
+</g>
+<!-- interface~check_particle_positions&#45;&gt;proc~check_particle_positions -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge14" class="edge">
+<title>interface~check_particle_positions&#45;&gt;proc~check_particle_positions</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M343.59,-123.76C371.44,-124.46 403.63,-125.27 432.39,-125.99"/>
+<polygon fill="#000000" stroke="#000000" points="432.32,-129.49 442.41,-126.24 432.5,-122.49 432.32,-129.49"/>
+</g>
+<!-- proc~impose_equatorial_plane_symmetry -->
+<g id="proc~~construct_particles_std~~CallsGraph_node16" class="node">
+<title>proc~impose_equatorial_plane_symmetry</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node16"><a xlink:href=".././proc/impose_equatorial_plane_symmetry.html" xlink:title="impose_equatorial_plane_symmetry">
+<polygon fill="#d9534f" stroke="#d9534f" points="616,-87 411,-87 411,-63 616,-63 616,-87"/>
+<text text-anchor="middle" x="513.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">impose_equatorial_plane_symmetry</text>
+</a>
+</g>
+</g>
+<!-- interface~impose_equatorial_plane_symmetry&#45;&gt;proc~impose_equatorial_plane_symmetry -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge15" class="edge">
+<title>interface~impose_equatorial_plane_symmetry&#45;&gt;proc~impose_equatorial_plane_symmetry</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M375.2,-77.87C383.7,-77.69 392.31,-77.51 400.87,-77.34"/>
+<polygon fill="#000000" stroke="#000000" points="400.96,-80.83 410.89,-77.13 400.82,-73.84 400.96,-80.83"/>
+</g>
+<!-- indexx -->
+<g id="proc~~construct_particles_std~~CallsGraph_node17" class="node">
+<title>indexx</title>
+<polygon fill="#777777" stroke="#777777" points="766.5,-150 712.5,-150 712.5,-126 766.5,-126 766.5,-150"/>
+<text text-anchor="middle" x="739.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">indexx</text>
+</g>
+<!-- proc~check_particle_positions&#45;&gt;indexx -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge16" class="edge">
+<title>proc~check_particle_positions&#45;&gt;indexx</title>
+<path fill="none" stroke="#000000" d="M584.76,-131.14C623.72,-132.88 670.55,-134.97 702.21,-136.38"/>
+<polygon fill="#000000" stroke="#000000" points="702.18,-139.88 712.33,-136.83 702.49,-132.89 702.18,-139.88"/>
+</g>
+<!-- com -->
+<g id="proc~~construct_particles_std~~CallsGraph_node18" class="node">
+<title>com</title>
+<polygon fill="#777777" stroke="#777777" points="766.5,-108 712.5,-108 712.5,-84 766.5,-84 766.5,-108"/>
+<text text-anchor="middle" x="739.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">com</text>
+</g>
+<!-- proc~impose_equatorial_plane_symmetry&#45;&gt;com -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge18" class="edge">
+<title>proc~impose_equatorial_plane_symmetry&#45;&gt;com</title>
+<path fill="none" stroke="#000000" d="M616.01,-84.52C646.73,-87.4 678.51,-90.38 702,-92.58"/>
+<polygon fill="#000000" stroke="#000000" points="701.89,-96.08 712.17,-93.53 702.54,-89.11 701.89,-96.08"/>
+</g>
+<!-- interface~find_particles_above_xy_plane -->
+<g id="proc~~construct_particles_std~~CallsGraph_node19" class="node">
+<title>interface~find_particles_above_xy_plane</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node19"><a xlink:href=".././interface/find_particles_above_xy_plane.html" xlink:title="find_particles_above_xy_plane">
+<polygon fill="#a7506f" stroke="#a7506f" points="827,-66 652,-66 652,-42 827,-42 827,-66"/>
+<text text-anchor="middle" x="739.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find_particles_above_xy_plane</text>
+</a>
+</g>
+</g>
+<!-- proc~impose_equatorial_plane_symmetry&#45;&gt;interface~find_particles_above_xy_plane -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge19" class="edge">
+<title>proc~impose_equatorial_plane_symmetry&#45;&gt;interface~find_particles_above_xy_plane</title>
+<path fill="none" stroke="#000000" d="M616.01,-65.48C624.49,-64.69 633.05,-63.89 641.49,-63.09"/>
+<polygon fill="#000000" stroke="#000000" points="642.09,-66.55 651.72,-62.14 641.43,-59.58 642.09,-66.55"/>
+</g>
+<!-- interface~reflect_particles_xy_plane -->
+<g id="proc~~construct_particles_std~~CallsGraph_node20" class="node">
+<title>interface~reflect_particles_xy_plane</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node20"><a xlink:href=".././interface/reflect_particles_xy_plane.html" xlink:title="reflect_particles_xy_plane">
+<polygon fill="#a7506f" stroke="#a7506f" points="814.5,-24 664.5,-24 664.5,0 814.5,0 814.5,-24"/>
+<text text-anchor="middle" x="739.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">reflect_particles_xy_plane</text>
+</a>
+</g>
+</g>
+<!-- proc~impose_equatorial_plane_symmetry&#45;&gt;interface~reflect_particles_xy_plane -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge17" class="edge">
+<title>proc~impose_equatorial_plane_symmetry&#45;&gt;interface~reflect_particles_xy_plane</title>
+<path fill="none" stroke="#000000" d="M551.97,-62.91C579.52,-54.18 617.94,-42.33 652,-33 660.03,-30.8 668.52,-28.59 676.91,-26.48"/>
+<polygon fill="#000000" stroke="#000000" points="677.83,-29.86 686.69,-24.06 676.14,-23.07 677.83,-29.86"/>
+</g>
+<!-- proc~find_particles_above_xy_plane -->
+<g id="proc~~construct_particles_std~~CallsGraph_node22" class="node">
+<title>proc~find_particles_above_xy_plane</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node22"><a xlink:href=".././proc/find_particles_above_xy_plane.html" xlink:title="find_particles_above_xy_plane">
+<polygon fill="#d9534f" stroke="#d9534f" points="1038,-66 863,-66 863,-42 1038,-42 1038,-66"/>
+<text text-anchor="middle" x="950.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find_particles_above_xy_plane</text>
+</a>
+</g>
+</g>
+<!-- interface~find_particles_above_xy_plane&#45;&gt;proc~find_particles_above_xy_plane -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge20" class="edge">
+<title>interface~find_particles_above_xy_plane&#45;&gt;proc~find_particles_above_xy_plane</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M827.02,-54C835.49,-54 844.13,-54 852.7,-54"/>
+<polygon fill="#000000" stroke="#000000" points="852.71,-57.5 862.71,-54 852.71,-50.5 852.71,-57.5"/>
+</g>
+<!-- proc~reflect_particles_xy_plane -->
+<g id="proc~~construct_particles_std~~CallsGraph_node21" class="node">
+<title>proc~reflect_particles_xy_plane</title>
+<g id="a_proc~~construct_particles_std~~CallsGraph_node21"><a xlink:href=".././proc/reflect_particles_xy_plane.html" xlink:title="reflect_particles_xy_plane">
+<polygon fill="#d9534f" stroke="#d9534f" points="1025.5,-24 875.5,-24 875.5,0 1025.5,0 1025.5,-24"/>
+<text text-anchor="middle" x="950.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">reflect_particles_xy_plane</text>
+</a>
+</g>
+</g>
+<!-- interface~reflect_particles_xy_plane&#45;&gt;proc~reflect_particles_xy_plane -->
+<g id="proc~~construct_particles_std~~CallsGraph_edge21" class="edge">
+<title>interface~reflect_particles_xy_plane&#45;&gt;proc~reflect_particles_xy_plane</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M814.77,-12C831.1,-12 848.5,-12 865.18,-12"/>
+<polygon fill="#000000" stroke="#000000" points="865.47,-15.5 875.47,-12 865.47,-8.5 865.47,-15.5"/>
+</g>
+</g>
+</svg>
+</div><script>var panprocconstruct_particles_stdCallsGraph = svgPanZoom('#procconstruct_particles_stdCallsGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="594pt" height="32pt"
+ viewBox="0.00 0.00 594.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 590,-28 590,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="388,-24 244,-24 244,0 388,0 388,-24"/>
+<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="463.5,-24 406.5,-24 406.5,0 463.5,0 463.5,-24"/>
+<text text-anchor="middle" x="435" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="586,-24 482,-24 482,0 586,0 586,-24"/>
+<text text-anchor="middle" x="534" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Called by</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~construct_particles_std~~CalledByGraph Pages: 1 -->
+<svg id="procconstruct_particles_stdCalledByGraph" width="549pt" height="74pt"
+ viewBox="0.00 0.00 549.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~construct_particles_std~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>proc~~construct_particles_std~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 545,-70 545,4 -4,4"/>
+<!-- proc~construct_particles_std -->
+<g id="proc~~construct_particles_std~~CalledByGraph_node1" class="node">
+<title>proc~construct_particles_std</title>
+<polygon fill="none" stroke="black" points="541,-45 407,-45 407,-21 541,-21 541,-45"/>
+<text text-anchor="middle" x="474" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">construct_particles_std</text>
+</g>
+<!-- interface~construct_particles_std -->
+<g id="proc~~construct_particles_std~~CalledByGraph_node2" class="node">
+<title>interface~construct_particles_std</title>
+<g id="a_proc~~construct_particles_std~~CalledByGraph_node2"><a xlink:href=".././interface/construct_particles_std.html" xlink:title="construct_particles_std">
+<polygon fill="#a7506f" stroke="#a7506f" points="371,-45 237,-45 237,-21 371,-21 371,-45"/>
+<text text-anchor="middle" x="304" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">construct_particles_std</text>
+</a>
+</g>
+</g>
+<!-- interface~construct_particles_std&#45;&gt;proc~construct_particles_std -->
+<g id="proc~~construct_particles_std~~CalledByGraph_edge1" class="edge">
+<title>interface~construct_particles_std&#45;&gt;proc~construct_particles_std</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M371.4,-33C379.68,-33 388.2,-33 396.62,-33"/>
+<polygon fill="#000000" stroke="#000000" points="396.81,-36.5 406.81,-33 396.81,-29.5 396.81,-36.5"/>
+</g>
+<!-- interface~particles -->
+<g id="proc~~construct_particles_std~~CalledByGraph_node3" class="node">
+<title>interface~particles</title>
+<g id="a_proc~~construct_particles_std~~CalledByGraph_node3"><a xlink:href=".././interface/particles.html" xlink:title="particles">
+<polygon fill="#a7506f" stroke="#a7506f" points="201,-45 143,-45 143,-21 201,-21 201,-45"/>
+<text text-anchor="middle" x="172" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">particles</text>
+</a>
+</g>
+</g>
+<!-- interface~particles&#45;&gt;interface~construct_particles_std -->
+<g id="proc~~construct_particles_std~~CalledByGraph_edge2" class="edge">
+<title>interface~particles&#45;&gt;interface~construct_particles_std</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M201.21,-33C208.91,-33 217.65,-33 226.68,-33"/>
+<polygon fill="#000000" stroke="#000000" points="226.97,-36.5 236.97,-33 226.97,-29.5 226.97,-36.5"/>
+</g>
+<!-- program~convergence_test -->
+<g id="proc~~construct_particles_std~~CalledByGraph_node4" class="node">
+<title>program~convergence_test</title>
+<g id="a_proc~~construct_particles_std~~CalledByGraph_node4"><a xlink:href=".././program/convergence_test.html" xlink:title="convergence_test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="107,-66 0,-66 0,-42 107,-42 107,-66"/>
+<text text-anchor="middle" x="53.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">convergence_test</text>
+</a>
+</g>
+</g>
+<!-- program~convergence_test&#45;&gt;interface~particles -->
+<g id="proc~~construct_particles_std~~CalledByGraph_edge3" class="edge">
+<title>program~convergence_test&#45;&gt;interface~particles</title>
+<path fill="none" stroke="#000000" d="M107.3,-44.48C115.93,-42.93 124.73,-41.34 132.92,-39.86"/>
+<polygon fill="#000000" stroke="#000000" points="133.69,-43.28 142.91,-38.06 132.45,-36.39 133.69,-43.28"/>
+</g>
+<!-- program~sphincs_id -->
+<g id="proc~~construct_particles_std~~CalledByGraph_node5" class="node">
+<title>program~sphincs_id</title>
+<g id="a_proc~~construct_particles_std~~CalledByGraph_node5"><a xlink:href=".././program/sphincs_id.html" xlink:title="sphincs_id">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="87,-24 20,-24 20,0 87,0 87,-24"/>
+<text text-anchor="middle" x="53.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sphincs_id</text>
+</a>
+</g>
+</g>
+<!-- program~sphincs_id&#45;&gt;interface~particles -->
+<g id="proc~~construct_particles_std~~CalledByGraph_edge4" class="edge">
+<title>program~sphincs_id&#45;&gt;interface~particles</title>
+<path fill="none" stroke="#000000" d="M87.26,-17.91C101.48,-20.47 118.22,-23.49 132.98,-26.15"/>
+<polygon fill="#000000" stroke="#000000" points="132.37,-29.59 142.83,-27.92 133.61,-22.7 132.37,-29.59"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="594pt" height="32pt"
+ viewBox="0.00 0.00 594.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 590,-28 590,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="388,-24 244,-24 244,0 388,0 388,-24"/>
+<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="463.5,-24 406.5,-24 406.5,0 463.5,0 463.5,-24"/>
+<text text-anchor="middle" x="435" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="586,-24 482,-24 482,0 586,0 586,-24"/>
+<text text-anchor="middle" x="534" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-a~6">a</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-apm_iterate~2">apm_iterate</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-apm_max_it~2">apm_max_it</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-barycenter~4">barycenter</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-center~8">center</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-central_density~4">central_density</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-column_nu">column_nu</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-columns">columns</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-compose_eos~2">compose_eos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-compose_filename~2">compose_filename</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-compose_path~2">compose_path</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-correct_nu~3">correct_nu</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-counter">counter</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-debug~3">debug</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-exist~10">exist</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-file_exists">file_exists</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_apm_pos">filename_apm_pos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_apm_pos_id">filename_apm_pos_id</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_apm_results">filename_apm_results</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_mass_profile~3">filename_mass_profile</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_shells_pos~2">filename_shells_pos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-filename_shells_radii~3">filename_shells_radii</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-g00_lengthscales">g00_lengthscales</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-ghost_dist~2">ghost_dist</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-header_lines">header_lines</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-i_matter~30">i_matter</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-lapse_lengthscales">lapse_lengthscales</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-last_r~3">last_r</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-lower_bound~3">lower_bound</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-lower_factor~2">lower_factor</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-mass_it~2">mass_it</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-max_inc~2">max_inc</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-max_length">max_length</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-max_mass">max_mass</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-max_steps~2">max_steps</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-min_eps">min_eps</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-min_g00_abs">min_g00_abs</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-min_lapse">min_lapse</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-min_vel">min_vel</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-n_cols">n_cols</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-n_matter_tmp">n_matter_tmp</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nlines">nlines</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-npart_des~3">npart_des</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-npart_des_i">npart_des_i</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-npart_i_tmp">npart_i_tmp</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-npart_tmp">npart_tmp</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nu_ratio_des~2">nu_ratio_des</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nuratio_des~2">nuratio_des</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nuratio_thres~2">nuratio_thres</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nx_gh~2">nx_gh</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-ny_gh~2">ny_gh</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-nz_gh~2">nz_gh</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-parts_all">parts_all</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-parts_pos">parts_pos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-parts_pos_namefile">parts_pos_namefile</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-parts_pos_path">parts_pos_path</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-phi_a">phi_a</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-print_step~2">print_step</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-pvol_tmp~2">pvol_tmp</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-r_a">r_a</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-randomize_phi~2">randomize_phi</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-randomize_r~2">randomize_r</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-randomize_theta~2">randomize_theta</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-read_nu~2">read_nu</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-redistribute_nu~2">redistribute_nu</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-reflect_particles_x~2">reflect_particles_x</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-remove_atmosphere~2">remove_atmosphere</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-shift_norm">shift_norm</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-sizes~3">sizes</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-str_i">str_i</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-stretch~2">stretch</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-theta_a">theta_a</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-thres~2">thres</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-tmp~2">tmp</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-tmp_pos">tmp_pos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-tol_equal_mass">tol_equal_mass</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-total_mass">total_mass</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-unit_pos">unit_pos</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-upper_bound~3">upper_bound</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-upper_factor~2">upper_factor</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-use_atmosphere~3">use_atmosphere</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-use_thres~2">use_thres</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-xmax~3">xmax</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-xmin~3">xmin</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-ymax~3">ymax</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-ymin~3">ymin</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-zmax~3">zmax</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#variable-zmin~3">zmin</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#types-1">Derived Types</a></h3></div>
+  <div id="types-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../proc/construct_particles_std.html#type-parts_i">parts_i</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
+  <div id="funcs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-import_density">import_density</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-validate_position~4">validate_position</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-compute_nstar_id">compute_nstar_id</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-get_nstar_id">get_nstar_id</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-import_id">import_id</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-integrate_mass_density">integrate_mass_density</a>
+      <a class="list-group-item" href="../proc/construct_particles_std.html#proc-reflect_particles_yz_plane">reflect_particles_yz_plane</a>
+    </div>
+  </div>
+</div>
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+
+    <section>    
+      <h2>Variables</h2>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-a~6"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>a</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-apm_iterate~2"></span>logical,</td>
+<td>private,</td>  <td>DIMENSION(id% get_n_matter())</td><td>::</td>
+  <td><strong>apm_iterate</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-apm_max_it~2"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>apm_max_it</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-barycenter~4"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(id% get_n_matter(),3)</td><td>::</td>
+  <td><strong>barycenter</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-center~8"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(id% get_n_matter(),3)</td><td>::</td>
+  <td><strong>center</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-central_density~4"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(id% get_n_matter())</td><td>::</td>
+  <td><strong>central_density</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-column_nu"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>column_nu</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-columns"></span>integer,</td>
+<td>private,</td>  <td>DIMENSION(3)</td><td>::</td>
+  <td><strong>columns</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-compose_eos~2"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>compose_eos</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-compose_filename~2"></span>character(len=max_length),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>compose_filename</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-compose_path~2"></span>character(len=max_length),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>compose_path</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-correct_nu~3"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>correct_nu</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-counter"></span>integer,</td>
+<td>private,</td>  <td>SAVE</td><td>::</td>
+  <td><strong>counter</strong></td><td> =</td><td>1</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-debug~3"></span>logical,</td>
+<td>private,</td>  <td>parameter</td><td>::</td>
+  <td><strong>debug</strong></td><td> =</td><td>.FALSE.</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-exist~10"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>exist</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-file_exists"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>file_exists</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-filename_apm_pos"></span>character(len=max_length),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>filename_apm_pos</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-filename_apm_pos_id"></span>character(len=max_length),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>filename_apm_pos_id</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-filename_apm_results"></span>character(len=max_length),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>filename_apm_results</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-filename_mass_profile~3"></span>character(len=max_length),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>filename_mass_profile</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-filename_shells_pos~2"></span>character(len=max_length),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>filename_shells_pos</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-filename_shells_radii~3"></span>character(len=max_length),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>filename_shells_radii</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-g00_lengthscales"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(id% get_n_matter())</td><td>::</td>
+  <td><strong>g00_lengthscales</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-ghost_dist~2"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>ghost_dist</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-header_lines"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>header_lines</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-i_matter~30"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>i_matter</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-lapse_lengthscales"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(id% get_n_matter())</td><td>::</td>
+  <td><strong>lapse_lengthscales</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-last_r~3"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>last_r</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-lower_bound~3"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>lower_bound</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-lower_factor~2"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>lower_factor</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-mass_it~2"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>mass_it</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-max_inc~2"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>max_inc</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-max_length"></span>integer,</td>
+<td>private,</td>  <td>parameter</td><td>::</td>
+  <td><strong>max_length</strong></td><td> =</td><td>50</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-max_mass"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>max_mass</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-max_steps~2"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>max_steps</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-min_eps"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>min_eps</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-min_g00_abs"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>min_g00_abs</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-min_lapse"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>min_lapse</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-min_vel"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>min_vel</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-n_cols"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>n_cols</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-n_matter_tmp"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>n_matter_tmp</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nlines"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>nlines</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-npart_des~3"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>npart_des</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-npart_des_i"></span>integer,</td>
+<td>private,</td>  <td>DIMENSION(id% get_n_matter())</td><td>::</td>
+  <td><strong>npart_des_i</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-npart_i_tmp"></span>integer,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>npart_i_tmp</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-npart_tmp"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>npart_tmp</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nu_ratio_des~2"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>nu_ratio_des</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nuratio_des~2"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>nuratio_des</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nuratio_thres~2"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>nuratio_thres</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nx_gh~2"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>nx_gh</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-ny_gh~2"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>ny_gh</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nz_gh~2"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>nz_gh</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-parts_all"></span>type(parts_i),</td>
+<td>private,</td>  <td>DIMENSION(id% get_n_matter())</td><td>::</td>
+  <td><strong>parts_all</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-parts_pos"></span>character(len=max_length),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>parts_pos</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-parts_pos_namefile"></span>character(len=:),</td>
+<td>private,</td>  <td>ALLOCATABLE</td><td>::</td>
+  <td><strong>parts_pos_namefile</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-parts_pos_path"></span>character(len=max_length),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>parts_pos_path</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-phi_a"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>phi_a</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-print_step~2"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>print_step</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-pvol_tmp~2"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>pvol_tmp</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-r_a"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>r_a</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-randomize_phi~2"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>randomize_phi</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-randomize_r~2"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>randomize_r</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-randomize_theta~2"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>randomize_theta</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-read_nu~2"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>read_nu</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-redistribute_nu~2"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>redistribute_nu</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-reflect_particles_x~2"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>reflect_particles_x</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-remove_atmosphere~2"></span>logical,</td>
+<td>private,</td>  <td>DIMENSION(id% get_n_matter())</td><td>::</td>
+  <td><strong>remove_atmosphere</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-shift_norm"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>shift_norm</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-sizes~3"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(id% get_n_matter(),6)</td><td>::</td>
+  <td><strong>sizes</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-str_i"></span>character(len=3),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>str_i</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-stretch~2"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>stretch</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-theta_a"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>theta_a</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-thres~2"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>thres</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-tmp~2"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>tmp</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-tmp_pos"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION( :, : ), ALLOCATABLE</td><td>::</td>
+  <td><strong>tmp_pos</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-tol_equal_mass"></span>double precision,</td>
+<td>private,</td>  <td>parameter</td><td>::</td>
+  <td><strong>tol_equal_mass</strong></td><td> =</td><td>5D-3</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-total_mass"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>total_mass</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-unit_pos"></span>integer,</td>
+<td>private,</td>  <td>parameter</td><td>::</td>
+  <td><strong>unit_pos</strong></td><td> =</td><td>2289</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-upper_bound~3"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>upper_bound</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-upper_factor~2"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>upper_factor</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-use_atmosphere~3"></span>logical,</td>
+<td>private,</td>  <td>DIMENSION(id% get_n_matter())</td><td>::</td>
+  <td><strong>use_atmosphere</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-use_thres~2"></span>logical,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>use_thres</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-xmax~3"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>xmax</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-xmin~3"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>xmin</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-ymax~3"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>ymax</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-ymin~3"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>ymin</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-zmax~3"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>zmax</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-zmin~3"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>zmin</strong></td><td></td><td></td><td></td>
+</tr>
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+
+    
+    <section>
+   <h2>Derived Types</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="type-parts_i"></span><h3>type :: parts_i  </h3></div>
+  <div class="panel-body">
+     <h4>Components</h4>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-h_i"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION( : ), ALLOCATABLE</td><td>::</td>
+  <td><strong>h_i</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nu_i"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION( : ), ALLOCATABLE</td><td>::</td>
+  <td><strong>nu_i</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-pmass_i"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION( : ), ALLOCATABLE</td><td>::</td>
+  <td><strong>pmass_i</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-pos_i"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION( :, : ), ALLOCATABLE</td><td>::</td>
+  <td><strong>pos_i</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-pvol_i"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION( : ), ALLOCATABLE</td><td>::</td>
+  <td><strong>pvol_i</strong></td><td></td><td></td><td></td>
+</tr>
+</tbody>
+</table>
+
+     
+  </div>
+</div>
+
+    </section>
+   <br>
+    
+ 
+    <section>
+    <h2>Functions</h2>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-import_density"></span><h3>function import_density(x, y, z) result(density)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>y</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>z</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision</small></h4>  
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-validate_position~4"></span><h3>function validate_position(x, y, z) result(answer)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>y</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>z</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>logical</small></h4>  
+
+  </div>
+  </div>
+
+    </section>
+    <br>
+
+
+    <section>
+    <h2>Subroutines</h2>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-compute_nstar_id"></span><h3>subroutine compute_nstar_id(npart_real, lapse, shift_x, shift_y, shift_z, v_euler_x, v_euler_y, v_euler_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, baryon_density, nstar_id)</h3></div>
+  <div class="panel-body">
+       
+<p>Compute nstar_id, the proper baryon mass density, given the
+  \(\mathrm{ID}\)</p>
+<p>FT 31.08.2021</p>
+<hr>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>npart_real</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>lapse</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>shift_x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>shift_y</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>shift_z</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>v_euler_x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>v_euler_y</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>v_euler_z</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>g_xx</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>g_xy</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>g_xz</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>g_yy</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>g_yz</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>g_zz</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>baryon_density</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out),</td>
+  <td></td>  <td>DIMENSION(npart_real)</td><td>::</td>
+  <td><strong>nstar_id</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_nstar_id"></span><h3>subroutine get_nstar_id(npart_real, x, y, z, nstar_id)</h3></div>
+  <div class="panel-body">
+       
+<p>Stores the proper baryon mass density in the array nstar_id
+  given as argument</p>
+<p>FT 31.08.2021</p>
+<hr>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>npart_real</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong>(npart_real)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>y</strong>(npart_real)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>z</strong>(npart_real)</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>nstar_id</strong>(npart_real)</td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-import_id"></span><h3>subroutine import_id(x, y, z, sqdetg, baryon_density, gamma_euler)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>y</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>z</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>sqdetg</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>baryon_density</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>gamma_euler</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-integrate_mass_density"></span><h3>subroutine integrate_mass_density(center, radius, central_density, dr, dth, dphi, mass, mass_profile, mass_profile_idx)</h3></div>
+  <div class="panel-body">
+           
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>center</strong></td><td><p>Center of the star</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>radius</strong></td><td><p>Radius of the star</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>central_density</strong></td><td><p>Central density of the star</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dr</strong></td><td><p>Integration steps</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dth</strong></td><td><p>Integration steps</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>dphi</strong></td><td><p>Integration steps</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>mass</strong></td><td><p>Integrated mass of the star</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out),</td>
+  <td></td>  <td>DIMENSION(3,0:NINT(radius/dr))</td><td>::</td>
+  <td><strong>mass_profile</strong></td><td><p>Array storing the radial mass profile of the star</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(out),</td>
+  <td></td>  <td>DIMENSION(0:NINT(radius/dr))</td><td>::</td>
+  <td><strong>mass_profile_idx</strong></td><td><p>Array to store the indices for array mass_profile, sorted so that
+  mass_profile[mass_profile_idx] is in increasing order
+INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-reflect_particles_yz_plane"></span><h3>subroutine reflect_particles_yz_plane(pos_star1, pvol_star1, pmass_star1, nu_star1, h_star1, npart_star1, pos_star2, pvol_star2, pmass_star2, nu_star2, h_star2, npart_star2)</h3></div>
+  <div class="panel-body">
+       
+<p>Reflect particles of star 1
+  with respect to the <script type="math/tex">yz</script> plane and place them on star 2</p>
+<p>FT 07.02.2022</p>
+<hr>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(:,:)</td><td>::</td>
+  <td><strong>pos_star1</strong></td><td><p>Array where to store the particle positions for star 1</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>pvol_star1</strong></td><td><p>Array where to store the particle volumes for star 1</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>pmass_star1</strong></td><td><p>Array where to store the particle masses for star 1</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>nu_star1</strong></td><td><p>Array where to store the particle baryon number for star 1</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>h_star1</strong></td><td><p>Array where to store the particle smoothing lengths for star 1</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>npart_star1</strong></td><td><p>Variable where to store the particle number for star 1</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>pos_star2</strong></td><td><p>Array where to store the particle positions for star 2</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>pvol_star2</strong></td><td><p>Array where to store the particle volumes for star 2</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>pmass_star2</strong></td><td><p>Array where to store the particle masses for star 2</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>nu_star2</strong></td><td><p>Array where to store the particle baryon number for star 2</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>h_star2</strong></td><td><p>Array where to store the particle smoothing lengths for star 2</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>npart_star2</strong></td><td><p>Variable where to store the particle number for star 2</p></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+    </section>    
+    
+    
+    </div>
+  </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2022 
+</p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2022-04-02 15:56:56           </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+  </body>
+</html>

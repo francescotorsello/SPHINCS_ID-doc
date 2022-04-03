@@ -1,6 +1,25 @@
 ! File:         module_diffstar_lorene.f90
 ! Authors:      Francesco Torsello (FT)
-! Copyright:    GNU General Public License (GPLv3)
+!************************************************************************
+! Copyright (C) 2020, 2021, 2022 Francesco Torsello                     *
+!                                                                       *
+! This file is part of SPHINCS_ID                                       *
+!                                                                       *
+! SPHINCS_ID is free software: you can redistribute it and/or modify    *
+! it under the terms of the GNU General Public License as published by  *
+! the Free Software Foundation, either version 3 of the License, or     *
+! (at your option) any later version.                                   *
+!                                                                       *
+! SPHINCS_ID is distributed in the hope that it will be useful,         *
+! but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+! GNU General Public License for more details.                          *
+!                                                                       *
+! You should have received a copy of the GNU General Public License     *
+! along with SPHINCS_ID. If not, see <https://www.gnu.org/licenses/>.   *
+! The copy of the GNU General Public License should be in the file      *
+! 'COPYING'.                                                            *
+!************************************************************************
 
 MODULE diffstar_lorene
 
@@ -21,7 +40,7 @@ MODULE diffstar_lorene
   USE id_base,                     ONLY: idbase
   USE utility,                     ONLY: itr, ios, err_msg, test_status, &
                                          perc, creturn, compute_g4, &
-                                         determinant_sym4x4_grid, show_progress
+                                         determinant_sym4x4, show_progress
   USE timing,                      ONLY: timer
 
 
@@ -168,7 +187,7 @@ MODULE diffstar_lorene
     PROCEDURE:: import_spatial_metric
     !! Returns the |lorene|'s conformally flat spatial ADM metric
 
-    PROCEDURE:: test_position => is_hydro_negative
+    PROCEDURE:: test_position => is_hydro_positive
     !# Returns 1 if the energy density or the specific energy or the pressure
     !  are negative
 
@@ -259,6 +278,7 @@ MODULE diffstar_lorene
     !
 
     MODULE SUBROUTINE construct_diffstarlorene( derived_type, filename )
+    !! Constructs a [[diffstarlorene]] object
     !# Prints a summary of the physical properties the system
     !  to the standard output and, optionally, to a formatted file whose name
     !  is given as the optional argument `filename`
@@ -476,7 +496,7 @@ MODULE diffstar_lorene
 
 
     MODULE SUBROUTINE import_id_mass_b( THIS, x, y, z, &
-                                        g_xx, &
+                                        g, &
                                         baryon_density, &
                                         gamma_euler )
     !! Stores the hydro ID in the arrays needed to compute the baryon mass
@@ -486,9 +506,9 @@ MODULE diffstar_lorene
       DOUBLE PRECISION, INTENT( IN )    :: x
       DOUBLE PRECISION, INTENT( IN )    :: y
       DOUBLE PRECISION, INTENT( IN)     :: z
-      DOUBLE PRECISION, INTENT( IN OUT ):: g_xx
-      DOUBLE PRECISION, INTENT( IN OUT ):: baryon_density
-      DOUBLE PRECISION, INTENT( IN OUT ):: gamma_euler
+      DOUBLE PRECISION, DIMENSION(6), INTENT( OUT ):: g
+      DOUBLE PRECISION, INTENT( OUT ):: baryon_density
+      DOUBLE PRECISION, INTENT( OUT ):: gamma_euler
 
     END SUBROUTINE import_id_mass_b
 
@@ -552,9 +572,9 @@ MODULE diffstar_lorene
     END FUNCTION import_spatial_metric
 
 
-    MODULE FUNCTION is_hydro_negative( THIS, x, y, z ) RESULT( res )
-    !# Returns 1 if the energy density or the specific energy or the pressure
-    !  are negative, 0 otherwise
+    MODULE FUNCTION is_hydro_positive( THIS, x, y, z ) RESULT( res )
+    !# Returns .TRUE. if the energy density or the specific energy or the
+    !  pressure are positive, .FALSE. otherwise
 
       !> [[diffstarlorene]] object which this PROCEDURE is a member of
       CLASS(diffstarlorene),     INTENT( IN )       :: THIS
@@ -566,9 +586,9 @@ MODULE diffstar_lorene
       DOUBLE PRECISION, INTENT( IN ), VALUE:: z
       !& 1 if the energy density or the specific energy or the pressure
       !  are negative, 0 otherwise
-      INTEGER:: res
+      LOGICAL:: res
 
-    END FUNCTION is_hydro_negative
+    END FUNCTION is_hydro_positive
 
 
     MODULE FUNCTION get_field_array( THIS, field ) RESULT( field_array )
@@ -622,7 +642,7 @@ MODULE diffstar_lorene
     MODULE SUBROUTINE get_eos_parameters( THIS, i_matter, eos_params )
 
       !> [[diffstarlorene]] object which this PROCEDURE is a member of
-      CLASS(diffstarlorene), INTENT( IN OUT ):: THIS
+      CLASS(diffstarlorene), INTENT( IN ):: THIS
       INTEGER, INTENT( IN ):: i_matter
       !! Index of the matter object whose parameter is to return
       DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE, INTENT(OUT):: eos_params
@@ -647,8 +667,9 @@ MODULE diffstar_lorene
   PRIVATE:: construct_etdiffrot, get_diffstar_full, get_diffstar_spacetime, &
             get_diffstar_particles, get_diffstar_mass_b, &
             get_diffstar_hydro, get_diffstar_mass_density, &
-            get_diffstar_spatial_metric, negative_hydro, get_diffstar_params, &
+            get_diffstar_spatial_metric, positive_hydro, get_diffstar_params, &
             destruct_etdiffrot
+
 
   !-----------------------------------------------------------------!
   !--  Interfaces to the methods of |lorene|'s class |etdiffrot|  --!
@@ -689,7 +710,7 @@ MODULE diffstar_lorene
                                   x, y, z, &
                                   lapse, &
                                   shift_x, shift_y, shift_z, &
-                                  g_diag, &
+                                  g_rr, g_tt, g_pp, &
                                   k_xx, k_xy, k_xz, &
                                   k_yy, k_yz, k_zz, &
                                   baryon_density, &
@@ -735,7 +756,7 @@ MODULE diffstar_lorene
       REAL(C_DOUBLE), INTENT(OUT)       :: shift_x
       REAL(C_DOUBLE), INTENT(OUT)       :: shift_y
       REAL(C_DOUBLE), INTENT(OUT)       :: shift_z
-      REAL(C_DOUBLE), INTENT(OUT)       :: g_diag
+      REAL(C_DOUBLE), INTENT(OUT)       :: g_rr, g_tt, g_pp
       REAL(C_DOUBLE), INTENT(OUT)       :: k_xx
       REAL(C_DOUBLE), INTENT(OUT)       :: k_xy
       REAL(C_DOUBLE), INTENT(OUT)       :: k_xz
@@ -756,7 +777,7 @@ MODULE diffstar_lorene
                                        x, y, z, &
                                        lapse, &
                                        shift_x, shift_y, shift_z, &
-                                       g_diag, &
+                                       g_rr, g_tt, g_pp, &
                                        k_xx, k_xy, k_xz, &
                                        k_yy, k_yz, k_zz ) &
       BIND(C, NAME= "get_rotdiff_spacetime")
@@ -789,7 +810,7 @@ MODULE diffstar_lorene
       REAL(C_DOUBLE), INTENT(OUT)       :: shift_x
       REAL(C_DOUBLE), INTENT(OUT)       :: shift_y
       REAL(C_DOUBLE), INTENT(OUT)       :: shift_z
-      REAL(C_DOUBLE), INTENT(OUT)       :: g_diag
+      REAL(C_DOUBLE), INTENT(OUT)       :: g_rr, g_tt, g_pp
       REAL(C_DOUBLE), INTENT(OUT)       :: k_xx
       REAL(C_DOUBLE), INTENT(OUT)       :: k_xy
       REAL(C_DOUBLE), INTENT(OUT)       :: k_xz
@@ -804,7 +825,7 @@ MODULE diffstar_lorene
                                        x, y, z, &
                                        lapse, &
                                        shift_x, shift_y, shift_z, &
-                                       g_diag, &
+                                       g_rr, g_tt, g_pp, &
                                        baryon_density, &
                                        energy_density, &
                                        specific_energy, &
@@ -847,7 +868,7 @@ MODULE diffstar_lorene
       REAL(C_DOUBLE), INTENT(OUT)       :: shift_x
       REAL(C_DOUBLE), INTENT(OUT)       :: shift_y
       REAL(C_DOUBLE), INTENT(OUT)       :: shift_z
-      REAL(C_DOUBLE), INTENT(OUT)       :: g_diag
+      REAL(C_DOUBLE), INTENT(OUT)       :: g_rr, g_tt, g_pp
       REAL(C_DOUBLE), INTENT(OUT)       :: baryon_density
       REAL(C_DOUBLE), INTENT(OUT)       :: energy_density
       REAL(C_DOUBLE), INTENT(OUT)       :: specific_energy
@@ -861,7 +882,7 @@ MODULE diffstar_lorene
 
     SUBROUTINE get_diffstar_mass_b( optr, &
                                     x, y, z, &
-                                    g_diag, &
+                                    g_rr, g_tt, g_pp, &
                                     baryon_density, &
                                     gamma_euler ) &
       BIND(C, NAME= "get_rotdiff_mass_b")
@@ -896,7 +917,7 @@ MODULE diffstar_lorene
       !> \(z\) coordinate of the desired point
       REAL(C_DOUBLE), INTENT(IN), VALUE :: z
       !> \(g_{xx}=g_{yy}=g_{zz}\) at \(x,y,z\)
-      REAL(C_DOUBLE), INTENT(OUT)       :: g_diag
+      REAL(C_DOUBLE), INTENT(OUT)       :: g_rr, g_tt, g_pp
       !> Baryon mass density at \(x,y,z\)
       REAL(C_DOUBLE), INTENT(OUT)       :: baryon_density
       !& Relative Lorentz factor between the 4-velocity of the fluid
@@ -992,7 +1013,7 @@ MODULE diffstar_lorene
 
 
     FUNCTION get_diffstar_spatial_metric( optr, x, y, z ) RESULT( res ) &
-      BIND(C, NAME= "get_g_diag")
+      BIND(C, NAME= "get_g_rr")
 
       !************************************************
       !
@@ -1025,16 +1046,16 @@ MODULE diffstar_lorene
     END FUNCTION get_diffstar_spatial_metric
 
 
-    FUNCTION negative_hydro( optr, x, y, z ) RESULT( res ) &
-      BIND(C, NAME= "is_hydro_negative")
+    FUNCTION positive_hydro( optr, x, y, z ) RESULT( res ) &
+      BIND(C, NAME= "is_hydro_positive_diffrot")
 
       !************************************************
       !
       !# Interface to the |lorene| method of class
       !  |etdiffrot| with the same name, that returns 1
-      !  if the energy density is nonpositive,
-      !  or if the specific energy is nonpositive,
-      !  or if the pressure is nonpositive,
+      !  if the energy density is positive,
+      !  and if the specific energy is positive,
+      !  and if the pressure is nonpositive,
       !  at the specified point; it returns 0 otherwise
       !
       !  FT 24.10.2021
@@ -1054,10 +1075,10 @@ MODULE diffstar_lorene
       !> \(z\) coordinate of the desired point
       REAL(C_DOUBLE), INTENT(IN),  VALUE :: z
       !& 1 if the energy density or the specific energy or the pressure
-      !  are negative, 0 otherwise
+      !  are positive, 0 otherwise
       INTEGER(C_INT) :: res
 
-    END FUNCTION negative_hydro
+    END FUNCTION positive_hydro
 
 
     SUBROUTINE get_diffstar_params( optr,                           &

@@ -1,65 +1,96 @@
 ! File:         convergence_test.f90
 ! Author:       Francesco Torsello (FT)
-! Copyright:    GNU General Public License (GPLv3)
+!************************************************************************
+! Copyright (C) 2020, 2021, 2022 Francesco Torsello                     *
+!                                                                       *
+! This file is part of SPHINCS_ID                                       *
+!                                                                       *
+! SPHINCS_ID is free software: you can redistribute it and/or modify    *
+! it under the terms of the GNU General Public License as published by  *
+! the Free Software Foundation, either version 3 of the License, or     *
+! (at your option) any later version.                                   *
+!                                                                       *
+! SPHINCS_ID is distributed in the hope that it will be useful,         *
+! but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the          *
+! GNU General Public License for more details.                          *
+!                                                                       *
+! You should have received a copy of the GNU General Public License     *
+! along with SPHINCS_ID. If not, see <https://www.gnu.org/licenses/>.   *
+! The copy of the GNU General Public License should be in the file      *
+! 'COPYING'.                                                            *
+!************************************************************************
 
 PROGRAM convergence_test
 
   !*****************************************************
-  !                                                    *
-  ! Make a convergence test to check the validity of   *
-  ! the code SPHINCS_LORENE.                           *
-  !                                                    *
-  ! FT 8.12.2020                                       *
-  !                                                    *
+  !
+  !# Make a convergence test to check the validity of
+  !  the code |sphincsid|.
+  !
+  !  FT 8.12.2020
+  !
   !*****************************************************
 
 #ifdef __INTEL_COMPILER
+
   USE IFPORT,          ONLY: MAKEDIRQQ
+
 #endif
 
 #if flavour == 1
-  USE sphincs_lorene,  ONLY: allocate_idbase
+
+  USE sphincs_id_full,         ONLY: allocate_idbase
+
+#elif flavour == 2
+
+  USE sphincs_id_lorene,       ONLY: allocate_idbase
+
+#elif flavour == 3
+
+  USE sphincs_id_fuka,         ONLY: allocate_idbase
+
+#elif flavour == 4
+
+  USE sphincs_id_interpolate,  ONLY: allocate_idbase
+
 #endif
 
-  USE utility,         ONLY: date, time, zone, values, run_id, itr, itr3, &
-                             file_exists, cnt, ios, err_msg, &
-                             test_status, show_progress, end_time
-  USE timing,          ONLY: timer
-  USE id_base,         ONLY: idbase, initialize
-  USE particles_id,    ONLY: particles
-  USE formul_bssn_id,  ONLY: bssn_id
-  USE formul_3p1_id,   ONLY: formul_3p1
+  USE id_base,                  ONLY: idbase, initialize
+  USE sph_particles,            ONLY: particles
+  USE bssn_formulation,         ONLY: bssn
+  USE standard_tpo_formulation, ONLY: tpo
+  USE timing,                   ONLY: timer
+  USE utility,                  ONLY: date, time, zone, values, run_id, &
+                                      itr3, ios, err_msg, &
+                                      test_status, show_progress, end_time, &
+                                      read_sphincs_id_parameters, &
+                                      !----------
+                                      n_id, common_path, filenames, placer, &
+                                      export_bin, export_form, export_form_xy, &
+                                      export_form_x, export_constraints_xy, &
+                                      export_constraints_x, &
+                                      compute_constraints, &
+                                      export_constraints, &
+                                      export_constraints_details, &
+                                      constraints_step, &
+                                      compute_parts_constraints, &
+                                      numerator_ratio_dx, denominator_ratio_dx,&
+                                      one_lapse, zero_shift, show_progress, &
+                                      run_sph, run_spacetime, sph_path, &
+                                      spacetime_path, estimate_length_scale, &
+                                      test_int, max_n_parts, ref_lev
+  USE ISO_FORTRAN_ENV,  ONLY: COMPILER_VERSION, COMPILER_OPTIONS
 
   IMPLICIT NONE
 
-  ! Maximum length for strings, and for the number of imported binaries
-  INTEGER, PARAMETER:: max_length= 50
-  ! Maximum number of binary systems
-  INTEGER, PARAMETER:: max_n_bns= 50
-  ! Maximum number of particle distributions
-  INTEGER, PARAMETER:: max_n_parts= 250
   ! Loop limits for BSSN objects (for debugging; 3 is for production)
   INTEGER, PARAMETER:: min_bssn= 1
   INTEGER, PARAMETER:: max_bssn= 3
-  ! Refinement level over which to compute contraints (make input parameter)
-  INTEGER:: ref_lev
-  ! Number of binary systems of neutron stars (BNS) to import
-  INTEGER:: n_bns
-  ! Export the constraints every constraints_step-th step
-  INTEGER:: constraints_step
-
-  ! Matrix storing the information on how to place particles for each bns
-  ! object. Row i contains information about the i^th bns object.
-  INTEGER, PARAMETER:: test_int= - 112
-  INTEGER, DIMENSION( max_n_bns, max_n_parts ):: placer= test_int
 
   ! Grid spacing for the first BSSN object; the other two will have
   ! original_dx/2 and original_dx/4 as grid spacings
   DOUBLE PRECISION:: original_dx
-  ! Rational ratio between the large grid spacing and the medium one,
-  ! equal to the ratio between the medium grid spacing nd the small one
-  DOUBLE PRECISION:: numerator_ratio_dx
-  DOUBLE PRECISION:: denominator_ratio_dx
   DOUBLE PRECISION:: ratio_dx
 
   CHARACTER( LEN= : ), DIMENSION(:), ALLOCATABLE:: systems, systems_name
@@ -80,58 +111,30 @@ PROGRAM convergence_test
   CHARACTER( LEN= 500 ):: name_logfile
   !# String storing the name for the formatted file containing a summary about
   !  the |bssn| constraints violations
-  CHARACTER( LEN= max_length ), DIMENSION( max_length ):: filenames= "0"
-  ! Array of strings storing the names of the |id| files
-  CHARACTER( LEN= max_length ):: common_path
-  !# String storing the local path to the directory where the |id| files
-  !  are stored
-  CHARACTER( LEN= max_length ):: sph_path
-  !# String storing the local path to the directory where the
-  !  SPH output is to be saved
-  CHARACTER( LEN= max_length ):: spacetime_path
-  !# String storing the local path to the directory where the
-  !  spacetime output is to be saved
 
   LOGICAL, PARAMETER:: debug= .FALSE.
   LOGICAL:: exist
   LOGICAL(4):: dir_out
 
-  ! Logical variables to steer the execution
-  LOGICAL:: export_bin, export_form, export_form_xy, export_form_x, &
-            compute_constraints, export_constraints_xy, &
-            export_constraints_x, export_constraints, &
-            export_constraints_details, compute_parts_constraints, &
-            one_lapse, zero_shift, run_sph, run_spacetime
+  CLASS(idbase), ALLOCATABLE:: idata
 
-  TYPE( timer ):: execution_timer
+  TYPE(particles):: particles_dist
+  !# Array storing the particles objects,
+  !  containing the particle distributions for each idbase object.
+  !  Multiple particle objects can contain different particle distributions
+  !  for the same idbase object.
 
-  ! Declaration of the bns (binary neutron star) object containing the
-  ! LORENE ID
-  !TYPE( bnslorene ):: binary
-  CLASS( idbase ), ALLOCATABLE:: idata
-  ! Declaration of the particles object containing the particle distribution
-  TYPE( particles ):: particles_dist
-  ! Declaration of the 3-component array storing the 3 bssn_id objects,
-  ! containing the BSSN variables on the gravity grid
-  TYPE( bssn_id ), DIMENSION(3):: bssn_forms
+  TYPE(bssn), DIMENSION(3):: bssn_forms
+  !# Array storing the bssn objects,
+  !  containing the BSSN variables on the gravity grid for each idbase object
 
-  ! Namelist containing parameters read from lorene_bns_id_parameters.par
-  ! by the SUBROUTINE read_bns_id_parameters of this PROGRAM                           
-  NAMELIST /bns_parameters/ n_bns, common_path, filenames, placer, &
-                            export_bin, export_form, export_form_xy, &
-                            export_form_x, export_constraints_xy, &
-                            export_constraints_x, compute_constraints, &
-                            export_constraints, export_constraints_details, &
-                            constraints_step, compute_parts_constraints, &
-                            numerator_ratio_dx, denominator_ratio_dx, ref_lev, &
-                            one_lapse, zero_shift, show_progress, &
-                            run_sph, run_spacetime, sph_path, spacetime_path
+  TYPE(timer):: execution_timer
 
   !---------------------------!
   !--  End of declarations  --!
   !---------------------------!
 
-  ! Conversions of some polytropic constants from LORENE units to
+  ! Conversions of some polytropic constants from formatted units to
   ! SPHINCS units, and vice versa
   !gamma= 2
   !PRINT *, 0.0332278*k_lorene2hydrobase( gamma )
@@ -144,13 +147,49 @@ PROGRAM convergence_test
 
   CALL DATE_AND_TIME( date, time, zone, values )
   run_id= date // "-" // time
-  !PRINT *, run_id
-  !STOP
+
+  PRINT *, "  ________________________________________________________________ "
+  PRINT *, "             ____________  ________  __________    __ ___          "
+  PRINT *, "            / ___/ _  / /_/ / / __ \/ ___/ ___/   / / __ \         "
+  PRINT *, "           (__  ) ___/ __  / / / / / /__(__  )___/ / /_/ /         "
+  PRINT *, "          /____/_/  /_/ /_/_/_/ /_/____/____/___/_/_____/          "
+  PRINT *
+  PRINT *, "  Smoothed Particle Hydrodynamics IN Curved Spacetime              "
+  PRINT *, "  Initial Data builder, v1.0 - Cauchy convergence test             "
+  PRINT *
+  PRINT *, "  SPHINCS_ID  Copyright (C) 2020, 2021, 2022  Francesco Torsello   "
+  PRINT *
+  PRINT *, "  SPHINCS_ID is free software: you can redistribute it and/or      "
+  PRINT *, "  modify it under the terms of the GNU General Public License      "
+  PRINT *, "  as published by the Free Software Foundation, either version     "
+  PRINT *, "  of the License, or (at your option) any later version.           "
+  PRINT *
+  PRINT *, "  SPHINCS_ID is distributed in the hope that it will be useful,    "
+  PRINT *, "  but WITHOUT ANY WARRANTY; without even the implied warranty of   "
+  PRINT *, "  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU "
+  PRINT *, "  General Public License for more details.                         "
+  PRINT *
+  PRINT *, "  You should have received a copy of the GNU General Public License"
+  PRINT *, "  along with SPHINCS_ID. If not, see https://www.gnu.org/licenses/."
+  PRINT *, "  The copy of the GNU General Public License should be in the file "
+  PRINT *, "  'COPYING'.                                                       "
+  PRINT *, "  ________________________________________________________________ "
+  PRINT *
+  PRINT *, "  SPHINCS_ID was compiled with: "
+  PRINT *, COMPILER_VERSION()
+  PRINT *
+  PRINT *, "  using the options: "
+  PRINT *, COMPILER_OPTIONS()
+  PRINT *, "  ________________________________________________________________ "
+  PRINT *
+  PRINT *, "  Run id: ", run_id
+  PRINT *, "  ________________________________________________________________ "
+  PRINT *
 
   execution_timer= timer( "execution_timer" )
   CALL execution_timer% start_timer()
 
-  CALL read_bns_id_parameters()
+  CALL read_sphincs_id_parameters()
 
   ratio_dx= numerator_ratio_dx/denominator_ratio_dx
 
@@ -215,84 +254,25 @@ PROGRAM convergence_test
   ALLOCATE( CHARACTER(5):: systems(1) )
   ALLOCATE( CHARACTER(5):: systems_name(1) )
 
-  !DO itr= 1, n_bns, 1
-  !  systems(1)= filenames(1)(1:5)
-  !  IF( systems(1) /= bnslo .AND. systems(1) /= drslo )THEN
-  !    PRINT *, "** ERROR! Unrecognized physical system ", systems(1), ",",&
-  !             " system number", 1, "."
-  !    PRINT *
-  !    PRINT *, "   Please specify the type of physical system in the first 5",&
-  !             " characters of the name of the file containing the initial", &
-  !             " data."
-  !    PRINT *
-  !    PRINT *, "   The 5-character names, and associated physical systems,", &
-  !             " supported by this version of SPHINCS_ID are:"
-  !    PRINT *
-  !    PRINT *, "   1. BNSLO: Binary Neutron Stars produced with LORENE"
-  !    PRINT *, "   2. DRSLO: Differentially Rotating Star produced with LORENE"
-  !    PRINT *
-  !    STOP
-  !  ENDIF
-  !ENDDO
-
   !
-  !-- Construct the bns object from the LORENE binary file
+  !-- Construct the idbase objects
   !
-  !binary= bnslorene( TRIM(common_path)//"/"//TRIM(filenames( 1 )) )
   CALL allocate_idbase( idata, TRIM(filenames(1)), systems(1), systems_name(1) )
+  PRINT *, "===================================================" &
+           // "==============="
+  PRINT *, " Constructing idbase object for "//systems(1)
+  PRINT *, "===================================================" &
+           // "==============="
+  PRINT *
   CALL idata% initialize( TRIM(common_path)//TRIM(filenames(1)) )
   ! Set the variables to decide on using the geodesic gauge or not
   ! (lapse=1, shift=0)
   CALL idata% set_one_lapse ( one_lapse )
   CALL idata% set_zero_shift( zero_shift )
 
-  !
-  !-- Construct the particles object from the bns object
-  !
-  IF( compute_parts_constraints )THEN
-
-    PRINT *, "===================================================" &
-             // "==============="
-    PRINT *, " Placing particles"
-    PRINT *, "===================================================" &
-             // "==============="
-    PRINT *
-    particles_dist= particles( idata, placer( 1, 1 ) )
-
-    !
-    !-- Compute the SPH variables
-    !
-    PRINT *, "===================================================" &
-             // "====================="
-    PRINT *, " Computing SPH variables "
-    PRINT *, "===================================================" &
-             // "====================="
-    PRINT *
-    WRITE( namefile_parts, "(A1,I1,A1,I1,A1)" ) &
-                                "l", &
-                                1, "-", 1, "."
-    WRITE( namefile_parts_bin, "(A5)" ) systems_name(itr3)
-    namefile_parts_bin= TRIM( sph_path ) // TRIM( namefile_parts_bin )
-
-    particles_dist% export_bin    = export_bin
-    particles_dist% export_form_xy= export_form_xy
-    particles_dist% export_form_x = export_form_x
-    CALL particles_dist% compute_and_export_SPH_variables( namefile_parts )
-
-    !
-    !-- Print the particle initial data to a formatted file
-    !
-    IF( export_form )THEN
-      WRITE( namefile_parts, "(A34)" ) &
-                             "lorene-bns-id-particles-form_1.dat"
-      namefile_parts= TRIM( sph_path ) // TRIM( namefile_parts )
-      CALL particles_dist% print_formatted_lorene_id_particles( namefile_parts )
-    ENDIF
-
-  ENDIF
 
   !
-  !-- Construct the bssn_id objects from the bns object
+  !-- Construct the bssn objects from the bns object
   !
   construct_bssn_loop: DO itr3 = min_bssn, max_bssn, 1
 
@@ -305,17 +285,17 @@ PROGRAM convergence_test
 
     IF( itr3 == 1 )THEN
 
-      bssn_forms( itr3 )= bssn_id( idata )
+      bssn_forms( itr3 )= bssn( idata )
       original_dx= bssn_forms( itr3 )% get_dx(ref_lev)
 
     ELSE
       IF( itr3 == min_bssn )THEN
 
-        bssn_forms( 1 )= bssn_id( idata )
+        bssn_forms( 1 )= bssn( idata )
         original_dx= bssn_forms( 1 )% get_dx(ref_lev)
 
       ENDIF
-      bssn_forms( itr3 )= bssn_id( idata, &
+      bssn_forms( itr3 )= bssn( idata, &
                                    original_dx/( ratio_dx**( itr3 - 1 ) ), &
                                    original_dx/( ratio_dx**( itr3 - 1 ) ), &
                                    original_dx/( ratio_dx**( itr3 - 1 ) ) )
@@ -372,7 +352,7 @@ PROGRAM convergence_test
     bssn_forms( itr3 )% export_form_xy= export_form_xy
     bssn_forms( itr3 )% export_form_x = export_form_x
     CALL bssn_forms( itr3 )% &
-                        compute_and_export_3p1_variables( namefile_bssn_bin )
+                        compute_and_export_tpo_variables( namefile_bssn_bin )
   ENDDO compute_export_bssn_loop
 
   !
@@ -385,12 +365,56 @@ PROGRAM convergence_test
       namefile_bssn= TRIM( spacetime_path ) // TRIM( namefile_bssn )
 
       CALL bssn_forms( itr3 )% &
-                  print_formatted_lorene_id_3p1_variables( namefile_bssn )
+                  print_formatted_id_tpo_variables( namefile_bssn )
     ENDDO export_bssn_loop
   ENDIF
 
-! There doesn't seem to be a bug until here
-!STOP
+
+  !
+  !-- Construct the particles object from the bns object
+  !
+  IF( compute_parts_constraints )THEN
+
+    PRINT *, "===================================================" &
+             // "==============="
+    PRINT *, " Placing particles"
+    PRINT *, "===================================================" &
+             // "==============="
+    PRINT *
+    particles_dist= particles( idata, placer( 1, 1 ) )
+
+    !
+    !-- Compute the SPH variables
+    !
+    PRINT *, "===================================================" &
+             // "====================="
+    PRINT *, " Computing SPH variables "
+    PRINT *, "===================================================" &
+             // "====================="
+    PRINT *
+    WRITE( namefile_parts, "(A1,I1,A1,I1,A1)" ) &
+                                "l", &
+                                1, "-", 1, "."
+    WRITE( namefile_parts_bin, "(A5)" ) systems_name(1)
+    namefile_parts_bin= TRIM( sph_path ) // TRIM( namefile_parts_bin )
+
+    particles_dist% export_bin    = export_bin
+    particles_dist% export_form_xy= export_form_xy
+    particles_dist% export_form_x = export_form_x
+    CALL particles_dist% compute_and_print_sph_variables( namefile_parts )
+
+    !
+    !-- Print the particle initial data to a formatted file
+    !
+    IF( export_form )THEN
+      WRITE( namefile_parts, "(A34)" ) &
+                             "lorene-bns-id-particles-form_1.dat"
+      namefile_parts= TRIM( sph_path ) // TRIM( namefile_parts )
+      CALL particles_dist% print_formatted_id_particles( namefile_parts )
+    ENDIF
+
+  ENDIF
+
 
   !
   !-- Compute the BSSN constraints
@@ -421,7 +445,7 @@ PROGRAM convergence_test
       name_logfile = TRIM( spacetime_path ) // TRIM( name_logfile )
 
       CALL bssn_forms( itr3 )% &
-                  compute_and_export_3p1_constraints( idata, &
+                  compute_and_export_tpo_constraints( idata, &
                                                       namefile_bssn, &
                                                       name_logfile )
 
@@ -448,7 +472,7 @@ PROGRAM convergence_test
       name_logfile = TRIM( spacetime_path ) // TRIM( name_logfile )
 
       CALL bssn_forms( itr3 )% &
-                  compute_and_export_3p1_constraints( particles_dist, &
+                  compute_and_export_tpo_constraints( particles_dist, &
                                                       namefile_bssn, &
                                                       name_logfile )
 
@@ -568,7 +592,7 @@ PROGRAM convergence_test
   PRINT *
 
   !
-  !-- Destruct the LORENE Bin_NS object by hand, since the pointer to it is
+  !-- Destruct the formatted Bin_NS object by hand, since the pointer to it is
   !-- global (because it is bound to C++) and cannot be nullified by the
   !-- destructor of bns. In case of multiple bns objects, this would lead
   !-- to problems...
@@ -585,7 +609,7 @@ PROGRAM convergence_test
 
     IMPLICIT NONE
 
-    CLASS(formul_3p1), INTENT( IN OUT ):: formul_dx, formul_dx2
+    CLASS(tpo), INTENT( IN OUT ):: formul_dx, formul_dx2
     INTEGER, INTENT( IN ):: use_constraints, ref_lev
 
     INTEGER:: ix, iy, iz, nx, ny, nz, unit_cauchy_ct, unit_cauchy_parts_ct, &
@@ -955,7 +979,7 @@ PROGRAM convergence_test
 
     IMPLICIT NONE
 
-    CLASS(formul_3p1), INTENT( IN OUT ):: formul_dx, formul_dx2, formul_dx4
+    CLASS(tpo), INTENT( IN OUT ):: formul_dx, formul_dx2, formul_dx4
     INTEGER, INTENT( IN ):: use_constraints, ref_lev
 
     INTEGER:: ix, iy, iz, nx, ny, nz, unit_cauchy_ct, unit_cauchy_parts_ct, &
@@ -1436,73 +1460,5 @@ PROGRAM convergence_test
 
   END SUBROUTINE cauchy_convergence_test_unknown
 
-
-  SUBROUTINE read_bns_id_parameters()
-
-    IMPLICIT NONE
-
-    INTEGER:: stat
-    INTEGER, PARAMETER:: unit_parameters= 17
-
-    CHARACTER( LEN= : ), ALLOCATABLE:: lorene_bns_id_parameters
-    CHARACTER( LEN= : ), ALLOCATABLE:: msg
-
-    lorene_bns_id_parameters= 'sphincs_lorene_bns_parameters.par'
-
-    INQUIRE( FILE= lorene_bns_id_parameters, EXIST= file_exists )
-
-    IF( file_exists )THEN
-
-     OPEN( UNIT= unit_parameters, FILE= lorene_bns_id_parameters, &
-           STATUS= 'OLD' )
-
-    ELSE
-
-     PRINT*
-     PRINT*,'** ERROR: ', lorene_bns_id_parameters, " file not found!"
-     PRINT*
-     STOP
-
-    ENDIF
-
-    READ( UNIT= unit_parameters, NML= bns_parameters, IOSTAT= stat, &
-          IOMSG= msg )
-
-    IF( stat /= 0 )THEN
-      PRINT *, "** ERROR: Error in reading ",lorene_bns_id_parameters,&
-               ". The IOSTAT variable is ", stat, &
-               "The error message is", msg
-      STOP
-    ENDIF
-
-    CLOSE( UNIT= unit_parameters )
-
-    DO itr= 1, max_length, 1
-      IF( TRIM(filenames(itr)).NE."0" )THEN
-          cnt= cnt + 1
-      ENDIF
-    ENDDO
-    IF( cnt.NE.n_bns )THEN
-      PRINT *, "** ERROR! The number of file names is", cnt, &
-               "and n_bns=", n_bns, ". The two should be the same."
-      PRINT *
-      STOP
-    ENDIF
-
-   !DO itr= 1, n_bns, 1
-   !  DO itr2= 1, max_n_parts, 1
-   !    IF( placer( itr, itr2 ) == test_int )THEN
-   !      PRINT *
-   !      PRINT *, "** ERROR! The array placer does not have ", &
-   !               "enough components to specify all the desired ", &
-   !               "particle distributions. Specify the ", &
-   !               "components in file lorene_bns_id_particles.par"
-   !      PRINT *
-   !      STOP
-   !    ENDIF
-   !  ENDDO
-   !ENDDO
-
-  END SUBROUTINE read_bns_id_parameters
 
 END PROGRAM convergence_test

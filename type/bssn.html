@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Documentation of \mathrm{SPHINCS\_ID} Figure caption: Projection of the SPH particles on the xy plane, for a binary neutron star system with gravitational masses of 1.2M_\odot (left) and 1.8M_\odot (right), with equation of state 'BBKF(DD2-SF) quark-hadron model RDF 1.8 (with electrons)' from the \texttt{CompOSE} database. The solution was computed with \texttt{LORENE} and the \texttt{CompOSE} software, and the particles were placed with \texttt{SPHINCS_ID} using the Artificial Pressure Method. The color bar shows the baryon mass density. The plot was made with \texttt{SPLASH} and \texttt{GIMP}.">
+    <meta name="author" content="Francesco Torsello" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>bssn &ndash; SPHINCS_ID </title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href='../page/index.html'>More</a></li>
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../lists/modules.html">Modules</a></li>
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+            <li><a href="../lists/programs.html">Programs</a></li>
+       
+            </ul>
+        
+            </li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+          </ul>
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>bssn
+    <small>Derived Type</small>
+    </h1>
+    <div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="<p> 4.5% of total for derived types.</p>Including implementation: 75 statements,  5.6% of total for derived types.">33 statements</a>
+     </li> 
+    <li><i class="fa fa-code"></i><a href="../src/module_bssn_formulation.f90"> Source File</a></li>
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+     <li><a href='../sourcefile/module_bssn_formulation.f90.html'>module_bssn_formulation.f90</a></li>
+     <li><a href='../module/bssn_formulation.html'>bssn_formulation</a></li>
+     <li class="active">bssn</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    <div id="sidebar">
+  <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/bssn.html#variable-a_bssn3_ll">A_BSSN3_ll</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc">GC</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_int">GC_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_l2">GC_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_loo">GC_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_parts">GC_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_parts_int">GC_parts_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_parts_l2">GC_parts_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_parts_loo">GC_parts_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gamma_u">Gamma_u</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc">HC</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_int">HC_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_l2">HC_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_loo">HC_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_parts">HC_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_parts_int">HC_parts_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_parts_l2">HC_parts_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_parts_loo">HC_parts_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-k_phys3_ll">K_phys3_ll</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc">MC</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_int">MC_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_l2">MC_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_loo">MC_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_parts">MC_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_parts_int">MC_parts_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_parts_l2">MC_parts_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_parts_loo">MC_parts_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-ricci_ll">Ricci_ll</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-ricci_scalar">Ricci_scalar</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-s">S</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-s_parts">S_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-bssn_computer_timer">bssn_computer_timer</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-call_flag~2">call_flag</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-cons_step">cons_step</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-coords">coords</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_bin~2">export_bin</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_constraints">export_constraints</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_constraints_details">export_constraints_details</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_constraints_x">export_constraints_x</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_constraints_xy">export_constraints_xy</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_form_x~2">export_form_x</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_form_xy~2">export_form_xy</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-g_bssn3_ll">g_BSSN3_ll</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-g_phys3_ll">g_phys3_ll</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-grid_timer">grid_timer</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-importer_timer~2">importer_timer</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-lapse~2">lapse</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-levels">levels</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-n_matter~2">n_matter</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-nlevels">nlevels</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-npoints_xaxis">npoints_xaxis</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-phi">phi</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-rad_coord">rad_coord</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-rho">rho</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-rho_parts">rho_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-shift_u">shift_u</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-trk">trK</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#cons-0">Constructor</a></h3></div>
+  <div id="cons-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/bssn.html#interface-bssn">bssn</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#fins-0">Finalization Procedures</a></h3></div>
+  <div id="fins-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/bssn.html#finalproc-destructor">destructor</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-0">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-abs_values_in">abs_values_in</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-analyze_constraint">analyze_constraint</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints~2">compute_and_export_tpo_constraints</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_grid~2">compute_and_export_tpo_constraints_grid</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_particles~2">compute_and_export_tpo_constraints_particles</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_variables~2">compute_and_export_tpo_variables</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_ricci">compute_ricci</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-deallocate_fields~2">deallocate_fields</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-deallocate_standard_tpo_variables">deallocate_standard_tpo_variables</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-define_allocate_fields~2">define_allocate_fields</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-destruct_bssn">destruct_bssn</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_hc">get_HC</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_hc_parts">get_HC_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_mc">get_MC</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_mc_parts">get_MC_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_dx">get_dx</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_dy">get_dy</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_dz">get_dz</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_grid_point">get_grid_point</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_levels">get_levels</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_ngrid_x">get_ngrid_x</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_ngrid_y">get_ngrid_y</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_ngrid_z">get_ngrid_z</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_nlevels">get_nlevels</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_xr">get_xR</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_yr">get_yR</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_zr">get_zR</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-print_formatted_id_tpo_variables~2">print_formatted_id_tpo_variables</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-print_summary~2">print_summary</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-read_bssn_dump_print_formatted">read_bssn_dump_print_formatted</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-setup_standard_tpo_variables">setup_standard_tpo_variables</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-test_recovery_m2p">test_recovery_m2p</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/bssn.html#src">bssn</a>
+  </div>
+</div>
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2>type, public, extends(<a href='../type/tpo.html'>tpo</a>) :: bssn</h2>
+    <p>TYPE representing the \(\mathrm{ID}\) for the \(\mathrm{BSSNOK}\) formulation
+ of the Einstein equations</p>
+<br>    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Inherits</h3>
+      </div>
+      <div class="panel-body">
+    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: type~~bssn~~InheritsGraph Pages: 1 -->
+<svg id="typebssnInheritsGraph" width="641pt" height="186pt"
+ viewBox="0.00 0.00 641.00 186.43" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~bssn~~InheritsGraph" class="graph" transform="scale(1.31 1.31) rotate(0) translate(4 239.44)">
+<title>type~~bssn~~InheritsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-239.44 833,-239.44 833,4 -4,4"/>
+<!-- type~bssn -->
+<g id="type~~bssn~~InheritsGraph_node1" class="node">
+<title>type~bssn</title>
+<polygon fill="none" stroke="black" points="829,-107.44 775,-107.44 775,-83.44 829,-83.44 829,-107.44"/>
+<text text-anchor="middle" x="802" y="-93.04" font-family="Helvetica,sans-Serif" font-size="10.50">bssn</text>
+</g>
+<!-- grid_function_scalar -->
+<g id="type~~bssn~~InheritsGraph_node2" class="node">
+<title>grid_function_scalar</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="120,-133.44 0,-133.44 0,-109.44 120,-109.44 120,-133.44"/>
+<text text-anchor="middle" x="60" y="-119.04" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grid_function_scalar</text>
+</g>
+<!-- type~bssn&#45;&gt;grid_function_scalar -->
+<g id="type~~bssn~~InheritsGraph_edge2" class="edge">
+<title>type~bssn&#45;&gt;grid_function_scalar</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M756,-95.44C481.9,-113.31 407.07,-33.21 138,-88.44 122.14,-91.69 105.52,-98.36 91.79,-104.85"/>
+<polygon fill="#000000" stroke="#000000" points="90.22,-101.72 82.79,-109.27 93.31,-108 90.22,-101.72"/>
+<text text-anchor="middle" x="600" y="-99.84" font-family="Helvetica,sans-Serif" font-size="9.50">phi, trK, Ricci_scalar</text>
+</g>
+<!-- grid_function -->
+<g id="type~~bssn~~InheritsGraph_node3" class="node">
+<title>grid_function</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="101,-235.44 19,-235.44 19,-211.44 101,-211.44 101,-235.44"/>
+<text text-anchor="middle" x="60" y="-221.04" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grid_function</text>
+</g>
+<!-- type~bssn&#45;&gt;grid_function -->
+<g id="type~~bssn~~InheritsGraph_edge1" class="edge">
+<title>type~bssn&#45;&gt;grid_function</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M756,-95.44C727.83,-97.72 758.79,-137.29 738,-156.44 639.83,-246.84 576.64,-202.77 444,-217.44 325.4,-230.55 184.91,-228.23 111.47,-225.67"/>
+<polygon fill="#000000" stroke="#000000" points="111.25,-222.16 101.13,-225.29 111,-229.15 111.25,-222.16"/>
+<text text-anchor="middle" x="600" y="-217.84" font-family="Helvetica,sans-Serif" font-size="9.50">Gamma_u, A_BSSN3_ll, g_BSSN3_ll, Ricci_ll, GC, GC_parts</text>
+</g>
+<!-- timer -->
+<g id="type~~bssn~~InheritsGraph_node4" class="node">
+<title>timer</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="87,-71.44 33,-71.44 33,-47.44 87,-47.44 87,-71.44"/>
+<text text-anchor="middle" x="60" y="-57.04" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
+</g>
+<!-- type~bssn&#45;&gt;timer -->
+<g id="type~~bssn~~InheritsGraph_edge3" class="edge">
+<title>type~bssn&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M774.92,-94.86C769.02,-94.89 762.79,-95.05 757,-95.44"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M756,-95.44C741.24,-96.42 750.94,-74.6 738,-67.44 521.54,52.4 203.35,-19.42 97.06,-48.75"/>
+<polygon fill="#000000" stroke="#000000" points="95.84,-45.45 87.15,-51.52 97.73,-52.19 95.84,-45.45"/>
+<text text-anchor="middle" x="600" y="-69.84" font-family="Helvetica,sans-Serif" font-size="9.50">bssn_computer_timer</text>
+</g>
+<!-- type~tpo -->
+<g id="type~~bssn~~InheritsGraph_node5" class="node">
+<title>type~tpo</title>
+<g id="a_type~~bssn~~InheritsGraph_node5"><a xlink:href=".././type/tpo.html" xlink:title="tpo">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="627,-147.44 573,-147.44 573,-123.44 627,-123.44 627,-147.44"/>
+<text text-anchor="middle" x="600" y="-133.04" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tpo</text>
+</a>
+</g>
+</g>
+<!-- type~bssn&#45;&gt;type~tpo -->
+<g id="type~~bssn~~InheritsGraph_edge4" class="edge">
+<title>type~bssn&#45;&gt;type~tpo</title>
+<path fill="none" stroke="#000000" d="M756,-95.44C745.89,-96.1 747.24,-105.27 738,-109.44 705.82,-123.98 665.83,-130.39 637.38,-133.21"/>
+<polygon fill="#000000" stroke="#000000" points="636.74,-129.76 627.09,-134.13 637.36,-136.73 636.74,-129.76"/>
+</g>
+<!-- type~tpo&#45;&gt;grid_function_scalar -->
+<g id="type~~bssn~~InheritsGraph_edge7" class="edge">
+<title>type~tpo&#45;&gt;grid_function_scalar</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M572.69,-134.75C492.74,-132.67 250.83,-126.38 130.5,-123.25"/>
+<polygon fill="#000000" stroke="#000000" points="130.39,-119.74 120.3,-122.98 130.2,-126.74 130.39,-119.74"/>
+<text text-anchor="middle" x="291" y="-132.84" font-family="Helvetica,sans-Serif" font-size="9.50">rad_coord, lapse, HC, HC_parts, rho, rho_parts</text>
+</g>
+<!-- type~tpo&#45;&gt;grid_function -->
+<g id="type~~bssn~~InheritsGraph_edge6" class="edge">
+<title>type~tpo&#45;&gt;grid_function</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M572.83,-135.52C543.94,-136.67 496.91,-141.78 462,-161.44 451.58,-167.31 454.71,-176.11 444,-181.44 382.89,-211.82 205.53,-197.59 138,-207.44 129.26,-208.71 120.03,-210.36 111.1,-212.12"/>
+<polygon fill="#000000" stroke="#000000" points="110.3,-208.71 101.2,-214.13 111.7,-215.57 110.3,-208.71"/>
+<text text-anchor="middle" x="291" y="-209.84" font-family="Helvetica,sans-Serif" font-size="9.50">coords, shift_u, g_phys3_ll, K_phys3_ll, S, MC, MC_parts, S_parts</text>
+</g>
+<!-- type~tpo&#45;&gt;timer -->
+<g id="type~~bssn~~InheritsGraph_edge8" class="edge">
+<title>type~tpo&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M572.99,-130.78C542.24,-125.34 489.47,-116.22 444,-109.44 316.83,-90.48 165.3,-71.87 97.24,-63.72"/>
+<polygon fill="#000000" stroke="#000000" points="97.4,-60.22 87.05,-62.51 96.57,-67.17 97.4,-60.22"/>
+<text text-anchor="middle" x="291" y="-111.84" font-family="Helvetica,sans-Serif" font-size="9.50">grid_timer, importer_timer</text>
+</g>
+<!-- level -->
+<g id="type~~bssn~~InheritsGraph_node6" class="node">
+<title>level</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="87,-185.44 33,-185.44 33,-161.44 87,-161.44 87,-185.44"/>
+<text text-anchor="middle" x="60" y="-171.04" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">level</text>
+</g>
+<!-- type~tpo&#45;&gt;level -->
+<g id="type~~bssn~~InheritsGraph_edge5" class="edge">
+<title>type~tpo&#45;&gt;level</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M572.69,-137.3C484.46,-143.53 198.98,-163.69 97.35,-170.87"/>
+<polygon fill="#000000" stroke="#000000" points="96.99,-167.39 87.26,-171.58 97.48,-174.37 96.99,-167.39"/>
+<text text-anchor="middle" x="291" y="-169.84" font-family="Helvetica,sans-Serif" font-size="9.50">levels</text>
+</g>
+</g>
+</svg>
+</div><script>var pantypebssnInheritsGraph = svgPanZoom('#typebssnInheritsGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="184pt" height="32pt"
+ viewBox="0.00 0.00 184.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 180,-28 180,4 -4,4"/>
+<!-- Type -->
+<g id="node1" class="node">
+<title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node2" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="176,-24 72,-24 72,0 176,0 176,-24"/>
+<text text-anchor="middle" x="124" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a derived type to the parent type which it
+    extends. Dashed arrows point from a derived type to the other
+    types it contains as a components, with a label listing the name(s) of
+    said component(s).
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/bssn.html#variable-a_bssn3_ll">A_BSSN3_ll</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc">GC</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_int">GC_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_l2">GC_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_loo">GC_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_parts">GC_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_parts_int">GC_parts_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_parts_l2">GC_parts_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gc_parts_loo">GC_parts_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-gamma_u">Gamma_u</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc">HC</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_int">HC_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_l2">HC_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_loo">HC_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_parts">HC_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_parts_int">HC_parts_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_parts_l2">HC_parts_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-hc_parts_loo">HC_parts_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-k_phys3_ll">K_phys3_ll</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc">MC</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_int">MC_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_l2">MC_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_loo">MC_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_parts">MC_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_parts_int">MC_parts_int</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_parts_l2">MC_parts_l2</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-mc_parts_loo">MC_parts_loo</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-ricci_ll">Ricci_ll</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-ricci_scalar">Ricci_scalar</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-s">S</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-s_parts">S_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-bssn_computer_timer">bssn_computer_timer</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-call_flag~2">call_flag</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-cons_step">cons_step</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-coords">coords</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_bin~2">export_bin</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_constraints">export_constraints</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_constraints_details">export_constraints_details</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_constraints_x">export_constraints_x</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_constraints_xy">export_constraints_xy</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_form_x~2">export_form_x</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-export_form_xy~2">export_form_xy</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-g_bssn3_ll">g_BSSN3_ll</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-g_phys3_ll">g_phys3_ll</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-grid_timer">grid_timer</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-importer_timer~2">importer_timer</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-lapse~2">lapse</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-levels">levels</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-n_matter~2">n_matter</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-nlevels">nlevels</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-npoints_xaxis">npoints_xaxis</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-phi">phi</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-rad_coord">rad_coord</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-rho">rho</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-rho_parts">rho_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-shift_u">shift_u</a>
+      <a class="list-group-item" href="../type/bssn.html#variable-trk">trK</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#cons-1">Constructor</a></h3></div>
+  <div id="cons-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/bssn.html#interface-bssn">bssn</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#fins-1">Finalization Procedures</a></h3></div>
+  <div id="fins-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/bssn.html#finalproc-destructor">destructor</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#boundprocs-1">Type-Bound Procedures</a></h3></div>
+  <div id="boundprocs-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-abs_values_in">abs_values_in</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-analyze_constraint">analyze_constraint</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints~2">compute_and_export_tpo_constraints</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_grid~2">compute_and_export_tpo_constraints_grid</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_particles~2">compute_and_export_tpo_constraints_particles</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_variables~2">compute_and_export_tpo_variables</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_ricci">compute_ricci</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-deallocate_fields~2">deallocate_fields</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-deallocate_standard_tpo_variables">deallocate_standard_tpo_variables</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-define_allocate_fields~2">define_allocate_fields</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-destruct_bssn">destruct_bssn</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_hc">get_HC</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_hc_parts">get_HC_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_mc">get_MC</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_mc_parts">get_MC_parts</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_dx">get_dx</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_dy">get_dy</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_dz">get_dz</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_grid_point">get_grid_point</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_levels">get_levels</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_ngrid_x">get_ngrid_x</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_ngrid_y">get_ngrid_y</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_ngrid_z">get_ngrid_z</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_nlevels">get_nlevels</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_xr">get_xR</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_yr">get_yR</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-get_zr">get_zR</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-print_formatted_id_tpo_variables~2">print_formatted_id_tpo_variables</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-print_summary~2">print_summary</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-read_bssn_dump_print_formatted">read_bssn_dump_print_formatted</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-setup_standard_tpo_variables">setup_standard_tpo_variables</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-test_recovery_m2p">test_recovery_m2p</a>
+    </div>
+  </div>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/bssn.html#src">bssn</a>
+  </div>
+</div>
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+    <h2>Components</h2>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-a_bssn3_ll"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>A_BSSN3_ll</strong></td><td></td><td></td><td><p>Conformal traceless extrinsic curvature <script type="math/tex">A_{ij} </script>
+</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-gc"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>GC</strong></td><td></td><td></td><td><p>Connection constraint computed with the \(\mathrm{ID}\) on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-gc_int"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>GC_int</strong></td><td></td><td></td><td><p>Integral of the connection constraint computed with the \(\mathrm{ID}\) on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-gc_l2"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>GC_l2</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_2</script> norm of the connection constraint computed
+ with the \(\mathrm{ID}\) on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-gc_loo"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>GC_loo</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_\infty</script> norm, i.e., supremum of the absolute value, of the
+ connection constraint computed with the \(\mathrm{ID}\) on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-gc_parts"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>GC_parts</strong></td><td></td><td></td><td><p>Connection constraint computed with the \(\mathrm{BSSNOK}\) \(\mathrm{ID}\) on the mesh, and
+ the hydrodynamical \(\mathrm{ID}\) mapped from the particles to the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-gc_parts_int"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>GC_parts_int</strong></td><td></td><td></td><td><p>Integral of the connection constraint computed with the \(\mathrm{BSSNOK}\) \(\mathrm{ID}\) on
+ the mesh, and the hydrodynamical \(\mathrm{ID}\) mapped from the particles to the
+ mesh with the \(\mathrm{ID}\) on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-gc_parts_l2"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>GC_parts_l2</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_2</script> norm of the connection constraint computed with the \(\mathrm{BSSNOK}\)
+ \(\mathrm{ID}\) on the mesh, and the hydrodynamical \(\mathrm{ID}\) mapped from the particles
+ to the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-gc_parts_loo"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>GC_parts_loo</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_\infty</script> norm, i.e., supremum of the absolute value, of the
+ connection constraint computed with the \(\mathrm{BSSNOK}\) \(\mathrm{ID}\) on the mesh,
+ and the hydrodynamical \(\mathrm{ID}\) mapped from the particles to the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-gamma_u"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>Gamma_u</strong></td><td></td><td></td><td><p>Conformal connection <script type="math/tex">\bar{\Gamma} ^i_{jk}</script>
+</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-hc"></span>type(grid_function_scalar),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>HC</strong></td><td></td><td></td><td><p>Grid scalar function storing the Hamiltonian constraint (violations)
+ computed using the ID on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-hc_int"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>HC_int</strong></td><td></td><td></td><td><p>Integral the Hamiltonian constraint computed using the stress-energy
+ tensor mapped from the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-hc_l2"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>HC_l2</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_2</script> norm of the Hamiltonian constraint computed on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-hc_loo"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>HC_loo</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_\infty</script> norm of the Hamiltonian constraint computed on the mesh
+ (i.e., its maximum)</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-hc_parts"></span>type(grid_function_scalar),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>HC_parts</strong></td><td></td><td></td><td><p>Grid scalar function storing the Hamiltonian constraint (violations)
+ computed using the stress-energy tensor mapped from the particles to the
+ mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-hc_parts_int"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>HC_parts_int</strong></td><td></td><td></td><td><p>Integral the Hamiltonian constraint computed on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-hc_parts_l2"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>HC_parts_l2</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_2</script> norm of the Hamiltonian constraint computed on the mesh, using
+ the stress-energy tensor mapped from the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-hc_parts_loo"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>HC_parts_loo</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_\infty</script> norm of the Hamiltonian constraint computed on the mesh,
+ using the stress-energy tensor mapped from the particles
+ (i.e., its maximum)</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-k_phys3_ll"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>K_phys3_ll</strong></td><td></td><td></td><td><p>Grid function storing the extrinsic curvature</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-mc"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>MC</strong></td><td></td><td></td><td><p>Grid function storing the momentum constraint (violations)
+ computed using the ID on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-mc_int"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>MC_int</strong></td><td></td><td></td><td><p>Integral of the momentum constraint computed on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-mc_l2"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>MC_l2</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_2</script> norm of the momentum constraint computed on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-mc_loo"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>MC_loo</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_\infty</script> norm of the momentum constraint computed on the mesh
+ (i.e., its maximum)</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-mc_parts"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>MC_parts</strong></td><td></td><td></td><td><p>Grid function storing the momentum constraint (violations)
+ computed using the stress-energy tensor mapped from the particles to the
+ mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-mc_parts_int"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>MC_parts_int</strong></td><td></td><td></td><td><p>Integral of the momentum constraint computed using the stress-energy
+ tensor mapped from the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-mc_parts_l2"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>MC_parts_l2</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_2</script> norm of the Hamiltonian constraint computed on the mesh, using
+ the stress-energy tensor mapped from the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-mc_parts_loo"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>MC_parts_loo</strong></td><td></td><td></td><td><p>
+<script type="math/tex">\ell_\infty</script> norm of the momentum constraint computed on the mesh,
+ using the stress-energy tensor mapped from the particles
+ (i.e., its maximum)</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-ricci_ll"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>Ricci_ll</strong></td><td></td><td></td><td><p>Ricci tensor <script type="math/tex">R_{ij} </script>
+</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-ricci_scalar"></span>type(grid_function_scalar),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>Ricci_scalar</strong></td><td></td><td></td><td><p>Ricci scalar <script type="math/tex">R^\mu{}_nu</script>
+</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-s"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>S</strong></td><td></td><td></td><td><p>Grid function storing the matter source in the momentum
+ constraint computed using the ID on the mesh, multiplied by <script type="math/tex">8\pi</script>
+</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-s_parts"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>S_parts</strong></td><td></td><td></td><td><p>Grid function storing the matter source in the momentum
+ constraint computed using the stress-energy tensor mapped from the
+ particles to the mesh, multiplied by <script type="math/tex">8\pi</script>
+</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-bssn_computer_timer"></span>type(timer),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>bssn_computer_timer</strong></td><td></td><td></td><td><p>Timer that times how long it takes to compute the \(\mathrm{BSSNOK}\) variables on
+ the refined mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-call_flag~2"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>call_flag</strong></td><td> =</td><td>0</td><td><p>Flag set to a value different than 0 if the SUBROUTINE
+ compute_and_export_bssn_variables is called</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-cons_step"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>cons_step</strong></td><td></td><td></td><td><p>Constraint violations are printed to file every cons_step-th grid point</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-coords"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>coords</strong></td><td></td><td></td><td><p>Grid function storing the Cartesian coordinates</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-export_bin~2"></span>logical,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>export_bin</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if the binary files for SPHINCS_BSSN are to be exported,
+ <code>.FALSE.</code> otherwise</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-export_constraints"></span>logical,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>export_constraints</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if the constraint violations  are to be printed to file,
+ <code>.FALSE.</code> otherwise</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-export_constraints_details"></span>logical,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>export_constraints_details</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if the points at which the constraints violations are within the
+ intervals <script type="math/tex">[0,10^{-7}],[10^3,\infty],[10^n,10^m]</script>, with
+ <script type="math/tex">n\in\{-7,2\}</script> and <script type="math/tex">m=n+1</script>, are to be printed to file;
+ <code>.FALSE.</code> otherwise</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-export_constraints_x"></span>logical,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>export_constraints_x</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if only the constrain violations on the <script type="math/tex">x</script> axis are to be</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-export_constraints_xy"></span>logical,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>export_constraints_xy</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if only the constrain violations on the <script type="math/tex">xy</script> plane are to be</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-export_form_x~2"></span>logical,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>export_form_x</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if the \(\mathrm{ID}\) in the formatted files is to be on the x axis
+ only, <code>.FALSE.</code> otherwise</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-export_form_xy~2"></span>logical,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>export_form_xy</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if the \(\mathrm{ID}\) in the formatted files is to be on the xy plane
+ only, <code>.FALSE.</code> otherwise</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-g_bssn3_ll"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>g_BSSN3_ll</strong></td><td></td><td></td><td><p>Conformal spatial metric <script type="math/tex">\gamma_{ij} </script>
+</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-g_phys3_ll"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>g_phys3_ll</strong></td><td></td><td></td><td><p>Grid function storing the spatial metric</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-grid_timer"></span>type(timer),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>grid_timer</strong></td><td></td><td></td><td><p>Timer that times how long it takes to set up the grid and allocate
+ the grid functions</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-importer_timer~2"></span>type(timer),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>importer_timer</strong></td><td></td><td></td><td><p>Timer that times how long it takes to import the \(\texttt{LORENE}\) ID
+ on the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-lapse~2"></span>type(grid_function_scalar),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>lapse</strong></td><td></td><td></td><td><p>Grid scalar function storing the lapse function</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-levels"></span>type(level),</td>
+<td>public,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>levels</strong></td><td></td><td></td><td><p>Array containing the information on each refinement level</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-n_matter~2"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>n_matter</strong></td><td></td><td></td><td><p>Number of matter objects in the physical system</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nlevels"></span>integer,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>nlevels</strong></td><td></td><td></td><td><p>Number of refinement levels</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-npoints_xaxis"></span>integer,</td>
+<td>public,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>npoints_xaxis</strong></td><td></td><td></td><td><p>Array containing the number of mesh points of the highest-resolution
+ refinement level across the x-axis-size of the matter objects</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-phi"></span>type(grid_function_scalar),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>phi</strong></td><td></td><td></td><td><p>Conformal factor <script type="math/tex">\phi </script>
+</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-rad_coord"></span>type(grid_function_scalar),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>rad_coord</strong></td><td></td><td></td><td><p>Grid scalar function storing the radial coordinates of each grid point</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-rho"></span>type(grid_function_scalar),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>rho</strong></td><td></td><td></td><td><p>Grid scalar function storing the matter source in the Hamiltonian
+ constraint computed using the ID on the mesh, multiplied by <script type="math/tex">16\pi</script>
+</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-rho_parts"></span>type(grid_function_scalar),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>rho_parts</strong></td><td></td><td></td><td><p>Grid scalar function storing the matter source in the Hamiltonian
+ constraint computed using the stress-energy tensor mapped from the
+ particles to the mesh, multiplied by <script type="math/tex">16\pi</script>
+</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-shift_u"></span>type(grid_function),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>shift_u</strong></td><td></td><td></td><td><p>Grid function storing the shift vector</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-trk"></span>type(grid_function_scalar),</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>trK</strong></td><td></td><td></td><td><p>Trace of extrinsic curvature <script type="math/tex">K </script>
+</p></td>
+</tr>
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+   <section>
+   <h2>Constructor</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-bssn"></span><h3>public interface <a href='../interface/bssn.html'>bssn</a>  </h3></div>
+  <ul class="list-group">
+    <li class="list-group-item">
+    <h3>public interface <a href='../interface/construct_bssn.html'>construct_bssn</a>()</h3>    
+<h4>Arguments</h4>      <em>None</em>
+
+    </li>
+  </ul>
+</div>
+
+   </section>
+   <br>
+    
+    <section>
+    <h2>Finalization Procedures</h2>
+         <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="finalproc-destructor"></span><h3>final :: <strong>destructor</strong> 
+</h3></div>
+  <div class="panel-body">
+    
+    <p>Destructor; finalizes members from both TYPES tpo and bssn,
+ by calling [[tpo:destruct_tpo]] and
+ [[bssn:destruct_bssn]]</p>
+  </div>
+  <ul class="list-group">
+     <li class="list-group-item">
+       <h3>public interface <a href='../interface/destructor.html'>destructor</a>()</h3>    
+<h4>Arguments</h4>      <em>None</em>
+
+     </li>
+  </ul>
+</div>
+
+  
+    </section>
+    <br>
+    
+ 
+    <section>
+    <h2>Type-Bound Procedures</h2>
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-abs_values_in"></span><h3>procedure, public :: <strong>abs_values_in</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine abs_values_in(THIS, lower_bound, upper_bound, constraint, l, export, unit_analysis, cnt)   <a href='../proc/abs_values_in.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>lower_bound</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision</td>
+<td></td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>upper_bound</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(:,:,:)</td><td>::</td>
+  <td><strong>constraint</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>logical,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>export</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>unit_analysis</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>cnt</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-analyze_constraint"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>analyze_constraint</strong>    </h3></div>
+  <div class="panel-body">
+    
+    <p>Analyze a constraint (or an arbitrary scalar grid function) by
+ examining its values at the refined mesh. Computes the number of mesh
+ points at which the scalar grid function has values lying within
+ predefined (hard-coded) intervals
+ </p><div class="alert alert-success" role="alert"><h4>Todo</h4><p>complete this documentation entries with more details</p></div>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine analyze_constraint(THIS, l, constraint, name_constraint, unit_logfile, name_analysis, l2_norm, loo_norm, integral, source)   <a href='../proc/analyze_constraint.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(:,:,:)</td><td>::</td>
+  <td><strong>constraint</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>name_constraint</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>unit_logfile</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>name_analysis</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l2_norm</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>loo_norm</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>integral</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td>optional</td>  <td>DIMENSION(:,:,:)</td><td>::</td>
+  <td><strong>source</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-compute_and_export_tpo_constraints~2"></span><h3>generic, public :: <strong>compute_and_export_tpo_constraints</strong>  => <a href='../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_grid~2'>compute_and_export_tpo_constraints_grid</a>, <a href='../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_particles~2'>compute_and_export_tpo_constraints_particles</a>   </h3></div>
+  <div class="panel-body">
+    
+    <p>Overloaded PROCEDURE to compute the constraints using only the \(\mathrm{ID}\)
+ on the refined mesh, or the spacetime \(\mathrm{ID}\) on the refined mesh and
+ the hydrodynamical \(\mathrm{ID}\) mapped from the particles to the refined mesh</p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+            <h3>public interface <a href='../interface/compute_and_export_bssn_constraints_grid.html'>compute_and_export_bssn_constraints_grid</a>()</h3>    
+<h4>Arguments</h4>      <em>None</em>
+
+      </li>
+      <li class="list-group-item">
+            <h3>public interface <a href='../interface/compute_and_export_bssn_constraints_particles.html'>compute_and_export_bssn_constraints_particles</a>()</h3>    
+<h4>Arguments</h4>      <em>None</em>
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-compute_and_export_tpo_constraints_grid~2"></span><h3>procedure, public :: <strong>compute_and_export_tpo_constraints_grid</strong>  => <a href='../interface/compute_and_export_bssn_constraints_grid.html'>compute_and_export_bssn_constraints_grid</a>   </h3></div>
+  <div class="panel-body">
+    
+    <p>Computes the \(\mathrm{BSSNOK}\) constraints using the full \(\mathrm{ID}\) on the refined mesh,
+ prints a summary with the statistics for the constraints. Optionally,
+ prints the constraints to a formatted file to be read by
+ <script type="math/tex">\texttt{gnuplot}</script>, and analyze the constraints by calling
+ <a href="../type/tpo.html#boundprocedure-analyze_constraint">analyze_constraint</a></p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine compute_and_export_bssn_constraints_grid(THIS, id, namefile, name_logfile)   <a href='../proc/compute_and_export_bssn_constraints_grid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Interface to <a href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_grid~2">compute_and_export_tpo_constraints_grid</a></p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/bssn.html'>bssn</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bssn.html">bssn</a> object to which this PROCEDURE is bound</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>id</strong></td><td><p><a href="../type/idbase.html">idbase</a> object used to read the hydrodynamical \(\mathrm{ID}\) to the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>name_logfile</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-compute_and_export_tpo_constraints_particles~2"></span><h3>procedure, public :: <strong>compute_and_export_tpo_constraints_particles</strong>  => <a href='../interface/compute_and_export_bssn_constraints_particles.html'>compute_and_export_bssn_constraints_particles</a>   </h3></div>
+  <div class="panel-body">
+    
+    <p>Computes the \(\mathrm{BSSNOK}\) constraints using the \(\mathrm{BSSNOK}\) \(\mathrm{ID}\) on the refined
+ mesh and the hydrodynamical \(\mathrm{ID}\) mapped from the particles to the mesh,
+ prints a summary with the statistics for the constraints. Optionally,
+ prints the constraints to a formatted file to be read by
+ <script type="math/tex">\texttt{gnuplot}</script>, and analyze the constraints by calling
+ <a href="../type/tpo.html#boundprocedure-analyze_constraint">analyze_constraint</a></p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine compute_and_export_bssn_constraints_particles(THIS, parts_obj, namefile, name_logfile)   <a href='../proc/compute_and_export_bssn_constraints_particles.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Interface to <a href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_particles~2">compute_and_export_tpo_constraints_particles</a></p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/bssn.html'>bssn</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bssn.html">bssn</a> object to which this PROCEDURE is bound</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>parts_obj</strong></td><td><p><a href="../type/particles.html">particles</a> object used to map the hydrodynamical \(\mathrm{ID}\) to the mesh</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>name_logfile</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-compute_and_export_tpo_variables~2"></span><h3>procedure, public :: <strong>compute_and_export_tpo_variables</strong>  => <a href='../interface/compute_and_export_bssn_variables.html'>compute_and_export_bssn_variables</a>   </h3></div>
+  <div class="panel-body">
+    
+    <p>Computes the \(\mathrm{BSSNOK}\) variables at the particle positions, and optionally
+ prints them to a binary file to be read by <script type="math/tex">\texttt{SPHINCS_BSSN}</script>
+ and <script type="math/tex">\texttt{splash}</script>, and to a formatted file to be read by
+ <script type="math/tex">\texttt{gnuplot}</script>, by calling
+ <a href="../type/bssn.html#boundprocedure-print_formatted_id_tpo_variables~2">print_formatted_id_tpo_variables</a></p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine compute_and_export_bssn_variables(THIS, namefile)   <a href='../proc/compute_and_export_bssn_variables.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Interface to <a href="../type/bssn.html#boundprocedure-compute_and_export_tpo_variables~2">compute_and_export_tpo_variables</a></p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/bssn.html'>bssn</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bssn.html">bssn</a> object to which this PROCEDURE is bound</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(inout),</td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-compute_ricci"></span><h3>procedure, public :: <strong>compute_ricci</strong>    </h3></div>
+  <div class="panel-body">
+    
+    <p>Computes the Ricci tensor and the Ricci scalar on the mesh</p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine compute_ricci(THIS)   <a href='../proc/compute_ricci.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Computes the Ricci tensor and the Ricci scalar on the mesh</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/bssn.html'>bssn</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bssn.html">bssn</a> object to which this PROCEDURE is bound</p></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_fields~2"></span><h3>procedure, public :: <strong>deallocate_fields</strong>  => <a href='../interface/deallocate_bssn_fields.html'>deallocate_bssn_fields</a>   </h3></div>
+  <div class="panel-body">
+    
+    <p>Deallocates memory for the <a href="../type/bssn.html">bssn</a> member arrays</p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine deallocate_bssn_fields(THIS)   <a href='../proc/deallocate_bssn_fields.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Interface to <a href="../type/bssn.html#boundprocedure-deallocate_fields~2">deallocate_fields</a></p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/bssn.html'>bssn</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bssn.html">bssn</a> object to which this PROCEDURE is bound</p></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_standard_tpo_variables"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>deallocate_standard_tpo_variables</strong>    </h3></div>
+  <div class="panel-body">
+    
+    <p>Deallocates memory for the standard 3+1 fields</p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine deallocate_standard_tpo_variables(ftpo)   <a href='../proc/deallocate_standard_tpo_variables.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>ftpo</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-define_allocate_fields~2"></span><h3>procedure, public :: <strong>define_allocate_fields</strong>  => <a href='../interface/allocate_bssn_fields.html'>allocate_bssn_fields</a>   </h3></div>
+  <div class="panel-body">
+    
+    <p>Allocates memory for the <a href="../type/bssn.html">bssn</a> member grid functions</p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine allocate_bssn_fields(THIS)   <a href='../proc/allocate_bssn_fields.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Interface to <a href="../type/bssn.html#boundprocedure-define_allocate_fields~2">define_allocate_fields</a></p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/bssn.html'>bssn</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bssn.html">bssn</a> object to which this PROCEDURE is bound</p></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-destruct_bssn"></span><h3>procedure, public :: <strong>destruct_bssn</strong>    </h3></div>
+  <div class="panel-body">
+    
+    <p>Destructor for the EXTENDED TYPE bssn, not ABSTRACT TYPE tpo</p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine destruct_bssn(THIS)   <a href='../proc/destruct_bssn.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Interface to <a href="../type/bssn.html#boundprocedure-destruct_bssn">destruct_bssn</a></p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/bssn.html'>bssn</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bssn.html">bssn</a> object to which this PROCEDURE is bound</p></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_hc"></span><h3>procedure, public :: <strong>get_HC</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_HC(THIS, i, j, k, l) result(HC_value)   <a href='../proc/get_hc.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_hc_parts"></span><h3>procedure, public :: <strong>get_HC_parts</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_HC_parts(THIS, i, j, k, l) result(HC_value)   <a href='../proc/get_hc_parts.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_mc"></span><h3>procedure, public :: <strong>get_MC</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_MC(THIS, i, j, k, l) result(MC_value)   <a href='../proc/get_mc.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision,DIMENSION(3)</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_mc_parts"></span><h3>procedure, public :: <strong>get_MC_parts</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_MC_parts(THIS, i, j, k, l) result(MC_value)   <a href='../proc/get_mc_parts.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision,DIMENSION(3)</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_dx"></span><h3>procedure, public :: <strong>get_dx</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_dx(THIS, l) result(dx)   <a href='../proc/get_dx.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_dy"></span><h3>procedure, public :: <strong>get_dy</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_dy(THIS, l) result(dy)   <a href='../proc/get_dy.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_dz"></span><h3>procedure, public :: <strong>get_dz</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_dz(THIS, l) result(dz)   <a href='../proc/get_dz.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_grid_point"></span><h3>procedure, public :: <strong>get_grid_point</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_grid_point(THIS, i, j, k, l) result(grid_point)   <a href='../proc/get_grid_point.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>k</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision,DIMENSION(3)</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_levels"></span><h3>procedure, public :: <strong>get_levels</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_levels(THIS, l) result(levels)   <a href='../proc/get_levels.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>type(level),DIMENSION(:), ALLOCATABLE</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ngrid_x"></span><h3>procedure, public :: <strong>get_ngrid_x</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_ngrid_x(THIS, l) result(ngrid_x)   <a href='../proc/get_ngrid_x.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>integer</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ngrid_y"></span><h3>procedure, public :: <strong>get_ngrid_y</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_ngrid_y(THIS, l) result(ngrid_y)   <a href='../proc/get_ngrid_y.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>integer</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_ngrid_z"></span><h3>procedure, public :: <strong>get_ngrid_z</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_ngrid_z(THIS, l) result(ngrid_z)   <a href='../proc/get_ngrid_z.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>integer</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_nlevels"></span><h3>procedure, public :: <strong>get_nlevels</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_nlevels(THIS) result(nlevels)   <a href='../proc/get_nlevels.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>integer</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_xr"></span><h3>procedure, public :: <strong>get_xR</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_xR(THIS, l) result(xR)   <a href='../proc/get_xr.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_yr"></span><h3>procedure, public :: <strong>get_yR</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_yR(THIS, l) result(yR)   <a href='../proc/get_yr.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_zr"></span><h3>procedure, public :: <strong>get_zR</strong>    </h3></div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module function get_zR(THIS, l) result(zR)   <a href='../proc/get_zr.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>l</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+<h4>Return Value <small>double precision</small></h4>  
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_formatted_id_tpo_variables~2"></span><h3>procedure, public :: <strong>print_formatted_id_tpo_variables</strong>  => <a href='../interface/print_formatted_id_bssn_variables.html'>print_formatted_id_bssn_variables</a>   </h3></div>
+  <div class="panel-body">
+    
+    <p>Prints the \(\mathrm{BSSNOK}\) \(\mathrm{ID}\) to a formatted file</p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine print_formatted_id_bssn_variables(THIS, namefile)   <a href='../proc/print_formatted_id_bssn_variables.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Interface to <a href="../type/bssn.html#boundprocedure-print_formatted_id_tpo_variables~2">print_formatted_id_tpo_variables</a></p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/bssn.html'>bssn</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bssn.html">bssn</a> object to which this PROCEDURE is bound</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(inout),</td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_summary~2"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>print_summary</strong>    </h3></div>
+  <div class="panel-body">
+    
+    <p>Prints a summary about the features of the refined mesh</p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine print_summary(THIS, filename)   <a href='../proc/print_summary~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Prints a summary of the properties of the refined mesh,
+ and optionally, to a formatted file whose name
+ is given as the optional argument <code>filename</code></p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(inout),</td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>filename</strong></td><td><p>Name of the formatted file to print the summary to</p></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-read_bssn_dump_print_formatted"></span><h3>procedure, public :: <strong>read_bssn_dump_print_formatted</strong>    </h3></div>
+  <div class="panel-body">
+    
+    <p>Reads the binary \(\mathrm{ID}\) file printed by
+ <a href="../type/bssn.html#boundprocedure-compute_and_export_tpo_variables~2">compute_and_export_tpo_variables</a></p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine read_bssn_dump_print_formatted(THIS, namefile_bin, namefile)   <a href='../proc/read_bssn_dump_print_formatted.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Interface to <a href="../type/bssn.html#boundprocedure-read_bssn_dump_print_formatted">read_bssn_dump_print_formatted</a></p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/bssn.html'>bssn</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>THIS</strong></td><td><p><a href="../type/bssn.html">bssn</a> object to which this PROCEDURE is bound</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(inout),</td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>namefile_bin</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(inout),</td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-setup_standard_tpo_variables"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>setup_standard_tpo_variables</strong>    </h3></div>
+  <div class="panel-body">
+    
+    <p>Set up the refined mesh by reading the <code>gravity_grid_parameter.dat</code>
+ parameter file, and read the standard 3+1 \(\mathrm{ID}\) using the given
+ <a href="../type/idbase.html">idbase</a> object, on the refined mesh</p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine setup_standard_tpo_variables(ftpo, id, dx, dy, dz)   <a href='../proc/setup_standard_tpo_variables.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3>    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>ftpo</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/idbase.html'>idbase</a>),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>id</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td></td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>dx</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td></td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>dy</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td></td>
+  <td>optional</td>  <td></td><td>::</td>
+  <td><strong>dz</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-test_recovery_m2p"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>test_recovery_m2p</strong>    </h3></div>
+  <div class="panel-body">
+    
+    <p>Computes the conserved variables from the physical ones, and vice versa,
+ to test that the recovered physical variables are the same to those
+ computed from the \(\mathrm{ID}\). Uses the metric mapped from the grid to the
+ particles. </p><div class="alert alert-success" role="alert"><h4>Todo</h4><p>add reference for recovery</p></div>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine test_recovery_m2p(this, parts, namefile)   <a href='../proc/test_recovery_m2p.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Tests the recovery. Computes the conserved variables from the physical
+ ones, and then the physical ones from the conserved ones. It then
+ compares the variables computed with the recovery PROCEDURES, with
+ those computed with \(\texttt{SPHINCS_ID}\). Uses the mesh-2-particle.
+ </p><a href="../interface/test_recovery_m2p.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td><p><a href="../type/tpo.html">tpo</a> object which this PROCEDURE is a member of</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>parts</strong></td><td><p><a href="../module/sph_particles.html#type-particles">particles</a> object used to map the metric
+ from the mesh to the particles, and to call the recovery procedures</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>character(len=*),</td>
+<td>intent(inout)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>namefile</strong></td><td><p>Name of the formatted file where the data is printed</p></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+    </section>
+    
+    <section>
+    <h3><span class="anchor" id="src"></span>Source Code</h3>
+    <div class="highlight"><pre><span></span>  <span class="k">TYPE</span><span class="p">,</span> <span class="k">EXTENDS</span><span class="p">(</span><span class="n">tpo</span><span class="p">)</span><span class="kd">::</span> <span class="n">bssn</span>
+  <span class="c">!# TYPE representing the |id| for the |bssn| formulation</span>
+  <span class="c">!  of the Einstein equations</span>
+
+
+    <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">call_flag</span><span class="o">=</span> <span class="mi">0</span>
+    <span class="c">!# Flag set to a value different than 0 if the SUBROUTINE</span>
+    <span class="c">!  compute_and_export_bssn_variables is called</span>
+
+    <span class="c">!</span>
+    <span class="c">!-- Arrays storing the BSSN variables for the LORENE ID on the grid</span>
+    <span class="c">!</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function</span><span class="p">)</span><span class="kd">::</span> <span class="n">Gamma_u</span>
+    <span class="c">!! Conformal connection \(\bar{\Gamma} ^i_{jk}\)</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function_scalar</span><span class="p">)</span><span class="kd">::</span> <span class="n">phi</span>
+    <span class="c">!! Conformal factor \(\phi \)</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function_scalar</span><span class="p">)</span><span class="kd">::</span> <span class="n">trK</span>
+    <span class="c">!! Trace of extrinsic curvature \(K \)</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function</span><span class="p">)</span><span class="kd">::</span> <span class="n">A_BSSN3_ll</span>
+    <span class="c">!! Conformal traceless extrinsic curvature \(A_{ij} \)</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function</span><span class="p">)</span><span class="kd">::</span> <span class="n">g_BSSN3_ll</span>
+    <span class="c">!! Conformal spatial metric \(\gamma_{ij} \)</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function</span><span class="p">)</span><span class="kd">::</span> <span class="n">Ricci_ll</span>
+    <span class="c">!! Ricci tensor \(R_{ij} \)</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function_scalar</span><span class="p">)</span><span class="kd">::</span> <span class="n">Ricci_scalar</span>
+    <span class="c">!! Ricci scalar \(R^\mu{}_nu\)</span>
+
+    <span class="c">!</span>
+    <span class="c">!-- Connection constraints and its l2 norm and loo norm</span>
+    <span class="c">!</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function</span><span class="p">)</span><span class="kd">::</span> <span class="n">GC</span>
+    <span class="c">!! Connection constraint computed with the |id| on the mesh</span>
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">grid_function</span><span class="p">)</span><span class="kd">::</span> <span class="n">GC_parts</span>
+    <span class="c">!# Connection constraint computed with the |bssn| |id| on the mesh, and</span>
+    <span class="c">!  the hydrodynamical |id| mapped from the particles to the mesh</span>
+
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">GC_l2</span>
+    <span class="c">!# \(\ell_2\) norm of the connection constraint computed</span>
+    <span class="c">!  with the |id| on the mesh</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">GC_parts_l2</span>
+    <span class="c">!# \(\ell_2\) norm of the connection constraint computed with the |bssn|</span>
+    <span class="c">!  |id| on the mesh, and the hydrodynamical |id| mapped from the particles</span>
+    <span class="c">!  to the mesh</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">GC_loo</span>
+    <span class="c">!# \(\ell_\infty\) norm, i.e., supremum of the absolute value, of the</span>
+    <span class="c">!  connection constraint computed with the |id| on the mesh</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">GC_parts_loo</span>
+    <span class="c">!# \(\ell_\infty\) norm, i.e., supremum of the absolute value, of the</span>
+    <span class="c">!  connection constraint computed with the |bssn| |id| on the mesh,</span>
+    <span class="c">!  and the hydrodynamical |id| mapped from the particles to the mesh</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">GC_int</span>
+    <span class="c">!# Integral of the connection constraint computed with the |id| on the mesh</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">GC_parts_int</span>
+    <span class="c">!# Integral of the connection constraint computed with the |bssn| |id| on</span>
+    <span class="c">!  the mesh, and the hydrodynamical |id| mapped from the particles to the</span>
+    <span class="c">!  mesh with the |id| on the mesh</span>
+
+    <span class="kt">LOGICAL</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">export_bin</span>
+    <span class="c">!# `.TRUE.` if the binary files for SPHINCS_BSSN are to be exported,</span>
+    <span class="c">!  `.FALSE.` otherwise</span>
+    <span class="kt">LOGICAL</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">export_form_xy</span>
+    <span class="c">!# `.TRUE.` if the |id| in the formatted files is to be on the xy plane</span>
+    <span class="c">!  only, `.FALSE.` otherwise</span>
+    <span class="kt">LOGICAL</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">export_form_x</span>
+    <span class="c">!# `.TRUE.` if the |id| in the formatted files is to be on the x axis</span>
+    <span class="c">!  only, `.FALSE.` otherwise</span>
+
+    <span class="k">TYPE</span><span class="p">(</span><span class="n">timer</span><span class="p">)</span><span class="kd">::</span> <span class="n">bssn_computer_timer</span>
+    <span class="c">!# Timer that times how long it takes to compute the |bssn| variables on</span>
+    <span class="c">!  the refined mesh</span>
+
+
+    <span class="k">CONTAINS</span>
+
+
+    <span class="c">!-------------------!</span>
+    <span class="c">!--  SUBROUTINES  --!</span>
+    <span class="c">!-------------------!</span>
+
+
+    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">define_allocate_fields</span> <span class="o">=&gt;</span> <span class="n">allocate_bssn_fields</span>
+    <span class="c">!! Allocates memory for the [[bssn]] member grid functions</span>
+
+    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">deallocate_fields</span> <span class="o">=&gt;</span> <span class="n">deallocate_bssn_fields</span>
+    <span class="c">!! Deallocates memory for the [[bssn]] member arrays</span>
+
+    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">compute_and_export_tpo_variables</span> <span class="p">&amp;</span>
+                    <span class="o">=&gt;</span> <span class="n">compute_and_export_bssn_variables</span>
+    <span class="c">!# Computes the |bssn| variables at the particle positions, and optionally</span>
+    <span class="c">!  prints them to a binary file to be read by \(\texttt{SPHINCS_BSSN}\)</span>
+    <span class="c">!  and \(\texttt{splash}\), and to a formatted file to be read by</span>
+    <span class="c">!  \(\texttt{gnuplot}\), by calling</span>
+    <span class="c">!  [[bssn:print_formatted_id_tpo_variables]]</span>
+
+    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">print_formatted_id_tpo_variables</span> <span class="p">&amp;</span>
+                    <span class="o">=&gt;</span> <span class="n">print_formatted_id_bssn_variables</span>
+    <span class="c">!! Prints the |bssn| |id| to a formatted file</span>
+
+    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">compute_and_export_tpo_constraints_grid</span> <span class="p">&amp;</span>
+                    <span class="o">=&gt;</span> <span class="n">compute_and_export_bssn_constraints_grid</span>
+    <span class="c">!# Computes the |bssn| constraints using the full |id| on the refined mesh,</span>
+    <span class="c">!  prints a summary with the statistics for the constraints. Optionally,</span>
+    <span class="c">!  prints the constraints to a formatted file to be read by</span>
+    <span class="c">!  \(\texttt{gnuplot}\), and analyze the constraints by calling</span>
+    <span class="c">!  [[tpo:analyze_constraint]]</span>
+
+    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">compute_and_export_tpo_constraints_particles</span> <span class="p">&amp;</span>
+                    <span class="o">=&gt;</span> <span class="n">compute_and_export_bssn_constraints_particles</span>
+    <span class="c">!# Computes the |bssn| constraints using the |bssn| |id| on the refined</span>
+    <span class="c">!  mesh and the hydrodynamical |id| mapped from the particles to the mesh,</span>
+    <span class="c">!  prints a summary with the statistics for the constraints. Optionally,</span>
+    <span class="c">!  prints the constraints to a formatted file to be read by</span>
+    <span class="c">!  \(\texttt{gnuplot}\), and analyze the constraints by calling</span>
+    <span class="c">!  [[tpo:analyze_constraint]]</span>
+
+
+    <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">destruct_bssn</span>
+    <span class="c">!# Destructor for the EXTENDED TYPE bssn, not ABSTRACT TYPE tpo</span>
+
+    <span class="k">FINAL</span>    <span class="kd">::</span> <span class="n">destructor</span>
+    <span class="c">!# Destructor; finalizes members from both TYPES tpo and bssn,</span>
+    <span class="c">!  by calling [[tpo:destruct_tpo]] and</span>
+    <span class="c">!  [[bssn:destruct_bssn]]</span>
+
+    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">read_bssn_dump_print_formatted</span>
+    <span class="c">!# Reads the binary |id| file printed by</span>
+    <span class="c">!  [[bssn:compute_and_export_tpo_variables]]</span>
+
+    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">PUBLIC</span><span class="kd">::</span> <span class="n">compute_ricci</span>
+    <span class="c">!# Computes the Ricci tensor and the Ricci scalar on the mesh</span>
+
+
+  <span class="k">END TYPE </span><span class="n">bssn</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>SPHINCS_ID was developed by Francesco Torsello<br>&copy; 2022 
+</p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2022-04-02 15:56:56           </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+  </body>
+</html>
