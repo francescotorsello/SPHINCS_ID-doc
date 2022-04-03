@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 8.5% of total for source files.">1393 statements</a>
+    title=" 8.8% of total for source files.">1399 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_sph_particles_apm.f90"> Source File</a></li>
   </ul>
@@ -570,7 +570,7 @@
 <a name="ln-299"></a><span class="k">    </span><span class="kt">INTEGER</span><span class="p">,</span>          <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">max_npart</span>        <span class="o">=</span> <span class="mi">10</span><span class="n">D</span><span class="o">+</span><span class="mi">6</span>
 <a name="ln-300"></a>    <span class="kt">INTEGER</span><span class="p">,</span>          <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">nn_des</span>           <span class="o">=</span> <span class="mi">301</span>
 <a name="ln-301"></a>    <span class="kt">INTEGER</span><span class="p">,</span>          <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">m_max_it</span>         <span class="o">=</span> <span class="mi">50</span>
-<a name="ln-302"></a>    <span class="kt">INTEGER</span><span class="p">,</span>          <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">search_pos</span>       <span class="o">=</span> <span class="mi">10</span>
+<a name="ln-302"></a>    <span class="kt">INTEGER</span><span class="p">,</span>          <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">search_pos</span>       <span class="o">=</span> <span class="mi">0</span>
 <a name="ln-303"></a>    <span class="c">!INTEGER,          PARAMETER:: print_step       = 15</span>
 <a name="ln-304"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">eps</span>              <span class="o">=</span> <span class="mf">5.0D-1</span>
 <a name="ln-305"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">ellipse_thickness</span><span class="o">=</span> <span class="mf">1.1D0</span>
@@ -1460,14 +1460,14 @@
 <a name="ln-1189"></a>        <span class="k">INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">finalnamefile</span><span class="p">),</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
 <a name="ln-1190"></a>
 <a name="ln-1191"></a>        <span class="k">IF</span><span class="p">(</span> <span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-1192"></a><span class="k">            OPEN</span><span class="p">(</span> <span class="n">UNIT</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">finalnamefile</span><span class="p">),</span> <span class="n">STATUS</span><span class="o">=</span> <span class="s2">&quot;REPLACE&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1193"></a>                  <span class="n">FORM</span><span class="o">=</span> <span class="s2">&quot;FORMATTED&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1194"></a>                  <span class="n">POSITION</span><span class="o">=</span> <span class="s2">&quot;REWIND&quot;</span><span class="p">,</span> <span class="n">ACTION</span><span class="o">=</span> <span class="s2">&quot;WRITE&quot;</span><span class="p">,</span> <span class="n">IOSTAT</span><span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1195"></a>                  <span class="n">IOMSG</span><span class="o">=</span> <span class="n">err_msg</span> <span class="p">)</span>
+<a name="ln-1192"></a><span class="k">          OPEN</span><span class="p">(</span> <span class="n">UNIT</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">finalnamefile</span><span class="p">),</span> <span class="n">STATUS</span><span class="o">=</span> <span class="s2">&quot;REPLACE&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-1193"></a>                <span class="n">FORM</span><span class="o">=</span> <span class="s2">&quot;FORMATTED&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-1194"></a>                <span class="n">POSITION</span><span class="o">=</span> <span class="s2">&quot;REWIND&quot;</span><span class="p">,</span> <span class="n">ACTION</span><span class="o">=</span> <span class="s2">&quot;WRITE&quot;</span><span class="p">,</span> <span class="n">IOSTAT</span><span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-1195"></a>                <span class="n">IOMSG</span><span class="o">=</span> <span class="n">err_msg</span> <span class="p">)</span>
 <a name="ln-1196"></a>        <span class="k">ELSE</span>
-<a name="ln-1197"></a><span class="k">            OPEN</span><span class="p">(</span> <span class="n">UNIT</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">finalnamefile</span><span class="p">),</span> <span class="n">STATUS</span><span class="o">=</span> <span class="s2">&quot;NEW&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1198"></a>                  <span class="n">FORM</span><span class="o">=</span> <span class="s2">&quot;FORMATTED&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1199"></a>                  <span class="n">ACTION</span><span class="o">=</span> <span class="s2">&quot;WRITE&quot;</span><span class="p">,</span> <span class="n">IOSTAT</span><span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span><span class="o">=</span> <span class="n">err_msg</span> <span class="p">)</span>
+<a name="ln-1197"></a><span class="k">          OPEN</span><span class="p">(</span> <span class="n">UNIT</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="k">FILE</span><span class="o">=</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">finalnamefile</span><span class="p">),</span> <span class="n">STATUS</span><span class="o">=</span> <span class="s2">&quot;NEW&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-1198"></a>                <span class="n">FORM</span><span class="o">=</span> <span class="s2">&quot;FORMATTED&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-1199"></a>                <span class="n">ACTION</span><span class="o">=</span> <span class="s2">&quot;WRITE&quot;</span><span class="p">,</span> <span class="n">IOSTAT</span><span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span><span class="o">=</span> <span class="n">err_msg</span> <span class="p">)</span>
 <a name="ln-1200"></a>        <span class="n">ENDIF</span>
 <a name="ln-1201"></a>        <span class="k">IF</span><span class="p">(</span> <span class="n">ios</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span><span class="k">THEN</span>
 <a name="ln-1202"></a><span class="k">          PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;...error when opening &quot;</span> <span class="o">//</span> <span class="nb">TRIM</span><span class="p">(</span><span class="n">finalnamefile</span><span class="p">),</span> <span class="p">&amp;</span>
@@ -1477,7 +1477,7 @@
 <a name="ln-1206"></a>
 <a name="ln-1207"></a>        <span class="k">DO </span><span class="n">a</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npart_real</span><span class="p">,</span> <span class="mi">1</span>
 <a name="ln-1208"></a>          <span class="c">!tmp= get_density( all_pos( 1, a ), all_pos( 2, a ), all_pos( 3, a ) )</span>
-<a name="ln-1209"></a>          <span class="n">tmp</span><span class="o">=</span> <span class="n">fld</span><span class="p">%</span> <span class="n">art_pr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a name="ln-1209"></a>          <span class="n">tmp</span><span class="o">=</span> <span class="n">fld</span><span class="p">%</span> <span class="n">dNstar</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <a name="ln-1210"></a>          <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="o">*</span> <span class="p">)</span> <span class="p">&amp;</span>
 <a name="ln-1211"></a>            <span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="p">&amp;</span>
 <a name="ln-1212"></a>            <span class="n">all_pos</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="p">),</span> <span class="p">&amp;</span>
@@ -1490,7 +1490,7 @@
 <a name="ln-1219"></a>        <span class="n">ENDDO</span>
 <a name="ln-1220"></a>
 <a name="ln-1221"></a>        <span class="k">DO </span><span class="n">a</span><span class="o">=</span> <span class="n">npart_real</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npart_all</span><span class="p">,</span> <span class="mi">1</span>
-<a name="ln-1222"></a>          <span class="n">tmp</span><span class="o">=</span> <span class="n">fld</span><span class="p">%</span> <span class="n">art_pr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a name="ln-1222"></a>          <span class="n">tmp</span><span class="o">=</span> <span class="n">fld</span><span class="p">%</span> <span class="n">dNstar</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <a name="ln-1223"></a>          <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="o">*</span> <span class="p">)</span> <span class="p">&amp;</span>
 <a name="ln-1224"></a>            <span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="p">&amp;</span>
 <a name="ln-1225"></a>            <span class="n">all_pos</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="p">),</span> <span class="p">&amp;</span>
@@ -1788,12 +1788,12 @@
 <a name="ln-1517"></a>      <span class="c">!</span>
 <a name="ln-1518"></a>
 <a name="ln-1519"></a>      <span class="n">fld</span><span class="p">%</span> <span class="n">nstar_id</span><span class="p">(</span> <span class="n">npart_real</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">npart_all</span> <span class="p">)</span><span class="o">=</span> <span class="n">zero</span>
-<a name="ln-1520"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">itr</span> <span class="o">&lt;=</span> <span class="mi">50</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-1521"></a><span class="k">        </span><span class="n">fld</span><span class="p">%</span> <span class="n">art_pr</span><span class="p">(</span> <span class="n">npart_real</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">npart_all</span> <span class="p">)</span><span class="o">=</span> <span class="n">zero</span>
-<a name="ln-1522"></a>      <span class="k">ELSE</span>
-<a name="ln-1523"></a><span class="k">        </span><span class="n">fld</span><span class="p">%</span> <span class="n">art_pr</span><span class="p">(</span> <span class="n">npart_real</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">npart_all</span> <span class="p">)</span><span class="o">=</span> <span class="n">max_art_pr_ghost</span>
-<a name="ln-1524"></a>                                <span class="c">!MIN( two*three*art_pr_max, max_art_pr_ghost )</span>
-<a name="ln-1525"></a>      <span class="n">ENDIF</span>
+<a name="ln-1520"></a>      <span class="c">!IF( itr &lt;= 50 )THEN</span>
+<a name="ln-1521"></a>      <span class="c">!  fld% art_pr( npart_real+1:npart_all )= zero</span>
+<a name="ln-1522"></a>      <span class="c">!ELSE</span>
+<a name="ln-1523"></a>        <span class="n">fld</span><span class="p">%</span> <span class="n">art_pr</span><span class="p">(</span> <span class="n">npart_real</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">npart_all</span> <span class="p">)</span><span class="o">=</span> <span class="p">&amp;</span>
+<a name="ln-1524"></a>                            <span class="nb">MIN</span><span class="p">(</span> <span class="n">itr</span><span class="o">*</span><span class="n">two</span><span class="o">*</span><span class="n">three</span><span class="o">*</span><span class="n">art_pr_max</span><span class="p">,</span> <span class="n">max_art_pr_ghost</span> <span class="p">)</span>
+<a name="ln-1525"></a>      <span class="c">!ENDIF</span>
 <a name="ln-1526"></a>
 <a name="ln-1527"></a>   <span class="c">!   !$OMP PARALLEL DO DEFAULT( NONE ) &amp;</span>
 <a name="ln-1528"></a>   <span class="c">!   !$OMP             SHARED( all_pos, npart_all, npart_real, center, &amp;</span>
@@ -2013,100 +2013,100 @@
 <a name="ln-1742"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Updating positions...&quot;</span>
 <a name="ln-1743"></a>
 <a name="ln-1744"></a>      <span class="c">!all_pos_prev= all_pos</span>
-<a name="ln-1745"></a>
-<a name="ln-1746"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;21&quot;</span>
+<a name="ln-1745"></a>      <span class="k">CALL </span><span class="n">density_loop</span><span class="p">(</span> <span class="n">npart_all</span><span class="p">,</span> <span class="n">all_pos</span><span class="p">,</span> <span class="p">&amp;</span>    <span class="c">! input</span>
+<a name="ln-1746"></a>                         <span class="n">nu</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">fld</span><span class="p">%</span> <span class="n">nstar_sph</span> <span class="p">)</span>      <span class="c">! output</span>
 <a name="ln-1747"></a>
-<a name="ln-1748"></a>      <span class="k">CALL </span><span class="n">position_correction</span><span class="p">(</span> <span class="n">npart_all</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1749"></a>                                <span class="n">all_pos</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">nu_all</span><span class="p">,</span> <span class="n">fld</span><span class="p">%</span> <span class="n">art_pr</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1750"></a>                                <span class="n">fld</span><span class="p">%</span> <span class="n">nstar_sph</span><span class="p">,</span> <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span> <span class="p">)</span>
-<a name="ln-1751"></a>
-<a name="ln-1752"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;22&quot;</span>
+<a name="ln-1748"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;21&quot;</span>
+<a name="ln-1749"></a>
+<a name="ln-1750"></a>      <span class="k">CALL </span><span class="n">position_correction</span><span class="p">(</span> <span class="n">npart_all</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-1751"></a>                                <span class="n">all_pos</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">nu_all</span><span class="p">,</span> <span class="n">fld</span><span class="p">%</span> <span class="n">art_pr</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-1752"></a>                                <span class="n">fld</span><span class="p">%</span> <span class="n">nstar_sph</span><span class="p">,</span> <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span> <span class="p">)</span>
 <a name="ln-1753"></a>
-<a name="ln-1754"></a>      <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(:,</span><span class="n">npart_real</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">npart_all</span><span class="p">)</span><span class="o">=</span> <span class="n">zero</span>
+<a name="ln-1754"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;22&quot;</span>
 <a name="ln-1755"></a>
-<a name="ln-1756"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;23&quot;</span>
+<a name="ln-1756"></a>      <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(:,</span><span class="n">npart_real</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">npart_all</span><span class="p">)</span><span class="o">=</span> <span class="n">zero</span>
 <a name="ln-1757"></a>
-<a name="ln-1758"></a>      <span class="c">!$OMP PARALLEL DO DEFAULT( NONE ) &amp;</span>
-<a name="ln-1759"></a>      <span class="c">!$OMP             SHARED( npart_real, fld, all_pos, center, &amp;</span>
-<a name="ln-1760"></a>      <span class="c">!$OMP                     larger_radius ) &amp;</span>
-<a name="ln-1761"></a>      <span class="c">!$OMP             PRIVATE( a, itr2, r, theta, phi )</span>
-<a name="ln-1762"></a>      <span class="n">find_nan_in_correction_pos</span><span class="p">:</span> <span class="k">DO </span><span class="n">a</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npart_real</span><span class="p">,</span> <span class="mi">1</span>
-<a name="ln-1763"></a>
-<a name="ln-1764"></a>        <span class="n">loop_over_spatial_components</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr2</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-1758"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;23&quot;</span>
+<a name="ln-1759"></a>
+<a name="ln-1760"></a>      <span class="c">!$OMP PARALLEL DO DEFAULT( NONE ) &amp;</span>
+<a name="ln-1761"></a>      <span class="c">!$OMP             SHARED( npart_real, fld, all_pos, center, &amp;</span>
+<a name="ln-1762"></a>      <span class="c">!$OMP                     larger_radius ) &amp;</span>
+<a name="ln-1763"></a>      <span class="c">!$OMP             PRIVATE( a, itr2, r, theta, phi )</span>
+<a name="ln-1764"></a>      <span class="n">find_nan_in_correction_pos</span><span class="p">:</span> <span class="k">DO </span><span class="n">a</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npart_real</span><span class="p">,</span> <span class="mi">1</span>
 <a name="ln-1765"></a>
-<a name="ln-1766"></a>          <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">is_finite_number</span><span class="p">(</span> <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span> <span class="n">itr2</span><span class="p">,</span> <span class="n">a</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-1766"></a>        <span class="n">loop_over_spatial_components</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr2</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span>
 <a name="ln-1767"></a>
-<a name="ln-1768"></a><span class="k">            CALL </span><span class="n">spherical_from_cartesian</span><span class="p">(</span> <span class="n">all_pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="n">all_pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-1769"></a>                                           <span class="n">all_pos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-1770"></a>                                           <span class="n">center</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">center</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">center</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-1771"></a>                                           <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">)</span>
-<a name="ln-1772"></a>
-<a name="ln-1773"></a>            <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="p">)</span><span class="o">=</span> <span class="o">-</span> <span class="n">one</span><span class="o">/</span><span class="p">(</span><span class="n">two</span><span class="o">*</span><span class="n">ten</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="nb">COS</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
-<a name="ln-1774"></a>            <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span> <span class="p">)</span><span class="o">=</span> <span class="o">-</span> <span class="n">one</span><span class="o">/</span><span class="p">(</span><span class="n">two</span><span class="o">*</span><span class="n">ten</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
-<a name="ln-1775"></a>            <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="n">a</span> <span class="p">)</span><span class="o">=</span> <span class="o">-</span> <span class="n">one</span><span class="o">/</span><span class="p">(</span><span class="n">two</span><span class="o">*</span><span class="n">ten</span><span class="p">)</span><span class="o">*</span><span class="nb">COS</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<a name="ln-1776"></a>            <span class="c">!fld% correction_pos( itr2, a )= zero</span>
-<a name="ln-1777"></a>
-<a name="ln-1778"></a>           <span class="c">! PRINT *, &quot;** ERROR! fld% correction_pos(&quot;, itr2, &quot;,&quot;, a, &quot;) is a NaN!&quot;</span>
-<a name="ln-1779"></a>           <span class="c">! PRINT *, &quot; *        fld% correction_pos: x=&quot;, fld% correction_pos(1,a), &amp;</span>
-<a name="ln-1780"></a>           <span class="c">!          &quot;, y=&quot;, fld% correction_pos(2,a), &quot;, z=&quot;, fld% correction_pos(3,a)</span>
-<a name="ln-1781"></a>           <span class="c">! PRINT *, &quot; *        Particle position: x=&quot;, all_pos(1,a), &amp;</span>
-<a name="ln-1782"></a>           <span class="c">!          &quot;, y=&quot;, all_pos(2,a), &quot;, z=&quot;, all_pos(3,a)</span>
-<a name="ln-1783"></a>           <span class="c">!</span>
-<a name="ln-1784"></a>           <span class="c">! CALL spherical_from_cartesian( &amp;</span>
-<a name="ln-1785"></a>           <span class="c">!                   all_pos(1,a), all_pos(2,a), all_pos(3,a), &amp;</span>
-<a name="ln-1786"></a>           <span class="c">!                   center(1), center(2), center(3), &amp;</span>
-<a name="ln-1787"></a>           <span class="c">!                   r_tmp, theta_tmp, phi_tmp )</span>
-<a name="ln-1788"></a>           <span class="c">!</span>
-<a name="ln-1789"></a>           <span class="c">! !r_tmp= SQRT( ( all_pos(1,a) - center(1) )**two + &amp;</span>
-<a name="ln-1790"></a>           <span class="c">! !             ( all_pos(2,a) - center(2) )**two + &amp;</span>
-<a name="ln-1791"></a>           <span class="c">! !             ( all_pos(3,a) - center(3) )**two )</span>
-<a name="ln-1792"></a>           <span class="c">!</span>
-<a name="ln-1793"></a>           <span class="c">! PRINT *, &quot; *        Particle radius: r=&quot;, r_tmp, &amp;</span>
-<a name="ln-1794"></a>           <span class="c">!          &quot;=&quot;, r_tmp/larger_radius*ten*ten, &amp;</span>
-<a name="ln-1795"></a>           <span class="c">!          &quot;% of the larger radius of the star.&quot;</span>
-<a name="ln-1796"></a>           <span class="c">! PRINT *, &quot; *        Particle colatitude: theta=&quot;, theta_tmp/pi,&quot; pi&quot;</span>
-<a name="ln-1797"></a>           <span class="c">! PRINT *, &quot; *        Particle longitude: phi=&quot;, phi_tmp/pi, &quot; pi&quot;</span>
-<a name="ln-1798"></a>           <span class="c">! PRINT *, &quot; * Stopping..&quot;</span>
-<a name="ln-1799"></a>           <span class="c">! PRINT *</span>
-<a name="ln-1800"></a>           <span class="c">! STOP</span>
-<a name="ln-1801"></a>
-<a name="ln-1802"></a>          <span class="n">ENDIF</span>
+<a name="ln-1768"></a>          <span class="k">IF</span><span class="p">(</span> <span class="p">.</span><span class="nb">NOT</span><span class="p">.</span><span class="n">is_finite_number</span><span class="p">(</span> <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span> <span class="n">itr2</span><span class="p">,</span> <span class="n">a</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-1769"></a>
+<a name="ln-1770"></a><span class="k">            CALL </span><span class="n">spherical_from_cartesian</span><span class="p">(</span> <span class="n">all_pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="n">all_pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-1771"></a>                                           <span class="n">all_pos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-1772"></a>                                           <span class="n">center</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">center</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">center</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-1773"></a>                                           <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">)</span>
+<a name="ln-1774"></a>
+<a name="ln-1775"></a>            <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span> <span class="p">)</span><span class="o">=</span> <span class="o">-</span> <span class="n">one</span><span class="o">/</span><span class="p">(</span><span class="n">two</span><span class="o">*</span><span class="n">ten</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="nb">COS</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<a name="ln-1776"></a>            <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="n">a</span> <span class="p">)</span><span class="o">=</span> <span class="o">-</span> <span class="n">one</span><span class="o">/</span><span class="p">(</span><span class="n">two</span><span class="o">*</span><span class="n">ten</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<a name="ln-1777"></a>            <span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="n">a</span> <span class="p">)</span><span class="o">=</span> <span class="o">-</span> <span class="n">one</span><span class="o">/</span><span class="p">(</span><span class="n">two</span><span class="o">*</span><span class="n">ten</span><span class="p">)</span><span class="o">*</span><span class="nb">COS</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<a name="ln-1778"></a>            <span class="c">!fld% correction_pos( itr2, a )= zero</span>
+<a name="ln-1779"></a>
+<a name="ln-1780"></a>           <span class="c">! PRINT *, &quot;** ERROR! fld% correction_pos(&quot;, itr2, &quot;,&quot;, a, &quot;) is a NaN!&quot;</span>
+<a name="ln-1781"></a>           <span class="c">! PRINT *, &quot; *        fld% correction_pos: x=&quot;, fld% correction_pos(1,a), &amp;</span>
+<a name="ln-1782"></a>           <span class="c">!          &quot;, y=&quot;, fld% correction_pos(2,a), &quot;, z=&quot;, fld% correction_pos(3,a)</span>
+<a name="ln-1783"></a>           <span class="c">! PRINT *, &quot; *        Particle position: x=&quot;, all_pos(1,a), &amp;</span>
+<a name="ln-1784"></a>           <span class="c">!          &quot;, y=&quot;, all_pos(2,a), &quot;, z=&quot;, all_pos(3,a)</span>
+<a name="ln-1785"></a>           <span class="c">!</span>
+<a name="ln-1786"></a>           <span class="c">! CALL spherical_from_cartesian( &amp;</span>
+<a name="ln-1787"></a>           <span class="c">!                   all_pos(1,a), all_pos(2,a), all_pos(3,a), &amp;</span>
+<a name="ln-1788"></a>           <span class="c">!                   center(1), center(2), center(3), &amp;</span>
+<a name="ln-1789"></a>           <span class="c">!                   r_tmp, theta_tmp, phi_tmp )</span>
+<a name="ln-1790"></a>           <span class="c">!</span>
+<a name="ln-1791"></a>           <span class="c">! !r_tmp= SQRT( ( all_pos(1,a) - center(1) )**two + &amp;</span>
+<a name="ln-1792"></a>           <span class="c">! !             ( all_pos(2,a) - center(2) )**two + &amp;</span>
+<a name="ln-1793"></a>           <span class="c">! !             ( all_pos(3,a) - center(3) )**two )</span>
+<a name="ln-1794"></a>           <span class="c">!</span>
+<a name="ln-1795"></a>           <span class="c">! PRINT *, &quot; *        Particle radius: r=&quot;, r_tmp, &amp;</span>
+<a name="ln-1796"></a>           <span class="c">!          &quot;=&quot;, r_tmp/larger_radius*ten*ten, &amp;</span>
+<a name="ln-1797"></a>           <span class="c">!          &quot;% of the larger radius of the star.&quot;</span>
+<a name="ln-1798"></a>           <span class="c">! PRINT *, &quot; *        Particle colatitude: theta=&quot;, theta_tmp/pi,&quot; pi&quot;</span>
+<a name="ln-1799"></a>           <span class="c">! PRINT *, &quot; *        Particle longitude: phi=&quot;, phi_tmp/pi, &quot; pi&quot;</span>
+<a name="ln-1800"></a>           <span class="c">! PRINT *, &quot; * Stopping..&quot;</span>
+<a name="ln-1801"></a>           <span class="c">! PRINT *</span>
+<a name="ln-1802"></a>           <span class="c">! STOP</span>
 <a name="ln-1803"></a>
-<a name="ln-1804"></a>        <span class="n">ENDDO</span> <span class="n">loop_over_spatial_components</span>
+<a name="ln-1804"></a>          <span class="n">ENDIF</span>
 <a name="ln-1805"></a>
-<a name="ln-1806"></a>      <span class="n">ENDDO</span> <span class="n">find_nan_in_correction_pos</span>
-<a name="ln-1807"></a>      <span class="c">!$OMP END PARALLEL DO</span>
-<a name="ln-1808"></a>
-<a name="ln-1809"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;After calling position_correction&quot;</span>
+<a name="ln-1806"></a>        <span class="n">ENDDO</span> <span class="n">loop_over_spatial_components</span>
+<a name="ln-1807"></a>
+<a name="ln-1808"></a>      <span class="n">ENDDO</span> <span class="n">find_nan_in_correction_pos</span>
+<a name="ln-1809"></a>      <span class="c">!$OMP END PARALLEL DO</span>
 <a name="ln-1810"></a>
-<a name="ln-1811"></a>      <span class="n">fld</span><span class="p">%</span> <span class="n">cnt_move</span><span class="o">=</span> <span class="mi">0</span>
-<a name="ln-1812"></a>      <span class="c">!$OMP PARALLEL DO DEFAULT( NONE ) &amp;</span>
-<a name="ln-1813"></a>      <span class="c">!$OMP             SHARED( use_atmosphere, all_pos, fld, &amp;</span>
-<a name="ln-1814"></a>      <span class="c">!$OMP                     npart_real, center )&amp;</span>
-<a name="ln-1815"></a>      <span class="c">!$OMP             PRIVATE( pos_corr_tmp, a, cnt, rand_num, rand_num2, &amp;</span>
-<a name="ln-1816"></a>      <span class="c">!$OMP                      rel_sign, r, theta, phi, theta_tmp )</span>
-<a name="ln-1817"></a>      <span class="n">displace_particles</span><span class="p">:</span> <span class="k">DO </span><span class="n">a</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npart_real</span><span class="p">,</span> <span class="mi">1</span>
-<a name="ln-1818"></a>
-<a name="ln-1819"></a>        <span class="n">adapt_displacement_to_error</span><span class="p">:</span> <span class="p">&amp;</span>
-<a name="ln-1820"></a>        <span class="k">IF</span><span class="p">(</span> <span class="n">fld</span><span class="p">%</span> <span class="n">dNstar</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">ten</span><span class="o">*</span><span class="n">ten</span> <span class="p">&amp;</span>
-<a name="ln-1821"></a>            <span class="p">.</span><span class="nb">AND</span><span class="p">.</span> <span class="p">&amp;</span>
-<a name="ln-1822"></a>            <span class="n">validate_position_final</span><span class="p">(</span> <span class="p">&amp;</span>
-<a name="ln-1823"></a>              <span class="n">all_pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">ten</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-1824"></a>              <span class="n">all_pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">ten</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-1825"></a>              <span class="n">all_pos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">ten</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-1826"></a>
-<a name="ln-1827"></a><span class="k">          </span><span class="n">pos_corr_tmp</span><span class="o">=</span> <span class="n">all_pos</span><span class="p">(:,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">ten</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(:,</span><span class="n">a</span><span class="p">)</span> <span class="c">! 10</span>
+<a name="ln-1811"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;After calling position_correction&quot;</span>
+<a name="ln-1812"></a>
+<a name="ln-1813"></a>      <span class="n">fld</span><span class="p">%</span> <span class="n">cnt_move</span><span class="o">=</span> <span class="mi">0</span>
+<a name="ln-1814"></a>      <span class="c">!$OMP PARALLEL DO DEFAULT( NONE ) &amp;</span>
+<a name="ln-1815"></a>      <span class="c">!$OMP             SHARED( use_atmosphere, all_pos, fld, &amp;</span>
+<a name="ln-1816"></a>      <span class="c">!$OMP                     npart_real, center )&amp;</span>
+<a name="ln-1817"></a>      <span class="c">!$OMP             PRIVATE( pos_corr_tmp, a, cnt, rand_num, rand_num2, &amp;</span>
+<a name="ln-1818"></a>      <span class="c">!$OMP                      rel_sign, r, theta, phi, theta_tmp )</span>
+<a name="ln-1819"></a>      <span class="n">displace_particles</span><span class="p">:</span> <span class="k">DO </span><span class="n">a</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npart_real</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-1820"></a>
+<a name="ln-1821"></a>        <span class="n">adapt_displacement_to_error</span><span class="p">:</span> <span class="p">&amp;</span>
+<a name="ln-1822"></a>        <span class="k">IF</span><span class="p">(</span> <span class="n">fld</span><span class="p">%</span> <span class="n">dNstar</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">ten</span><span class="o">*</span><span class="n">ten</span> <span class="p">&amp;</span>
+<a name="ln-1823"></a>            <span class="p">.</span><span class="nb">AND</span><span class="p">.</span> <span class="p">&amp;</span>
+<a name="ln-1824"></a>            <span class="n">validate_position_final</span><span class="p">(</span> <span class="p">&amp;</span>
+<a name="ln-1825"></a>              <span class="n">all_pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">ten</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-1826"></a>              <span class="n">all_pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">ten</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-1827"></a>              <span class="n">all_pos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">ten</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
 <a name="ln-1828"></a>
-<a name="ln-1829"></a>
-<a name="ln-1830"></a>        <span class="n">ELSEIF</span><span class="p">(</span> <span class="n">fld</span><span class="p">%</span> <span class="n">dNstar</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">ten</span> <span class="p">&amp;</span>
-<a name="ln-1831"></a>                <span class="p">.</span><span class="nb">AND</span><span class="p">.</span> <span class="p">&amp;</span>
-<a name="ln-1832"></a>                <span class="n">validate_position_final</span><span class="p">(</span> <span class="p">&amp;</span>
-<a name="ln-1833"></a>                  <span class="n">all_pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">three</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-1834"></a>                  <span class="n">all_pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">three</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-1835"></a>                  <span class="n">all_pos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">three</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-1836"></a>
-<a name="ln-1837"></a><span class="k">          </span><span class="n">pos_corr_tmp</span><span class="o">=</span> <span class="n">all_pos</span><span class="p">(:,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">three</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(:,</span><span class="n">a</span><span class="p">)</span> <span class="c">! 3</span>
-<a name="ln-1838"></a>
+<a name="ln-1829"></a><span class="k">          </span><span class="n">pos_corr_tmp</span><span class="o">=</span> <span class="n">all_pos</span><span class="p">(:,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">ten</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(:,</span><span class="n">a</span><span class="p">)</span> <span class="c">! 10</span>
+<a name="ln-1830"></a>
+<a name="ln-1831"></a>        <span class="n">ELSEIF</span><span class="p">(</span> <span class="n">fld</span><span class="p">%</span> <span class="n">dNstar</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">ten</span> <span class="p">&amp;</span>
+<a name="ln-1832"></a>                <span class="p">.</span><span class="nb">AND</span><span class="p">.</span> <span class="p">&amp;</span>
+<a name="ln-1833"></a>                <span class="n">validate_position_final</span><span class="p">(</span> <span class="p">&amp;</span>
+<a name="ln-1834"></a>                  <span class="n">all_pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">three</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-1835"></a>                  <span class="n">all_pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">three</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-1836"></a>                  <span class="n">all_pos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">three</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-1837"></a>
+<a name="ln-1838"></a><span class="k">          </span><span class="n">pos_corr_tmp</span><span class="o">=</span> <span class="n">all_pos</span><span class="p">(:,</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="n">three</span><span class="o">*</span><span class="n">fld</span><span class="p">%</span> <span class="n">correction_pos</span><span class="p">(:,</span><span class="n">a</span><span class="p">)</span> <span class="c">! 3</span>
 <a name="ln-1839"></a>
 <a name="ln-1840"></a>        <span class="k">ELSE</span>
 <a name="ln-1841"></a>
@@ -2193,8 +2193,8 @@
 <a name="ln-1922"></a>            <span class="c">!    times, do not move the particle at this step,</span>
 <a name="ln-1923"></a>            <span class="c">!    and exit the &#39;determine_new_position&#39; loop</span>
 <a name="ln-1924"></a>
-<a name="ln-1925"></a>              <span class="n">fld</span><span class="p">%</span> <span class="n">cnt_move</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">=</span> <span class="mi">0</span>
-<a name="ln-1926"></a>              <span class="k">EXIT</span>
+<a name="ln-1925"></a>            <span class="c">!  fld% cnt_move(a)= 0</span>
+<a name="ln-1926"></a>            <span class="c">!  EXIT</span>
 <a name="ln-1927"></a>
 <a name="ln-1928"></a>              <span class="c">! cnt= cnt + 1</span>
 <a name="ln-1929"></a>              <span class="c">! CALL RANDOM_NUMBER( rand_num )</span>
@@ -2204,64 +2204,64 @@
 <a name="ln-1933"></a>              <span class="c">! IF( rand_num2 &gt;= half ) rel_sign=   1</span>
 <a name="ln-1934"></a>              <span class="c">! all_pos(:,a)= all_pos(:,a)*( one -rand_num*half*third )</span>
 <a name="ln-1935"></a>
-<a name="ln-1936"></a>           <span class="c">!   CALL spherical_from_cartesian( all_pos(1,a), all_pos(2,a), &amp;</span>
-<a name="ln-1937"></a>           <span class="c">!                                  all_pos(3,a), &amp;</span>
-<a name="ln-1938"></a>           <span class="c">!                                  center(1), center(2), center(3), &amp;</span>
-<a name="ln-1939"></a>           <span class="c">!                                  r, theta, phi )</span>
-<a name="ln-1940"></a>           <span class="c">!</span>
-<a name="ln-1941"></a>           <span class="c">!   !all_pos(1,a)= all_pos(1,a) &amp;</span>
-<a name="ln-1942"></a>           <span class="c">!   !      - one/(two*ten)*SIN(theta*(one + one/(ten*ten)))*COS(phi)</span>
-<a name="ln-1943"></a>           <span class="c">!   !all_pos(2,a)= all_pos(2,a) &amp;</span>
-<a name="ln-1944"></a>           <span class="c">!   !      - one/(two*ten)*SIN(theta*(one + one/(ten*ten)))*SIN(phi)</span>
-<a name="ln-1945"></a>           <span class="c">!   !all_pos(3,a)= all_pos(3,a) &amp;</span>
-<a name="ln-1946"></a>           <span class="c">!   !      - one/(two*ten)*COS(theta*(one + one/(ten*ten)))</span>
-<a name="ln-1947"></a>           <span class="c">!</span>
-<a name="ln-1948"></a>           <span class="c">!   ! ...push the particle closer to the origin close to its radial</span>
-<a name="ln-1949"></a>           <span class="c">!   !    line, and place it to the first place having an acceptable</span>
-<a name="ln-1950"></a>           <span class="c">!   !    density</span>
-<a name="ln-1951"></a>           <span class="c">!   ! TODO: what if the particles is placed on top of another</span>
-<a name="ln-1952"></a>           <span class="c">!   !       particle?</span>
-<a name="ln-1953"></a>          <span class="c">!    scan_radial_line: DO itr2= NINT((ten - three)*ten), 1, -1</span>
-<a name="ln-1954"></a>          <span class="c">!</span>
-<a name="ln-1955"></a>          <span class="c">!     ! CALL RANDOM_NUMBER( rand_num )</span>
-<a name="ln-1956"></a>          <span class="c">!     ! CALL RANDOM_NUMBER( rand_num2 )</span>
-<a name="ln-1957"></a>          <span class="c">!     !</span>
-<a name="ln-1958"></a>          <span class="c">!     ! IF( rand_num2 &lt; half )  rel_sign= - 1</span>
-<a name="ln-1959"></a>          <span class="c">!     ! IF( rand_num2 &gt;= half ) rel_sign=   1</span>
-<a name="ln-1960"></a>          <span class="c">!     !</span>
-<a name="ln-1961"></a>          <span class="c">!     ! theta_tmp= theta*( one + DBLE(rel_sign)*rand_num*half )</span>
-<a name="ln-1962"></a>          <span class="c">!     !</span>
-<a name="ln-1963"></a>          <span class="c">!     ! IF( theta_tmp &lt; pi .AND. theta_tmp &gt; pi/two ) theta= theta_tmp</span>
-<a name="ln-1964"></a>          <span class="c">!     !</span>
-<a name="ln-1965"></a>          <span class="c">!     ! CALL RANDOM_NUMBER( rand_num )</span>
-<a name="ln-1966"></a>          <span class="c">!     ! CALL RANDOM_NUMBER( rand_num2 )</span>
-<a name="ln-1967"></a>          <span class="c">!     !</span>
-<a name="ln-1968"></a>          <span class="c">!     ! IF( rand_num2 &lt; half )  rel_sign= - 1</span>
-<a name="ln-1969"></a>          <span class="c">!     ! IF( rand_num2 &gt;= half ) rel_sign=   1</span>
-<a name="ln-1970"></a>          <span class="c">!     !</span>
-<a name="ln-1971"></a>          <span class="c">!     ! phi= phi*( one + DBLE(rel_sign)*rand_num*half )</span>
-<a name="ln-1972"></a>          <span class="c">!</span>
-<a name="ln-1973"></a>          <span class="c">!      pos_corr_tmp(1)= center(1) + &amp;</span>
-<a name="ln-1974"></a>          <span class="c">!                       r*DBLE(itr2)/(ten*ten)*SIN(theta)*COS(phi)</span>
-<a name="ln-1975"></a>          <span class="c">!      pos_corr_tmp(2)= center(2) + &amp;</span>
-<a name="ln-1976"></a>          <span class="c">!                       r*DBLE(itr2)/(ten*ten)*SIN(theta)*SIN(phi)</span>
-<a name="ln-1977"></a>          <span class="c">!      pos_corr_tmp(3)= center(3) + &amp;</span>
-<a name="ln-1978"></a>          <span class="c">!                       r*DBLE(itr2)/(ten*ten)*COS(theta)</span>
-<a name="ln-1979"></a>          <span class="c">!</span>
-<a name="ln-1980"></a>          <span class="c">!      IF( get_density( &amp;</span>
-<a name="ln-1981"></a>          <span class="c">!          pos_corr_tmp(1), pos_corr_tmp(2), pos_corr_tmp(3) ) &gt; zero &amp;</span>
-<a name="ln-1982"></a>          <span class="c">!          .AND. &amp;</span>
-<a name="ln-1983"></a>          <span class="c">!          validate_position_final( &amp;</span>
-<a name="ln-1984"></a>          <span class="c">!          pos_corr_tmp(1), pos_corr_tmp(2), pos_corr_tmp(3) ) &amp;</span>
-<a name="ln-1985"></a>          <span class="c">!      )THEN</span>
-<a name="ln-1986"></a>          <span class="c">!</span>
-<a name="ln-1987"></a>          <span class="c">!        all_pos(:,a)= pos_corr_tmp</span>
-<a name="ln-1988"></a>          <span class="c">!        fld% cnt_move(a)= 1</span>
-<a name="ln-1989"></a>          <span class="c">!        EXIT</span>
-<a name="ln-1990"></a>          <span class="c">!</span>
-<a name="ln-1991"></a>          <span class="c">!      ENDIF</span>
-<a name="ln-1992"></a>          <span class="c">!</span>
-<a name="ln-1993"></a>          <span class="c">!    ENDDO scan_radial_line</span>
+<a name="ln-1936"></a>              <span class="k">CALL </span><span class="n">spherical_from_cartesian</span><span class="p">(</span> <span class="n">all_pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="n">all_pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-1937"></a>                                             <span class="n">all_pos</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-1938"></a>                                             <span class="n">center</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">center</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">center</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-1939"></a>                                             <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">)</span>
+<a name="ln-1940"></a>
+<a name="ln-1941"></a>              <span class="c">!all_pos(1,a)= all_pos(1,a) &amp;</span>
+<a name="ln-1942"></a>              <span class="c">!      - one/(two*ten)*SIN(theta*(one + one/(ten*ten)))*COS(phi)</span>
+<a name="ln-1943"></a>              <span class="c">!all_pos(2,a)= all_pos(2,a) &amp;</span>
+<a name="ln-1944"></a>              <span class="c">!      - one/(two*ten)*SIN(theta*(one + one/(ten*ten)))*SIN(phi)</span>
+<a name="ln-1945"></a>              <span class="c">!all_pos(3,a)= all_pos(3,a) &amp;</span>
+<a name="ln-1946"></a>              <span class="c">!      - one/(two*ten)*COS(theta*(one + one/(ten*ten)))</span>
+<a name="ln-1947"></a>
+<a name="ln-1948"></a>              <span class="c">! ...push the particle closer to the origin close to its radial</span>
+<a name="ln-1949"></a>              <span class="c">!    line, and place it to the first place having an acceptable</span>
+<a name="ln-1950"></a>              <span class="c">!    density</span>
+<a name="ln-1951"></a>              <span class="c">! TODO: what if the particles is placed on top of another</span>
+<a name="ln-1952"></a>              <span class="c">!       particle?</span>
+<a name="ln-1953"></a>              <span class="n">scan_radial_line</span><span class="p">:</span> <span class="k">DO </span><span class="n">itr2</span><span class="o">=</span> <span class="nb">NINT</span><span class="p">((</span><span class="n">ten</span> <span class="o">-</span> <span class="n">three</span><span class="p">)</span><span class="o">*</span><span class="n">ten</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+<a name="ln-1954"></a>
+<a name="ln-1955"></a>               <span class="c">! CALL RANDOM_NUMBER( rand_num )</span>
+<a name="ln-1956"></a>               <span class="c">! CALL RANDOM_NUMBER( rand_num2 )</span>
+<a name="ln-1957"></a>               <span class="c">!</span>
+<a name="ln-1958"></a>               <span class="c">! IF( rand_num2 &lt; half )  rel_sign= - 1</span>
+<a name="ln-1959"></a>               <span class="c">! IF( rand_num2 &gt;= half ) rel_sign=   1</span>
+<a name="ln-1960"></a>               <span class="c">!</span>
+<a name="ln-1961"></a>               <span class="c">! theta_tmp= theta*( one + DBLE(rel_sign)*rand_num*half )</span>
+<a name="ln-1962"></a>               <span class="c">!</span>
+<a name="ln-1963"></a>               <span class="c">! IF( theta_tmp &lt; pi .AND. theta_tmp &gt; pi/two ) theta= theta_tmp</span>
+<a name="ln-1964"></a>               <span class="c">!</span>
+<a name="ln-1965"></a>               <span class="c">! CALL RANDOM_NUMBER( rand_num )</span>
+<a name="ln-1966"></a>               <span class="c">! CALL RANDOM_NUMBER( rand_num2 )</span>
+<a name="ln-1967"></a>               <span class="c">!</span>
+<a name="ln-1968"></a>               <span class="c">! IF( rand_num2 &lt; half )  rel_sign= - 1</span>
+<a name="ln-1969"></a>               <span class="c">! IF( rand_num2 &gt;= half ) rel_sign=   1</span>
+<a name="ln-1970"></a>               <span class="c">!</span>
+<a name="ln-1971"></a>               <span class="c">! phi= phi*( one + DBLE(rel_sign)*rand_num*half )</span>
+<a name="ln-1972"></a>
+<a name="ln-1973"></a>                <span class="n">pos_corr_tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span> <span class="n">center</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">&amp;</span>
+<a name="ln-1974"></a>                                 <span class="n">r</span><span class="o">*</span><span class="nb">DBLE</span><span class="p">(</span><span class="n">itr2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ten</span><span class="o">*</span><span class="n">ten</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="nb">COS</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<a name="ln-1975"></a>                <span class="n">pos_corr_tmp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span> <span class="n">center</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">&amp;</span>
+<a name="ln-1976"></a>                                 <span class="n">r</span><span class="o">*</span><span class="nb">DBLE</span><span class="p">(</span><span class="n">itr2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ten</span><span class="o">*</span><span class="n">ten</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<a name="ln-1977"></a>                <span class="n">pos_corr_tmp</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span> <span class="n">center</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="p">&amp;</span>
+<a name="ln-1978"></a>                                 <span class="n">r</span><span class="o">*</span><span class="nb">DBLE</span><span class="p">(</span><span class="n">itr2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ten</span><span class="o">*</span><span class="n">ten</span><span class="p">)</span><span class="o">*</span><span class="nb">COS</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<a name="ln-1979"></a>
+<a name="ln-1980"></a>                <span class="k">IF</span><span class="p">(</span> <span class="n">get_density</span><span class="p">(</span> <span class="p">&amp;</span>
+<a name="ln-1981"></a>                    <span class="n">pos_corr_tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">pos_corr_tmp</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">pos_corr_tmp</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="n">zero</span> <span class="p">&amp;</span>
+<a name="ln-1982"></a>                    <span class="p">.</span><span class="nb">AND</span><span class="p">.</span> <span class="p">&amp;</span>
+<a name="ln-1983"></a>                    <span class="n">validate_position_final</span><span class="p">(</span> <span class="p">&amp;</span>
+<a name="ln-1984"></a>                    <span class="n">pos_corr_tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">pos_corr_tmp</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">pos_corr_tmp</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-1985"></a>                <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-1986"></a>
+<a name="ln-1987"></a><span class="k">                  </span><span class="n">all_pos</span><span class="p">(:,</span><span class="n">a</span><span class="p">)</span><span class="o">=</span> <span class="n">pos_corr_tmp</span>
+<a name="ln-1988"></a>                  <span class="n">fld</span><span class="p">%</span> <span class="n">cnt_move</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">=</span> <span class="mi">1</span>
+<a name="ln-1989"></a>                  <span class="k">EXIT</span>
+<a name="ln-1990"></a>
+<a name="ln-1991"></a><span class="k">                </span><span class="n">ENDIF</span>
+<a name="ln-1992"></a>
+<a name="ln-1993"></a>              <span class="n">ENDDO</span> <span class="n">scan_radial_line</span>
 <a name="ln-1994"></a>
 <a name="ln-1995"></a>              <span class="k">EXIT</span>
 <a name="ln-1996"></a>
@@ -4006,7 +4006,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-02 15:56:56           </p>
+ on 2022-04-03 16:31:15           </p>
         </div>
       </div>
       <br>
