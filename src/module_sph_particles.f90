@@ -125,10 +125,10 @@ MODULE sph_particles
   !                                                          *
   !              Definition of TYPE particles                *
   !                                                          *
-  ! This class places the |sph| particles, reads             *
+  ! This class places the |sph| particles, imports           *
   ! the |id| on the particle positions, stores               *
   ! it, computes the relevant |sph| fields and exports it to *
-  ! both a formatted file, and a binary file for evolution   *
+  ! both a formatted, and a binary file for evolution        *
   !                                                          *
   !***********************************************************
 
@@ -823,21 +823,17 @@ MODULE sph_particles
 
 
     MODULE SUBROUTINE impose_equatorial_plane_symmetry( npart, pos, &
-                                          nu, com_star, verbose )!, pos_prev )
+                                                 nu, com_star, verbose )
     !# Mirror the particle with z>0 with respect to the xy plane,
     !  to impose the equatorial-plane symmetry
 
+      !CLASS(particles), INTENT( IN OUT ):: this
       INTEGER, INTENT(INOUT):: npart
-      !INTEGER, INTENT(INOUT):: npart_real
-      !INTEGER, INTENT(IN)   :: npart_ghost
+      DOUBLE PRECISION, INTENT(IN), OPTIONAL:: com_star
+      LOGICAL, INTENT(IN), OPTIONAL:: verbose
 
       DOUBLE PRECISION, DIMENSION(3,npart), INTENT(INOUT):: pos
-
-      DOUBLE PRECISION,                     INTENT(IN),    OPTIONAL:: com_star
       DOUBLE PRECISION, DIMENSION(npart),   INTENT(INOUT), OPTIONAL:: nu
-      !DOUBLE PRECISION, DIMENSION(3,npart_real+npart_ghost), &
-      !INTENT(IN),    OPTIONAL:: pos_prev
-      LOGICAL,                              INTENT(IN),    OPTIONAL:: verbose
 
     END SUBROUTINE impose_equatorial_plane_symmetry
 
@@ -965,23 +961,23 @@ MODULE sph_particles
     END SUBROUTINE compute_and_print_sph_variables
 
     MODULE SUBROUTINE perform_apm( get_density, get_nstar_id, &
-                                   npart_output, &
-                                   pos_input, &
-                                   pvol, h_output, nu_output, &
-                                   center, &
-                                   com_star, &
-                                   mass, &
-                                   sizes, &
-                                   apm_max_it, max_inc, &
-                                   mass_it, correct_nu, nuratio_thres, &
-                                   nuratio_des, &
-                                   nx_gh, ny_gh, nz_gh, ghost_dist, &
-                                   use_atmosphere, &
-                                   remove_atmosphere, &
-                                   print_step, &
-                                   namefile_pos_id, namefile_pos, &
-                                   namefile_results, &
-                                   validate_position )
+                                       npart_output, &
+                                       pos_input, &
+                                       pvol, h_output, nu_output, &
+                                       center, &
+                                       com_star, &
+                                       mass, &
+                                       sizes, &
+                                       apm_max_it, max_inc, &
+                                       mass_it, correct_nu, nuratio_thres, &
+                                       nuratio_des, &
+                                       nx_gh, ny_gh, nz_gh, ghost_dist, &
+                                       use_atmosphere, &
+                                       remove_atmosphere, &
+                                       print_step, &
+                                       namefile_pos_id, namefile_pos, &
+                                       namefile_results, &
+                                       validate_position )
     !! Performs the Artificial Pressure Method (APM) on one star's particles
 
       !> [[particles]] object which this PROCEDURE is a member of
@@ -1000,7 +996,7 @@ MODULE sph_particles
         END FUNCTION get_density
       END INTERFACE
       INTERFACE
-        SUBROUTINE get_nstar_id( npart_real, x, y, z, nstar_p )
+        SUBROUTINE get_nstar_id( npart_real, x, y, z, nstar_id, nstar_eul_id )
         !! Computes the proper baryon number density at the particle positions
           INTEGER, INTENT(IN):: npart_real
           !! Number of real particles (i.e., no ghost particles included here)
@@ -1010,8 +1006,11 @@ MODULE sph_particles
           !! Array of \(y\) coordinates
           DOUBLE PRECISION, INTENT(IN):: z(npart_real)
           !! Array of \(z\) coordinates
-          DOUBLE PRECISION, INTENT(OUT):: nstar_p(npart_real)
+          DOUBLE PRECISION, INTENT(OUT):: nstar_id(npart_real)
           !! Array to store the computed proper baryon number density
+          DOUBLE PRECISION, INTENT(OUT):: nstar_eul_id(npart_real)
+          !# Array to store the computed proper baryon number density seen
+          !  by the Eulerian observer
         END SUBROUTINE get_nstar_id
       END INTERFACE
       INTERFACE
@@ -1031,7 +1030,8 @@ MODULE sph_particles
       PROCEDURE(validate_position_int), OPTIONAL:: validate_position
       !> Initial particle number
       INTEGER,                          INTENT( INOUT ):: npart_output
-      !> Prints he particle positions to a formatted file every print_step steps
+      !& Prints the particle positions to a formatted file every
+      !  print_step steps
       INTEGER,                          INTENT( INOUT ):: print_step
       !> Initial particle positions
       DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE, INTENT( INOUT ):: pos_input
@@ -1051,12 +1051,6 @@ MODULE sph_particles
       DOUBLE PRECISION,                 INTENT( IN )   :: mass
       !> Radius of the star in the x direction, towards the companion
       DOUBLE PRECISION, DIMENSION(6),   INTENT( IN )   :: sizes
-      !> Radius of the star in the x direction, opposite to companion
-      !DOUBLE PRECISION,                 INTENT( IN )   :: radx_opp
-      !> Radius of the star in the y direction
-      !DOUBLE PRECISION,                 INTENT( IN )   :: rady
-      !> Radius of the star in the z direction
-      !DOUBLE PRECISION,                 INTENT( IN )   :: radz
       !> Maximum number of APM iterations, irrespective of the EXIT condition
       INTEGER,                          INTENT( IN )   :: apm_max_it
       !& Sets the EXIT condition: If the average over all the
@@ -1088,26 +1082,26 @@ MODULE sph_particles
       INTEGER,                          INTENT( IN )   :: ny_gh
       !> Number of lattice points in the z direction for ghosts
       INTEGER,                          INTENT( IN )   :: nz_gh
-      !> Distance between the ghost particles and the surface
+      !& Distance between the ghost particles and the surface
       !  of the matter object considered (star, ejecta, etc...)
       DOUBLE PRECISION,                 INTENT( IN )   :: ghost_dist
-      !> If .TRUE., allows particles to move where the density
+      !& If .TRUE., allows particles to move where the density
       !  is 0, and displace them using only the smoothing term.
       !  This can be useful when the system has an irregular
       !  geometry, as, for example, an ejecta; `.FALSE.` otherwise
       LOGICAL,                          INTENT( INOUT ):: use_atmosphere
-      !> If .TRUE., removes the particles placed where the density is 0,
+      !& If .TRUE., removes the particles placed where the density is 0,
       !  at the end of the APM iteration; `.FALSE.` otherwise
       LOGICAL,                          INTENT( INOUT ):: remove_atmosphere
-      !> Name for the formatted file where the initial particle positions
+      !& Name for the formatted file where the initial particle positions
       !  and the ghost positions will be printed
       CHARACTER( LEN= * ),              INTENT( INOUT ), OPTIONAL :: &
                                                             namefile_pos_id
-      !> Name for the formatted file where the particle positions
+      !& Name for the formatted file where the particle positions
       !  and the ghost positions will be printed every 15 iterations
       CHARACTER( LEN= * ),              INTENT( INOUT ), OPTIONAL :: &
                                                             namefile_pos
-      !> Name for the formatted file where various quantities related
+      !& Name for the formatted file where various quantities related
       !  to the particle distribution, the baryon number particle and the
       !  kernel estimate of the density will be printed at the end of
       !  the APM iteration

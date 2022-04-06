@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.6% of total for procedures.">1146 statements</a>
+    title=" 1.7% of total for procedures.">1263 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_sph_particles_apm.f90"> Source File</a></li>
   </ul>
@@ -120,23 +120,31 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-a~5">a</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-a~4">a</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-a2">a2</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-a_numax">a_numax</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-a_numax2">a_numax2</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-a_numin">a_numin</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-a_numin2">a_numin2</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-all_pos~2">all_pos</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-all_pos">all_pos</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-all_pos_best">all_pos_best</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-all_pos_prev">all_pos_prev</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-all_pos_tmp">all_pos_tmp</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-art_pr">art_pr</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-art_pr_max">art_pr_max</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-art_pr_max_prev">art_pr_max_prev</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-atmosphere_density">atmosphere_density</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-baryon_density~43">baryon_density</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-cnt1">cnt1</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_d~3">com_d</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_x~3">com_x</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_y~3">com_y</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_z~3">com_z</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-cnt_move">cnt_move</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_d~2">com_d</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_x~2">com_x</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_y~2">com_y</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_z~2">com_z</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-correction_pos">correction_pos</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-dn">dN</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dn_av">dN_av</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dn_max">dN_max</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-dnstar">dNstar</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-debug~2">debug</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dens_min">dens_min</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dim_seed">dim_seed</a>
@@ -144,6 +152,7 @@
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dy~6">dy</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dz~6">dz</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-ellipse_thickness">ellipse_thickness</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-energy_density~34">energy_density</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-eps">eps</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-err_n_max">err_N_max</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-err_n_mean">err_N_mean</a>
@@ -151,15 +160,21 @@
       <a class="list-group-item" href="../proc/perform_apm.html#variable-err_n_mean_min_old">err_N_mean_min_old</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-err_mean_old">err_mean_old</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-err_n_min">err_n_min</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-exist~9">exist</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-exist~8">exist</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-few_ncand">few_ncand</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-finalnamefile~5">finalnamefile</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-finalnamefile~4">finalnamefile</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-find_h_bruteforce_timer">find_h_bruteforce_timer</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-fld~2">fld</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-freeze">freeze</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_xx~15">g_xx</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_xy~15">g_xy</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_xz~15">g_xz</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_yy~15">g_yy</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_yz~15">g_yz</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_zz~15">g_zz</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-ghost_pos">ghost_pos</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-ghost_pos_tmp">ghost_pos_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-h_av">h_av</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-h_guess~2">h_guess</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-h_guess">h_guess</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-h_guess_tmp">h_guess_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-h_max">h_max</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-h_tmp">h_tmp</a>
@@ -171,6 +186,7 @@
       <a class="list-group-item" href="../proc/perform_apm.html#variable-j~6">j</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-k~6">k</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-l~18">l</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-lapse~37">lapse</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-larger_radius">larger_radius</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-m_max_it">m_max_it</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-max_art_pr_ghost">max_art_pr_ghost</a>
@@ -189,16 +205,21 @@
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nearest_neighbors">nearest_neighbors</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-neighbors_lists">neighbors_lists</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nn_des">nn_des</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_all~2">npart_all</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_ghost~4">npart_ghost</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_real~5">npart_real</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_all">npart_all</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_ghost">npart_ghost</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_real~2">npart_real</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_real_half">npart_real_half</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_eul_id">nstar_eul_id</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_id">nstar_id</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_id_err">nstar_id_err</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_int~2">nstar_int</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_sph~2">nstar_sph</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_sph_err">nstar_sph_err</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_all">nu_all</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_eul">nu_eul</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_one">nu_one</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_ratio">nu_ratio</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_tmp">nu_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_tmp2">nu_tmp2</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_tot">nu_tot</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nuratio_tmp">nuratio_tmp</a>
@@ -209,10 +230,11 @@
       <a class="list-group-item" href="../proc/perform_apm.html#variable-phi~6">phi</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-phi_ell">phi_ell</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-phi_tmp">phi_tmp</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-pos~24">pos</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-pos~23">pos</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-pos_corr_tmp~2">pos_corr_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-pos_maxerr">pos_maxerr</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-pos_tmp">pos_tmp</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-pressure~21">pressure</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-pvol_tmp">pvol_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-r~3">r</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-r_ell">r_ell</a>
@@ -226,9 +248,14 @@
       <a class="list-group-item" href="../proc/perform_apm.html#variable-rand_num">rand_num</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-rand_num2">rand_num2</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-rel_sign">rel_sign</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-rho_tmp~2">rho_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-search_pos">search_pos</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-seed">seed</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-shift_x~29">shift_x</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-shift_y~29">shift_y</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-shift_z~29">shift_z</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-smaller_radius">smaller_radius</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-specific_energy~35">specific_energy</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-stddev_dn">stddev_dN</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-stddev_nu">stddev_nu</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-theta~4">theta</a>
@@ -237,6 +264,9 @@
       <a class="list-group-item" href="../proc/perform_apm.html#variable-tiny_real~3">tiny_real</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-tmp">tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-tol">tol</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-v_euler_x~17">v_euler_x</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-v_euler_y~17">v_euler_y</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-v_euler_z~17">v_euler_z</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-variance_dn">variance_dN</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-variance_nu">variance_nu</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-x_ell">x_ell</a>
@@ -285,16 +315,18 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li>units</li>
-    <li>APM</li>
-    <li>set_h</li>
-    <li>analyze</li>
-    <li>sph_variables</li>
-    <li>constants</li>
     <li><a href='../module/utility.html'>utility</a></li>
+    <li>set_h</li>
     <li>matrix</li>
-    <li>RCB_tree_3D</li>
+    <li>constants</li>
+    <li>units</li>
+    <li>sph_variables</li>
+    <li>analyze</li>
     <li>sphincs_sph</li>
+    <li>metric_on_particles</li>
+    <li>gradient</li>
+    <li>RCB_tree_3D</li>
+    <li>APM</li>
   </ul>
       </li>
       <li class="list-group-item">
@@ -304,145 +336,169 @@
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~perform_apm~~UsesGraph Pages: 1 -->
-<svg id="procperform_apmUsesGraph" width="304pt" height="406pt"
- viewBox="0.00 0.00 304.00 406.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~perform_apm~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 402)">
+<svg id="procperform_apmUsesGraph" width="336pt" height="490pt"
+ viewBox="0.00 0.00 336.00 490.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~perform_apm~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 486)">
 <title>proc~~perform_apm~~UsesGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-402 300,-402 300,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-486 332,-486 332,4 -4,4"/>
 <!-- proc~perform_apm -->
 <g id="proc~~perform_apm~~UsesGraph_node1" class="node">
 <title>proc~perform_apm</title>
-<polygon fill="none" stroke="black" points="296,-209 211,-209 211,-185 296,-185 296,-209"/>
-<text text-anchor="middle" x="253.5" y="-194.6" font-family="Helvetica,sans-Serif" font-size="10.50">perform_apm</text>
-</g>
-<!-- units -->
-<g id="proc~~perform_apm~~UsesGraph_node2" class="node">
-<title>units</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-398 105.5,-398 105.5,-374 159.5,-374 159.5,-398"/>
-<text text-anchor="middle" x="132.5" y="-383.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">units</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;units -->
-<g id="proc~~perform_apm~~UsesGraph_edge1" class="edge">
-<title>proc~perform_apm&#45;&gt;units</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M249.84,-209.14C242.69,-239.16 220.49,-317.83 175,-365 173,-367.07 170.76,-368.97 168.37,-370.71"/>
-<polygon fill="#000000" stroke="#000000" points="166.51,-367.74 159.88,-376.01 170.22,-373.68 166.51,-367.74"/>
-</g>
-<!-- APM -->
-<g id="proc~~perform_apm~~UsesGraph_node3" class="node">
-<title>APM</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-356 105.5,-356 105.5,-332 159.5,-332 159.5,-356"/>
-<text text-anchor="middle" x="132.5" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">APM</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;APM -->
-<g id="proc~~perform_apm~~UsesGraph_edge2" class="edge">
-<title>proc~perform_apm&#45;&gt;APM</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M247.67,-209.28C237.53,-233.73 211.85,-289.09 175,-323 172.88,-324.95 170.55,-326.76 168.11,-328.44"/>
-<polygon fill="#000000" stroke="#000000" points="166.26,-325.46 159.5,-333.62 169.87,-331.46 166.26,-325.46"/>
+<polygon fill="none" stroke="black" points="328,-255 243,-255 243,-231 328,-231 328,-255"/>
+<text text-anchor="middle" x="285.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50">perform_apm</text>
 </g>
 <!-- set_h -->
-<g id="proc~~perform_apm~~UsesGraph_node4" class="node">
+<g id="proc~~perform_apm~~UsesGraph_node2" class="node">
 <title>set_h</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-314 105.5,-314 105.5,-290 159.5,-290 159.5,-314"/>
-<text text-anchor="middle" x="132.5" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_h</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-482 121.5,-482 121.5,-458 175.5,-458 175.5,-482"/>
+<text text-anchor="middle" x="148.5" y="-467.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_h</text>
 </g>
 <!-- proc~perform_apm&#45;&gt;set_h -->
-<g id="proc~~perform_apm~~UsesGraph_edge3" class="edge">
+<g id="proc~~perform_apm~~UsesGraph_edge10" class="edge">
 <title>proc~perform_apm&#45;&gt;set_h</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M243.6,-209.12C230.23,-226.69 203.5,-259.47 175,-281 172.97,-282.53 170.81,-284.01 168.59,-285.41"/>
-<polygon fill="#000000" stroke="#000000" points="166.72,-282.45 159.81,-290.48 170.22,-288.51 166.72,-282.45"/>
-</g>
-<!-- analyze -->
-<g id="proc~~perform_apm~~UsesGraph_node5" class="node">
-<title>analyze</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-272 105.5,-272 105.5,-248 159.5,-248 159.5,-272"/>
-<text text-anchor="middle" x="132.5" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">analyze</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;analyze -->
-<g id="proc~~perform_apm~~UsesGraph_edge4" class="edge">
-<title>proc~perform_apm&#45;&gt;analyze</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M230.54,-209.11C215.07,-217.6 193.84,-229.13 175,-239 172.3,-240.42 169.49,-241.87 166.66,-243.32"/>
-<polygon fill="#000000" stroke="#000000" points="165.01,-240.24 157.7,-247.9 168.2,-246.47 165.01,-240.24"/>
-</g>
-<!-- sph_variables -->
-<g id="proc~~perform_apm~~UsesGraph_node6" class="node">
-<title>sph_variables</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="175,-230 90,-230 90,-206 175,-206 175,-230"/>
-<text text-anchor="middle" x="132.5" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sph_variables</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;sph_variables -->
-<g id="proc~~perform_apm~~UsesGraph_edge5" class="edge">
-<title>proc~perform_apm&#45;&gt;sph_variables</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M210.88,-204.34C202.59,-205.81 193.8,-207.36 185.22,-208.87"/>
-<polygon fill="#000000" stroke="#000000" points="184.54,-205.44 175.3,-210.62 185.75,-212.33 184.54,-205.44"/>
-</g>
-<!-- constants -->
-<g id="proc~~perform_apm~~UsesGraph_node7" class="node">
-<title>constants</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="164.5,-188 100.5,-188 100.5,-164 164.5,-164 164.5,-188"/>
-<text text-anchor="middle" x="132.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;constants -->
-<g id="proc~~perform_apm~~UsesGraph_edge6" class="edge">
-<title>proc~perform_apm&#45;&gt;constants</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M210.88,-189.66C199.16,-187.59 186.43,-185.34 174.74,-183.28"/>
-<polygon fill="#000000" stroke="#000000" points="175.24,-179.81 164.78,-181.52 174.02,-186.7 175.24,-179.81"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M283.05,-255.09C278.37,-289.17 260.68,-387.19 207,-444 200.94,-450.41 193.01,-455.36 184.98,-459.13"/>
+<polygon fill="#000000" stroke="#000000" points="183.49,-455.96 175.61,-463.04 186.19,-462.42 183.49,-455.96"/>
 </g>
 <!-- matrix -->
-<g id="proc~~perform_apm~~UsesGraph_node8" class="node">
+<g id="proc~~perform_apm~~UsesGraph_node3" class="node">
 <title>matrix</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-86 0,-86 0,-62 54,-62 54,-86"/>
-<text text-anchor="middle" x="27" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-380 0,-380 0,-356 54,-356 54,-380"/>
+<text text-anchor="middle" x="27" y="-365.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
 </g>
 <!-- proc~perform_apm&#45;&gt;matrix -->
-<g id="proc~~perform_apm~~UsesGraph_edge7" class="edge">
+<g id="proc~~perform_apm~~UsesGraph_edge2" class="edge">
 <title>proc~perform_apm&#45;&gt;matrix</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M231.35,-184.97C215.89,-176.32 194.35,-164.55 175,-155 137.89,-136.68 126.05,-137.32 90,-117 77.03,-109.69 63.36,-100.4 52.17,-92.32"/>
-<polygon fill="#000000" stroke="#000000" points="53.92,-89.26 43.78,-86.17 49.77,-94.91 53.92,-89.26"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M283.22,-255.17C279.11,-287.44 263,-375.16 207,-411 163.2,-439.03 139.63,-426.53 90,-411 74.66,-406.2 59.78,-396.12 48.44,-386.93"/>
+<polygon fill="#000000" stroke="#000000" points="50.4,-383.99 40.52,-380.17 45.86,-389.32 50.4,-383.99"/>
 </g>
-<!-- RCB_tree_3D -->
-<g id="proc~~perform_apm~~UsesGraph_node9" class="node">
-<title>RCB_tree_3D</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="172.5,-108 92.5,-108 92.5,-84 172.5,-84 172.5,-108"/>
-<text text-anchor="middle" x="132.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">RCB_tree_3D</text>
+<!-- constants -->
+<g id="proc~~perform_apm~~UsesGraph_node4" class="node">
+<title>constants</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="180.5,-402 116.5,-402 116.5,-378 180.5,-378 180.5,-402"/>
+<text text-anchor="middle" x="148.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
 </g>
-<!-- proc~perform_apm&#45;&gt;RCB_tree_3D -->
-<g id="proc~~perform_apm~~UsesGraph_edge8" class="edge">
-<title>proc~perform_apm&#45;&gt;RCB_tree_3D</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M241.39,-184.76C226.93,-169.2 200.5,-141.97 175,-122 171.36,-119.15 167.4,-116.34 163.41,-113.68"/>
-<polygon fill="#000000" stroke="#000000" points="165.07,-110.59 154.76,-108.14 161.3,-116.48 165.07,-110.59"/>
+<!-- proc~perform_apm&#45;&gt;constants -->
+<g id="proc~~perform_apm~~UsesGraph_edge3" class="edge">
+<title>proc~perform_apm&#45;&gt;constants</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M280.15,-255.27C270.71,-280.22 245.99,-337.16 207,-369 202.03,-373.06 196.21,-376.37 190.21,-379.06"/>
+<polygon fill="#000000" stroke="#000000" points="188.75,-375.87 180.73,-382.8 191.32,-382.39 188.75,-375.87"/>
 </g>
-<!-- sphincs_sph -->
-<g id="proc~~perform_apm~~UsesGraph_node10" class="node">
-<title>sphincs_sph</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="170.5,-66 94.5,-66 94.5,-42 170.5,-42 170.5,-66"/>
-<text text-anchor="middle" x="132.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sphincs_sph</text>
+<!-- units -->
+<g id="proc~~perform_apm~~UsesGraph_node5" class="node">
+<title>units</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-360 121.5,-360 121.5,-336 175.5,-336 175.5,-360"/>
+<text text-anchor="middle" x="148.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">units</text>
 </g>
-<!-- proc~perform_apm&#45;&gt;sphincs_sph -->
-<g id="proc~~perform_apm~~UsesGraph_edge9" class="edge">
-<title>proc~perform_apm&#45;&gt;sphincs_sph</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M247.41,-184.75C236.97,-160.9 211.06,-107.7 175,-75 173.73,-73.84 172.38,-72.73 170.97,-71.67"/>
-<polygon fill="#000000" stroke="#000000" points="172.77,-68.67 162.49,-66.11 168.93,-74.52 172.77,-68.67"/>
+<!-- proc~perform_apm&#45;&gt;units -->
+<g id="proc~~perform_apm~~UsesGraph_edge4" class="edge">
+<title>proc~perform_apm&#45;&gt;units</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M276.14,-255.28C263.25,-273.34 236.88,-307.08 207,-327 200.42,-331.39 192.81,-335 185.32,-337.91"/>
+<polygon fill="#000000" stroke="#000000" points="183.9,-334.7 175.65,-341.35 186.24,-341.3 183.9,-334.7"/>
 </g>
 <!-- module~utility -->
-<g id="proc~~perform_apm~~UsesGraph_node11" class="node">
+<g id="proc~~perform_apm~~UsesGraph_node6" class="node">
 <title>module~utility</title>
-<g id="a_proc~~perform_apm~~UsesGraph_node11"><a xlink:href=".././module/utility.html" xlink:title="utility">
-<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-24 105.5,-24 105.5,0 159.5,0 159.5,-24"/>
-<text text-anchor="middle" x="132.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">utility</text>
+<g id="a_proc~~perform_apm~~UsesGraph_node6"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-318 121.5,-318 121.5,-294 175.5,-294 175.5,-318"/>
+<text text-anchor="middle" x="148.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">utility</text>
 </a>
 </g>
 </g>
 <!-- proc~perform_apm&#45;&gt;module~utility -->
-<g id="proc~~perform_apm~~UsesGraph_edge10" class="edge">
+<g id="proc~~perform_apm~~UsesGraph_edge5" class="edge">
 <title>proc~perform_apm&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M249.64,-184.71C242.19,-155.09 219.59,-78.81 175,-33 172.99,-30.94 170.74,-29.04 168.35,-27.31"/>
-<polygon fill="#000000" stroke="#000000" points="170.19,-24.33 159.85,-22.02 166.49,-30.28 170.19,-24.33"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M264.19,-255.07C248.8,-263.96 226.95,-276.01 207,-285 200.07,-288.12 192.53,-291.14 185.25,-293.86"/>
+<polygon fill="#000000" stroke="#000000" points="183.78,-290.67 175.58,-297.38 186.18,-297.25 183.78,-290.67"/>
+</g>
+<!-- sph_variables -->
+<g id="proc~~perform_apm~~UsesGraph_node7" class="node">
+<title>sph_variables</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="191,-276 106,-276 106,-252 191,-252 191,-276"/>
+<text text-anchor="middle" x="148.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sph_variables</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;sph_variables -->
+<g id="proc~~perform_apm~~UsesGraph_edge7" class="edge">
+<title>proc~perform_apm&#45;&gt;sph_variables</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M242.89,-249.47C229.81,-251.51 215.19,-253.78 201.47,-255.92"/>
+<polygon fill="#000000" stroke="#000000" points="200.54,-252.52 191.2,-257.51 201.62,-259.43 200.54,-252.52"/>
+</g>
+<!-- analyze -->
+<g id="proc~~perform_apm~~UsesGraph_node8" class="node">
+<title>analyze</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-234 121.5,-234 121.5,-210 175.5,-210 175.5,-234"/>
+<text text-anchor="middle" x="148.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">analyze</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;analyze -->
+<g id="proc~~perform_apm~~UsesGraph_edge8" class="edge">
+<title>proc~perform_apm&#45;&gt;analyze</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M242.89,-236.53C224.63,-233.69 203.39,-230.38 185.78,-227.64"/>
+<polygon fill="#000000" stroke="#000000" points="186.3,-224.18 175.88,-226.1 185.22,-231.1 186.3,-224.18"/>
+</g>
+<!-- sphincs_sph -->
+<g id="proc~~perform_apm~~UsesGraph_node9" class="node">
+<title>sphincs_sph</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="186.5,-192 110.5,-192 110.5,-168 186.5,-168 186.5,-192"/>
+<text text-anchor="middle" x="148.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sphincs_sph</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;sphincs_sph -->
+<g id="proc~~perform_apm~~UsesGraph_edge12" class="edge">
+<title>proc~perform_apm&#45;&gt;sphincs_sph</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M264.19,-230.93C248.8,-222.04 226.95,-209.99 207,-201 202.97,-199.18 198.73,-197.4 194.45,-195.69"/>
+<polygon fill="#000000" stroke="#000000" points="195.69,-192.42 185.1,-192.08 193.17,-198.95 195.69,-192.42"/>
+</g>
+<!-- metric_on_particles -->
+<g id="proc~~perform_apm~~UsesGraph_node10" class="node">
+<title>metric_on_particles</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="207,-150 90,-150 90,-126 207,-126 207,-150"/>
+<text text-anchor="middle" x="148.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">metric_on_particles</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;metric_on_particles -->
+<g id="proc~~perform_apm~~UsesGraph_edge9" class="edge">
+<title>proc~perform_apm&#45;&gt;metric_on_particles</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M276.14,-230.72C263.25,-212.66 236.88,-178.92 207,-159 204.6,-157.4 202.05,-155.9 199.43,-154.5"/>
+<polygon fill="#000000" stroke="#000000" points="200.81,-151.28 190.28,-150.12 197.79,-157.59 200.81,-151.28"/>
+</g>
+<!-- gradient -->
+<g id="proc~~perform_apm~~UsesGraph_node11" class="node">
+<title>gradient</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="177.5,-108 119.5,-108 119.5,-84 177.5,-84 177.5,-108"/>
+<text text-anchor="middle" x="148.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gradient</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;gradient -->
+<g id="proc~~perform_apm~~UsesGraph_edge6" class="edge">
+<title>proc~perform_apm&#45;&gt;gradient</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M280.15,-230.73C270.71,-205.78 245.99,-148.84 207,-117 201.23,-112.29 194.3,-108.58 187.29,-105.68"/>
+<polygon fill="#000000" stroke="#000000" points="188.37,-102.35 177.77,-102.21 185.97,-108.93 188.37,-102.35"/>
+</g>
+<!-- RCB_tree_3D -->
+<g id="proc~~perform_apm~~UsesGraph_node12" class="node">
+<title>RCB_tree_3D</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="188.5,-66 108.5,-66 108.5,-42 188.5,-42 188.5,-66"/>
+<text text-anchor="middle" x="148.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">RCB_tree_3D</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;RCB_tree_3D -->
+<g id="proc~~perform_apm~~UsesGraph_edge11" class="edge">
+<title>proc~perform_apm&#45;&gt;RCB_tree_3D</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M282.26,-230.97C275.99,-200.51 255.43,-119.61 207,-75 204.22,-72.44 201.1,-70.18 197.79,-68.2"/>
+<polygon fill="#000000" stroke="#000000" points="199.18,-64.98 188.68,-63.55 196,-71.21 199.18,-64.98"/>
+</g>
+<!-- APM -->
+<g id="proc~~perform_apm~~UsesGraph_node13" class="node">
+<title>APM</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-24 121.5,-24 121.5,0 175.5,0 175.5,-24"/>
+<text text-anchor="middle" x="148.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">APM</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;APM -->
+<g id="proc~~perform_apm~~UsesGraph_edge1" class="edge">
+<title>proc~perform_apm&#45;&gt;APM</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M283.52,-230.93C280,-195.51 264.94,-90.75 207,-33 201.01,-27.03 193.18,-22.74 185.24,-19.66"/>
+<polygon fill="#000000" stroke="#000000" points="186.2,-16.3 175.61,-16.48 184.01,-22.94 186.2,-16.3"/>
 </g>
 <!-- module~utility&#45;&gt;matrix -->
-<g id="proc~~perform_apm~~UsesGraph_edge11" class="edge">
+<g id="proc~~perform_apm~~UsesGraph_edge13" class="edge">
 <title>module~utility&#45;&gt;matrix</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M106.23,-24.2C100.81,-26.98 95.17,-30 90,-33 77.67,-40.16 64.44,-48.78 53.38,-56.26"/>
-<polygon fill="#000000" stroke="#000000" points="51.31,-53.43 45.03,-61.97 55.26,-59.21 51.31,-53.43"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M121.48,-314.05C111.43,-317.54 99.96,-321.97 90,-327 77,-333.56 63.41,-342.3 52.29,-350.03"/>
+<polygon fill="#000000" stroke="#000000" points="50.08,-347.3 43.95,-355.95 54.13,-353.01 50.08,-347.3"/>
 </g>
 </g>
 </svg>
@@ -591,7 +647,7 @@
 </tr>
 <tr>
   <td colspan="7">
-      <small><h5>subroutine get_nstar_id(npart_real, x, y, z, nstar_p)</h5><p>Computes the proper baryon number density at the particle positions</p>
+      <small><h5>subroutine get_nstar_id(npart_real, x, y, z, nstar_id, nstar_eul_id)</h5><p>Computes the proper baryon number density at the particle positions</p>
     
 <h6>Arguments</h6>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -624,7 +680,14 @@
   <td><span class="anchor" ></span>double precision,</td>
 <td>intent(out)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>nstar_p</strong>(npart_real)</td><td><p>Array to store the computed proper baryon number density</p></td>
+  <td><strong>nstar_id</strong>(npart_real)</td><td><p>Array to store the computed proper baryon number density</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>nstar_eul_id</strong>(npart_real)</td><td><p>Array to store the computed proper baryon number density seen
+ by the Eulerian observer</p></td>
 </tr>
 </tbody>
 </table>
@@ -671,7 +734,7 @@
   <td><strong>center</strong></td><td><p>Center of the star (point of highest density), computed by \(\texttt{LORENE}\)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-com_star~4"></span>double precision,</td>
+  <td><span class="anchor" id="variable-com_star~3"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(3)</td><td>::</td>
   <td><strong>com_star</strong></td><td><p>Center of mass of the star, computed by \(\texttt{LORENE}\)</p></td>
@@ -692,10 +755,7 @@
   <td><span class="anchor" id="variable-apm_max_it"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>apm_max_it</strong></td><td><p>Radius of the star in the x direction, opposite to companion
-Radius of the star in the y direction
-Radius of the star in the z direction
-Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
+  <td><strong>apm_max_it</strong></td><td><p>Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-max_inc"></span>integer,</td>
@@ -762,43 +822,54 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><span class="anchor" id="variable-ghost_dist"></span>double precision,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>ghost_dist</strong></td><td><p>Distance between the ghost particles and the surface</p></td>
+  <td><strong>ghost_dist</strong></td><td><p>Distance between the ghost particles and the surface
+ of the matter object considered (star, ejecta, etc...)</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-use_atmosphere~2"></span>logical,</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>use_atmosphere</strong></td><td><p>If .TRUE., allows particles to move where the density</p></td>
+  <td><strong>use_atmosphere</strong></td><td><p>If .TRUE., allows particles to move where the density
+ is 0, and displace them using only the smoothing term.
+ This can be useful when the system has an irregular
+ geometry, as, for example, an ejecta; <code>.FALSE.</code> otherwise</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-remove_atmosphere"></span>logical,</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>remove_atmosphere</strong></td><td><p>If .TRUE., removes the particles placed where the density is 0,</p></td>
+  <td><strong>remove_atmosphere</strong></td><td><p>If .TRUE., removes the particles placed where the density is 0,
+ at the end of the APM iteration; <code>.FALSE.</code> otherwise</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-print_step"></span>integer,</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>print_step</strong></td><td><p>Prints he particle positions to a formatted file every print_step steps</p></td>
+  <td><strong>print_step</strong></td><td><p>Prints the particle positions to a formatted file every
+ print_step steps</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-namefile_pos_id"></span>character(len=*),</td>
 <td>intent(inout),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>namefile_pos_id</strong></td><td><p>Name for the formatted file where the initial particle positions</p></td>
+  <td><strong>namefile_pos_id</strong></td><td><p>Name for the formatted file where the initial particle positions
+ and the ghost positions will be printed</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-namefile_pos"></span>character(len=*),</td>
 <td>intent(inout),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>namefile_pos</strong></td><td><p>Name for the formatted file where the particle positions</p></td>
+  <td><strong>namefile_pos</strong></td><td><p>Name for the formatted file where the particle positions
+ and the ghost positions will be printed every 15 iterations</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-namefile_results"></span>character(len=*),</td>
 <td>intent(inout),</td>
   <td>optional</td>  <td></td><td>::</td>
-  <td><strong>namefile_results</strong></td><td><p>Name for the formatted file where various quantities related</p></td>
+  <td><strong>namefile_results</strong></td><td><p>Name for the formatted file where various quantities related
+ to the particle distribution, the baryon number particle and the
+ kernel estimate of the density will be printed at the end of
+ the APM iteration</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-validate_position"></span>procedure(validate_position_int),</td>
@@ -821,583 +892,538 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~perform_apm~~CallsGraph Pages: 1 -->
-<svg id="procperform_apmCallsGraph" width="641pt" height="727pt"
- viewBox="0.00 0.00 641.00 727.42" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~perform_apm~~CallsGraph" class="graph" transform="scale(1.6 1.6) rotate(0) translate(4 1161.46)">
+<svg id="procperform_apmCallsGraph" width="641pt" height="796pt"
+ viewBox="0.00 0.00 641.00 795.95" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~perform_apm~~CallsGraph" class="graph" transform="scale(1.56 1.56) rotate(0) translate(4 1234)">
 <title>proc~~perform_apm~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-1161.46 1023,-1161.46 1023,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-1234 993,-1234 993,4 -4,4"/>
 <!-- proc~perform_apm -->
 <g id="proc~~perform_apm~~CallsGraph_node1" class="node">
 <title>proc~perform_apm</title>
-<polygon fill="none" stroke="black" points="85,-564 0,-564 0,-540 85,-540 85,-564"/>
-<text text-anchor="middle" x="42.5" y="-549.6" font-family="Helvetica,sans-Serif" font-size="10.50">perform_apm</text>
+<polygon fill="none" stroke="black" points="85,-629 0,-629 0,-605 85,-605 85,-629"/>
+<text text-anchor="middle" x="42.5" y="-614.6" font-family="Helvetica,sans-Serif" font-size="10.50">perform_apm</text>
 </g>
-<!-- allocate_rcb_tree_memory_3d -->
+<!-- assign_h -->
 <g id="proc~~perform_apm~~CallsGraph_node2" class="node">
-<title>allocate_rcb_tree_memory_3d</title>
-<polygon fill="#777777" stroke="#777777" points="581,-1069 408,-1069 408,-1045 581,-1045 581,-1069"/>
-<text text-anchor="middle" x="494.5" y="-1054.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_rcb_tree_memory_3d</text>
+<title>assign_h</title>
+<polygon fill="#777777" stroke="#777777" points="252.5,-1230 194.5,-1230 194.5,-1206 252.5,-1206 252.5,-1230"/>
+<text text-anchor="middle" x="223.5" y="-1215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">assign_h</text>
 </g>
-<!-- proc~perform_apm&#45;&gt;allocate_rcb_tree_memory_3d -->
+<!-- proc~perform_apm&#45;&gt;assign_h -->
 <g id="proc~~perform_apm~~CallsGraph_edge1" class="edge">
-<title>proc~perform_apm&#45;&gt;allocate_rcb_tree_memory_3d</title>
-<path fill="none" stroke="#000000" d="M43.68,-564.08C44.93,-630.04 54.35,-946.1 121,-1010 201.25,-1086.94 339.93,-1082.22 423.55,-1070.5"/>
-<polygon fill="#000000" stroke="#000000" points="424.08,-1073.96 433.46,-1069.04 423.06,-1067.03 424.08,-1073.96"/>
-</g>
-<!-- deallocate_sph_memory -->
-<g id="proc~~perform_apm~~CallsGraph_node3" class="node">
-<title>deallocate_sph_memory</title>
-<polygon fill="#777777" stroke="#777777" points="566,-1027 423,-1027 423,-1003 566,-1003 566,-1027"/>
-<text text-anchor="middle" x="494.5" y="-1012.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_sph_memory</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;deallocate_sph_memory -->
-<g id="proc~~perform_apm~~CallsGraph_edge2" class="edge">
-<title>proc~perform_apm&#45;&gt;deallocate_sph_memory</title>
-<path fill="none" stroke="#000000" d="M43.97,-564.41C46.6,-626.76 61.55,-905.2 121,-962 198.26,-1035.83 328.9,-1036.94 413.14,-1028.12"/>
-<polygon fill="#000000" stroke="#000000" points="413.63,-1031.59 423.18,-1027 412.85,-1024.64 413.63,-1031.59"/>
-</g>
-<!-- deallocate_metric_on_particles -->
-<g id="proc~~perform_apm~~CallsGraph_node4" class="node">
-<title>deallocate_metric_on_particles</title>
-<polygon fill="#777777" stroke="#777777" points="583.5,-985 405.5,-985 405.5,-961 583.5,-961 583.5,-985"/>
-<text text-anchor="middle" x="494.5" y="-970.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_metric_on_particles</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;deallocate_metric_on_particles -->
-<g id="proc~~perform_apm~~CallsGraph_edge3" class="edge">
-<title>proc~perform_apm&#45;&gt;deallocate_metric_on_particles</title>
-<path fill="none" stroke="#000000" d="M44.35,-564.34C48.56,-621.69 69.08,-861.5 121,-911 193.27,-979.9 311.4,-988.76 395.24,-984.64"/>
-<polygon fill="#000000" stroke="#000000" points="395.5,-988.13 405.29,-984.07 395.11,-981.14 395.5,-988.13"/>
-</g>
-<!-- proc~correct_center_of_mass -->
-<g id="proc~~perform_apm~~CallsGraph_node5" class="node">
-<title>proc~correct_center_of_mass</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node5"><a xlink:href=".././proc/correct_center_of_mass.html" xlink:title="correct_center_of_mass">
-<polygon fill="#d9534f" stroke="#d9534f" points="307.5,-1149 169.5,-1149 169.5,-1125 307.5,-1125 307.5,-1149"/>
-<text text-anchor="middle" x="238.5" y="-1134.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">correct_center_of_mass</text>
-</a>
-</g>
-</g>
-<!-- proc~perform_apm&#45;&gt;proc~correct_center_of_mass -->
-<g id="proc~~perform_apm~~CallsGraph_edge4" class="edge">
-<title>proc~perform_apm&#45;&gt;proc~correct_center_of_mass</title>
-<path fill="none" stroke="#000000" d="M43.38,-564.09C42.92,-637.91 44.15,-1027.6 121,-1111 131.15,-1122.02 144.87,-1128.89 159.32,-1133.07"/>
-<polygon fill="#000000" stroke="#000000" points="158.86,-1136.57 169.41,-1135.56 160.53,-1129.77 158.86,-1136.57"/>
-</g>
-<!-- proc~find_h_backup -->
-<g id="proc~~perform_apm~~CallsGraph_node6" class="node">
-<title>proc~find_h_backup</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node6"><a xlink:href=".././proc/find_h_backup.html" xlink:title="find_h_backup">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="283,-524 194,-524 194,-500 283,-500 283,-524"/>
-<text text-anchor="middle" x="238.5" y="-509.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find_h_backup</text>
-</a>
-</g>
-</g>
-<!-- proc~perform_apm&#45;&gt;proc~find_h_backup -->
-<g id="proc~~perform_apm~~CallsGraph_edge5" class="edge">
-<title>proc~perform_apm&#45;&gt;proc~find_h_backup</title>
-<path fill="none" stroke="#000000" d="M85.12,-543.42C114.05,-537.45 152.87,-529.45 184.09,-523.01"/>
-<polygon fill="#000000" stroke="#000000" points="184.85,-526.43 193.93,-520.98 183.43,-519.57 184.85,-526.43"/>
-</g>
-<!-- proc~is_finite_number -->
-<g id="proc~~perform_apm~~CallsGraph_node7" class="node">
-<title>proc~is_finite_number</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node7"><a xlink:href=".././proc/is_finite_number.html" xlink:title="is_finite_number">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="544.5,-485 444.5,-485 444.5,-461 544.5,-461 544.5,-485"/>
-<text text-anchor="middle" x="494.5" y="-470.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">is_finite_number</text>
-</a>
-</g>
-</g>
-<!-- proc~perform_apm&#45;&gt;proc~is_finite_number -->
-<g id="proc~~perform_apm~~CallsGraph_edge6" class="edge">
-<title>proc~perform_apm&#45;&gt;proc~is_finite_number</title>
-<path fill="none" stroke="#000000" d="M54.15,-539.94C67.91,-525.3 93.41,-501.31 121,-491 225.7,-451.88 358.58,-457.34 434.03,-465.04"/>
-<polygon fill="#000000" stroke="#000000" points="433.97,-468.55 444.28,-466.13 434.71,-461.59 433.97,-468.55"/>
-</g>
-<!-- iorig -->
-<g id="proc~~perform_apm~~CallsGraph_node8" class="node">
-<title>iorig</title>
-<polygon fill="#777777" stroke="#777777" points="521.5,-943 467.5,-943 467.5,-919 521.5,-919 521.5,-943"/>
-<text text-anchor="middle" x="494.5" y="-928.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iorig</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;iorig -->
-<g id="proc~~perform_apm~~CallsGraph_edge7" class="edge">
-<title>proc~perform_apm&#45;&gt;iorig</title>
-<path fill="none" stroke="#000000" d="M44.86,-564.2C50.87,-615.87 76.73,-816.08 121,-858 214.73,-946.75 383.09,-942.43 457.01,-935.5"/>
-<polygon fill="#000000" stroke="#000000" points="457.61,-938.96 467.21,-934.47 456.91,-931.99 457.61,-938.96"/>
-</g>
-<!-- interface~impose_equatorial_plane_symmetry -->
-<g id="proc~~perform_apm~~CallsGraph_node9" class="node">
-<title>interface~impose_equatorial_plane_symmetry</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node9"><a xlink:href=".././interface/impose_equatorial_plane_symmetry.html" xlink:title="impose_equatorial_plane_symmetry">
-<polygon fill="#a7506f" stroke="#a7506f" points="341,-849 136,-849 136,-825 341,-825 341,-849"/>
-<text text-anchor="middle" x="238.5" y="-834.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">impose_equatorial_plane_symmetry</text>
-</a>
-</g>
-</g>
-<!-- proc~perform_apm&#45;&gt;interface~impose_equatorial_plane_symmetry -->
-<g id="proc~~perform_apm~~CallsGraph_edge8" class="edge">
-<title>proc~perform_apm&#45;&gt;interface~impose_equatorial_plane_symmetry</title>
-<path fill="none" stroke="#000000" d="M43.45,-564.24C43.99,-604.53 51.29,-734.37 121,-803 128.7,-810.58 137.99,-816.49 147.93,-821.09"/>
-<polygon fill="#000000" stroke="#000000" points="146.63,-824.34 157.21,-824.96 149.33,-817.88 146.63,-824.34"/>
-</g>
-<!-- interface~check_particle_positions -->
-<g id="proc~~perform_apm~~CallsGraph_node10" class="node">
-<title>interface~check_particle_positions</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node10"><a xlink:href=".././interface/check_particle_positions.html" xlink:title="check_particle_positions">
-<polygon fill="#a7506f" stroke="#a7506f" points="309.5,-402 167.5,-402 167.5,-378 309.5,-378 309.5,-402"/>
-<text text-anchor="middle" x="238.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">check_particle_positions</text>
-</a>
-</g>
-</g>
-<!-- proc~perform_apm&#45;&gt;interface~check_particle_positions -->
-<g id="proc~~perform_apm~~CallsGraph_edge9" class="edge">
-<title>proc~perform_apm&#45;&gt;interface~check_particle_positions</title>
-<path fill="none" stroke="#000000" d="M46.38,-539.81C53.63,-512 75.41,-443.77 121,-411 131.7,-403.3 144.36,-398.15 157.32,-394.74"/>
-<polygon fill="#000000" stroke="#000000" points="158.29,-398.11 167.25,-392.46 156.72,-391.28 158.29,-398.11"/>
-</g>
-<!-- com -->
-<g id="proc~~perform_apm~~CallsGraph_node11" class="node">
-<title>com</title>
-<polygon fill="#777777" stroke="#777777" points="747.5,-908 693.5,-908 693.5,-884 747.5,-884 747.5,-908"/>
-<text text-anchor="middle" x="720.5" y="-893.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">com</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;com -->
-<g id="proc~~perform_apm~~CallsGraph_edge10" class="edge">
-<title>proc~perform_apm&#45;&gt;com</title>
-<path fill="none" stroke="#000000" d="M43.42,-564.42C43.25,-635.28 46.22,-987.62 121,-1057 159.81,-1093.01 550.27,-1102.88 597,-1078 661.5,-1043.66 698.13,-958.57 712.43,-918.09"/>
-<polygon fill="#000000" stroke="#000000" points="715.83,-918.96 715.73,-908.37 709.2,-916.71 715.83,-918.96"/>
-</g>
-<!-- deallocate_rcb_tree_memory_3d -->
-<g id="proc~~perform_apm~~CallsGraph_node12" class="node">
-<title>deallocate_rcb_tree_memory_3d</title>
-<polygon fill="#777777" stroke="#777777" points="588,-745 401,-745 401,-721 588,-721 588,-745"/>
-<text text-anchor="middle" x="494.5" y="-730.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_rcb_tree_memory_3d</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;deallocate_rcb_tree_memory_3d -->
-<g id="proc~~perform_apm~~CallsGraph_edge11" class="edge">
-<title>proc~perform_apm&#45;&gt;deallocate_rcb_tree_memory_3d</title>
-<path fill="none" stroke="#000000" d="M46.8,-564.27C54.65,-590.91 77.16,-653.96 121,-683 200.56,-735.69 310.78,-744.5 390.67,-742.37"/>
-<polygon fill="#000000" stroke="#000000" points="390.87,-745.86 400.75,-742.03 390.64,-738.87 390.87,-745.86"/>
-</g>
-<!-- allocate_metric_on_particles -->
-<g id="proc~~perform_apm~~CallsGraph_node13" class="node">
-<title>allocate_metric_on_particles</title>
-<polygon fill="#777777" stroke="#777777" points="577,-703 412,-703 412,-679 577,-679 577,-703"/>
-<text text-anchor="middle" x="494.5" y="-688.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_metric_on_particles</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;allocate_metric_on_particles -->
-<g id="proc~~perform_apm~~CallsGraph_edge12" class="edge">
-<title>proc~perform_apm&#45;&gt;allocate_metric_on_particles</title>
-<path fill="none" stroke="#000000" d="M49.92,-564.24C61.26,-584.47 86.88,-624.51 121,-643 207.82,-690.06 322.28,-698.24 401.3,-697.07"/>
-<polygon fill="#000000" stroke="#000000" points="401.8,-700.56 411.72,-696.86 401.65,-693.56 401.8,-700.56"/>
+<title>proc~perform_apm&#45;&gt;assign_h</title>
+<path fill="none" stroke="#000000" d="M43.3,-629.06C42.29,-704.48 40.69,-1110.76 121,-1197 136.81,-1213.98 162.43,-1219.18 183.98,-1220.16"/>
+<polygon fill="#000000" stroke="#000000" points="184.11,-1223.67 194.17,-1220.34 184.23,-1216.67 184.11,-1223.67"/>
 </g>
 <!-- proc~spherical_from_cartesian -->
-<g id="proc~~perform_apm~~CallsGraph_node14" class="node">
+<g id="proc~~perform_apm~~CallsGraph_node3" class="node">
 <title>proc~spherical_from_cartesian</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node14"><a xlink:href=".././proc/spherical_from_cartesian.html" xlink:title="spherical_from_cartesian">
-<polygon fill="#d9534f" stroke="#d9534f" points="311.5,-360 165.5,-360 165.5,-336 311.5,-336 311.5,-360"/>
-<text text-anchor="middle" x="238.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spherical_from_cartesian</text>
+<g id="a_proc~~perform_apm~~CallsGraph_node3"><a xlink:href=".././proc/spherical_from_cartesian.html" xlink:title="spherical_from_cartesian">
+<polygon fill="#d9534f" stroke="#d9534f" points="296.5,-1188 150.5,-1188 150.5,-1164 296.5,-1164 296.5,-1188"/>
+<text text-anchor="middle" x="223.5" y="-1173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spherical_from_cartesian</text>
 </a>
 </g>
 </g>
 <!-- proc~perform_apm&#45;&gt;proc~spherical_from_cartesian -->
-<g id="proc~~perform_apm~~CallsGraph_edge13" class="edge">
+<g id="proc~~perform_apm~~CallsGraph_edge2" class="edge">
 <title>proc~perform_apm&#45;&gt;proc~spherical_from_cartesian</title>
-<path fill="none" stroke="#000000" d="M44.74,-539.84C48.82,-506.61 64.94,-413.8 121,-369 130.94,-361.05 142.9,-355.72 155.3,-352.21"/>
-<polygon fill="#000000" stroke="#000000" points="156.44,-355.53 165.32,-349.76 154.78,-348.73 156.44,-355.53"/>
+<path fill="none" stroke="#000000" d="M43.44,-629.12C43.31,-701.44 46.31,-1075.62 121,-1155 126.59,-1160.94 133.39,-1165.44 140.79,-1168.82"/>
+<polygon fill="#000000" stroke="#000000" points="139.84,-1172.2 150.43,-1172.52 142.35,-1165.67 139.84,-1172.2"/>
+</g>
+<!-- deallocate_metric_on_particles -->
+<g id="proc~~perform_apm~~CallsGraph_node4" class="node">
+<title>deallocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="312.5,-1146 134.5,-1146 134.5,-1122 312.5,-1122 312.5,-1146"/>
+<text text-anchor="middle" x="223.5" y="-1131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_metric_on_particles</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;deallocate_metric_on_particles -->
+<g id="proc~~perform_apm~~CallsGraph_edge3" class="edge">
+<title>proc~perform_apm&#45;&gt;deallocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M43.6,-629.06C44.4,-697.89 51.89,-1040.41 121,-1113 122.61,-1114.69 124.32,-1116.27 126.12,-1117.74"/>
+<polygon fill="#000000" stroke="#000000" points="124.26,-1120.7 134.48,-1123.48 128.22,-1114.93 124.26,-1120.7"/>
+</g>
+<!-- allocate_rcb_tree_memory_3d -->
+<g id="proc~~perform_apm~~CallsGraph_node5" class="node">
+<title>allocate_rcb_tree_memory_3d</title>
+<polygon fill="#777777" stroke="#777777" points="310,-1104 137,-1104 137,-1080 310,-1080 310,-1104"/>
+<text text-anchor="middle" x="223.5" y="-1089.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_rcb_tree_memory_3d</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;allocate_rcb_tree_memory_3d -->
+<g id="proc~~perform_apm~~CallsGraph_edge4" class="edge">
+<title>proc~perform_apm&#45;&gt;allocate_rcb_tree_memory_3d</title>
+<path fill="none" stroke="#000000" d="M43.79,-629.32C45.62,-695.18 57.54,-1005.28 121,-1071 123.17,-1073.25 125.51,-1075.28 127.99,-1077.13"/>
+<polygon fill="#000000" stroke="#000000" points="126.57,-1080.37 136.9,-1082.7 130.28,-1074.43 126.57,-1080.37"/>
 </g>
 <!-- allocate_gradient -->
-<g id="proc~~perform_apm~~CallsGraph_node15" class="node">
+<g id="proc~~perform_apm~~CallsGraph_node6" class="node">
 <title>allocate_gradient</title>
-<polygon fill="#777777" stroke="#777777" points="547.5,-661 441.5,-661 441.5,-637 547.5,-637 547.5,-661"/>
-<text text-anchor="middle" x="494.5" y="-646.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_gradient</text>
+<polygon fill="#777777" stroke="#777777" points="276.5,-1062 170.5,-1062 170.5,-1038 276.5,-1038 276.5,-1062"/>
+<text text-anchor="middle" x="223.5" y="-1047.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_gradient</text>
 </g>
 <!-- proc~perform_apm&#45;&gt;allocate_gradient -->
-<g id="proc~~perform_apm~~CallsGraph_edge14" class="edge">
+<g id="proc~~perform_apm~~CallsGraph_edge5" class="edge">
 <title>proc~perform_apm&#45;&gt;allocate_gradient</title>
-<path fill="none" stroke="#000000" d="M55.66,-564.22C69.94,-577.72 95,-598.9 121,-609 224.21,-649.1 354.88,-653.56 430.85,-652.04"/>
-<polygon fill="#000000" stroke="#000000" points="431.28,-655.53 441.2,-651.79 431.12,-648.53 431.28,-655.53"/>
+<path fill="none" stroke="#000000" d="M44.03,-629.39C46.95,-691.7 63.12,-970.06 121,-1029 131.45,-1039.64 145.77,-1045.59 160.36,-1048.78"/>
+<polygon fill="#000000" stroke="#000000" points="160.01,-1052.27 170.46,-1050.56 161.22,-1045.37 160.01,-1052.27"/>
 </g>
-<!-- proc~impose_equatorial_plane_symmetry_apm -->
-<g id="proc~~perform_apm~~CallsGraph_node16" class="node">
-<title>proc~impose_equatorial_plane_symmetry_apm</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node16"><a xlink:href=".././proc/impose_equatorial_plane_symmetry_apm.html" xlink:title="impose_equatorial_plane_symmetry_apm">
-<polygon fill="#d9534f" stroke="#d9534f" points="356,-794 121,-794 121,-770 356,-770 356,-794"/>
-<text text-anchor="middle" x="238.5" y="-779.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">impose_equatorial_plane_symmetry_apm</text>
+<!-- deallocate_gradient -->
+<g id="proc~~perform_apm~~CallsGraph_node7" class="node">
+<title>deallocate_gradient</title>
+<polygon fill="#777777" stroke="#777777" points="283,-1020 164,-1020 164,-996 283,-996 283,-1020"/>
+<text text-anchor="middle" x="223.5" y="-1005.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_gradient</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;deallocate_gradient -->
+<g id="proc~~perform_apm~~CallsGraph_edge6" class="edge">
+<title>proc~perform_apm&#45;&gt;deallocate_gradient</title>
+<path fill="none" stroke="#000000" d="M44.31,-629.28C48.38,-687.46 68.61,-934.74 121,-987 129.95,-995.92 141.62,-1001.53 153.86,-1004.97"/>
+<polygon fill="#000000" stroke="#000000" points="153.21,-1008.42 163.75,-1007.29 154.81,-1001.6 153.21,-1008.42"/>
+</g>
+<!-- interface~check_particle_positions -->
+<g id="proc~~perform_apm~~CallsGraph_node8" class="node">
+<title>interface~check_particle_positions</title>
+<g id="a_proc~~perform_apm~~CallsGraph_node8"><a xlink:href=".././interface/check_particle_positions.html" xlink:title="check_particle_positions">
+<polygon fill="#a7506f" stroke="#a7506f" points="294.5,-978 152.5,-978 152.5,-954 294.5,-954 294.5,-978"/>
+<text text-anchor="middle" x="223.5" y="-963.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">check_particle_positions</text>
 </a>
 </g>
 </g>
-<!-- proc~perform_apm&#45;&gt;proc~impose_equatorial_plane_symmetry_apm -->
-<g id="proc~~perform_apm~~CallsGraph_edge15" class="edge">
-<title>proc~perform_apm&#45;&gt;proc~impose_equatorial_plane_symmetry_apm</title>
-<path fill="none" stroke="#000000" d="M44.26,-564.09C47.17,-599.51 60.71,-703.8 121,-756 125.06,-759.51 129.49,-762.58 134.17,-765.26"/>
-<polygon fill="#000000" stroke="#000000" points="132.95,-768.57 143.46,-769.94 136.1,-762.32 132.95,-768.57"/>
+<!-- proc~perform_apm&#45;&gt;interface~check_particle_positions -->
+<g id="proc~~perform_apm~~CallsGraph_edge7" class="edge">
+<title>proc~perform_apm&#45;&gt;interface~check_particle_positions</title>
+<path fill="none" stroke="#000000" d="M44.74,-629.08C50.45,-682.15 75.78,-894.08 121,-940 127.26,-946.36 134.85,-951.23 143.02,-954.96"/>
+<polygon fill="#000000" stroke="#000000" points="141.88,-958.27 152.46,-958.7 144.45,-951.76 141.88,-958.27"/>
 </g>
-<!-- timer -->
-<g id="proc~~perform_apm~~CallsGraph_node17" class="node">
-<title>timer</title>
-<polygon fill="#777777" stroke="#777777" points="265.5,-318 211.5,-318 211.5,-294 265.5,-294 265.5,-318"/>
-<text text-anchor="middle" x="238.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
+<!-- proc~correct_center_of_mass -->
+<g id="proc~~perform_apm~~CallsGraph_node9" class="node">
+<title>proc~correct_center_of_mass</title>
+<g id="a_proc~~perform_apm~~CallsGraph_node9"><a xlink:href=".././proc/correct_center_of_mass.html" xlink:title="correct_center_of_mass">
+<polygon fill="#d9534f" stroke="#d9534f" points="533.5,-816 395.5,-816 395.5,-792 533.5,-792 533.5,-816"/>
+<text text-anchor="middle" x="464.5" y="-801.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">correct_center_of_mass</text>
+</a>
 </g>
-<!-- proc~perform_apm&#45;&gt;timer -->
-<g id="proc~~perform_apm~~CallsGraph_edge17" class="edge">
-<title>proc~perform_apm&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" d="M43.67,-539.94C44.9,-502 54.19,-384.28 121,-327 142.84,-308.27 175.64,-303.75 200.87,-303.49"/>
-<polygon fill="#000000" stroke="#000000" points="201.13,-307 211.17,-303.62 201.21,-300 201.13,-307"/>
 </g>
-<!-- position_correction -->
-<g id="proc~~perform_apm~~CallsGraph_node18" class="node">
-<title>position_correction</title>
-<polygon fill="#777777" stroke="#777777" points="295,-276 182,-276 182,-252 295,-252 295,-276"/>
-<text text-anchor="middle" x="238.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">position_correction</text>
+<!-- proc~perform_apm&#45;&gt;proc~correct_center_of_mass -->
+<g id="proc~~perform_apm~~CallsGraph_edge8" class="edge">
+<title>proc~perform_apm&#45;&gt;proc~correct_center_of_mass</title>
+<path fill="none" stroke="#000000" d="M44.89,-629C49.28,-660.85 66.01,-747.62 121,-785 162.45,-813.18 297.48,-812.51 385.1,-808.75"/>
+<polygon fill="#000000" stroke="#000000" points="385.44,-812.24 395.28,-808.3 385.13,-805.25 385.44,-812.24"/>
 </g>
-<!-- proc~perform_apm&#45;&gt;position_correction -->
-<g id="proc~~perform_apm~~CallsGraph_edge16" class="edge">
-<title>proc~perform_apm&#45;&gt;position_correction</title>
-<path fill="none" stroke="#000000" d="M42.92,-539.89C41.61,-497.55 43.36,-354.95 121,-285 134.85,-272.52 153.51,-266.25 171.83,-263.35"/>
-<polygon fill="#000000" stroke="#000000" points="172.46,-266.8 181.95,-262.07 171.59,-259.86 172.46,-266.8"/>
+<!-- allocate_metric_on_particles -->
+<g id="proc~~perform_apm~~CallsGraph_node10" class="node">
+<title>allocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="306,-898 141,-898 141,-874 306,-874 306,-898"/>
+<text text-anchor="middle" x="223.5" y="-883.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_metric_on_particles</text>
 </g>
-<!-- assign_h -->
-<g id="proc~~perform_apm~~CallsGraph_node19" class="node">
-<title>assign_h</title>
-<polygon fill="#777777" stroke="#777777" points="267.5,-234 209.5,-234 209.5,-210 267.5,-210 267.5,-234"/>
-<text text-anchor="middle" x="238.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">assign_h</text>
+<!-- proc~perform_apm&#45;&gt;allocate_metric_on_particles -->
+<g id="proc~~perform_apm~~CallsGraph_edge9" class="edge">
+<title>proc~perform_apm&#45;&gt;allocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M43.3,-629.04C43.31,-669.22 49.12,-799.89 121,-865 124.23,-867.92 127.75,-870.48 131.48,-872.71"/>
+<polygon fill="#000000" stroke="#000000" points="130.05,-875.91 140.54,-877.37 133.24,-869.68 130.05,-875.91"/>
 </g>
-<!-- proc~perform_apm&#45;&gt;assign_h -->
-<g id="proc~~perform_apm~~CallsGraph_edge18" class="edge">
-<title>proc~perform_apm&#45;&gt;assign_h</title>
-<path fill="none" stroke="#000000" d="M44.82,-539.67C50.69,-487.42 76.05,-285.02 121,-243 141.72,-223.63 173.95,-219.04 199.26,-218.93"/>
-<polygon fill="#000000" stroke="#000000" points="199.22,-222.43 209.28,-219.11 199.35,-215.43 199.22,-222.43"/>
+<!-- deallocate_rcb_tree_memory_3d -->
+<g id="proc~~perform_apm~~CallsGraph_node11" class="node">
+<title>deallocate_rcb_tree_memory_3d</title>
+<polygon fill="#777777" stroke="#777777" points="317,-856 130,-856 130,-832 317,-832 317,-856"/>
+<text text-anchor="middle" x="223.5" y="-841.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_rcb_tree_memory_3d</text>
 </g>
-<!-- nu -->
-<g id="proc~~perform_apm~~CallsGraph_node20" class="node">
-<title>nu</title>
-<polygon fill="#777777" stroke="#777777" points="265.5,-192 211.5,-192 211.5,-168 265.5,-168 265.5,-192"/>
-<text text-anchor="middle" x="238.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nu</text>
+<!-- proc~perform_apm&#45;&gt;deallocate_rcb_tree_memory_3d -->
+<g id="proc~~perform_apm~~CallsGraph_edge11" class="edge">
+<title>proc~perform_apm&#45;&gt;deallocate_rcb_tree_memory_3d</title>
+<path fill="none" stroke="#000000" d="M44.42,-629.08C47.76,-663.99 62.31,-765.81 121,-818 124.98,-821.54 129.37,-824.6 134.03,-827.26"/>
+<polygon fill="#000000" stroke="#000000" points="132.78,-830.55 143.29,-831.89 135.91,-824.29 132.78,-830.55"/>
 </g>
-<!-- proc~perform_apm&#45;&gt;nu -->
-<g id="proc~~perform_apm~~CallsGraph_edge19" class="edge">
-<title>proc~perform_apm&#45;&gt;nu</title>
-<path fill="none" stroke="#000000" d="M44.41,-539.95C48.88,-483.93 70.4,-249.67 121,-201 141.96,-180.84 175.34,-176.55 201.01,-176.75"/>
-<polygon fill="#000000" stroke="#000000" points="201.03,-180.25 211.13,-177.05 201.24,-173.25 201.03,-180.25"/>
+<!-- interface~impose_equatorial_plane_symmetry -->
+<g id="proc~~perform_apm~~CallsGraph_node12" class="node">
+<title>interface~impose_equatorial_plane_symmetry</title>
+<g id="a_proc~~perform_apm~~CallsGraph_node12"><a xlink:href=".././interface/impose_equatorial_plane_symmetry.html" xlink:title="impose_equatorial_plane_symmetry">
+<polygon fill="#a7506f" stroke="#a7506f" points="326,-524 121,-524 121,-500 326,-500 326,-524"/>
+<text text-anchor="middle" x="223.5" y="-509.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">impose_equatorial_plane_symmetry</text>
+</a>
 </g>
-<!-- none~get_nstar_id_atm -->
-<g id="proc~~perform_apm~~CallsGraph_node21" class="node">
-<title>none~get_nstar_id_atm</title>
-<polygon fill="#d9534f" stroke="#d9534f" points="290,-444 187,-444 187,-420 290,-420 290,-444"/>
-<text text-anchor="middle" x="238.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_nstar_id_atm</text>
 </g>
-<!-- proc~perform_apm&#45;&gt;none~get_nstar_id_atm -->
-<g id="proc~~perform_apm~~CallsGraph_edge20" class="edge">
-<title>proc~perform_apm&#45;&gt;none~get_nstar_id_atm</title>
-<path fill="none" stroke="#000000" d="M50.01,-539.7C61.48,-519.31 87.29,-478.69 121,-458 137.69,-447.76 157.94,-441.53 176.84,-437.76"/>
-<polygon fill="#000000" stroke="#000000" points="177.65,-441.17 186.87,-435.95 176.41,-434.28 177.65,-441.17"/>
+<!-- proc~perform_apm&#45;&gt;interface~impose_equatorial_plane_symmetry -->
+<g id="proc~~perform_apm~~CallsGraph_edge10" class="edge">
+<title>proc~perform_apm&#45;&gt;interface~impose_equatorial_plane_symmetry</title>
+<path fill="none" stroke="#000000" d="M51.1,-604.77C63.37,-586.12 89.4,-550.88 121,-533 124.43,-531.06 128.01,-529.3 131.69,-527.7"/>
+<polygon fill="#000000" stroke="#000000" points="133,-530.95 141.04,-524.05 130.45,-524.43 133,-530.95"/>
+</g>
+<!-- nic -->
+<g id="proc~~perform_apm~~CallsGraph_node13" class="node">
+<title>nic</title>
+<polygon fill="#777777" stroke="#777777" points="250.5,-776 196.5,-776 196.5,-752 250.5,-752 250.5,-776"/>
+<text text-anchor="middle" x="223.5" y="-761.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nic</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;nic -->
+<g id="proc~~perform_apm~~CallsGraph_edge13" class="edge">
+<title>proc~perform_apm&#45;&gt;nic</title>
+<path fill="none" stroke="#000000" d="M47.35,-629.36C56.01,-654.99 79.58,-713.95 121,-743 139.9,-756.26 165.36,-761.5 186.05,-763.43"/>
+<polygon fill="#000000" stroke="#000000" points="185.85,-766.93 196.07,-764.15 186.35,-759.95 185.85,-766.93"/>
+</g>
+<!-- exact_nei_tree_update -->
+<g id="proc~~perform_apm~~CallsGraph_node14" class="node">
+<title>exact_nei_tree_update</title>
+<polygon fill="#777777" stroke="#777777" points="289.5,-734 157.5,-734 157.5,-710 289.5,-710 289.5,-734"/>
+<text text-anchor="middle" x="223.5" y="-719.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">exact_nei_tree_update</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;exact_nei_tree_update -->
+<g id="proc~~perform_apm~~CallsGraph_edge12" class="edge">
+<title>proc~perform_apm&#45;&gt;exact_nei_tree_update</title>
+<path fill="none" stroke="#000000" d="M51.1,-629.23C63.37,-647.88 89.4,-683.12 121,-701 129.2,-705.64 138.28,-709.25 147.55,-712.08"/>
+<polygon fill="#000000" stroke="#000000" points="146.68,-715.47 157.25,-714.74 148.53,-708.72 146.68,-715.47"/>
+</g>
+<!-- iorig -->
+<g id="proc~~perform_apm~~CallsGraph_node15" class="node">
+<title>iorig</title>
+<polygon fill="#777777" stroke="#777777" points="250.5,-692 196.5,-692 196.5,-668 250.5,-668 250.5,-692"/>
+<text text-anchor="middle" x="223.5" y="-677.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iorig</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;iorig -->
+<g id="proc~~perform_apm~~CallsGraph_edge14" class="edge">
+<title>proc~perform_apm&#45;&gt;iorig</title>
+<path fill="none" stroke="#000000" d="M62.19,-629.16C77.45,-638.58 99.87,-651.28 121,-659 142.06,-666.7 166.67,-671.87 186.38,-675.16"/>
+<polygon fill="#000000" stroke="#000000" points="186.06,-678.66 196.48,-676.76 187.15,-671.74 186.06,-678.66"/>
 </g>
 <!-- none~validate_position_final -->
-<g id="proc~~perform_apm~~CallsGraph_node22" class="node">
+<g id="proc~~perform_apm~~CallsGraph_node16" class="node">
 <title>none~validate_position_final</title>
-<polygon fill="#d94e8f" stroke="#d94e8f" points="304,-150 173,-150 173,-126 304,-126 304,-150"/>
-<text text-anchor="middle" x="238.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">validate_position_final</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="289,-650 158,-650 158,-626 289,-626 289,-650"/>
+<text text-anchor="middle" x="223.5" y="-635.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">validate_position_final</text>
 </g>
 <!-- proc~perform_apm&#45;&gt;none~validate_position_final -->
-<g id="proc~~perform_apm~~CallsGraph_edge21" class="edge">
+<g id="proc~~perform_apm~~CallsGraph_edge15" class="edge">
 <title>proc~perform_apm&#45;&gt;none~validate_position_final</title>
-<path fill="none" stroke="#000000" d="M44.11,-539.75C47.39,-479.37 64.86,-214.23 121,-159 132.24,-147.95 147.2,-141.63 162.64,-138.21"/>
-<polygon fill="#000000" stroke="#000000" points="163.62,-141.59 172.83,-136.35 162.36,-134.7 163.62,-141.59"/>
+<path fill="none" stroke="#000000" d="M85.02,-621.87C103.65,-624.06 126.22,-626.71 147.65,-629.22"/>
+<polygon fill="#000000" stroke="#000000" points="147.38,-632.71 157.72,-630.4 148.19,-625.76 147.38,-632.71"/>
 </g>
-<!-- allocate_sph_memory -->
+<!-- nu -->
+<g id="proc~~perform_apm~~CallsGraph_node17" class="node">
+<title>nu</title>
+<polygon fill="#777777" stroke="#777777" points="250.5,-608 196.5,-608 196.5,-584 250.5,-584 250.5,-608"/>
+<text text-anchor="middle" x="223.5" y="-593.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nu</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;nu -->
+<g id="proc~~perform_apm~~CallsGraph_edge16" class="edge">
+<title>proc~perform_apm&#45;&gt;nu</title>
+<path fill="none" stroke="#000000" d="M85.02,-612.13C115.65,-608.54 156.92,-603.69 186.23,-600.25"/>
+<polygon fill="#000000" stroke="#000000" points="186.92,-603.7 196.45,-599.06 186.11,-596.75 186.92,-603.7"/>
+</g>
+<!-- lpart -->
+<g id="proc~~perform_apm~~CallsGraph_node18" class="node">
+<title>lpart</title>
+<polygon fill="#777777" stroke="#777777" points="250.5,-566 196.5,-566 196.5,-542 250.5,-542 250.5,-566"/>
+<text text-anchor="middle" x="223.5" y="-551.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lpart</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;lpart -->
+<g id="proc~~perform_apm~~CallsGraph_edge17" class="edge">
+<title>proc~perform_apm&#45;&gt;lpart</title>
+<path fill="none" stroke="#000000" d="M62.19,-604.84C77.45,-595.42 99.87,-582.72 121,-575 142.06,-567.3 166.67,-562.13 186.38,-558.84"/>
+<polygon fill="#000000" stroke="#000000" points="187.15,-562.26 196.48,-557.24 186.06,-555.34 187.15,-562.26"/>
+</g>
+<!-- com -->
+<g id="proc~~perform_apm~~CallsGraph_node19" class="node">
+<title>com</title>
+<polygon fill="#777777" stroke="#777777" points="717.5,-816 663.5,-816 663.5,-792 717.5,-792 717.5,-816"/>
+<text text-anchor="middle" x="690.5" y="-801.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">com</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;com -->
+<g id="proc~~perform_apm~~CallsGraph_edge18" class="edge">
+<title>proc~perform_apm&#45;&gt;com</title>
+<path fill="none" stroke="#000000" d="M44.81,-629.12C50.53,-679.56 75.12,-871.77 121,-907 205.76,-972.08 543.24,-857.48 654.05,-817.21"/>
+<polygon fill="#000000" stroke="#000000" points="655.26,-820.49 663.45,-813.77 652.86,-813.92 655.26,-820.49"/>
+</g>
+<!-- proc~find_h_backup -->
+<g id="proc~~perform_apm~~CallsGraph_node20" class="node">
+<title>proc~find_h_backup</title>
+<g id="a_proc~~perform_apm~~CallsGraph_node20"><a xlink:href=".././proc/find_h_backup.html" xlink:title="find_h_backup">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="268,-482 179,-482 179,-458 268,-458 268,-482"/>
+<text text-anchor="middle" x="223.5" y="-467.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find_h_backup</text>
+</a>
+</g>
+</g>
+<!-- proc~perform_apm&#45;&gt;proc~find_h_backup -->
+<g id="proc~~perform_apm~~CallsGraph_edge19" class="edge">
+<title>proc~perform_apm&#45;&gt;proc~find_h_backup</title>
+<path fill="none" stroke="#000000" d="M47.35,-604.64C56.01,-579.01 79.58,-520.05 121,-491 134.91,-481.24 152.36,-475.83 168.85,-472.88"/>
+<polygon fill="#000000" stroke="#000000" points="169.6,-476.3 178.96,-471.34 168.55,-469.38 169.6,-476.3"/>
+</g>
+<!-- density -->
+<g id="proc~~perform_apm~~CallsGraph_node21" class="node">
+<title>density</title>
+<polygon fill="#777777" stroke="#777777" points="250.5,-440 196.5,-440 196.5,-416 250.5,-416 250.5,-440"/>
+<text text-anchor="middle" x="223.5" y="-425.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">density</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;density -->
+<g id="proc~~perform_apm~~CallsGraph_edge20" class="edge">
+<title>proc~perform_apm&#45;&gt;density</title>
+<path fill="none" stroke="#000000" d="M45.29,-604.99C50.58,-573.86 69.19,-490.16 121,-449 139.32,-434.45 165.22,-429.26 186.27,-427.68"/>
+<polygon fill="#000000" stroke="#000000" points="186.65,-431.16 196.46,-427.16 186.29,-424.17 186.65,-431.16"/>
+</g>
+<!-- timer -->
+<g id="proc~~perform_apm~~CallsGraph_node22" class="node">
+<title>timer</title>
+<polygon fill="#777777" stroke="#777777" points="250.5,-398 196.5,-398 196.5,-374 250.5,-374 250.5,-398"/>
+<text text-anchor="middle" x="223.5" y="-383.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;timer -->
+<g id="proc~~perform_apm~~CallsGraph_edge21" class="edge">
+<title>proc~perform_apm&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" d="M44.08,-604.77C46.5,-568.47 58.85,-460.49 121,-407 138.74,-391.74 164.64,-386.56 185.84,-385.16"/>
+<polygon fill="#000000" stroke="#000000" points="186.27,-388.65 196.12,-384.75 185.99,-381.65 186.27,-388.65"/>
+</g>
+<!-- rpart -->
 <g id="proc~~perform_apm~~CallsGraph_node23" class="node">
-<title>allocate_sph_memory</title>
-<polygon fill="#777777" stroke="#777777" points="559.5,-619 429.5,-619 429.5,-595 559.5,-595 559.5,-619"/>
-<text text-anchor="middle" x="494.5" y="-604.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_sph_memory</text>
+<title>rpart</title>
+<polygon fill="#777777" stroke="#777777" points="250.5,-356 196.5,-356 196.5,-332 250.5,-332 250.5,-356"/>
+<text text-anchor="middle" x="223.5" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rpart</text>
 </g>
-<!-- proc~perform_apm&#45;&gt;allocate_sph_memory -->
+<!-- proc~perform_apm&#45;&gt;rpart -->
 <g id="proc~~perform_apm~~CallsGraph_edge22" class="edge">
-<title>proc~perform_apm&#45;&gt;allocate_sph_memory</title>
-<path fill="none" stroke="#000000" d="M67.99,-564.12C82.93,-570.92 102.63,-578.84 121,-583 222.42,-605.94 343.04,-609.55 418.95,-609.05"/>
-<polygon fill="#000000" stroke="#000000" points="419.39,-612.55 429.36,-608.96 419.32,-605.55 419.39,-612.55"/>
+<title>proc~perform_apm&#45;&gt;rpart</title>
+<path fill="none" stroke="#000000" d="M43.23,-604.78C43.02,-563.96 48.21,-431.23 121,-365 138.5,-349.08 164.8,-343.97 186.24,-342.77"/>
+<polygon fill="#000000" stroke="#000000" points="186.43,-346.27 196.32,-342.46 186.22,-339.27 186.43,-346.27"/>
 </g>
 <!-- h -->
 <g id="proc~~perform_apm~~CallsGraph_node24" class="node">
 <title>h</title>
-<polygon fill="#777777" stroke="#777777" points="521.5,-577 467.5,-577 467.5,-553 521.5,-553 521.5,-577"/>
-<text text-anchor="middle" x="494.5" y="-562.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h</text>
+<polygon fill="#777777" stroke="#777777" points="250.5,-314 196.5,-314 196.5,-290 250.5,-290 250.5,-314"/>
+<text text-anchor="middle" x="223.5" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h</text>
 </g>
 <!-- proc~perform_apm&#45;&gt;h -->
 <g id="proc~~perform_apm~~CallsGraph_edge23" class="edge">
 <title>proc~perform_apm&#45;&gt;h</title>
-<path fill="none" stroke="#000000" d="M85.14,-560.93C96.7,-563.03 109.29,-564.95 121,-566 243.89,-577.01 390.51,-571.05 457.23,-567.3"/>
-<polygon fill="#000000" stroke="#000000" points="457.45,-570.8 467.23,-566.72 457.05,-563.81 457.45,-570.8"/>
+<path fill="none" stroke="#000000" d="M44.99,-604.95C51.42,-554.8 78.47,-363.3 121,-323 138.17,-306.73 164.48,-301.63 186.01,-300.52"/>
+<polygon fill="#000000" stroke="#000000" points="186.23,-304.02 196.13,-300.27 186.05,-297.02 186.23,-304.02"/>
 </g>
-<!-- deallocate_gradient -->
+<!-- position_correction -->
 <g id="proc~~perform_apm~~CallsGraph_node25" class="node">
-<title>deallocate_gradient</title>
-<polygon fill="#777777" stroke="#777777" points="554,-535 435,-535 435,-511 554,-511 554,-535"/>
-<text text-anchor="middle" x="494.5" y="-520.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_gradient</text>
+<title>position_correction</title>
+<polygon fill="#777777" stroke="#777777" points="280,-272 167,-272 167,-248 280,-248 280,-272"/>
+<text text-anchor="middle" x="223.5" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">position_correction</text>
 </g>
-<!-- proc~perform_apm&#45;&gt;deallocate_gradient -->
+<!-- proc~perform_apm&#45;&gt;position_correction -->
 <g id="proc~~perform_apm~~CallsGraph_edge24" class="edge">
-<title>proc~perform_apm&#45;&gt;deallocate_gradient</title>
-<path fill="none" stroke="#000000" d="M85.21,-549.62C145.14,-546.17 259.06,-539.47 356,-533 378.37,-531.51 402.78,-529.77 424.74,-528.16"/>
-<polygon fill="#000000" stroke="#000000" points="425.25,-531.63 434.97,-527.41 424.74,-524.65 425.25,-531.63"/>
-</g>
-<!-- density -->
-<g id="proc~~perform_apm~~CallsGraph_node26" class="node">
-<title>density</title>
-<polygon fill="#777777" stroke="#777777" points="265.5,-108 211.5,-108 211.5,-84 265.5,-84 265.5,-108"/>
-<text text-anchor="middle" x="238.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">density</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;density -->
-<g id="proc~~perform_apm~~CallsGraph_edge25" class="edge">
-<title>proc~perform_apm&#45;&gt;density</title>
-<path fill="none" stroke="#000000" d="M43.86,-539.75C46.01,-475.59 59.23,-178.9 121,-117 141.67,-96.29 175.39,-92.12 201.24,-92.5"/>
-<polygon fill="#000000" stroke="#000000" points="201.3,-96 211.43,-92.88 201.56,-89.01 201.3,-96"/>
+<title>proc~perform_apm&#45;&gt;position_correction</title>
+<path fill="none" stroke="#000000" d="M44.58,-604.76C49.68,-549.97 73.05,-327.87 121,-281 130.69,-271.53 143.46,-265.81 156.66,-262.46"/>
+<polygon fill="#000000" stroke="#000000" points="157.73,-265.81 166.8,-260.34 156.29,-258.96 157.73,-265.81"/>
 </g>
 <!-- density_loop -->
-<g id="proc~~perform_apm~~CallsGraph_node27" class="node">
+<g id="proc~~perform_apm~~CallsGraph_node26" class="node">
 <title>density_loop</title>
-<polygon fill="#777777" stroke="#777777" points="278,-66 199,-66 199,-42 278,-42 278,-66"/>
-<text text-anchor="middle" x="238.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">density_loop</text>
+<polygon fill="#777777" stroke="#777777" points="263,-230 184,-230 184,-206 263,-206 263,-230"/>
+<text text-anchor="middle" x="223.5" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">density_loop</text>
 </g>
 <!-- proc~perform_apm&#45;&gt;density_loop -->
-<g id="proc~~perform_apm~~CallsGraph_edge26" class="edge">
+<g id="proc~~perform_apm~~CallsGraph_edge25" class="edge">
 <title>proc~perform_apm&#45;&gt;density_loop</title>
-<path fill="none" stroke="#000000" d="M43.65,-539.93C44.74,-472.57 53.51,-143.66 121,-75 138.32,-57.38 165.06,-51.68 188.56,-50.59"/>
-<polygon fill="#000000" stroke="#000000" points="188.81,-54.08 198.73,-50.38 188.67,-47.08 188.81,-54.08"/>
+<path fill="none" stroke="#000000" d="M44.24,-604.85C48.07,-546.15 67.52,-292.58 121,-239 134.79,-225.18 155.13,-219.3 173.98,-217.12"/>
+<polygon fill="#000000" stroke="#000000" points="174.29,-220.61 183.95,-216.27 173.69,-213.63 174.29,-220.61"/>
 </g>
-<!-- exact_nei_tree_update -->
+<!-- none~get_nstar_id_atm -->
+<g id="proc~~perform_apm~~CallsGraph_node27" class="node">
+<title>none~get_nstar_id_atm</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="275,-150 172,-150 172,-126 275,-126 275,-150"/>
+<text text-anchor="middle" x="223.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_nstar_id_atm</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;none~get_nstar_id_atm -->
+<g id="proc~~perform_apm~~CallsGraph_edge26" class="edge">
+<title>proc~perform_apm&#45;&gt;none~get_nstar_id_atm</title>
+<path fill="none" stroke="#000000" d="M43.85,-604.76C45.98,-539.3 59.21,-231.03 121,-164 131.67,-152.43 146.73,-145.7 161.98,-141.88"/>
+<polygon fill="#000000" stroke="#000000" points="162.93,-145.26 171.99,-139.76 161.49,-138.41 162.93,-145.26"/>
+</g>
+<!-- proc~is_finite_number -->
 <g id="proc~~perform_apm~~CallsGraph_node28" class="node">
-<title>exact_nei_tree_update</title>
-<polygon fill="#777777" stroke="#777777" points="304.5,-24 172.5,-24 172.5,0 304.5,0 304.5,-24"/>
-<text text-anchor="middle" x="238.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">exact_nei_tree_update</text>
-</g>
-<!-- proc~perform_apm&#45;&gt;exact_nei_tree_update -->
-<g id="proc~~perform_apm~~CallsGraph_edge27" class="edge">
-<title>proc~perform_apm&#45;&gt;exact_nei_tree_update</title>
-<path fill="none" stroke="#000000" d="M43.48,-539.82C43.6,-468.77 47.88,-108.35 121,-33 131.98,-21.69 146.83,-15.27 162.26,-11.83"/>
-<polygon fill="#000000" stroke="#000000" points="163.23,-15.21 172.45,-9.97 161.98,-8.32 163.23,-15.21"/>
-</g>
-<!-- proc~correct_center_of_mass&#45;&gt;com -->
-<g id="proc~~perform_apm~~CallsGraph_edge28" class="edge">
-<title>proc~correct_center_of_mass&#45;&gt;com</title>
-<path fill="none" stroke="#000000" d="M301.47,-1149.03C377.34,-1160.28 506.87,-1167.86 597,-1111 668.5,-1065.9 702.46,-963.1 714.34,-917.96"/>
-<polygon fill="#000000" stroke="#000000" points="717.8,-918.58 716.84,-908.03 711.01,-916.87 717.8,-918.58"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry -->
-<g id="proc~~perform_apm~~CallsGraph_node29" class="node">
-<title>proc~impose_equatorial_plane_symmetry</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node29"><a xlink:href=".././proc/impose_equatorial_plane_symmetry.html" xlink:title="impose_equatorial_plane_symmetry">
-<polygon fill="#d9534f" stroke="#d9534f" points="597,-863 392,-863 392,-839 597,-839 597,-863"/>
-<text text-anchor="middle" x="494.5" y="-848.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">impose_equatorial_plane_symmetry</text>
+<title>proc~is_finite_number</title>
+<g id="a_proc~~perform_apm~~CallsGraph_node28"><a xlink:href=".././proc/is_finite_number.html" xlink:title="is_finite_number">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="514.5,-190 414.5,-190 414.5,-166 514.5,-166 514.5,-190"/>
+<text text-anchor="middle" x="464.5" y="-175.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">is_finite_number</text>
 </a>
 </g>
 </g>
-<!-- interface~impose_equatorial_plane_symmetry&#45;&gt;proc~impose_equatorial_plane_symmetry -->
+<!-- proc~perform_apm&#45;&gt;proc~is_finite_number -->
+<g id="proc~~perform_apm~~CallsGraph_edge27" class="edge">
+<title>proc~perform_apm&#45;&gt;proc~is_finite_number</title>
+<path fill="none" stroke="#000000" d="M43.81,-604.61C45.7,-541.1 57.69,-252.73 121,-197 161.64,-161.22 317.38,-166.69 404.18,-172.85"/>
+<polygon fill="#000000" stroke="#000000" points="404.18,-176.36 414.41,-173.61 404.7,-169.38 404.18,-176.36"/>
+</g>
+<!-- deallocate_sph_memory -->
+<g id="proc~~perform_apm~~CallsGraph_node29" class="node">
+<title>deallocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="295,-108 152,-108 152,-84 295,-84 295,-108"/>
+<text text-anchor="middle" x="223.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_sph_memory</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;deallocate_sph_memory -->
+<g id="proc~~perform_apm~~CallsGraph_edge28" class="edge">
+<title>proc~perform_apm&#45;&gt;deallocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M43.58,-604.84C44.3,-535.46 51.39,-190.2 121,-117 126.97,-110.72 134.29,-106.06 142.23,-102.63"/>
+<polygon fill="#000000" stroke="#000000" points="143.6,-105.86 151.8,-99.15 141.21,-99.28 143.6,-105.86"/>
+</g>
+<!-- allocate_sph_memory -->
+<g id="proc~~perform_apm~~CallsGraph_node30" class="node">
+<title>allocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="288.5,-66 158.5,-66 158.5,-42 288.5,-42 288.5,-66"/>
+<text text-anchor="middle" x="223.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_sph_memory</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;allocate_sph_memory -->
 <g id="proc~~perform_apm~~CallsGraph_edge29" class="edge">
-<title>interface~impose_equatorial_plane_symmetry&#45;&gt;proc~impose_equatorial_plane_symmetry</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M341.35,-842.61C354.55,-843.34 368.12,-844.09 381.47,-844.83"/>
-<polygon fill="#000000" stroke="#000000" points="381.45,-848.33 391.63,-845.39 381.84,-841.34 381.45,-848.33"/>
+<title>proc~perform_apm&#45;&gt;allocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M43.42,-604.79C43.21,-531.93 45.81,-155 121,-75 128.5,-67.02 138.17,-61.65 148.56,-58.09"/>
+<polygon fill="#000000" stroke="#000000" points="149.61,-61.43 158.26,-55.32 147.68,-54.7 149.61,-61.43"/>
+</g>
+<!-- ncand -->
+<g id="proc~~perform_apm~~CallsGraph_node31" class="node">
+<title>ncand</title>
+<polygon fill="#777777" stroke="#777777" points="250.5,-24 196.5,-24 196.5,0 250.5,0 250.5,-24"/>
+<text text-anchor="middle" x="223.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ncand</text>
+</g>
+<!-- proc~perform_apm&#45;&gt;ncand -->
+<g id="proc~~perform_apm~~CallsGraph_edge30" class="edge">
+<title>proc~perform_apm&#45;&gt;ncand</title>
+<path fill="none" stroke="#000000" d="M43.28,-604.85C42.2,-528.92 40.18,-119.86 121,-33 137.4,-15.37 164.39,-10.43 186.41,-9.74"/>
+<polygon fill="#000000" stroke="#000000" points="186.46,-13.24 196.44,-9.69 186.43,-6.24 186.46,-13.24"/>
 </g>
 <!-- proc~check_particle_positions -->
-<g id="proc~~perform_apm~~CallsGraph_node32" class="node">
+<g id="proc~~perform_apm~~CallsGraph_node35" class="node">
 <title>proc~check_particle_positions</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node32"><a xlink:href=".././proc/check_particle_positions.html" xlink:title="check_particle_positions">
-<polygon fill="#d9534f" stroke="#d9534f" points="565.5,-401 423.5,-401 423.5,-377 565.5,-377 565.5,-401"/>
-<text text-anchor="middle" x="494.5" y="-386.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">check_particle_positions</text>
+<g id="a_proc~~perform_apm~~CallsGraph_node35"><a xlink:href=".././proc/check_particle_positions.html" xlink:title="check_particle_positions">
+<polygon fill="#d9534f" stroke="#d9534f" points="535.5,-978 393.5,-978 393.5,-954 535.5,-954 535.5,-978"/>
+<text text-anchor="middle" x="464.5" y="-963.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">check_particle_positions</text>
 </a>
 </g>
 </g>
 <!-- interface~check_particle_positions&#45;&gt;proc~check_particle_positions -->
-<g id="proc~~perform_apm~~CallsGraph_edge30" class="edge">
-<title>interface~check_particle_positions&#45;&gt;proc~check_particle_positions</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M309.58,-389.72C341.65,-389.6 379.83,-389.45 413.06,-389.32"/>
-<polygon fill="#000000" stroke="#000000" points="413.22,-392.82 423.21,-389.28 413.2,-385.82 413.22,-392.82"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;allocate_rcb_tree_memory_3d -->
-<g id="proc~~perform_apm~~CallsGraph_edge34" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;allocate_rcb_tree_memory_3d</title>
-<path fill="none" stroke="#000000" d="M323.6,-794.01C335.86,-799.07 347.27,-806.14 356,-816 421.67,-890.19 323.42,-964.49 392,-1036 394.16,-1038.25 396.49,-1040.3 398.97,-1042.15"/>
-<polygon fill="#000000" stroke="#000000" points="397.54,-1045.38 407.87,-1047.74 401.26,-1039.46 397.54,-1045.38"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;deallocate_sph_memory -->
-<g id="proc~~perform_apm~~CallsGraph_edge35" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;deallocate_sph_memory</title>
-<path fill="none" stroke="#000000" d="M322.7,-794.05C335.22,-799.09 346.95,-806.15 356,-816 410.61,-875.43 335.05,-936.8 392,-994 398.07,-1000.1 405.41,-1004.65 413.33,-1008.02"/>
-<polygon fill="#000000" stroke="#000000" points="412.27,-1011.36 422.87,-1011.46 414.65,-1004.77 412.27,-1011.36"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;deallocate_metric_on_particles -->
-<g id="proc~~perform_apm~~CallsGraph_edge36" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;deallocate_metric_on_particles</title>
-<path fill="none" stroke="#000000" d="M321.02,-794.05C334.03,-799.07 346.37,-806.12 356,-816 399.65,-860.77 346.59,-909.01 392,-952 393.52,-953.44 395.11,-954.79 396.76,-956.06"/>
-<polygon fill="#000000" stroke="#000000" points="395.2,-959.22 405.49,-961.74 399.02,-953.35 395.2,-959.22"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;iorig -->
 <g id="proc~~perform_apm~~CallsGraph_edge31" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;iorig</title>
-<path fill="none" stroke="#000000" d="M317.31,-794.1C331.39,-799.08 345.06,-806.11 356,-816 387.65,-844.62 359.88,-876.91 392,-905 409.89,-920.64 435.95,-927.09 457.18,-929.66"/>
-<polygon fill="#000000" stroke="#000000" points="456.87,-933.14 467.16,-930.63 457.55,-926.17 456.87,-933.14"/>
+<title>interface~check_particle_positions&#45;&gt;proc~check_particle_positions</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M294.59,-966C322.44,-966 354.63,-966 383.39,-966"/>
+<polygon fill="#000000" stroke="#000000" points="383.41,-969.5 393.41,-966 383.41,-962.5 383.41,-969.5"/>
 </g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;com -->
-<g id="proc~~perform_apm~~CallsGraph_edge38" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;com</title>
-<path fill="none" stroke="#000000" d="M310.75,-794.09C326.67,-799.07 342.75,-806.1 356,-816 379.7,-833.71 366.57,-856.88 392,-872 440.23,-900.67 607.88,-899.44 682.82,-897.34"/>
-<polygon fill="#000000" stroke="#000000" points="683.29,-900.83 693.18,-897.03 683.08,-893.83 683.29,-900.83"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;deallocate_rcb_tree_memory_3d -->
-<g id="proc~~perform_apm~~CallsGraph_edge41" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;deallocate_rcb_tree_memory_3d</title>
-<path fill="none" stroke="#000000" d="M301.96,-769.95C338.1,-762.98 383.73,-754.18 421.39,-746.91"/>
-<polygon fill="#000000" stroke="#000000" points="422.12,-750.33 431.28,-745 420.8,-743.46 422.12,-750.33"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;allocate_metric_on_particles -->
-<g id="proc~~perform_apm~~CallsGraph_edge42" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;allocate_metric_on_particles</title>
-<path fill="none" stroke="#000000" d="M261.59,-769.92C290.7,-754.47 343.84,-727.81 392,-712 399.33,-709.59 407.06,-707.4 414.84,-705.42"/>
-<polygon fill="#000000" stroke="#000000" points="415.8,-708.79 424.7,-703.03 414.15,-701.99 415.8,-708.79"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;allocate_gradient -->
-<g id="proc~~perform_apm~~CallsGraph_edge33" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;allocate_gradient</title>
-<path fill="none" stroke="#000000" d="M252.14,-769.67C276.81,-746.35 334.08,-695.78 392,-670 404.25,-664.55 417.97,-660.49 431.26,-657.48"/>
-<polygon fill="#000000" stroke="#000000" points="432.24,-660.85 441.31,-655.37 430.8,-654 432.24,-660.85"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;allocate_sph_memory -->
-<g id="proc~~perform_apm~~CallsGraph_edge37" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;allocate_sph_memory</title>
-<path fill="none" stroke="#000000" d="M247.77,-769.62C268.31,-739.92 324.86,-664.43 392,-628 400.6,-623.33 410.13,-619.7 419.8,-616.88"/>
-<polygon fill="#000000" stroke="#000000" points="420.72,-620.25 429.49,-614.31 418.92,-613.49 420.72,-620.25"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;h -->
-<g id="proc~~perform_apm~~CallsGraph_edge39" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;h</title>
-<path fill="none" stroke="#000000" d="M245.06,-769.92C261.76,-735.09 315.14,-633.85 392,-586 411.51,-573.85 436.82,-568.6 457.29,-566.38"/>
-<polygon fill="#000000" stroke="#000000" points="457.84,-569.85 467.49,-565.48 457.22,-562.88 457.84,-569.85"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;deallocate_gradient -->
-<g id="proc~~perform_apm~~CallsGraph_edge40" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;deallocate_gradient</title>
-<path fill="none" stroke="#000000" d="M243.39,-769.97C256.82,-730.43 305.27,-603.65 392,-544 401.79,-537.27 413.28,-532.61 424.94,-529.41"/>
-<polygon fill="#000000" stroke="#000000" points="425.84,-532.79 434.74,-527.04 424.2,-525.99 425.84,-532.79"/>
-</g>
-<!-- interface~reflect_particles_xy_plane -->
-<g id="proc~~perform_apm~~CallsGraph_node30" class="node">
-<title>interface~reflect_particles_xy_plane</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node30"><a xlink:href=".././interface/reflect_particles_xy_plane.html" xlink:title="reflect_particles_xy_plane">
-<polygon fill="#a7506f" stroke="#a7506f" points="795.5,-858 645.5,-858 645.5,-834 795.5,-834 795.5,-858"/>
-<text text-anchor="middle" x="720.5" y="-843.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">reflect_particles_xy_plane</text>
-</a>
-</g>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;interface~reflect_particles_xy_plane -->
+<!-- proc~correct_center_of_mass&#45;&gt;com -->
 <g id="proc~~perform_apm~~CallsGraph_edge32" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;interface~reflect_particles_xy_plane</title>
-<path fill="none" stroke="#000000" d="M329.5,-794C417.24,-805.7 549.62,-823.35 635.31,-834.77"/>
-<polygon fill="#000000" stroke="#000000" points="634.89,-838.25 645.26,-836.1 635.82,-831.31 634.89,-838.25"/>
+<title>proc~correct_center_of_mass&#45;&gt;com</title>
+<path fill="none" stroke="#000000" d="M533.62,-804C572.94,-804 620.83,-804 653.06,-804"/>
+<polygon fill="#000000" stroke="#000000" points="653.36,-807.5 663.36,-804 653.36,-800.5 653.36,-807.5"/>
 </g>
-<!-- interface~find_particles_above_xy_plane -->
+<!-- proc~impose_equatorial_plane_symmetry -->
 <g id="proc~~perform_apm~~CallsGraph_node34" class="node">
-<title>interface~find_particles_above_xy_plane</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node34"><a xlink:href=".././interface/find_particles_above_xy_plane.html" xlink:title="find_particles_above_xy_plane">
-<polygon fill="#a7506f" stroke="#a7506f" points="808,-799 633,-799 633,-775 808,-775 808,-799"/>
-<text text-anchor="middle" x="720.5" y="-784.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find_particles_above_xy_plane</text>
+<title>proc~impose_equatorial_plane_symmetry</title>
+<g id="a_proc~~perform_apm~~CallsGraph_node34"><a xlink:href=".././proc/impose_equatorial_plane_symmetry.html" xlink:title="impose_equatorial_plane_symmetry">
+<polygon fill="#d9534f" stroke="#d9534f" points="567,-566 362,-566 362,-542 567,-542 567,-566"/>
+<text text-anchor="middle" x="464.5" y="-551.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">impose_equatorial_plane_symmetry</text>
 </a>
 </g>
 </g>
-<!-- proc~impose_equatorial_plane_symmetry_apm&#45;&gt;interface~find_particles_above_xy_plane -->
-<g id="proc~~perform_apm~~CallsGraph_edge43" class="edge">
-<title>proc~impose_equatorial_plane_symmetry_apm&#45;&gt;interface~find_particles_above_xy_plane</title>
-<path fill="none" stroke="#000000" d="M356,-783.21C437.66,-784.06 545.54,-785.19 622.51,-785.99"/>
-<polygon fill="#000000" stroke="#000000" points="622.66,-789.49 632.69,-786.1 622.73,-782.49 622.66,-789.49"/>
-</g>
-<!-- none~get_nstar_id_atm&#45;&gt;proc~is_finite_number -->
-<g id="proc~~perform_apm~~CallsGraph_edge44" class="edge">
-<title>none~get_nstar_id_atm&#45;&gt;proc~is_finite_number</title>
-<path fill="none" stroke="#000000" d="M290.29,-440.2C331.79,-446.9 390.52,-456.38 434.18,-463.43"/>
-<polygon fill="#000000" stroke="#000000" points="433.66,-466.89 444.09,-465.03 434.78,-459.98 433.66,-466.89"/>
-</g>
-<!-- get_nstar_id -->
-<g id="proc~~perform_apm~~CallsGraph_node31" class="node">
-<title>get_nstar_id</title>
-<polygon fill="#777777" stroke="#777777" points="533,-443 456,-443 456,-419 533,-419 533,-443"/>
-<text text-anchor="middle" x="494.5" y="-428.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_nstar_id</text>
-</g>
-<!-- none~get_nstar_id_atm&#45;&gt;get_nstar_id -->
-<g id="proc~~perform_apm~~CallsGraph_edge45" class="edge">
-<title>none~get_nstar_id_atm&#45;&gt;get_nstar_id</title>
-<path fill="none" stroke="#000000" d="M290.29,-431.8C335.59,-431.62 401.42,-431.36 445.77,-431.19"/>
-<polygon fill="#000000" stroke="#000000" points="446.01,-434.69 456,-431.15 445.98,-427.69 446.01,-434.69"/>
+<!-- interface~impose_equatorial_plane_symmetry&#45;&gt;proc~impose_equatorial_plane_symmetry -->
+<g id="proc~~perform_apm~~CallsGraph_edge33" class="edge">
+<title>interface~impose_equatorial_plane_symmetry&#45;&gt;proc~impose_equatorial_plane_symmetry</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M292.99,-524.04C321.74,-529.09 355.34,-534.99 385.08,-540.22"/>
+<polygon fill="#000000" stroke="#000000" points="384.55,-543.68 395,-541.96 385.76,-536.78 384.55,-543.68"/>
 </g>
 <!-- validate_position -->
 <g id="proc~~perform_apm~~CallsGraph_node33" class="node">
 <title>validate_position</title>
-<polygon fill="#777777" stroke="#777777" points="546,-150 443,-150 443,-126 546,-126 546,-150"/>
-<text text-anchor="middle" x="494.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">validate_position</text>
+<polygon fill="#777777" stroke="#777777" points="516,-650 413,-650 413,-626 516,-626 516,-650"/>
+<text text-anchor="middle" x="464.5" y="-635.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">validate_position</text>
 </g>
 <!-- none~validate_position_final&#45;&gt;validate_position -->
-<g id="proc~~perform_apm~~CallsGraph_edge46" class="edge">
+<g id="proc~~perform_apm~~CallsGraph_edge34" class="edge">
 <title>none~validate_position_final&#45;&gt;validate_position</title>
-<path fill="none" stroke="#000000" d="M304.25,-138C343.78,-138 394.01,-138 432.78,-138"/>
-<polygon fill="#000000" stroke="#000000" points="432.88,-141.5 442.88,-138 432.88,-134.5 432.88,-141.5"/>
+<path fill="none" stroke="#000000" d="M289.18,-638C324.53,-638 368.06,-638 402.78,-638"/>
+<polygon fill="#000000" stroke="#000000" points="402.79,-641.5 412.79,-638 402.79,-634.5 402.79,-641.5"/>
+</g>
+<!-- none~get_nstar_id_atm&#45;&gt;proc~is_finite_number -->
+<g id="proc~~perform_apm~~CallsGraph_edge36" class="edge">
+<title>none~get_nstar_id_atm&#45;&gt;proc~is_finite_number</title>
+<path fill="none" stroke="#000000" d="M275.19,-146.48C312.88,-152.79 364.42,-161.42 404.05,-168.05"/>
+<polygon fill="#000000" stroke="#000000" points="403.67,-171.54 414.11,-169.73 404.83,-164.63 403.67,-171.54"/>
+</g>
+<!-- get_nstar_id -->
+<g id="proc~~perform_apm~~CallsGraph_node32" class="node">
+<title>get_nstar_id</title>
+<polygon fill="#777777" stroke="#777777" points="503,-148 426,-148 426,-124 503,-124 503,-148"/>
+<text text-anchor="middle" x="464.5" y="-133.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_nstar_id</text>
+</g>
+<!-- none~get_nstar_id_atm&#45;&gt;get_nstar_id -->
+<g id="proc~~perform_apm~~CallsGraph_edge35" class="edge">
+<title>none~get_nstar_id_atm&#45;&gt;get_nstar_id</title>
+<path fill="none" stroke="#000000" d="M275.19,-137.58C316.66,-137.23 374.9,-136.74 415.6,-136.4"/>
+<polygon fill="#000000" stroke="#000000" points="415.83,-139.9 425.8,-136.32 415.77,-132.9 415.83,-139.9"/>
 </g>
 <!-- proc~impose_equatorial_plane_symmetry&#45;&gt;com -->
-<g id="proc~~perform_apm~~CallsGraph_edge49" class="edge">
+<g id="proc~~perform_apm~~CallsGraph_edge39" class="edge">
 <title>proc~impose_equatorial_plane_symmetry&#45;&gt;com</title>
-<path fill="none" stroke="#000000" d="M555.23,-863C595.99,-871.19 648.65,-881.77 683.21,-888.71"/>
-<polygon fill="#000000" stroke="#000000" points="682.83,-892.2 693.33,-890.74 684.21,-885.34 682.83,-892.2"/>
+<path fill="none" stroke="#000000" d="M491.41,-566.06C513.3,-577.14 544.59,-595.13 567,-617 619.3,-668.04 660.94,-745.17 679.3,-782.39"/>
+<polygon fill="#000000" stroke="#000000" points="676.34,-784.31 683.85,-791.78 682.64,-781.25 676.34,-784.31"/>
 </g>
-<!-- proc~impose_equatorial_plane_symmetry&#45;&gt;interface~reflect_particles_xy_plane -->
-<g id="proc~~perform_apm~~CallsGraph_edge47" class="edge">
-<title>proc~impose_equatorial_plane_symmetry&#45;&gt;interface~reflect_particles_xy_plane</title>
-<path fill="none" stroke="#000000" d="M597.01,-848.73C609.77,-848.45 622.7,-848.16 635.15,-847.88"/>
-<polygon fill="#000000" stroke="#000000" points="635.56,-851.37 645.47,-847.65 635.4,-844.38 635.56,-851.37"/>
-</g>
-<!-- proc~impose_equatorial_plane_symmetry&#45;&gt;interface~find_particles_above_xy_plane -->
-<g id="proc~~perform_apm~~CallsGraph_edge48" class="edge">
-<title>proc~impose_equatorial_plane_symmetry&#45;&gt;interface~find_particles_above_xy_plane</title>
-<path fill="none" stroke="#000000" d="M537.63,-838.96C574.43,-828.45 627.99,-813.14 667.46,-801.87"/>
-<polygon fill="#000000" stroke="#000000" points="668.52,-805.21 677.18,-799.09 666.6,-798.47 668.52,-805.21"/>
-</g>
-<!-- proc~reflect_particles_xy_plane -->
-<g id="proc~~perform_apm~~CallsGraph_node35" class="node">
-<title>proc~reflect_particles_xy_plane</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node35"><a xlink:href=".././proc/reflect_particles_xy_plane.html" xlink:title="reflect_particles_xy_plane">
-<polygon fill="#d9534f" stroke="#d9534f" points="1006.5,-858 856.5,-858 856.5,-834 1006.5,-834 1006.5,-858"/>
-<text text-anchor="middle" x="931.5" y="-843.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">reflect_particles_xy_plane</text>
+<!-- interface~find_particles_above_xy_plane -->
+<g id="proc~~perform_apm~~CallsGraph_node36" class="node">
+<title>interface~find_particles_above_xy_plane</title>
+<g id="a_proc~~perform_apm~~CallsGraph_node36"><a xlink:href=".././interface/find_particles_above_xy_plane.html" xlink:title="find_particles_above_xy_plane">
+<polygon fill="#a7506f" stroke="#a7506f" points="778,-545 603,-545 603,-521 778,-521 778,-545"/>
+<text text-anchor="middle" x="690.5" y="-530.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find_particles_above_xy_plane</text>
 </a>
 </g>
 </g>
-<!-- interface~reflect_particles_xy_plane&#45;&gt;proc~reflect_particles_xy_plane -->
-<g id="proc~~perform_apm~~CallsGraph_edge50" class="edge">
-<title>interface~reflect_particles_xy_plane&#45;&gt;proc~reflect_particles_xy_plane</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M795.77,-846C812.1,-846 829.5,-846 846.18,-846"/>
-<polygon fill="#000000" stroke="#000000" points="846.47,-849.5 856.47,-846 846.47,-842.5 846.47,-849.5"/>
+<!-- proc~impose_equatorial_plane_symmetry&#45;&gt;interface~find_particles_above_xy_plane -->
+<g id="proc~~perform_apm~~CallsGraph_edge37" class="edge">
+<title>proc~impose_equatorial_plane_symmetry&#45;&gt;interface~find_particles_above_xy_plane</title>
+<path fill="none" stroke="#000000" d="M567.01,-544.48C575.49,-543.69 584.05,-542.89 592.49,-542.09"/>
+<polygon fill="#000000" stroke="#000000" points="593.09,-545.55 602.72,-541.14 592.43,-538.58 593.09,-545.55"/>
+</g>
+<!-- interface~reflect_particles_xy_plane -->
+<g id="proc~~perform_apm~~CallsGraph_node37" class="node">
+<title>interface~reflect_particles_xy_plane</title>
+<g id="a_proc~~perform_apm~~CallsGraph_node37"><a xlink:href=".././interface/reflect_particles_xy_plane.html" xlink:title="reflect_particles_xy_plane">
+<polygon fill="#a7506f" stroke="#a7506f" points="765.5,-587 615.5,-587 615.5,-563 765.5,-563 765.5,-587"/>
+<text text-anchor="middle" x="690.5" y="-572.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">reflect_particles_xy_plane</text>
+</a>
+</g>
+</g>
+<!-- proc~impose_equatorial_plane_symmetry&#45;&gt;interface~reflect_particles_xy_plane -->
+<g id="proc~~perform_apm~~CallsGraph_edge38" class="edge">
+<title>proc~impose_equatorial_plane_symmetry&#45;&gt;interface~reflect_particles_xy_plane</title>
+<path fill="none" stroke="#000000" d="M567.01,-563.52C579.77,-564.71 592.7,-565.92 605.15,-567.09"/>
+<polygon fill="#000000" stroke="#000000" points="605.19,-570.61 615.47,-568.06 605.85,-563.64 605.19,-570.61"/>
 </g>
 <!-- indexx -->
-<g id="proc~~perform_apm~~CallsGraph_node36" class="node">
+<g id="proc~~perform_apm~~CallsGraph_node38" class="node">
 <title>indexx</title>
-<polygon fill="#777777" stroke="#777777" points="747.5,-401 693.5,-401 693.5,-377 747.5,-377 747.5,-401"/>
-<text text-anchor="middle" x="720.5" y="-386.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">indexx</text>
+<polygon fill="#777777" stroke="#777777" points="717.5,-978 663.5,-978 663.5,-954 717.5,-954 717.5,-978"/>
+<text text-anchor="middle" x="690.5" y="-963.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">indexx</text>
 </g>
 <!-- proc~check_particle_positions&#45;&gt;indexx -->
-<g id="proc~~perform_apm~~CallsGraph_edge51" class="edge">
+<g id="proc~~perform_apm~~CallsGraph_edge40" class="edge">
 <title>proc~check_particle_positions&#45;&gt;indexx</title>
-<path fill="none" stroke="#000000" d="M565.76,-389C604.72,-389 651.55,-389 683.21,-389"/>
-<polygon fill="#000000" stroke="#000000" points="683.33,-392.5 693.33,-389 683.33,-385.5 683.33,-392.5"/>
+<path fill="none" stroke="#000000" d="M535.76,-966C574.72,-966 621.55,-966 653.21,-966"/>
+<polygon fill="#000000" stroke="#000000" points="653.33,-969.5 663.33,-966 653.33,-962.5 653.33,-969.5"/>
 </g>
 <!-- proc~find_particles_above_xy_plane -->
-<g id="proc~~perform_apm~~CallsGraph_node37" class="node">
+<g id="proc~~perform_apm~~CallsGraph_node40" class="node">
 <title>proc~find_particles_above_xy_plane</title>
-<g id="a_proc~~perform_apm~~CallsGraph_node37"><a xlink:href=".././proc/find_particles_above_xy_plane.html" xlink:title="find_particles_above_xy_plane">
-<polygon fill="#d9534f" stroke="#d9534f" points="1019,-799 844,-799 844,-775 1019,-775 1019,-799"/>
-<text text-anchor="middle" x="931.5" y="-784.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find_particles_above_xy_plane</text>
+<g id="a_proc~~perform_apm~~CallsGraph_node40"><a xlink:href=".././proc/find_particles_above_xy_plane.html" xlink:title="find_particles_above_xy_plane">
+<polygon fill="#d9534f" stroke="#d9534f" points="989,-545 814,-545 814,-521 989,-521 989,-545"/>
+<text text-anchor="middle" x="901.5" y="-530.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find_particles_above_xy_plane</text>
 </a>
 </g>
 </g>
 <!-- interface~find_particles_above_xy_plane&#45;&gt;proc~find_particles_above_xy_plane -->
-<g id="proc~~perform_apm~~CallsGraph_edge52" class="edge">
+<g id="proc~~perform_apm~~CallsGraph_edge41" class="edge">
 <title>interface~find_particles_above_xy_plane&#45;&gt;proc~find_particles_above_xy_plane</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M808.02,-787C816.49,-787 825.13,-787 833.7,-787"/>
-<polygon fill="#000000" stroke="#000000" points="833.71,-790.5 843.71,-787 833.71,-783.5 833.71,-790.5"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M778.02,-533C786.49,-533 795.13,-533 803.7,-533"/>
+<polygon fill="#000000" stroke="#000000" points="803.71,-536.5 813.71,-533 803.71,-529.5 803.71,-536.5"/>
+</g>
+<!-- proc~reflect_particles_xy_plane -->
+<g id="proc~~perform_apm~~CallsGraph_node39" class="node">
+<title>proc~reflect_particles_xy_plane</title>
+<g id="a_proc~~perform_apm~~CallsGraph_node39"><a xlink:href=".././proc/reflect_particles_xy_plane.html" xlink:title="reflect_particles_xy_plane">
+<polygon fill="#d9534f" stroke="#d9534f" points="976.5,-587 826.5,-587 826.5,-563 976.5,-563 976.5,-587"/>
+<text text-anchor="middle" x="901.5" y="-572.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">reflect_particles_xy_plane</text>
+</a>
+</g>
+</g>
+<!-- interface~reflect_particles_xy_plane&#45;&gt;proc~reflect_particles_xy_plane -->
+<g id="proc~~perform_apm~~CallsGraph_edge42" class="edge">
+<title>interface~reflect_particles_xy_plane&#45;&gt;proc~reflect_particles_xy_plane</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M765.77,-575C782.1,-575 799.5,-575 816.18,-575"/>
+<polygon fill="#000000" stroke="#000000" points="816.47,-578.5 826.47,-575 816.47,-571.5 816.47,-578.5"/>
 </g>
 </g>
 </svg>
@@ -1571,23 +1597,31 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-a~5">a</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-a~4">a</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-a2">a2</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-a_numax">a_numax</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-a_numax2">a_numax2</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-a_numin">a_numin</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-a_numin2">a_numin2</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-all_pos~2">all_pos</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-all_pos">all_pos</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-all_pos_best">all_pos_best</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-all_pos_prev">all_pos_prev</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-all_pos_tmp">all_pos_tmp</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-art_pr">art_pr</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-art_pr_max">art_pr_max</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-art_pr_max_prev">art_pr_max_prev</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-atmosphere_density">atmosphere_density</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-baryon_density~43">baryon_density</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-cnt1">cnt1</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_d~3">com_d</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_x~3">com_x</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_y~3">com_y</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_z~3">com_z</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-cnt_move">cnt_move</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_d~2">com_d</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_x~2">com_x</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_y~2">com_y</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-com_z~2">com_z</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-correction_pos">correction_pos</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-dn">dN</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dn_av">dN_av</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dn_max">dN_max</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-dnstar">dNstar</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-debug~2">debug</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dens_min">dens_min</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dim_seed">dim_seed</a>
@@ -1595,6 +1629,7 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dy~6">dy</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-dz~6">dz</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-ellipse_thickness">ellipse_thickness</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-energy_density~34">energy_density</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-eps">eps</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-err_n_max">err_N_max</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-err_n_mean">err_N_mean</a>
@@ -1602,15 +1637,21 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-err_n_mean_min_old">err_N_mean_min_old</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-err_mean_old">err_mean_old</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-err_n_min">err_n_min</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-exist~9">exist</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-exist~8">exist</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-few_ncand">few_ncand</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-finalnamefile~5">finalnamefile</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-finalnamefile~4">finalnamefile</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-find_h_bruteforce_timer">find_h_bruteforce_timer</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-fld~2">fld</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-freeze">freeze</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_xx~15">g_xx</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_xy~15">g_xy</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_xz~15">g_xz</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_yy~15">g_yy</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_yz~15">g_yz</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-g_zz~15">g_zz</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-ghost_pos">ghost_pos</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-ghost_pos_tmp">ghost_pos_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-h_av">h_av</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-h_guess~2">h_guess</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-h_guess">h_guess</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-h_guess_tmp">h_guess_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-h_max">h_max</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-h_tmp">h_tmp</a>
@@ -1622,6 +1663,7 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-j~6">j</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-k~6">k</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-l~18">l</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-lapse~37">lapse</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-larger_radius">larger_radius</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-m_max_it">m_max_it</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-max_art_pr_ghost">max_art_pr_ghost</a>
@@ -1640,16 +1682,21 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nearest_neighbors">nearest_neighbors</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-neighbors_lists">neighbors_lists</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nn_des">nn_des</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_all~2">npart_all</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_ghost~4">npart_ghost</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_real~5">npart_real</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_all">npart_all</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_ghost">npart_ghost</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_real~2">npart_real</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-npart_real_half">npart_real_half</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_eul_id">nstar_eul_id</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_id">nstar_id</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_id_err">nstar_id_err</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_int~2">nstar_int</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_sph~2">nstar_sph</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nstar_sph_err">nstar_sph_err</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_all">nu_all</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_eul">nu_eul</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_one">nu_one</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_ratio">nu_ratio</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_tmp">nu_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_tmp2">nu_tmp2</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nu_tot">nu_tot</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-nuratio_tmp">nuratio_tmp</a>
@@ -1660,10 +1707,11 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-phi~6">phi</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-phi_ell">phi_ell</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-phi_tmp">phi_tmp</a>
-      <a class="list-group-item" href="../proc/perform_apm.html#variable-pos~24">pos</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-pos~23">pos</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-pos_corr_tmp~2">pos_corr_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-pos_maxerr">pos_maxerr</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-pos_tmp">pos_tmp</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-pressure~21">pressure</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-pvol_tmp">pvol_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-r~3">r</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-r_ell">r_ell</a>
@@ -1677,9 +1725,14 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-rand_num">rand_num</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-rand_num2">rand_num2</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-rel_sign">rel_sign</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-rho_tmp~2">rho_tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-search_pos">search_pos</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-seed">seed</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-shift_x~29">shift_x</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-shift_y~29">shift_y</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-shift_z~29">shift_z</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-smaller_radius">smaller_radius</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-specific_energy~35">specific_energy</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-stddev_dn">stddev_dN</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-stddev_nu">stddev_nu</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-theta~4">theta</a>
@@ -1688,6 +1741,9 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-tiny_real~3">tiny_real</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-tmp">tmp</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-tol">tol</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-v_euler_x~17">v_euler_x</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-v_euler_y~17">v_euler_y</a>
+      <a class="list-group-item" href="../proc/perform_apm.html#variable-v_euler_z~17">v_euler_z</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-variance_dn">variance_dN</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-variance_nu">variance_nu</a>
       <a class="list-group-item" href="../proc/perform_apm.html#variable-x_ell">x_ell</a>
@@ -1732,7 +1788,7 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-a~5"></span>integer,</td>
+  <td><span class="anchor" id="variable-a~4"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>a</strong></td><td></td><td></td><td></td>
 </tr>
@@ -1762,9 +1818,29 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>a_numin2</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-all_pos~2"></span>double precision,</td>
+  <td><span class="anchor" id="variable-all_pos"></span>double precision,</td>
 <td>private,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
   <td><strong>all_pos</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-all_pos_best"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>all_pos_best</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-all_pos_prev"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>all_pos_prev</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-all_pos_tmp"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>all_pos_tmp</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-art_pr"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>art_pr</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-art_pr_max"></span>double precision,</td>
@@ -1772,14 +1848,14 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>art_pr_max</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-art_pr_max_prev"></span>double precision,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>art_pr_max_prev</strong></td><td></td><td></td><td></td>
-</tr>
-<tr>
   <td><span class="anchor" id="variable-atmosphere_density"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>atmosphere_density</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-baryon_density~43"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>baryon_density</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-cnt1"></span>integer,</td>
@@ -1787,24 +1863,39 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>cnt1</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-com_d~3"></span>double precision,</td>
+  <td><span class="anchor" id="variable-cnt_move"></span>integer,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>cnt_move</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-com_d~2"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>com_d</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-com_x~3"></span>double precision,</td>
+  <td><span class="anchor" id="variable-com_x~2"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>com_x</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-com_y~3"></span>double precision,</td>
+  <td><span class="anchor" id="variable-com_y~2"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>com_y</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-com_z~3"></span>double precision,</td>
+  <td><span class="anchor" id="variable-com_z~2"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>com_z</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-correction_pos"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
+  <td><strong>correction_pos</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dn"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>dN</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-dn_av"></span>double precision,</td>
@@ -1815,6 +1906,11 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><span class="anchor" id="variable-dn_max"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>dN_max</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-dnstar"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>dNstar</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-debug~2"></span>logical,</td>
@@ -1852,6 +1948,11 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>ellipse_thickness</strong></td><td> =</td><td>1.1D0</td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" id="variable-energy_density~34"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>energy_density</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-eps"></span>double precision,</td>
 <td>private,</td>  <td>parameter</td><td>::</td>
   <td><strong>eps</strong></td><td> =</td><td>5.0D-1</td><td></td>
@@ -1887,7 +1988,7 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>err_n_min</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-exist~9"></span>logical,</td>
+  <td><span class="anchor" id="variable-exist~8"></span>logical,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>exist</strong></td><td></td><td></td><td></td>
 </tr>
@@ -1897,7 +1998,7 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>few_ncand</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-finalnamefile~5"></span>character(len=:),</td>
+  <td><span class="anchor" id="variable-finalnamefile~4"></span>character(len=:),</td>
 <td>private,</td>  <td>ALLOCATABLE</td><td>::</td>
   <td><strong>finalnamefile</strong></td><td></td><td></td><td></td>
 </tr>
@@ -1907,20 +2008,49 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>find_h_bruteforce_timer</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-fld~2"></span>type(<a href='../type/apm_fields.html'>apm_fields</a>),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>fld</strong></td><td></td><td></td><td></td>
+  <td><span class="anchor" id="variable-freeze"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>freeze</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-g_xx~15"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>g_xx</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-g_xy~15"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>g_xy</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-g_xz~15"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>g_xz</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-g_yy~15"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>g_yy</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-g_yz~15"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>g_yz</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-g_zz~15"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>g_zz</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-ghost_pos"></span>double precision,</td>
 <td>private,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
-  <td><strong>ghost_pos</strong></td><td></td><td></td><td><p>Array storing the positions of the ghost particles. Only used when
- placing the ghost particles.</p></td>
+  <td><strong>ghost_pos</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-ghost_pos_tmp"></span>double precision,</td>
 <td>private,</td>  <td>DIMENSION(:,:,:,:), ALLOCATABLE</td><td>::</td>
-  <td><strong>ghost_pos_tmp</strong></td><td></td><td></td><td><p>Cache-array used when placing ghost particles</p></td>
+  <td><strong>ghost_pos_tmp</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-h_av"></span>double precision,</td>
@@ -1928,15 +2058,14 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>h_av</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-h_guess~2"></span>double precision,</td>
+  <td><span class="anchor" id="variable-h_guess"></span>double precision,</td>
 <td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
   <td><strong>h_guess</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-h_guess_tmp"></span>double precision,</td>
 <td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>h_guess_tmp</strong></td><td></td><td></td><td><p>Cache-array used to temporarily store the first guesses for the
- smoothing lengths</p></td>
+  <td><strong>h_guess_tmp</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-h_max"></span>double precision,</td>
@@ -1946,7 +2075,7 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
 <tr>
   <td><span class="anchor" id="variable-h_tmp"></span>double precision,</td>
 <td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
-  <td><strong>h_tmp</strong></td><td></td><td></td><td><p>Cache-array used to temporarily store the smoothing lengths</p></td>
+  <td><strong>h_tmp</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-i~8"></span>integer,</td>
@@ -1987,6 +2116,11 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><span class="anchor" id="variable-l~18"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>l</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-lapse~37"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>lapse</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-larger_radius"></span>double precision,</td>
@@ -2079,17 +2213,17 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>nn_des</strong></td><td> =</td><td>301</td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-npart_all~2"></span>integer,</td>
+  <td><span class="anchor" id="variable-npart_all"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>npart_all</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-npart_ghost~4"></span>integer,</td>
+  <td><span class="anchor" id="variable-npart_ghost"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>npart_ghost</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-npart_real~5"></span>integer,</td>
+  <td><span class="anchor" id="variable-npart_real~2"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>npart_real</strong></td><td></td><td></td><td></td>
 </tr>
@@ -2097,6 +2231,16 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><span class="anchor" id="variable-npart_real_half"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>npart_real_half</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nstar_eul_id"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>nstar_eul_id</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nstar_id"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>nstar_id</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-nstar_id_err"></span>double precision,</td>
@@ -2109,6 +2253,11 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>nstar_int</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" id="variable-nstar_sph~2"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>nstar_sph</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-nstar_sph_err"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>nstar_sph_err</strong></td><td></td><td></td><td></td>
@@ -2119,6 +2268,11 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>nu_all</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" id="variable-nu_eul"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>nu_eul</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-nu_one"></span>double precision,</td>
 <td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
   <td><strong>nu_one</strong></td><td></td><td></td><td></td>
@@ -2127,6 +2281,11 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><span class="anchor" id="variable-nu_ratio"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>nu_ratio</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-nu_tmp"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>nu_tmp</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-nu_tmp2"></span>double precision,</td>
@@ -2179,7 +2338,7 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>phi_tmp</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-pos~24"></span>double precision,</td>
+  <td><span class="anchor" id="variable-pos~23"></span>double precision,</td>
 <td>private,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
   <td><strong>pos</strong></td><td></td><td></td><td></td>
 </tr>
@@ -2197,6 +2356,11 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><span class="anchor" id="variable-pos_tmp"></span>double precision,</td>
 <td>private,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
   <td><strong>pos_tmp</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-pressure~21"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>pressure</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-pvol_tmp"></span>double precision,</td>
@@ -2264,9 +2428,14 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>rel_sign</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" id="variable-rho_tmp~2"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>rho_tmp</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-search_pos"></span>integer,</td>
 <td>private,</td>  <td>parameter</td><td>::</td>
-  <td><strong>search_pos</strong></td><td> =</td><td>0</td><td></td>
+  <td><strong>search_pos</strong></td><td> =</td><td>10</td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-seed"></span>integer,</td>
@@ -2274,9 +2443,29 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>seed</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
+  <td><span class="anchor" id="variable-shift_x~29"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>shift_x</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-shift_y~29"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>shift_y</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-shift_z~29"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>shift_z</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
   <td><span class="anchor" id="variable-smaller_radius"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>smaller_radius</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-specific_energy~35"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>specific_energy</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-stddev_dn"></span>double precision,</td>
@@ -2317,6 +2506,21 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><span class="anchor" id="variable-tol"></span>double precision,</td>
 <td>private,</td>  <td>parameter</td><td>::</td>
   <td><strong>tol</strong></td><td> =</td><td>1.0D-3</td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-v_euler_x~17"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>v_euler_x</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-v_euler_y~17"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>v_euler_y</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-v_euler_z~17"></span>double precision,</td>
+<td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>v_euler_z</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-variance_dn"></span>double precision,</td>
@@ -2406,7 +2610,7 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <div class="panel-body">
        
 <p>Returns validate_position( x, y, z ) if the latter
-  is present, .TRUE. otherwise</p>
+  is present, 0 otherwise</p>
 <p>FT 22.09.2021</p>
 <hr>
     
@@ -2449,7 +2653,7 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
     <section>
     <h2>Subroutines</h2>
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_nstar_id_atm"></span><h3>subroutine get_nstar_id_atm(npart_real, x, y, z, nstar_id, use_atmosphere)</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_nstar_id_atm"></span><h3>subroutine get_nstar_id_atm(npart_real, x, y, z, nstar_id, nstar_eul_id, use_atmosphere)</h3></div>
   <div class="panel-body">
        
 <p>FT 5.12.2021</p>
@@ -2489,6 +2693,13 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
   <td><strong>nstar_id</strong>(npart_real)</td><td><p>Array to store the computed proper baryon number density</p></td>
 </tr>
 <tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>nstar_eul_id</strong>(npart_real)</td><td><p>Array to store the computed proper baryon number density seen
+ by the Eulerian observer</p></td>
+</tr>
+<tr>
   <td><span class="anchor" ></span>logical,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
@@ -2521,7 +2732,7 @@ Maximum number of APM iterations, irrespective of the EXIT condition</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-03 16:31:15           </p>
+ on 2022-04-06 09:24:34           </p>
         </div>
       </div>
       <br>

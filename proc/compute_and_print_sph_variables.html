@@ -121,7 +121,7 @@
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-theta_a">Theta_a</a>
-      <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-a~12">a</a>
+      <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-a~11">a</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-call_flag~3">call_flag</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-cnt1~2">cnt1</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-com_d_1pn">com_d_1pn</a>
@@ -136,7 +136,7 @@
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-debug~5">debug</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-det~5">det</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-few_ncand~2">few_ncand</a>
-      <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-finalnamefile~9">finalnamefile</a>
+      <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-finalnamefile~8">finalnamefile</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-find_h_bruteforce_timer~2">find_h_bruteforce_timer</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-g4~4">g4</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-gg4">gg4</a>
@@ -181,25 +181,25 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li>set_h</li>
-    <li>gradient</li>
-    <li>input_output</li>
-    <li>NR</li>
-    <li>units</li>
-    <li>matrix</li>
+    <li>pwp_EOS</li>
     <li>options</li>
+    <li>matrix</li>
+    <li>tensor</li>
     <li>alive_flag</li>
-    <li>kernel_table</li>
-    <li>constants</li>
-    <li><a href='../module/utility.html'>utility</a></li>
+    <li>set_h</li>
     <li>RCB_tree_3D</li>
     <li>sphincs_sph</li>
-    <li>metric_on_particles</li>
-    <li>APM</li>
-    <li>tensor</li>
-    <li>analyze</li>
+    <li>NR</li>
     <li>sph_variables</li>
-    <li>pwp_EOS</li>
+    <li>APM</li>
+    <li>constants</li>
+    <li>units</li>
+    <li>analyze</li>
+    <li>metric_on_particles</li>
+    <li>gradient</li>
+    <li>input_output</li>
+    <li>kernel_table</li>
+    <li><a href='../module/utility.html'>utility</a></li>
   </ul>
       </li>
       <li class="list-group-item">
@@ -220,242 +220,242 @@
 <polygon fill="none" stroke="black" points="436,-402 243,-402 243,-378 436,-378 436,-402"/>
 <text text-anchor="middle" x="339.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50">compute_and_print_sph_variables</text>
 </g>
-<!-- set_h -->
+<!-- pwp_EOS -->
 <g id="proc~~compute_and_print_sph_variables~~UsesGraph_node2" class="node">
-<title>set_h</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-776 121.5,-776 121.5,-752 175.5,-752 175.5,-776"/>
-<text text-anchor="middle" x="148.5" y="-761.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_h</text>
+<title>pwp_EOS</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="179,-776 118,-776 118,-752 179,-752 179,-776"/>
+<text text-anchor="middle" x="148.5" y="-761.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pwp_EOS</text>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;set_h -->
+<!-- proc~compute_and_print_sph_variables&#45;&gt;pwp_EOS -->
 <g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge1" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;set_h</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M337.55,-402.28C333.04,-452.07 309.53,-641.13 207,-743 201,-748.96 193.17,-753.25 185.22,-756.32"/>
-<polygon fill="#000000" stroke="#000000" points="183.99,-753.04 175.6,-759.5 186.19,-759.69 183.99,-753.04"/>
-</g>
-<!-- gradient -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node3" class="node">
-<title>gradient</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="177.5,-734 119.5,-734 119.5,-710 177.5,-710 177.5,-734"/>
-<text text-anchor="middle" x="148.5" y="-719.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gradient</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;gradient -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge2" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;gradient</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M336.88,-402.07C330.12,-447.82 300.01,-612.51 207,-701 201.49,-706.24 194.58,-710.19 187.47,-713.16"/>
-<polygon fill="#000000" stroke="#000000" points="186,-709.97 177.77,-716.64 188.37,-716.56 186,-709.97"/>
-</g>
-<!-- input_output -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node4" class="node">
-<title>input_output</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="188,-692 109,-692 109,-668 188,-668 188,-692"/>
-<text text-anchor="middle" x="148.5" y="-677.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">input_output</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;input_output -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge3" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;input_output</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M335.98,-402.15C326.69,-444.01 290.44,-583.86 207,-659 204.06,-661.64 200.77,-663.96 197.28,-666"/>
-<polygon fill="#000000" stroke="#000000" points="195.68,-662.88 188.3,-670.48 198.81,-669.15 195.68,-662.88"/>
-</g>
-<!-- NR -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node5" class="node">
-<title>NR</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-650 121.5,-650 121.5,-626 175.5,-626 175.5,-650"/>
-<text text-anchor="middle" x="148.5" y="-635.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NR</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;NR -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge4" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;NR</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M334.82,-402.05C322.81,-439.45 281.15,-554.8 207,-617 200.7,-622.28 192.96,-626.29 185.22,-629.31"/>
-<polygon fill="#000000" stroke="#000000" points="183.86,-626.08 175.53,-632.63 186.13,-632.7 183.86,-626.08"/>
-</g>
-<!-- units -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node6" class="node">
-<title>units</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-608 121.5,-608 121.5,-584 175.5,-584 175.5,-608"/>
-<text text-anchor="middle" x="148.5" y="-593.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">units</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;units -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge5" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;units</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M332.49,-402.16C316.32,-433.81 268.88,-519.73 207,-570 200.47,-575.3 192.69,-579.77 184.99,-583.41"/>
-<polygon fill="#000000" stroke="#000000" points="183.49,-580.25 175.73,-587.46 186.29,-586.66 183.49,-580.25"/>
-</g>
-<!-- matrix -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node7" class="node">
-<title>matrix</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-317 0,-317 0,-293 54,-293 54,-317"/>
-<text text-anchor="middle" x="27" y="-302.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;matrix -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge6" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;matrix</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M332.32,-402.2C316.41,-432.07 270.77,-508.48 207,-537 159.53,-558.23 131.24,-568.67 90,-537 56.43,-511.22 37.11,-380.37 30.55,-327.36"/>
-<polygon fill="#000000" stroke="#000000" points="34.01,-326.8 29.35,-317.29 27.06,-327.64 34.01,-326.8"/>
+<title>proc~compute_and_print_sph_variables&#45;&gt;pwp_EOS</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M337.55,-402.28C333.04,-452.07 309.53,-641.13 207,-743 201.93,-748.03 195.57,-751.87 188.93,-754.79"/>
+<polygon fill="#000000" stroke="#000000" points="187.28,-751.68 179.13,-758.45 189.73,-758.23 187.28,-751.68"/>
 </g>
 <!-- options -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node8" class="node">
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node3" class="node">
 <title>options</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-528 121.5,-528 121.5,-504 175.5,-504 175.5,-528"/>
-<text text-anchor="middle" x="148.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">options</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-734 121.5,-734 121.5,-710 175.5,-710 175.5,-734"/>
+<text text-anchor="middle" x="148.5" y="-719.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">options</text>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;options -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge7" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge2" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;options</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M326.08,-402.25C303.87,-423.61 255.14,-467.95 207,-495 200.31,-498.76 192.82,-502.07 185.52,-504.88"/>
-<polygon fill="#000000" stroke="#000000" points="183.98,-501.72 175.76,-508.41 186.36,-508.3 183.98,-501.72"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M336.5,-402.28C328.57,-447.39 295.29,-606.03 207,-696 200.88,-702.24 192.99,-707.11 185.02,-710.87"/>
+<polygon fill="#000000" stroke="#000000" points="183.6,-707.67 175.75,-714.78 186.32,-714.12 183.6,-707.67"/>
+</g>
+<!-- matrix -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node4" class="node">
+<title>matrix</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-359 0,-359 0,-335 54,-335 54,-359"/>
+<text text-anchor="middle" x="27" y="-344.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;matrix -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge3" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;matrix</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M337.09,-402.23C331.19,-446.92 304.11,-601.99 207,-663 162.97,-690.66 130.15,-696.04 90,-663 44.4,-625.47 31.84,-434.65 28.84,-369.13"/>
+<polygon fill="#000000" stroke="#000000" points="32.33,-368.91 28.41,-359.07 25.34,-369.21 32.33,-368.91"/>
+</g>
+<!-- tensor -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node5" class="node">
+<title>tensor</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-654 121.5,-654 121.5,-630 175.5,-630 175.5,-654"/>
+<text text-anchor="middle" x="148.5" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tensor</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;tensor -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge4" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;tensor</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M334.89,-402.26C323.06,-440.32 281.89,-557.7 207,-621 200.72,-626.31 192.99,-630.32 185.25,-633.35"/>
+<polygon fill="#000000" stroke="#000000" points="183.89,-630.11 175.56,-636.66 186.16,-636.74 183.89,-630.11"/>
 </g>
 <!-- alive_flag -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node9" class="node">
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node6" class="node">
 <title>alive_flag</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="180.5,-486 116.5,-486 116.5,-462 180.5,-462 180.5,-486"/>
-<text text-anchor="middle" x="148.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">alive_flag</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="180.5,-612 116.5,-612 116.5,-588 180.5,-588 180.5,-612"/>
+<text text-anchor="middle" x="148.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">alive_flag</text>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;alive_flag -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge8" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge5" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;alive_flag</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M315.06,-402.08C289,-415.31 245.5,-436.79 207,-453 201.6,-455.27 195.87,-457.54 190.19,-459.7"/>
-<polygon fill="#000000" stroke="#000000" points="188.9,-456.44 180.75,-463.21 191.34,-463 188.9,-456.44"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M333.31,-402.09C318.51,-435.2 272.86,-528.25 207,-579 201.92,-582.92 196.03,-586.15 190.01,-588.81"/>
+<polygon fill="#000000" stroke="#000000" points="188.56,-585.63 180.52,-592.53 191.11,-592.14 188.56,-585.63"/>
 </g>
-<!-- kernel_table -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node10" class="node">
-<title>kernel_table</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="187.5,-444 109.5,-444 109.5,-420 187.5,-420 187.5,-444"/>
-<text text-anchor="middle" x="148.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kernel_table</text>
+<!-- set_h -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node7" class="node">
+<title>set_h</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-570 121.5,-570 121.5,-546 175.5,-546 175.5,-570"/>
+<text text-anchor="middle" x="148.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_h</text>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;kernel_table -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge9" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;kernel_table</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M284.34,-402.04C256.97,-408.12 224.04,-415.44 197.57,-421.32"/>
-<polygon fill="#000000" stroke="#000000" points="196.77,-417.91 187.77,-423.5 198.29,-424.74 196.77,-417.91"/>
-</g>
-<!-- constants -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node11" class="node">
-<title>constants</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="180.5,-402 116.5,-402 116.5,-378 180.5,-378 180.5,-402"/>
-<text text-anchor="middle" x="148.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;constants -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge10" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;constants</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M242.89,-390C224.59,-390 206.35,-390 190.9,-390"/>
-<polygon fill="#000000" stroke="#000000" points="190.69,-386.5 180.69,-390 190.69,-393.5 190.69,-386.5"/>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;set_h -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge6" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;set_h</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M330.79,-402.09C312.55,-429.79 263.98,-498.39 207,-537 200.45,-541.44 192.86,-545.07 185.37,-547.99"/>
+<polygon fill="#000000" stroke="#000000" points="183.95,-544.78 175.69,-551.42 186.29,-551.37 183.95,-544.78"/>
 </g>
 <!-- RCB_tree_3D -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node12" class="node">
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node8" class="node">
 <title>RCB_tree_3D</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="188.5,-360 108.5,-360 108.5,-336 188.5,-336 188.5,-360"/>
-<text text-anchor="middle" x="148.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">RCB_tree_3D</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="188.5,-528 108.5,-528 108.5,-504 188.5,-504 188.5,-528"/>
+<text text-anchor="middle" x="148.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">RCB_tree_3D</text>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;RCB_tree_3D -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge11" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge7" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;RCB_tree_3D</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M284.34,-377.96C257.38,-371.97 225.02,-364.78 198.76,-358.95"/>
-<polygon fill="#000000" stroke="#000000" points="199.17,-355.45 188.65,-356.7 197.66,-362.29 199.17,-355.45"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M326.08,-402.25C303.87,-423.61 255.14,-467.95 207,-495 203.94,-496.72 200.72,-498.34 197.42,-499.87"/>
+<polygon fill="#000000" stroke="#000000" points="195.82,-496.75 188.01,-503.9 198.58,-503.18 195.82,-496.75"/>
 </g>
 <!-- sphincs_sph -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node13" class="node">
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node9" class="node">
 <title>sphincs_sph</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="186.5,-318 110.5,-318 110.5,-294 186.5,-294 186.5,-318"/>
-<text text-anchor="middle" x="148.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sphincs_sph</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="186.5,-486 110.5,-486 110.5,-462 186.5,-462 186.5,-486"/>
+<text text-anchor="middle" x="148.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sphincs_sph</text>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;sphincs_sph -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge12" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge8" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;sphincs_sph</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M315.06,-377.92C289,-364.69 245.5,-343.21 207,-327 202.64,-325.16 198.05,-323.33 193.46,-321.56"/>
-<polygon fill="#000000" stroke="#000000" points="194.66,-318.27 184.07,-318.01 192.19,-324.82 194.66,-318.27"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M315.06,-402.08C289,-415.31 245.5,-436.79 207,-453 202.64,-454.84 198.05,-456.67 193.46,-458.44"/>
+<polygon fill="#000000" stroke="#000000" points="192.19,-455.18 184.07,-461.99 194.66,-461.73 192.19,-455.18"/>
 </g>
-<!-- metric_on_particles -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node14" class="node">
-<title>metric_on_particles</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="207,-276 90,-276 90,-252 207,-252 207,-276"/>
-<text text-anchor="middle" x="148.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">metric_on_particles</text>
+<!-- NR -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node10" class="node">
+<title>NR</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-444 121.5,-444 121.5,-420 175.5,-420 175.5,-444"/>
+<text text-anchor="middle" x="148.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">NR</text>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;metric_on_particles -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge13" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;metric_on_particles</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M326.08,-377.75C303.87,-356.39 255.14,-312.05 207,-285 203.94,-283.28 200.72,-281.66 197.42,-280.13"/>
-<polygon fill="#000000" stroke="#000000" points="198.58,-276.82 188.01,-276.1 195.82,-283.25 198.58,-276.82"/>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;NR -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge9" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;NR</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M284.34,-402.04C252.71,-409.06 213.66,-417.74 185.74,-423.95"/>
+<polygon fill="#000000" stroke="#000000" points="184.62,-420.61 175.62,-426.2 186.14,-427.44 184.62,-420.61"/>
+</g>
+<!-- sph_variables -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node11" class="node">
+<title>sph_variables</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="191,-402 106,-402 106,-378 191,-378 191,-402"/>
+<text text-anchor="middle" x="148.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sph_variables</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;sph_variables -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge10" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;sph_variables</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M242.89,-390C228.59,-390 214.32,-390 201.39,-390"/>
+<polygon fill="#000000" stroke="#000000" points="201.34,-386.5 191.34,-390 201.34,-393.5 201.34,-386.5"/>
 </g>
 <!-- APM -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node15" class="node">
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node12" class="node">
 <title>APM</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-234 121.5,-234 121.5,-210 175.5,-210 175.5,-234"/>
-<text text-anchor="middle" x="148.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">APM</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-360 121.5,-360 121.5,-336 175.5,-336 175.5,-360"/>
+<text text-anchor="middle" x="148.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">APM</text>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;APM -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge14" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge11" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;APM</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M284.34,-377.96C252.71,-370.94 213.66,-362.26 185.74,-356.05"/>
+<polygon fill="#000000" stroke="#000000" points="186.14,-352.56 175.62,-353.8 184.62,-359.39 186.14,-352.56"/>
+</g>
+<!-- constants -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node13" class="node">
+<title>constants</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="180.5,-318 116.5,-318 116.5,-294 180.5,-294 180.5,-318"/>
+<text text-anchor="middle" x="148.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;constants -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge12" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;constants</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M315.06,-377.92C289,-364.69 245.5,-343.21 207,-327 201.6,-324.73 195.87,-322.46 190.19,-320.3"/>
+<polygon fill="#000000" stroke="#000000" points="191.34,-317 180.75,-316.79 188.9,-323.56 191.34,-317"/>
+</g>
+<!-- units -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node14" class="node">
+<title>units</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-276 121.5,-276 121.5,-252 175.5,-252 175.5,-276"/>
+<text text-anchor="middle" x="148.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">units</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;units -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge13" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;units</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M326.08,-377.75C303.87,-356.39 255.14,-312.05 207,-285 200.31,-281.24 192.82,-277.93 185.52,-275.12"/>
+<polygon fill="#000000" stroke="#000000" points="186.36,-271.7 175.76,-271.59 183.98,-278.28 186.36,-271.7"/>
+</g>
+<!-- analyze -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node15" class="node">
+<title>analyze</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-234 121.5,-234 121.5,-210 175.5,-210 175.5,-234"/>
+<text text-anchor="middle" x="148.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">analyze</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;analyze -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge14" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;analyze</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M330.79,-377.91C312.55,-350.21 263.98,-281.61 207,-243 200.45,-238.56 192.86,-234.93 185.37,-232.01"/>
 <polygon fill="#000000" stroke="#000000" points="186.29,-228.63 175.69,-228.58 183.95,-235.22 186.29,-228.63"/>
 </g>
-<!-- tensor -->
+<!-- metric_on_particles -->
 <g id="proc~~compute_and_print_sph_variables~~UsesGraph_node16" class="node">
-<title>tensor</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-192 121.5,-192 121.5,-168 175.5,-168 175.5,-192"/>
-<text text-anchor="middle" x="148.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tensor</text>
+<title>metric_on_particles</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="207,-192 90,-192 90,-168 207,-168 207,-192"/>
+<text text-anchor="middle" x="148.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">metric_on_particles</text>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;tensor -->
+<!-- proc~compute_and_print_sph_variables&#45;&gt;metric_on_particles -->
 <g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge15" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;tensor</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M333.31,-377.91C318.51,-344.8 272.86,-251.75 207,-201 200.55,-196.03 192.81,-192.15 185.12,-189.16"/>
-<polygon fill="#000000" stroke="#000000" points="186.12,-185.8 175.53,-185.83 183.83,-192.41 186.12,-185.8"/>
+<title>proc~compute_and_print_sph_variables&#45;&gt;metric_on_particles</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M333.31,-377.91C318.51,-344.8 272.86,-251.75 207,-201 205.15,-199.58 203.2,-198.24 201.17,-196.99"/>
+<polygon fill="#000000" stroke="#000000" points="202.38,-193.67 191.91,-192.05 199.08,-199.85 202.38,-193.67"/>
 </g>
-<!-- analyze -->
+<!-- gradient -->
 <g id="proc~~compute_and_print_sph_variables~~UsesGraph_node17" class="node">
-<title>analyze</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-150 121.5,-150 121.5,-126 175.5,-126 175.5,-150"/>
-<text text-anchor="middle" x="148.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">analyze</text>
+<title>gradient</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="177.5,-150 119.5,-150 119.5,-126 177.5,-126 177.5,-150"/>
+<text text-anchor="middle" x="148.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gradient</text>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;analyze -->
+<!-- proc~compute_and_print_sph_variables&#45;&gt;gradient -->
 <g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge16" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;analyze</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M334.89,-377.74C323.06,-339.68 281.89,-222.3 207,-159 200.72,-153.69 192.99,-149.68 185.25,-146.65"/>
-<polygon fill="#000000" stroke="#000000" points="186.16,-143.26 175.56,-143.34 183.89,-149.89 186.16,-143.26"/>
+<title>proc~compute_and_print_sph_variables&#45;&gt;gradient</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M334.89,-377.74C323.06,-339.68 281.89,-222.3 207,-159 201.25,-154.14 194.29,-150.36 187.21,-147.44"/>
+<polygon fill="#000000" stroke="#000000" points="188.2,-144.08 177.61,-143.96 185.82,-150.66 188.2,-144.08"/>
 </g>
-<!-- sph_variables -->
+<!-- input_output -->
 <g id="proc~~compute_and_print_sph_variables~~UsesGraph_node18" class="node">
-<title>sph_variables</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="191,-108 106,-108 106,-84 191,-84 191,-108"/>
-<text text-anchor="middle" x="148.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sph_variables</text>
+<title>input_output</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="188,-108 109,-108 109,-84 188,-84 188,-108"/>
+<text text-anchor="middle" x="148.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">input_output</text>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;sph_variables -->
+<!-- proc~compute_and_print_sph_variables&#45;&gt;input_output -->
 <g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge17" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;sph_variables</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M336.1,-377.97C327.1,-335.85 291.41,-193.46 207,-117 204.86,-115.06 202.52,-113.3 200.06,-111.69"/>
-<polygon fill="#000000" stroke="#000000" points="201.73,-108.61 191.28,-106.83 198.33,-114.74 201.73,-108.61"/>
+<title>proc~compute_and_print_sph_variables&#45;&gt;input_output</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M336.1,-377.97C327.1,-335.85 291.41,-193.46 207,-117 204.03,-114.31 200.68,-111.95 197.14,-109.89"/>
+<polygon fill="#000000" stroke="#000000" points="198.53,-106.68 188.02,-105.36 195.42,-112.95 198.53,-106.68"/>
+</g>
+<!-- kernel_table -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node19" class="node">
+<title>kernel_table</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="187.5,-66 109.5,-66 109.5,-42 187.5,-42 187.5,-66"/>
+<text text-anchor="middle" x="148.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kernel_table</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;kernel_table -->
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge18" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;kernel_table</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M336.93,-377.78C330.36,-331.45 300.83,-164.67 207,-75 203.93,-72.07 200.42,-69.54 196.68,-67.36"/>
+<polygon fill="#000000" stroke="#000000" points="198.15,-64.18 187.64,-62.88 195.05,-70.46 198.15,-64.18"/>
 </g>
 <!-- module~utility -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node19" class="node">
+<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node20" class="node">
 <title>module~utility</title>
-<g id="a_proc~~compute_and_print_sph_variables~~UsesGraph_node19"><a xlink:href=".././module/utility.html" xlink:title="utility">
-<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-66 121.5,-66 121.5,-42 175.5,-42 175.5,-66"/>
-<text text-anchor="middle" x="148.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">utility</text>
+<g id="a_proc~~compute_and_print_sph_variables~~UsesGraph_node20"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<polygon fill="#337ab7" stroke="#337ab7" points="175.5,-24 121.5,-24 121.5,0 175.5,0 175.5,-24"/>
+<text text-anchor="middle" x="148.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">utility</text>
 </a>
 </g>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;module~utility -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge18" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M336.93,-377.78C330.36,-331.45 300.83,-164.67 207,-75 200.94,-69.21 193.15,-64.99 185.27,-61.93"/>
-<polygon fill="#000000" stroke="#000000" points="186.33,-58.59 175.74,-58.74 184.11,-65.23 186.33,-58.59"/>
-</g>
-<!-- pwp_EOS -->
-<g id="proc~~compute_and_print_sph_variables~~UsesGraph_node20" class="node">
-<title>pwp_EOS</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="179,-24 118,-24 118,0 179,0 179,-24"/>
-<text text-anchor="middle" x="148.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pwp_EOS</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;pwp_EOS -->
 <g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge19" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;pwp_EOS</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M337.62,-377.93C333.37,-328.11 310.59,-136.31 207,-33 201.94,-27.96 195.58,-24.12 188.95,-21.19"/>
-<polygon fill="#000000" stroke="#000000" points="189.74,-17.75 179.15,-17.53 187.29,-24.31 189.74,-17.75"/>
+<title>proc~compute_and_print_sph_variables&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M337.62,-377.93C333.37,-328.11 310.59,-136.31 207,-33 201.01,-27.02 193.18,-22.73 185.24,-19.66"/>
+<polygon fill="#000000" stroke="#000000" points="186.21,-16.29 175.61,-16.48 184.01,-22.94 186.21,-16.29"/>
 </g>
 <!-- module~utility&#45;&gt;matrix -->
 <g id="proc~~compute_and_print_sph_variables~~UsesGraph_edge20" class="edge">
 <title>module~utility&#45;&gt;matrix</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M121.32,-58.05C110.27,-61.02 98.12,-66.15 90,-75 35.25,-134.72 27.99,-237.72 27.59,-282.8"/>
-<polygon fill="#000000" stroke="#000000" points="24.1,-282.95 27.62,-292.95 31.1,-282.94 24.1,-282.95"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M121.32,-15.72C110.14,-18.62 97.88,-23.79 90,-33 52.09,-77.31 34.66,-260.05 29.62,-324.43"/>
+<polygon fill="#000000" stroke="#000000" points="26.11,-324.45 28.84,-334.69 33.09,-324.98 26.11,-324.45"/>
 </g>
 </g>
 </svg>
@@ -533,7 +533,7 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~23"></span>class(<a href='../type/particles.html'>particles</a>),</td>
+  <td><span class="anchor" id="variable-this~20"></span>class(<a href='../type/particles.html'>particles</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>this</strong></td><td><p><a href="../type/particles.html">particles</a> object which this PROCEDURE is a member of</p></td>
@@ -559,484 +559,496 @@
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~compute_and_print_sph_variables~~CallsGraph Pages: 1 -->
-<svg id="proccompute_and_print_sph_variablesCallsGraph" width="424pt" height="1586pt"
- viewBox="0.00 0.00 424.00 1586.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 1582)">
+<svg id="proccompute_and_print_sph_variablesCallsGraph" width="424pt" height="1628pt"
+ viewBox="0.00 0.00 424.00 1628.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 1624)">
 <title>proc~~compute_and_print_sph_variables~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-1582 420,-1582 420,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-1624 420,-1624 420,4 -4,4"/>
 <!-- proc~compute_and_print_sph_variables -->
 <g id="proc~~compute_and_print_sph_variables~~CallsGraph_node1" class="node">
 <title>proc~compute_and_print_sph_variables</title>
-<polygon fill="none" stroke="black" points="193,-801 0,-801 0,-777 193,-777 193,-801"/>
-<text text-anchor="middle" x="96.5" y="-786.6" font-family="Helvetica,sans-Serif" font-size="10.50">compute_and_print_sph_variables</text>
+<polygon fill="none" stroke="black" points="193,-822 0,-822 0,-798 193,-798 193,-822"/>
+<text text-anchor="middle" x="96.5" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50">compute_and_print_sph_variables</text>
 </g>
-<!-- lpart -->
+<!-- assign_h -->
 <g id="proc~~compute_and_print_sph_variables~~CallsGraph_node2" class="node">
-<title>lpart</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-1578 295.5,-1578 295.5,-1554 349.5,-1554 349.5,-1578"/>
-<text text-anchor="middle" x="322.5" y="-1563.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lpart</text>
+<title>assign_h</title>
+<polygon fill="#777777" stroke="#777777" points="351.5,-1620 293.5,-1620 293.5,-1596 351.5,-1596 351.5,-1620"/>
+<text text-anchor="middle" x="322.5" y="-1605.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">assign_h</text>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;lpart -->
+<!-- proc~compute_and_print_sph_variables&#45;&gt;assign_h -->
 <g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge1" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;lpart</title>
-<path fill="none" stroke="#000000" d="M97.83,-801.14C100.5,-889.33 121.17,-1431.53 229,-1545 243.33,-1560.08 266.03,-1565.39 285.36,-1566.9"/>
-<polygon fill="#000000" stroke="#000000" points="285.23,-1570.4 295.39,-1567.38 285.57,-1563.41 285.23,-1570.4"/>
-</g>
-<!-- set_units -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node3" class="node">
-<title>set_units</title>
-<polygon fill="#777777" stroke="#777777" points="352,-1536 293,-1536 293,-1512 352,-1512 352,-1536"/>
-<text text-anchor="middle" x="322.5" y="-1521.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_units</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;set_units -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge2" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;set_units</title>
-<path fill="none" stroke="#000000" d="M97.96,-801.01C101.47,-885.98 126.67,-1396.37 229,-1503 242.76,-1517.34 264.09,-1522.82 282.81,-1524.62"/>
-<polygon fill="#000000" stroke="#000000" points="282.67,-1528.12 292.87,-1525.27 283.12,-1521.13 282.67,-1528.12"/>
-</g>
-<!-- sq_det_g4 -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node4" class="node">
-<title>sq_det_g4</title>
-<polygon fill="#777777" stroke="#777777" points="355.5,-1494 289.5,-1494 289.5,-1470 355.5,-1470 355.5,-1494"/>
-<text text-anchor="middle" x="322.5" y="-1479.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sq_det_g4</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;sq_det_g4 -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge3" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;sq_det_g4</title>
-<path fill="none" stroke="#000000" d="M98.11,-801.09C102.55,-883.4 132.24,-1361.29 229,-1461 241.94,-1474.34 261.45,-1480 279.22,-1482.15"/>
-<polygon fill="#000000" stroke="#000000" points="279.15,-1485.66 289.42,-1483.05 279.76,-1478.69 279.15,-1485.66"/>
-</g>
-<!-- allocate_rcb_tree_memory_3d -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node5" class="node">
-<title>allocate_rcb_tree_memory_3d</title>
-<polygon fill="#777777" stroke="#777777" points="409,-1452 236,-1452 236,-1428 409,-1428 409,-1452"/>
-<text text-anchor="middle" x="322.5" y="-1437.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_rcb_tree_memory_3d</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;allocate_rcb_tree_memory_3d -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge4" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;allocate_rcb_tree_memory_3d</title>
-<path fill="none" stroke="#000000" d="M98.28,-801.09C103.67,-880.44 137.76,-1326.16 229,-1419 229.94,-1419.96 230.92,-1420.88 231.92,-1421.76"/>
-<polygon fill="#000000" stroke="#000000" points="230.05,-1424.72 240.19,-1427.78 234.17,-1419.06 230.05,-1424.72"/>
-</g>
-<!-- rpart -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node6" class="node">
-<title>rpart</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-1410 295.5,-1410 295.5,-1386 349.5,-1386 349.5,-1410"/>
-<text text-anchor="middle" x="322.5" y="-1395.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rpart</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;rpart -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge5" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;rpart</title>
-<path fill="none" stroke="#000000" d="M98.49,-801.27C104.94,-877.97 143.34,-1291.06 229,-1377 243.52,-1391.56 265.88,-1396.92 284.98,-1398.58"/>
-<polygon fill="#000000" stroke="#000000" points="285.01,-1402.09 295.19,-1399.16 285.4,-1395.1 285.01,-1402.09"/>
-</g>
-<!-- deallocate_sph_memory -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node7" class="node">
-<title>deallocate_sph_memory</title>
-<polygon fill="#777777" stroke="#777777" points="394,-1368 251,-1368 251,-1344 394,-1344 394,-1368"/>
-<text text-anchor="middle" x="322.5" y="-1353.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_sph_memory</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;deallocate_sph_memory -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge6" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;deallocate_sph_memory</title>
-<path fill="none" stroke="#000000" d="M98.72,-801.34C106.28,-874.98 148.85,-1255.89 229,-1335 232.79,-1338.74 237.09,-1341.86 241.72,-1344.48"/>
-<polygon fill="#000000" stroke="#000000" points="240.44,-1347.74 250.97,-1348.89 243.45,-1341.43 240.44,-1347.74"/>
+<title>proc~compute_and_print_sph_variables&#45;&gt;assign_h</title>
+<path fill="none" stroke="#000000" d="M97.77,-822.18C100.03,-911.9 118.41,-1470.09 229,-1587 242.75,-1601.54 264.28,-1607 283.12,-1608.74"/>
+<polygon fill="#000000" stroke="#000000" points="283.04,-1612.24 293.23,-1609.35 283.46,-1605.25 283.04,-1612.24"/>
 </g>
 <!-- deallocate_metric_on_particles -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node8" class="node">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node3" class="node">
 <title>deallocate_metric_on_particles</title>
-<polygon fill="#777777" stroke="#777777" points="411.5,-1326 233.5,-1326 233.5,-1302 411.5,-1302 411.5,-1326"/>
-<text text-anchor="middle" x="322.5" y="-1311.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_metric_on_particles</text>
+<polygon fill="#777777" stroke="#777777" points="411.5,-1578 233.5,-1578 233.5,-1554 411.5,-1554 411.5,-1578"/>
+<text text-anchor="middle" x="322.5" y="-1563.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_metric_on_particles</text>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;deallocate_metric_on_particles -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge7" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge2" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;deallocate_metric_on_particles</title>
-<path fill="none" stroke="#000000" d="M98.98,-801.3C107.68,-871.48 154.3,-1220.65 229,-1293 230.11,-1294.07 231.26,-1295.1 232.45,-1296.07"/>
-<polygon fill="#000000" stroke="#000000" points="230.59,-1299.04 240.81,-1301.83 234.56,-1293.28 230.59,-1299.04"/>
+<path fill="none" stroke="#000000" d="M97.9,-822.08C100.98,-908.69 123.93,-1434.95 229,-1545 229.93,-1545.97 230.89,-1546.9 231.88,-1547.79"/>
+<polygon fill="#000000" stroke="#000000" points="229.96,-1550.73 240.07,-1553.89 234.14,-1545.11 229.96,-1550.73"/>
+</g>
+<!-- allocate_rcb_tree_memory_3d -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node4" class="node">
+<title>allocate_rcb_tree_memory_3d</title>
+<polygon fill="#777777" stroke="#777777" points="409,-1536 236,-1536 236,-1512 409,-1512 409,-1536"/>
+<text text-anchor="middle" x="322.5" y="-1521.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_rcb_tree_memory_3d</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;allocate_rcb_tree_memory_3d -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge3" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;allocate_rcb_tree_memory_3d</title>
+<path fill="none" stroke="#000000" d="M98.04,-822.19C102.03,-906.27 129.51,-1399.89 229,-1503 229.93,-1503.97 230.9,-1504.89 231.9,-1505.78"/>
+<polygon fill="#000000" stroke="#000000" points="229.99,-1508.72 240.11,-1511.85 234.15,-1503.09 229.99,-1508.72"/>
+</g>
+<!-- vel_u -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node5" class="node">
+<title>vel_u</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-1494 295.5,-1494 295.5,-1470 349.5,-1470 349.5,-1494"/>
+<text text-anchor="middle" x="322.5" y="-1479.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">vel_u</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;vel_u -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge4" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;vel_u</title>
+<path fill="none" stroke="#000000" d="M98.21,-822.23C103.14,-903.46 135.06,-1364.78 229,-1461 243.37,-1475.71 265.73,-1481.07 284.86,-1482.7"/>
+<polygon fill="#000000" stroke="#000000" points="284.92,-1486.2 295.09,-1483.25 285.3,-1479.21 284.92,-1486.2"/>
+</g>
+<!-- sq_det_g4 -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node6" class="node">
+<title>sq_det_g4</title>
+<polygon fill="#777777" stroke="#777777" points="355.5,-1452 289.5,-1452 289.5,-1428 355.5,-1428 355.5,-1452"/>
+<text text-anchor="middle" x="322.5" y="-1437.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sq_det_g4</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;sq_det_g4 -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge5" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;sq_det_g4</title>
+<path fill="none" stroke="#000000" d="M98.39,-822.19C104.3,-900.27 140.56,-1329.62 229,-1419 241.97,-1432.11 261.3,-1437.77 278.94,-1439.99"/>
+<polygon fill="#000000" stroke="#000000" points="278.79,-1443.49 289.07,-1440.93 279.44,-1436.52 278.79,-1443.49"/>
+</g>
+<!-- allocate_gradient -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node7" class="node">
+<title>allocate_gradient</title>
+<polygon fill="#777777" stroke="#777777" points="375.5,-1410 269.5,-1410 269.5,-1386 375.5,-1386 375.5,-1410"/>
+<text text-anchor="middle" x="322.5" y="-1395.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_gradient</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;allocate_gradient -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge6" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;allocate_gradient</title>
+<path fill="none" stroke="#000000" d="M98.6,-822.32C105.6,-897.54 146.1,-1294.49 229,-1377 237.3,-1385.27 248.14,-1390.56 259.46,-1393.89"/>
+<polygon fill="#000000" stroke="#000000" points="258.93,-1397.37 269.47,-1396.35 260.59,-1390.57 258.93,-1397.37"/>
+</g>
+<!-- deallocate_gradient -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node8" class="node">
+<title>deallocate_gradient</title>
+<polygon fill="#777777" stroke="#777777" points="382,-1368 263,-1368 263,-1344 382,-1344 382,-1368"/>
+<text text-anchor="middle" x="322.5" y="-1353.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_gradient</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;deallocate_gradient -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge7" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;deallocate_gradient</title>
+<path fill="none" stroke="#000000" d="M98.85,-822.34C106.97,-894.3 151.58,-1259.28 229,-1335 235.82,-1341.67 244.28,-1346.39 253.3,-1349.71"/>
+<polygon fill="#000000" stroke="#000000" points="252.26,-1353.05 262.85,-1352.69 254.34,-1346.37 252.26,-1353.05"/>
+</g>
+<!-- allocate_metric_on_particles -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node9" class="node">
+<title>allocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="405,-1326 240,-1326 240,-1302 405,-1302 405,-1326"/>
+<text text-anchor="middle" x="322.5" y="-1311.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_metric_on_particles</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;allocate_metric_on_particles -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge8" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;allocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M99.12,-822.24C108.41,-890.54 157,-1224 229,-1293 230.11,-1294.07 231.27,-1295.09 232.47,-1296.06"/>
+<polygon fill="#000000" stroke="#000000" points="230.62,-1299.04 240.85,-1301.79 234.57,-1293.26 230.62,-1299.04"/>
+</g>
+<!-- deallocate_rcb_tree_memory_3d -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node10" class="node">
+<title>deallocate_rcb_tree_memory_3d</title>
+<polygon fill="#777777" stroke="#777777" points="416,-1284 229,-1284 229,-1260 416,-1260 416,-1284"/>
+<text text-anchor="middle" x="322.5" y="-1269.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_rcb_tree_memory_3d</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;deallocate_rcb_tree_memory_3d -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge9" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;deallocate_rcb_tree_memory_3d</title>
+<path fill="none" stroke="#000000" d="M97.05,-822.05C95.62,-879.49 97.44,-1127.92 229,-1251 230.28,-1252.2 231.62,-1253.33 233,-1254.41"/>
+<polygon fill="#000000" stroke="#000000" points="231.1,-1257.35 241.38,-1259.93 234.95,-1251.51 231.1,-1257.35"/>
+</g>
+<!-- nic -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node11" class="node">
+<title>nic</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-1242 295.5,-1242 295.5,-1218 349.5,-1218 349.5,-1242"/>
+<text text-anchor="middle" x="322.5" y="-1227.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nic</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;nic -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge11" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;nic</title>
+<path fill="none" stroke="#000000" d="M97.49,-822.36C98.14,-877.04 108.38,-1099.34 229,-1209 244.11,-1222.74 266.29,-1228.1 285.15,-1229.97"/>
+<polygon fill="#000000" stroke="#000000" points="284.99,-1233.46 295.21,-1230.68 285.49,-1226.48 284.99,-1233.46"/>
+</g>
+<!-- exact_nei_tree_update -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node12" class="node">
+<title>exact_nei_tree_update</title>
+<polygon fill="#777777" stroke="#777777" points="388.5,-1200 256.5,-1200 256.5,-1176 388.5,-1176 388.5,-1200"/>
+<text text-anchor="middle" x="322.5" y="-1185.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">exact_nei_tree_update</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;exact_nei_tree_update -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge10" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;exact_nei_tree_update</title>
+<path fill="none" stroke="#000000" d="M98.01,-822.1C100.84,-872.83 118.82,-1070.25 229,-1167 234.24,-1171.6 240.27,-1175.25 246.7,-1178.14"/>
+<polygon fill="#000000" stroke="#000000" points="245.75,-1181.53 256.34,-1181.86 248.27,-1175 245.75,-1181.53"/>
+</g>
+<!-- gen_pwp_eos -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node13" class="node">
+<title>gen_pwp_eos</title>
+<polygon fill="#777777" stroke="#777777" points="364.5,-1158 280.5,-1158 280.5,-1134 364.5,-1134 364.5,-1158"/>
+<text text-anchor="middle" x="322.5" y="-1143.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gen_pwp_eos</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;gen_pwp_eos -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge12" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;gen_pwp_eos</title>
+<path fill="none" stroke="#000000" d="M98.69,-822.28C103.94,-869.55 129.45,-1041.27 229,-1125 240.57,-1134.73 255.74,-1140.18 270.44,-1143.18"/>
+<polygon fill="#000000" stroke="#000000" points="270.04,-1146.66 280.49,-1144.87 271.21,-1139.76 270.04,-1146.66"/>
+</g>
+<!-- shorten_eos_name -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node14" class="node">
+<title>shorten_eos_name</title>
+<polygon fill="#777777" stroke="#777777" points="379,-1116 266,-1116 266,-1092 379,-1092 379,-1116"/>
+<text text-anchor="middle" x="322.5" y="-1101.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">shorten_eos_name</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;shorten_eos_name -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge13" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;shorten_eos_name</title>
+<path fill="none" stroke="#000000" d="M99.51,-822.13C107.31,-865.17 139.7,-1011.88 229,-1083 236.83,-1089.23 246.15,-1093.69 255.81,-1096.86"/>
+<polygon fill="#000000" stroke="#000000" points="254.97,-1100.26 265.55,-1099.63 256.88,-1093.53 254.97,-1100.26"/>
+</g>
+<!-- iorig -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node15" class="node">
+<title>iorig</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-1074 295.5,-1074 295.5,-1050 349.5,-1050 349.5,-1074"/>
+<text text-anchor="middle" x="322.5" y="-1059.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iorig</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;iorig -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge14" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;iorig</title>
+<path fill="none" stroke="#000000" d="M100.63,-822.13C111.26,-860.84 149.87,-982.3 229,-1041 245.11,-1052.95 266.82,-1058.28 285.16,-1060.59"/>
+<polygon fill="#000000" stroke="#000000" points="284.93,-1064.08 295.23,-1061.6 285.63,-1057.12 284.93,-1064.08"/>
 </g>
 <!-- proc~spacetime_vector_norm_sym4x4 -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node9" class="node">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node16" class="node">
 <title>proc~spacetime_vector_norm_sym4x4</title>
-<g id="a_proc~~compute_and_print_sph_variables~~CallsGraph_node9"><a xlink:href=".././proc/spacetime_vector_norm_sym4x4.html" xlink:title="spacetime_vector_norm_sym4x4">
-<polygon fill="#d9534f" stroke="#d9534f" points="416,-1284 229,-1284 229,-1260 416,-1260 416,-1284"/>
-<text text-anchor="middle" x="322.5" y="-1269.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spacetime_vector_norm_sym4x4</text>
+<g id="a_proc~~compute_and_print_sph_variables~~CallsGraph_node16"><a xlink:href=".././proc/spacetime_vector_norm_sym4x4.html" xlink:title="spacetime_vector_norm_sym4x4">
+<polygon fill="#d9534f" stroke="#d9534f" points="416,-1032 229,-1032 229,-1008 416,-1008 416,-1032"/>
+<text text-anchor="middle" x="322.5" y="-1017.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spacetime_vector_norm_sym4x4</text>
 </a>
 </g>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;proc~spacetime_vector_norm_sym4x4 -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge8" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge37" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;proc~spacetime_vector_norm_sym4x4</title>
-<path fill="none" stroke="#000000" d="M99.27,-801.14C109.15,-867.46 159.68,-1185.33 229,-1251 230.27,-1252.21 231.6,-1253.35 232.98,-1254.43"/>
-<polygon fill="#000000" stroke="#000000" points="231.06,-1257.36 241.33,-1259.99 234.94,-1251.53 231.06,-1257.36"/>
+<path fill="none" stroke="#000000" d="M102.16,-822.05C115.92,-855.88 159.72,-952.31 229,-999 231.43,-1000.64 233.97,-1002.15 236.6,-1003.55"/>
+<polygon fill="#000000" stroke="#000000" points="235.26,-1006.79 245.8,-1007.86 238.23,-1000.45 235.26,-1006.79"/>
 </g>
-<!-- proc~find_h_backup -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node10" class="node">
-<title>proc~find_h_backup</title>
-<g id="a_proc~~compute_and_print_sph_variables~~CallsGraph_node10"><a xlink:href=".././proc/find_h_backup.html" xlink:title="find_h_backup">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="367,-1242 278,-1242 278,-1218 367,-1218 367,-1242"/>
-<text text-anchor="middle" x="322.5" y="-1227.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find_h_backup</text>
-</a>
-</g>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;proc~find_h_backup -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge9" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;proc~find_h_backup</title>
-<path fill="none" stroke="#000000" d="M97.26,-801.23C96.85,-857.37 102.94,-1092.67 229,-1209 239.52,-1218.71 253.55,-1224.24 267.51,-1227.32"/>
-<polygon fill="#000000" stroke="#000000" points="267.14,-1230.81 277.6,-1229.15 268.39,-1223.92 267.14,-1230.81"/>
-</g>
-<!-- nlrf -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node11" class="node">
-<title>nlrf</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-1200 295.5,-1200 295.5,-1176 349.5,-1176 349.5,-1200"/>
-<text text-anchor="middle" x="322.5" y="-1185.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nlrf</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;nlrf -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge10" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;nlrf</title>
-<path fill="none" stroke="#000000" d="M97.73,-801.08C99.44,-853.54 113.5,-1063.71 229,-1167 244.23,-1180.62 266.41,-1185.97 285.24,-1187.87"/>
-<polygon fill="#000000" stroke="#000000" points="285.06,-1191.36 295.29,-1188.6 285.57,-1184.38 285.06,-1191.36"/>
-</g>
-<!-- iorig -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node12" class="node">
-<title>iorig</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-1158 295.5,-1158 295.5,-1134 349.5,-1134 349.5,-1158"/>
-<text text-anchor="middle" x="322.5" y="-1143.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iorig</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;iorig -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge11" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;iorig</title>
-<path fill="none" stroke="#000000" d="M98.32,-801.06C102.3,-849.91 124.06,-1034.71 229,-1125 244.48,-1138.32 266.68,-1143.66 285.44,-1145.63"/>
-<polygon fill="#000000" stroke="#000000" points="285.21,-1149.12 295.45,-1146.41 285.75,-1142.15 285.21,-1149.12"/>
-</g>
-<!-- pos_u -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node13" class="node">
-<title>pos_u</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-1116 295.5,-1116 295.5,-1092 349.5,-1092 349.5,-1116"/>
-<text text-anchor="middle" x="322.5" y="-1101.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pos_u</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;pos_u -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge13" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;pos_u</title>
-<path fill="none" stroke="#000000" d="M99.06,-801.09C105.52,-846.13 134.52,-1005.54 229,-1083 244.62,-1095.8 266.49,-1101.16 285.05,-1103.26"/>
-<polygon fill="#000000" stroke="#000000" points="284.98,-1106.77 295.24,-1104.14 285.58,-1099.8 284.98,-1106.77"/>
-</g>
-<!-- read_options -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node14" class="node">
-<title>read_options</title>
-<polygon fill="#777777" stroke="#777777" points="363,-1074 282,-1074 282,-1050 363,-1050 363,-1074"/>
-<text text-anchor="middle" x="322.5" y="-1059.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">read_options</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;read_options -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge14" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;read_options</title>
-<path fill="none" stroke="#000000" d="M100.01,-801.05C109.16,-841.89 144.76,-976.09 229,-1041 241.19,-1050.39 256.8,-1055.73 271.72,-1058.71"/>
-<polygon fill="#000000" stroke="#000000" points="271.44,-1062.21 281.88,-1060.43 272.6,-1055.31 271.44,-1062.21"/>
-</g>
-<!-- deallocate_rcb_tree_memory_3d -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node15" class="node">
-<title>deallocate_rcb_tree_memory_3d</title>
-<polygon fill="#777777" stroke="#777777" points="416,-1032 229,-1032 229,-1008 416,-1008 416,-1032"/>
-<text text-anchor="middle" x="322.5" y="-1017.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_rcb_tree_memory_3d</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;deallocate_rcb_tree_memory_3d -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge15" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;deallocate_rcb_tree_memory_3d</title>
-<path fill="none" stroke="#000000" d="M101.31,-801.06C113.45,-837.35 154.81,-946.34 229,-999 231.25,-1000.6 233.6,-1002.08 236.04,-1003.45"/>
-<polygon fill="#000000" stroke="#000000" points="234.63,-1006.65 245.15,-1007.93 237.72,-1000.37 234.63,-1006.65"/>
-</g>
-<!-- allocate_metric_on_particles -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node16" class="node">
-<title>allocate_metric_on_particles</title>
-<polygon fill="#777777" stroke="#777777" points="405,-990 240,-990 240,-966 405,-966 405,-990"/>
-<text text-anchor="middle" x="322.5" y="-975.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_metric_on_particles</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;allocate_metric_on_particles -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge16" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;allocate_metric_on_particles</title>
-<path fill="none" stroke="#000000" d="M103.21,-801.05C118.68,-832.26 164.56,-916.15 229,-957 231.78,-958.76 234.69,-960.38 237.7,-961.86"/>
-<polygon fill="#000000" stroke="#000000" points="236.39,-965.11 246.95,-965.91 239.19,-958.69 236.39,-965.11"/>
-</g>
-<!-- nic -->
+<!-- nu -->
 <g id="proc~~compute_and_print_sph_variables~~CallsGraph_node17" class="node">
-<title>nic</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-948 295.5,-948 295.5,-924 349.5,-924 349.5,-948"/>
-<text text-anchor="middle" x="322.5" y="-933.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nic</text>
+<title>nu</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-990 295.5,-990 295.5,-966 349.5,-966 349.5,-990"/>
+<text text-anchor="middle" x="322.5" y="-975.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nu</text>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;nic -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge17" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;nic</title>
-<path fill="none" stroke="#000000" d="M106.49,-801.29C125.85,-826.78 174.15,-885.49 229,-915 246.34,-924.33 267.65,-929.52 285.45,-932.41"/>
-<polygon fill="#000000" stroke="#000000" points="285.07,-935.89 295.46,-933.86 286.07,-928.96 285.07,-935.89"/>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;nu -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge15" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;nu</title>
+<path fill="none" stroke="#000000" d="M104.63,-822.18C121.98,-850.67 169.39,-921.91 229,-957 245.96,-966.99 267.25,-972.23 285.13,-974.97"/>
+<polygon fill="#000000" stroke="#000000" points="284.83,-978.46 295.2,-976.32 285.76,-971.53 284.83,-978.46"/>
 </g>
-<!-- gen_pwp_eos -->
+<!-- lpart -->
 <g id="proc~~compute_and_print_sph_variables~~CallsGraph_node18" class="node">
-<title>gen_pwp_eos</title>
-<polygon fill="#777777" stroke="#777777" points="364.5,-906 280.5,-906 280.5,-882 364.5,-882 364.5,-906"/>
-<text text-anchor="middle" x="322.5" y="-891.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gen_pwp_eos</text>
+<title>lpart</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-948 295.5,-948 295.5,-924 349.5,-924 349.5,-948"/>
+<text text-anchor="middle" x="322.5" y="-933.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lpart</text>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;gen_pwp_eos -->
+<!-- proc~compute_and_print_sph_variables&#45;&gt;lpart -->
 <g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge18" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;gen_pwp_eos</title>
-<path fill="none" stroke="#000000" d="M112.71,-801.23C136.24,-819.55 183.51,-853.99 229,-873 242.08,-878.47 256.83,-882.63 270.64,-885.75"/>
-<polygon fill="#000000" stroke="#000000" points="269.98,-889.19 280.49,-887.84 271.44,-882.34 269.98,-889.19"/>
+<title>proc~compute_and_print_sph_variables&#45;&gt;lpart</title>
+<path fill="none" stroke="#000000" d="M108.9,-822.19C130.27,-844.26 178.72,-890.8 229,-915 246.61,-923.48 267.78,-928.61 285.42,-931.67"/>
+<polygon fill="#000000" stroke="#000000" points="284.92,-935.14 295.34,-933.25 286.02,-928.22 284.92,-935.14"/>
 </g>
-<!-- shorten_eos_name -->
+<!-- theta -->
 <g id="proc~~compute_and_print_sph_variables~~CallsGraph_node19" class="node">
-<title>shorten_eos_name</title>
-<polygon fill="#777777" stroke="#777777" points="379,-864 266,-864 266,-840 379,-840 379,-864"/>
-<text text-anchor="middle" x="322.5" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">shorten_eos_name</text>
+<title>theta</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-906 295.5,-906 295.5,-882 349.5,-882 349.5,-906"/>
+<text text-anchor="middle" x="322.5" y="-891.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">theta</text>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;shorten_eos_name -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge19" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;shorten_eos_name</title>
-<path fill="none" stroke="#000000" d="M132.42,-801.06C158.78,-809.94 195.94,-821.98 229,-831 237.63,-833.35 246.77,-835.66 255.81,-837.82"/>
-<polygon fill="#000000" stroke="#000000" points="255.01,-841.23 265.55,-840.11 256.61,-834.41 255.01,-841.23"/>
-</g>
-<!-- select_eos_parameters -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node20" class="node">
-<title>select_eos_parameters</title>
-<polygon fill="#777777" stroke="#777777" points="390.5,-822 254.5,-822 254.5,-798 390.5,-798 390.5,-822"/>
-<text text-anchor="middle" x="322.5" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">select_eos_parameters</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;select_eos_parameters -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge20" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;select_eos_parameters</title>
-<path fill="none" stroke="#000000" d="M193.15,-797.97C210.18,-799.56 227.73,-801.21 244.18,-802.75"/>
-<polygon fill="#000000" stroke="#000000" points="243.98,-806.25 254.26,-803.7 244.63,-799.28 243.98,-806.25"/>
-</g>
-<!-- vel_u -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node21" class="node">
-<title>vel_u</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-780 295.5,-780 295.5,-756 349.5,-756 349.5,-780"/>
-<text text-anchor="middle" x="322.5" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">vel_u</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;vel_u -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge21" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;vel_u</title>
-<path fill="none" stroke="#000000" d="M193.15,-780.03C225.61,-776.99 259.94,-773.77 284.93,-771.43"/>
-<polygon fill="#000000" stroke="#000000" points="285.4,-774.9 295.03,-770.48 284.75,-767.93 285.4,-774.9"/>
-</g>
-<!-- allocate_gradient -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node22" class="node">
-<title>allocate_gradient</title>
-<polygon fill="#777777" stroke="#777777" points="375.5,-738 269.5,-738 269.5,-714 375.5,-714 375.5,-738"/>
-<text text-anchor="middle" x="322.5" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_gradient</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;allocate_gradient -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge22" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;allocate_gradient</title>
-<path fill="none" stroke="#000000" d="M132.42,-776.94C158.78,-768.06 195.94,-756.02 229,-747 238.87,-744.31 249.4,-741.69 259.69,-739.26"/>
-<polygon fill="#000000" stroke="#000000" points="260.5,-742.66 269.45,-736.99 258.91,-735.84 260.5,-742.66"/>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;theta -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge16" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;theta</title>
+<path fill="none" stroke="#000000" d="M118.74,-822.01C144.23,-835.98 188.6,-858.93 229,-873 247.03,-879.28 267.7,-884.18 284.92,-887.66"/>
+<polygon fill="#000000" stroke="#000000" points="284.66,-891.17 295.15,-889.64 286,-884.3 284.66,-891.17"/>
 </g>
 <!-- proc~compute_g4 -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node23" class="node">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node20" class="node">
 <title>proc~compute_g4</title>
-<g id="a_proc~~compute_and_print_sph_variables~~CallsGraph_node23"><a xlink:href=".././proc/compute_g4.html" xlink:title="compute_g4">
-<polygon fill="#d9534f" stroke="#d9534f" points="362,-696 283,-696 283,-672 362,-672 362,-696"/>
-<text text-anchor="middle" x="322.5" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_g4</text>
+<g id="a_proc~~compute_and_print_sph_variables~~CallsGraph_node20"><a xlink:href=".././proc/compute_g4.html" xlink:title="compute_g4">
+<polygon fill="#d9534f" stroke="#d9534f" points="362,-864 283,-864 283,-840 362,-840 362,-864"/>
+<text text-anchor="middle" x="322.5" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_g4</text>
 </a>
 </g>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;proc~compute_g4 -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge37" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge17" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;proc~compute_g4</title>
-<path fill="none" stroke="#000000" d="M112.71,-776.77C136.24,-758.45 183.51,-724.01 229,-705 242.69,-699.28 258.21,-694.98 272.57,-691.82"/>
-<polygon fill="#000000" stroke="#000000" points="273.69,-695.16 282.78,-689.71 272.28,-688.3 273.69,-695.16"/>
+<path fill="none" stroke="#000000" d="M161.69,-822.04C197.04,-828.66 240.2,-836.76 272.76,-842.86"/>
+<polygon fill="#000000" stroke="#000000" points="272.46,-846.37 282.93,-844.77 273.75,-839.49 272.46,-846.37"/>
 </g>
-<!-- ncand -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node24" class="node">
-<title>ncand</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-654 295.5,-654 295.5,-630 349.5,-630 349.5,-654"/>
-<text text-anchor="middle" x="322.5" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ncand</text>
+<!-- proc~find_h_backup -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node21" class="node">
+<title>proc~find_h_backup</title>
+<g id="a_proc~~compute_and_print_sph_variables~~CallsGraph_node21"><a xlink:href=".././proc/find_h_backup.html" xlink:title="find_h_backup">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="367,-822 278,-822 278,-798 367,-798 367,-822"/>
+<text text-anchor="middle" x="322.5" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">find_h_backup</text>
+</a>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;ncand -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge23" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;ncand</title>
-<path fill="none" stroke="#000000" d="M106.49,-776.71C125.85,-751.22 174.15,-692.51 229,-663 246.34,-653.67 267.65,-648.48 285.45,-645.59"/>
-<polygon fill="#000000" stroke="#000000" points="286.07,-649.04 295.46,-644.14 285.07,-642.11 286.07,-649.04"/>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;proc~find_h_backup -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge19" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;proc~find_h_backup</title>
+<path fill="none" stroke="#000000" d="M193.15,-810C218.6,-810 245.21,-810 267.56,-810"/>
+<polygon fill="#000000" stroke="#000000" points="267.84,-813.5 277.84,-810 267.84,-806.5 267.84,-813.5"/>
+</g>
+<!-- density -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node22" class="node">
+<title>density</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-780 295.5,-780 295.5,-756 349.5,-756 349.5,-780"/>
+<text text-anchor="middle" x="322.5" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">density</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;density -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge20" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;density</title>
+<path fill="none" stroke="#000000" d="M161.69,-797.96C201.7,-790.46 251.74,-781.08 285.06,-774.83"/>
+<polygon fill="#000000" stroke="#000000" points="286.07,-778.2 295.25,-772.92 284.78,-771.32 286.07,-778.2"/>
 </g>
 <!-- timer -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node25" class="node">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node23" class="node">
 <title>timer</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-612 295.5,-612 295.5,-588 349.5,-588 349.5,-612"/>
-<text text-anchor="middle" x="322.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
+<polygon fill="#777777" stroke="#777777" points="349.5,-738 295.5,-738 295.5,-714 349.5,-714 349.5,-738"/>
+<text text-anchor="middle" x="322.5" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;timer -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge24" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge21" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" d="M103.21,-776.95C118.68,-745.74 164.56,-661.85 229,-621 245.74,-610.39 267.19,-605.11 285.22,-602.5"/>
-<polygon fill="#000000" stroke="#000000" points="285.88,-605.95 295.38,-601.25 285.02,-599 285.88,-605.95"/>
-</g>
-<!-- nu -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node26" class="node">
-<title>nu</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-570 295.5,-570 295.5,-546 349.5,-546 349.5,-570"/>
-<text text-anchor="middle" x="322.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nu</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;nu -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge25" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;nu</title>
-<path fill="none" stroke="#000000" d="M101.31,-776.94C113.45,-740.65 154.81,-631.66 229,-579 245.35,-567.39 267.08,-562.08 285.37,-559.69"/>
-<polygon fill="#000000" stroke="#000000" points="285.82,-563.16 295.39,-558.63 285.08,-556.2 285.82,-563.16"/>
-</g>
-<!-- assign_h -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node27" class="node">
-<title>assign_h</title>
-<polygon fill="#777777" stroke="#777777" points="351.5,-528 293.5,-528 293.5,-504 351.5,-504 351.5,-528"/>
-<text text-anchor="middle" x="322.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">assign_h</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;assign_h -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge26" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;assign_h</title>
-<path fill="none" stroke="#000000" d="M100.01,-776.95C109.16,-736.11 144.76,-601.91 229,-537 244.45,-525.1 265.4,-519.71 283.45,-517.36"/>
-<polygon fill="#000000" stroke="#000000" points="283.82,-520.84 293.41,-516.33 283.1,-513.88 283.82,-520.84"/>
-</g>
-<!-- gen_pwp_cold_eos -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node28" class="node">
-<title>gen_pwp_cold_eos</title>
-<polygon fill="#777777" stroke="#777777" points="378.5,-486 266.5,-486 266.5,-462 378.5,-462 378.5,-486"/>
-<text text-anchor="middle" x="322.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gen_pwp_cold_eos</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;gen_pwp_cold_eos -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge27" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;gen_pwp_cold_eos</title>
-<path fill="none" stroke="#000000" d="M99.06,-776.91C105.52,-731.87 134.52,-572.46 229,-495 237.01,-488.43 246.67,-483.83 256.68,-480.61"/>
-<polygon fill="#000000" stroke="#000000" points="257.64,-483.98 266.35,-477.94 255.78,-477.23 257.64,-483.98"/>
+<path fill="none" stroke="#000000" d="M118.74,-797.99C144.23,-784.02 188.6,-761.07 229,-747 247.03,-740.72 267.7,-735.82 284.92,-732.34"/>
+<polygon fill="#000000" stroke="#000000" points="286,-735.7 295.15,-730.36 284.66,-728.83 286,-735.7"/>
 </g>
 <!-- cs -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node29" class="node">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node24" class="node">
 <title>cs</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-444 295.5,-444 295.5,-420 349.5,-420 349.5,-444"/>
-<text text-anchor="middle" x="322.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cs</text>
+<polygon fill="#777777" stroke="#777777" points="349.5,-696 295.5,-696 295.5,-672 349.5,-672 349.5,-696"/>
+<text text-anchor="middle" x="322.5" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cs</text>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;cs -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge28" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge22" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;cs</title>
-<path fill="none" stroke="#000000" d="M98.32,-776.94C102.3,-728.09 124.06,-543.29 229,-453 244.48,-439.68 266.68,-434.34 285.44,-432.37"/>
-<polygon fill="#000000" stroke="#000000" points="285.75,-435.85 295.45,-431.59 285.21,-428.88 285.75,-435.85"/>
-</g>
-<!-- u -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node30" class="node">
-<title>u</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-402 295.5,-402 295.5,-378 349.5,-378 349.5,-402"/>
-<text text-anchor="middle" x="322.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">u</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;u -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge29" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;u</title>
-<path fill="none" stroke="#000000" d="M97.73,-776.92C99.44,-724.46 113.5,-514.29 229,-411 244.23,-397.38 266.41,-392.03 285.24,-390.13"/>
-<polygon fill="#000000" stroke="#000000" points="285.57,-393.62 295.29,-389.4 285.06,-386.64 285.57,-393.62"/>
-</g>
-<!-- allocate_sph_memory -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node31" class="node">
-<title>allocate_sph_memory</title>
-<polygon fill="#777777" stroke="#777777" points="387.5,-360 257.5,-360 257.5,-336 387.5,-336 387.5,-360"/>
-<text text-anchor="middle" x="322.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_sph_memory</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;allocate_sph_memory -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge30" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;allocate_sph_memory</title>
-<path fill="none" stroke="#000000" d="M97.26,-776.77C96.85,-720.63 102.94,-485.33 229,-369 234.49,-363.93 240.94,-360 247.84,-356.96"/>
-<polygon fill="#000000" stroke="#000000" points="249.34,-360.14 257.47,-353.35 246.88,-353.58 249.34,-360.14"/>
-</g>
-<!-- theta -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node32" class="node">
-<title>theta</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-318 295.5,-318 295.5,-294 349.5,-294 349.5,-318"/>
-<text text-anchor="middle" x="322.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">theta</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;theta -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge31" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;theta</title>
-<path fill="none" stroke="#000000" d="M99.27,-776.86C109.15,-710.54 159.68,-392.67 229,-327 243.93,-312.86 266.3,-307.52 285.31,-305.75"/>
-<polygon fill="#000000" stroke="#000000" points="285.69,-309.24 295.45,-305.11 285.25,-302.25 285.69,-309.24"/>
-</g>
-<!-- pr -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node33" class="node">
-<title>pr</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-276 295.5,-276 295.5,-252 349.5,-252 349.5,-276"/>
-<text text-anchor="middle" x="322.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pr</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;pr -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge32" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;pr</title>
-<path fill="none" stroke="#000000" d="M98.98,-776.7C107.68,-706.52 154.3,-357.35 229,-285 243.77,-270.69 266.14,-265.35 285.18,-263.62"/>
-<polygon fill="#000000" stroke="#000000" points="285.58,-267.11 295.35,-263.01 285.16,-260.12 285.58,-267.11"/>
-</g>
-<!-- h -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node34" class="node">
-<title>h</title>
-<polygon fill="#777777" stroke="#777777" points="349.5,-234 295.5,-234 295.5,-210 349.5,-210 349.5,-234"/>
-<text text-anchor="middle" x="322.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;h -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge33" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;h</title>
-<path fill="none" stroke="#000000" d="M98.72,-776.66C106.28,-703.02 148.85,-322.11 229,-243 243.64,-228.55 266,-223.21 285.08,-221.51"/>
-<polygon fill="#000000" stroke="#000000" points="285.49,-225 295.26,-220.92 285.08,-218.01 285.49,-225"/>
-</g>
-<!-- deallocate_gradient -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node35" class="node">
-<title>deallocate_gradient</title>
-<polygon fill="#777777" stroke="#777777" points="382,-192 263,-192 263,-168 382,-168 382,-192"/>
-<text text-anchor="middle" x="322.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_gradient</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;deallocate_gradient -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge34" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;deallocate_gradient</title>
-<path fill="none" stroke="#000000" d="M98.49,-776.73C104.94,-700.03 143.34,-286.94 229,-201 235.66,-194.32 243.97,-189.58 252.86,-186.24"/>
-<polygon fill="#000000" stroke="#000000" points="254.19,-189.49 262.68,-183.14 252.09,-182.81 254.19,-189.49"/>
-</g>
-<!-- write_sphincs_dump -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node36" class="node">
-<title>write_sphincs_dump</title>
-<polygon fill="#777777" stroke="#777777" points="382.5,-150 262.5,-150 262.5,-126 382.5,-126 382.5,-150"/>
-<text text-anchor="middle" x="322.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_sphincs_dump</text>
-</g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;write_sphincs_dump -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge35" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;write_sphincs_dump</title>
-<path fill="none" stroke="#000000" d="M98.28,-776.91C103.67,-697.56 137.76,-251.84 229,-159 235.53,-152.36 243.68,-147.63 252.43,-144.28"/>
-<polygon fill="#000000" stroke="#000000" points="253.65,-147.57 262.11,-141.18 251.52,-140.9 253.65,-147.57"/>
+<path fill="none" stroke="#000000" d="M108.9,-797.81C130.27,-775.74 178.72,-729.2 229,-705 246.61,-696.52 267.78,-691.39 285.42,-688.33"/>
+<polygon fill="#000000" stroke="#000000" points="286.02,-691.78 295.34,-686.75 284.92,-684.86 286.02,-691.78"/>
 </g>
 <!-- proc~determinant_sym4x4 -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node37" class="node">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node25" class="node">
 <title>proc~determinant_sym4x4</title>
-<g id="a_proc~~compute_and_print_sph_variables~~CallsGraph_node37"><a xlink:href=".././proc/determinant_sym4x4.html" xlink:title="determinant_sym4x4">
-<polygon fill="#d9534f" stroke="#d9534f" points="385,-108 260,-108 260,-84 385,-84 385,-108"/>
-<text text-anchor="middle" x="322.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym4x4</text>
+<g id="a_proc~~compute_and_print_sph_variables~~CallsGraph_node25"><a xlink:href=".././proc/determinant_sym4x4.html" xlink:title="determinant_sym4x4">
+<polygon fill="#d9534f" stroke="#d9534f" points="385,-654 260,-654 260,-630 385,-630 385,-654"/>
+<text text-anchor="middle" x="322.5" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym4x4</text>
 </a>
 </g>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;proc~determinant_sym4x4 -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge36" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge23" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;proc~determinant_sym4x4</title>
-<path fill="none" stroke="#000000" d="M98.11,-776.91C102.55,-694.6 132.24,-216.71 229,-117 234.93,-110.88 242.25,-106.38 250.15,-103.09"/>
-<polygon fill="#000000" stroke="#000000" points="251.36,-106.38 259.63,-99.76 249.04,-99.77 251.36,-106.38"/>
+<path fill="none" stroke="#000000" d="M104.63,-797.82C121.98,-769.33 169.39,-698.09 229,-663 235.44,-659.21 242.5,-656.1 249.76,-653.56"/>
+<polygon fill="#000000" stroke="#000000" points="251.26,-656.75 259.75,-650.42 249.16,-650.08 251.26,-656.75"/>
+</g>
+<!-- rpart -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node26" class="node">
+<title>rpart</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-612 295.5,-612 295.5,-588 349.5,-588 349.5,-612"/>
+<text text-anchor="middle" x="322.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rpart</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;rpart -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge24" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;rpart</title>
+<path fill="none" stroke="#000000" d="M102.16,-797.95C115.92,-764.12 159.72,-667.69 229,-621 245.51,-609.87 267.07,-604.57 285.22,-602.07"/>
+<polygon fill="#000000" stroke="#000000" points="285.63,-605.55 295.17,-600.93 284.83,-598.59 285.63,-605.55"/>
+</g>
+<!-- h -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node27" class="node">
+<title>h</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-570 295.5,-570 295.5,-546 349.5,-546 349.5,-570"/>
+<text text-anchor="middle" x="322.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;h -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge25" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;h</title>
+<path fill="none" stroke="#000000" d="M100.63,-797.87C111.26,-759.16 149.87,-637.7 229,-579 245.11,-567.05 266.82,-561.72 285.16,-559.41"/>
+<polygon fill="#000000" stroke="#000000" points="285.63,-562.88 295.23,-558.4 284.93,-555.92 285.63,-562.88"/>
 </g>
 <!-- density_loop -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node38" class="node">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node28" class="node">
 <title>density_loop</title>
-<polygon fill="#777777" stroke="#777777" points="362,-66 283,-66 283,-42 362,-42 362,-66"/>
-<text text-anchor="middle" x="322.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">density_loop</text>
+<polygon fill="#777777" stroke="#777777" points="362,-528 283,-528 283,-504 362,-504 362,-528"/>
+<text text-anchor="middle" x="322.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">density_loop</text>
 </g>
 <!-- proc~compute_and_print_sph_variables&#45;&gt;density_loop -->
-<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge12" class="edge">
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge26" class="edge">
 <title>proc~compute_and_print_sph_variables&#45;&gt;density_loop</title>
-<path fill="none" stroke="#000000" d="M97.96,-776.99C101.47,-692.02 126.67,-181.63 229,-75 240.32,-63.21 256.77,-57.4 272.66,-54.71"/>
-<polygon fill="#000000" stroke="#000000" points="273.51,-58.13 282.97,-53.37 272.6,-51.19 273.51,-58.13"/>
+<path fill="none" stroke="#000000" d="M99.51,-797.87C107.31,-754.83 139.7,-608.12 229,-537 241.36,-527.15 257.46,-521.74 272.75,-518.82"/>
+<polygon fill="#000000" stroke="#000000" points="273.31,-522.27 282.63,-517.23 272.2,-515.36 273.31,-522.27"/>
 </g>
-<!-- exact_nei_tree_update -->
+<!-- u -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node29" class="node">
+<title>u</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-486 295.5,-486 295.5,-462 349.5,-462 349.5,-486"/>
+<text text-anchor="middle" x="322.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">u</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;u -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge27" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;u</title>
+<path fill="none" stroke="#000000" d="M98.69,-797.72C103.94,-750.45 129.45,-578.73 229,-495 244.45,-482 266.32,-476.64 284.92,-474.58"/>
+<polygon fill="#000000" stroke="#000000" points="285.46,-478.04 295.13,-473.73 284.88,-471.07 285.46,-478.04"/>
+</g>
+<!-- pos_u -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node30" class="node">
+<title>pos_u</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-444 295.5,-444 295.5,-420 349.5,-420 349.5,-444"/>
+<text text-anchor="middle" x="322.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pos_u</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;pos_u -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge28" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;pos_u</title>
+<path fill="none" stroke="#000000" d="M98.01,-797.9C100.84,-747.17 118.82,-549.75 229,-453 244.35,-439.52 266.54,-434.18 285.34,-432.24"/>
+<polygon fill="#000000" stroke="#000000" points="285.66,-435.73 295.37,-431.49 285.13,-428.75 285.66,-435.73"/>
+</g>
+<!-- select_eos_parameters -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node31" class="node">
+<title>select_eos_parameters</title>
+<polygon fill="#777777" stroke="#777777" points="390.5,-402 254.5,-402 254.5,-378 390.5,-378 390.5,-402"/>
+<text text-anchor="middle" x="322.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">select_eos_parameters</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;select_eos_parameters -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge29" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;select_eos_parameters</title>
+<path fill="none" stroke="#000000" d="M97.49,-797.64C98.14,-742.96 108.38,-520.66 229,-411 233.72,-406.71 239.12,-403.24 244.9,-400.43"/>
+<polygon fill="#000000" stroke="#000000" points="246.35,-403.62 254.25,-396.56 243.67,-397.16 246.35,-403.62"/>
+</g>
+<!-- write_sphincs_dump -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node32" class="node">
+<title>write_sphincs_dump</title>
+<polygon fill="#777777" stroke="#777777" points="382.5,-360 262.5,-360 262.5,-336 382.5,-336 382.5,-360"/>
+<text text-anchor="middle" x="322.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_sphincs_dump</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;write_sphincs_dump -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge30" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;write_sphincs_dump</title>
+<path fill="none" stroke="#000000" d="M97.05,-797.95C95.62,-740.51 97.44,-492.08 229,-369 235.71,-362.72 243.89,-358.18 252.59,-354.92"/>
+<polygon fill="#000000" stroke="#000000" points="253.71,-358.24 262.17,-351.86 251.58,-351.57 253.71,-358.24"/>
+</g>
+<!-- gen_pwp_cold_eos -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node33" class="node">
+<title>gen_pwp_cold_eos</title>
+<polygon fill="#777777" stroke="#777777" points="378.5,-318 266.5,-318 266.5,-294 378.5,-294 378.5,-318"/>
+<text text-anchor="middle" x="322.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">gen_pwp_cold_eos</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;gen_pwp_cold_eos -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge31" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;gen_pwp_cold_eos</title>
+<path fill="none" stroke="#000000" d="M99.12,-797.76C108.41,-729.46 157,-396 229,-327 236.66,-319.66 246.32,-314.69 256.49,-311.35"/>
+<polygon fill="#000000" stroke="#000000" points="257.64,-314.66 266.35,-308.63 255.78,-307.91 257.64,-314.66"/>
+</g>
+<!-- deallocate_sph_memory -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node34" class="node">
+<title>deallocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="394,-276 251,-276 251,-252 394,-252 394,-276"/>
+<text text-anchor="middle" x="322.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_sph_memory</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;deallocate_sph_memory -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge33" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;deallocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M98.85,-797.66C106.97,-725.7 151.58,-360.72 229,-285 232.73,-281.35 236.95,-278.28 241.49,-275.71"/>
+<polygon fill="#000000" stroke="#000000" points="243.07,-278.84 250.56,-271.35 240.03,-272.53 243.07,-278.84"/>
+</g>
+<!-- read_options -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node35" class="node">
+<title>read_options</title>
+<polygon fill="#777777" stroke="#777777" points="363,-234 282,-234 282,-210 363,-210 363,-234"/>
+<text text-anchor="middle" x="322.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">read_options</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;read_options -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge34" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;read_options</title>
+<path fill="none" stroke="#000000" d="M98.6,-797.68C105.6,-722.46 146.1,-325.51 229,-243 240.3,-231.75 256.28,-226.01 271.78,-223.22"/>
+<polygon fill="#000000" stroke="#000000" points="272.44,-226.66 281.85,-221.78 271.45,-219.73 272.44,-226.66"/>
+</g>
+<!-- nlrf -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node36" class="node">
+<title>nlrf</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-192 295.5,-192 295.5,-168 349.5,-168 349.5,-192"/>
+<text text-anchor="middle" x="322.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nlrf</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;nlrf -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge35" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;nlrf</title>
+<path fill="none" stroke="#000000" d="M98.39,-797.81C104.3,-719.73 140.56,-290.38 229,-201 243.46,-186.38 265.83,-181.03 284.94,-179.38"/>
+<polygon fill="#000000" stroke="#000000" points="285.37,-182.86 295.15,-178.81 284.97,-175.87 285.37,-182.86"/>
+</g>
+<!-- pr -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node37" class="node">
+<title>pr</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-150 295.5,-150 295.5,-126 349.5,-126 349.5,-150"/>
+<text text-anchor="middle" x="322.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pr</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;pr -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge36" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;pr</title>
+<path fill="none" stroke="#000000" d="M98.21,-797.77C103.14,-716.54 135.06,-255.22 229,-159 243.37,-144.29 265.73,-138.93 284.86,-137.3"/>
+<polygon fill="#000000" stroke="#000000" points="285.3,-140.79 295.09,-136.75 284.92,-133.8 285.3,-140.79"/>
+</g>
+<!-- set_units -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node38" class="node">
+<title>set_units</title>
+<polygon fill="#777777" stroke="#777777" points="352,-108 293,-108 293,-84 352,-84 352,-108"/>
+<text text-anchor="middle" x="322.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_units</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;set_units -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge32" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;set_units</title>
+<path fill="none" stroke="#000000" d="M98.04,-797.81C102.03,-713.73 129.51,-220.11 229,-117 242.8,-102.7 264.14,-97.22 282.84,-95.41"/>
+<polygon fill="#000000" stroke="#000000" points="283.15,-98.9 292.9,-94.76 282.69,-91.92 283.15,-98.9"/>
+</g>
+<!-- allocate_sph_memory -->
 <g id="proc~~compute_and_print_sph_variables~~CallsGraph_node39" class="node">
-<title>exact_nei_tree_update</title>
-<polygon fill="#777777" stroke="#777777" points="388.5,-24 256.5,-24 256.5,0 388.5,0 388.5,-24"/>
-<text text-anchor="middle" x="322.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">exact_nei_tree_update</text>
+<title>allocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="387.5,-66 257.5,-66 257.5,-42 387.5,-42 387.5,-66"/>
+<text text-anchor="middle" x="322.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_sph_memory</text>
 </g>
-<!-- proc~compute_and_print_sph_variables&#45;&gt;exact_nei_tree_update -->
+<!-- proc~compute_and_print_sph_variables&#45;&gt;allocate_sph_memory -->
 <g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge38" class="edge">
-<title>proc~compute_and_print_sph_variables&#45;&gt;exact_nei_tree_update</title>
-<path fill="none" stroke="#000000" d="M97.83,-776.86C100.5,-688.67 121.17,-146.47 229,-33 234.07,-27.67 240.19,-23.55 246.83,-20.4"/>
-<polygon fill="#000000" stroke="#000000" points="248.19,-23.63 256.17,-16.67 245.59,-17.13 248.19,-23.63"/>
+<title>proc~compute_and_print_sph_variables&#45;&gt;allocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M97.9,-797.92C100.98,-711.31 123.93,-185.05 229,-75 234.24,-69.51 240.59,-65.32 247.48,-62.14"/>
+<polygon fill="#000000" stroke="#000000" points="249.09,-65.26 257.15,-58.39 246.56,-58.74 249.09,-65.26"/>
+</g>
+<!-- ncand -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_node40" class="node">
+<title>ncand</title>
+<polygon fill="#777777" stroke="#777777" points="349.5,-24 295.5,-24 295.5,0 349.5,0 349.5,-24"/>
+<text text-anchor="middle" x="322.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ncand</text>
+</g>
+<!-- proc~compute_and_print_sph_variables&#45;&gt;ncand -->
+<g id="proc~~compute_and_print_sph_variables~~CallsGraph_edge39" class="edge">
+<title>proc~compute_and_print_sph_variables&#45;&gt;ncand</title>
+<path fill="none" stroke="#000000" d="M97.77,-797.82C100.03,-708.1 118.41,-149.91 229,-33 243.29,-17.89 266,-12.58 285.34,-11.07"/>
+<polygon fill="#000000" stroke="#000000" points="285.54,-14.57 295.37,-10.6 285.21,-7.58 285.54,-14.57"/>
 </g>
 </g>
 </svg>
@@ -1211,7 +1223,7 @@
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-theta_a">Theta_a</a>
-      <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-a~12">a</a>
+      <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-a~11">a</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-call_flag~3">call_flag</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-cnt1~2">cnt1</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-com_d_1pn">com_d_1pn</a>
@@ -1226,7 +1238,7 @@
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-debug~5">debug</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-det~5">det</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-few_ncand~2">few_ncand</a>
-      <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-finalnamefile~9">finalnamefile</a>
+      <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-finalnamefile~8">finalnamefile</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-find_h_bruteforce_timer~2">find_h_bruteforce_timer</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-g4~4">g4</a>
       <a class="list-group-item" href="../proc/compute_and_print_sph_variables.html#variable-gg4">gg4</a>
@@ -1272,7 +1284,7 @@
   <td><strong>Theta_a</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-a~12"></span>integer,</td>
+  <td><span class="anchor" id="variable-a~11"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>a</strong></td><td></td><td></td><td></td>
 </tr>
@@ -1347,7 +1359,7 @@
   <td><strong>few_ncand</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-finalnamefile~9"></span>character(len=:),</td>
+  <td><span class="anchor" id="variable-finalnamefile~8"></span>character(len=:),</td>
 <td>private,</td>  <td>ALLOCATABLE</td><td>::</td>
   <td><strong>finalnamefile</strong></td><td></td><td></td><td></td>
 </tr>
@@ -1510,7 +1522,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-03 16:31:15           </p>
+ on 2022-04-06 09:24:34           </p>
         </div>
       </div>
       <br>
