@@ -93,6 +93,8 @@ SUBMODULE (sph_particles) apm
     !
     !*****************************************************
 
+    USE, INTRINSIC:: IEEE_ARITHMETIC, &
+                             ONLY: IEEE_IS_FINITE
     USE utility,             ONLY: cnt, spherical_from_cartesian
     USE constants,           ONLY: half, third, Msun, amu, pi
 
@@ -135,7 +137,7 @@ SUBMODULE (sph_particles) apm
     DOUBLE PRECISION, PARAMETER:: max_art_pr_ghost = 1.0D+10
     DOUBLE PRECISION, PARAMETER:: tiny_real        = 1.0D-10
 
-    INTEGER:: a, a2, itr, itr2, n_inc, cnt1!, inde, index1   ! iterators
+    INTEGER:: a, itr, itr2, n_inc, cnt1!, inde, index1   ! iterators
     INTEGER:: npart_real, npart_real_half, npart_ghost, npart_all
     INTEGER:: nx, ny, nz, i, j, k
     INTEGER:: a_numin, a_numin2, a_numax, a_numax2
@@ -154,8 +156,7 @@ SUBMODULE (sph_particles) apm
     DOUBLE PRECISION:: nu_all
     DOUBLE PRECISION:: err_N_mean_min, err_N_mean_min_old, err_N_mean, &
                        err_mean_old, err_n_min, err_N_max, dN, &!dNstar, &
-                       nstar_id_err, nstar_sph_err, dN_max, dN_av, &
-                       r_tmp, theta_tmp, phi_tmp
+                       nstar_id_err, nstar_sph_err, dN_max, dN_av
     DOUBLE PRECISION:: art_pr_max
     DOUBLE PRECISION:: nu_tot, nu_ratio, nu_tmp2, nuratio_tmp
     DOUBLE PRECISION:: variance_nu, stddev_nu, mean_nu
@@ -180,8 +181,6 @@ SUBMODULE (sph_particles) apm
     DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE:: ghost_pos
     DOUBLE PRECISION, DIMENSION(:,:,:,:), ALLOCATABLE:: ghost_pos_tmp
     DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE:: all_pos
-    DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE:: all_pos_tmp
-    DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE:: all_pos_best
     DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE:: all_pos_prev
     DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE:: correction_pos
 
@@ -196,7 +195,6 @@ SUBMODULE (sph_particles) apm
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: nstar_sph
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: dNstar
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: art_pr
-    DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: freeze
 
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: nu_tmp
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: pvol_tmp
@@ -207,19 +205,8 @@ SUBMODULE (sph_particles) apm
 
     DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE:: nearest_neighbors
 
-    DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: lapse, &
-                                               shift_x, shift_y, shift_z, &
-                                               g_xx, g_xy, g_xz, &
-                                               g_yy, g_yz, g_zz, &
-                                               baryon_density, &
-                                               energy_density, &
-                                               specific_energy, &
-                                               pressure, &
-                                               v_euler_x, v_euler_y, v_euler_z
-
     LOGICAL:: exist
 
-    !CHARACTER:: it_n
     CHARACTER( LEN= : ), ALLOCATABLE:: finalnamefile
 
     LOGICAL, PARAMETER:: debug= .FALSE.
@@ -889,34 +876,35 @@ SUBMODULE (sph_particles) apm
                                   nstar_id, nstar_eul_id, &
                                   use_atmosphere )
 
-    !$OMP PARALLEL DO DEFAULT( NONE ) &
-    !$OMP             SHARED( all_pos, npart_all, nstar_id, h, nu, &
-    !$OMP                     center, dNstar ) &
-    !$OMP             PRIVATE( a )
-    check_nstar_id: DO a= 1, npart_all, 1
-
-      IF( .NOT.is_finite_number( nstar_id( a ) ) )THEN
-
-        PRINT *, "** WARNING! nstar_id(", a, ") is a not a finite number ", &
-                 "in SUBROUTINE perform_apm!"
-        PRINT *, "   nstar_id(", a, ")=", nstar_id(a)
-        PRINT *, "   dNstar(", a, ")=", dNstar(a)
-        PRINT *, "   rho(", a, ")=", get_density( all_pos(1,a), &
-                                                  all_pos(2,a), &
-                                                  all_pos(3,a) )
-        IF( debug ) PRINT *, " * h(", a, ")=", h(a)
-        IF( debug ) PRINT *, " * nu(", a, ")=", nu(a)
-        IF( debug ) PRINT *, " * all_pos(", a, ")=", all_pos(:,a)
-        IF( debug ) PRINT *, " * r(", a, ")=", &
-                              SQRT( ( all_pos(1,a) - center )**two &
-                              + all_pos(2,a)**two + all_pos(3,a)**two )
-        PRINT *
-        STOP
-
-      ENDIF
-
-    ENDDO check_nstar_id
-    !$OMP END PARALLEL DO
+  ! The following test is done inside get_nstar_id_atm. Kept here for paranoia
+  !  !$OMP PARALLEL DO DEFAULT( NONE ) &
+  !  !$OMP             SHARED( all_pos, npart_all, nstar_id, h, nu, &
+  !  !$OMP                     center, dNstar ) &
+  !  !$OMP             PRIVATE( a )
+  !  check_nstar_id: DO a= 1, npart_all, 1
+  !
+  !    IF( .NOT.is_finite_number( nstar_id( a ) ) )THEN
+  !
+  !      PRINT *, "** WARNING! nstar_id(", a, ") is a not a finite number ", &
+  !               "in SUBROUTINE perform_apm!"
+  !      PRINT *, "   nstar_id(", a, ")=", nstar_id(a)
+  !      PRINT *, "   dNstar(", a, ")=", dNstar(a)
+  !      PRINT *, "   rho(", a, ")=", get_density( all_pos(1,a), &
+  !                                                all_pos(2,a), &
+  !                                                all_pos(3,a) )
+  !      IF( debug ) PRINT *, " * h(", a, ")=", h(a)
+  !      IF( debug ) PRINT *, " * nu(", a, ")=", nu(a)
+  !      IF( debug ) PRINT *, " * all_pos(", a, ")=", all_pos(:,a)
+  !      IF( debug ) PRINT *, " * r(", a, ")=", &
+  !                            SQRT( ( all_pos(1,a) - center )**two &
+  !                            + all_pos(2,a)**two + all_pos(3,a)**two )
+  !      PRINT *
+  !      STOP
+  !
+  !    ENDIF
+  !
+  !  ENDDO check_nstar_id
+  !  !$OMP END PARALLEL DO
 
     IF( debug ) PRINT *, "8"
 
@@ -972,9 +960,8 @@ SUBMODULE (sph_particles) apm
     PRINT *, " * Performing APM iteration..."
     PRINT *
 
-    ALLOCATE( freeze( npart_all ) )
+    !ALLOCATE( freeze( npart_all ) )
     ALLOCATE( correction_pos( 3, npart_all ) )
-    ALLOCATE( all_pos_tmp( 3, npart_all ) )
     ALLOCATE( all_pos_prev( 3, npart_all ) )
     ALLOCATE( cnt_move( npart_real ) )
     cnt_move= 0
@@ -1276,34 +1263,35 @@ SUBMODULE (sph_particles) apm
                                         nstar_id, nstar_eul_id, &
                                         use_atmosphere )
 
-      !$OMP PARALLEL DO DEFAULT( NONE ) &
-      !$OMP             SHARED( all_pos, npart_all, nstar_id, h, nu, &
-      !$OMP                     center, dNstar ) &
-      !$OMP             PRIVATE( a )
-      check_nstar_id2: DO a= 1, npart_all, 1
-
-        IF( .NOT.is_finite_number( nstar_id( a ) ) )THEN
-
-          PRINT *, "** WARNING! nstar_id(", a, ") is a not a finite number ", &
-                   "in SUBROUTINE perform_apm!"
-          PRINT *, "   nstar_id(", a, ")=", nstar_id(a)
-          PRINT *, "   dNstar(", a, ")=", dNstar(a)
-          PRINT *, "   rho(", a, ")=", get_density( all_pos(1,a), &
-                                                    all_pos(2,a), &
-                                                    all_pos(3,a) )
-          IF( debug ) PRINT *, " * h(", a, ")=", h(a)
-          IF( debug ) PRINT *, " * nu(", a, ")=", nu(a)
-          IF( debug ) PRINT *, " * all_pos(", a, ")=", all_pos(:,a)
-          IF( debug ) PRINT *, " * r(", a, ")=", &
-                                SQRT( ( all_pos(1,a) - center )**two &
-                                + all_pos(2,a)**two + all_pos(3,a)**two )
-          PRINT *
-          STOP
-
-        ENDIF
-
-      ENDDO check_nstar_id2
-      !$OMP END PARALLEL DO
+! The following test is done inside get_nstar_id_atm. Kept here for paranoia
+!      !$OMP PARALLEL DO DEFAULT( NONE ) &
+!      !$OMP             SHARED( all_pos, npart_all, nstar_id, h, nu, &
+!      !$OMP                     center, dNstar ) &
+!      !$OMP             PRIVATE( a )
+!      check_nstar_id2: DO a= 1, npart_all, 1
+!
+!        IF( .NOT.is_finite_number( nstar_id( a ) ) )THEN
+!
+!          PRINT *, "** WARNING! nstar_id(", a, ") is a not a finite number ", &
+!                   "in SUBROUTINE perform_apm!"
+!          PRINT *, "   nstar_id(", a, ")=", nstar_id(a)
+!          PRINT *, "   dNstar(", a, ")=", dNstar(a)
+!          PRINT *, "   rho(", a, ")=", get_density( all_pos(1,a), &
+!                                                    all_pos(2,a), &
+!                                                    all_pos(3,a) )
+!          IF( debug ) PRINT *, " * h(", a, ")=", h(a)
+!          IF( debug ) PRINT *, " * nu(", a, ")=", nu(a)
+!          IF( debug ) PRINT *, " * all_pos(", a, ")=", all_pos(:,a)
+!          IF( debug ) PRINT *, " * r(", a, ")=", &
+!                                SQRT( ( all_pos(1,a) - center )**two &
+!                                + all_pos(2,a)**two + all_pos(3,a)**two )
+!          PRINT *
+!          STOP
+!
+!        ENDIF
+!
+!      ENDDO check_nstar_id2
+!      !$OMP END PARALLEL DO
 
       art_pr_max= zero
       err_N_max=  zero
@@ -1382,8 +1370,8 @@ SUBMODULE (sph_particles) apm
         STOP
       ENDIF
 
-      err_N_max = MAXVAL( dNstar, MASK= nstar_id(1:npart_real) > zero )
-      err_N_min = MINVAL( dNstar, MASK= nstar_id(1:npart_real) > zero )
+      err_N_max = MAXVAL( ABS(dNstar), MASK= nstar_id(1:npart_real) > zero )
+      err_N_min = MINVAL( ABS(dNstar), MASK= nstar_id(1:npart_real) > zero )
       err_N_mean= SUM( dNstar, DIM= 1 )/npart_real
 
     !  DO a= 1, npart_real, 1
@@ -1441,9 +1429,9 @@ SUBMODULE (sph_particles) apm
         !ENDIF
 
         IF( dNstar(a) == err_N_max )THEN
-          pos_maxerr    = all_pos(:,a)
+          pos_maxerr   = all_pos(:,a)
           nstar_sph_err= nstar_sph(a)
-          nstar_id_err   = nstar_id(a)
+          nstar_id_err = nstar_id(a)
         ENDIF
 
         !err_N_max = MAX( err_N_max, ABS(dNstar) )
@@ -1520,7 +1508,8 @@ SUBMODULE (sph_particles) apm
 
             ! ..assign a pressure that increases with i, to build a pressure
             !   gradient
-            art_pr( a )= MAX( DBLE(3*itr)*art_pr_max, max_art_pr_ghost )
+            art_pr(a)= DBLE(3*itr)*art_pr_max
+            IF( .NOT.IEEE_IS_FINITE(art_pr(a)) ) art_pr(a)= max_art_pr_ghost
 
           !ELSE
           !
