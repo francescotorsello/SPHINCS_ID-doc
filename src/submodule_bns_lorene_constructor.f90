@@ -160,7 +160,7 @@ SUBMODULE (bns_lorene) constructor
     !PRINT *
 
     ! Deallocate memory
-    CALL THIS% deallocate_lorene_id_memory()
+    CALL THIS% deallocate_bnslorene_memory()
 
   END PROCEDURE destruct_bnslorene
 

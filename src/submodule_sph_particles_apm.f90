@@ -1370,43 +1370,21 @@ SUBMODULE (sph_particles) apm
         STOP
       ENDIF
 
+      ! TODO: make these parallelized. Fortran does not do that automatically
       err_N_max = MAXVAL( ABS(dNstar), MASK= nstar_id(1:npart_real) > zero )
       err_N_min = MINVAL( ABS(dNstar), MASK= nstar_id(1:npart_real) > zero )
-      err_N_mean= SUM( dNstar, DIM= 1 )/npart_real
+      !err_N_mean= &
+      !SUM( ABS(dNstar), DIM= 1, MASK= nstar_id(1:npart_real) > zero )/npart_real
 
-    !  DO a= 1, npart_real, 1
-    !
-    !    IF( ABS(dNstar(a)) > err_N_max &
-    !        .AND. &
-    !        get_density( all_pos(1,a), &
-    !                     all_pos(2,a), &
-    !                     all_pos(3,a) ) > zero )THEN
-    !
-    !      err_N_max     = ABS(dNstar(a))
-    !      pos_maxerr    = all_pos(:,a)
-    !      nstar_sph_err= nstar_sph(a)
-    !      nstar_id_err   = nstar_id(a)
-    !
-    !    ENDIF
-    !
-    !    !err_N_max = MAX( err_N_max, ABS(dNstar) )
-    !    IF( get_density( all_pos(1,a), &
-    !                     all_pos(2,a), &
-    !                     all_pos(3,a) ) > zero )THEN
-    !
-    !      err_N_min = MIN( err_N_min, ABS(dNstar(a)) )
-    !      err_N_mean= err_N_mean + ABS(dNstar(a))
-    !
-    !    ENDIF
-    !
-    !    IF( .NOT.is_finite_number(dNstar(a)) )THEN
-    !      PRINT *, "dNstar= ", dNstar(a), " at particle ", a
-    !      PRINT *, "nstar_sph= ", nstar_sph(a)
-    !      PRINT *, "nstar_id= ", nstar_id(a)
-    !      STOP
-    !    ENDIF
-    !
-    !  ENDDO
+      !$OMP PARALLEL DO DEFAULT( NONE ) &
+      !$OMP             SHARED( npart_real, dNstar, nstar_id ) &
+      !$OMP             PRIVATE( a ) &
+      !$OMP             REDUCTION( +: err_N_mean )
+      DO a= 1, npart_real, 1
+        err_N_mean= err_N_mean + ABS(dNstar(a))
+      ENDDO
+      !$OMP END PARALLEL DO
+      err_N_mean= err_N_mean/npart_real
 
       !$OMP PARALLEL DO DEFAULT( NONE ) &
       !$OMP             SHARED( all_pos, npart_real, nstar_sph, nstar_id, &
@@ -1415,34 +1393,11 @@ SUBMODULE (sph_particles) apm
       !$OMP             PRIVATE( a )
       DO a= 1, npart_real, 1
 
-        !IF( ABS(dNstar(a)) > err_N_max &
-        !    .AND. &
-        !    get_density( all_pos(1,a), &
-        !                 all_pos(2,a), &
-        !                 all_pos(3,a) ) > zero )THEN
-        !
-        !  err_N_max     = ABS(dNstar(a))
-        !  pos_maxerr    = all_pos(:,a)
-        !  nstar_sph_err= nstar_sph(a)
-        !  nstar_id_err   = nstar_id(a)
-        !
-        !ENDIF
-
         IF( dNstar(a) == err_N_max )THEN
           pos_maxerr   = all_pos(:,a)
           nstar_sph_err= nstar_sph(a)
           nstar_id_err = nstar_id(a)
         ENDIF
-
-        !err_N_max = MAX( err_N_max, ABS(dNstar) )
-        !IF( get_density( all_pos(1,a), &
-        !                 all_pos(2,a), &
-        !                 all_pos(3,a) ) > zero )THEN
-        !
-        !  err_N_min = MIN( err_N_min, ABS(dNstar(a)) )
-        !  err_N_mean= err_N_mean + ABS(dNstar(a))
-        !
-        !ENDIF
 
         IF( .NOT.is_finite_number(dNstar(a)) )THEN
           PRINT *, "** ERROR! dNstar(", a, ")= ", dNstar(a), &
@@ -1476,6 +1431,21 @@ SUBMODULE (sph_particles) apm
       !$OMP             PRIVATE( a, r, theta, phi, x_ell, y_ell, z_ell, r_ell, &
       !$OMP                      itr2 )
       assign_artificial_pressure_on_ghost_particles: &
+      !
+      !-- This way of assigning the artificial pressure comes from a bug.
+      !-- In the loop shell_loop below, the running index should be itr2.
+      !-- However, due to human error, the index is itr; the index itr
+      !-- counts the APM step, hence the artificial pressure increases with the
+      !-- APM step, and a pressure gradient is not imposed. Building a pressure
+      !-- gradient was the intended purpose for loop shell_loop.
+      !-- So, what happens now is that the pressure is assigned gradually,
+      !-- starting from the ghost particles closer to the surface of the
+      !-- matter object, and proceeding towards those which are farer away.
+      !-- From APM step=10, a uniform pressure is assigned to all the ghost
+      !-- particles, which increases with the APM step.
+      !-- All the tried alternatives (uniform constant pressure,
+      !-- constant pressure gradient) perform worse than the current one.
+      !
       DO a= npart_real + 1, npart_all, 1
 
         CALL spherical_from_cartesian( &
@@ -1498,22 +1468,16 @@ SUBMODULE (sph_particles) apm
           IF( r <= ( one + ( ellipse_thickness - one )*DBLE(itr)/ten )*r_ell &
               .AND. &
               r >= ( one + ( ellipse_thickness - one )*DBLE(itr-1)/ten )*r_ell &
-          ! If the ghost particle is contained within the i-th spherical shell..
-
-              !r <= ( 500.D0 + 50.D0*DBLE(itr)/ten ) &
-              !.AND. &
-              !r > ( 500.D0 + 50.D0*DBLE(itr-1)/ten ) &
-
           )THEN
 
-            ! ..assign a pressure that increases with i, to build a pressure
-            !   gradient
             art_pr(a)= DBLE(3*itr)*art_pr_max
-            IF( .NOT.IEEE_IS_FINITE(art_pr(a)) ) art_pr(a)= max_art_pr_ghost
-
-          !ELSE
-          !
-          !  art_pr( a )= art_pr_max
+            IF( .NOT.IEEE_IS_FINITE(art_pr(a)) &
+                .OR. &
+                art_pr(a) > max_art_pr_ghost &
+            )THEN
+              art_pr(a)= max_art_pr_ghost
+            ENDIF
+            EXIT
 
           ENDIF
 
@@ -1851,6 +1815,8 @@ SUBMODULE (sph_particles) apm
             !    times, do not move the particle at this step,
             !    and exit the 'determine_new_position' loop
 
+              cnt_move(a)= 0
+
               ! cnt= cnt + 1
               ! CALL RANDOM_NUMBER( rand_num )
               ! CALL RANDOM_NUMBER( rand_num2 )
@@ -2134,38 +2100,6 @@ SUBMODULE (sph_particles) apm
     ENDDO check_h3
     CALL find_h_bruteforce_timer% stop_timer()
     CALL find_h_bruteforce_timer% print_timer( 2 )
-
-   ! find_problem_in_h_2: DO a= 1, npart_real, 1
-   !
-   !   IF( .NOT.is_finite_number( h( a ) ) )THEN
-   !     PRINT *, "** ERROR! h(", a, ") is a NaN!"
-   !     PRINT *, " * h_guess(", a, ")= ", h_guess(a)
-   !     PRINT *, " * all_pos(:,", a, ")= ", all_pos(:,a)
-   !     PRINT *, " Stopping..."
-   !     PRINT *
-   !     STOP
-   !   ENDIF
-   !   IF( h( a ) <= zero )THEN
-   !    ! PRINT *, "** ERROR! h(", a, ") is zero or negative!"
-   !    ! PRINT *, " * h_guess(", a, ")= ", h_guess(a)
-   !    ! PRINT *, " * all_pos(:,", a, ")= ", all_pos(:,a)
-   !    ! PRINT *, " * h(", a, ")= ", h(a)
-   !    ! PRINT *, " Stopping..."
-   !    ! PRINT *
-   !    ! STOP
-   !     IF( a == 1 )THEN
-   !       DO a2= 2, npart_real, 1
-   !         IF( h( a2 ) > zero )THEN
-   !           h( a )= h( a2 )
-   !           EXIT
-   !         ENDIF
-   !       ENDDO
-   !     ELSE
-   !       h(a) = h(a - 1)
-   !     ENDIF
-   !   ENDIF
-   !
-   ! ENDDO find_problem_in_h_2
 
     IF( debug ) PRINT *, "2"
 
