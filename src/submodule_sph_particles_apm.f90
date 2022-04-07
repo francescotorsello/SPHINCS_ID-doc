@@ -2278,15 +2278,15 @@ SUBMODULE (sph_particles) apm
        ENDIF
     ENDDO
 
-    PRINT *, "Excluding the absolute max and min of nu:"
+    PRINT *, " * Excluding the absolute max and min of nu:"
     PRINT *
-    PRINT *, "max_nu=", max_nu2
+    PRINT *, "   max_nu=", max_nu2
     PRINT *, "        at ", pos(:, a_numax2), " r= ", &
              NORM2( pos(:, a_numax2) )/larger_radius
-    PRINT *, "min_nu=", min_nu2
+    PRINT *, "   min_nu=", min_nu2
     PRINT *, "        at ", pos(:, a_numin2), " r= ", &
              NORM2( pos(:, a_numin2) )/larger_radius
-    PRINT *, "max_nu/min_nu=", max_nu2/min_nu2
+    PRINT *, "   max_nu/min_nu=", max_nu2/min_nu2
     PRINT *
 
     nu_tot= zero
@@ -2456,11 +2456,19 @@ SUBMODULE (sph_particles) apm
     variance_dN = variance_dN / DBLE(cnt1)
     stddev_dN   = SQRT(variance_dN)            ! compute standard deviation
 
-    PRINT *, "dN_max=", dN_max
-    PRINT *, "dN_av=", dN_av
-    PRINT *, "variance_dN=", variance_dN
-    PRINT *, "stddev_dN=", stddev_dN
-    PRINT *, "stddev_dN/dN_a=", stddev_dN/dN_av
+    PRINT *, " * Final maximum relative error between the density from the ", &
+             "ID and the SPH density estimate: dN_max=", dN_max
+    PRINT *, " * Final average relative error between the density from the ", &
+             "ID and the SPH density estimate: dN_max=", dN_av
+    PRINT *, " * Final variance of the relative error between the density ", &
+             "from the ID and the SPH density estimate: variance_dN=", &
+             variance_dN
+    PRINT *, " * Final standard deviation of the relative error between the ", &
+             "density from the ID and the SPH density estimate: stddev_dN=", &
+             stddev_dN
+    PRINT *, " * Final normalized standard deviation of the relative error ", &
+             "between the density from the ID and the SPH density ", &
+             "estimate: stddev_dN/dN_a=", stddev_dN/dN_av
     PRINT *
 
     IF( debug ) PRINT *, "100"
@@ -3086,127 +3094,6 @@ SUBMODULE (sph_particles) apm
 
 
   END PROCEDURE perform_apm
-
-
-  SUBROUTINE correct_center_of_mass( npart_real, pos, nu, get_density, &
-                                     validate_pos, com_star, verbose )
-
-    !***********************************************************
-    !
-    !# Translate the particles so that their center of mass
-    !  coincides with the center of mass of the star, given by
-    !  |id|
-    !
-    !  FT 1.09.2021
-    !
-    !***********************************************************
-
-    USE analyze, ONLY: COM
-
-    IMPLICIT NONE
-
-    INTEGER, INTENT(IN):: npart_real
-    DOUBLE PRECISION, DIMENSION(3), INTENT(IN):: com_star
-    LOGICAL, INTENT(IN), OPTIONAL:: verbose
-
-    INTERFACE
-      FUNCTION get_density( x, y, z ) RESULT( density )
-        DOUBLE PRECISION, INTENT(IN):: x
-        DOUBLE PRECISION, INTENT(IN):: y
-        DOUBLE PRECISION, INTENT(IN):: z
-        DOUBLE PRECISION:: density
-      END FUNCTION
-    END INTERFACE
-    INTERFACE
-      FUNCTION validate_pos( x, y, z ) RESULT( answer )
-        DOUBLE PRECISION, INTENT(IN):: x
-        DOUBLE PRECISION, INTENT(IN):: y
-        DOUBLE PRECISION, INTENT(IN):: z
-        LOGICAL:: answer
-      END FUNCTION
-    END INTERFACE
-
-    DOUBLE PRECISION, DIMENSION(3,npart_real), INTENT(INOUT):: pos
-    DOUBLE PRECISION, DIMENSION(npart_real),   INTENT(INOUT):: nu
-
-    INTEGER:: a
-    DOUBLE PRECISION:: com_x, com_y, com_z, com_d
-    DOUBLE PRECISION, DIMENSION(3):: pos_corr_tmp
-
-    CALL COM( npart_real, pos, nu, &       ! input
-              com_x, com_y, com_z, com_d ) ! output
-
-    IF( PRESENT(verbose) .AND. verbose .EQV. .TRUE. )THEN
-      PRINT *, "** Before center of mass correction:"
-      PRINT *, " * x coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(1), "Msun_geo"
-      PRINT *, " * y coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(2), "Msun_geo"
-      PRINT *, " * z coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(3), "Msun_geo"
-      PRINT *, " * x coordinate of the center of mass of the particle ", &
-               "distribution: com_x= ", com_x, "Msun_geo"
-      PRINT *, " * y coordinate of the center of mass of the particle ", &
-               "distribution: com_y= ", com_y, "Msun_geo"
-      PRINT *, " * z coordinate of the center of mass of the particle ", &
-               "distribution: com_z= ", com_z, "Msun_geo"
-      PRINT *, " * Distance of the center of mass of the particle ", &
-               "distribution from the  origin: com_d= ", com_d
-      PRINT *, " * |com_x-com_star_x/com_star_x|=", &
-               ABS( com_x-com_star(1) )/ABS( com_star(1) + 1 )
-      PRINT *
-    ENDIF
-
-    !$OMP PARALLEL DO DEFAULT( NONE ) &
-    !$OMP             SHARED( pos, com_star, &
-    !$OMP                     com_x, com_y, com_z, npart_real ) &
-    !$OMP             PRIVATE( pos_corr_tmp, a )
-    DO a= 1, npart_real, 1
-
-      pos_corr_tmp(1)= pos(1,a) - ( com_x - com_star(1) )
-      pos_corr_tmp(2)= pos(2,a) - ( com_y - com_star(2) )
-      pos_corr_tmp(3)= pos(3,a) - ( com_z - com_star(3) )
-
-      IF( get_density( &
-                  pos_corr_tmp(1), pos_corr_tmp(2), pos_corr_tmp(3) ) > zero &
-          .AND. &
-          !binary% is_hydro_negative( &
-          validate_pos( &
-                  pos_corr_tmp(1), pos_corr_tmp(2), pos_corr_tmp(3) ) &
-      )THEN
-
-        pos(:,a)= pos_corr_tmp
-
-      ENDIF
-
-    ENDDO
-    !$OMP END PARALLEL DO
-
-    CALL COM( npart_real, pos, nu, & ! input
-              com_x, com_y, com_z, com_d ) ! output
-
-    IF( PRESENT(verbose) .AND. verbose .EQV. .TRUE. )THEN
-      PRINT *, "** After center of mass correction:"
-      PRINT *, " * x coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(1), "Msun_geo"
-      PRINT *, " * y coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(2), "Msun_geo"
-      PRINT *, " * z coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(3), "Msun_geo"
-      PRINT *, " * x coordinate of the center of mass of the particle ", &
-               "distribution: com_x= ", com_x, "Msun_geo"
-      PRINT *, " * y coordinate of the center of mass of the particle ", &
-               "distribution: com_y= ", com_y, "Msun_geo"
-      PRINT *, " * z coordinate of the center of mass of the particle ", &
-               "distribution: com_z= ", com_z, "Msun_geo"
-      PRINT *, " * Distance of the center of mass of the particle ", &
-               "distribution from the  origin: com_d= ", com_d
-      PRINT *, " * |com_x-com_star_x/com_star_x|=", &
-               ABS( com_x-com_star(1) )/ABS( com_star(1) + 1 )
-      PRINT *
-    ENDIF
-
-  END SUBROUTINE correct_center_of_mass
 
 
   SUBROUTINE get_neighbours_bf(ipart,npart,pos,h,dimensions,nnei,neilist)
