@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 5.3% of total for source files.">850 statements</a>
+    title=" 5.2% of total for source files.">843 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_sph_particles_constructor_std.f90"> Source File</a></li>
   </ul>
@@ -166,7 +166,7 @@
 </g>
 </g>
 <!-- sourcefile~submodule_sph_particles_constructor_std.f90&#45;&gt;sourcefile~module_sph_particles.f90 -->
-<g id="sourcefile~~submodule_sph_particles_constructor_std.f90~~EfferentGraph_edge1" class="edge">
+<g id="sourcefile~~submodule_sph_particles_constructor_std.f90~~EfferentGraph_edge2" class="edge">
 <title>sourcefile~submodule_sph_particles_constructor_std.f90&#45;&gt;sourcefile~module_sph_particles.f90</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M338.9,-23.27C330.23,-22.53 321.62,-21.8 313.27,-21.09"/>
 <polygon fill="#000000" stroke="#000000" points="313.48,-17.59 303.22,-20.23 312.89,-24.57 313.48,-17.59"/>
@@ -181,7 +181,7 @@
 </g>
 </g>
 <!-- sourcefile~submodule_sph_particles_constructor_std.f90&#45;&gt;sourcefile~module_utility.f90 -->
-<g id="sourcefile~~submodule_sph_particles_constructor_std.f90~~EfferentGraph_edge2" class="edge">
+<g id="sourcefile~~submodule_sph_particles_constructor_std.f90~~EfferentGraph_edge1" class="edge">
 <title>sourcefile~submodule_sph_particles_constructor_std.f90&#45;&gt;sourcefile~module_utility.f90</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M338.95,-40.23C266.99,-43.79 179.95,-48.09 122.56,-50.93"/>
 <polygon fill="#000000" stroke="#000000" points="122.37,-47.44 112.55,-51.43 122.71,-54.43 122.37,-47.44"/>
@@ -1695,19 +1695,19 @@
 <a name="ln-1424"></a>    <span class="c">!</span>
 <a name="ln-1425"></a>    <span class="c">! TODO: The idbase object should tell the location of the total</span>
 <a name="ln-1426"></a>    <span class="c">!       computing frame center of mass to the particle object</span>
-<a name="ln-1427"></a>    <span class="k">CALL </span><span class="n">correct_center_of_mass</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">pos</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">nu</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1428"></a>                                 <span class="n">import_density</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1429"></a>                                 <span class="n">validate_position</span><span class="p">,</span> <span class="p">[</span><span class="n">zero</span><span class="p">,</span><span class="n">zero</span><span class="p">,</span><span class="n">zero</span><span class="p">],</span> <span class="p">&amp;</span>
-<a name="ln-1430"></a>                                 <span class="n">verbose</span><span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span> <span class="p">)</span>
-<a name="ln-1431"></a>
-<a name="ln-1432"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Final particle distribution prepared. Number of particles=&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1433"></a>             <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span>
-<a name="ln-1434"></a>    <span class="k">DO </span><span class="n">i_matter</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">n_matter</span><span class="p">,</span> <span class="mi">1</span>
-<a name="ln-1435"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Number of particles on object &quot;</span><span class="p">,</span> <span class="n">i_matter</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1436"></a>               <span class="n">parts</span><span class="p">%</span> <span class="n">npart_i</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
-<a name="ln-1437"></a>      <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-1438"></a>    <span class="n">ENDDO</span>
-<a name="ln-1439"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-1427"></a>  <span class="c">!  CALL correct_center_of_mass( parts% npart, parts% pos, parts% nu, &amp;</span>
+<a name="ln-1428"></a>  <span class="c">!                               import_density, &amp;</span>
+<a name="ln-1429"></a>  <span class="c">!                               validate_position, [zero,zero,zero], &amp;</span>
+<a name="ln-1430"></a>  <span class="c">!                               verbose= .TRUE. )</span>
+<a name="ln-1431"></a>  <span class="c">!</span>
+<a name="ln-1432"></a>  <span class="c">!  PRINT *, &quot; * Final particle distribution prepared. Number of particles=&quot;, &amp;</span>
+<a name="ln-1433"></a>  <span class="c">!           parts% npart</span>
+<a name="ln-1434"></a>  <span class="c">!  DO i_matter= 1, parts% n_matter, 1</span>
+<a name="ln-1435"></a>  <span class="c">!    PRINT *, &quot; * Number of particles on object &quot;, i_matter, &quot;=&quot;, &amp;</span>
+<a name="ln-1436"></a>  <span class="c">!             parts% npart_i(i_matter)</span>
+<a name="ln-1437"></a>  <span class="c">!    PRINT *</span>
+<a name="ln-1438"></a>  <span class="c">!  ENDDO</span>
+<a name="ln-1439"></a>  <span class="c">!  PRINT *</span>
 <a name="ln-1440"></a>
 <a name="ln-1441"></a>    <span class="c">!STOP</span>
 <a name="ln-1442"></a>
@@ -1911,7 +1911,7 @@
 <a name="ln-1640"></a>    <span class="c">! Ok it seems working</span>
 <a name="ln-1641"></a>
 <a name="ln-1642"></a>    <span class="c">!</span>
-<a name="ln-1643"></a>    <span class="c">!-- Compute typical legnth-scale approximating g_00 with the Newtonian</span>
+<a name="ln-1643"></a>    <span class="c">!-- Compute typical length-scale approximating g_00 with the Newtonian</span>
 <a name="ln-1644"></a>    <span class="c">!-- potential</span>
 <a name="ln-1645"></a>    <span class="c">!</span>
 <a name="ln-1646"></a>    <span class="k">DO </span><span class="n">i_matter</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">n_matter</span><span class="p">,</span> <span class="mi">1</span>
@@ -2708,7 +2708,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-07 12:00:02           </p>
+ on 2022-04-08 15:26:28           </p>
         </div>
       </div>
       <br>

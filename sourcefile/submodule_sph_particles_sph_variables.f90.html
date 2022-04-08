@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 2.9% of total for source files.">459 statements</a>
+    title=" 2.8% of total for source files.">460 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_sph_particles_sph_variables.f90"> Source File</a></li>
   </ul>
@@ -166,7 +166,7 @@
 </g>
 </g>
 <!-- sourcefile~submodule_sph_particles_sph_variables.f90&#45;&gt;sourcefile~module_sph_particles.f90 -->
-<g id="sourcefile~~submodule_sph_particles_sph_variables.f90~~EfferentGraph_edge1" class="edge">
+<g id="sourcefile~~submodule_sph_particles_sph_variables.f90~~EfferentGraph_edge2" class="edge">
 <title>sourcefile~submodule_sph_particles_sph_variables.f90&#45;&gt;sourcefile~module_sph_particles.f90</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M338.84,-23.44C330.22,-22.7 321.65,-21.95 313.32,-21.23"/>
 <polygon fill="#000000" stroke="#000000" points="313.56,-17.74 303.3,-20.36 312.96,-24.71 313.56,-17.74"/>
@@ -181,7 +181,7 @@
 </g>
 </g>
 <!-- sourcefile~submodule_sph_particles_sph_variables.f90&#45;&gt;sourcefile~module_utility.f90 -->
-<g id="sourcefile~~submodule_sph_particles_sph_variables.f90~~EfferentGraph_edge2" class="edge">
+<g id="sourcefile~~submodule_sph_particles_sph_variables.f90~~EfferentGraph_edge1" class="edge">
 <title>sourcefile~submodule_sph_particles_sph_variables.f90&#45;&gt;sourcefile~module_utility.f90</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M338.86,-40.08C267.41,-43.65 180.12,-48.02 122.56,-50.9"/>
 <polygon fill="#000000" stroke="#000000" points="122.33,-47.4 112.52,-51.4 122.68,-54.4 122.33,-47.4"/>
@@ -1753,126 +1753,141 @@
 <a name="ln-1482"></a>                              <span class="n">this</span><span class="p">%</span> <span class="n">theta</span><span class="p">,</span>       <span class="p">&amp;</span>
 <a name="ln-1483"></a>                              <span class="n">this</span><span class="p">%</span> <span class="n">nstar_int</span> <span class="p">)</span>
 <a name="ln-1484"></a>
-<a name="ln-1485"></a>    <span class="c">! Test the recovery on ech matter object separately</span>
-<a name="ln-1486"></a>    <span class="c">! DO i_matter= 1, this% n_matter, 1</span>
-<a name="ln-1487"></a>    <span class="c">!</span>
-<a name="ln-1488"></a>    <span class="c">!   PRINT *, &quot; * Testing recovery on matter object&quot;, i_matter, &quot;...&quot;</span>
-<a name="ln-1489"></a>    <span class="c">!   PRINT *</span>
-<a name="ln-1490"></a>    <span class="c">!</span>
-<a name="ln-1491"></a>    <span class="c">!   IF( i_matter &gt; 9 )THEN</span>
-<a name="ln-1492"></a>    <span class="c">!     WRITE( i_mat, &quot;(I2)&quot; ) i_matter</span>
-<a name="ln-1493"></a>    <span class="c">!   ELSE</span>
-<a name="ln-1494"></a>    <span class="c">!     WRITE( i_mat, &quot;(I1)&quot; ) i_matter</span>
-<a name="ln-1495"></a>    <span class="c">!   ENDIF</span>
-<a name="ln-1496"></a>    <span class="c">!   finalnamefile= &quot;recovery_test-&quot;//TRIM(i_mat)//&quot;.dat&quot;</span>
-<a name="ln-1497"></a>    <span class="c">!</span>
-<a name="ln-1498"></a>    <span class="c">!   ASSOCIATE( npart_in   =&gt; this% npart_i(i_matter-1) + 1, &amp;</span>
-<a name="ln-1499"></a>    <span class="c">!              npart_fin  =&gt; this% npart_i(i_matter-1) +    &amp;</span>
-<a name="ln-1500"></a>    <span class="c">!                            this% npart_i(i_matter) )</span>
-<a name="ln-1501"></a>    <span class="c">!</span>
-<a name="ln-1502"></a>    <span class="c">!   CALL this% test_recovery( this% npart_i    (i_matter),               &amp;</span>
-<a name="ln-1503"></a>    <span class="c">!                             this% pos        (:,npart_in:npart_fin),   &amp;</span>
-<a name="ln-1504"></a>    <span class="c">!                             this% nlrf_int   (npart_in:npart_fin),     &amp;</span>
-<a name="ln-1505"></a>    <span class="c">!                             this% u_pwp      (npart_in:npart_fin),     &amp;</span>
-<a name="ln-1506"></a>    <span class="c">!                             this% pressure_cu(npart_in:npart_fin),     &amp;</span>
-<a name="ln-1507"></a>    <span class="c">!                             this% v          (1:3,npart_in:npart_fin), &amp;</span>
-<a name="ln-1508"></a>    <span class="c">!                             this% theta      (npart_in:npart_fin),     &amp;</span>
-<a name="ln-1509"></a>    <span class="c">!                             this% nstar_int  (npart_in:npart_fin),     &amp;</span>
-<a name="ln-1510"></a>    <span class="c">!                             finalnamefile )</span>
-<a name="ln-1511"></a>    <span class="c">!</span>
-<a name="ln-1512"></a>    <span class="c">!   END ASSOCIATE</span>
-<a name="ln-1513"></a>    <span class="c">!</span>
-<a name="ln-1514"></a>    <span class="c">! ENDDO</span>
-<a name="ln-1515"></a>
-<a name="ln-1516"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Computing particle number density by kernel interpolation...&quot;</span>
-<a name="ln-1517"></a>    <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-1518"></a>    <span class="n">nu</span><span class="o">=</span> <span class="n">one</span>
-<a name="ln-1519"></a>    <span class="k">CALL </span><span class="n">density_loop</span><span class="p">(</span> <span class="n">this</span><span class="p">%</span> <span class="n">npart</span><span class="p">,</span> <span class="n">this</span><span class="p">%</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-1520"></a>                       <span class="n">this</span><span class="p">%</span> <span class="n">particle_density_int</span> <span class="p">)</span>
-<a name="ln-1521"></a>
-<a name="ln-1522"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;100&quot;</span>
-<a name="ln-1523"></a>
-<a name="ln-1524"></a>    <span class="c">!CALL COM( this% npart, this% pos, this% nu, &amp;</span>
-<a name="ln-1525"></a>    <span class="c">!          com_x_newt, com_y_newt, com_z_newt, com_d_newt )</span>
-<a name="ln-1526"></a>    <span class="c">!CALL COM( this% npart_i(1), this% pos(:,1:this% npart_i(1)), &amp;</span>
-<a name="ln-1527"></a>    <span class="c">!          this% nu(1:this% npart_i(1)), &amp;</span>
-<a name="ln-1528"></a>    <span class="c">!          com_x_newt, com_y_newt, com_z_newt, com_d_newt )</span>
-<a name="ln-1529"></a>
-<a name="ln-1530"></a>    <span class="c">!CALL COM_1PN( this% npart, this% pos, this% v, &amp;</span>
-<a name="ln-1531"></a>    <span class="c">!              !this% v_euler_x, &amp;</span>
-<a name="ln-1532"></a>    <span class="c">!              this% nu, this% baryon_density, &amp;</span>
-<a name="ln-1533"></a>    <span class="c">!              this% specific_energy, this% nstar_int, sq_detg4, gg4, &amp;</span>
-<a name="ln-1534"></a>    <span class="c">!              com_x_1pn, com_y_1pn, com_z_1pn, com_d_1pn )</span>
-<a name="ln-1535"></a>    <span class="c">!CALL COM_1PN( this% npart_i(1), this% pos(:,1:this% npart_i(1)), &amp;</span>
-<a name="ln-1536"></a>    <span class="c">!              this% v(1:3,1:this% npart_i(1)), &amp;</span>
-<a name="ln-1537"></a>    <span class="c">!              !this% v_euler_x, &amp;</span>
-<a name="ln-1538"></a>    <span class="c">!              this% nu(1:this% npart_i(1)), &amp;!/sq_det_g4(1:this% npart_i(1))/this% Theta(1:this% npart_i(1)), &amp;</span>
-<a name="ln-1539"></a>    <span class="c">!              !this% baryon_density(1:this% npart_i(1)), &amp;</span>
-<a name="ln-1540"></a>    <span class="c">!              this% nlrf_int(1:this% npart_i(1)), &amp;</span>
-<a name="ln-1541"></a>    <span class="c">!              this% u_pwp(1:this% npart_i(1)), &amp;</span>
-<a name="ln-1542"></a>    <span class="c">!              this% nstar_int(1:this% npart_i(1)), &amp;</span>
-<a name="ln-1543"></a>    <span class="c">!              sq_det_g4(1:this% npart_i(1)), &amp;</span>
-<a name="ln-1544"></a>    <span class="c">!              gg4(:,1:this% npart_i(1)), &amp;</span>
-<a name="ln-1545"></a>    <span class="c">!              com_x_1pn, com_y_1pn, com_z_1pn, com_d_1pn, mass_1pn )</span>
-<a name="ln-1546"></a>
-<a name="ln-1547"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;101&quot;</span>
-<a name="ln-1548"></a>
-<a name="ln-1549"></a>    <span class="c">!nu   = this% nu</span>
-<a name="ln-1550"></a>    <span class="c">!vel_u= this% v(1:3,:)</span>
-<a name="ln-1551"></a>    <span class="c">!CALL lin_mom( pnorm_newt, px_newt, py_newt, pz_newt )</span>
-<a name="ln-1552"></a>    <span class="c">!CALL momentum_1pn( this% npart, this% pos, &amp;</span>
-<a name="ln-1553"></a>    <span class="c">!                   this% v, &amp;</span>
-<a name="ln-1554"></a>    <span class="c">!                   !this% v_euler_x, &amp;</span>
-<a name="ln-1555"></a>    <span class="c">!                   this% nu, this% baryon_density, &amp;</span>
-<a name="ln-1556"></a>    <span class="c">!                   this% specific_energy, this% pressure_cu, &amp;</span>
-<a name="ln-1557"></a>    <span class="c">!                   this% nstar_int, this% h, &amp;</span>
-<a name="ln-1558"></a>    <span class="c">!                   sq_detg4, gg4, px, py, pz )</span>
-<a name="ln-1559"></a>    <span class="c">!CALL momentum_1pn( this% npart, this% pos, &amp;</span>
-<a name="ln-1560"></a>    <span class="c">!                   this% v, &amp;</span>
-<a name="ln-1561"></a>    <span class="c">!                   !this% v_euler_x, &amp;</span>
-<a name="ln-1562"></a>    <span class="c">!                   this% nu, &amp;</span>
-<a name="ln-1563"></a>    <span class="c">!                   this% nlrf_int, &amp;</span>
-<a name="ln-1564"></a>    <span class="c">!                   this% u_pwp, &amp;</span>
-<a name="ln-1565"></a>    <span class="c">!                   this% pressure_cu, &amp;</span>
-<a name="ln-1566"></a>    <span class="c">!                   this% nstar_int, &amp;</span>
-<a name="ln-1567"></a>    <span class="c">!                   this% h, &amp;</span>
-<a name="ln-1568"></a>    <span class="c">!                   sq_detg4, gg4, px, py, pz )</span>
-<a name="ln-1569"></a>
-<a name="ln-1570"></a>    <span class="c">!PRINT *, &quot;LORENE mass:            &quot;, this% masses(1), mass_1pn*amu/Msun</span>
-<a name="ln-1571"></a>    <span class="c">!PRINT *, &quot;LORENE COM:            &quot;, &amp;</span>
-<a name="ln-1572"></a>    <span class="c">!         this% barycenter(1,:)! + this% barycenter(2,:)</span>
-<a name="ln-1573"></a>    <span class="c">!PRINT *, &quot;Newtonian COM:         &quot;, &amp;</span>
-<a name="ln-1574"></a>    <span class="c">!         com_x_newt, com_y_newt, com_z_newt!, com_d_newt</span>
-<a name="ln-1575"></a>    <span class="c">!PRINT *, &quot;1PN COM:               &quot;, &amp;</span>
-<a name="ln-1576"></a>    <span class="c">!         com_x_1pn, com_y_1pn, com_z_1pn!, com_d_1pn</span>
-<a name="ln-1577"></a>    <span class="c">!PRINT *, &quot;Newtonian spacetime momentum:&quot;, px_newt/SUM(nu,DIM=1), py_newt/SUM(nu,DIM=1), pz_newt/SUM(nu,DIM=1), pnorm_newt/SUM(nu,DIM=1)</span>
-<a name="ln-1578"></a>    <span class="c">!PRINT *, &quot;1PN spacetime momentum:&quot;, px/mass_1pn, py/mass_1pn, pz/mass_1pn, pnorm/mass_1pn</span>
-<a name="ln-1579"></a>    <span class="c">!PRINT *</span>
-<a name="ln-1580"></a>    <span class="c">!PRINT *</span>
-<a name="ln-1581"></a>
-<a name="ln-1582"></a>    <span class="c">!</span>
-<a name="ln-1583"></a>    <span class="c">!-- Deallocate MODULE variables</span>
-<a name="ln-1584"></a>    <span class="c">!</span>
-<a name="ln-1585"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Deallocating MODULE variables...&quot;</span>
-<a name="ln-1586"></a>    <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-1587"></a>    <span class="k">IF</span><span class="p">(</span> <span class="nb">ALLOCATED</span><span class="p">(</span><span class="n">g4_ll</span><span class="p">)</span> <span class="p">)</span> <span class="k">CALL </span><span class="n">deallocate_metric_on_particles</span>
-<a name="ln-1588"></a>    <span class="k">CALL </span><span class="n">deallocate_gradient</span>
-<a name="ln-1589"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">alive</span> <span class="p">)</span>
-<a name="ln-1590"></a>    <span class="k">CALL </span><span class="n">deallocate_RCB_tree_memory_3D</span>
-<a name="ln-1591"></a>    <span class="k">CALL </span><span class="n">deallocate_SPH_memory</span>
-<a name="ln-1592"></a>
-<a name="ln-1593"></a>    <span class="c">!STOP</span>
-<a name="ln-1594"></a>
-<a name="ln-1595"></a>    <span class="n">call_flag</span><span class="o">=</span> <span class="n">call_flag</span> <span class="o">+</span> <span class="mi">1</span>
-<a name="ln-1596"></a>    <span class="n">this</span><span class="p">%</span> <span class="n">call_flag</span><span class="o">=</span> <span class="n">call_flag</span>
-<a name="ln-1597"></a>
-<a name="ln-1598"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** Subroutine compute_and_print_sph_variables executed.&quot;</span>
-<a name="ln-1599"></a>    <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-1600"></a>
-<a name="ln-1601"></a>  <span class="k">END PROCEDURE </span><span class="n">compute_and_print_sph_variables</span>
-<a name="ln-1602"></a>
-<a name="ln-1603"></a>
-<a name="ln-1604"></a><span class="k">END SUBMODULE </span><span class="n">sph_variables</span>
+<a name="ln-1485"></a>    <span class="k">CALL </span><span class="n">compute_adm_momentum</span><span class="p">(</span> <span class="n">this</span><span class="p">,</span> <span class="n">this</span><span class="p">%</span> <span class="n">npart</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-1486"></a>                               <span class="n">this</span><span class="p">%</span> <span class="n">pos</span><span class="p">,</span>         <span class="p">&amp;</span>
+<a name="ln-1487"></a>                               <span class="n">this</span><span class="p">%</span> <span class="n">nlrf_int</span><span class="p">,</span>    <span class="p">&amp;</span>
+<a name="ln-1488"></a>                               <span class="n">this</span><span class="p">%</span> <span class="n">u_pwp</span><span class="p">,</span>       <span class="p">&amp;</span>
+<a name="ln-1489"></a>                               <span class="n">this</span><span class="p">%</span> <span class="n">pressure_cu</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-1490"></a>                               <span class="n">this</span><span class="p">%</span> <span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,:),</span>    <span class="p">&amp;</span>
+<a name="ln-1491"></a>                               <span class="n">this</span><span class="p">%</span> <span class="n">theta</span><span class="p">,</span>       <span class="p">&amp;</span>
+<a name="ln-1492"></a>                               <span class="n">this</span><span class="p">%</span> <span class="n">nstar_int</span><span class="p">,</span>   <span class="p">&amp;</span>
+<a name="ln-1493"></a>                               <span class="n">this</span><span class="p">%</span> <span class="n">nu</span><span class="p">,</span>          <span class="p">&amp;</span>
+<a name="ln-1494"></a>                               <span class="n">this</span><span class="p">%</span> <span class="n">lapse</span><span class="p">,</span>       <span class="p">&amp;</span>
+<a name="ln-1495"></a>                               <span class="p">[</span><span class="n">this</span><span class="p">%</span> <span class="n">shift_x</span><span class="p">,</span>    <span class="p">&amp;</span>
+<a name="ln-1496"></a>                                <span class="n">this</span><span class="p">%</span> <span class="n">shift_y</span><span class="p">,</span>    <span class="p">&amp;</span>
+<a name="ln-1497"></a>                                <span class="n">this</span><span class="p">%</span> <span class="n">shift_x</span><span class="p">],</span>   <span class="p">&amp;</span>
+<a name="ln-1498"></a>                               <span class="n">this</span><span class="p">%</span> <span class="n">adm_linear_momentum</span> <span class="p">)</span>
+<a name="ln-1499"></a>
+<a name="ln-1500"></a>    <span class="c">! Test the recovery on ech matter object separately</span>
+<a name="ln-1501"></a>    <span class="c">! DO i_matter= 1, this% n_matter, 1</span>
+<a name="ln-1502"></a>    <span class="c">!</span>
+<a name="ln-1503"></a>    <span class="c">!   PRINT *, &quot; * Testing recovery on matter object&quot;, i_matter, &quot;...&quot;</span>
+<a name="ln-1504"></a>    <span class="c">!   PRINT *</span>
+<a name="ln-1505"></a>    <span class="c">!</span>
+<a name="ln-1506"></a>    <span class="c">!   IF( i_matter &gt; 9 )THEN</span>
+<a name="ln-1507"></a>    <span class="c">!     WRITE( i_mat, &quot;(I2)&quot; ) i_matter</span>
+<a name="ln-1508"></a>    <span class="c">!   ELSE</span>
+<a name="ln-1509"></a>    <span class="c">!     WRITE( i_mat, &quot;(I1)&quot; ) i_matter</span>
+<a name="ln-1510"></a>    <span class="c">!   ENDIF</span>
+<a name="ln-1511"></a>    <span class="c">!   finalnamefile= &quot;recovery_test-&quot;//TRIM(i_mat)//&quot;.dat&quot;</span>
+<a name="ln-1512"></a>    <span class="c">!</span>
+<a name="ln-1513"></a>    <span class="c">!   ASSOCIATE( npart_in   =&gt; this% npart_i(i_matter-1) + 1, &amp;</span>
+<a name="ln-1514"></a>    <span class="c">!              npart_fin  =&gt; this% npart_i(i_matter-1) +    &amp;</span>
+<a name="ln-1515"></a>    <span class="c">!                            this% npart_i(i_matter) )</span>
+<a name="ln-1516"></a>    <span class="c">!</span>
+<a name="ln-1517"></a>    <span class="c">!   CALL this% test_recovery( this% npart_i    (i_matter),               &amp;</span>
+<a name="ln-1518"></a>    <span class="c">!                             this% pos        (:,npart_in:npart_fin),   &amp;</span>
+<a name="ln-1519"></a>    <span class="c">!                             this% nlrf_int   (npart_in:npart_fin),     &amp;</span>
+<a name="ln-1520"></a>    <span class="c">!                             this% u_pwp      (npart_in:npart_fin),     &amp;</span>
+<a name="ln-1521"></a>    <span class="c">!                             this% pressure_cu(npart_in:npart_fin),     &amp;</span>
+<a name="ln-1522"></a>    <span class="c">!                             this% v          (1:3,npart_in:npart_fin), &amp;</span>
+<a name="ln-1523"></a>    <span class="c">!                             this% theta      (npart_in:npart_fin),     &amp;</span>
+<a name="ln-1524"></a>    <span class="c">!                             this% nstar_int  (npart_in:npart_fin),     &amp;</span>
+<a name="ln-1525"></a>    <span class="c">!                             finalnamefile )</span>
+<a name="ln-1526"></a>    <span class="c">!</span>
+<a name="ln-1527"></a>    <span class="c">!   END ASSOCIATE</span>
+<a name="ln-1528"></a>    <span class="c">!</span>
+<a name="ln-1529"></a>    <span class="c">! ENDDO</span>
+<a name="ln-1530"></a>
+<a name="ln-1531"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Computing particle number density by kernel interpolation...&quot;</span>
+<a name="ln-1532"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-1533"></a>    <span class="n">nu</span><span class="o">=</span> <span class="n">one</span>
+<a name="ln-1534"></a>    <span class="k">CALL </span><span class="n">density_loop</span><span class="p">(</span> <span class="n">this</span><span class="p">%</span> <span class="n">npart</span><span class="p">,</span> <span class="n">this</span><span class="p">%</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-1535"></a>                       <span class="n">this</span><span class="p">%</span> <span class="n">particle_density_int</span> <span class="p">)</span>
+<a name="ln-1536"></a>
+<a name="ln-1537"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;100&quot;</span>
+<a name="ln-1538"></a>
+<a name="ln-1539"></a>    <span class="c">!CALL COM( this% npart, this% pos, this% nu, &amp;</span>
+<a name="ln-1540"></a>    <span class="c">!          com_x_newt, com_y_newt, com_z_newt, com_d_newt )</span>
+<a name="ln-1541"></a>    <span class="c">!CALL COM( this% npart_i(1), this% pos(:,1:this% npart_i(1)), &amp;</span>
+<a name="ln-1542"></a>    <span class="c">!          this% nu(1:this% npart_i(1)), &amp;</span>
+<a name="ln-1543"></a>    <span class="c">!          com_x_newt, com_y_newt, com_z_newt, com_d_newt )</span>
+<a name="ln-1544"></a>
+<a name="ln-1545"></a>    <span class="c">!CALL COM_1PN( this% npart, this% pos, this% v, &amp;</span>
+<a name="ln-1546"></a>    <span class="c">!              !this% v_euler_x, &amp;</span>
+<a name="ln-1547"></a>    <span class="c">!              this% nu, this% baryon_density, &amp;</span>
+<a name="ln-1548"></a>    <span class="c">!              this% specific_energy, this% nstar_int, sq_detg4, gg4, &amp;</span>
+<a name="ln-1549"></a>    <span class="c">!              com_x_1pn, com_y_1pn, com_z_1pn, com_d_1pn )</span>
+<a name="ln-1550"></a>    <span class="c">!CALL COM_1PN( this% npart_i(1), this% pos(:,1:this% npart_i(1)), &amp;</span>
+<a name="ln-1551"></a>    <span class="c">!              this% v(1:3,1:this% npart_i(1)), &amp;</span>
+<a name="ln-1552"></a>    <span class="c">!              !this% v_euler_x, &amp;</span>
+<a name="ln-1553"></a>    <span class="c">!              this% nu(1:this% npart_i(1)), &amp;!/sq_det_g4(1:this% npart_i(1))/this% Theta(1:this% npart_i(1)), &amp;</span>
+<a name="ln-1554"></a>    <span class="c">!              !this% baryon_density(1:this% npart_i(1)), &amp;</span>
+<a name="ln-1555"></a>    <span class="c">!              this% nlrf_int(1:this% npart_i(1)), &amp;</span>
+<a name="ln-1556"></a>    <span class="c">!              this% u_pwp(1:this% npart_i(1)), &amp;</span>
+<a name="ln-1557"></a>    <span class="c">!              this% nstar_int(1:this% npart_i(1)), &amp;</span>
+<a name="ln-1558"></a>    <span class="c">!              sq_det_g4(1:this% npart_i(1)), &amp;</span>
+<a name="ln-1559"></a>    <span class="c">!              gg4(:,1:this% npart_i(1)), &amp;</span>
+<a name="ln-1560"></a>    <span class="c">!              com_x_1pn, com_y_1pn, com_z_1pn, com_d_1pn, mass_1pn )</span>
+<a name="ln-1561"></a>
+<a name="ln-1562"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">debug</span> <span class="p">)</span> <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;101&quot;</span>
+<a name="ln-1563"></a>
+<a name="ln-1564"></a>    <span class="c">!nu   = this% nu</span>
+<a name="ln-1565"></a>    <span class="c">!vel_u= this% v(1:3,:)</span>
+<a name="ln-1566"></a>    <span class="c">!CALL lin_mom( pnorm_newt, px_newt, py_newt, pz_newt )</span>
+<a name="ln-1567"></a>    <span class="c">!CALL momentum_1pn( this% npart, this% pos, &amp;</span>
+<a name="ln-1568"></a>    <span class="c">!                   this% v, &amp;</span>
+<a name="ln-1569"></a>    <span class="c">!                   !this% v_euler_x, &amp;</span>
+<a name="ln-1570"></a>    <span class="c">!                   this% nu, this% baryon_density, &amp;</span>
+<a name="ln-1571"></a>    <span class="c">!                   this% specific_energy, this% pressure_cu, &amp;</span>
+<a name="ln-1572"></a>    <span class="c">!                   this% nstar_int, this% h, &amp;</span>
+<a name="ln-1573"></a>    <span class="c">!                   sq_detg4, gg4, px, py, pz )</span>
+<a name="ln-1574"></a>    <span class="c">!CALL momentum_1pn( this% npart, this% pos, &amp;</span>
+<a name="ln-1575"></a>    <span class="c">!                   this% v, &amp;</span>
+<a name="ln-1576"></a>    <span class="c">!                   !this% v_euler_x, &amp;</span>
+<a name="ln-1577"></a>    <span class="c">!                   this% nu, &amp;</span>
+<a name="ln-1578"></a>    <span class="c">!                   this% nlrf_int, &amp;</span>
+<a name="ln-1579"></a>    <span class="c">!                   this% u_pwp, &amp;</span>
+<a name="ln-1580"></a>    <span class="c">!                   this% pressure_cu, &amp;</span>
+<a name="ln-1581"></a>    <span class="c">!                   this% nstar_int, &amp;</span>
+<a name="ln-1582"></a>    <span class="c">!                   this% h, &amp;</span>
+<a name="ln-1583"></a>    <span class="c">!                   sq_detg4, gg4, px, py, pz )</span>
+<a name="ln-1584"></a>
+<a name="ln-1585"></a>    <span class="c">!PRINT *, &quot;LORENE mass:            &quot;, this% masses(1), mass_1pn*amu/Msun</span>
+<a name="ln-1586"></a>    <span class="c">!PRINT *, &quot;LORENE COM:            &quot;, &amp;</span>
+<a name="ln-1587"></a>    <span class="c">!         this% barycenter(1,:)! + this% barycenter(2,:)</span>
+<a name="ln-1588"></a>    <span class="c">!PRINT *, &quot;Newtonian COM:         &quot;, &amp;</span>
+<a name="ln-1589"></a>    <span class="c">!         com_x_newt, com_y_newt, com_z_newt!, com_d_newt</span>
+<a name="ln-1590"></a>    <span class="c">!PRINT *, &quot;1PN COM:               &quot;, &amp;</span>
+<a name="ln-1591"></a>    <span class="c">!         com_x_1pn, com_y_1pn, com_z_1pn!, com_d_1pn</span>
+<a name="ln-1592"></a>    <span class="c">!PRINT *, &quot;Newtonian spacetime momentum:&quot;, px_newt/SUM(nu,DIM=1), py_newt/SUM(nu,DIM=1), pz_newt/SUM(nu,DIM=1), pnorm_newt/SUM(nu,DIM=1)</span>
+<a name="ln-1593"></a>    <span class="c">!PRINT *, &quot;1PN spacetime momentum:&quot;, px/mass_1pn, py/mass_1pn, pz/mass_1pn, pnorm/mass_1pn</span>
+<a name="ln-1594"></a>    <span class="c">!PRINT *</span>
+<a name="ln-1595"></a>    <span class="c">!PRINT *</span>
+<a name="ln-1596"></a>
+<a name="ln-1597"></a>    <span class="c">!</span>
+<a name="ln-1598"></a>    <span class="c">!-- Deallocate MODULE variables</span>
+<a name="ln-1599"></a>    <span class="c">!</span>
+<a name="ln-1600"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Deallocating MODULE variables...&quot;</span>
+<a name="ln-1601"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-1602"></a>    <span class="k">IF</span><span class="p">(</span> <span class="nb">ALLOCATED</span><span class="p">(</span><span class="n">g4_ll</span><span class="p">)</span> <span class="p">)</span> <span class="k">CALL </span><span class="n">deallocate_metric_on_particles</span>
+<a name="ln-1603"></a>    <span class="k">CALL </span><span class="n">deallocate_gradient</span>
+<a name="ln-1604"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">alive</span> <span class="p">)</span>
+<a name="ln-1605"></a>    <span class="k">CALL </span><span class="n">deallocate_RCB_tree_memory_3D</span>
+<a name="ln-1606"></a>    <span class="k">CALL </span><span class="n">deallocate_SPH_memory</span>
+<a name="ln-1607"></a>
+<a name="ln-1608"></a>    <span class="c">!STOP</span>
+<a name="ln-1609"></a>
+<a name="ln-1610"></a>    <span class="n">call_flag</span><span class="o">=</span> <span class="n">call_flag</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="ln-1611"></a>    <span class="n">this</span><span class="p">%</span> <span class="n">call_flag</span><span class="o">=</span> <span class="n">call_flag</span>
+<a name="ln-1612"></a>
+<a name="ln-1613"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** Subroutine compute_and_print_sph_variables executed.&quot;</span>
+<a name="ln-1614"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-1615"></a>
+<a name="ln-1616"></a>  <span class="k">END PROCEDURE </span><span class="n">compute_and_print_sph_variables</span>
+<a name="ln-1617"></a>
+<a name="ln-1618"></a>
+<a name="ln-1619"></a><span class="k">END SUBMODULE </span><span class="n">sph_variables</span>
 </pre></div>
 
     </section>
@@ -1891,7 +1906,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-07 12:00:02           </p>
+ on 2022-04-08 15:26:28           </p>
         </div>
       </div>
       <br>

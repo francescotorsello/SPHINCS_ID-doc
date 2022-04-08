@@ -444,8 +444,8 @@
 <a name="ln-179"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">pos_below</span>
 <a name="ln-180"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">nu_below</span>
 <a name="ln-181"></a>
-<a name="ln-182"></a>  <span class="c">!  DOUBLE PRECISION, DIMENSION(3,npart_real+npart_ghost):: pos_tmp</span>
-<a name="ln-183"></a>  <span class="c">!  DOUBLE PRECISION, DIMENSION(npart_real+npart_ghost)  :: nu_tmp</span>
+<a name="ln-182"></a>  <span class="c">!  DOUBLE PRECISION, DIMENSION(3,npart+npart_ghost):: pos_tmp</span>
+<a name="ln-183"></a>  <span class="c">!  DOUBLE PRECISION, DIMENSION(npart+npart_ghost)  :: nu_tmp</span>
 <a name="ln-184"></a>
 <a name="ln-185"></a>    <span class="k">IF</span><span class="p">(</span> <span class="nb">MOD</span><span class="p">(</span><span class="n">npart</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">/=</span> <span class="mi">0</span> <span class="p">)</span><span class="k">THEN</span>
 <a name="ln-186"></a><span class="k">      PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! If the equatorial symmetry has to be imposed, &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
@@ -807,7 +807,7 @@
 <a name="ln-542"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">com_x</span><span class="p">,</span> <span class="n">com_y</span><span class="p">,</span> <span class="n">com_z</span><span class="p">,</span> <span class="n">com_d</span>
 <a name="ln-543"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">pos_corr_tmp</span>
 <a name="ln-544"></a>
-<a name="ln-545"></a>    <span class="k">CALL </span><span class="n">COM</span><span class="p">(</span> <span class="n">npart_real</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="p">&amp;</span>       <span class="c">! input</span>
+<a name="ln-545"></a>    <span class="k">CALL </span><span class="n">COM</span><span class="p">(</span> <span class="n">npart</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="p">&amp;</span>       <span class="c">! input</span>
 <a name="ln-546"></a>              <span class="n">com_x</span><span class="p">,</span> <span class="n">com_y</span><span class="p">,</span> <span class="n">com_z</span><span class="p">,</span> <span class="n">com_d</span> <span class="p">)</span> <span class="c">! output</span>
 <a name="ln-547"></a>
 <a name="ln-548"></a>    <span class="k">IF</span><span class="p">(</span> <span class="nb">PRESENT</span><span class="p">(</span><span class="n">verbose</span><span class="p">)</span> <span class="p">.</span><span class="nb">AND</span><span class="p">.</span> <span class="n">verbose</span> <span class="p">.</span><span class="n">EQV</span><span class="p">.</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span> <span class="p">)</span><span class="k">THEN</span>
@@ -833,9 +833,9 @@
 <a name="ln-568"></a>
 <a name="ln-569"></a>    <span class="c">!$OMP PARALLEL DO DEFAULT( NONE ) &amp;</span>
 <a name="ln-570"></a>    <span class="c">!$OMP             SHARED( pos, com_star, &amp;</span>
-<a name="ln-571"></a>    <span class="c">!$OMP                     com_x, com_y, com_z, npart_real ) &amp;</span>
+<a name="ln-571"></a>    <span class="c">!$OMP                     com_x, com_y, com_z, npart ) &amp;</span>
 <a name="ln-572"></a>    <span class="c">!$OMP             PRIVATE( pos_corr_tmp, a )</span>
-<a name="ln-573"></a>    <span class="k">DO </span><span class="n">a</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npart_real</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-573"></a>    <span class="k">DO </span><span class="n">a</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npart</span><span class="p">,</span> <span class="mi">1</span>
 <a name="ln-574"></a>
 <a name="ln-575"></a>      <span class="n">pos_corr_tmp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span> <span class="n">pos</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">com_x</span> <span class="o">-</span> <span class="n">com_star</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
 <a name="ln-576"></a>      <span class="n">pos_corr_tmp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">=</span> <span class="n">pos</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span> <span class="n">com_y</span> <span class="o">-</span> <span class="n">com_star</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
@@ -856,7 +856,7 @@
 <a name="ln-591"></a>    <span class="n">ENDDO</span>
 <a name="ln-592"></a>    <span class="c">!$OMP END PARALLEL DO</span>
 <a name="ln-593"></a>
-<a name="ln-594"></a>    <span class="k">CALL </span><span class="n">COM</span><span class="p">(</span> <span class="n">npart_real</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="p">&amp;</span> <span class="c">! input</span>
+<a name="ln-594"></a>    <span class="k">CALL </span><span class="n">COM</span><span class="p">(</span> <span class="n">npart</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nu</span><span class="p">,</span> <span class="p">&amp;</span> <span class="c">! input</span>
 <a name="ln-595"></a>              <span class="n">com_x</span><span class="p">,</span> <span class="n">com_y</span><span class="p">,</span> <span class="n">com_z</span><span class="p">,</span> <span class="n">com_d</span> <span class="p">)</span> <span class="c">! output</span>
 <a name="ln-596"></a>
 <a name="ln-597"></a>    <span class="k">IF</span><span class="p">(</span> <span class="nb">PRESENT</span><span class="p">(</span><span class="n">verbose</span><span class="p">)</span> <span class="p">.</span><span class="nb">AND</span><span class="p">.</span> <span class="n">verbose</span> <span class="p">.</span><span class="n">EQV</span><span class="p">.</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span> <span class="p">)</span><span class="k">THEN</span>
@@ -902,7 +902,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-07 12:00:02           </p>
+ on 2022-04-08 15:26:28           </p>
         </div>
       </div>
       <br>
