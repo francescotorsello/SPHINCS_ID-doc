@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>19.8% of total for derived types.</p>Including implementation: 157 statements, 12.2% of total for derived types.">157 statements</a>
+    title="<p>19.6% of total for derived types.</p>Including implementation: 157 statements, 12.2% of total for derived types.">157 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/module_bns_base.f90"> Source File</a></li>
   </ul>
@@ -144,6 +144,7 @@
       <a class="list-group-item" href="../type/bnsbase.html#variable-eos1">eos1</a>
       <a class="list-group-item" href="../type/bnsbase.html#variable-eos2">eos2</a>
       <a class="list-group-item" href="../type/bnsbase.html#variable-estimate_length_scale">estimate_length_scale</a>
+      <a class="list-group-item" href="../type/bnsbase.html#variable-finalize_sph_id_ptr">finalize_sph_id_ptr</a>
       <a class="list-group-item" href="../type/bnsbase.html#variable-gamma0_1">gamma0_1</a>
       <a class="list-group-item" href="../type/bnsbase.html#variable-gamma0_2">gamma0_2</a>
       <a class="list-group-item" href="../type/bnsbase.html#variable-gamma1_1">gamma1_1</a>
@@ -546,6 +547,7 @@
       <a class="list-group-item" href="../type/bnsbase.html#variable-eos1">eos1</a>
       <a class="list-group-item" href="../type/bnsbase.html#variable-eos2">eos2</a>
       <a class="list-group-item" href="../type/bnsbase.html#variable-estimate_length_scale">estimate_length_scale</a>
+      <a class="list-group-item" href="../type/bnsbase.html#variable-finalize_sph_id_ptr">finalize_sph_id_ptr</a>
       <a class="list-group-item" href="../type/bnsbase.html#variable-gamma0_1">gamma0_1</a>
       <a class="list-group-item" href="../type/bnsbase.html#variable-gamma0_2">gamma0_2</a>
       <a class="list-group-item" href="../type/bnsbase.html#variable-gamma1_1">gamma1_1</a>
@@ -880,6 +882,12 @@ in the mass-radius diagrams, together with the gravitatonal mass</p></td>
   <td><strong>estimate_length_scale</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if a typical length scale equal to the ratio of a field over
  its gradient should be computed (usually, the field is the pressure);
  <code>.FALSE.</code> otherwise</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-finalize_sph_id_ptr"></span>procedure(<a href='../interface/finalize_sph_id_int.html'>finalize_sph_id_int</a>),</td>
+<td>public,</td>  <td>NOPASS, POINTER</td><td>::</td>
+  <td><strong>finalize_sph_id_ptr</strong></td><td></td><td></td><td><p>Pointer to a procedure that finalize the \(\mathrm{SPH}\) \(\mathrm{ID}\); for example,
+ correct for the residual ADM linear momentum.</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-gamma0_1"></span>double precision,</td>
@@ -1269,6 +1277,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/check_i_matter.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine check_i_matter(this, i_matter)   <a href='../proc/check_i_matter.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Checks that the given index <code>i_matter</code> is between 1 and
  <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, included. If not, it stops the execution of the
@@ -1302,6 +1311,8 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <div class="panel-body">
     
     <p>Constructs a TYPE that extends <a href="../type/idbase.html">idbase</a></p>
+<p>Finalize the \(\mathrm{SPH}\) \(\mathrm{ID}\); for example,
+ correct for the residual ADM linear momentum.</p>
   </div>
   <ul class="list-group">
       <li class="list-group-item">
@@ -1347,6 +1358,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/estimate_lengthscale_field.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module function estimate_lengthscale_field(this, get_field, n_mat) result(scales)   <a href='../proc/estimate_lengthscale_field.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Estimate typical length scales, one per each matter object, by
  computing <script type="math/tex">\dfrac{f}{\partial f}</script>, where <script type="math/tex">f</script> is a field given
@@ -1648,6 +1660,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_cold_system.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module function get_cold_system(this)   <a href='../proc/get_cold_system.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <a href="../type/idbase.html#variable-cold_system~2">cold_system</a>, the <code>LOGICAL</code> variable at specifies if
  the system is cold (no thermal component)</p>
@@ -1985,6 +1998,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_estimate_length_scale.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module function get_estimate_length_scale(this)   <a href='../proc/get_estimate_length_scale.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <a href="../type/idbase.html#variable-estimate_length_scale">estimate_length_scale</a>, the <code>LOGICAL</code> variable
  that specifies if a typical length scale, equal to the ratio
@@ -3046,6 +3060,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_n_matter~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module function get_n_matter(this)   <a href='../proc/get_n_matter~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system</p>
@@ -3204,6 +3219,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_one_lapse.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module function get_one_lapse(this)   <a href='../proc/get_one_lapse.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system</p>
@@ -3674,6 +3690,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_total_spatial_extent.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module function get_total_spatial_extent(this) result(box)   <a href='../proc/get_total_spatial_extent.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>INTERFACE to the SUBROUTINE that detects the spatial extent of the
   physical system considered, and returns a 6-dimensional array
@@ -3716,6 +3733,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_zero_shift.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module function get_zero_shift(this)   <a href='../proc/get_zero_shift.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system</p>
@@ -3752,6 +3770,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/initialize.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine initialize(derived_type, filename)   <a href='../proc/initialize.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Prints a summary of the physical properties the system
  to the standard output and, optionally, to a formatted file whose name
@@ -3792,6 +3811,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/integrate_baryon_mass_density.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine integrate_baryon_mass_density(this, center, radius, central_density, dr, dth, dphi, mass, mass_profile, mass_profile_idx)   <a href='../proc/integrate_baryon_mass_density.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>INTERFACE to the SUBROUTINE integrating the baryon mass density to
  compute the radial mass profile of a single star.</p>
@@ -4863,6 +4883,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/sanity_check.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine sanity_check(derived_type)   <a href='../proc/sanity_check.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Prints a summary of the physical properties the system
  to the standard output and, optionally, to a formatted file whose name
@@ -4897,6 +4918,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/set_cold_system.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine set_cold_system(this, value)   <a href='../proc/set_cold_system.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Sets <a href="../type/idbase.html#variable-cold_system~2">cold_system</a>, the <code>LOGICAL</code> variable at specifies if
  the system is cold (no thermal component)</p>
@@ -4937,6 +4959,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/set_estimate_length_scale.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine set_estimate_length_scale(this, value)   <a href='../proc/set_estimate_length_scale.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Sets <a href="../type/idbase.html#variable-estimate_length_scale">estimate_length_scale</a>, the <code>LOGICAL</code> variable
  that specifies if a typical length scale, equal to the ratio
@@ -4977,6 +5000,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/set_n_matter.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module subroutine set_n_matter(this, value)   <a href='../proc/set_n_matter.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Sets <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system, to the given value</p>
@@ -5016,6 +5040,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/set_one_lapse.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module subroutine set_one_lapse(this, logic)   <a href='../proc/set_one_lapse.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Sets <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system, to the given value</p>
@@ -5056,6 +5081,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/set_zero_shift.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module subroutine set_zero_shift(this, logic)   <a href='../proc/set_zero_shift.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Sets <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system, to the given value</p>
@@ -5648,7 +5674,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-08 15:26:28           </p>
+ on 2022-04-14 10:28:03           </p>
         </div>
       </div>
       <br>

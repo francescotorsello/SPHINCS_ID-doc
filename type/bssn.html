@@ -202,6 +202,7 @@
     <div class="list-group">
       <a class="list-group-item" href="../type/bssn.html#boundprocedure-abs_values_in">abs_values_in</a>
       <a class="list-group-item" href="../type/bssn.html#boundprocedure-analyze_constraint">analyze_constraint</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_adm_momentum_fluid_m2p">compute_adm_momentum_fluid_m2p</a>
       <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints~2">compute_and_export_tpo_constraints</a>
       <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_grid~2">compute_and_export_tpo_constraints_grid</a>
       <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_particles~2">compute_and_export_tpo_constraints_particles</a>
@@ -272,18 +273,18 @@
 <polygon fill="none" stroke="black" points="829,-148 775,-148 775,-124 829,-124 829,-148"/>
 <text text-anchor="middle" x="802" y="-133.6" font-family="Helvetica,sans-Serif" font-size="10.50">bssn</text>
 </g>
-<!-- timer -->
+<!-- grid_function_scalar -->
 <g id="type~~bssn~~InheritsGraph_node2" class="node">
-<title>timer</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="87,-136 33,-136 33,-112 87,-112 87,-136"/>
-<text text-anchor="middle" x="60" y="-121.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
+<title>grid_function_scalar</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="120,-136 0,-136 0,-112 120,-112 120,-136"/>
+<text text-anchor="middle" x="60" y="-121.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grid_function_scalar</text>
 </g>
-<!-- type~bssn&#45;&gt;timer -->
-<g id="type~~bssn~~InheritsGraph_edge3" class="edge">
-<title>type~bssn&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M756,-136C617.86,-123.52 582.69,-141.44 444,-143 308.01,-144.53 273.01,-159.41 138,-143 124.41,-141.35 109.76,-138.11 96.93,-134.77"/>
-<polygon fill="#000000" stroke="#000000" points="97.65,-131.34 87.08,-132.1 95.81,-138.1 97.65,-131.34"/>
-<text text-anchor="middle" x="600" y="-144.4" font-family="Helvetica,sans-Serif" font-size="9.50">bssn_computer_timer</text>
+<!-- type~bssn&#45;&gt;grid_function_scalar -->
+<g id="type~~bssn~~InheritsGraph_edge2" class="edge">
+<title>type~bssn&#45;&gt;grid_function_scalar</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M756,-136C617.86,-123.52 582.69,-141.44 444,-143 308.01,-144.53 273.01,-159.41 138,-143 129.45,-141.96 120.49,-140.3 111.82,-138.37"/>
+<polygon fill="#000000" stroke="#000000" points="112.35,-134.9 101.82,-136.02 110.75,-141.72 112.35,-134.9"/>
+<text text-anchor="middle" x="600" y="-144.4" font-family="Helvetica,sans-Serif" font-size="9.50">phi, trK, Ricci_scalar</text>
 </g>
 <!-- type~tpo -->
 <g id="type~~bssn~~InheritsGraph_node3" class="node">
@@ -313,26 +314,26 @@
 <polygon fill="#000000" stroke="#000000" points="111.74,-182.03 101.23,-183.4 110.3,-188.88 111.74,-182.03"/>
 <text text-anchor="middle" x="600" y="-217.4" font-family="Helvetica,sans-Serif" font-size="9.50">Gamma_u, A_BSSN3_ll, g_BSSN3_ll, Ricci_ll, GC, GC_parts</text>
 </g>
-<!-- grid_function_scalar -->
+<!-- timer -->
 <g id="type~~bssn~~InheritsGraph_node5" class="node">
-<title>grid_function_scalar</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="120,-24 0,-24 0,0 120,0 120,-24"/>
-<text text-anchor="middle" x="60" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">grid_function_scalar</text>
+<title>timer</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="87,-24 33,-24 33,0 87,0 87,-24"/>
+<text text-anchor="middle" x="60" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
 </g>
-<!-- type~bssn&#45;&gt;grid_function_scalar -->
-<g id="type~~bssn~~InheritsGraph_edge2" class="edge">
-<title>type~bssn&#45;&gt;grid_function_scalar</title>
+<!-- type~bssn&#45;&gt;timer -->
+<g id="type~~bssn~~InheritsGraph_edge3" class="edge">
+<title>type~bssn&#45;&gt;timer</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M774.93,-136.51C769.03,-136.49 762.8,-136.35 757,-136"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M756,-136C720.05,-133.85 764.45,-81.44 738,-57 641.02,32.63 575.68,-23.92 444,-14 334.54,-5.75 206.98,-7.31 130.18,-9.46"/>
-<polygon fill="#000000" stroke="#000000" points="130.05,-5.96 120.15,-9.75 130.25,-12.96 130.05,-5.96"/>
-<text text-anchor="middle" x="600" y="-59.4" font-family="Helvetica,sans-Serif" font-size="9.50">phi, trK, Ricci_scalar</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M756,-136C720.05,-133.85 764.45,-81.44 738,-57 641.02,32.63 575.68,-23.92 444,-14 316.86,-4.42 165.32,-8.07 97.25,-10.5"/>
+<polygon fill="#000000" stroke="#000000" points="96.92,-7.01 87.06,-10.88 97.18,-14.01 96.92,-7.01"/>
+<text text-anchor="middle" x="600" y="-59.4" font-family="Helvetica,sans-Serif" font-size="9.50">bssn_computer_timer</text>
 </g>
-<!-- type~tpo&#45;&gt;timer -->
-<g id="type~~bssn~~InheritsGraph_edge8" class="edge">
-<title>type~tpo&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M572.77,-86.18C502,-81.79 301.5,-72.93 138,-100 124.37,-102.26 109.82,-106.34 97.07,-110.5"/>
-<polygon fill="#000000" stroke="#000000" points="95.63,-107.29 87.29,-113.82 97.88,-113.92 95.63,-107.29"/>
-<text text-anchor="middle" x="291" y="-102.4" font-family="Helvetica,sans-Serif" font-size="9.50">grid_timer, importer_timer</text>
+<!-- type~tpo&#45;&gt;grid_function_scalar -->
+<g id="type~~bssn~~InheritsGraph_edge7" class="edge">
+<title>type~tpo&#45;&gt;grid_function_scalar</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M572.77,-86.18C502,-81.79 301.5,-72.93 138,-100 126.25,-101.95 113.8,-105.25 102.42,-108.79"/>
+<polygon fill="#000000" stroke="#000000" points="101.17,-105.52 92.74,-111.94 103.33,-112.18 101.17,-105.52"/>
+<text text-anchor="middle" x="291" y="-102.4" font-family="Helvetica,sans-Serif" font-size="9.50">rad_coord, lapse, HC, HC_parts, rho, rho_parts</text>
 </g>
 <!-- type~tpo&#45;&gt;grid_function -->
 <g id="type~~bssn~~InheritsGraph_edge6" class="edge">
@@ -341,12 +342,12 @@
 <polygon fill="#000000" stroke="#000000" points="110.37,-159.76 101.28,-165.2 111.78,-166.61 110.37,-159.76"/>
 <text text-anchor="middle" x="291" y="-160.4" font-family="Helvetica,sans-Serif" font-size="9.50">coords, shift_u, g_phys3_ll, K_phys3_ll, S, MC, MC_parts, S_parts</text>
 </g>
-<!-- type~tpo&#45;&gt;grid_function_scalar -->
-<g id="type~~bssn~~InheritsGraph_edge7" class="edge">
-<title>type~tpo&#45;&gt;grid_function_scalar</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M572.97,-79.68C542.41,-70.25 490.05,-55.14 444,-47 335.29,-27.8 207.26,-18.8 130.2,-14.83"/>
-<polygon fill="#000000" stroke="#000000" points="130.29,-11.33 120.13,-14.33 129.94,-18.33 130.29,-11.33"/>
-<text text-anchor="middle" x="291" y="-49.4" font-family="Helvetica,sans-Serif" font-size="9.50">rad_coord, lapse, HC, HC_parts, rho, rho_parts</text>
+<!-- type~tpo&#45;&gt;timer -->
+<g id="type~~bssn~~InheritsGraph_edge8" class="edge">
+<title>type~tpo&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M572.97,-79.68C542.41,-70.25 490.05,-55.14 444,-47 317.93,-24.73 165.85,-16.18 97.45,-13.3"/>
+<polygon fill="#000000" stroke="#000000" points="97.34,-9.79 87.21,-12.88 97.06,-16.79 97.34,-9.79"/>
+<text text-anchor="middle" x="291" y="-49.4" font-family="Helvetica,sans-Serif" font-size="9.50">grid_timer, importer_timer</text>
 </g>
 <!-- level -->
 <g id="type~~bssn~~InheritsGraph_node6" class="node">
@@ -491,6 +492,7 @@
     <div class="list-group">
       <a class="list-group-item" href="../type/bssn.html#boundprocedure-abs_values_in">abs_values_in</a>
       <a class="list-group-item" href="../type/bssn.html#boundprocedure-analyze_constraint">analyze_constraint</a>
+      <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_adm_momentum_fluid_m2p">compute_adm_momentum_fluid_m2p</a>
       <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints~2">compute_and_export_tpo_constraints</a>
       <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_grid~2">compute_and_export_tpo_constraints_grid</a>
       <a class="list-group-item" href="../type/bssn.html#boundprocedure-compute_and_export_tpo_constraints_particles~2">compute_and_export_tpo_constraints_particles</a>
@@ -1086,6 +1088,57 @@
 <td>intent(in),</td>
   <td>optional</td>  <td>DIMENSION(:,:,:)</td><td>::</td>
   <td><strong>source</strong></td><td></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-compute_adm_momentum_fluid_m2p"></span><h3>procedure, public, NON_OVERRIDABLE :: <strong>compute_adm_momentum_fluid_m2p</strong>    </h3></div>
+  <div class="panel-body">
+    
+    <p>Computes an estimate of the <script type="math/tex">\mathrm{ADM}</script> linear momentum of the
+ fluid using the \(\mathrm{SPH}\) hydro fields, and the spacetime metric mapped
+ from the mesh
+ </p><div class="alert alert-success" role="alert"><h4>Todo</h4><p>add reference</p></div>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine compute_adm_momentum_fluid_m2p(this, parts, adm_mom)   <a href='../proc/compute_adm_momentum_fluid_m2p.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Computes an estimate of the <script type="math/tex">\mathrm{ADM}</script> linear momentum of the
+ fluid using the \(\mathrm{SPH}\) hydro fields, and the spacetime metric mapped
+ from the mesh
+ </p><a href="../interface/compute_adm_momentum_fluid_m2p.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/tpo.html'>tpo</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>this</strong></td><td><p><a href="../type/tpo.html">tpo</a> object which this PROCEDURE is a member of</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>parts</strong></td><td><p><a href="../module/sph_particles.html#type-particles">particles</a> object used to map the metric
+ from the mesh to the particles, and to call the recovery procedures</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(out),</td>
+  <td></td>  <td>DIMENSION(3)</td><td>::</td>
+  <td><strong>adm_mom</strong></td><td><p>ADM linear momentum of the fluid computed using the metric mapped
+ with the mesh-to-particle mapping</p></td>
 </tr>
 </tbody>
 </table>
@@ -2422,7 +2475,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-08 15:26:28           </p>
+ on 2022-04-14 10:28:03           </p>
         </div>
       </div>
       <br>

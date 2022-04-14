@@ -155,11 +155,22 @@ SUBMODULE (sph_particles) io
 
     ENDDO
 
-    PRINT *, "   SPH estimate of the ADM ", &
-             "momentum computed using the canonical momentum per baryon= "
-    PRINT *, "   (", this% adm_linear_momentum(1), ","
-    PRINT *, "    ", this% adm_linear_momentum(2), ","
-    PRINT *, "    ", this% adm_linear_momentum(3), ") Msun*c"
+    DO i_matter= 1, this% n_matter, 1
+
+      PRINT *, "   SPH estimate of the ADM linear momentum computed using ", &
+               "the canonical momentum per baryon, on matter object", &
+               i_matter,"= "
+      PRINT *, "   (", this% adm_linear_momentum_i(i_matter, 1), ","
+      PRINT *, "    ", this% adm_linear_momentum_i(i_matter, 2), ","
+      PRINT *, "    ", this% adm_linear_momentum_i(i_matter, 3), ") Msun*c"
+      PRINT *
+
+    ENDDO
+    PRINT *, "   SPH estimate of the ADM momentum of the fluid ", &
+             "computed using the canonical momentum per baryon= "
+    PRINT *, "   (", this% adm_linear_momentum_fluid(1), ","
+    PRINT *, "    ", this% adm_linear_momentum_fluid(2), ","
+    PRINT *, "    ", this% adm_linear_momentum_fluid(3), ") Msun*c"
     PRINT *
 
   END PROCEDURE print_summary
@@ -378,7 +389,7 @@ SUBMODULE (sph_particles) io
     !CALL test_status( ios, err_msg, "...error when writing line 3 in "&
     !        // TRIM(finalnamefile) )
 
-    write_data_loop: DO itr = 1, this% npart, 1
+    write_data_loop: DO itr = 1, npart, 1
 
       IF( this% export_form_xy .AND. &
           !( pos_u( 3, itr ) /= min_abs_z1 .AND. &
@@ -452,7 +463,7 @@ SUBMODULE (sph_particles) io
     CALL deallocate_SPH_memory
 
     PRINT *, " * LORENE SPH ID on the particles saved to formatted " &
-             // "file", TRIM(namefile)
+             // "file ", TRIM(namefile)
 
     PRINT *, "** Subroutine read_sphincs_dump_print_formatted " &
              // "executed."

@@ -92,7 +92,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">205 statements</a>
+    title=" 0.3% of total for procedures.">190 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/module_sph_particles.f90"> Source File</a></li>
   </ul>
@@ -164,167 +164,167 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M84.27,-264C92.49,-264 101.22,-264 109.73,-264"/>
 <polygon fill="#000000" stroke="#000000" points="109.95,-267.5 119.95,-264 109.95,-260.5 109.95,-267.5"/>
 </g>
-<!-- phys_2_cons -->
+<!-- u_fb -->
 <g id="interface~~test_recovery~~CallsGraph_node3" class="node">
-<title>phys_2_cons</title>
-<polygon fill="#777777" stroke="#777777" points="368.5,-528 289.5,-528 289.5,-504 368.5,-504 368.5,-528"/>
-<text text-anchor="middle" x="329" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">phys_2_cons</text>
+<title>u_fb</title>
+<polygon fill="#777777" stroke="#777777" points="356,-528 302,-528 302,-504 356,-504 356,-528"/>
+<text text-anchor="middle" x="329" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">u_fb</text>
 </g>
-<!-- proc~test_recovery&#45;&gt;phys_2_cons -->
+<!-- proc~test_recovery&#45;&gt;u_fb -->
 <g id="interface~~test_recovery~~CallsGraph_edge2" class="edge">
-<title>proc~test_recovery&#45;&gt;phys_2_cons</title>
-<path fill="none" stroke="#000000" d="M163.17,-276.21C164.39,-314.65 173.61,-434.18 240,-495 250.72,-504.82 265.19,-510.28 279.29,-513.26"/>
-<polygon fill="#000000" stroke="#000000" points="278.99,-516.76 289.44,-515.01 280.18,-509.86 278.99,-516.76"/>
-</g>
-<!-- theta_fb -->
-<g id="interface~~test_recovery~~CallsGraph_node4" class="node">
-<title>theta_fb</title>
-<polygon fill="#777777" stroke="#777777" points="357,-486 301,-486 301,-462 357,-462 357,-486"/>
-<text text-anchor="middle" x="329" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">theta_fb</text>
-</g>
-<!-- proc~test_recovery&#45;&gt;theta_fb -->
-<g id="interface~~test_recovery~~CallsGraph_edge3" class="edge">
-<title>proc~test_recovery&#45;&gt;theta_fb</title>
-<path fill="none" stroke="#000000" d="M164.21,-276.38C168.19,-310.24 184.07,-405.01 240,-453 253.92,-464.94 273.45,-470.36 290.57,-472.72"/>
-<polygon fill="#000000" stroke="#000000" points="290.54,-476.24 300.86,-473.82 291.29,-469.28 290.54,-476.24"/>
+<title>proc~test_recovery&#45;&gt;u_fb</title>
+<path fill="none" stroke="#000000" d="M163.17,-276.21C164.39,-314.65 173.61,-434.18 240,-495 253.94,-507.77 274.23,-513.18 291.81,-515.32"/>
+<polygon fill="#000000" stroke="#000000" points="291.51,-518.8 301.78,-516.23 292.14,-511.83 291.51,-518.8"/>
 </g>
 <!-- proc~compute_g4 -->
-<g id="interface~~test_recovery~~CallsGraph_node5" class="node">
+<g id="interface~~test_recovery~~CallsGraph_node4" class="node">
 <title>proc~compute_g4</title>
-<g id="a_interface~~test_recovery~~CallsGraph_node5"><a xlink:href=".././proc/compute_g4.html" xlink:title="compute_g4">
-<polygon fill="#d9534f" stroke="#d9534f" points="368.5,-444 289.5,-444 289.5,-420 368.5,-420 368.5,-444"/>
-<text text-anchor="middle" x="329" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_g4</text>
+<g id="a_interface~~test_recovery~~CallsGraph_node4"><a xlink:href=".././proc/compute_g4.html" xlink:title="compute_g4">
+<polygon fill="#d9534f" stroke="#d9534f" points="368.5,-486 289.5,-486 289.5,-462 368.5,-462 368.5,-486"/>
+<text text-anchor="middle" x="329" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_g4</text>
 </a>
 </g>
 </g>
 <!-- proc~test_recovery&#45;&gt;proc~compute_g4 -->
-<g id="interface~~test_recovery~~CallsGraph_edge4" class="edge">
+<g id="interface~~test_recovery~~CallsGraph_edge3" class="edge">
 <title>proc~test_recovery&#45;&gt;proc~compute_g4</title>
+<path fill="none" stroke="#000000" d="M164.21,-276.38C168.19,-310.24 184.07,-405.01 240,-453 250.94,-462.38 265.33,-467.74 279.31,-470.75"/>
+<polygon fill="#000000" stroke="#000000" points="278.89,-474.23 289.35,-472.55 280.13,-467.34 278.89,-474.23"/>
+</g>
+<!-- cons_2_phys -->
+<g id="interface~~test_recovery~~CallsGraph_node5" class="node">
+<title>cons_2_phys</title>
+<polygon fill="#777777" stroke="#777777" points="368.5,-444 289.5,-444 289.5,-420 368.5,-420 368.5,-444"/>
+<text text-anchor="middle" x="329" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cons_2_phys</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;cons_2_phys -->
+<g id="interface~~test_recovery~~CallsGraph_edge4" class="edge">
+<title>proc~test_recovery&#45;&gt;cons_2_phys</title>
 <path fill="none" stroke="#000000" d="M165.7,-276.09C172.68,-304.4 194.07,-375.26 240,-411 251.27,-419.77 265.64,-424.96 279.48,-428.01"/>
 <polygon fill="#000000" stroke="#000000" points="278.94,-431.47 289.41,-429.87 280.23,-424.59 278.94,-431.47"/>
 </g>
-<!-- cons_2_phys -->
-<g id="interface~~test_recovery~~CallsGraph_node6" class="node">
-<title>cons_2_phys</title>
-<polygon fill="#777777" stroke="#777777" points="368.5,-402 289.5,-402 289.5,-378 368.5,-378 368.5,-402"/>
-<text text-anchor="middle" x="329" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cons_2_phys</text>
-</g>
-<!-- proc~test_recovery&#45;&gt;cons_2_phys -->
-<g id="interface~~test_recovery~~CallsGraph_edge5" class="edge">
-<title>proc~test_recovery&#45;&gt;cons_2_phys</title>
-<path fill="none" stroke="#000000" d="M168.41,-276.25C178.87,-298.42 204.03,-345.12 240,-369 251.57,-376.69 265.66,-381.57 279.13,-384.66"/>
-<polygon fill="#000000" stroke="#000000" points="278.77,-388.16 289.26,-386.7 280.15,-381.3 278.77,-388.16"/>
-</g>
-<!-- deallocate_metric_on_particles -->
-<g id="interface~~test_recovery~~CallsGraph_node7" class="node">
-<title>deallocate_metric_on_particles</title>
-<polygon fill="#777777" stroke="#777777" points="418,-360 240,-360 240,-336 418,-336 418,-360"/>
-<text text-anchor="middle" x="329" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_metric_on_particles</text>
-</g>
-<!-- proc~test_recovery&#45;&gt;deallocate_metric_on_particles -->
-<g id="interface~~test_recovery~~CallsGraph_edge6" class="edge">
-<title>proc~test_recovery&#45;&gt;deallocate_metric_on_particles</title>
-<path fill="none" stroke="#000000" d="M174.32,-276.14C188.37,-290.46 213.69,-313.96 240,-327 244.07,-329.02 248.34,-330.84 252.72,-332.5"/>
-<polygon fill="#000000" stroke="#000000" points="251.83,-335.9 262.43,-335.86 254.12,-329.28 251.83,-335.9"/>
-</g>
-<!-- g4_ll -->
-<g id="interface~~test_recovery~~CallsGraph_node8" class="node">
-<title>g4_ll</title>
-<polygon fill="#777777" stroke="#777777" points="356,-318 302,-318 302,-294 356,-294 356,-318"/>
-<text text-anchor="middle" x="329" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">g4_ll</text>
-</g>
-<!-- proc~test_recovery&#45;&gt;g4_ll -->
-<g id="interface~~test_recovery~~CallsGraph_edge7" class="edge">
-<title>proc~test_recovery&#45;&gt;g4_ll</title>
-<path fill="none" stroke="#000000" d="M204.1,-275.47C215.69,-278.63 228.32,-282.01 240,-285 256.98,-289.34 275.87,-293.88 291.78,-297.63"/>
-<polygon fill="#000000" stroke="#000000" points="291.23,-301.1 301.76,-299.97 292.82,-294.28 291.23,-301.1"/>
-</g>
-<!-- pr_fb -->
-<g id="interface~~test_recovery~~CallsGraph_node9" class="node">
-<title>pr_fb</title>
-<polygon fill="#777777" stroke="#777777" points="356,-276 302,-276 302,-252 356,-252 356,-276"/>
-<text text-anchor="middle" x="329" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pr_fb</text>
-</g>
-<!-- proc~test_recovery&#45;&gt;pr_fb -->
-<g id="interface~~test_recovery~~CallsGraph_edge8" class="edge">
-<title>proc~test_recovery&#45;&gt;pr_fb</title>
-<path fill="none" stroke="#000000" d="M204.21,-264C231.06,-264 265.76,-264 291.59,-264"/>
-<polygon fill="#000000" stroke="#000000" points="291.72,-267.5 301.72,-264 291.72,-260.5 291.72,-267.5"/>
-</g>
-<!-- vel_u_fb -->
-<g id="interface~~test_recovery~~CallsGraph_node10" class="node">
-<title>vel_u_fb</title>
-<polygon fill="#777777" stroke="#777777" points="357,-234 301,-234 301,-210 357,-210 357,-234"/>
-<text text-anchor="middle" x="329" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">vel_u_fb</text>
-</g>
-<!-- proc~test_recovery&#45;&gt;vel_u_fb -->
-<g id="interface~~test_recovery~~CallsGraph_edge9" class="edge">
-<title>proc~test_recovery&#45;&gt;vel_u_fb</title>
-<path fill="none" stroke="#000000" d="M204.1,-252.53C215.69,-249.37 228.32,-245.99 240,-243 256.73,-238.72 275.31,-234.25 291.08,-230.53"/>
-<polygon fill="#000000" stroke="#000000" points="292.05,-233.9 300.98,-228.21 290.45,-227.09 292.05,-233.9"/>
-</g>
 <!-- proc~determinant_sym4x4 -->
-<g id="interface~~test_recovery~~CallsGraph_node11" class="node">
+<g id="interface~~test_recovery~~CallsGraph_node6" class="node">
 <title>proc~determinant_sym4x4</title>
-<g id="a_interface~~test_recovery~~CallsGraph_node11"><a xlink:href=".././proc/determinant_sym4x4.html" xlink:title="determinant_sym4x4">
-<polygon fill="#d9534f" stroke="#d9534f" points="391.5,-192 266.5,-192 266.5,-168 391.5,-168 391.5,-192"/>
-<text text-anchor="middle" x="329" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym4x4</text>
+<g id="a_interface~~test_recovery~~CallsGraph_node6"><a xlink:href=".././proc/determinant_sym4x4.html" xlink:title="determinant_sym4x4">
+<polygon fill="#d9534f" stroke="#d9534f" points="391.5,-402 266.5,-402 266.5,-378 391.5,-378 391.5,-402"/>
+<text text-anchor="middle" x="329" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym4x4</text>
 </a>
 </g>
 </g>
 <!-- proc~test_recovery&#45;&gt;proc~determinant_sym4x4 -->
-<g id="interface~~test_recovery~~CallsGraph_edge10" class="edge">
+<g id="interface~~test_recovery~~CallsGraph_edge5" class="edge">
 <title>proc~test_recovery&#45;&gt;proc~determinant_sym4x4</title>
-<path fill="none" stroke="#000000" d="M174.32,-251.86C188.37,-237.54 213.69,-214.04 240,-201 245.23,-198.41 250.79,-196.13 256.49,-194.12"/>
-<polygon fill="#000000" stroke="#000000" points="257.72,-197.4 266.15,-191 255.56,-190.74 257.72,-197.4"/>
+<path fill="none" stroke="#000000" d="M168.41,-276.25C178.87,-298.42 204.03,-345.12 240,-369 245.03,-372.34 250.53,-375.15 256.25,-377.51"/>
+<polygon fill="#000000" stroke="#000000" points="255.45,-380.95 266.04,-381.09 257.85,-374.37 255.45,-380.95"/>
 </g>
 <!-- nlrf_fb -->
-<g id="interface~~test_recovery~~CallsGraph_node12" class="node">
+<g id="interface~~test_recovery~~CallsGraph_node7" class="node">
 <title>nlrf_fb</title>
-<polygon fill="#777777" stroke="#777777" points="356,-150 302,-150 302,-126 356,-126 356,-150"/>
-<text text-anchor="middle" x="329" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nlrf_fb</text>
+<polygon fill="#777777" stroke="#777777" points="356,-360 302,-360 302,-336 356,-336 356,-360"/>
+<text text-anchor="middle" x="329" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">nlrf_fb</text>
 </g>
 <!-- proc~test_recovery&#45;&gt;nlrf_fb -->
-<g id="interface~~test_recovery~~CallsGraph_edge11" class="edge">
+<g id="interface~~test_recovery~~CallsGraph_edge6" class="edge">
 <title>proc~test_recovery&#45;&gt;nlrf_fb</title>
-<path fill="none" stroke="#000000" d="M168.41,-251.75C178.87,-229.58 204.03,-182.88 240,-159 255.28,-148.86 274.93,-143.6 291.78,-140.88"/>
-<polygon fill="#000000" stroke="#000000" points="292.42,-144.32 301.85,-139.49 291.47,-137.39 292.42,-144.32"/>
+<path fill="none" stroke="#000000" d="M174.32,-276.14C188.37,-290.46 213.69,-313.96 240,-327 256.05,-334.95 275.26,-339.98 291.63,-343.12"/>
+<polygon fill="#000000" stroke="#000000" points="291.46,-346.65 301.92,-344.92 292.67,-339.75 291.46,-346.65"/>
 </g>
-<!-- u_fb -->
+<!-- allocate_metric_on_particles -->
+<g id="interface~~test_recovery~~CallsGraph_node8" class="node">
+<title>allocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="411.5,-318 246.5,-318 246.5,-294 411.5,-294 411.5,-318"/>
+<text text-anchor="middle" x="329" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_metric_on_particles</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;allocate_metric_on_particles -->
+<g id="interface~~test_recovery~~CallsGraph_edge7" class="edge">
+<title>proc~test_recovery&#45;&gt;allocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M204.1,-275.47C215.69,-278.63 228.32,-282.01 240,-285 248.51,-287.18 257.51,-289.4 266.37,-291.56"/>
+<polygon fill="#000000" stroke="#000000" points="265.74,-295.01 276.28,-293.95 267.38,-288.2 265.74,-295.01"/>
+</g>
+<!-- theta_fb -->
+<g id="interface~~test_recovery~~CallsGraph_node9" class="node">
+<title>theta_fb</title>
+<polygon fill="#777777" stroke="#777777" points="357,-276 301,-276 301,-252 357,-252 357,-276"/>
+<text text-anchor="middle" x="329" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">theta_fb</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;theta_fb -->
+<g id="interface~~test_recovery~~CallsGraph_edge8" class="edge">
+<title>proc~test_recovery&#45;&gt;theta_fb</title>
+<path fill="none" stroke="#000000" d="M204.21,-264C230.72,-264 264.9,-264 290.62,-264"/>
+<polygon fill="#000000" stroke="#000000" points="290.73,-267.5 300.73,-264 290.73,-260.5 290.73,-267.5"/>
+</g>
+<!-- cs_fb -->
+<g id="interface~~test_recovery~~CallsGraph_node10" class="node">
+<title>cs_fb</title>
+<polygon fill="#777777" stroke="#777777" points="356,-234 302,-234 302,-210 356,-210 356,-234"/>
+<text text-anchor="middle" x="329" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cs_fb</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;cs_fb -->
+<g id="interface~~test_recovery~~CallsGraph_edge9" class="edge">
+<title>proc~test_recovery&#45;&gt;cs_fb</title>
+<path fill="none" stroke="#000000" d="M204.1,-252.53C215.69,-249.37 228.32,-245.99 240,-243 256.98,-238.66 275.87,-234.12 291.78,-230.37"/>
+<polygon fill="#000000" stroke="#000000" points="292.82,-233.72 301.76,-228.03 291.23,-226.9 292.82,-233.72"/>
+</g>
+<!-- g4_ll -->
+<g id="interface~~test_recovery~~CallsGraph_node11" class="node">
+<title>g4_ll</title>
+<polygon fill="#777777" stroke="#777777" points="356,-192 302,-192 302,-168 356,-168 356,-192"/>
+<text text-anchor="middle" x="329" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">g4_ll</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;g4_ll -->
+<g id="interface~~test_recovery~~CallsGraph_edge10" class="edge">
+<title>proc~test_recovery&#45;&gt;g4_ll</title>
+<path fill="none" stroke="#000000" d="M174.32,-251.86C188.37,-237.54 213.69,-214.04 240,-201 256.05,-193.05 275.26,-188.02 291.63,-184.88"/>
+<polygon fill="#000000" stroke="#000000" points="292.67,-188.25 301.92,-183.08 291.46,-181.35 292.67,-188.25"/>
+</g>
+<!-- deallocate_metric_on_particles -->
+<g id="interface~~test_recovery~~CallsGraph_node12" class="node">
+<title>deallocate_metric_on_particles</title>
+<polygon fill="#777777" stroke="#777777" points="418,-150 240,-150 240,-126 418,-126 418,-150"/>
+<text text-anchor="middle" x="329" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_metric_on_particles</text>
+</g>
+<!-- proc~test_recovery&#45;&gt;deallocate_metric_on_particles -->
+<g id="interface~~test_recovery~~CallsGraph_edge11" class="edge">
+<title>proc~test_recovery&#45;&gt;deallocate_metric_on_particles</title>
+<path fill="none" stroke="#000000" d="M168.41,-251.75C178.87,-229.58 204.03,-182.88 240,-159 242.6,-157.27 245.32,-155.69 248.14,-154.24"/>
+<polygon fill="#000000" stroke="#000000" points="249.75,-157.35 257.4,-150.02 246.85,-150.98 249.75,-157.35"/>
+</g>
+<!-- pr_fb -->
 <g id="interface~~test_recovery~~CallsGraph_node13" class="node">
-<title>u_fb</title>
+<title>pr_fb</title>
 <polygon fill="#777777" stroke="#777777" points="356,-108 302,-108 302,-84 356,-84 356,-108"/>
-<text text-anchor="middle" x="329" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">u_fb</text>
+<text text-anchor="middle" x="329" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pr_fb</text>
 </g>
-<!-- proc~test_recovery&#45;&gt;u_fb -->
+<!-- proc~test_recovery&#45;&gt;pr_fb -->
 <g id="interface~~test_recovery~~CallsGraph_edge12" class="edge">
-<title>proc~test_recovery&#45;&gt;u_fb</title>
+<title>proc~test_recovery&#45;&gt;pr_fb</title>
 <path fill="none" stroke="#000000" d="M165.7,-251.91C172.68,-223.6 194.07,-152.74 240,-117 254.58,-105.66 274.33,-100.3 291.43,-97.83"/>
 <polygon fill="#000000" stroke="#000000" points="292.14,-101.27 301.66,-96.64 291.32,-94.32 292.14,-101.27"/>
 </g>
-<!-- allocate_metric_on_particles -->
+<!-- vel_u_fb -->
 <g id="interface~~test_recovery~~CallsGraph_node14" class="node">
-<title>allocate_metric_on_particles</title>
-<polygon fill="#777777" stroke="#777777" points="411.5,-66 246.5,-66 246.5,-42 411.5,-42 411.5,-66"/>
-<text text-anchor="middle" x="329" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_metric_on_particles</text>
+<title>vel_u_fb</title>
+<polygon fill="#777777" stroke="#777777" points="357,-66 301,-66 301,-42 357,-42 357,-66"/>
+<text text-anchor="middle" x="329" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">vel_u_fb</text>
 </g>
-<!-- proc~test_recovery&#45;&gt;allocate_metric_on_particles -->
+<!-- proc~test_recovery&#45;&gt;vel_u_fb -->
 <g id="interface~~test_recovery~~CallsGraph_edge13" class="edge">
-<title>proc~test_recovery&#45;&gt;allocate_metric_on_particles</title>
-<path fill="none" stroke="#000000" d="M164.21,-251.62C168.19,-217.76 184.07,-122.99 240,-75 241.52,-73.7 243.11,-72.47 244.75,-71.32"/>
-<polygon fill="#000000" stroke="#000000" points="246.61,-74.28 253.39,-66.14 243.01,-68.28 246.61,-74.28"/>
+<title>proc~test_recovery&#45;&gt;vel_u_fb</title>
+<path fill="none" stroke="#000000" d="M164.21,-251.62C168.19,-217.76 184.07,-122.99 240,-75 253.92,-63.06 273.45,-57.64 290.57,-55.28"/>
+<polygon fill="#000000" stroke="#000000" points="291.29,-58.72 300.86,-54.18 290.54,-51.76 291.29,-58.72"/>
 </g>
-<!-- cs_fb -->
+<!-- phys_2_cons -->
 <g id="interface~~test_recovery~~CallsGraph_node15" class="node">
-<title>cs_fb</title>
-<polygon fill="#777777" stroke="#777777" points="356,-24 302,-24 302,0 356,0 356,-24"/>
-<text text-anchor="middle" x="329" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cs_fb</text>
+<title>phys_2_cons</title>
+<polygon fill="#777777" stroke="#777777" points="368.5,-24 289.5,-24 289.5,0 368.5,0 368.5,-24"/>
+<text text-anchor="middle" x="329" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">phys_2_cons</text>
 </g>
-<!-- proc~test_recovery&#45;&gt;cs_fb -->
+<!-- proc~test_recovery&#45;&gt;phys_2_cons -->
 <g id="interface~~test_recovery~~CallsGraph_edge14" class="edge">
-<title>proc~test_recovery&#45;&gt;cs_fb</title>
-<path fill="none" stroke="#000000" d="M163.17,-251.79C164.39,-213.35 173.61,-93.82 240,-33 253.94,-20.23 274.23,-14.82 291.81,-12.68"/>
-<polygon fill="#000000" stroke="#000000" points="292.14,-16.17 301.78,-11.77 291.51,-9.2 292.14,-16.17"/>
+<title>proc~test_recovery&#45;&gt;phys_2_cons</title>
+<path fill="none" stroke="#000000" d="M163.17,-251.79C164.39,-213.35 173.61,-93.82 240,-33 250.72,-23.18 265.19,-17.72 279.29,-14.74"/>
+<polygon fill="#000000" stroke="#000000" points="280.18,-18.14 289.44,-12.99 278.99,-11.24 280.18,-18.14"/>
 </g>
 </g>
 </svg>
@@ -400,55 +400,55 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~52"></span>class(<a href='../type/particles.html'>particles</a>),</td>
+  <td><span class="anchor" id="variable-this~51"></span>class(<a href='../type/particles.html'>particles</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>this</strong></td><td><p><a href="../type/particles.html">particles</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-npart~11"></span>integer,</td>
+  <td><span class="anchor" id="variable-npart~14"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>npart</strong></td><td><p>Particle number</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-pos~15"></span>double precision,</td>
+  <td><span class="anchor" id="variable-pos~16"></span>double precision,</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(3,npart)</td><td>::</td>
   <td><strong>pos</strong></td><td><p>Particle positions</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-nlrf~4"></span>double precision,</td>
+  <td><span class="anchor" id="variable-nlrf~6"></span>double precision,</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(npart)</td><td>::</td>
   <td><strong>nlrf</strong></td><td><p>Baryon density in the local rest frame on the particles</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-u~3"></span>double precision,</td>
+  <td><span class="anchor" id="variable-u~5"></span>double precision,</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(npart)</td><td>::</td>
   <td><strong>u</strong></td><td><p>Specific internal energy on the particles</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-pr~2"></span>double precision,</td>
+  <td><span class="anchor" id="variable-pr~4"></span>double precision,</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(npart)</td><td>::</td>
   <td><strong>pr</strong></td><td><p>Pressure on the particles</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-vel_u~2"></span>double precision,</td>
+  <td><span class="anchor" id="variable-vel_u~4"></span>double precision,</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(3,npart)</td><td>::</td>
   <td><strong>vel_u</strong></td><td><p>Spatial velocity in the computing frame on the particles</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-theta~4"></span>double precision,</td>
+  <td><span class="anchor" id="variable-theta~6"></span>double precision,</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(npart)</td><td>::</td>
   <td><strong>theta</strong></td><td><p>Generalized Lorentz factor on the particles</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-nstar~4"></span>double precision,</td>
+  <td><span class="anchor" id="variable-nstar~5"></span>double precision,</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(npart)</td><td>::</td>
   <td><strong>nstar</strong></td><td><p>Proper baryon density in the local rest frame on the particles</p>
@@ -486,7 +486,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-08 15:26:28           </p>
+ on 2022-04-14 10:28:03           </p>
         </div>
       </div>
       <br>

@@ -136,12 +136,12 @@
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-c111">c111</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-i~24">i</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-ierr">ierr</a>
-      <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-j~21">j</a>
+      <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-j~23">j</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-k~20">k</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-phi~10">phi</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-r~7">r</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-sgn_z">sgn_z</a>
-      <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-theta~6">theta</a>
+      <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-theta~11">theta</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-x0">x0</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-x1">x1</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-x_ell~2">x_ell</a>
@@ -174,8 +174,8 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li>constants</li>
-    <li>numerics</li>
     <li><a href='../module/utility.html'>utility</a></li>
+    <li>numerics</li>
   </ul>
       </li>
       <li class="list-group-item">
@@ -323,7 +323,7 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~260"></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
+  <td><span class="anchor" id="variable-this~235"></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
@@ -378,32 +378,32 @@
 <polygon fill="none" stroke="black" points="148,-45 0,-45 0,-21 148,-21 148,-45"/>
 <text text-anchor="middle" x="74" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">interpolate_mass_density</text>
 </g>
-<!-- trilinear_interpolation -->
-<g id="proc~~interpolate_mass_density~~CallsGraph_node2" class="node">
-<title>trilinear_interpolation</title>
-<polygon fill="#777777" stroke="#777777" points="321,-66 193,-66 193,-42 321,-42 321,-66"/>
-<text text-anchor="middle" x="257" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">trilinear_interpolation</text>
-</g>
-<!-- proc~interpolate_mass_density&#45;&gt;trilinear_interpolation -->
-<g id="proc~~interpolate_mass_density~~CallsGraph_edge1" class="edge">
-<title>proc~interpolate_mass_density&#45;&gt;trilinear_interpolation</title>
-<path fill="none" stroke="#000000" d="M148.1,-41.48C159.56,-42.81 171.4,-44.18 182.86,-45.51"/>
-<polygon fill="#000000" stroke="#000000" points="182.48,-48.99 192.81,-46.67 183.28,-42.04 182.48,-48.99"/>
-</g>
 <!-- proc~spherical_from_cartesian -->
-<g id="proc~~interpolate_mass_density~~CallsGraph_node3" class="node">
+<g id="proc~~interpolate_mass_density~~CallsGraph_node2" class="node">
 <title>proc~spherical_from_cartesian</title>
-<g id="a_proc~~interpolate_mass_density~~CallsGraph_node3"><a xlink:href=".././proc/spherical_from_cartesian.html" xlink:title="spherical_from_cartesian">
-<polygon fill="#d9534f" stroke="#d9534f" points="330,-24 184,-24 184,0 330,0 330,-24"/>
-<text text-anchor="middle" x="257" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spherical_from_cartesian</text>
+<g id="a_proc~~interpolate_mass_density~~CallsGraph_node2"><a xlink:href=".././proc/spherical_from_cartesian.html" xlink:title="spherical_from_cartesian">
+<polygon fill="#d9534f" stroke="#d9534f" points="330,-66 184,-66 184,-42 330,-42 330,-66"/>
+<text text-anchor="middle" x="257" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spherical_from_cartesian</text>
 </a>
 </g>
 </g>
 <!-- proc~interpolate_mass_density&#45;&gt;proc~spherical_from_cartesian -->
-<g id="proc~~interpolate_mass_density~~CallsGraph_edge2" class="edge">
+<g id="proc~~interpolate_mass_density~~CallsGraph_edge1" class="edge">
 <title>proc~interpolate_mass_density&#45;&gt;proc~spherical_from_cartesian</title>
-<path fill="none" stroke="#000000" d="M148.1,-24.52C156.56,-23.54 165.23,-22.53 173.81,-21.54"/>
-<polygon fill="#000000" stroke="#000000" points="174.28,-25.01 183.81,-20.38 173.47,-18.05 174.28,-25.01"/>
+<path fill="none" stroke="#000000" d="M148.1,-41.48C156.56,-42.46 165.23,-43.47 173.81,-44.46"/>
+<polygon fill="#000000" stroke="#000000" points="173.47,-47.95 183.81,-45.62 174.28,-40.99 173.47,-47.95"/>
+</g>
+<!-- trilinear_interpolation -->
+<g id="proc~~interpolate_mass_density~~CallsGraph_node3" class="node">
+<title>trilinear_interpolation</title>
+<polygon fill="#777777" stroke="#777777" points="321,-24 193,-24 193,0 321,0 321,-24"/>
+<text text-anchor="middle" x="257" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">trilinear_interpolation</text>
+</g>
+<!-- proc~interpolate_mass_density&#45;&gt;trilinear_interpolation -->
+<g id="proc~~interpolate_mass_density~~CallsGraph_edge2" class="edge">
+<title>proc~interpolate_mass_density&#45;&gt;trilinear_interpolation</title>
+<path fill="none" stroke="#000000" d="M148.1,-24.52C159.56,-23.19 171.4,-21.82 182.86,-20.49"/>
+<polygon fill="#000000" stroke="#000000" points="183.28,-23.96 192.81,-19.33 182.48,-17.01 183.28,-23.96"/>
 </g>
 </g>
 </svg>
@@ -593,12 +593,12 @@
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-c111">c111</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-i~24">i</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-ierr">ierr</a>
-      <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-j~21">j</a>
+      <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-j~23">j</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-k~20">k</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-phi~10">phi</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-r~7">r</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-sgn_z">sgn_z</a>
-      <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-theta~6">theta</a>
+      <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-theta~11">theta</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-x0">x0</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-x1">x1</a>
       <a class="list-group-item" href="../proc/interpolate_mass_density.html#variable-x_ell~2">x_ell</a>
@@ -706,7 +706,7 @@
   <td><strong>ierr</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-j~21"></span>integer,</td>
+  <td><span class="anchor" id="variable-j~23"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>j</strong></td><td></td><td></td><td></td>
 </tr>
@@ -731,7 +731,7 @@
   <td><strong>sgn_z</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-theta~6"></span>double precision,</td>
+  <td><span class="anchor" id="variable-theta~11"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>theta</strong></td><td></td><td></td><td></td>
 </tr>
@@ -829,7 +829,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-08 15:26:28           </p>
+ on 2022-04-14 10:28:03           </p>
         </div>
       </div>
       <br>

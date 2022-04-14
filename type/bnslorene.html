@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 7.3% of total for derived types.</p>Including implementation: 67 statements,  5.2% of total for derived types.">58 statements</a>
+    title="<p> 7.4% of total for derived types.</p>Including implementation: 68 statements,  5.3% of total for derived types.">59 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/module_bns_lorene.f90"> Source File</a></li>
   </ul>
@@ -150,6 +150,7 @@
       <a class="list-group-item" href="../type/bnslorene.html#variable-eos2">eos2</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-eos2_loreneid">eos2_loreneid</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-estimate_length_scale">estimate_length_scale</a>
+      <a class="list-group-item" href="../type/bnslorene.html#variable-finalize_sph_id_ptr">finalize_sph_id_ptr</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-g_xx~2">g_xx</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-g_xy~2">g_xy</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-g_xz~2">g_xz</a>
@@ -249,6 +250,7 @@
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-allocate_bnslorene_memory">allocate_bnslorene_memory</a>
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-check_i_matter">check_i_matter</a>
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-construct_binary">construct_binary</a>
+      <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-correct_adm_linear_momentum">correct_adm_linear_momentum</a>
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-deallocate_bnslorene_memory">deallocate_bnslorene_memory</a>
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-derived_type_constructor~2">derived_type_constructor</a>
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-destruct_binary">destruct_binary</a>
@@ -536,6 +538,7 @@
       <a class="list-group-item" href="../type/bnslorene.html#variable-eos2">eos2</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-eos2_loreneid">eos2_loreneid</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-estimate_length_scale">estimate_length_scale</a>
+      <a class="list-group-item" href="../type/bnslorene.html#variable-finalize_sph_id_ptr">finalize_sph_id_ptr</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-g_xx~2">g_xx</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-g_xy~2">g_xy</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-g_xz~2">g_xz</a>
@@ -635,6 +638,7 @@
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-allocate_bnslorene_memory">allocate_bnslorene_memory</a>
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-check_i_matter">check_i_matter</a>
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-construct_binary">construct_binary</a>
+      <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-correct_adm_linear_momentum">correct_adm_linear_momentum</a>
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-deallocate_bnslorene_memory">deallocate_bnslorene_memory</a>
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-derived_type_constructor~2">derived_type_constructor</a>
       <a class="list-group-item" href="../type/bnslorene.html#boundprocedure-destruct_binary">destruct_binary</a>
@@ -949,6 +953,12 @@ N.B. This variable is global. The pointer to the second \(\texttt{LORENE}\) \(\t
   <td><strong>estimate_length_scale</strong></td><td></td><td></td><td><p><code>.TRUE.</code> if a typical length scale equal to the ratio of a field over
  its gradient should be computed (usually, the field is the pressure);
  <code>.FALSE.</code> otherwise</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-finalize_sph_id_ptr"></span>procedure(<a href='../interface/finalize_sph_id_int.html'>finalize_sph_id_int</a>),</td>
+<td>public,</td>  <td>NOPASS, POINTER</td><td>::</td>
+  <td><strong>finalize_sph_id_ptr</strong></td><td></td><td></td><td><p>Pointer to a procedure that finalize the \(\mathrm{SPH}\) \(\mathrm{ID}\); for example,
+ correct for the residual ADM linear momentum.</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-g_xx~2"></span>double precision,</td>
@@ -1464,7 +1474,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine allocate_bnslorene_memory(THIS, d)   <a href='../proc/allocate_bnslorene_memory.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine allocate_bnslorene_memory(this, d)   <a href='../proc/allocate_bnslorene_memory.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Allocates allocatable arrays member of a <a href="../type/bnslorene.html">bnslorene</a> object</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1474,7 +1484,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -1502,6 +1512,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/check_i_matter.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine check_i_matter(this, i_matter)   <a href='../proc/check_i_matter.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Checks that the given index <code>i_matter</code> is between 1 and
  <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, included. If not, it stops the execution of the
@@ -1541,7 +1552,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine construct_binary(THIS, resu_file)   <a href='../proc/construct_binary.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine construct_binary(this, resu_file)   <a href='../proc/construct_binary.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface of the subroutine that constructs the \(\texttt{LORENE}\) \(\texttt{Bin_NS}\) object</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1551,13 +1562,94 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(kind=C_CHAR,len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>resu_file</strong></td><td><p>\(\texttt{LORENE}\) binary file containing the spectral BNS ID</p></td>
+</tr>
+</tbody>
+</table>
+
+
+      </li>
+  </ul>
+</div>
+
+     <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-correct_adm_linear_momentum"></span><h3>procedure, public, NOPASS :: <strong>correct_adm_linear_momentum</strong>    </h3></div>
+  <div class="panel-body">
+    
+    <p>Corrects the \(\mathrm{SPH}\) \(\mathrm{ID}\) so that the linear <script type="math/tex">\mathrm{ADM}</script> momentum
+ is zero</p>
+  </div>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <h3>interface
+          </h3>
+  
+          <h3>public module module subroutine correct_adm_linear_momentum(npart, pos, nlrf, u, pr, vel_u, theta, nstar, nu)   <a href='../proc/correct_adm_linear_momentum.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+</h3><p>Post-process the \(\mathrm{SPH}\) \(\mathrm{ID}\); for example, correct for the residual
+ ADM linear momentum.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>npart</strong></td><td><p>Particle number</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(3,npart)</td><td>::</td>
+  <td><strong>pos</strong></td><td><p>Particle positions</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>nlrf</strong></td><td><p>Baryon density in the local rest frame on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>u</strong></td><td><p>Specific internal energy on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>pr</strong></td><td><p>Pressure on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(3,npart)</td><td>::</td>
+  <td><strong>vel_u</strong></td><td><p>Spatial velocity in the computing frame on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>theta</strong></td><td><p>Generalized Lorentz factor on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>nstar</strong></td><td><p>Proper baryon density in the local rest frame on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>nu</strong></td><td><p>Baryon number per particle</p></td>
 </tr>
 </tbody>
 </table>
@@ -1578,7 +1670,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine deallocate_bnslorene_memory(THIS)   <a href='../proc/deallocate_bnslorene_memory.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine deallocate_bnslorene_memory(this)   <a href='../proc/deallocate_bnslorene_memory.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Deallocates allocatable arrays member of a <a href="../type/bnslorene.html">bnslorene</a> object</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1588,7 +1680,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1644,7 +1736,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine destruct_binary(THIS)   <a href='../proc/destruct_binary.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine destruct_binary(this)   <a href='../proc/destruct_binary.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Destructs a \(\texttt{LORENE}\) \(\texttt{Bin_NS}\) object</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1654,7 +1746,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1679,6 +1771,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/estimate_lengthscale_field.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module function estimate_lengthscale_field(this, get_field, n_mat) result(scales)   <a href='../proc/estimate_lengthscale_field.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Estimate typical length scales, one per each matter object, by
  computing <script type="math/tex">\dfrac{f}{\partial f}</script>, where <script type="math/tex">f</script> is a field given
@@ -1917,7 +2010,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public module module function get_bns_identifier(THIS)   <a href='../proc/get_bns_identifier.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_bns_identifier(this)   <a href='../proc/get_bns_identifier.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1926,7 +2019,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2011,6 +2104,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_cold_system.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module function get_cold_system(this)   <a href='../proc/get_cold_system.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <a href="../type/idbase.html#variable-cold_system~2">cold_system</a>, the <code>LOGICAL</code> variable at specifies if
  the system is cold (no thermal component)</p>
@@ -2261,7 +2355,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public module module function get_eos1_loreneid(THIS)   <a href='../proc/get_eos1_loreneid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_eos1_loreneid(this)   <a href='../proc/get_eos1_loreneid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2270,7 +2364,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2292,7 +2386,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public module module function get_eos1_loreneid(THIS)   <a href='../proc/get_eos1_loreneid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_eos1_loreneid(this)   <a href='../proc/get_eos1_loreneid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2301,7 +2395,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2354,7 +2448,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public module module function get_eos2_loreneid(THIS)   <a href='../proc/get_eos2_loreneid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_eos2_loreneid(this)   <a href='../proc/get_eos2_loreneid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2363,7 +2457,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2385,7 +2479,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public module module function get_eos2_loreneid(THIS)   <a href='../proc/get_eos2_loreneid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_eos2_loreneid(this)   <a href='../proc/get_eos2_loreneid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2394,7 +2488,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2418,6 +2512,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_estimate_length_scale.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module function get_estimate_length_scale(this)   <a href='../proc/get_estimate_length_scale.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <a href="../type/idbase.html#variable-estimate_length_scale">estimate_length_scale</a>, the <code>LOGICAL</code> variable
  that specifies if a typical length scale, equal to the ratio
@@ -2452,7 +2547,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public module module function get_field_array(THIS, field) result(field_array)   <a href='../proc/get_field_array.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_field_array(this, field) result(field_array)   <a href='../proc/get_field_array.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns the <a href="../type/bnslorene.html">bnslorene</a> member arrays named field</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -2462,7 +2557,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=:),</td>
@@ -2511,7 +2606,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public module module function get_field_value(THIS, field, n) result(field_value)   <a href='../proc/get_field_value.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_field_value(this, field, n) result(field_value)   <a href='../proc/get_field_value.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns the component n of the <a href="../type/bnslorene.html">bnslorene</a> member arrays named field</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -2521,7 +2616,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=:),</td>
@@ -3582,6 +3677,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_n_matter~2.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module function get_n_matter(this)   <a href='../proc/get_n_matter~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system</p>
@@ -3740,6 +3836,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_one_lapse.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module function get_one_lapse(this)   <a href='../proc/get_one_lapse.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system</p>
@@ -4210,6 +4307,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_total_spatial_extent.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module function get_total_spatial_extent(this) result(box)   <a href='../proc/get_total_spatial_extent.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>INTERFACE to the SUBROUTINE that detects the spatial extent of the
   physical system considered, and returns a 6-dimensional array
@@ -4252,6 +4350,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/get_zero_shift.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module function get_zero_shift(this)   <a href='../proc/get_zero_shift.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system</p>
@@ -4285,7 +4384,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine import_id_int(THIS, n, x, y, z)   <a href='../proc/import_id_int.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine import_id_int(this, n, x, y, z)   <a href='../proc/import_id_int.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the ID in the <a href="../type/bnslorene.html">bnslorene</a> member arrays</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -4295,7 +4394,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -4342,7 +4441,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine import_id_params(THIS)   <a href='../proc/import_id_params.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine import_id_params(this)   <a href='../proc/import_id_params.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Imports the BNS parameters from \(\texttt{LORENE}\)</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -4352,7 +4451,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4373,7 +4472,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public module module function import_pressure(THIS, x, y, z) result(res)   <a href='../proc/import_pressure.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function import_pressure(this, x, y, z) result(res)   <a href='../proc/import_pressure.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns the \(\texttt{LORENE}\) pressure at a point <script type="math/tex">(x,y,z)</script>
 </p>
     
@@ -4384,7 +4483,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>double precision,</td>
@@ -4428,7 +4527,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public module module function import_spatial_metric(THIS, x, y, z) result(res)   <a href='../proc/import_spatial_metric.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function import_spatial_metric(this, x, y, z) result(res)   <a href='../proc/import_spatial_metric.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns the \(\texttt{LORENE}\) conformally flat spatial metric component
  <script type="math/tex">g_{xx}=g_{yy}=g_{zz}</script> at a point <script type="math/tex">(x,y,z)</script>
 </p>
@@ -4440,7 +4539,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>real(kind=C_DOUBLE),</td>
@@ -4488,6 +4587,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/initialize.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine initialize(derived_type, filename)   <a href='../proc/initialize.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Prints a summary of the physical properties the system
  to the standard output and, optionally, to a formatted file whose name
@@ -4528,6 +4628,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/integrate_baryon_mass_density.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine integrate_baryon_mass_density(this, center, radius, central_density, dr, dth, dphi, mass, mass_profile, mass_profile_idx)   <a href='../proc/integrate_baryon_mass_density.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>INTERFACE to the SUBROUTINE integrating the baryon mass density to
  compute the radial mass profile of a single star.</p>
@@ -4616,7 +4717,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine print_id_params(THIS)   <a href='../proc/print_id_params.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine print_id_params(this)   <a href='../proc/print_id_params.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Prints the BNS parameters to the standard output</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -4626,7 +4727,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4678,7 +4779,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine print_summary_bnslorene(THIS, filename)   <a href='../proc/print_summary_bnslorene.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine print_summary_bnslorene(this, filename)   <a href='../proc/print_summary_bnslorene.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Prints a summary of the physical properties of the \(\mathrm{BNS}\) produced by
  \(\texttt{LORENE}\) to the standard output and, optionally, to a formatted file
  whose name is given as the optional argument <code>filename</code></p>
@@ -4690,7 +4791,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
@@ -4713,7 +4814,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine import_id_full(THIS, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz, baryon_density, energy_density, specific_energy, u_euler_x, u_euler_y, u_euler_z)   <a href='../proc/import_id_full.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine import_id_full(this, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz, baryon_density, energy_density, specific_energy, u_euler_x, u_euler_y, u_euler_z)   <a href='../proc/import_id_full.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the ID in non <a href="../type/bnslorene.html">bnslorene</a>-member arrays with the same shape as the
  <a href="../type/bnslorene.html">bnslorene</a> member arrays</p>
     
@@ -4724,7 +4825,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -4897,7 +4998,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine import_id_hydro(THIS, nx, ny, nz, pos, baryon_density, energy_density, specific_energy, pressure, u_euler)   <a href='../proc/import_id_hydro.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine import_id_hydro(this, nx, ny, nz, pos, baryon_density, energy_density, specific_energy, pressure, u_euler)   <a href='../proc/import_id_hydro.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the hydro ID in the arrays needed to compute the constraints
  on the refined mesh</p>
     
@@ -4908,7 +5009,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -4979,7 +5080,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine import_id_k(THIS, n, x, y, z, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz)   <a href='../proc/import_id_k.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine import_id_k(this, n, x, y, z, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz)   <a href='../proc/import_id_k.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the components of the extrinsic curvature in arrays</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -4989,7 +5090,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -5066,7 +5167,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine import_id_mass_b(THIS, x, y, z, g, baryon_density, gamma_euler)   <a href='../proc/import_id_mass_b.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine import_id_mass_b(this, x, y, z, g, baryon_density, gamma_euler)   <a href='../proc/import_id_mass_b.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the hydro ID in the arrays needed to compute the baryon mass</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -5076,7 +5177,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>double precision,</td>
@@ -5129,7 +5230,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine import_id_particles(THIS, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, baryon_density, energy_density, specific_energy, pressure, u_euler_x, u_euler_y, u_euler_z)   <a href='../proc/import_id_particles.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine import_id_particles(this, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, baryon_density, energy_density, specific_energy, pressure, u_euler_x, u_euler_y, u_euler_z)   <a href='../proc/import_id_particles.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the hydro ID in the arrays needed to compute the SPH ID</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -5139,7 +5240,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -5282,7 +5383,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine import_id_spacetime(THIS, nx, ny, nz, pos, lapse, shift, g, ek)   <a href='../proc/import_id_spacetime.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine import_id_spacetime(this, nx, ny, nz, pos, lapse, shift, g, ek)   <a href='../proc/import_id_spacetime.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the spacetime ID in multi-dimensional arrays needed to compute
  the BSSN variables and constraints</p>
     
@@ -5293,7 +5394,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -5362,7 +5463,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function import_mass_density(THIS, x, y, z) result(res)   <a href='../proc/import_mass_density.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function import_mass_density(this, x, y, z) result(res)   <a href='../proc/import_mass_density.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns the \(\texttt{LORENE}\) baryon mass density at a point <script type="math/tex">(x,y,z)</script>
 </p>
     
@@ -5373,7 +5474,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>double precision,</td>
@@ -5512,7 +5613,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine get_eos_parameters(THIS, i_matter, eos_params)   <a href='../proc/get_eos_parameters.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine get_eos_parameters(this, i_matter, eos_params)   <a href='../proc/get_eos_parameters.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -5521,7 +5622,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -5624,6 +5725,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/sanity_check.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine sanity_check(derived_type)   <a href='../proc/sanity_check.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Prints a summary of the physical properties the system
  to the standard output and, optionally, to a formatted file whose name
@@ -5658,6 +5760,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/set_cold_system.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine set_cold_system(this, value)   <a href='../proc/set_cold_system.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Sets <a href="../type/idbase.html#variable-cold_system~2">cold_system</a>, the <code>LOGICAL</code> variable at specifies if
  the system is cold (no thermal component)</p>
@@ -5698,6 +5801,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/set_estimate_length_scale.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public module module subroutine set_estimate_length_scale(this, value)   <a href='../proc/set_estimate_length_scale.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Sets <a href="../type/idbase.html#variable-estimate_length_scale">estimate_length_scale</a>, the <code>LOGICAL</code> variable
  that specifies if a typical length scale, equal to the ratio
@@ -5738,6 +5842,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/set_n_matter.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module subroutine set_n_matter(this, value)   <a href='../proc/set_n_matter.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Sets <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system, to the given value</p>
@@ -5777,6 +5882,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/set_one_lapse.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module subroutine set_one_lapse(this, logic)   <a href='../proc/set_one_lapse.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Sets <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system, to the given value</p>
@@ -5817,6 +5923,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
+            <p>ADM linear momentum.</p><a href="../interface/set_zero_shift.html" class="pull-right"><emph>Read more&hellip;</emph></a>
           <h3>public pure module module subroutine set_zero_shift(this, logic)   <a href='../proc/set_zero_shift.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Sets <a href="../type/idbase.html#variable-n_matter~3">n_matter</a>, the number of matter objects in the
  physical system, to the given value</p>
@@ -5856,7 +5963,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function is_hydro_positive(THIS, x, y, z) result(res)   <a href='../proc/is_hydro_positive.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function is_hydro_positive(this, x, y, z) result(res)   <a href='../proc/is_hydro_positive.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns 1 if the energy density or the specific energy or the pressure
  are negative, 0 otherwise</p>
     
@@ -5867,7 +5974,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>double precision,</td>
@@ -6033,6 +6140,10 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
 
     <span class="k">PROCEDURE</span><span class="kd">::</span> <span class="n">print_summary_derived</span> <span class="o">=&gt;</span> <span class="n">print_summary_bnslorene</span>
 
+    <span class="k">PROCEDURE</span><span class="p">,</span> <span class="k">NOPASS</span><span class="kd">::</span> <span class="n">correct_adm_linear_momentum</span>
+    <span class="c">!# Corrects the |sph| |id| so that the linear \(\mathrm{ADM}\) momentum</span>
+    <span class="c">!  is zero</span>
+
     <span class="c">!-----------------!</span>
     <span class="c">!--  FUNCTIONS  --!</span>
     <span class="c">!-----------------!</span>
@@ -6111,7 +6222,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-08 15:26:28           </p>
+ on 2022-04-14 10:28:03           </p>
         </div>
       </div>
       <br>

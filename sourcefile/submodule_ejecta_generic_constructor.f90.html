@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.4% of total for source files.">234 statements</a>
+    title=" 1.4% of total for source files.">238 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_ejecta_generic_constructor.f90"> Source File</a></li>
   </ul>
@@ -721,31 +721,48 @@
 <a name="ln-456"></a>    <span class="n">derived_type</span><span class="p">%</span> <span class="n">logRho1</span><span class="o">=</span> <span class="n">LOG10</span><span class="p">(</span><span class="n">get_rho_1</span><span class="p">())</span>
 <a name="ln-457"></a>    <span class="n">derived_type</span><span class="p">%</span> <span class="n">logRho2</span><span class="o">=</span> <span class="n">LOG10</span><span class="p">(</span><span class="n">get_rho_2</span><span class="p">())</span>
 <a name="ln-458"></a>
-<a name="ln-459"></a>  <span class="k">END PROCEDURE </span><span class="n">construct_ejecta</span>
+<a name="ln-459"></a>    <span class="n">derived_type</span><span class="p">%</span> <span class="n">finalize_sph_id_ptr</span> <span class="o">=&gt;</span> <span class="n">finalize</span>
 <a name="ln-460"></a>
-<a name="ln-461"></a>
-<a name="ln-462"></a>  <span class="c">!</span>
-<a name="ln-463"></a>  <span class="c">!-- Implementation of the destructor of the bns object</span>
-<a name="ln-464"></a>  <span class="c">!</span>
-<a name="ln-465"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">destruct_ejecta</span>
-<a name="ln-466"></a>
-<a name="ln-467"></a>    <span class="c">!****************************************************</span>
-<a name="ln-468"></a>    <span class="c">!</span>
-<a name="ln-469"></a>    <span class="c">!# Destructs an object of TYPE [[ejecta]]</span>
-<a name="ln-470"></a>    <span class="c">!</span>
-<a name="ln-471"></a>    <span class="c">!  FT xx.11.2021</span>
-<a name="ln-472"></a>    <span class="c">!</span>
-<a name="ln-473"></a>    <span class="c">!****************************************************</span>
-<a name="ln-474"></a>
-<a name="ln-475"></a>    <span class="k">IMPLICIT NONE</span>
-<a name="ln-476"></a>
-<a name="ln-477"></a><span class="k">    CALL </span><span class="n">THIS</span><span class="p">%</span> <span class="n">deallocate_gridid_memory</span><span class="p">()</span>
+<a name="ln-461"></a>  <span class="k">END PROCEDURE </span><span class="n">construct_ejecta</span>
+<a name="ln-462"></a>
+<a name="ln-463"></a>
+<a name="ln-464"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">finalize</span>
+<a name="ln-465"></a>
+<a name="ln-466"></a>    <span class="c">!***********************************************</span>
+<a name="ln-467"></a>    <span class="c">!</span>
+<a name="ln-468"></a>    <span class="c">!#</span>
+<a name="ln-469"></a>    <span class="c">!</span>
+<a name="ln-470"></a>    <span class="c">!  FT 14.04.2022</span>
+<a name="ln-471"></a>    <span class="c">!</span>
+<a name="ln-472"></a>    <span class="c">!***********************************************</span>
+<a name="ln-473"></a>
+<a name="ln-474"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-475"></a>
+<a name="ln-476"></a><span class="k">  END PROCEDURE </span><span class="n">finalize</span>
+<a name="ln-477"></a>
 <a name="ln-478"></a>
-<a name="ln-479"></a>
-<a name="ln-480"></a>  <span class="k">END PROCEDURE </span><span class="n">destruct_ejecta</span>
-<a name="ln-481"></a>
-<a name="ln-482"></a>
-<a name="ln-483"></a><span class="k">END SUBMODULE </span><span class="n">constructor</span>
+<a name="ln-479"></a>  <span class="c">!</span>
+<a name="ln-480"></a>  <span class="c">!-- Implementation of the destructor of the bns object</span>
+<a name="ln-481"></a>  <span class="c">!</span>
+<a name="ln-482"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">destruct_ejecta</span>
+<a name="ln-483"></a>
+<a name="ln-484"></a>    <span class="c">!****************************************************</span>
+<a name="ln-485"></a>    <span class="c">!</span>
+<a name="ln-486"></a>    <span class="c">!# Destructs an object of TYPE [[ejecta]]</span>
+<a name="ln-487"></a>    <span class="c">!</span>
+<a name="ln-488"></a>    <span class="c">!  FT xx.11.2021</span>
+<a name="ln-489"></a>    <span class="c">!</span>
+<a name="ln-490"></a>    <span class="c">!****************************************************</span>
+<a name="ln-491"></a>
+<a name="ln-492"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-493"></a>
+<a name="ln-494"></a><span class="k">    CALL </span><span class="n">THIS</span><span class="p">%</span> <span class="n">deallocate_gridid_memory</span><span class="p">()</span>
+<a name="ln-495"></a>
+<a name="ln-496"></a>
+<a name="ln-497"></a>  <span class="k">END PROCEDURE </span><span class="n">destruct_ejecta</span>
+<a name="ln-498"></a>
+<a name="ln-499"></a>
+<a name="ln-500"></a><span class="k">END SUBMODULE </span><span class="n">constructor</span>
 </pre></div>
 
     </section>
@@ -764,7 +781,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-08 15:26:28           </p>
+ on 2022-04-14 10:28:03           </p>
         </div>
       </div>
       <br>
