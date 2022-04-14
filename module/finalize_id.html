@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.0% of total for modules and submodules.">7 statements</a>
+    title=" 0.4% of total for modules and submodules.">61 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_bns_lorene_finalize_id.f90"> Source File</a></li>
   </ul>
@@ -131,7 +131,7 @@
     <div class="col-md-9" id='text'>
     <p>Implementation of the PROCEDURE that act on the \(\mathrm{ID}\)
   after it is set up on the mesh and/or on the particles,
-  to finalize its preparation</p>
+  to finalize its preparation for \(\texttt{SPHINCS_BSSN}\)</p>
 <p>FT 14.04.2022</p>
 <hr>
 <br>        <div class="panel panel-default">
@@ -178,90 +178,78 @@
 <path fill="none" stroke="#000000" d="M405.73,-72C397.68,-72 388.9,-72 380.38,-72"/>
 <polygon fill="#000000" stroke="#000000" points="380.18,-68.5 370.18,-72 380.18,-75.5 380.18,-68.5"/>
 </g>
-<!-- module~bns_base -->
-<g id="module~~finalize_id~~UsesGraph_node3" class="node">
-<title>module~bns_base</title>
-<g id="a_module~~finalize_id~~UsesGraph_node3"><a xlink:href=".././module/bns_base.html" xlink:title="bns_base">
-<polygon fill="#337ab7" stroke="#337ab7" points="253,-104 191,-104 191,-80 253,-80 253,-104"/>
-<text text-anchor="middle" x="222" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">bns_base</text>
-</a>
-</g>
-</g>
-<!-- module~bns_lorene&#45;&gt;module~bns_base -->
-<g id="module~~finalize_id~~UsesGraph_edge2" class="edge">
-<title>module~bns_lorene&#45;&gt;module~bns_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M299.79,-78.16C288.26,-80.24 275.29,-82.58 263.33,-84.73"/>
-<polygon fill="#000000" stroke="#000000" points="262.37,-81.35 253.15,-86.57 263.61,-88.24 262.37,-81.35"/>
-</g>
-<!-- timing -->
-<g id="module~~finalize_id~~UsesGraph_node4" class="node">
-<title>timing</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-84 0,-84 0,-60 54,-60 54,-84"/>
-<text text-anchor="middle" x="27" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timing</text>
-</g>
-<!-- module~bns_lorene&#45;&gt;timing -->
-<g id="module~~finalize_id~~UsesGraph_edge3" class="edge">
-<title>module~bns_lorene&#45;&gt;timing</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M299.79,-62.47C277.99,-57.24 249.04,-51.83 223,-52"/>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M221,-52C166.19,-52.36 103.09,-60.34 64.38,-66.11"/>
-<polygon fill="#000000" stroke="#000000" points="63.49,-62.7 54.13,-67.67 64.55,-69.62 63.49,-62.7"/>
-</g>
-<!-- iso_c_binding -->
-<g id="module~~finalize_id~~UsesGraph_node5" class="node">
-<title>iso_c_binding</title>
-<g id="a_module~~finalize_id~~UsesGraph_node5"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
-<polygon fill="#337ab7" stroke="#337ab7" points="264,-24 180,-24 180,0 264,0 264,-24"/>
-<text text-anchor="middle" x="222" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
-</a>
-</g>
-</g>
-<!-- module~bns_lorene&#45;&gt;iso_c_binding -->
-<g id="module~~finalize_id~~UsesGraph_edge4" class="edge">
-<title>module~bns_lorene&#45;&gt;iso_c_binding</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M311.54,-59.86C295.14,-50.99 272.69,-38.86 254.5,-29.03"/>
-<polygon fill="#000000" stroke="#000000" points="255.89,-25.8 245.43,-24.12 252.56,-31.96 255.89,-25.8"/>
-</g>
 <!-- module~utility -->
-<g id="module~~finalize_id~~UsesGraph_node6" class="node">
+<g id="module~~finalize_id~~UsesGraph_node3" class="node">
 <title>module~utility</title>
-<g id="a_module~~finalize_id~~UsesGraph_node6"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<g id="a_module~~finalize_id~~UsesGraph_node3"><a xlink:href=".././module/utility.html" xlink:title="utility">
 <polygon fill="#337ab7" stroke="#337ab7" points="144,-146 90,-146 90,-122 144,-122 144,-146"/>
 <text text-anchor="middle" x="117" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">utility</text>
 </a>
 </g>
 </g>
 <!-- module~bns_lorene&#45;&gt;module~utility -->
-<g id="module~~finalize_id~~UsesGraph_edge5" class="edge">
+<g id="module~~finalize_id~~UsesGraph_edge2" class="edge">
 <title>module~bns_lorene&#45;&gt;module~utility</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M317.64,-84.06C304,-93.49 283.68,-106.12 264,-113 227.89,-125.63 184.21,-130.67 154.09,-132.68"/>
 <polygon fill="#000000" stroke="#000000" points="153.81,-129.19 144.03,-133.27 154.22,-136.17 153.81,-129.19"/>
 </g>
 <!-- module~id_base -->
-<g id="module~~finalize_id~~UsesGraph_node7" class="node">
+<g id="module~~finalize_id~~UsesGraph_node4" class="node">
 <title>module~id_base</title>
-<g id="a_module~~finalize_id~~UsesGraph_node7"><a xlink:href=".././module/id_base.html" xlink:title="id_base">
+<g id="a_module~~finalize_id~~UsesGraph_node4"><a xlink:href=".././module/id_base.html" xlink:title="id_base">
 <polygon fill="#337ab7" stroke="#337ab7" points="144,-104 90,-104 90,-80 144,-80 144,-104"/>
 <text text-anchor="middle" x="117" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">id_base</text>
 </a>
 </g>
 </g>
 <!-- module~bns_lorene&#45;&gt;module~id_base -->
-<g id="module~~finalize_id~~UsesGraph_edge6" class="edge">
+<g id="module~~finalize_id~~UsesGraph_edge3" class="edge">
 <title>module~bns_lorene&#45;&gt;module~id_base</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M221,-52C194.17,-52.17 165.92,-64.1 145.8,-74.88"/>
 <polygon fill="#000000" stroke="#000000" points="143.91,-71.93 136.89,-79.86 147.33,-78.03 143.91,-71.93"/>
 </g>
-<!-- module~bns_base&#45;&gt;module~utility -->
-<g id="module~~finalize_id~~UsesGraph_edge7" class="edge">
-<title>module~bns_base&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M191.48,-104.04C179.66,-108.86 165.94,-114.45 153.58,-119.49"/>
-<polygon fill="#000000" stroke="#000000" points="151.95,-116.38 144.01,-123.39 154.6,-122.86 151.95,-116.38"/>
+<!-- timing -->
+<g id="module~~finalize_id~~UsesGraph_node5" class="node">
+<title>timing</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-84 0,-84 0,-60 54,-60 54,-84"/>
+<text text-anchor="middle" x="27" y="-69.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timing</text>
 </g>
-<!-- module~bns_base&#45;&gt;module~id_base -->
-<g id="module~~finalize_id~~UsesGraph_edge8" class="edge">
-<title>module~bns_base&#45;&gt;module~id_base</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.93,-92C179.45,-92 166.24,-92 154.24,-92"/>
-<polygon fill="#000000" stroke="#000000" points="154.09,-88.5 144.09,-92 154.09,-95.5 154.09,-88.5"/>
+<!-- module~bns_lorene&#45;&gt;timing -->
+<g id="module~~finalize_id~~UsesGraph_edge4" class="edge">
+<title>module~bns_lorene&#45;&gt;timing</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M299.79,-62.47C277.99,-57.24 249.04,-51.83 223,-52"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M221,-52C166.19,-52.36 103.09,-60.34 64.38,-66.11"/>
+<polygon fill="#000000" stroke="#000000" points="63.49,-62.7 54.13,-67.67 64.55,-69.62 63.49,-62.7"/>
+</g>
+<!-- module~bns_base -->
+<g id="module~~finalize_id~~UsesGraph_node6" class="node">
+<title>module~bns_base</title>
+<g id="a_module~~finalize_id~~UsesGraph_node6"><a xlink:href=".././module/bns_base.html" xlink:title="bns_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="253,-104 191,-104 191,-80 253,-80 253,-104"/>
+<text text-anchor="middle" x="222" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">bns_base</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene&#45;&gt;module~bns_base -->
+<g id="module~~finalize_id~~UsesGraph_edge5" class="edge">
+<title>module~bns_lorene&#45;&gt;module~bns_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M299.79,-78.16C288.26,-80.24 275.29,-82.58 263.33,-84.73"/>
+<polygon fill="#000000" stroke="#000000" points="262.37,-81.35 253.15,-86.57 263.61,-88.24 262.37,-81.35"/>
+</g>
+<!-- iso_c_binding -->
+<g id="module~~finalize_id~~UsesGraph_node7" class="node">
+<title>iso_c_binding</title>
+<g id="a_module~~finalize_id~~UsesGraph_node7"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
+<polygon fill="#337ab7" stroke="#337ab7" points="264,-24 180,-24 180,0 264,0 264,-24"/>
+<text text-anchor="middle" x="222" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
+</a>
+</g>
+</g>
+<!-- module~bns_lorene&#45;&gt;iso_c_binding -->
+<g id="module~~finalize_id~~UsesGraph_edge6" class="edge">
+<title>module~bns_lorene&#45;&gt;iso_c_binding</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M311.54,-59.86C295.14,-50.99 272.69,-38.86 254.5,-29.03"/>
+<polygon fill="#000000" stroke="#000000" points="255.89,-25.8 245.43,-24.12 252.56,-31.96 255.89,-25.8"/>
 </g>
 <!-- matrix -->
 <g id="module~~finalize_id~~UsesGraph_node8" class="node">
@@ -270,16 +258,28 @@
 <text text-anchor="middle" x="27" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
 </g>
 <!-- module~utility&#45;&gt;matrix -->
-<g id="module~~finalize_id~~UsesGraph_edge9" class="edge">
+<g id="module~~finalize_id~~UsesGraph_edge7" class="edge">
 <title>module~utility&#45;&gt;matrix</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.6,-134C81.61,-134 72.69,-134 64.18,-134"/>
 <polygon fill="#000000" stroke="#000000" points="64.08,-130.5 54.08,-134 64.08,-137.5 64.08,-130.5"/>
 </g>
 <!-- module~id_base&#45;&gt;timing -->
-<g id="module~~finalize_id~~UsesGraph_edge10" class="edge">
+<g id="module~~finalize_id~~UsesGraph_edge8" class="edge">
 <title>module~id_base&#45;&gt;timing</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M89.6,-86C81.52,-84.16 72.49,-82.11 63.9,-80.16"/>
 <polygon fill="#000000" stroke="#000000" points="64.61,-76.73 54.08,-77.93 63.06,-83.56 64.61,-76.73"/>
+</g>
+<!-- module~bns_base&#45;&gt;module~utility -->
+<g id="module~~finalize_id~~UsesGraph_edge10" class="edge">
+<title>module~bns_base&#45;&gt;module~utility</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M191.48,-104.04C179.66,-108.86 165.94,-114.45 153.58,-119.49"/>
+<polygon fill="#000000" stroke="#000000" points="151.95,-116.38 144.01,-123.39 154.6,-122.86 151.95,-116.38"/>
+</g>
+<!-- module~bns_base&#45;&gt;module~id_base -->
+<g id="module~~finalize_id~~UsesGraph_edge9" class="edge">
+<title>module~bns_base&#45;&gt;module~id_base</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M190.93,-92C179.45,-92 166.24,-92 154.24,-92"/>
+<polygon fill="#000000" stroke="#000000" points="154.09,-88.5 144.09,-92 154.09,-95.5 154.09,-88.5"/>
 </g>
 </g>
 </svg>
@@ -377,13 +377,14 @@
         <section>
         <h2>Module Procedures</h2>
           <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-correct_adm_linear_momentum"></span><h3>module procedure <a href='../proc/correct_adm_linear_momentum.html'>correct_adm_linear_momentum</a> <small>module module subroutine correct_adm_linear_momentum(npart, pos, nlrf, u, pr, vel_u, theta, nstar, nu)</small>   <a href='../interface/correct_adm_linear_momentum.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-correct_adm_linear_momentum"></span><h3>module procedure <a href='../proc/correct_adm_linear_momentum.html'>correct_adm_linear_momentum</a> <small>module module subroutine correct_adm_linear_momentum(npart, pos, nlrf, u, pr, vel_u, theta, nstar, nu, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, lapse, shift_x, shift_y, shift_z, adm_mom_error)</small>   <a href='../interface/correct_adm_linear_momentum.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h3></div>
   <div class="panel-body">
        
 <p>Correct the velocity and the generalized
   Lorentz factor, so that the <script type="math/tex">\mathrm{ADM}</script>
-  linear momentum of the \(\mathrm{BNS}\) is 0</p><a href="../proc/correct_adm_linear_momentum.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  linear momentum of the \(\mathrm{BNS}\) is 0
+  </p><a href="../proc/correct_adm_linear_momentum.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -442,6 +443,72 @@
   <td></td>  <td>DIMENSION(npart)</td><td>::</td>
   <td><strong>nu</strong></td><td><p>Baryon number per particle</p></td>
 </tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>g_xx</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>g_xy</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>g_xz</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>g_yy</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>g_yz</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>g_zz</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>lapse</strong></td><td><p>Lapse function on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>shift_x</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>shift_y</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(npart)</td><td>::</td>
+  <td><strong>shift_z</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(in),</td>
+  <td></td>  <td>DIMENSION(3)</td><td>::</td>
+  <td><strong>adm_mom_error</strong></td><td></td>
+</tr>
 </tbody>
 </table>
 
@@ -466,7 +533,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-14 10:28:03           </p>
+ on 2022-04-14 15:12:46           </p>
         </div>
       </div>
       <br>
