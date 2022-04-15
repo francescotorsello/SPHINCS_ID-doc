@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>15.5% of total for derived types.</p>Including implementation: 310 statements, 24.0% of total for derived types.">120 statements</a>
+    title="<p>15.6% of total for derived types.</p>Including implementation: 311 statements, 24.1% of total for derived types.">121 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/module_sph_particles.f90"> Source File</a></li>
   </ul>
@@ -125,6 +125,7 @@
       <a class="list-group-item" href="../type/particles.html#variable-ye_table">Ye_table</a>
       <a class="list-group-item" href="../type/particles.html#variable-adm_linear_momentum_fluid">adm_linear_momentum_fluid</a>
       <a class="list-group-item" href="../type/particles.html#variable-adm_linear_momentum_i">adm_linear_momentum_i</a>
+      <a class="list-group-item" href="../type/particles.html#variable-adm_mass~2">adm_mass</a>
       <a class="list-group-item" href="../type/particles.html#variable-all_eos">all_eos</a>
       <a class="list-group-item" href="../type/particles.html#variable-apm_iterate">apm_iterate</a>
       <a class="list-group-item" href="../type/particles.html#variable-apm_timers">apm_timers</a>
@@ -297,34 +298,34 @@
 <polygon fill="none" stroke="black" points="555,-45 497,-45 497,-21 555,-21 555,-45"/>
 <text text-anchor="middle" x="526" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">particles</text>
 </g>
-<!-- type~eos -->
+<!-- timer -->
 <g id="type~~particles~~InheritsGraph_node2" class="node">
-<title>type~eos</title>
-<g id="a_type~~particles~~InheritsGraph_node2"><a xlink:href=".././type/eos.html" xlink:title="eos">
+<title>timer</title>
 <polygon fill="#5cb85c" stroke="#5cb85c" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
-<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">eos</text>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
+</g>
+<!-- type~particles&#45;&gt;timer -->
+<g id="type~~particles~~InheritsGraph_edge2" class="edge">
+<title>type~particles&#45;&gt;timer</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M496.86,-34.19C412.03,-37.77 158.89,-48.47 64.24,-52.47"/>
+<polygon fill="#000000" stroke="#000000" points="63.87,-48.98 54.02,-52.9 64.16,-55.98 63.87,-48.98"/>
+<text text-anchor="middle" x="275.5" y="-53.4" font-family="Helvetica,sans-Serif" font-size="9.50">placer_timer, same_particle_timer, apm_timers, importer_timer, sph_computer_timer</text>
+</g>
+<!-- type~eos -->
+<g id="type~~particles~~InheritsGraph_node3" class="node">
+<title>type~eos</title>
+<g id="a_type~~particles~~InheritsGraph_node3"><a xlink:href=".././type/eos.html" xlink:title="eos">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">eos</text>
 </a>
 </g>
 </g>
 <!-- type~particles&#45;&gt;type~eos -->
 <g id="type~~particles~~InheritsGraph_edge1" class="edge">
 <title>type~particles&#45;&gt;type~eos</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M496.86,-34.19C412.03,-37.77 158.89,-48.47 64.24,-52.47"/>
-<polygon fill="#000000" stroke="#000000" points="63.87,-48.98 54.02,-52.9 64.16,-55.98 63.87,-48.98"/>
-<text text-anchor="middle" x="275.5" y="-53.4" font-family="Helvetica,sans-Serif" font-size="9.50">all_eos</text>
-</g>
-<!-- timer -->
-<g id="type~~particles~~InheritsGraph_node3" class="node">
-<title>timer</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
-<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
-</g>
-<!-- type~particles&#45;&gt;timer -->
-<g id="type~~particles~~InheritsGraph_edge2" class="edge">
-<title>type~particles&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M496.99,-24.58C491.1,-23.12 484.89,-21.81 479,-21 326.01,0.18 141.07,-5.93 64.21,-9.86"/>
-<polygon fill="#000000" stroke="#000000" points="63.9,-6.37 54.1,-10.39 64.27,-13.36 63.9,-6.37"/>
-<text text-anchor="middle" x="275.5" y="-23.4" font-family="Helvetica,sans-Serif" font-size="9.50">placer_timer, same_particle_timer, apm_timers, importer_timer, sph_computer_timer</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M496.96,-25.29C491.07,-23.96 484.86,-22.76 479,-22 325.81,-2.21 140.98,-6.98 64.18,-10.21"/>
+<polygon fill="#000000" stroke="#000000" points="63.91,-6.72 54.07,-10.65 64.22,-13.71 63.91,-6.72"/>
+<text text-anchor="middle" x="275.5" y="-24.4" font-family="Helvetica,sans-Serif" font-size="9.50">all_eos</text>
 </g>
 </g>
 </svg>
@@ -379,6 +380,7 @@
       <a class="list-group-item" href="../type/particles.html#variable-ye_table">Ye_table</a>
       <a class="list-group-item" href="../type/particles.html#variable-adm_linear_momentum_fluid">adm_linear_momentum_fluid</a>
       <a class="list-group-item" href="../type/particles.html#variable-adm_linear_momentum_i">adm_linear_momentum_i</a>
+      <a class="list-group-item" href="../type/particles.html#variable-adm_mass~2">adm_mass</a>
       <a class="list-group-item" href="../type/particles.html#variable-all_eos">all_eos</a>
       <a class="list-group-item" href="../type/particles.html#variable-apm_iterate">apm_iterate</a>
       <a class="list-group-item" href="../type/particles.html#variable-apm_timers">apm_timers</a>
@@ -556,6 +558,11 @@
 <td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
   <td><strong>adm_linear_momentum_i</strong></td><td></td><td></td><td><p>Estimate of the <script type="math/tex">\mathrm{ADM}</script> linear momentum of each matter object,
  computed from the canonical momentum per baryon on the particles</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-adm_mass~2"></span>double precision,</td>
+<td>public</td>  <td></td><td>::</td>
+  <td><strong>adm_mass</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-all_eos"></span>type(<a href='../type/eos.html'>eos</a>),</td>
@@ -3220,6 +3227,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT )::mass_profile_idx</p></td>
     <span class="c">!&gt; Baryon number ratios on the matter objects</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">nuratio_i</span>
 
+    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">adm_mass</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">adm_linear_momentum_i</span>
     <span class="c">!# Estimate of the \(\mathrm{ADM}\) linear momentum of each matter object,</span>
     <span class="c">!  computed from the canonical momentum per baryon on the particles</span>
@@ -3485,7 +3493,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT )::mass_profile_idx</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-14 15:12:46           </p>
+ on 2022-04-15 14:38:14           </p>
         </div>
       </div>
       <br>
