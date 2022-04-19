@@ -91,6 +91,14 @@ SUBMODULE (sph_particles) io
              this% nuratio
     PRINT *
 
+    PRINT *, "   Center of mass of the entire particle distribution    ="
+    PRINT *, "   (", this% barycenter_system(1), ","
+    PRINT *, "    ", this% barycenter_system(2), ","
+    PRINT *, "    ", this% barycenter_system(3), ") Msun"
+    PRINT *, "   Its distance from the origin is: ", &
+             this% barycenter_system(4), " Msun"
+    PRINT *
+
     DO i_matter= 1, this% n_matter, 1
 
       ASSOCIATE( npart_in   => this% npart_i(i_matter-1) + 1, &
@@ -219,10 +227,7 @@ SUBMODULE (sph_particles) io
 
     INTEGER, PARAMETER:: max_npart= 2.D+7
 
-    INTEGER:: itr, min_y_index
-
-    DOUBLE PRECISION:: min_abs_y, min_abs_z1, min_abs_z2
-    DOUBLE PRECISION, DIMENSION( :, : ), ALLOCATABLE:: abs_pos
+    INTEGER:: itr
 
     LOGICAL:: exist, final_save_data
 

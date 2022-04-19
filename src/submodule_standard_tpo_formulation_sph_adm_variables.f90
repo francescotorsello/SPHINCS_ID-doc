@@ -84,7 +84,7 @@ SUBMODULE (standard_tpo_formulation) sph_adm_variables
 
     INTEGER:: a, j, l, i_matter
 
-    DOUBLE PRECISION:: det, p_max, shift_norm2
+    DOUBLE PRECISION:: det, shift_norm2
 
     !DOUBLE PRECISION, DIMENSION(n_sym4x4,npart)  :: g4
     DOUBLE PRECISION, DIMENSION(0:3)             :: v_u
@@ -103,11 +103,6 @@ SUBMODULE (standard_tpo_formulation) sph_adm_variables
     DOUBLE PRECISION, DIMENSION(:),   ALLOCATABLE:: theta_loc
 
     DOUBLE PRECISION, DIMENSION(parts% get_n_matter(),3):: adm_mom_i
-
-    LOGICAL:: exist
-
-    CHARACTER( LEN= 2 ):: i_mat
-    CHARACTER( LEN= : ), ALLOCATABLE:: finalnamefile
 
     LOGICAL, PARAMETER:: debug= .FALSE.
 
@@ -198,19 +193,16 @@ SUBMODULE (standard_tpo_formulation) sph_adm_variables
     adm_mom= zero
     matter_objects_loop: DO i_matter= 1, parts% get_n_matter(), 1
 
-      ASSOCIATE( npart_in   => parts% get_npart_i(i_matter-1) + 1, &
-                 npart_fin  => parts% get_npart_i(i_matter-1) +    &
-                               parts% get_npart_i(i_matter) )
-
       adm_mom_i(i_matter,:)= zero
       !$OMP PARALLEL DO DEFAULT( NONE ) &
-      !$OMP             SHARED( npart_in, npart_fin, parts, g4_ll, vel_loc, &
+      !$OMP             SHARED( parts, g4_ll, vel_loc, &
       !$OMP                     v_l, nu_loc, theta_loc, pr_loc, nlrf_loc, &
       !$OMP                     u_loc, i_matter ) &
       !$OMP             PRIVATE( a, det, v_u, shift_norm2, j, g3, lapse_loc, &
       !$OMP                      shift ) &
       !$OMP             REDUCTION( +: adm_mom_i )
-      DO a= npart_in, npart_fin, 1
+      DO a= parts% get_npart_i(i_matter-1) + 1, &
+            parts% get_npart_i(i_matter-1) + parts% get_npart_i(i_matter), 1
 
         CALL compute_tpo_metric( g4_ll(:,a), lapse_loc, shift, g3 )
 
@@ -230,9 +222,9 @@ SUBMODULE (standard_tpo_formulation) sph_adm_variables
       ENDDO
       !$OMP END PARALLEL DO
 
-      PRINT *, "   Estimate of the ADM momentum of the fluid computed using ",&
-               "the SPH hydro fields and the metric mapped with ", &
-               "mesh-to-particle mapping= "
+      PRINT *, "   Estimate of the ADM momentum of matter object", i_matter, &
+               " computed using the SPH hydro fields and", &
+               " the metric mapped with mesh-to-particle mapping= "
       PRINT *, "   (", adm_mom_i(i_matter,1), ","
       PRINT *, "    ", adm_mom_i(i_matter,2), ","
       PRINT *, "    ", adm_mom_i(i_matter,3), ") Msun*c"
@@ -240,9 +232,15 @@ SUBMODULE (standard_tpo_formulation) sph_adm_variables
 
       adm_mom= adm_mom + adm_mom_i(i_matter,:)
 
-      END ASSOCIATE
-
     ENDDO matter_objects_loop
+
+    PRINT *, "   Estimate of the ADM momentum of the fluid computed using ",&
+             "the SPH hydro fields and the metric mapped with ", &
+             "mesh-to-particle mapping= "
+    PRINT *, "   (", adm_mom(1), ","
+    PRINT *, "    ", adm_mom(2), ","
+    PRINT *, "    ", adm_mom(3), ") Msun*c"
+    PRINT *
 
     CALL deallocate_metric_on_particles
     CALL deallocate_gradient

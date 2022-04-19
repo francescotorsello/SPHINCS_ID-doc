@@ -69,32 +69,34 @@ MODULE sph_particles
   !-- TODO: Make the following parameters member of TYPE eos?
   !--       They belong there, but putting them there decreases readability
   !--       of the code
+  !--       Rewrite this as an enumeration?
+  !--       How to write enumerations in Fortran?
   !
-  INTEGER,               PARAMETER:: $eos_id     = 1
+  INTEGER,               PARAMETER:: eos$id     = 1
   !! First component of array [[eos:eos_parameters]] for a polytropic |eos|
-  INTEGER,               PARAMETER:: $poly_gamma = 2
+  INTEGER,               PARAMETER:: poly$gamma = 2
   !! Second component of array [[eos:eos_parameters]] for a polytropic |eos|
-  INTEGER,               PARAMETER:: $poly_kappa = 3
+  INTEGER,               PARAMETER:: poly$kappa = 3
   !! Third component of array [[eos:eos_parameters]] for a polytropic |eos|
-  INTEGER,               PARAMETER:: $pwp_npoly  = 2
+  INTEGER,               PARAMETER:: pwp$npoly  = 2
   !# Second component of array [[eos:eos_parameters]] for a piecewise
   !  polytropic |eos|
-  INTEGER, DIMENSION(4), PARAMETER:: $pwp_gamma  = [3,4,5,6]
+  INTEGER, DIMENSION(4), PARAMETER:: pwp$gamma  = [3,4,5,6]
   !# Third to sixth component of array [[eos:eos_parameters]] for a piecewise
   !  polytropic |eos|
-  INTEGER, DIMENSION(4), PARAMETER:: $pwp_kappa  = [7,8,9,10]
+  INTEGER, DIMENSION(4), PARAMETER:: pwp$kappa  = [7,8,9,10]
   !# Seventh to tenth component of array [[eos:eos_parameters]] for a piecewise
   !  polytropic |eos|
-  INTEGER,               PARAMETER:: $pwp_log10p1  = 11
+  INTEGER,               PARAMETER:: pwp$log10p1  = 11
   !# Eleventh component of array [[eos:eos_parameters]] for a piecewise
   !  polytropic |eos|
-  INTEGER,               PARAMETER:: $pwp_log10rho0= 12
+  INTEGER,               PARAMETER:: pwp$log10rho0= 12
   !# Twelfth component of array [[eos:eos_parameters]] for a piecewise
   !  polytropic |eos|
-  INTEGER,               PARAMETER:: $pwp_log10rho1= 13
+  INTEGER,               PARAMETER:: pwp$log10rho1= 13
   !# Thirteenth component of array [[eos:eos_parameters]] for a piecewise
   !  polytropic |eos|
-  INTEGER,               PARAMETER:: $pwp_log10rho2= 14
+  INTEGER,               PARAMETER:: pwp$log10rho2= 14
   !# Fourteenth component of array [[eos:eos_parameters]] for a piecewise
   !  polytropic |eos|
 
@@ -155,6 +157,8 @@ MODULE sph_particles
     !  `.FALSE.` otherwise
     DOUBLE PRECISION, DIMENSION(:,:), ALLOCATABLE:: barycenter
     !# Array storing the centers of mass of the matter objects
+    DOUBLE PRECISION, DIMENSION(4):: barycenter_system
+    !# Array storing the center of mass of the **entire particle distribution**
 
 
     INTEGER, DIMENSION(:), ALLOCATABLE:: baryon_density_index
@@ -1016,23 +1020,23 @@ MODULE sph_particles
     END SUBROUTINE compute_and_print_sph_variables
 
     MODULE SUBROUTINE perform_apm( get_density, get_nstar_id, &
-                                       npart_output, &
-                                       pos_input, &
-                                       pvol, h_output, nu_output, &
-                                       center, &
-                                       com_star, &
-                                       mass, &
-                                       sizes, &
-                                       apm_max_it, max_inc, &
-                                       mass_it, correct_nu, nuratio_thres, &
-                                       nuratio_des, &
-                                       nx_gh, ny_gh, nz_gh, ghost_dist, &
-                                       use_atmosphere, &
-                                       remove_atmosphere, &
-                                       print_step, &
-                                       namefile_pos_id, namefile_pos, &
-                                       namefile_results, &
-                                       validate_position )
+                                   npart_output, &
+                                   pos_input, &
+                                   pvol, h_output, nu_output, &
+                                   center, &
+                                   com_star, &
+                                   mass, &
+                                   sizes, &
+                                   apm_max_it, max_inc, &
+                                   mass_it, correct_nu, nuratio_thres, &
+                                   nuratio_des, &
+                                   nx_gh, ny_gh, nz_gh, ghost_dist, &
+                                   use_atmosphere, &
+                                   remove_atmosphere, &
+                                   print_step, &
+                                   namefile_pos_id, namefile_pos, &
+                                   namefile_results, &
+                                   validate_position )
     !! Performs the Artificial Pressure Method (APM) on one star's particles
 
       !> [[particles]] object which this PROCEDURE is a member of
@@ -1051,7 +1055,7 @@ MODULE sph_particles
         END FUNCTION get_density
       END INTERFACE
       INTERFACE
-        SUBROUTINE get_nstar_id( npart, x, y, z, nstar_id, nstar_eul_id )
+        SUBROUTINE get_nstar_id( npart, x, y, z, nstar_id )!, nstar_eul_id )
         !! Computes the proper baryon number density at the particle positions
           INTEGER, INTENT(IN):: npart
           !! Number of real particles (i.e., no ghost particles included here)
@@ -1063,7 +1067,7 @@ MODULE sph_particles
           !! Array of \(z\) coordinates
           DOUBLE PRECISION, INTENT(OUT):: nstar_id(npart)
           !! Array to store the computed proper baryon number density
-          DOUBLE PRECISION, INTENT(OUT):: nstar_eul_id(npart)
+          !DOUBLE PRECISION, INTENT(OUT):: nstar_eul_id(npart)
           !# Array to store the computed proper baryon number density seen
           !  by the Eulerian observer
         END SUBROUTINE get_nstar_id
@@ -1168,7 +1172,7 @@ MODULE sph_particles
 
 
     MODULE SUBROUTINE test_recovery( this, npart, pos, nlrf, u, pr, vel_u, &
-                                     theta, nstar, namefile )
+                                     theta, nstar )!, namefile )
     !# Tests the recovery. Computes the conserved variables from the physical
     !  ones, and then the physical ones from the conserved ones. It then
     !  compares the variables computed with the recovery PROCEDURES, with
@@ -1196,7 +1200,7 @@ MODULE sph_particles
       !! Canonical momentum on the particles
       !DOUBLE PRECISION, DIMENSION(npart),   INTENT(IN)   :: e_hat
       !! Canonical energy on the particles
-      CHARACTER( LEN= * ),                  INTENT(INOUT), OPTIONAL :: namefile
+      !CHARACTER( LEN= * ),                  INTENT(INOUT), OPTIONAL :: namefile
       !! Name of the formatted file where the data is printed
 
     END SUBROUTINE test_recovery
@@ -1255,14 +1259,14 @@ MODULE sph_particles
     END SUBROUTINE compute_Ye
 
 
-    MODULE SUBROUTINE print_summary( this, filename )
+    MODULE SUBROUTINE print_summary( this )!, filename )
     !# Prints a summary of the properties of the |sph| particle
     !  distribution, optionally, to a formatted file whose name
     !  is given as the optional argument `filename`
 
 
       CLASS(particles), INTENT( IN OUT ):: this
-      CHARACTER( LEN= * ), INTENT( INOUT ), OPTIONAL:: filename
+      !CHARACTER( LEN= * ), INTENT( INOUT ), OPTIONAL:: filename
       !! Name of the formatted file to print the summary to
 
     END SUBROUTINE print_summary
@@ -1570,18 +1574,10 @@ MODULE sph_particles
     END FUNCTION check_particle_position
 
 
-    MODULE SUBROUTINE correct_center_of_mass( npart, pos, nu, get_density,&
-                                       validate_pos, com_star, verbose )
-
-      !***********************************************************
-      !
-      !# Translate the particles so that their center of mass
-      !  coincides with the center of mass of the star, given by
-      !  |id|
-      !
-      !  FT 1.09.2021
-      !
-      !***********************************************************
+    MODULE SUBROUTINE correct_center_of_mass &
+    ( npart, pos, nu, get_density, validate_pos, com_star, verbose )
+    !# Translate the particles so that their center of mass
+    !  coincides with the center of mass of the star, given by |id|
 
       IMPLICIT NONE
 
@@ -1612,6 +1608,19 @@ MODULE sph_particles
     END SUBROUTINE correct_center_of_mass
 
 
+    MODULE SUBROUTINE get_neighbours_bf &
+    (ipart,npart,pos,h,dimensions,nnei,neilist)
+    !# Get neighbours of particle ipart in a "brute force" way
+
+      IMPLICIT NONE
+
+      INTEGER,          INTENT(IN) :: ipart, npart, dimensions
+      DOUBLE PRECISION, INTENT(IN) :: pos(dimensions,npart), h(npart)
+      INTEGER,          INTENT(OUT):: nnei, neilist(npart)
+
+    END SUBROUTINE get_neighbours_bf
+
+
   END INTERFACE
 
 
@@ -1632,8 +1641,8 @@ MODULE sph_particles
 
 
     MODULE SUBROUTINE compute_adm_momentum_fluid_fields &
-      ( npart, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, lapse, &
-        shift_x, shift_y, shift_z, nu, theta, nlrf, pr, u, vel_u, adm_mom )
+    ( npart, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, lapse, &
+      shift_x, shift_y, shift_z, nu, theta, nlrf, pr, u, vel_u, adm_mom )
     !# Computes an estimate of the \(\mathrm{ADM}\) linear momentum of the
     !  fluid using the |sph| fields
     !  @todo add reference
@@ -1672,7 +1681,7 @@ MODULE sph_particles
 
 
     MODULE SUBROUTINE compute_adm_momentum_fluid_canmom &
-      ( npart, g3, lapse, shift, nu, s_l, adm_mom )
+    ( npart, g3, lapse, shift, nu, s_l, adm_mom )
     !# Computes an estimate of the \(\mathrm{ADM}\) linear momentum of the
     !  fluid using the canonical momentum per baryon on the particles
     !  @todo add reference

@@ -360,22 +360,21 @@ MODULE utility
     USE matrix,     ONLY: invert_3x3_matrix
     USE tensor,     ONLY: itt, itx, ity, itz, ixx, ixy, &
                           ixz, iyy, iyz, izz, jxx, jxy, jxz, &
-                          jyy, jyz, jzz, jx, jy, jz
+                          jyy, jyz, jzz, jx, jy, jz, n_sym4x4, n_sym3x3
 
     IMPLICIT NONE
 
-    DOUBLE PRECISION, DIMENSION(10), INTENT(IN)   :: g4
+    DOUBLE PRECISION, DIMENSION(n_sym4x4),  INTENT(IN) :: g4
     !! Covariant spacetime metric
-    DOUBLE PRECISION,                INTENT(INOUT):: lapse
+    DOUBLE PRECISION,                       INTENT(OUT):: lapse
     !! Lapse function
-    DOUBLE PRECISION, DIMENSION(3),  INTENT(INOUT):: shift
+    DOUBLE PRECISION, DIMENSION(3),         INTENT(OUT):: shift
     !! Contravariant shift vector
-    DOUBLE PRECISION, DIMENSION(6),  INTENT(INOUT):: g3
+    DOUBLE PRECISION, DIMENSION(n_sym3x3),  INTENT(OUT):: g3
     !! Covariant spatial metric
 
     DOUBLE PRECISION, DIMENSION(3,3):: gmat
     DOUBLE PRECISION, DIMENSION(3,3):: gmat_inv
-    DOUBLE PRECISION, DIMENSION(6)  :: g3_inv
 
     g3(jxx)= g4(ixx)
     g3(jxy)= g4(ixy)

@@ -137,23 +137,19 @@ SUBMODULE (sph_particles) sph_variables
     !INTEGER, PARAMETER:: max_it_h= 1
 
     ! Spacetime indices \mu and \nu
-    INTEGER:: nus, mus, cnt1, a, i_matter!, itr2, inde, index1!, cnt2
+    INTEGER:: cnt1, a, i_matter!, itr2, inde, index1!, cnt2
     INTEGER:: n_problematic_h
     INTEGER:: itot, l, ill!, b, k
 
-    INTEGER:: pwp_gamma, pwp_kappa
-
-    !DOUBLE PRECISION:: g4(0:3,0:3)
     DOUBLE PRECISION:: g4(n_sym4x4)
-    DOUBLE PRECISION:: gg4(n_sym4x4,this% npart)
+    !DOUBLE PRECISION:: gg4(n_sym4x4,this% npart)
     DOUBLE PRECISION:: sq_detg4(this% npart)
-    DOUBLE PRECISION:: det, sq_g, Theta_a!, &!nu_max1, nu_max2, &
-                       !nu_tmp, nu_thres1, nu_thres2
-    DOUBLE PRECISION:: com_x_newt, com_y_newt, com_z_newt, com_d_newt, mass_newt
-    DOUBLE PRECISION:: com_x_1pn, com_y_1pn, com_z_1pn, com_d_1pn, mass_1pn
-    DOUBLE PRECISION:: px_newt, py_newt, pz_newt, pnorm_newt
-    DOUBLE PRECISION:: px, py, pz, pnorm, tmp
-    DOUBLE PRECISION, DIMENSION(3):: tmp2
+    DOUBLE PRECISION:: det, sq_g, Theta_a, tmp
+    !DOUBLE PRECISION:: com_x_newt, com_y_newt, com_z_newt, com_d_newt, mass_newt
+    !DOUBLE PRECISION:: com_x_1pn, com_y_1pn, com_z_1pn, com_d_1pn, mass_1pn
+    !DOUBLE PRECISION:: px_newt, py_newt, pz_newt, pnorm_newt
+    !DOUBLE PRECISION:: px, py, pz, pnorm, tmp
+    !DOUBLE PRECISION, DIMENSION(3):: tmp2
 
     !DOUBLE PRECISION:: ha, ha_1, ha_3, va, mat(3,3), mat_1(3,3), xa, ya, za
     !DOUBLE PRECISION:: mat_xx, mat_xy, mat_xz, mat_yy
@@ -164,7 +160,7 @@ SUBMODULE (sph_particles) sph_variables
 
     LOGICAL, PARAMETER:: debug= .FALSE.
 
-    CHARACTER( LEN= 2 ):: i_mat
+    !CHARACTER( LEN= 2 ):: i_mat
     CHARACTER( LEN= : ), ALLOCATABLE:: compose_namefile
     CHARACTER( LEN= : ), ALLOCATABLE:: finalnamefile
 
@@ -1081,9 +1077,9 @@ SUBMODULE (sph_particles) sph_variables
           PRINT *
 
           Pr(npart_in:npart_fin)= &
-            this% all_eos(i_matter)% eos_parameters($poly_kappa) &
+            this% all_eos(i_matter)% eos_parameters(poly$kappa) &
             *( this% nlrf_int(npart_in:npart_fin)*m0c2_cu ) &
-            **this% all_eos(i_matter)% eos_parameters($poly_gamma)
+            **this% all_eos(i_matter)% eos_parameters(poly$gamma)
 
           ! Using this internal energy gives machine-precision relative errors
           ! after the recovery, since it is computed from nlrf_int
@@ -1092,13 +1088,13 @@ SUBMODULE (sph_particles) sph_variables
           ! from the ID
           u(npart_in:npart_fin)= ( Pr(npart_in:npart_fin) &
             /(this% nlrf_int(npart_in:npart_fin)*m0c2_cu &
-            *( this% all_eos(i_matter)% eos_parameters($poly_gamma) - one ) ) )
+            *( this% all_eos(i_matter)% eos_parameters(poly$gamma) - one ) ) )
 
           this% enthalpy(npart_in:npart_fin)= one + u(npart_in:npart_fin) &
             + this% nlrf_int(npart_in:npart_fin)*m0c2_cu/Pr(npart_in:npart_fin)
 
           cs(npart_in:npart_fin)= SQRT( &
-            this% all_eos(i_matter)% eos_parameters($poly_gamma) &
+            this% all_eos(i_matter)% eos_parameters(poly$gamma) &
               *Pr(npart_in:npart_fin)/ &
             (this% nlrf_int(npart_in:npart_fin)*m0c2_cu &
             *this% enthalpy(npart_in:npart_fin)) )
@@ -1140,14 +1136,14 @@ SUBMODULE (sph_particles) sph_variables
 
             Pr(a)= &
             ! cold pressure
-            this% all_eos(i_matter)% eos_parameters($poly_kappa) &
+            this% all_eos(i_matter)% eos_parameters(poly$kappa) &
               *( this% nlrf_int(a)*m0c2_cu ) &
-              **this% all_eos(i_matter)% eos_parameters($poly_gamma) &
+              **this% all_eos(i_matter)% eos_parameters(poly$gamma) &
             + &
             ! thermal pressure
             Gamma_th_1*( this% nlrf_int(a)*m0c2_cu )* &
               MAX(u(a) - ( Pr(a)/(this% nlrf_int(a)*m0c2_cu &
-                *( this% all_eos(i_matter)% eos_parameters($poly_gamma) &
+                *( this% all_eos(i_matter)% eos_parameters(poly$gamma) &
                    - one ) ) ), zero)
 
           ENDDO
@@ -1155,7 +1151,7 @@ SUBMODULE (sph_particles) sph_variables
             + this% nlrf_int(npart_in:npart_fin)*m0c2_cu/Pr(npart_in:npart_fin)
 
           cs(npart_in:npart_fin)= SQRT( &
-            this% all_eos(i_matter)% eos_parameters($poly_gamma) &
+            this% all_eos(i_matter)% eos_parameters(poly$gamma) &
               *Pr(npart_in:npart_fin)/ &
             (this% nlrf_int(npart_in:npart_fin)*m0c2_cu &
             *this% enthalpy(npart_in:npart_fin)) )
@@ -1441,23 +1437,23 @@ SUBMODULE (sph_particles) sph_variables
     !
     !-- Exporting the SPH ID to a binary file, for evolution
     !
-    IF( this% export_bin )THEN
-
-      IF( PRESENT(namefile) )THEN
-
-        finalnamefile= TRIM( namefile ) // "00000"
-        dcount= -1 ! since it is increased before writing
-        CALL write_SPHINCS_dump( finalnamefile )
-
-      ELSE
-
-        basename= "NSNS."
-        dcount= -1 ! since it is increased before writing
-        CALL write_SPHINCS_dump()
-
-      ENDIF
-
-    ENDIF
+ !   IF( this% export_bin )THEN
+ !
+ !     IF( PRESENT(namefile) )THEN
+ !
+ !       finalnamefile= TRIM( namefile ) // "00000"
+ !       dcount= -1 ! since it is increased before writing
+ !       CALL write_SPHINCS_dump( finalnamefile )
+ !
+ !     ELSE
+ !
+ !       basename= "NSNS."
+ !       dcount= -1 ! since it is increased before writing
+ !       CALL write_SPHINCS_dump()
+ !
+ !     ENDIF
+ !
+ !   ENDIF
 
     !
     !-- Test the recovery
@@ -1617,6 +1613,7 @@ SUBMODULE (sph_particles) sph_variables
 
     ENDIF
 
+    vel_u= this% v(1:3,:)
 
     this% adm_linear_momentum_fluid= zero
     DO i_matter= 1, this% n_matter, 1
@@ -1647,7 +1644,7 @@ SUBMODULE (sph_particles) sph_variables
                                   this% nlrf_int(npart_in:npart_fin),     &
                                   this% pressure_cu(npart_in:npart_fin),  &
                                   this% u_pwp(npart_in:npart_fin),        &
-                                  this% v(1:3,npart_in:npart_fin),        &
+                                  vel_u(1:3,npart_in:npart_fin),        &
                                   this% adm_linear_momentum_i(i_matter,:) )
 
       PRINT *, "   SPH estimate of the ADM linear momentum computed using ", &
@@ -1670,6 +1667,26 @@ SUBMODULE (sph_particles) sph_variables
     PRINT *, "    ", this% adm_linear_momentum_fluid(3), ") Msun*c"
     PRINT *
 
+    !
+    !-- Exporting the SPH ID to a binary file, for SPHINCS_BSSN
+    !
+    IF( this% export_bin )THEN
+
+      IF( PRESENT(namefile) )THEN
+
+        finalnamefile= TRIM( namefile ) // "00000"
+        dcount= -1 ! since it is increased before writing
+        CALL write_SPHINCS_dump( finalnamefile )
+
+      ELSE
+
+        basename= "NSNS."
+        dcount= -1 ! since it is increased before writing
+        CALL write_SPHINCS_dump()
+
+      ENDIF
+
+    ENDIF
 
     !
     !-- Compute particle number density

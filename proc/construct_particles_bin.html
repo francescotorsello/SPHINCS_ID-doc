@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">102 statements</a>
+    title=" 0.1% of total for procedures.">100 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_sph_particles_constructor_bin.f90"> Source File</a></li>
   </ul>
@@ -120,11 +120,10 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-a~8">a</a>
+      <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-a~7">a</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-det~6">det</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-g4~5">g4</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-sq_detg4">sq_detg4</a>
-      <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-tmp~3">tmp</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-tmp1">tmp1</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-tmp10">tmp10</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-tmp2">tmp2</a>
@@ -155,14 +154,14 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li>input_output</li>
-    <li>constants</li>
-    <li>sph_variables</li>
+    <li>units</li>
     <li><a href='../module/utility.html'>utility</a></li>
     <li>pwp_EOS</li>
-    <li>tensor</li>
     <li><a href="https://www.openmp.org/spec-html/5.1/openmpch3.html#x156-1890003">omp_lib</a></li>
-    <li>units</li>
+    <li>tensor</li>
     <li>options</li>
+    <li>sph_variables</li>
+    <li>constants</li>
   </ul>
       </li>
       <li class="list-group-item">
@@ -195,17 +194,17 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M271.68,-192.17C258.11,-219.43 221.98,-286.2 175,-327 173.66,-328.16 172.24,-329.28 170.77,-330.36"/>
 <polygon fill="#000000" stroke="#000000" points="168.48,-327.67 161.93,-336 172.24,-333.57 168.48,-327.67"/>
 </g>
-<!-- constants -->
+<!-- units -->
 <g id="proc~~construct_particles_bin~~UsesGraph_node3" class="node">
-<title>constants</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="164.5,-318 100.5,-318 100.5,-294 164.5,-294 164.5,-318"/>
-<text text-anchor="middle" x="132.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
+<title>units</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-318 105.5,-318 105.5,-294 159.5,-294 159.5,-318"/>
+<text text-anchor="middle" x="132.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">units</text>
 </g>
-<!-- proc~construct_particles_bin&#45;&gt;constants -->
+<!-- proc~construct_particles_bin&#45;&gt;units -->
 <g id="proc~~construct_particles_bin~~UsesGraph_edge2" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;constants</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M267.82,-192.29C250.79,-213.32 213.62,-256.67 175,-285 173.2,-286.32 171.31,-287.6 169.36,-288.83"/>
-<polygon fill="#000000" stroke="#000000" points="167.5,-285.86 160.61,-293.91 171.01,-291.92 167.5,-285.86"/>
+<title>proc~construct_particles_bin&#45;&gt;units</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M267.82,-192.29C250.79,-213.32 213.62,-256.67 175,-285 172.95,-286.5 170.77,-287.96 168.54,-289.35"/>
+<polygon fill="#000000" stroke="#000000" points="166.68,-286.38 159.73,-294.38 170.15,-292.46 166.68,-286.38"/>
 </g>
 <!-- omp_lib -->
 <g id="proc~~construct_particles_bin~~UsesGraph_node4" class="node">
@@ -222,92 +221,92 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M258.89,-192.08C238.56,-205.13 204.9,-226.28 175,-243 172.49,-244.4 169.87,-245.82 167.23,-247.23"/>
 <polygon fill="#000000" stroke="#000000" points="165.51,-244.18 158.25,-251.9 168.74,-250.39 165.51,-244.18"/>
 </g>
-<!-- sph_variables -->
+<!-- pwp_EOS -->
 <g id="proc~~construct_particles_bin~~UsesGraph_node5" class="node">
+<title>pwp_EOS</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="163,-234 102,-234 102,-210 163,-210 163,-234"/>
+<text text-anchor="middle" x="132.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pwp_EOS</text>
+</g>
+<!-- proc~construct_particles_bin&#45;&gt;pwp_EOS -->
+<g id="proc~~construct_particles_bin~~UsesGraph_edge4" class="edge">
+<title>proc~construct_particles_bin&#45;&gt;pwp_EOS</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M236.24,-192.04C216.42,-197.82 192.78,-204.71 173.17,-210.43"/>
+<polygon fill="#000000" stroke="#000000" points="171.95,-207.14 163.33,-213.3 173.91,-213.86 171.95,-207.14"/>
+</g>
+<!-- tensor -->
+<g id="proc~~construct_particles_bin~~UsesGraph_node6" class="node">
+<title>tensor</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-192 105.5,-192 105.5,-168 159.5,-168 159.5,-192"/>
+<text text-anchor="middle" x="132.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tensor</text>
+</g>
+<!-- proc~construct_particles_bin&#45;&gt;tensor -->
+<g id="proc~~construct_particles_bin~~UsesGraph_edge5" class="edge">
+<title>proc~construct_particles_bin&#45;&gt;tensor</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M210.98,-180C196.82,-180 182.37,-180 169.85,-180"/>
+<polygon fill="#000000" stroke="#000000" points="169.83,-176.5 159.83,-180 169.83,-183.5 169.83,-176.5"/>
+</g>
+<!-- options -->
+<g id="proc~~construct_particles_bin~~UsesGraph_node7" class="node">
+<title>options</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-150 105.5,-150 105.5,-126 159.5,-126 159.5,-150"/>
+<text text-anchor="middle" x="132.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">options</text>
+</g>
+<!-- proc~construct_particles_bin&#45;&gt;options -->
+<g id="proc~~construct_particles_bin~~UsesGraph_edge6" class="edge">
+<title>proc~construct_particles_bin&#45;&gt;options</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M236.24,-167.96C215.19,-161.83 189.83,-154.43 169.58,-148.52"/>
+<polygon fill="#000000" stroke="#000000" points="170.37,-145.11 159.79,-145.67 168.41,-151.83 170.37,-145.11"/>
+</g>
+<!-- sph_variables -->
+<g id="proc~~construct_particles_bin~~UsesGraph_node8" class="node">
 <title>sph_variables</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="175,-234 90,-234 90,-210 175,-210 175,-234"/>
-<text text-anchor="middle" x="132.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sph_variables</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="175,-108 90,-108 90,-84 175,-84 175,-108"/>
+<text text-anchor="middle" x="132.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">sph_variables</text>
 </g>
 <!-- proc~construct_particles_bin&#45;&gt;sph_variables -->
-<g id="proc~~construct_particles_bin~~UsesGraph_edge4" class="edge">
+<g id="proc~~construct_particles_bin~~UsesGraph_edge7" class="edge">
 <title>proc~construct_particles_bin&#45;&gt;sph_variables</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M236.24,-192.04C220.12,-196.74 201.47,-202.18 184.52,-207.12"/>
-<polygon fill="#000000" stroke="#000000" points="183.39,-203.8 174.77,-209.96 185.35,-210.52 183.39,-203.8"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M258.89,-167.92C238.56,-154.87 204.9,-133.72 175,-117 172.49,-115.6 169.87,-114.18 167.23,-112.77"/>
+<polygon fill="#000000" stroke="#000000" points="168.74,-109.61 158.25,-108.1 165.51,-115.82 168.74,-109.61"/>
 </g>
 <!-- module~utility -->
-<g id="proc~~construct_particles_bin~~UsesGraph_node6" class="node">
+<g id="proc~~construct_particles_bin~~UsesGraph_node9" class="node">
 <title>module~utility</title>
-<g id="a_proc~~construct_particles_bin~~UsesGraph_node6"><a xlink:href=".././module/utility.html" xlink:title="utility">
-<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-192 105.5,-192 105.5,-168 159.5,-168 159.5,-192"/>
-<text text-anchor="middle" x="132.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">utility</text>
+<g id="a_proc~~construct_particles_bin~~UsesGraph_node9"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-66 105.5,-66 105.5,-42 159.5,-42 159.5,-66"/>
+<text text-anchor="middle" x="132.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">utility</text>
 </a>
 </g>
 </g>
 <!-- proc~construct_particles_bin&#45;&gt;module~utility -->
-<g id="proc~~construct_particles_bin~~UsesGraph_edge5" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;module~utility</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M210.98,-180C196.82,-180 182.37,-180 169.85,-180"/>
-<polygon fill="#000000" stroke="#000000" points="169.83,-176.5 159.83,-180 169.83,-183.5 169.83,-176.5"/>
-</g>
-<!-- pwp_EOS -->
-<g id="proc~~construct_particles_bin~~UsesGraph_node7" class="node">
-<title>pwp_EOS</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="163,-150 102,-150 102,-126 163,-126 163,-150"/>
-<text text-anchor="middle" x="132.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pwp_EOS</text>
-</g>
-<!-- proc~construct_particles_bin&#45;&gt;pwp_EOS -->
-<g id="proc~~construct_particles_bin~~UsesGraph_edge6" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;pwp_EOS</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M236.24,-167.96C216.42,-162.18 192.78,-155.29 173.17,-149.57"/>
-<polygon fill="#000000" stroke="#000000" points="173.91,-146.14 163.33,-146.7 171.95,-152.86 173.91,-146.14"/>
-</g>
-<!-- tensor -->
-<g id="proc~~construct_particles_bin~~UsesGraph_node8" class="node">
-<title>tensor</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-108 105.5,-108 105.5,-84 159.5,-84 159.5,-108"/>
-<text text-anchor="middle" x="132.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tensor</text>
-</g>
-<!-- proc~construct_particles_bin&#45;&gt;tensor -->
-<g id="proc~~construct_particles_bin~~UsesGraph_edge7" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;tensor</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M258.89,-167.92C238.56,-154.87 204.9,-133.72 175,-117 172.49,-115.6 169.87,-114.18 167.23,-112.77"/>
-<polygon fill="#000000" stroke="#000000" points="168.74,-109.61 158.25,-108.1 165.51,-115.82 168.74,-109.61"/>
-</g>
-<!-- units -->
-<g id="proc~~construct_particles_bin~~UsesGraph_node9" class="node">
-<title>units</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-66 105.5,-66 105.5,-42 159.5,-42 159.5,-66"/>
-<text text-anchor="middle" x="132.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">units</text>
-</g>
-<!-- proc~construct_particles_bin&#45;&gt;units -->
 <g id="proc~~construct_particles_bin~~UsesGraph_edge8" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;units</title>
+<title>proc~construct_particles_bin&#45;&gt;module~utility</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M267.82,-167.71C250.79,-146.68 213.62,-103.33 175,-75 172.95,-73.5 170.77,-72.04 168.54,-70.65"/>
 <polygon fill="#000000" stroke="#000000" points="170.15,-67.54 159.73,-65.62 166.68,-73.62 170.15,-67.54"/>
 </g>
-<!-- options -->
+<!-- constants -->
 <g id="proc~~construct_particles_bin~~UsesGraph_node10" class="node">
-<title>options</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="159.5,-24 105.5,-24 105.5,0 159.5,0 159.5,-24"/>
-<text text-anchor="middle" x="132.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">options</text>
+<title>constants</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="164.5,-24 100.5,-24 100.5,0 164.5,0 164.5,-24"/>
+<text text-anchor="middle" x="132.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
 </g>
-<!-- proc~construct_particles_bin&#45;&gt;options -->
+<!-- proc~construct_particles_bin&#45;&gt;constants -->
 <g id="proc~~construct_particles_bin~~UsesGraph_edge9" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;options</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M271.68,-167.83C258.11,-140.57 221.98,-73.8 175,-33 173.03,-31.29 170.89,-29.67 168.66,-28.15"/>
-<polygon fill="#000000" stroke="#000000" points="170.14,-24.96 159.76,-22.81 166.53,-30.96 170.14,-24.96"/>
+<title>proc~construct_particles_bin&#45;&gt;constants</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M271.68,-167.83C258.11,-140.57 221.98,-73.8 175,-33 173.66,-31.84 172.24,-30.72 170.77,-29.64"/>
+<polygon fill="#000000" stroke="#000000" points="172.24,-26.43 161.93,-24 168.48,-32.33 172.24,-26.43"/>
 </g>
 <!-- matrix -->
 <g id="proc~~construct_particles_bin~~UsesGraph_node11" class="node">
 <title>matrix</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="54,-192 0,-192 0,-168 54,-168 54,-192"/>
-<text text-anchor="middle" x="27" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
 </g>
 <!-- module~utility&#45;&gt;matrix -->
 <g id="proc~~construct_particles_bin~~UsesGraph_edge10" class="edge">
 <title>module~utility&#45;&gt;matrix</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M105.38,-180C92.88,-180 77.71,-180 64.12,-180"/>
-<polygon fill="#000000" stroke="#000000" points="64.11,-176.5 54.11,-180 64.11,-183.5 64.11,-176.5"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M105.38,-54C92.88,-54 77.71,-54 64.12,-54"/>
+<polygon fill="#000000" stroke="#000000" points="64.11,-50.5 54.11,-54 64.11,-57.5 64.11,-50.5"/>
 </g>
 </g>
 </svg>
@@ -413,133 +412,121 @@
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~construct_particles_bin~~CallsGraph Pages: 1 -->
-<svg id="procconstruct_particles_binCallsGraph" width="366pt" height="368pt"
- viewBox="0.00 0.00 366.00 368.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~construct_particles_bin~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 364)">
+<svg id="procconstruct_particles_binCallsGraph" width="366pt" height="326pt"
+ viewBox="0.00 0.00 366.00 326.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~construct_particles_bin~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 322)">
 <title>proc~~construct_particles_bin~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-364 362,-364 362,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-322 362,-322 362,4 -4,4"/>
 <!-- proc~construct_particles_bin -->
 <g id="proc~~construct_particles_bin~~CallsGraph_node1" class="node">
 <title>proc~construct_particles_bin</title>
-<polygon fill="none" stroke="black" points="135,-192 0,-192 0,-168 135,-168 135,-192"/>
-<text text-anchor="middle" x="67.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50">construct_particles_bin</text>
+<polygon fill="none" stroke="black" points="135,-171 0,-171 0,-147 135,-147 135,-171"/>
+<text text-anchor="middle" x="67.5" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50">construct_particles_bin</text>
 </g>
-<!-- proc~compute_g4 -->
+<!-- set_units -->
 <g id="proc~~construct_particles_bin~~CallsGraph_node2" class="node">
-<title>proc~compute_g4</title>
-<g id="a_proc~~construct_particles_bin~~CallsGraph_node2"><a xlink:href=".././proc/compute_g4.html" xlink:title="compute_g4">
-<polygon fill="#d9534f" stroke="#d9534f" points="304,-360 225,-360 225,-336 304,-336 304,-360"/>
-<text text-anchor="middle" x="264.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_g4</text>
+<title>set_units</title>
+<polygon fill="#777777" stroke="#777777" points="294,-318 235,-318 235,-294 294,-294 294,-318"/>
+<text text-anchor="middle" x="264.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_units</text>
+</g>
+<!-- proc~construct_particles_bin&#45;&gt;set_units -->
+<g id="proc~~construct_particles_bin~~CallsGraph_edge1" class="edge">
+<title>proc~construct_particles_bin&#45;&gt;set_units</title>
+<path fill="none" stroke="#000000" d="M74.8,-171.32C88.55,-196.88 123.8,-255.7 171,-285 187.14,-295.02 207.52,-300.27 225.04,-303.02"/>
+<polygon fill="#000000" stroke="#000000" points="224.59,-306.49 234.97,-304.37 225.53,-299.56 224.59,-306.49"/>
+</g>
+<!-- proc~spacetime_vector_norm_sym4x4 -->
+<g id="proc~~construct_particles_bin~~CallsGraph_node3" class="node">
+<title>proc~spacetime_vector_norm_sym4x4</title>
+<g id="a_proc~~construct_particles_bin~~CallsGraph_node3"><a xlink:href=".././proc/spacetime_vector_norm_sym4x4.html" xlink:title="spacetime_vector_norm_sym4x4">
+<polygon fill="#d9534f" stroke="#d9534f" points="358,-276 171,-276 171,-252 358,-252 358,-276"/>
+<text text-anchor="middle" x="264.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spacetime_vector_norm_sym4x4</text>
 </a>
 </g>
 </g>
-<!-- proc~construct_particles_bin&#45;&gt;proc~compute_g4 -->
-<g id="proc~~construct_particles_bin~~CallsGraph_edge1" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;proc~compute_g4</title>
-<path fill="none" stroke="#000000" d="M73.3,-192.18C85.19,-220.67 118.87,-291.9 171,-327 183.87,-335.67 199.81,-340.8 214.8,-343.82"/>
-<polygon fill="#000000" stroke="#000000" points="214.53,-347.33 224.98,-345.6 215.73,-340.43 214.53,-347.33"/>
+<!-- proc~construct_particles_bin&#45;&gt;proc~spacetime_vector_norm_sym4x4 -->
+<g id="proc~~construct_particles_bin~~CallsGraph_edge2" class="edge">
+<title>proc~construct_particles_bin&#45;&gt;proc~spacetime_vector_norm_sym4x4</title>
+<path fill="none" stroke="#000000" d="M79.52,-171.08C97.05,-189.53 133.18,-224.5 171,-243 175.3,-245.1 179.82,-247 184.46,-248.71"/>
+<polygon fill="#000000" stroke="#000000" points="183.49,-252.08 194.09,-251.97 185.73,-245.45 183.49,-252.08"/>
 </g>
 <!-- select_eos_parameters -->
-<g id="proc~~construct_particles_bin~~CallsGraph_node3" class="node">
+<g id="proc~~construct_particles_bin~~CallsGraph_node4" class="node">
 <title>select_eos_parameters</title>
-<polygon fill="#777777" stroke="#777777" points="332.5,-318 196.5,-318 196.5,-294 332.5,-294 332.5,-318"/>
-<text text-anchor="middle" x="264.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">select_eos_parameters</text>
+<polygon fill="#777777" stroke="#777777" points="332.5,-234 196.5,-234 196.5,-210 332.5,-210 332.5,-234"/>
+<text text-anchor="middle" x="264.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">select_eos_parameters</text>
 </g>
 <!-- proc~construct_particles_bin&#45;&gt;select_eos_parameters -->
-<g id="proc~~construct_particles_bin~~CallsGraph_edge2" class="edge">
+<g id="proc~~construct_particles_bin~~CallsGraph_edge3" class="edge">
 <title>proc~construct_particles_bin&#45;&gt;select_eos_parameters</title>
-<path fill="none" stroke="#000000" d="M76.76,-192.27C92.38,-214.48 128.54,-261.23 171,-285 175.85,-287.71 181.03,-290.08 186.36,-292.14"/>
-<polygon fill="#000000" stroke="#000000" points="185.51,-295.55 196.1,-295.52 187.81,-288.93 185.51,-295.55"/>
-</g>
-<!-- set_units -->
-<g id="proc~~construct_particles_bin~~CallsGraph_node4" class="node">
-<title>set_units</title>
-<polygon fill="#777777" stroke="#777777" points="294,-276 235,-276 235,-252 294,-252 294,-276"/>
-<text text-anchor="middle" x="264.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_units</text>
-</g>
-<!-- proc~construct_particles_bin&#45;&gt;set_units -->
-<g id="proc~~construct_particles_bin~~CallsGraph_edge4" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;set_units</title>
-<path fill="none" stroke="#000000" d="M84.3,-192.01C103.71,-206.21 138.12,-229.59 171,-243 188.05,-249.95 207.85,-254.84 224.74,-258.13"/>
-<polygon fill="#000000" stroke="#000000" points="224.37,-261.62 234.84,-259.99 225.63,-254.74 224.37,-261.62"/>
-</g>
-<!-- deallocate_sph_memory -->
-<g id="proc~~construct_particles_bin~~CallsGraph_node5" class="node">
-<title>deallocate_sph_memory</title>
-<polygon fill="#777777" stroke="#777777" points="336,-234 193,-234 193,-210 336,-210 336,-234"/>
-<text text-anchor="middle" x="264.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_sph_memory</text>
-</g>
-<!-- proc~construct_particles_bin&#45;&gt;deallocate_sph_memory -->
-<g id="proc~~construct_particles_bin~~CallsGraph_edge5" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;deallocate_sph_memory</title>
-<path fill="none" stroke="#000000" d="M124.38,-192.04C147.23,-196.96 173.83,-202.69 197.61,-207.81"/>
-<polygon fill="#000000" stroke="#000000" points="197.1,-211.28 207.61,-209.96 198.57,-204.44 197.1,-211.28"/>
+<path fill="none" stroke="#000000" d="M94.6,-171.1C115.06,-180.24 144.41,-192.6 171,-201 178.4,-203.34 186.2,-205.53 194.02,-207.54"/>
+<polygon fill="#000000" stroke="#000000" points="193.35,-210.98 203.89,-210 195.04,-204.19 193.35,-210.98"/>
 </g>
 <!-- allocate_sph_memory -->
-<g id="proc~~construct_particles_bin~~CallsGraph_node6" class="node">
+<g id="proc~~construct_particles_bin~~CallsGraph_node5" class="node">
 <title>allocate_sph_memory</title>
 <polygon fill="#777777" stroke="#777777" points="329.5,-192 199.5,-192 199.5,-168 329.5,-168 329.5,-192"/>
 <text text-anchor="middle" x="264.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">allocate_sph_memory</text>
 </g>
 <!-- proc~construct_particles_bin&#45;&gt;allocate_sph_memory -->
-<g id="proc~~construct_particles_bin~~CallsGraph_edge6" class="edge">
+<g id="proc~~construct_particles_bin~~CallsGraph_edge4" class="edge">
 <title>proc~construct_particles_bin&#45;&gt;allocate_sph_memory</title>
-<path fill="none" stroke="#000000" d="M135.06,-180C152.4,-180 171.2,-180 188.92,-180"/>
-<polygon fill="#000000" stroke="#000000" points="189.21,-183.5 199.21,-180 189.21,-176.5 189.21,-183.5"/>
-</g>
-<!-- read_options -->
-<g id="proc~~construct_particles_bin~~CallsGraph_node7" class="node">
-<title>read_options</title>
-<polygon fill="#777777" stroke="#777777" points="305,-150 224,-150 224,-126 305,-126 305,-150"/>
-<text text-anchor="middle" x="264.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">read_options</text>
-</g>
-<!-- proc~construct_particles_bin&#45;&gt;read_options -->
-<g id="proc~~construct_particles_bin~~CallsGraph_edge8" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;read_options</title>
-<path fill="none" stroke="#000000" d="M124.38,-167.96C152.52,-161.9 186.36,-154.62 213.62,-148.74"/>
-<polygon fill="#000000" stroke="#000000" points="214.67,-152.1 223.71,-146.57 213.2,-145.25 214.67,-152.1"/>
-</g>
-<!-- proc~spacetime_vector_norm_sym4x4 -->
-<g id="proc~~construct_particles_bin~~CallsGraph_node8" class="node">
-<title>proc~spacetime_vector_norm_sym4x4</title>
-<g id="a_proc~~construct_particles_bin~~CallsGraph_node8"><a xlink:href=".././proc/spacetime_vector_norm_sym4x4.html" xlink:title="spacetime_vector_norm_sym4x4">
-<polygon fill="#d9534f" stroke="#d9534f" points="358,-108 171,-108 171,-84 358,-84 358,-108"/>
-<text text-anchor="middle" x="264.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">spacetime_vector_norm_sym4x4</text>
-</a>
-</g>
-</g>
-<!-- proc~construct_particles_bin&#45;&gt;proc~spacetime_vector_norm_sym4x4 -->
-<g id="proc~~construct_particles_bin~~CallsGraph_edge7" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;proc~spacetime_vector_norm_sym4x4</title>
-<path fill="none" stroke="#000000" d="M84.3,-167.99C103.71,-153.79 138.12,-130.41 171,-117 176.47,-114.77 182.22,-112.75 188.07,-110.93"/>
-<polygon fill="#000000" stroke="#000000" points="189.35,-114.2 197.98,-108.05 187.4,-107.48 189.35,-114.2"/>
-</g>
-<!-- omp_set_num_threads -->
-<g id="proc~~construct_particles_bin~~CallsGraph_node9" class="node">
-<title>omp_set_num_threads</title>
-<polygon fill="#777777" stroke="#777777" points="330.5,-66 198.5,-66 198.5,-42 330.5,-42 330.5,-66"/>
-<text text-anchor="middle" x="264.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">omp_set_num_threads</text>
-</g>
-<!-- proc~construct_particles_bin&#45;&gt;omp_set_num_threads -->
-<g id="proc~~construct_particles_bin~~CallsGraph_edge3" class="edge">
-<title>proc~construct_particles_bin&#45;&gt;omp_set_num_threads</title>
-<path fill="none" stroke="#000000" d="M76.76,-167.73C92.38,-145.52 128.54,-98.77 171,-75 176.47,-71.94 182.36,-69.32 188.42,-67.09"/>
-<polygon fill="#000000" stroke="#000000" points="189.67,-70.36 198.05,-63.88 187.46,-63.72 189.67,-70.36"/>
+<path fill="none" stroke="#000000" d="M135.06,-166.17C152.4,-168.04 171.2,-170.06 188.92,-171.97"/>
+<polygon fill="#000000" stroke="#000000" points="188.9,-175.49 199.21,-173.08 189.65,-168.53 188.9,-175.49"/>
 </g>
 <!-- proc~determinant_sym4x4 -->
-<g id="proc~~construct_particles_bin~~CallsGraph_node10" class="node">
+<g id="proc~~construct_particles_bin~~CallsGraph_node6" class="node">
 <title>proc~determinant_sym4x4</title>
-<g id="a_proc~~construct_particles_bin~~CallsGraph_node10"><a xlink:href=".././proc/determinant_sym4x4.html" xlink:title="determinant_sym4x4">
-<polygon fill="#d9534f" stroke="#d9534f" points="327,-24 202,-24 202,0 327,0 327,-24"/>
-<text text-anchor="middle" x="264.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym4x4</text>
+<g id="a_proc~~construct_particles_bin~~CallsGraph_node6"><a xlink:href=".././proc/determinant_sym4x4.html" xlink:title="determinant_sym4x4">
+<polygon fill="#d9534f" stroke="#d9534f" points="327,-150 202,-150 202,-126 327,-126 327,-150"/>
+<text text-anchor="middle" x="264.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym4x4</text>
 </a>
 </g>
 </g>
 <!-- proc~construct_particles_bin&#45;&gt;proc~determinant_sym4x4 -->
-<g id="proc~~construct_particles_bin~~CallsGraph_edge9" class="edge">
+<g id="proc~~construct_particles_bin~~CallsGraph_edge5" class="edge">
 <title>proc~construct_particles_bin&#45;&gt;proc~determinant_sym4x4</title>
-<path fill="none" stroke="#000000" d="M73.3,-167.82C85.19,-139.33 118.87,-68.1 171,-33 177.44,-28.67 184.63,-25.22 192.1,-22.47"/>
-<polygon fill="#000000" stroke="#000000" points="193.23,-25.79 201.66,-19.36 191.06,-19.13 193.23,-25.79"/>
+<path fill="none" stroke="#000000" d="M135.06,-151.83C153.31,-149.87 173.17,-147.73 191.69,-145.73"/>
+<polygon fill="#000000" stroke="#000000" points="192.26,-149.19 201.83,-144.64 191.51,-142.23 192.26,-149.19"/>
+</g>
+<!-- read_options -->
+<g id="proc~~construct_particles_bin~~CallsGraph_node7" class="node">
+<title>read_options</title>
+<polygon fill="#777777" stroke="#777777" points="305,-108 224,-108 224,-84 305,-84 305,-108"/>
+<text text-anchor="middle" x="264.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">read_options</text>
+</g>
+<!-- proc~construct_particles_bin&#45;&gt;read_options -->
+<g id="proc~~construct_particles_bin~~CallsGraph_edge6" class="edge">
+<title>proc~construct_particles_bin&#45;&gt;read_options</title>
+<path fill="none" stroke="#000000" d="M94.6,-146.9C115.06,-137.76 144.41,-125.4 171,-117 184.77,-112.65 199.97,-108.81 213.99,-105.65"/>
+<polygon fill="#000000" stroke="#000000" points="214.94,-109.03 223.96,-103.47 213.44,-102.19 214.94,-109.03"/>
+</g>
+<!-- proc~compute_g4 -->
+<g id="proc~~construct_particles_bin~~CallsGraph_node8" class="node">
+<title>proc~compute_g4</title>
+<g id="a_proc~~construct_particles_bin~~CallsGraph_node8"><a xlink:href=".././proc/compute_g4.html" xlink:title="compute_g4">
+<polygon fill="#d9534f" stroke="#d9534f" points="304,-66 225,-66 225,-42 304,-42 304,-66"/>
+<text text-anchor="middle" x="264.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_g4</text>
+</a>
+</g>
+</g>
+<!-- proc~construct_particles_bin&#45;&gt;proc~compute_g4 -->
+<g id="proc~~construct_particles_bin~~CallsGraph_edge7" class="edge">
+<title>proc~construct_particles_bin&#45;&gt;proc~compute_g4</title>
+<path fill="none" stroke="#000000" d="M79.52,-146.92C97.05,-128.47 133.18,-93.5 171,-75 184.58,-68.36 200.32,-63.78 214.92,-60.64"/>
+<polygon fill="#000000" stroke="#000000" points="215.67,-64.06 224.81,-58.68 214.32,-57.19 215.67,-64.06"/>
+</g>
+<!-- deallocate_sph_memory -->
+<g id="proc~~construct_particles_bin~~CallsGraph_node9" class="node">
+<title>deallocate_sph_memory</title>
+<polygon fill="#777777" stroke="#777777" points="336,-24 193,-24 193,0 336,0 336,-24"/>
+<text text-anchor="middle" x="264.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">deallocate_sph_memory</text>
+</g>
+<!-- proc~construct_particles_bin&#45;&gt;deallocate_sph_memory -->
+<g id="proc~~construct_particles_bin~~CallsGraph_edge8" class="edge">
+<title>proc~construct_particles_bin&#45;&gt;deallocate_sph_memory</title>
+<path fill="none" stroke="#000000" d="M74.8,-146.68C88.55,-121.12 123.8,-62.3 171,-33 174.88,-30.59 179.01,-28.46 183.28,-26.57"/>
+<polygon fill="#000000" stroke="#000000" points="184.81,-29.72 192.84,-22.81 182.25,-23.21 184.81,-29.72"/>
 </g>
 </g>
 </svg>
@@ -758,11 +745,10 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-a~8">a</a>
+      <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-a~7">a</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-det~6">det</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-g4~5">g4</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-sq_detg4">sq_detg4</a>
-      <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-tmp~3">tmp</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-tmp1">tmp1</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-tmp10">tmp10</a>
       <a class="list-group-item" href="../proc/construct_particles_bin.html#variable-tmp2">tmp2</a>
@@ -788,7 +774,7 @@
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-a~8"></span>integer,</td>
+  <td><span class="anchor" id="variable-a~7"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>a</strong></td><td></td><td></td><td></td>
 </tr>
@@ -806,11 +792,6 @@
   <td><span class="anchor" id="variable-sq_detg4"></span>double precision,</td>
 <td>private,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
   <td><strong>sq_detg4</strong></td><td></td><td></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-tmp~3"></span>integer,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>tmp</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-tmp1"></span>double precision,</td>
@@ -896,7 +877,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-15 14:38:14           </p>
+ on 2022-04-19 16:01:41           </p>
         </div>
       </div>
       <br>

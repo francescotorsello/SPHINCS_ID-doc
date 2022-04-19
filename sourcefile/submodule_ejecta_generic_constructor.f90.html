@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.4% of total for source files.">238 statements</a>
+    title=" 1.5% of total for source files.">245 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_ejecta_generic_constructor.f90"> Source File</a></li>
   </ul>
@@ -333,14 +333,14 @@
 <a name="ln-68"></a>    <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">header_lines</span><span class="o">=</span> <span class="mi">2</span> <span class="c">! TODO: give this as input</span>
 <a name="ln-69"></a>    <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">nlines</span><span class="p">,</span> <span class="n">ntmp</span>
 <a name="ln-70"></a>    <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">i_matter</span><span class="p">,</span> <span class="n">n_matter_loc</span><span class="p">,</span> <span class="n">itr</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span>
-<a name="ln-71"></a>    <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">x_sorted</span><span class="p">,</span> <span class="n">y_sorted</span><span class="p">,</span> <span class="n">z_sorted</span>
+<a name="ln-71"></a>   <span class="c">! INTEGER, DIMENSION(:), ALLOCATABLE:: x_sorted, y_sorted, z_sorted</span>
 <a name="ln-72"></a>    <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">mass_profile_idx</span>
 <a name="ln-73"></a>
 <a name="ln-74"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">xtmp</span><span class="p">,</span> <span class="n">ytmp</span><span class="p">,</span> <span class="n">ztmp</span><span class="p">,</span> <span class="p">&amp;</span>
 <a name="ln-75"></a>                       <span class="n">rhotmp</span><span class="p">,</span> <span class="n">epstmp</span><span class="p">,</span> <span class="n">vxtmp</span><span class="p">,</span> <span class="n">vytmp</span><span class="p">,</span> <span class="n">vztmp</span><span class="p">,</span> <span class="p">&amp;</span>
 <a name="ln-76"></a>                       <span class="n">dr</span><span class="p">,</span> <span class="n">dphi</span><span class="p">,</span> <span class="n">dth</span>
 <a name="ln-77"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">grid_tmp</span>
-<a name="ln-78"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">rho_tmp</span>
+<a name="ln-78"></a>    <span class="c">!DOUBLE PRECISION, DIMENSION(:,:,:), ALLOCATABLE:: rho_tmp</span>
 <a name="ln-79"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span>   <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">mass_profile</span>
 <a name="ln-80"></a>
 <a name="ln-81"></a>    <span class="kt">LOGICAL</span><span class="kd">::</span> <span class="n">exist</span>
@@ -736,33 +736,46 @@
 <a name="ln-471"></a>    <span class="c">!</span>
 <a name="ln-472"></a>    <span class="c">!***********************************************</span>
 <a name="ln-473"></a>
-<a name="ln-474"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-474"></a>    <span class="k">USE </span><span class="n">constants</span><span class="p">,</span>  <span class="n">ONLY</span><span class="p">:</span> <span class="n">zero</span>
 <a name="ln-475"></a>
-<a name="ln-476"></a><span class="k">  END PROCEDURE </span><span class="n">finalize</span>
+<a name="ln-476"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-477"></a>
-<a name="ln-478"></a>
-<a name="ln-479"></a>  <span class="c">!</span>
-<a name="ln-480"></a>  <span class="c">!-- Implementation of the destructor of the bns object</span>
-<a name="ln-481"></a>  <span class="c">!</span>
-<a name="ln-482"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">destruct_ejecta</span>
-<a name="ln-483"></a>
-<a name="ln-484"></a>    <span class="c">!****************************************************</span>
-<a name="ln-485"></a>    <span class="c">!</span>
-<a name="ln-486"></a>    <span class="c">!# Destructs an object of TYPE [[ejecta]]</span>
-<a name="ln-487"></a>    <span class="c">!</span>
-<a name="ln-488"></a>    <span class="c">!  FT xx.11.2021</span>
-<a name="ln-489"></a>    <span class="c">!</span>
-<a name="ln-490"></a>    <span class="c">!****************************************************</span>
+<a name="ln-478"></a>    <span class="c">! Temporary implementation, to avoid warnings about unuesed variables</span>
+<a name="ln-479"></a>
+<a name="ln-480"></a>    <span class="n">pos</span>  <span class="o">=</span> <span class="n">npart</span>
+<a name="ln-481"></a>    <span class="n">nlrf</span> <span class="o">=</span> <span class="n">zero</span>
+<a name="ln-482"></a>    <span class="n">nu</span>   <span class="o">=</span> <span class="n">zero</span>
+<a name="ln-483"></a>    <span class="n">pr</span>   <span class="o">=</span> <span class="n">zero</span>
+<a name="ln-484"></a>    <span class="n">vel_u</span><span class="o">=</span> <span class="n">zero</span>
+<a name="ln-485"></a>    <span class="n">theta</span><span class="o">=</span> <span class="n">zero</span>
+<a name="ln-486"></a>    <span class="n">nstar</span><span class="o">=</span> <span class="n">zero</span>
+<a name="ln-487"></a>    <span class="n">u</span>    <span class="o">=</span> <span class="n">zero</span>
+<a name="ln-488"></a>
+<a name="ln-489"></a>  <span class="k">END PROCEDURE </span><span class="n">finalize</span>
+<a name="ln-490"></a>
 <a name="ln-491"></a>
-<a name="ln-492"></a>    <span class="k">IMPLICIT NONE</span>
-<a name="ln-493"></a>
-<a name="ln-494"></a><span class="k">    CALL </span><span class="n">THIS</span><span class="p">%</span> <span class="n">deallocate_gridid_memory</span><span class="p">()</span>
-<a name="ln-495"></a>
+<a name="ln-492"></a>  <span class="c">!</span>
+<a name="ln-493"></a>  <span class="c">!-- Implementation of the destructor of the bns object</span>
+<a name="ln-494"></a>  <span class="c">!</span>
+<a name="ln-495"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">destruct_ejecta</span>
 <a name="ln-496"></a>
-<a name="ln-497"></a>  <span class="k">END PROCEDURE </span><span class="n">destruct_ejecta</span>
-<a name="ln-498"></a>
-<a name="ln-499"></a>
-<a name="ln-500"></a><span class="k">END SUBMODULE </span><span class="n">constructor</span>
+<a name="ln-497"></a>    <span class="c">!****************************************************</span>
+<a name="ln-498"></a>    <span class="c">!</span>
+<a name="ln-499"></a>    <span class="c">!# Destructs an object of TYPE [[ejecta]]</span>
+<a name="ln-500"></a>    <span class="c">!</span>
+<a name="ln-501"></a>    <span class="c">!  FT xx.11.2021</span>
+<a name="ln-502"></a>    <span class="c">!</span>
+<a name="ln-503"></a>    <span class="c">!****************************************************</span>
+<a name="ln-504"></a>
+<a name="ln-505"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-506"></a>
+<a name="ln-507"></a><span class="k">    CALL </span><span class="n">THIS</span><span class="p">%</span> <span class="n">deallocate_gridid_memory</span><span class="p">()</span>
+<a name="ln-508"></a>
+<a name="ln-509"></a>
+<a name="ln-510"></a>  <span class="k">END PROCEDURE </span><span class="n">destruct_ejecta</span>
+<a name="ln-511"></a>
+<a name="ln-512"></a>
+<a name="ln-513"></a><span class="k">END SUBMODULE </span><span class="n">constructor</span>
 </pre></div>
 
     </section>
@@ -781,7 +794,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-15 14:38:14           </p>
+ on 2022-04-19 16:01:41           </p>
         </div>
       </div>
       <br>

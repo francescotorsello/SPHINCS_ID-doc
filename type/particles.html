@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>15.6% of total for derived types.</p>Including implementation: 311 statements, 24.1% of total for derived types.">121 statements</a>
+    title="<p>15.7% of total for derived types.</p>Including implementation: 309 statements, 24.0% of total for derived types.">122 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/module_sph_particles.f90"> Source File</a></li>
   </ul>
@@ -130,6 +130,7 @@
       <a class="list-group-item" href="../type/particles.html#variable-apm_iterate">apm_iterate</a>
       <a class="list-group-item" href="../type/particles.html#variable-apm_timers">apm_timers</a>
       <a class="list-group-item" href="../type/particles.html#variable-barycenter">barycenter</a>
+      <a class="list-group-item" href="../type/particles.html#variable-barycenter_system">barycenter_system</a>
       <a class="list-group-item" href="../type/particles.html#variable-baryon_density">baryon_density</a>
       <a class="list-group-item" href="../type/particles.html#variable-baryon_density_index">baryon_density_index</a>
       <a class="list-group-item" href="../type/particles.html#variable-call_flag">call_flag</a>
@@ -385,6 +386,7 @@
       <a class="list-group-item" href="../type/particles.html#variable-apm_iterate">apm_iterate</a>
       <a class="list-group-item" href="../type/particles.html#variable-apm_timers">apm_timers</a>
       <a class="list-group-item" href="../type/particles.html#variable-barycenter">barycenter</a>
+      <a class="list-group-item" href="../type/particles.html#variable-barycenter_system">barycenter_system</a>
       <a class="list-group-item" href="../type/particles.html#variable-baryon_density">baryon_density</a>
       <a class="list-group-item" href="../type/particles.html#variable-baryon_density_index">baryon_density_index</a>
       <a class="list-group-item" href="../type/particles.html#variable-call_flag">call_flag</a>
@@ -586,6 +588,11 @@
   <td><span class="anchor" id="variable-barycenter"></span>double precision,</td>
 <td>public,</td>  <td>DIMENSION(:,:), ALLOCATABLE</td><td>::</td>
   <td><strong>barycenter</strong></td><td></td><td></td><td><p>Array storing the centers of mass of the matter objects</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-barycenter_system"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(4)</td><td>::</td>
+  <td><strong>barycenter_system</strong></td><td></td><td></td><td><p>Array storing the center of mass of the <strong>entire particle distribution</strong></p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-baryon_density"></span>double precision,</td>
@@ -2078,7 +2085,7 @@
 </tr>
 <tr>
   <td colspan="7">
-      <small><h5>subroutine get_nstar_id(npart, x, y, z, nstar_id, nstar_eul_id)</h5><p>Computes the proper baryon number density at the particle positions</p>
+      <small><h5>subroutine get_nstar_id(npart, x, y, z, nstar_id)</h5><p>Computes the proper baryon number density at the particle positions</p>
     
 <h6>Arguments</h6>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2111,13 +2118,8 @@
   <td><span class="anchor" ></span>double precision,</td>
 <td>intent(out)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>nstar_id</strong>(npart)</td><td><p>Array to store the computed proper baryon number density</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>double precision,</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>nstar_eul_id</strong>(npart)</td><td><p>Array to store the computed proper baryon number density seen
+  <td><strong>nstar_id</strong>(npart)</td><td><p>Array to store the computed proper baryon number density</p>
+<p>Array to store the computed proper baryon number density seen
  by the Eulerian observer</p></td>
 </tr>
 </tbody>
@@ -2839,7 +2841,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT )::mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine print_summary(this, filename)   <a href='../proc/print_summary.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine print_summary(this)   <a href='../proc/print_summary.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Prints a summary of the properties of the \(\mathrm{SPH}\) particle
  distribution, optionally, to a formatted file whose name
  is given as the optional argument <code>filename</code></p>
@@ -2851,13 +2853,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT )::mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/particles.html'>particles</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>this</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(inout),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>filename</strong></td><td><p>Name of the formatted file to print the summary to</p></td>
+  <td><strong>this</strong></td><td><p>Name of the formatted file to print the summary to</p></td>
 </tr>
 </tbody>
 </table>
@@ -2973,7 +2969,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT )::mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine test_recovery(this, npart, pos, nlrf, u, pr, vel_u, theta, nstar, namefile)   <a href='../proc/test_recovery.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine test_recovery(this, npart, pos, nlrf, u, pr, vel_u, theta, nstar)   <a href='../proc/test_recovery.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Tests the recovery. Computes the conserved variables from the physical
  ones, and then the physical ones from the conserved ones. It then
  compares the variables computed with the recovery PROCEDURES, with
@@ -3036,13 +3032,8 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT )::mass_profile_idx</p></td>
   <td></td>  <td>DIMENSION(npart)</td><td>::</td>
   <td><strong>nstar</strong></td><td><p>Proper baryon density in the local rest frame on the particles</p>
 <p>Canonical momentum on the particles</p>
-<p>Canonical energy on the particles</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>character(len=*),</td>
-<td>intent(inout),</td>
-  <td>optional</td>  <td></td><td>::</td>
-  <td><strong>namefile</strong></td><td><p>Name of the formatted file where the data is printed</p></td>
+<p>Canonical energy on the particles</p>
+<p>Name of the formatted file where the data is printed</p></td>
 </tr>
 </tbody>
 </table>
@@ -3079,6 +3070,8 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT )::mass_profile_idx</p></td>
     <span class="c">!  `.FALSE.` otherwise</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:,:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">barycenter</span>
     <span class="c">!# Array storing the centers of mass of the matter objects</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="kd">::</span> <span class="n">barycenter_system</span>
+    <span class="c">!# Array storing the center of mass of the **entire particle distribution**</span>
 
 
     <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">baryon_density_index</span>
@@ -3493,7 +3486,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( IN OUT )::mass_profile_idx</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-15 14:38:14           </p>
+ on 2022-04-19 16:01:41           </p>
         </div>
       </div>
       <br>

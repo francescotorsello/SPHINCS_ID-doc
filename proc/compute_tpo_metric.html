@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.0% of total for procedures.">33 statements</a>
+    title=" 0.0% of total for procedures.">32 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/module_utility.f90"> Source File</a></li>
   </ul>
@@ -120,7 +120,6 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/compute_tpo_metric.html#variable-g3_inv">g3_inv</a>
       <a class="list-group-item" href="../proc/compute_tpo_metric.html#variable-gmat">gmat</a>
       <a class="list-group-item" href="../proc/compute_tpo_metric.html#variable-gmat_inv">gmat_inv</a>
     </div>
@@ -146,8 +145,8 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li>tensor</li>
     <li>matrix</li>
+    <li>tensor</li>
     <li>constants</li>
   </ul>
       </li>
@@ -169,27 +168,27 @@
 <polygon fill="none" stroke="black" points="222,-66 100,-66 100,-42 222,-42 222,-66"/>
 <text text-anchor="middle" x="161" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">compute_tpo_metric</text>
 </g>
-<!-- tensor -->
+<!-- matrix -->
 <g id="proc~~compute_tpo_metric~~UsesGraph_node2" class="node">
-<title>tensor</title>
+<title>matrix</title>
 <polygon fill="#337ab7" stroke="#337ab7" points="59,-108 5,-108 5,-84 59,-84 59,-108"/>
-<text text-anchor="middle" x="32" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tensor</text>
+<text text-anchor="middle" x="32" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
 </g>
-<!-- proc~compute_tpo_metric&#45;&gt;tensor -->
+<!-- proc~compute_tpo_metric&#45;&gt;matrix -->
 <g id="proc~~compute_tpo_metric~~UsesGraph_edge1" class="edge">
-<title>proc~compute_tpo_metric&#45;&gt;tensor</title>
+<title>proc~compute_tpo_metric&#45;&gt;matrix</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M123.61,-66.04C106.45,-71.71 86.04,-78.46 68.95,-84.11"/>
 <polygon fill="#000000" stroke="#000000" points="67.7,-80.84 59.31,-87.3 69.9,-87.48 67.7,-80.84"/>
 </g>
-<!-- matrix -->
+<!-- tensor -->
 <g id="proc~~compute_tpo_metric~~UsesGraph_node3" class="node">
-<title>matrix</title>
+<title>tensor</title>
 <polygon fill="#337ab7" stroke="#337ab7" points="59,-66 5,-66 5,-42 59,-42 59,-66"/>
-<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
+<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tensor</text>
 </g>
-<!-- proc~compute_tpo_metric&#45;&gt;matrix -->
+<!-- proc~compute_tpo_metric&#45;&gt;tensor -->
 <g id="proc~~compute_tpo_metric~~UsesGraph_edge2" class="edge">
-<title>proc~compute_tpo_metric&#45;&gt;matrix</title>
+<title>proc~compute_tpo_metric&#45;&gt;tensor</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M99.85,-54C89.41,-54 78.86,-54 69.31,-54"/>
 <polygon fill="#000000" stroke="#000000" points="69.03,-50.5 59.03,-54 69.03,-57.5 69.03,-50.5"/>
 </g>
@@ -282,25 +281,25 @@
 <tr>
   <td><span class="anchor" id="variable-g4~2"></span>double precision,</td>
 <td>intent(in),</td>
-  <td></td>  <td>DIMENSION(10)</td><td>::</td>
+  <td></td>  <td>DIMENSION(n_sym4x4)</td><td>::</td>
   <td><strong>g4</strong></td><td><p>Covariant spacetime metric</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-lapse~10"></span>double precision,</td>
-<td>intent(inout)</td>
+<td>intent(out)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>lapse</strong></td><td><p>Lapse function</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-shift~3"></span>double precision,</td>
-<td>intent(inout),</td>
+<td>intent(out),</td>
   <td></td>  <td>DIMENSION(3)</td><td>::</td>
   <td><strong>shift</strong></td><td><p>Contravariant shift vector</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-g3~2"></span>double precision,</td>
-<td>intent(inout),</td>
-  <td></td>  <td>DIMENSION(6)</td><td>::</td>
+<td>intent(out),</td>
+  <td></td>  <td>DIMENSION(n_sym3x3)</td><td>::</td>
   <td><strong>g3</strong></td><td><p>Covariant spatial metric</p></td>
 </tr>
 </tbody>
@@ -528,7 +527,6 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/compute_tpo_metric.html#variable-g3_inv">g3_inv</a>
       <a class="list-group-item" href="../proc/compute_tpo_metric.html#variable-gmat">gmat</a>
       <a class="list-group-item" href="../proc/compute_tpo_metric.html#variable-gmat_inv">gmat_inv</a>
     </div>
@@ -550,11 +548,6 @@
     <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
-<tr>
-  <td><span class="anchor" id="variable-g3_inv"></span>double precision,</td>
-<td>public,</td>  <td>DIMENSION(6)</td><td>::</td>
-  <td><strong>g3_inv</strong></td><td></td><td></td><td></td>
-</tr>
 <tr>
   <td><span class="anchor" id="variable-gmat"></span>double precision,</td>
 <td>public,</td>  <td>DIMENSION(3,3)</td><td>::</td>
@@ -595,22 +588,21 @@
     <span class="k">USE </span><span class="n">matrix</span><span class="p">,</span>     <span class="n">ONLY</span><span class="p">:</span> <span class="n">invert_3x3_matrix</span>
     <span class="k">USE </span><span class="n">tensor</span><span class="p">,</span>     <span class="n">ONLY</span><span class="p">:</span> <span class="n">itt</span><span class="p">,</span> <span class="n">itx</span><span class="p">,</span> <span class="n">ity</span><span class="p">,</span> <span class="n">itz</span><span class="p">,</span> <span class="n">ixx</span><span class="p">,</span> <span class="n">ixy</span><span class="p">,</span> <span class="p">&amp;</span>
                           <span class="n">ixz</span><span class="p">,</span> <span class="n">iyy</span><span class="p">,</span> <span class="n">iyz</span><span class="p">,</span> <span class="n">izz</span><span class="p">,</span> <span class="n">jxx</span><span class="p">,</span> <span class="n">jxy</span><span class="p">,</span> <span class="n">jxz</span><span class="p">,</span> <span class="p">&amp;</span>
-                          <span class="n">jyy</span><span class="p">,</span> <span class="n">jyz</span><span class="p">,</span> <span class="n">jzz</span><span class="p">,</span> <span class="n">jx</span><span class="p">,</span> <span class="n">jy</span><span class="p">,</span> <span class="n">jz</span>
+                          <span class="n">jyy</span><span class="p">,</span> <span class="n">jyz</span><span class="p">,</span> <span class="n">jzz</span><span class="p">,</span> <span class="n">jx</span><span class="p">,</span> <span class="n">jy</span><span class="p">,</span> <span class="n">jz</span><span class="p">,</span> <span class="n">n_sym4x4</span><span class="p">,</span> <span class="n">n_sym3x3</span>
 
     <span class="k">IMPLICIT NONE</span>
 
-<span class="k">    </span><span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span>   <span class="kd">::</span> <span class="n">g4</span>
+<span class="k">    </span><span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">n_sym4x4</span><span class="p">),</span>  <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span> <span class="kd">::</span> <span class="n">g4</span>
     <span class="c">!! Covariant spacetime metric</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span>                <span class="k">INTENT</span><span class="p">(</span><span class="n">INOUT</span><span class="p">)</span><span class="kd">::</span> <span class="n">lapse</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span>                       <span class="k">INTENT</span><span class="p">(</span><span class="n">OUT</span><span class="p">)</span><span class="kd">::</span> <span class="n">lapse</span>
     <span class="c">!! Lapse function</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>  <span class="k">INTENT</span><span class="p">(</span><span class="n">INOUT</span><span class="p">)</span><span class="kd">::</span> <span class="n">shift</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>         <span class="k">INTENT</span><span class="p">(</span><span class="n">OUT</span><span class="p">)</span><span class="kd">::</span> <span class="n">shift</span>
     <span class="c">!! Contravariant shift vector</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span>  <span class="k">INTENT</span><span class="p">(</span><span class="n">INOUT</span><span class="p">)</span><span class="kd">::</span> <span class="n">g3</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="n">n_sym3x3</span><span class="p">),</span>  <span class="k">INTENT</span><span class="p">(</span><span class="n">OUT</span><span class="p">)</span><span class="kd">::</span> <span class="n">g3</span>
     <span class="c">!! Covariant spatial metric</span>
 
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">gmat</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">gmat_inv</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">g3_inv</span>
 
     <span class="n">g3</span><span class="p">(</span><span class="n">jxx</span><span class="p">)</span><span class="o">=</span> <span class="n">g4</span><span class="p">(</span><span class="n">ixx</span><span class="p">)</span>
     <span class="n">g3</span><span class="p">(</span><span class="n">jxy</span><span class="p">)</span><span class="o">=</span> <span class="n">g4</span><span class="p">(</span><span class="n">ixy</span><span class="p">)</span>
@@ -662,7 +654,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-15 14:38:14           </p>
+ on 2022-04-19 16:01:41           </p>
         </div>
       </div>
       <br>

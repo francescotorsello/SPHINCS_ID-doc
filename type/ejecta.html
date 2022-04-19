@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 9.6% of total for derived types.</p>Including implementation: 321 statements, 24.8% of total for derived types.">77 statements</a>
+    title="<p> 9.6% of total for derived types.</p>Including implementation: 321 statements, 24.9% of total for derived types.">77 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/module_ejecta_generic.f90"> Source File</a></li>
   </ul>
@@ -786,7 +786,7 @@
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine allocate_gridid_memory(THIS, n_matter)   <a href='../proc/allocate_gridid_memory.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine allocate_gridid_memory(this, n_matter)   <a href='../proc/allocate_gridid_memory.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Allocates allocatable arrays member of a <a href="../type/ejecta.html">ejecta</a> object</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -796,7 +796,7 @@
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -864,7 +864,7 @@
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine deallocate_gridid_memory(THIS)   <a href='../proc/deallocate_gridid_memory.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine deallocate_gridid_memory(this)   <a href='../proc/deallocate_gridid_memory.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Deallocates allocatable arrays member of a <a href="../type/ejecta.html">ejecta</a> object</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -874,7 +874,7 @@
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1131,7 +1131,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public module module function get_eos_ejectaid(THIS)   <a href='../proc/get_eos_ejectaid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_eos_ejectaid(this)   <a href='../proc/get_eos_ejectaid.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_eos_ejectaid">get_eos_ejectaid</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1141,7 +1141,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1200,7 +1200,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma(THIS)   <a href='../proc/get_gamma~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma(this)   <a href='../proc/get_gamma~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_gamma">get_gamma</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1210,7 +1210,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1232,7 +1232,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma0(THIS)   <a href='../proc/get_gamma0~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma0(this)   <a href='../proc/get_gamma0~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_gamma0">get_gamma0</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1242,7 +1242,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1264,7 +1264,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma1(THIS)   <a href='../proc/get_gamma1~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma1(this)   <a href='../proc/get_gamma1~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_gamma1">get_gamma1</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1274,7 +1274,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1296,7 +1296,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma2(THIS)   <a href='../proc/get_gamma2~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma2(this)   <a href='../proc/get_gamma2~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_gamma2">get_gamma2</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1306,7 +1306,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1328,7 +1328,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma3(THIS)   <a href='../proc/get_gamma3~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma3(this)   <a href='../proc/get_gamma3~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_gamma3">get_gamma3</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1338,7 +1338,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1360,7 +1360,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa(THIS)   <a href='../proc/get_kappa~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa(this)   <a href='../proc/get_kappa~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_kappa">get_kappa</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1370,7 +1370,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1392,7 +1392,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa0(THIS)   <a href='../proc/get_kappa0~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa0(this)   <a href='../proc/get_kappa0~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_kappa0">get_kappa0</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1402,7 +1402,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1424,7 +1424,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa1(THIS)   <a href='../proc/get_kappa1~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa1(this)   <a href='../proc/get_kappa1~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_kappa1">get_kappa1</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1434,7 +1434,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1456,7 +1456,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa2(THIS)   <a href='../proc/get_kappa2~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa2(this)   <a href='../proc/get_kappa2~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_kappa2">get_kappa2</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1466,7 +1466,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1488,7 +1488,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa3(THIS)   <a href='../proc/get_kappa3~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa3(this)   <a href='../proc/get_kappa3~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_kappa3">get_kappa3</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1498,7 +1498,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1520,7 +1520,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logP1(THIS)   <a href='../proc/get_logp1~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logP1(this)   <a href='../proc/get_logp1~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_logp1">get_logP1</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1530,7 +1530,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1552,7 +1552,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logRho0(THIS)   <a href='../proc/get_logrho0~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logRho0(this)   <a href='../proc/get_logrho0~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_logrho0">get_logRho0</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1562,7 +1562,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1584,7 +1584,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logRho1(THIS)   <a href='../proc/get_logrho1~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logRho1(this)   <a href='../proc/get_logrho1~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_logrho1">get_logRho1</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1594,7 +1594,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1616,7 +1616,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logRho2(THIS)   <a href='../proc/get_logrho2~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logRho2(this)   <a href='../proc/get_logrho2~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_logrho2">get_logRho2</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1626,7 +1626,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1683,7 +1683,7 @@ Prints a summary of the physical properties the system
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_npeos(THIS)   <a href='../proc/get_npeos~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_npeos(this)   <a href='../proc/get_npeos~2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_npeos">get_npeos</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1693,7 +1693,7 @@ Prints a summary of the physical properties the system
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1959,7 +1959,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine print_summary_ejecta(THIS, filename)   <a href='../proc/print_summary_ejecta.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine print_summary_ejecta(this, filename)   <a href='../proc/print_summary_ejecta.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Prints a summary of the physical properties the system
  to the standard output and, optionally, to a formatted file whose name
  is given as the optional argument <code>filename</code></p>
@@ -1971,7 +1971,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
@@ -1994,7 +1994,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine interpolate_id_full(THIS, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz, baryon_density, energy_density, specific_energy, u_euler_x, u_euler_y, u_euler_z)   <a href='../proc/interpolate_id_full.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine interpolate_id_full(this, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz, baryon_density, energy_density, specific_energy, u_euler_x, u_euler_y, u_euler_z)   <a href='../proc/interpolate_id_full.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the ID in non <a href="../type/ejecta.html">ejecta</a>-member arrays with the same
  shape as the <a href="../type/ejecta.html">ejecta</a> member arrays</p>
     
@@ -2005,7 +2005,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -2178,7 +2178,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine interpolate_id_hydro(THIS, nx, ny, nz, pos, baryon_density, energy_density, specific_energy, pressure, u_euler)   <a href='../proc/interpolate_id_hydro.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine interpolate_id_hydro(this, nx, ny, nz, pos, baryon_density, energy_density, specific_energy, pressure, u_euler)   <a href='../proc/interpolate_id_hydro.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the hydro ID in the arrays needed to compute the constraints
  on the refined mesh</p>
     
@@ -2189,7 +2189,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -2260,7 +2260,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine interpolate_id_k(THIS, n, x, y, z, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz)   <a href='../proc/interpolate_id_k.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine interpolate_id_k(this, n, x, y, z, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz)   <a href='../proc/interpolate_id_k.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the components of the extrinsic curvature in arrays</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -2270,7 +2270,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -2347,7 +2347,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine interpolate_id_mass_b(THIS, x, y, z, g, baryon_density, gamma_euler)   <a href='../proc/interpolate_id_mass_b.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine interpolate_id_mass_b(this, x, y, z, g, baryon_density, gamma_euler)   <a href='../proc/interpolate_id_mass_b.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the hydro ID in the arrays needed to compute the baryon mass</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -2357,7 +2357,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>double precision,</td>
@@ -2410,7 +2410,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine interpolate_id_particles(THIS, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, baryon_density, energy_density, specific_energy, pressure, u_euler_x, u_euler_y, u_euler_z)   <a href='../proc/interpolate_id_particles.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine interpolate_id_particles(this, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, baryon_density, energy_density, specific_energy, pressure, u_euler_x, u_euler_y, u_euler_z)   <a href='../proc/interpolate_id_particles.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the hydro ID in the arrays needed to compute the SPH ID</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -2420,7 +2420,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -2563,7 +2563,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine interpolate_id_spacetime(THIS, nx, ny, nz, pos, lapse, shift, g, ek)   <a href='../proc/interpolate_id_spacetime.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine interpolate_id_spacetime(this, nx, ny, nz, pos, lapse, shift, g, ek)   <a href='../proc/interpolate_id_spacetime.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the spacetime ID in multi-dimensional arrays needed to compute
  the BSSN variables and constraints</p>
     
@@ -2574,7 +2574,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -2644,7 +2644,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function interpolate_mass_density(THIS, x, y, z) result(res)   <a href='../proc/interpolate_mass_density.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function interpolate_mass_density(this, x, y, z) result(res)   <a href='../proc/interpolate_mass_density.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns the \(\texttt{LORENE}\) baryon mass density at a point <script type="math/tex">(x,y,z)</script>
 </p>
     
@@ -2655,7 +2655,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>double precision,</td>
@@ -2695,7 +2695,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function get_barycenter(THIS, i_matter)   <a href='../proc/get_barycenter~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_barycenter(this, i_matter)   <a href='../proc/get_barycenter~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2704,7 +2704,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -2728,7 +2728,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function get_center(THIS, i_matter)   <a href='../proc/get_center~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_center(this, i_matter)   <a href='../proc/get_center~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2737,7 +2737,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -2761,7 +2761,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function get_eos(THIS, i_matter)   <a href='../proc/get_eos~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_eos(this, i_matter)   <a href='../proc/get_eos~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_eos">get_eos</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -2771,7 +2771,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -2795,7 +2795,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine get_eos_parameters(THIS, i_matter, eos_params)   <a href='../proc/get_eos_parameters~4.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine get_eos_parameters(this, i_matter, eos_params)   <a href='../proc/get_eos_parameters~4.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Interface to <a href="../module/ejecta_generic.html#interface-get_eos_parameters">get_eos_parameters</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -2805,7 +2805,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -2834,7 +2834,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function get_mass(THIS, i_matter)   <a href='../proc/get_mass~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_mass(this, i_matter)   <a href='../proc/get_mass~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <a href="../type/ejecta.html#variable-masses~2">masses</a></p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -2844,7 +2844,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -2868,7 +2868,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function get_radii(THIS, i_matter)   <a href='../proc/get_radii~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_radii(this, i_matter)   <a href='../proc/get_radii~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2877,7 +2877,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -3146,7 +3146,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function is_hydro_positive(THIS, x, y, z) result(res)   <a href='../proc/is_hydro_positive~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function is_hydro_positive(this, x, y, z) result(res)   <a href='../proc/is_hydro_positive~3.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns <code>.TRUE.</code> if the energy density or the specific energy or the
  pressure are positivee, <code>.FALSE.</code> otherwise</p>
     
@@ -3157,7 +3157,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/ejecta.html'>ejecta</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/ejecta.html">ejecta</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>double precision,</td>
@@ -3464,7 +3464,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-15 14:38:14           </p>
+ on 2022-04-19 16:01:41           </p>
         </div>
       </div>
       <br>

@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.6% of total for source files.">106 statements</a>
+    title=" 0.6% of total for source files.">104 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_sph_particles_constructor_bin.f90"> Source File</a></li>
   </ul>
@@ -332,190 +332,166 @@
 <a name="ln-61"></a>    <span class="k">USE options</span><span class="p">,</span>        <span class="n">ONLY</span><span class="p">:</span> <span class="n">eos_str</span>
 <a name="ln-62"></a>    <span class="k">USE </span><span class="n">units</span><span class="p">,</span>          <span class="n">ONLY</span><span class="p">:</span> <span class="n">set_units</span>
 <a name="ln-63"></a>    <span class="k">USE </span><span class="n">pwp_EOS</span><span class="p">,</span>        <span class="n">ONLY</span><span class="p">:</span> <span class="n">select_EOS_parameters</span>
-<a name="ln-64"></a>    <span class="k">USE </span><span class="n">sph_variables</span><span class="p">,</span>  <span class="n">ONLY</span><span class="p">:</span> <span class="n">npart</span><span class="p">,</span> <span class="p">&amp;</span>  <span class="c">! particle number</span>
-<a name="ln-65"></a>                              <span class="n">n1</span><span class="p">,</span>    <span class="p">&amp;</span>  <span class="c">! particle number for star 1</span>
-<a name="ln-66"></a>                              <span class="n">n2</span><span class="p">,</span>    <span class="p">&amp;</span>  <span class="c">! particle number for star 2</span>
-<a name="ln-67"></a>                              <span class="n">pos_u</span><span class="p">,</span> <span class="p">&amp;</span>  <span class="c">! particle positions</span>
-<a name="ln-68"></a>                              <span class="n">vel_u</span><span class="p">,</span> <span class="p">&amp;</span>  <span class="c">! particle velocities in</span>
-<a name="ln-69"></a>                                        <span class="c">! coordinate frame</span>
-<a name="ln-70"></a>                              <span class="n">nlrf</span><span class="p">,</span>  <span class="p">&amp;</span>  <span class="c">! baryon number density in</span>
-<a name="ln-71"></a>                                        <span class="c">! local rest frame</span>
-<a name="ln-72"></a>                              <span class="c">!ehat,  &amp;  ! canonical energy per baryon</span>
-<a name="ln-73"></a>                              <span class="n">nu</span><span class="p">,</span>    <span class="p">&amp;</span>  <span class="c">! canonical baryon number per</span>
-<a name="ln-74"></a>                                        <span class="c">! particle</span>
-<a name="ln-75"></a>                              <span class="n">Theta</span><span class="p">,</span> <span class="p">&amp;</span>  <span class="c">! Generalized Lorentz factor</span>
-<a name="ln-76"></a>                              <span class="n">h</span><span class="p">,</span>     <span class="p">&amp;</span>  <span class="c">! Smoothing length</span>
-<a name="ln-77"></a>                              <span class="n">Pr</span><span class="p">,</span>    <span class="p">&amp;</span>  <span class="c">! Pressure</span>
-<a name="ln-78"></a>                              <span class="n">u</span><span class="p">,</span>     <span class="p">&amp;</span>  <span class="c">! Specific internal energy in local</span>
-<a name="ln-79"></a>                                        <span class="c">! rest frame (no kinetic energy)</span>
-<a name="ln-80"></a>                              <span class="n">temp</span><span class="p">,</span>  <span class="p">&amp;</span>  <span class="c">! Temperature</span>
-<a name="ln-81"></a>                              <span class="n">av</span><span class="p">,</span>    <span class="p">&amp;</span>  <span class="c">! Dissipation</span>
-<a name="ln-82"></a>                              <span class="n">ye</span><span class="p">,</span>    <span class="p">&amp;</span>  <span class="c">! Electron fraction</span>
-<a name="ln-83"></a>                              <span class="n">divv</span><span class="p">,</span>  <span class="p">&amp;</span>  <span class="c">! Divergence of velocity vel_u</span>
-<a name="ln-84"></a>                              <span class="n">cs</span><span class="p">,</span>    <span class="p">&amp;</span>  <span class="c">! Sound speed</span>
-<a name="ln-85"></a>                              <span class="n">allocate_SPH_memory</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-86"></a>                              <span class="n">deallocate_SPH_memory</span>
-<a name="ln-87"></a>
-<a name="ln-88"></a>
-<a name="ln-89"></a>    <span class="k">IMPLICIT NONE</span>
-<a name="ln-90"></a>
-<a name="ln-91"></a>
-<a name="ln-92"></a><span class="k">    </span><span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">a</span>
-<a name="ln-93"></a>
-<a name="ln-94"></a>    <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">tmp</span>
+<a name="ln-64"></a>    <span class="k">USE </span><span class="n">sph_variables</span><span class="p">,</span>  <span class="n">ONLY</span><span class="p">:</span> <span class="n">allocate_SPH_memory</span><span class="p">,</span> <span class="n">deallocate_SPH_memory</span>
+<a name="ln-65"></a>
+<a name="ln-66"></a>
+<a name="ln-67"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-68"></a>
+<a name="ln-69"></a>
+<a name="ln-70"></a><span class="k">    </span><span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">a</span>
+<a name="ln-71"></a>
+<a name="ln-72"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">g4</span><span class="p">(</span><span class="n">n_sym4x4</span><span class="p">),</span> <span class="n">det</span><span class="p">,</span> <span class="n">v_norm</span>
+<a name="ln-73"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp1</span>
+<a name="ln-74"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp2</span>
+<a name="ln-75"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp3</span>
+<a name="ln-76"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp4</span>
+<a name="ln-77"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp5</span>
+<a name="ln-78"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp6</span>
+<a name="ln-79"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp7</span>
+<a name="ln-80"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp8</span>
+<a name="ln-81"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp9</span>
+<a name="ln-82"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp10</span>
+<a name="ln-83"></a>
+<a name="ln-84"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">sq_detg4</span>
+<a name="ln-85"></a>
+<a name="ln-86"></a>
+<a name="ln-87"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** Assigning the ID to the particles...&quot;</span>
+<a name="ln-88"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-89"></a>
+<a name="ln-90"></a>    <span class="k">CALL </span><span class="n">set_units</span><span class="p">(</span><span class="s1">&#39;NSM&#39;</span><span class="p">)</span>
+<a name="ln-91"></a>    <span class="k">CALL </span><span class="n">read_options</span>
+<a name="ln-92"></a>
+<a name="ln-93"></a>    <span class="k">CALL </span><span class="n">parts</span><span class="p">%</span> <span class="n">read_sphincs_dump_print_formatted</span><span class="p">(</span> <span class="n">namefile_bin</span><span class="o">=</span> <span class="n">namefile</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-94"></a>                                                   <span class="n">save_data</span>   <span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span> <span class="p">)</span>
 <a name="ln-95"></a>
-<a name="ln-96"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">g4</span><span class="p">(</span><span class="n">n_sym4x4</span><span class="p">),</span> <span class="n">det</span><span class="p">,</span> <span class="n">v_norm</span>
-<a name="ln-97"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp1</span>
-<a name="ln-98"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp2</span>
-<a name="ln-99"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp3</span>
-<a name="ln-100"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp4</span>
-<a name="ln-101"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp5</span>
-<a name="ln-102"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp6</span>
-<a name="ln-103"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp7</span>
-<a name="ln-104"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp8</span>
-<a name="ln-105"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp9</span>
-<a name="ln-106"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">tmp10</span>
-<a name="ln-107"></a>
-<a name="ln-108"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">sq_detg4</span>
-<a name="ln-109"></a>
-<a name="ln-110"></a>
-<a name="ln-111"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** Assigning the ID to the particles...&quot;</span>
-<a name="ln-112"></a>    <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-113"></a>
-<a name="ln-114"></a>    <span class="k">CALL </span><span class="n">set_units</span><span class="p">(</span><span class="s1">&#39;NSM&#39;</span><span class="p">)</span>
-<a name="ln-115"></a>    <span class="k">CALL </span><span class="n">read_options</span>
-<a name="ln-116"></a>
-<a name="ln-117"></a>    <span class="k">CALL </span><span class="n">parts</span><span class="p">%</span> <span class="n">read_sphincs_dump_print_formatted</span><span class="p">(</span> <span class="n">namefile_bin</span><span class="o">=</span> <span class="n">namefile</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-118"></a>                                                   <span class="n">save_data</span>   <span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span> <span class="p">)</span>
-<a name="ln-119"></a>
-<a name="ln-120"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp1</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
-<a name="ln-121"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp2</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
-<a name="ln-122"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp3</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
-<a name="ln-123"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp4</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
-<a name="ln-124"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp5</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
-<a name="ln-125"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp6</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
-<a name="ln-126"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp7</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
-<a name="ln-127"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp8</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
-<a name="ln-128"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp9</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
-<a name="ln-129"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp10</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
-<a name="ln-130"></a>
-<a name="ln-131"></a>    <span class="k">CALL </span><span class="n">id</span><span class="p">%</span> <span class="n">read_id_particles</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-132"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">pos</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:</span> <span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-133"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">pos</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="p">:</span> <span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-134"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">pos</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="p">:</span> <span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-135"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">lapse</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-136"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">shift_x</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-137"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">shift_y</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-138"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">shift_z</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-139"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_xx</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-140"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_xy</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-141"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_xz</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-142"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_yy</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-143"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_yz</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-144"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_zz</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-145"></a>                                <span class="n">tmp4</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-146"></a>                                <span class="n">tmp5</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-147"></a>                                <span class="n">tmp6</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-148"></a>                                <span class="n">tmp7</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-149"></a>                                <span class="n">tmp8</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-150"></a>                                <span class="n">tmp9</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-151"></a>                                <span class="n">tmp10</span> <span class="p">)</span>
-<a name="ln-152"></a>
-<a name="ln-153"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp1</span>  <span class="p">)</span>
-<a name="ln-154"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp2</span>  <span class="p">)</span>
-<a name="ln-155"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp3</span>  <span class="p">)</span>
-<a name="ln-156"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp4</span>  <span class="p">)</span>
-<a name="ln-157"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp5</span>  <span class="p">)</span>
-<a name="ln-158"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp6</span>  <span class="p">)</span>
-<a name="ln-159"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp7</span>  <span class="p">)</span>
-<a name="ln-160"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp8</span>  <span class="p">)</span>
-<a name="ln-161"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp9</span>  <span class="p">)</span>
-<a name="ln-162"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp10</span> <span class="p">)</span>
+<a name="ln-96"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp1</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-97"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp2</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-98"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp3</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-99"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp4</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-100"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp5</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-101"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp6</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-102"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp7</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-103"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp8</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-104"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp9</span> <span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-105"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">tmp10</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-106"></a>
+<a name="ln-107"></a>    <span class="k">CALL </span><span class="n">id</span><span class="p">%</span> <span class="n">read_id_particles</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-108"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">pos</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:</span> <span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-109"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">pos</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="p">:</span> <span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-110"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">pos</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="p">:</span> <span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-111"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">lapse</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-112"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">shift_x</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-113"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">shift_y</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-114"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">shift_z</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-115"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_xx</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-116"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_xy</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-117"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_xz</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-118"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_yy</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-119"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_yz</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-120"></a>                                <span class="n">parts</span><span class="p">%</span> <span class="n">g_zz</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-121"></a>                                <span class="n">tmp4</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-122"></a>                                <span class="n">tmp5</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-123"></a>                                <span class="n">tmp6</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-124"></a>                                <span class="n">tmp7</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-125"></a>                                <span class="n">tmp8</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-126"></a>                                <span class="n">tmp9</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-127"></a>                                <span class="n">tmp10</span> <span class="p">)</span>
+<a name="ln-128"></a>
+<a name="ln-129"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp1</span>  <span class="p">)</span>
+<a name="ln-130"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp2</span>  <span class="p">)</span>
+<a name="ln-131"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp3</span>  <span class="p">)</span>
+<a name="ln-132"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp4</span>  <span class="p">)</span>
+<a name="ln-133"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp5</span>  <span class="p">)</span>
+<a name="ln-134"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp6</span>  <span class="p">)</span>
+<a name="ln-135"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp7</span>  <span class="p">)</span>
+<a name="ln-136"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp8</span>  <span class="p">)</span>
+<a name="ln-137"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp9</span>  <span class="p">)</span>
+<a name="ln-138"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">tmp10</span> <span class="p">)</span>
+<a name="ln-139"></a>
+<a name="ln-140"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">sq_detg4</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
+<a name="ln-141"></a>
+<a name="ln-142"></a>    <span class="k">DO </span><span class="n">a</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-143"></a>
+<a name="ln-144"></a>      <span class="k">CALL </span><span class="n">compute_g4</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">lapse</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-145"></a>            <span class="p">[</span><span class="n">parts</span><span class="p">%</span> <span class="n">shift_x</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">shift_y</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">shift_z</span><span class="p">(</span><span class="n">a</span><span class="p">)],</span> <span class="p">&amp;</span>
+<a name="ln-146"></a>            <span class="p">[</span><span class="n">parts</span><span class="p">%</span> <span class="n">g_xx</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">g_xy</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">g_xz</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-147"></a>             <span class="n">parts</span><span class="p">%</span> <span class="n">g_yy</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">g_yz</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">g_zz</span><span class="p">(</span><span class="n">a</span><span class="p">)],</span> <span class="p">&amp;</span>
+<a name="ln-148"></a>             <span class="n">g4</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_sym4x4</span><span class="p">)</span> <span class="p">)</span>
+<a name="ln-149"></a>
+<a name="ln-150"></a>      <span class="k">CALL </span><span class="n">determinant_sym4x4</span><span class="p">(</span> <span class="n">g4</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_sym4x4</span><span class="p">),</span> <span class="n">det</span> <span class="p">)</span>
+<a name="ln-151"></a>      <span class="k">IF</span><span class="p">(</span> <span class="nb">ABS</span><span class="p">(</span><span class="n">det</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="n">D</span><span class="o">-</span><span class="mi">10</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-152"></a><span class="k">          PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The determinant of the spacetime metric is &quot;</span> <span class="p">&amp;</span>
+<a name="ln-153"></a>                   <span class="o">//</span> <span class="s2">&quot;effectively 0 at particle &quot;</span><span class="p">,</span> <span class="n">a</span>
+<a name="ln-154"></a>          <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-155"></a>          <span class="k">STOP</span>
+<a name="ln-156"></a><span class="k">      </span><span class="n">ELSEIF</span><span class="p">(</span> <span class="n">det</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-157"></a><span class="k">          PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The determinant of the spacetime metric is &quot;</span> <span class="p">&amp;</span>
+<a name="ln-158"></a>                   <span class="o">//</span> <span class="s2">&quot;positive at particle &quot;</span><span class="p">,</span> <span class="n">a</span>
+<a name="ln-159"></a>          <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-160"></a>          <span class="k">STOP</span>
+<a name="ln-161"></a><span class="k">      </span><span class="n">ENDIF</span>
+<a name="ln-162"></a>      <span class="n">sq_detg4</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">=</span> <span class="nb">SQRT</span><span class="p">(</span><span class="o">-</span><span class="n">det</span><span class="p">)</span>
 <a name="ln-163"></a>
-<a name="ln-164"></a>    <span class="k">ALLOCATE</span><span class="p">(</span> <span class="n">sq_detg4</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span> <span class="p">)</span> <span class="p">)</span>
-<a name="ln-165"></a>
-<a name="ln-166"></a>    <span class="k">DO </span><span class="n">a</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span><span class="p">,</span> <span class="mi">1</span>
-<a name="ln-167"></a>
-<a name="ln-168"></a>      <span class="k">CALL </span><span class="n">compute_g4</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">lapse</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-169"></a>            <span class="p">[</span><span class="n">parts</span><span class="p">%</span> <span class="n">shift_x</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">shift_y</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">shift_z</span><span class="p">(</span><span class="n">a</span><span class="p">)],</span> <span class="p">&amp;</span>
-<a name="ln-170"></a>            <span class="p">[</span><span class="n">parts</span><span class="p">%</span> <span class="n">g_xx</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">g_xy</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">g_xz</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-171"></a>             <span class="n">parts</span><span class="p">%</span> <span class="n">g_yy</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">g_yz</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">parts</span><span class="p">%</span> <span class="n">g_zz</span><span class="p">(</span><span class="n">a</span><span class="p">)],</span> <span class="p">&amp;</span>
-<a name="ln-172"></a>             <span class="n">g4</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_sym4x4</span><span class="p">)</span> <span class="p">)</span>
-<a name="ln-173"></a>
-<a name="ln-174"></a>      <span class="k">CALL </span><span class="n">determinant_sym4x4</span><span class="p">(</span> <span class="n">g4</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n_sym4x4</span><span class="p">),</span> <span class="n">det</span> <span class="p">)</span>
-<a name="ln-175"></a>      <span class="k">IF</span><span class="p">(</span> <span class="nb">ABS</span><span class="p">(</span><span class="n">det</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="n">D</span><span class="o">-</span><span class="mi">10</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-176"></a><span class="k">          PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The determinant of the spacetime metric is &quot;</span> <span class="p">&amp;</span>
-<a name="ln-177"></a>                   <span class="o">//</span> <span class="s2">&quot;effectively 0 at particle &quot;</span><span class="p">,</span> <span class="n">a</span>
-<a name="ln-178"></a>          <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-179"></a>          <span class="k">STOP</span>
-<a name="ln-180"></a><span class="k">      </span><span class="n">ELSEIF</span><span class="p">(</span> <span class="n">det</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-181"></a><span class="k">          PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The determinant of the spacetime metric is &quot;</span> <span class="p">&amp;</span>
-<a name="ln-182"></a>                   <span class="o">//</span> <span class="s2">&quot;positive at particle &quot;</span><span class="p">,</span> <span class="n">a</span>
-<a name="ln-183"></a>          <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-184"></a>          <span class="k">STOP</span>
-<a name="ln-185"></a><span class="k">      </span><span class="n">ENDIF</span>
-<a name="ln-186"></a>      <span class="n">sq_detg4</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">=</span> <span class="nb">SQRT</span><span class="p">(</span><span class="o">-</span><span class="n">det</span><span class="p">)</span>
-<a name="ln-187"></a>
-<a name="ln-188"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">theta</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">zero</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-189"></a><span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The computing frame generalized Lorentz factor &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-190"></a>                 <span class="s2">&quot;is negative at particle  &quot;</span><span class="p">,</span> <span class="n">a</span>
-<a name="ln-191"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Its value is &quot;</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">theta</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a name="ln-192"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Stopping..&quot;</span>
-<a name="ln-193"></a>        <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-194"></a>        <span class="k">STOP</span>
-<a name="ln-195"></a><span class="k">      </span><span class="n">ELSEIF</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">theta</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="n">zero</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-196"></a><span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The computing frame generalized Lorentz factor &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-197"></a>                 <span class="s2">&quot;is zero at particle &quot;</span><span class="p">,</span> <span class="n">a</span>
-<a name="ln-198"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Its value is &quot;</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">theta</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<a name="ln-199"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Stopping..&quot;</span>
-<a name="ln-200"></a>        <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-201"></a>        <span class="k">STOP</span>
-<a name="ln-202"></a><span class="k">      </span><span class="n">ENDIF</span>
+<a name="ln-164"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">theta</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">zero</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-165"></a><span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The computing frame generalized Lorentz factor &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-166"></a>                 <span class="s2">&quot;is negative at particle  &quot;</span><span class="p">,</span> <span class="n">a</span>
+<a name="ln-167"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Its value is &quot;</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">theta</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a name="ln-168"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Stopping..&quot;</span>
+<a name="ln-169"></a>        <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-170"></a>        <span class="k">STOP</span>
+<a name="ln-171"></a><span class="k">      </span><span class="n">ELSEIF</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">theta</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="n">zero</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-172"></a><span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The computing frame generalized Lorentz factor &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-173"></a>                 <span class="s2">&quot;is zero at particle &quot;</span><span class="p">,</span> <span class="n">a</span>
+<a name="ln-174"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Its value is &quot;</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">theta</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a name="ln-175"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Stopping..&quot;</span>
+<a name="ln-176"></a>        <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-177"></a>        <span class="k">STOP</span>
+<a name="ln-178"></a><span class="k">      </span><span class="n">ENDIF</span>
+<a name="ln-179"></a>
+<a name="ln-180"></a>      <span class="n">v_norm</span><span class="o">=</span> <span class="n">zero</span>
+<a name="ln-181"></a>      <span class="k">CALL </span><span class="n">spacetime_vector_norm_sym4x4</span><span class="p">(</span> <span class="n">g4</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">v</span><span class="p">(:,</span><span class="n">a</span><span class="p">),</span> <span class="n">v_norm</span> <span class="p">)</span>
+<a name="ln-182"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">v_norm</span> <span class="o">&gt;</span> <span class="n">zero</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-183"></a><span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The computing frame particle 4-velocity is &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-184"></a>                 <span class="s2">&quot;spacelike at particle &quot;</span><span class="p">,</span> <span class="n">a</span>
+<a name="ln-185"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Its norm is &quot;</span><span class="p">,</span> <span class="n">v_norm</span>
+<a name="ln-186"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Stopping..&quot;</span>
+<a name="ln-187"></a>        <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-188"></a>        <span class="k">STOP</span>
+<a name="ln-189"></a><span class="k">      </span><span class="n">ELSEIF</span><span class="p">(</span> <span class="n">v_norm</span> <span class="o">==</span> <span class="n">zero</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-190"></a><span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The computing frame particle 4-velocity is &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-191"></a>                 <span class="s2">&quot;null at particle &quot;</span><span class="p">,</span> <span class="n">a</span>
+<a name="ln-192"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Its norm is &quot;</span><span class="p">,</span> <span class="n">v_norm</span>
+<a name="ln-193"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Stopping..&quot;</span>
+<a name="ln-194"></a>        <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-195"></a>        <span class="k">STOP</span>
+<a name="ln-196"></a><span class="k">      </span><span class="n">ENDIF</span>
+<a name="ln-197"></a>
+<a name="ln-198"></a>    <span class="n">ENDDO</span>
+<a name="ln-199"></a>
+<a name="ln-200"></a>    <span class="n">parts</span><span class="p">%</span> <span class="n">nstar_int</span><span class="o">=</span> <span class="n">parts</span><span class="p">%</span> <span class="n">nlrf_int</span><span class="o">*</span><span class="n">sq_detg4</span><span class="o">*</span><span class="n">parts</span><span class="p">%</span> <span class="n">theta</span>
+<a name="ln-201"></a>
+<a name="ln-202"></a>    <span class="k">CALL </span><span class="n">allocate_sph_memory</span>
 <a name="ln-203"></a>
-<a name="ln-204"></a>      <span class="n">v_norm</span><span class="o">=</span> <span class="n">zero</span>
-<a name="ln-205"></a>      <span class="k">CALL </span><span class="n">spacetime_vector_norm_sym4x4</span><span class="p">(</span> <span class="n">g4</span><span class="p">,</span> <span class="n">parts</span><span class="p">%</span> <span class="n">v</span><span class="p">(:,</span><span class="n">a</span><span class="p">),</span> <span class="n">v_norm</span> <span class="p">)</span>
-<a name="ln-206"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">v_norm</span> <span class="o">&gt;</span> <span class="n">zero</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-207"></a><span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The computing frame particle 4-velocity is &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-208"></a>                 <span class="s2">&quot;spacelike at particle &quot;</span><span class="p">,</span> <span class="n">a</span>
-<a name="ln-209"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Its norm is &quot;</span><span class="p">,</span> <span class="n">v_norm</span>
-<a name="ln-210"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Stopping..&quot;</span>
-<a name="ln-211"></a>        <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-212"></a>        <span class="k">STOP</span>
-<a name="ln-213"></a><span class="k">      </span><span class="n">ELSEIF</span><span class="p">(</span> <span class="n">v_norm</span> <span class="o">==</span> <span class="n">zero</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-214"></a><span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR! The computing frame particle 4-velocity is &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-215"></a>                 <span class="s2">&quot;null at particle &quot;</span><span class="p">,</span> <span class="n">a</span>
-<a name="ln-216"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Its norm is &quot;</span><span class="p">,</span> <span class="n">v_norm</span>
-<a name="ln-217"></a>        <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Stopping..&quot;</span>
-<a name="ln-218"></a>        <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-219"></a>        <span class="k">STOP</span>
-<a name="ln-220"></a><span class="k">      </span><span class="n">ENDIF</span>
+<a name="ln-204"></a>    <span class="c">!CALL OMP_SET_NUM_THREADS(1)</span>
+<a name="ln-205"></a>
+<a name="ln-206"></a>    <span class="k">CALL </span><span class="n">select_EOS_parameters</span><span class="p">(</span> <span class="n">eos_str</span> <span class="p">)</span>
+<a name="ln-207"></a>
+<a name="ln-208"></a>    <span class="k">CALL </span><span class="n">parts</span><span class="p">%</span> <span class="n">test_recovery</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span><span class="p">,</span>       <span class="p">&amp;</span>
+<a name="ln-209"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">pos</span><span class="p">,</span>         <span class="p">&amp;</span>
+<a name="ln-210"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">nlrf_int</span><span class="p">,</span>    <span class="p">&amp;</span>
+<a name="ln-211"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">u_pwp</span><span class="p">,</span>       <span class="p">&amp;</span>
+<a name="ln-212"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">pressure_cu</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-213"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,:),</span>    <span class="p">&amp;</span>
+<a name="ln-214"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">theta</span><span class="p">,</span>       <span class="p">&amp;</span>
+<a name="ln-215"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">nstar_int</span> <span class="p">)</span>
+<a name="ln-216"></a>
+<a name="ln-217"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">sq_detg4</span> <span class="p">)</span>
+<a name="ln-218"></a>    <span class="k">CALL </span><span class="n">deallocate_sph_memory</span>
+<a name="ln-219"></a>
+<a name="ln-220"></a>  <span class="k">END PROCEDURE </span><span class="n">construct_particles_bin</span>
 <a name="ln-221"></a>
-<a name="ln-222"></a>    <span class="n">ENDDO</span>
-<a name="ln-223"></a>
-<a name="ln-224"></a>    <span class="n">parts</span><span class="p">%</span> <span class="n">nstar_int</span><span class="o">=</span> <span class="n">parts</span><span class="p">%</span> <span class="n">nlrf_int</span><span class="o">*</span><span class="n">sq_detg4</span><span class="o">*</span><span class="n">parts</span><span class="p">%</span> <span class="n">theta</span>
-<a name="ln-225"></a>
-<a name="ln-226"></a>    <span class="k">CALL </span><span class="n">allocate_sph_memory</span>
-<a name="ln-227"></a>
-<a name="ln-228"></a>    <span class="k">CALL </span><span class="n">OMP_SET_NUM_THREADS</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a name="ln-229"></a>
-<a name="ln-230"></a>    <span class="k">CALL </span><span class="n">select_EOS_parameters</span><span class="p">(</span> <span class="n">eos_str</span> <span class="p">)</span>
-<a name="ln-231"></a>
-<a name="ln-232"></a>    <span class="k">CALL </span><span class="n">parts</span><span class="p">%</span> <span class="n">test_recovery</span><span class="p">(</span> <span class="n">parts</span><span class="p">%</span> <span class="n">npart</span><span class="p">,</span>       <span class="p">&amp;</span>
-<a name="ln-233"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">pos</span><span class="p">,</span>         <span class="p">&amp;</span>
-<a name="ln-234"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">nlrf_int</span><span class="p">,</span>    <span class="p">&amp;</span>
-<a name="ln-235"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">u_pwp</span><span class="p">,</span>       <span class="p">&amp;</span>
-<a name="ln-236"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">pressure_cu</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-237"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,:),</span>    <span class="p">&amp;</span>
-<a name="ln-238"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">theta</span><span class="p">,</span>       <span class="p">&amp;</span>
-<a name="ln-239"></a>                               <span class="n">parts</span><span class="p">%</span> <span class="n">nstar_int</span> <span class="p">)</span>
-<a name="ln-240"></a>
-<a name="ln-241"></a>    <span class="k">DEALLOCATE</span><span class="p">(</span> <span class="n">sq_detg4</span> <span class="p">)</span>
-<a name="ln-242"></a>    <span class="k">CALL </span><span class="n">deallocate_sph_memory</span>
-<a name="ln-243"></a>
-<a name="ln-244"></a>  <span class="k">END PROCEDURE </span><span class="n">construct_particles_bin</span>
-<a name="ln-245"></a>
-<a name="ln-246"></a>
-<a name="ln-247"></a><span class="k">END SUBMODULE </span><span class="n">constructor_bin</span>
+<a name="ln-222"></a>
+<a name="ln-223"></a><span class="k">END SUBMODULE </span><span class="n">constructor_bin</span>
 </pre></div>
 
     </section>
@@ -534,7 +510,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-15 14:38:14           </p>
+ on 2022-04-19 16:01:41           </p>
         </div>
       </div>
       <br>

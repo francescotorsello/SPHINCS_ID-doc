@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.9% of total for source files.">157 statements</a>
+    title=" 0.9% of total for source files.">156 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_ejecta_generic_interpolate.f90"> Source File</a></li>
   </ul>
@@ -385,8 +385,8 @@
 <a name="ln-114"></a><span class="k">    </span><span class="kt">LOGICAL</span><span class="p">,</span> <span class="k">PARAMETER</span><span class="kd">::</span> <span class="n">debug</span><span class="o">=</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.</span>
 <a name="ln-115"></a>    <span class="c">!</span>
 <a name="ln-116"></a>
-<a name="ln-117"></a>    <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">i_eps</span><span class="p">,</span> <span class="n">i_vel</span>
-<a name="ln-118"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">zp</span><span class="p">,</span> <span class="n">min_eps</span><span class="p">,</span> <span class="n">min_vel</span><span class="p">,</span> <span class="n">xtmp</span><span class="p">,</span> <span class="n">ytmp</span><span class="p">,</span> <span class="n">ztmp</span><span class="p">,</span> <span class="n">xsgn</span><span class="p">,</span> <span class="n">ysgn</span><span class="p">,</span> <span class="n">zsgn</span>
+<a name="ln-117"></a>    <span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span>
+<a name="ln-118"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">zp</span><span class="p">,</span> <span class="n">xtmp</span><span class="p">,</span> <span class="n">ytmp</span><span class="p">,</span> <span class="n">ztmp</span>
 <a name="ln-119"></a>
 <a name="ln-120"></a>    <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="p">:</span> <span class="p">),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">finalnamefile</span>
 <a name="ln-121"></a>    <span class="kt">LOGICAL</span><span class="kd">::</span> <span class="n">exist</span>
@@ -658,110 +658,104 @@
 <a name="ln-387"></a>
 <a name="ln-388"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-389"></a>
-<a name="ln-390"></a>
-<a name="ln-391"></a><span class="k">    </span><span class="kt">INTEGER</span><span class="kd">::</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">ierr</span><span class="p">,</span> <span class="n">sgn_z</span>
-<a name="ln-392"></a>
-<a name="ln-393"></a>    <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="n">xd</span><span class="p">,</span> <span class="n">yd</span><span class="p">,</span> <span class="n">zd</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-394"></a>                       <span class="n">c000</span><span class="p">,</span> <span class="n">c001</span><span class="p">,</span> <span class="n">c010</span><span class="p">,</span> <span class="n">c100</span><span class="p">,</span> <span class="n">c011</span><span class="p">,</span> <span class="n">c110</span><span class="p">,</span> <span class="n">c101</span><span class="p">,</span> <span class="n">c111</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-395"></a>                       <span class="n">c00</span><span class="p">,</span> <span class="n">c01</span><span class="p">,</span> <span class="n">c10</span><span class="p">,</span> <span class="n">c11</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">zp</span><span class="p">,</span> <span class="n">x_ell</span><span class="p">,</span> <span class="n">y_ell</span><span class="p">,</span> <span class="n">z_ell</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-396"></a>                       <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">r</span>
-<a name="ln-397"></a>
-<a name="ln-398"></a>    <span class="n">zp</span><span class="o">=</span> <span class="n">z</span>
-<a name="ln-399"></a>    <span class="n">res</span><span class="o">=</span> <span class="n">trilinear_interpolation</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">zp</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-400"></a>                                  <span class="n">THIS</span><span class="p">%</span> <span class="n">nx_grid</span><span class="p">,</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">ny_grid</span><span class="p">,</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">nz_grid</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-401"></a>                                  <span class="n">THIS</span><span class="p">%</span> <span class="n">grid</span><span class="p">,</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">baryon_mass_density</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-402"></a>                                  <span class="n">equator_symmetry</span><span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.,</span> <span class="nb">parity</span><span class="o">=</span> <span class="n">one</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-403"></a>                                  <span class="n">debug</span><span class="o">=</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.</span> <span class="p">)</span>
-<a name="ln-404"></a>
-<a name="ln-405"></a>    <span class="k">CALL </span><span class="n">spherical_from_cartesian</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-406"></a>                  <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">&amp;</span>
-<a name="ln-407"></a>                                   <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">)</span>
+<a name="ln-390"></a><span class="k">    </span><span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">zp</span><span class="p">,</span> <span class="n">x_ell</span><span class="p">,</span> <span class="n">y_ell</span><span class="p">,</span> <span class="n">z_ell</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">r</span>
+<a name="ln-391"></a>
+<a name="ln-392"></a>    <span class="n">zp</span><span class="o">=</span> <span class="n">z</span>
+<a name="ln-393"></a>    <span class="n">res</span><span class="o">=</span> <span class="n">trilinear_interpolation</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">zp</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-394"></a>                                  <span class="n">THIS</span><span class="p">%</span> <span class="n">nx_grid</span><span class="p">,</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">ny_grid</span><span class="p">,</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">nz_grid</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-395"></a>                                  <span class="n">THIS</span><span class="p">%</span> <span class="n">grid</span><span class="p">,</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">baryon_mass_density</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-396"></a>                                  <span class="n">equator_symmetry</span><span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.,</span> <span class="nb">parity</span><span class="o">=</span> <span class="n">one</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-397"></a>                                  <span class="n">debug</span><span class="o">=</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.</span> <span class="p">)</span>
+<a name="ln-398"></a>
+<a name="ln-399"></a>    <span class="k">CALL </span><span class="n">spherical_from_cartesian</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-400"></a>                  <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">&amp;</span>
+<a name="ln-401"></a>                                   <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">)</span>
+<a name="ln-402"></a>
+<a name="ln-403"></a>    <span class="n">x_ell</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-404"></a>           <span class="o">+</span> <span class="nb">MAX</span><span class="p">(</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="nb">COS</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<a name="ln-405"></a>
+<a name="ln-406"></a>    <span class="n">y_ell</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-407"></a>           <span class="o">+</span> <span class="nb">MAX</span><span class="p">(</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
 <a name="ln-408"></a>
-<a name="ln-409"></a>    <span class="n">x_ell</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">&amp;</span>
-<a name="ln-410"></a>           <span class="o">+</span> <span class="nb">MAX</span><span class="p">(</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="nb">COS</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<a name="ln-409"></a>    <span class="n">z_ell</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-410"></a>           <span class="o">+</span> <span class="nb">MAX</span><span class="p">(</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span><span class="o">*</span><span class="nb">COS</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
 <a name="ln-411"></a>
-<a name="ln-412"></a>    <span class="n">y_ell</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">&amp;</span>
-<a name="ln-413"></a>           <span class="o">+</span> <span class="nb">MAX</span><span class="p">(</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="nb">SIN</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<a name="ln-414"></a>
-<a name="ln-415"></a>    <span class="n">z_ell</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">&amp;</span>
-<a name="ln-416"></a>           <span class="o">+</span> <span class="nb">MAX</span><span class="p">(</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">THIS</span><span class="p">%</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span><span class="o">*</span><span class="nb">COS</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<a name="ln-412"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">r</span> <span class="o">&gt;=</span> <span class="nb">SQRT</span><span class="p">(</span> <span class="p">(</span> <span class="n">x_ell</span> <span class="o">-</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="n">two</span> <span class="p">&amp;</span>
+<a name="ln-413"></a>                 <span class="o">+</span> <span class="p">(</span> <span class="n">y_ell</span> <span class="o">-</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="n">two</span> <span class="p">&amp;</span>
+<a name="ln-414"></a>                 <span class="o">+</span> <span class="p">(</span> <span class="n">z_ell</span> <span class="o">-</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="n">two</span> <span class="p">)</span> <span class="p">)</span> <span class="n">res</span><span class="o">=</span> <span class="n">zero</span>
+<a name="ln-415"></a>
+<a name="ln-416"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">res</span> <span class="o">&lt;</span> <span class="n">zero</span> <span class="p">)</span> <span class="n">res</span><span class="o">=</span> <span class="n">zero</span>
 <a name="ln-417"></a>
-<a name="ln-418"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">r</span> <span class="o">&gt;=</span> <span class="nb">SQRT</span><span class="p">(</span> <span class="p">(</span> <span class="n">x_ell</span> <span class="o">-</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="n">two</span> <span class="p">&amp;</span>
-<a name="ln-419"></a>                 <span class="o">+</span> <span class="p">(</span> <span class="n">y_ell</span> <span class="o">-</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="n">two</span> <span class="p">&amp;</span>
-<a name="ln-420"></a>                 <span class="o">+</span> <span class="p">(</span> <span class="n">z_ell</span> <span class="o">-</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">centers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span><span class="o">**</span><span class="n">two</span> <span class="p">)</span> <span class="p">)</span> <span class="n">res</span><span class="o">=</span> <span class="n">zero</span>
-<a name="ln-421"></a>
-<a name="ln-422"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">res</span> <span class="o">&lt;</span> <span class="n">zero</span> <span class="p">)</span> <span class="n">res</span><span class="o">=</span> <span class="n">zero</span>
+<a name="ln-418"></a>  <span class="c">!  IF(      x &gt; THIS% centers(1,1) + THIS% sizes(1,2) &amp;</span>
+<a name="ln-419"></a>  <span class="c">!      .OR. x &lt; THIS% centers(1,1) - THIS% sizes(1,1) &amp;</span>
+<a name="ln-420"></a>  <span class="c">!      .OR. y &gt; THIS% centers(1,2) + THIS% sizes(1,4) &amp;</span>
+<a name="ln-421"></a>  <span class="c">!      .OR. y &lt; THIS% centers(1,2) - THIS% sizes(1,3) &amp;</span>
+<a name="ln-422"></a>  <span class="c">!      .OR. zp &gt; THIS% centers(1,3) + THIS% sizes(1,6) ) res= zero</span>
 <a name="ln-423"></a>
-<a name="ln-424"></a>  <span class="c">!  IF(      x &gt; THIS% centers(1,1) + THIS% sizes(1,2) &amp;</span>
-<a name="ln-425"></a>  <span class="c">!      .OR. x &lt; THIS% centers(1,1) - THIS% sizes(1,1) &amp;</span>
-<a name="ln-426"></a>  <span class="c">!      .OR. y &gt; THIS% centers(1,2) + THIS% sizes(1,4) &amp;</span>
-<a name="ln-427"></a>  <span class="c">!      .OR. y &lt; THIS% centers(1,2) - THIS% sizes(1,3) &amp;</span>
-<a name="ln-428"></a>  <span class="c">!      .OR. zp &gt; THIS% centers(1,3) + THIS% sizes(1,6) ) res= zero</span>
+<a name="ln-424"></a>  <span class="c">!   IF(      x &gt; THIS% xR_grid &amp;</span>
+<a name="ln-425"></a>  <span class="c">!       .OR. x &lt; THIS% xL_grid &amp;</span>
+<a name="ln-426"></a>  <span class="c">!       .OR. y &gt; THIS% yR_grid &amp;</span>
+<a name="ln-427"></a>  <span class="c">!       .OR. y &lt; THIS% yL_grid &amp;</span>
+<a name="ln-428"></a>  <span class="c">!       .OR. zp &gt; THIS% zR_grid ) res= zero</span>
 <a name="ln-429"></a>
-<a name="ln-430"></a>  <span class="c">!   IF(      x &gt; THIS% xR_grid &amp;</span>
-<a name="ln-431"></a>  <span class="c">!       .OR. x &lt; THIS% xL_grid &amp;</span>
-<a name="ln-432"></a>  <span class="c">!       .OR. y &gt; THIS% yR_grid &amp;</span>
-<a name="ln-433"></a>  <span class="c">!       .OR. y &lt; THIS% yL_grid &amp;</span>
-<a name="ln-434"></a>  <span class="c">!       .OR. zp &gt; THIS% zR_grid ) res= zero</span>
-<a name="ln-435"></a>
-<a name="ln-436"></a>  <span class="k">END PROCEDURE </span><span class="n">interpolate_mass_density</span>
-<a name="ln-437"></a>
-<a name="ln-438"></a>
-<a name="ln-439"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">interpolate_spatial_metric</span>
-<a name="ln-440"></a>
+<a name="ln-430"></a>  <span class="k">END PROCEDURE </span><span class="n">interpolate_mass_density</span>
+<a name="ln-431"></a>
+<a name="ln-432"></a>
+<a name="ln-433"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">interpolate_spatial_metric</span>
+<a name="ln-434"></a>
+<a name="ln-435"></a>    <span class="c">!***********************************************</span>
+<a name="ln-436"></a>    <span class="c">!</span>
+<a name="ln-437"></a>    <span class="c">!# Returns the spatial metric.</span>
+<a name="ln-438"></a>    <span class="c">!</span>
+<a name="ln-439"></a>    <span class="c">!  FT 19.11.2021</span>
+<a name="ln-440"></a>    <span class="c">!</span>
 <a name="ln-441"></a>    <span class="c">!***********************************************</span>
-<a name="ln-442"></a>    <span class="c">!</span>
-<a name="ln-443"></a>    <span class="c">!# Returns the spatial metric.</span>
-<a name="ln-444"></a>    <span class="c">!</span>
-<a name="ln-445"></a>    <span class="c">!  FT 19.11.2021</span>
-<a name="ln-446"></a>    <span class="c">!</span>
-<a name="ln-447"></a>    <span class="c">!***********************************************</span>
-<a name="ln-448"></a>
-<a name="ln-449"></a>    <span class="k">IMPLICIT NONE</span>
-<a name="ln-450"></a>
-<a name="ln-451"></a><span class="k">  END PROCEDURE </span><span class="n">interpolate_spatial_metric</span>
-<a name="ln-452"></a>
-<a name="ln-453"></a>
-<a name="ln-454"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">is_hydro_positive</span>
-<a name="ln-455"></a>
-<a name="ln-456"></a>    <span class="c">!************************************************</span>
-<a name="ln-457"></a>    <span class="c">!</span>
-<a name="ln-458"></a>    <span class="c">!# Return 1 if the energy density is nonpositive</span>
-<a name="ln-459"></a>    <span class="c">!  or if the specific energy is nonpositive,</span>
-<a name="ln-460"></a>    <span class="c">!  or if the pressure is nonpositive</span>
-<a name="ln-461"></a>    <span class="c">!  at the specified point; return 0 otherwise</span>
-<a name="ln-462"></a>    <span class="c">!</span>
-<a name="ln-463"></a>    <span class="c">!  FT 19.11.2021</span>
-<a name="ln-464"></a>    <span class="c">!</span>
-<a name="ln-465"></a>    <span class="c">!************************************************</span>
-<a name="ln-466"></a>
-<a name="ln-467"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-442"></a>
+<a name="ln-443"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-444"></a>
+<a name="ln-445"></a><span class="k">  END PROCEDURE </span><span class="n">interpolate_spatial_metric</span>
+<a name="ln-446"></a>
+<a name="ln-447"></a>
+<a name="ln-448"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">is_hydro_positive</span>
+<a name="ln-449"></a>
+<a name="ln-450"></a>    <span class="c">!************************************************</span>
+<a name="ln-451"></a>    <span class="c">!</span>
+<a name="ln-452"></a>    <span class="c">!# Return 1 if the energy density is nonpositive</span>
+<a name="ln-453"></a>    <span class="c">!  or if the specific energy is nonpositive,</span>
+<a name="ln-454"></a>    <span class="c">!  or if the pressure is nonpositive</span>
+<a name="ln-455"></a>    <span class="c">!  at the specified point; return 0 otherwise</span>
+<a name="ln-456"></a>    <span class="c">!</span>
+<a name="ln-457"></a>    <span class="c">!  FT 19.11.2021</span>
+<a name="ln-458"></a>    <span class="c">!</span>
+<a name="ln-459"></a>    <span class="c">!************************************************</span>
+<a name="ln-460"></a>
+<a name="ln-461"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-462"></a>
+<a name="ln-463"></a><span class="k">    </span><span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">center</span>
+<a name="ln-464"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="kd">::</span> <span class="n">sizes</span>
+<a name="ln-465"></a>
+<a name="ln-466"></a>    <span class="n">center</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">return_center</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-467"></a>    <span class="n">sizes</span> <span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">return_spatial_extent</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <a name="ln-468"></a>
-<a name="ln-469"></a><span class="k">    </span><span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="kd">::</span> <span class="n">center</span>
-<a name="ln-470"></a>    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="kd">::</span> <span class="n">sizes</span>
-<a name="ln-471"></a>
-<a name="ln-472"></a>    <span class="n">center</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">return_center</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a name="ln-473"></a>    <span class="n">sizes</span> <span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">return_spatial_extent</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a name="ln-474"></a>
-<a name="ln-475"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">read_mass_density</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">)</span> <span class="o">&lt;=</span> <span class="n">zero</span> <span class="p">&amp;</span>
-<a name="ln-476"></a>        <span class="p">.</span><span class="nb">OR</span><span class="p">.</span> <span class="p">&amp;</span>
-<a name="ln-477"></a>        <span class="c">!SQRT( ( x - center(1) )**2 + ( y - center(2) )**2 &amp;</span>
-<a name="ln-478"></a>        <span class="c">!    + ( z - center(3) )**2  ) &gt; 50zero</span>
-<a name="ln-479"></a>             <span class="n">x</span> <span class="o">&gt;</span> <span class="n">center</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">&amp;</span>
-<a name="ln-480"></a>        <span class="p">.</span><span class="nb">OR</span><span class="p">.</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">center</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">&amp;</span>
-<a name="ln-481"></a>        <span class="p">.</span><span class="nb">OR</span><span class="p">.</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">center</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">&amp;</span>
-<a name="ln-482"></a>        <span class="p">.</span><span class="nb">OR</span><span class="p">.</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">center</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">&amp;</span>
-<a name="ln-483"></a>        <span class="p">.</span><span class="nb">OR</span><span class="p">.</span> <span class="nb">ABS</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">center</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">&amp;</span>
-<a name="ln-484"></a>    <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-485"></a><span class="k">      </span><span class="n">res</span><span class="o">=</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.</span>
-<a name="ln-486"></a>    <span class="k">ELSE</span>
-<a name="ln-487"></a><span class="k">      </span><span class="n">res</span><span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
-<a name="ln-488"></a>    <span class="n">ENDIF</span>
-<a name="ln-489"></a>
-<a name="ln-490"></a>  <span class="k">END PROCEDURE </span><span class="n">is_hydro_positive</span>
-<a name="ln-491"></a>
-<a name="ln-492"></a>
-<a name="ln-493"></a><span class="k">END SUBMODULE </span><span class="n">interpolate</span>
+<a name="ln-469"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">read_mass_density</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">)</span> <span class="o">&lt;=</span> <span class="n">zero</span> <span class="p">&amp;</span>
+<a name="ln-470"></a>        <span class="p">.</span><span class="nb">OR</span><span class="p">.</span> <span class="p">&amp;</span>
+<a name="ln-471"></a>        <span class="c">!SQRT( ( x - center(1) )**2 + ( y - center(2) )**2 &amp;</span>
+<a name="ln-472"></a>        <span class="c">!    + ( z - center(3) )**2  ) &gt; 50zero</span>
+<a name="ln-473"></a>             <span class="n">x</span> <span class="o">&gt;</span> <span class="n">center</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-474"></a>        <span class="p">.</span><span class="nb">OR</span><span class="p">.</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">center</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-475"></a>        <span class="p">.</span><span class="nb">OR</span><span class="p">.</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">center</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-476"></a>        <span class="p">.</span><span class="nb">OR</span><span class="p">.</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">center</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-477"></a>        <span class="p">.</span><span class="nb">OR</span><span class="p">.</span> <span class="nb">ABS</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">center</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">sizes</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-478"></a>    <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-479"></a><span class="k">      </span><span class="n">res</span><span class="o">=</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.</span>
+<a name="ln-480"></a>    <span class="k">ELSE</span>
+<a name="ln-481"></a><span class="k">      </span><span class="n">res</span><span class="o">=</span> <span class="p">.</span><span class="n">TRUE</span><span class="p">.</span>
+<a name="ln-482"></a>    <span class="n">ENDIF</span>
+<a name="ln-483"></a>
+<a name="ln-484"></a>  <span class="k">END PROCEDURE </span><span class="n">is_hydro_positive</span>
+<a name="ln-485"></a>
+<a name="ln-486"></a>
+<a name="ln-487"></a><span class="k">END SUBMODULE </span><span class="n">interpolate</span>
 </pre></div>
 
     </section>
@@ -780,7 +774,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-15 14:38:14           </p>
+ on 2022-04-19 16:01:41           </p>
         </div>
       </div>
       <br>

@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.0% of total for procedures.">18 statements</a>
+    title=" 0.0% of total for procedures.">16 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_sph_particles_handle_positions.f90"> Source File</a></li>
   </ul>
@@ -120,10 +120,8 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/find_particles_above_xy_plane.html#variable-a~10">a</a>
+      <a class="list-group-item" href="../proc/find_particles_above_xy_plane.html#variable-a~9">a</a>
       <a class="list-group-item" href="../proc/find_particles_above_xy_plane.html#variable-above_xy_plane">above_xy_plane</a>
-      <a class="list-group-item" href="../proc/find_particles_above_xy_plane.html#variable-exist~13">exist</a>
-      <a class="list-group-item" href="../proc/find_particles_above_xy_plane.html#variable-finalnamefile~8">finalnamefile</a>
     </div>
   </div>
 </div>
@@ -249,13 +247,13 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-npart~11"></span>integer,</td>
+  <td><span class="anchor" id="variable-npart~10"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>npart</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-pos~11"></span>double precision,</td>
+  <td><span class="anchor" id="variable-pos~10"></span>double precision,</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(3,npart)</td><td>::</td>
   <td><strong>pos</strong></td><td></td>
@@ -373,25 +371,10 @@
 <path fill="none" stroke="#000000" d="M516.67,-16.3C531.49,-17.83 548.95,-19.63 566.82,-21.48"/>
 <polygon fill="#000000" stroke="#000000" points="566.48,-24.96 576.78,-22.5 567.2,-18 566.48,-24.96"/>
 </g>
-<!-- interface~construct_particles_std -->
-<g id="proc~~find_particles_above_xy_plane~~CalledByGraph_node7" class="node">
-<title>interface~construct_particles_std</title>
-<g id="a_proc~~find_particles_above_xy_plane~~CalledByGraph_node7"><a xlink:href=".././interface/construct_particles_std.html" xlink:title="construct_particles_std">
-<polygon fill="#a7506f" stroke="#a7506f" points="371,-66 237,-66 237,-42 371,-42 371,-66"/>
-<text text-anchor="middle" x="304" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">construct_particles_std</text>
-</a>
-</g>
-</g>
-<!-- interface~construct_particles_std&#45;&gt;proc~construct_particles_std -->
-<g id="proc~~find_particles_above_xy_plane~~CalledByGraph_edge6" class="edge">
-<title>interface~construct_particles_std&#45;&gt;proc~construct_particles_std</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M371.4,-54C379.68,-54 388.2,-54 396.62,-54"/>
-<polygon fill="#000000" stroke="#000000" points="396.81,-57.5 406.81,-54 396.81,-50.5 396.81,-57.5"/>
-</g>
 <!-- interface~perform_apm -->
-<g id="proc~~find_particles_above_xy_plane~~CalledByGraph_node8" class="node">
+<g id="proc~~find_particles_above_xy_plane~~CalledByGraph_node7" class="node">
 <title>interface~perform_apm</title>
-<g id="a_proc~~find_particles_above_xy_plane~~CalledByGraph_node8"><a xlink:href=".././interface/perform_apm.html" xlink:title="perform_apm">
+<g id="a_proc~~find_particles_above_xy_plane~~CalledByGraph_node7"><a xlink:href=".././interface/perform_apm.html" xlink:title="perform_apm">
 <polygon fill="#a7506f" stroke="#a7506f" points="346.5,-24 261.5,-24 261.5,0 346.5,0 346.5,-24"/>
 <text text-anchor="middle" x="304" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">perform_apm</text>
 </a>
@@ -402,6 +385,21 @@
 <title>interface~perform_apm&#45;&gt;proc~perform_apm</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M346.53,-12C369.14,-12 397.33,-12 421.36,-12"/>
 <polygon fill="#000000" stroke="#000000" points="421.37,-15.5 431.37,-12 421.37,-8.5 421.37,-15.5"/>
+</g>
+<!-- interface~construct_particles_std -->
+<g id="proc~~find_particles_above_xy_plane~~CalledByGraph_node8" class="node">
+<title>interface~construct_particles_std</title>
+<g id="a_proc~~find_particles_above_xy_plane~~CalledByGraph_node8"><a xlink:href=".././interface/construct_particles_std.html" xlink:title="construct_particles_std">
+<polygon fill="#a7506f" stroke="#a7506f" points="371,-66 237,-66 237,-42 371,-42 371,-66"/>
+<text text-anchor="middle" x="304" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">construct_particles_std</text>
+</a>
+</g>
+</g>
+<!-- interface~construct_particles_std&#45;&gt;proc~construct_particles_std -->
+<g id="proc~~find_particles_above_xy_plane~~CalledByGraph_edge6" class="edge">
+<title>interface~construct_particles_std&#45;&gt;proc~construct_particles_std</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M371.4,-54C379.68,-54 388.2,-54 396.62,-54"/>
+<polygon fill="#000000" stroke="#000000" points="396.81,-57.5 406.81,-54 396.81,-50.5 396.81,-57.5"/>
 </g>
 <!-- interface~particles -->
 <g id="proc~~find_particles_above_xy_plane~~CalledByGraph_node9" class="node">
@@ -520,10 +518,8 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/find_particles_above_xy_plane.html#variable-a~10">a</a>
+      <a class="list-group-item" href="../proc/find_particles_above_xy_plane.html#variable-a~9">a</a>
       <a class="list-group-item" href="../proc/find_particles_above_xy_plane.html#variable-above_xy_plane">above_xy_plane</a>
-      <a class="list-group-item" href="../proc/find_particles_above_xy_plane.html#variable-exist~13">exist</a>
-      <a class="list-group-item" href="../proc/find_particles_above_xy_plane.html#variable-finalnamefile~8">finalnamefile</a>
     </div>
   </div>
 </div>
@@ -538,7 +534,7 @@
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-a~10"></span>integer,</td>
+  <td><span class="anchor" id="variable-a~9"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>a</strong></td><td></td><td></td><td></td>
 </tr>
@@ -546,16 +542,6 @@
   <td><span class="anchor" id="variable-above_xy_plane"></span>integer,</td>
 <td>private,</td>  <td>DIMENSION(npart)</td><td>::</td>
   <td><strong>above_xy_plane</strong></td><td></td><td></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-exist~13"></span>logical,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>exist</strong></td><td></td><td></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-finalnamefile~8"></span>character(len=:),</td>
-<td>private,</td>  <td>ALLOCATABLE</td><td>::</td>
-  <td><strong>finalnamefile</strong></td><td></td><td></td><td></td>
 </tr>
 </tbody>
 </table>
@@ -586,7 +572,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-15 14:38:14           </p>
+ on 2022-04-19 16:01:41           </p>
         </div>
       </div>
       <br>
