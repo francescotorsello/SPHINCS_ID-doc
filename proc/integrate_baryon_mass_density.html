@@ -150,9 +150,9 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li>NR</li>
+    <li>constants</li>
     <li>tensor</li>
     <li>matrix</li>
-    <li>constants</li>
   </ul>
       </li>
       <li class="list-group-item">
@@ -185,41 +185,41 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M159.33,-87.15C133.46,-97.56 96.14,-112.58 68.78,-123.6"/>
 <polygon fill="#000000" stroke="#000000" points="67.15,-120.48 59.18,-127.46 69.77,-126.97 67.15,-120.48"/>
 </g>
-<!-- tensor -->
+<!-- constants -->
 <g id="proc~~integrate_baryon_mass_density~~UsesGraph_node3" class="node">
+<title>constants</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="64,-108 0,-108 0,-84 64,-84 64,-108"/>
+<text text-anchor="middle" x="32" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
+</g>
+<!-- proc~integrate_baryon_mass_density&#45;&gt;constants -->
+<g id="proc~~integrate_baryon_mass_density~~UsesGraph_edge2" class="edge">
+<title>proc~integrate_baryon_mass_density&#45;&gt;constants</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M99.82,-87.03C90.99,-88.22 82.36,-89.38 74.39,-90.45"/>
+<polygon fill="#000000" stroke="#000000" points="73.77,-87 64.32,-91.8 74.7,-93.94 73.77,-87"/>
+</g>
+<!-- tensor -->
+<g id="proc~~integrate_baryon_mass_density~~UsesGraph_node4" class="node">
 <title>tensor</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="59,-108 5,-108 5,-84 59,-84 59,-108"/>
-<text text-anchor="middle" x="32" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tensor</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="59,-66 5,-66 5,-42 59,-42 59,-66"/>
+<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">tensor</text>
 </g>
 <!-- proc~integrate_baryon_mass_density&#45;&gt;tensor -->
-<g id="proc~~integrate_baryon_mass_density~~UsesGraph_edge2" class="edge">
-<title>proc~integrate_baryon_mass_density&#45;&gt;tensor</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M99.82,-87.03C89.01,-88.48 78.49,-89.9 69.12,-91.15"/>
-<polygon fill="#000000" stroke="#000000" points="68.51,-87.7 59.07,-92.5 69.45,-94.64 68.51,-87.7"/>
-</g>
-<!-- matrix -->
-<g id="proc~~integrate_baryon_mass_density~~UsesGraph_node4" class="node">
-<title>matrix</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="59,-66 5,-66 5,-42 59,-42 59,-66"/>
-<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
-</g>
-<!-- proc~integrate_baryon_mass_density&#45;&gt;matrix -->
 <g id="proc~~integrate_baryon_mass_density~~UsesGraph_edge3" class="edge">
-<title>proc~integrate_baryon_mass_density&#45;&gt;matrix</title>
+<title>proc~integrate_baryon_mass_density&#45;&gt;tensor</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M99.82,-62.97C89.01,-61.52 78.49,-60.1 69.12,-58.85"/>
 <polygon fill="#000000" stroke="#000000" points="69.45,-55.36 59.07,-57.5 68.51,-62.3 69.45,-55.36"/>
 </g>
-<!-- constants -->
+<!-- matrix -->
 <g id="proc~~integrate_baryon_mass_density~~UsesGraph_node5" class="node">
-<title>constants</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="64,-24 0,-24 0,0 64,0 64,-24"/>
-<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
+<title>matrix</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="59,-24 5,-24 5,0 59,0 59,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">matrix</text>
 </g>
-<!-- proc~integrate_baryon_mass_density&#45;&gt;constants -->
+<!-- proc~integrate_baryon_mass_density&#45;&gt;matrix -->
 <g id="proc~~integrate_baryon_mass_density~~UsesGraph_edge4" class="edge">
-<title>proc~integrate_baryon_mass_density&#45;&gt;constants</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M159.33,-62.85C134.56,-52.89 99.32,-38.7 72.34,-27.84"/>
-<polygon fill="#000000" stroke="#000000" points="73.4,-24.49 62.82,-24 70.79,-30.98 73.4,-24.49"/>
+<title>proc~integrate_baryon_mass_density&#45;&gt;matrix</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M159.33,-62.85C133.46,-52.44 96.14,-37.42 68.78,-26.4"/>
+<polygon fill="#000000" stroke="#000000" points="69.77,-23.03 59.18,-22.54 67.15,-29.52 69.77,-23.03"/>
 </g>
 </g>
 </svg>
@@ -384,29 +384,29 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
 <polygon fill="none" stroke="black" points="181,-45 0,-45 0,-21 181,-21 181,-45"/>
 <text text-anchor="middle" x="90.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">integrate_baryon_mass_density</text>
 </g>
-<!-- determinant_3x3_sym_matrix -->
-<g id="proc~~integrate_baryon_mass_density~~CallsGraph_node2" class="node">
-<title>determinant_3x3_sym_matrix</title>
-<polygon fill="#777777" stroke="#777777" points="387,-66 217,-66 217,-42 387,-42 387,-66"/>
-<text text-anchor="middle" x="302" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_3x3_sym_matrix</text>
-</g>
-<!-- proc~integrate_baryon_mass_density&#45;&gt;determinant_3x3_sym_matrix -->
-<g id="proc~~integrate_baryon_mass_density~~CallsGraph_edge1" class="edge">
-<title>proc~integrate_baryon_mass_density&#45;&gt;determinant_3x3_sym_matrix</title>
-<path fill="none" stroke="#000000" d="M181.26,-42C189.63,-42.84 198.13,-43.69 206.54,-44.53"/>
-<polygon fill="#000000" stroke="#000000" points="206.44,-48.04 216.74,-45.55 207.14,-41.07 206.44,-48.04"/>
-</g>
 <!-- indexx -->
-<g id="proc~~integrate_baryon_mass_density~~CallsGraph_node3" class="node">
+<g id="proc~~integrate_baryon_mass_density~~CallsGraph_node2" class="node">
 <title>indexx</title>
-<polygon fill="#777777" stroke="#777777" points="329,-24 275,-24 275,0 329,0 329,-24"/>
-<text text-anchor="middle" x="302" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">indexx</text>
+<polygon fill="#777777" stroke="#777777" points="329,-66 275,-66 275,-42 329,-42 329,-66"/>
+<text text-anchor="middle" x="302" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">indexx</text>
 </g>
 <!-- proc~integrate_baryon_mass_density&#45;&gt;indexx -->
-<g id="proc~~integrate_baryon_mass_density~~CallsGraph_edge2" class="edge">
+<g id="proc~~integrate_baryon_mass_density~~CallsGraph_edge1" class="edge">
 <title>proc~integrate_baryon_mass_density&#45;&gt;indexx</title>
-<path fill="none" stroke="#000000" d="M181.26,-24C210.73,-21.05 241.82,-17.93 264.93,-15.62"/>
-<polygon fill="#000000" stroke="#000000" points="265.35,-19.09 274.95,-14.61 264.65,-12.13 265.35,-19.09"/>
+<path fill="none" stroke="#000000" d="M181.26,-42C210.73,-44.95 241.82,-48.07 264.93,-50.38"/>
+<polygon fill="#000000" stroke="#000000" points="264.65,-53.87 274.95,-51.39 265.35,-46.91 264.65,-53.87"/>
+</g>
+<!-- determinant_3x3_sym_matrix -->
+<g id="proc~~integrate_baryon_mass_density~~CallsGraph_node3" class="node">
+<title>determinant_3x3_sym_matrix</title>
+<polygon fill="#777777" stroke="#777777" points="387,-24 217,-24 217,0 387,0 387,-24"/>
+<text text-anchor="middle" x="302" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_3x3_sym_matrix</text>
+</g>
+<!-- proc~integrate_baryon_mass_density&#45;&gt;determinant_3x3_sym_matrix -->
+<g id="proc~~integrate_baryon_mass_density~~CallsGraph_edge2" class="edge">
+<title>proc~integrate_baryon_mass_density&#45;&gt;determinant_3x3_sym_matrix</title>
+<path fill="none" stroke="#000000" d="M181.26,-24C189.63,-23.16 198.13,-22.31 206.54,-21.47"/>
+<polygon fill="#000000" stroke="#000000" points="207.14,-24.93 216.74,-20.45 206.44,-17.96 207.14,-24.93"/>
 </g>
 </g>
 </svg>
@@ -688,7 +688,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-19 16:01:41           </p>
+ on 2022-04-20 10:40:32           </p>
         </div>
       </div>
       <br>

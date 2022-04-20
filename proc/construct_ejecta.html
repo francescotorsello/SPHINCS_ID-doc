@@ -166,8 +166,8 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li>NR</li>
-    <li>pwp_EOS</li>
     <li>constants</li>
+    <li>pwp_EOS</li>
   </ul>
       </li>
       <li class="list-group-item">
@@ -200,29 +200,29 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M115.76,-66.04C101.04,-71.36 83.7,-77.64 68.71,-83.07"/>
 <polygon fill="#000000" stroke="#000000" points="67.46,-79.8 59.25,-86.5 69.84,-86.38 67.46,-79.8"/>
 </g>
-<!-- pwp_EOS -->
-<g id="proc~~construct_ejecta~~UsesGraph_node3" class="node">
-<title>pwp_EOS</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="62.5,-66 1.5,-66 1.5,-42 62.5,-42 62.5,-66"/>
-<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pwp_EOS</text>
-</g>
-<!-- proc~construct_ejecta&#45;&gt;pwp_EOS -->
-<g id="proc~~construct_ejecta~~UsesGraph_edge2" class="edge">
-<title>proc~construct_ejecta&#45;&gt;pwp_EOS</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M99.81,-54C90.85,-54 81.61,-54 72.96,-54"/>
-<polygon fill="#000000" stroke="#000000" points="72.76,-50.5 62.76,-54 72.76,-57.5 72.76,-50.5"/>
-</g>
 <!-- constants -->
-<g id="proc~~construct_ejecta~~UsesGraph_node4" class="node">
+<g id="proc~~construct_ejecta~~UsesGraph_node3" class="node">
 <title>constants</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="64,-24 0,-24 0,0 64,0 64,-24"/>
-<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="64,-66 0,-66 0,-42 64,-42 64,-66"/>
+<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
 </g>
 <!-- proc~construct_ejecta&#45;&gt;constants -->
-<g id="proc~~construct_ejecta~~UsesGraph_edge3" class="edge">
+<g id="proc~~construct_ejecta~~UsesGraph_edge2" class="edge">
 <title>proc~construct_ejecta&#45;&gt;constants</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M115.76,-41.96C102.72,-37.24 87.63,-31.78 73.93,-26.82"/>
-<polygon fill="#000000" stroke="#000000" points="74.85,-23.43 64.25,-23.32 72.47,-30.01 74.85,-23.43"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M99.81,-54C91.3,-54 82.53,-54 74.26,-54"/>
+<polygon fill="#000000" stroke="#000000" points="74.1,-50.5 64.1,-54 74.1,-57.5 74.1,-50.5"/>
+</g>
+<!-- pwp_EOS -->
+<g id="proc~~construct_ejecta~~UsesGraph_node4" class="node">
+<title>pwp_EOS</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="62.5,-24 1.5,-24 1.5,0 62.5,0 62.5,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pwp_EOS</text>
+</g>
+<!-- proc~construct_ejecta&#45;&gt;pwp_EOS -->
+<g id="proc~~construct_ejecta~~UsesGraph_edge3" class="edge">
+<title>proc~construct_ejecta&#45;&gt;pwp_EOS</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M115.76,-41.96C102.16,-37.04 86.33,-31.31 72.17,-26.18"/>
+<polygon fill="#000000" stroke="#000000" points="73.28,-22.86 62.69,-22.75 70.9,-29.44 73.28,-22.86"/>
 </g>
 </g>
 </svg>
@@ -336,95 +336,92 @@
 <polygon fill="none" stroke="black" points="100,-276 0,-276 0,-252 100,-252 100,-276"/>
 <text text-anchor="middle" x="50" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50">construct_ejecta</text>
 </g>
-<!-- get_k3 -->
+<!-- select_eos_parameters -->
 <g id="proc~~construct_ejecta~~CallsGraph_node2" class="node">
-<title>get_k3</title>
-<polygon fill="#777777" stroke="#777777" points="231,-528 177,-528 177,-504 231,-504 231,-528"/>
-<text text-anchor="middle" x="204" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_k3</text>
+<title>select_eos_parameters</title>
+<polygon fill="#777777" stroke="#777777" points="272,-528 136,-528 136,-504 272,-504 272,-528"/>
+<text text-anchor="middle" x="204" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">select_eos_parameters</text>
 </g>
-<!-- proc~construct_ejecta&#45;&gt;get_k3 -->
-<g id="proc~~construct_ejecta~~CallsGraph_edge1" class="edge">
-<title>proc~construct_ejecta&#45;&gt;get_k3</title>
-<path fill="none" stroke="#000000" d="M51.81,-276.05C55.01,-314 70.09,-432.23 136,-495 144.45,-503.05 155.94,-508.01 167.03,-511.07"/>
-<polygon fill="#000000" stroke="#000000" points="166.46,-514.53 176.99,-513.39 168.04,-507.72 166.46,-514.53"/>
-</g>
-<!-- get_k0 -->
-<g id="proc~~construct_ejecta~~CallsGraph_node3" class="node">
-<title>get_k0</title>
-<polygon fill="#777777" stroke="#777777" points="231,-486 177,-486 177,-462 231,-462 231,-486"/>
-<text text-anchor="middle" x="204" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_k0</text>
-</g>
-<!-- proc~construct_ejecta&#45;&gt;get_k0 -->
+<!-- proc~construct_ejecta&#45;&gt;select_eos_parameters -->
 <g id="proc~~construct_ejecta~~CallsGraph_edge2" class="edge">
-<title>proc~construct_ejecta&#45;&gt;get_k0</title>
+<title>proc~construct_ejecta&#45;&gt;select_eos_parameters</title>
+<path fill="none" stroke="#000000" d="M51.81,-276.05C55.01,-314 70.09,-432.23 136,-495 137.27,-496.21 138.62,-497.36 140.02,-498.43"/>
+<polygon fill="#000000" stroke="#000000" points="138.28,-501.48 148.59,-503.91 142.05,-495.58 138.28,-501.48"/>
+</g>
+<!-- get_k1 -->
+<g id="proc~~construct_ejecta~~CallsGraph_node3" class="node">
+<title>get_k1</title>
+<polygon fill="#777777" stroke="#777777" points="231,-486 177,-486 177,-462 231,-462 231,-486"/>
+<text text-anchor="middle" x="204" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_k1</text>
+</g>
+<!-- proc~construct_ejecta&#45;&gt;get_k1 -->
+<g id="proc~~construct_ejecta~~CallsGraph_edge13" class="edge">
+<title>proc~construct_ejecta&#45;&gt;get_k1</title>
 <path fill="none" stroke="#000000" d="M52.94,-276.2C58.9,-309.6 80.03,-403.32 136,-453 144.65,-460.68 156.11,-465.56 167.09,-468.65"/>
 <polygon fill="#000000" stroke="#000000" points="166.41,-472.08 176.95,-471.01 168.04,-465.27 166.41,-472.08"/>
 </g>
-<!-- interface~get_gamma0 -->
-<g id="proc~~construct_ejecta~~CallsGraph_node4" class="node">
-<title>interface~get_gamma0</title>
-<g id="a_proc~~construct_ejecta~~CallsGraph_node4"><a xlink:href=".././interface/get_gamma0.html" xlink:title="get_gamma0">
-<polygon fill="#a7506f" stroke="#a7506f" points="245.5,-444 162.5,-444 162.5,-420 245.5,-420 245.5,-444"/>
-<text text-anchor="middle" x="204" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma0</text>
-</a>
-</g>
-</g>
-<!-- proc~construct_ejecta&#45;&gt;interface~get_gamma0 -->
-<g id="proc~~construct_ejecta~~CallsGraph_edge3" class="edge">
-<title>proc~construct_ejecta&#45;&gt;interface~get_gamma0</title>
-<path fill="none" stroke="#000000" d="M54.68,-276.31C63.72,-304.47 89.74,-373.97 136,-411 141,-415 146.76,-418.24 152.77,-420.87"/>
-<polygon fill="#000000" stroke="#000000" points="151.74,-424.22 162.33,-424.51 154.23,-417.68 151.74,-424.22"/>
-</g>
 <!-- get_p1 -->
-<g id="proc~~construct_ejecta~~CallsGraph_node5" class="node">
+<g id="proc~~construct_ejecta~~CallsGraph_node4" class="node">
 <title>get_p1</title>
-<polygon fill="#777777" stroke="#777777" points="231,-402 177,-402 177,-378 231,-378 231,-402"/>
-<text text-anchor="middle" x="204" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_p1</text>
+<polygon fill="#777777" stroke="#777777" points="231,-444 177,-444 177,-420 231,-420 231,-444"/>
+<text text-anchor="middle" x="204" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_p1</text>
 </g>
 <!-- proc~construct_ejecta&#45;&gt;get_p1 -->
-<g id="proc~~construct_ejecta~~CallsGraph_edge4" class="edge">
+<g id="proc~~construct_ejecta~~CallsGraph_edge3" class="edge">
 <title>proc~construct_ejecta&#45;&gt;get_p1</title>
+<path fill="none" stroke="#000000" d="M54.68,-276.31C63.72,-304.47 89.74,-373.97 136,-411 144.8,-418.04 155.98,-422.74 166.68,-425.86"/>
+<polygon fill="#000000" stroke="#000000" points="166.13,-429.34 176.69,-428.4 167.86,-422.55 166.13,-429.34"/>
+</g>
+<!-- get_k0 -->
+<g id="proc~~construct_ejecta~~CallsGraph_node5" class="node">
+<title>get_k0</title>
+<polygon fill="#777777" stroke="#777777" points="231,-402 177,-402 177,-378 231,-378 231,-402"/>
+<text text-anchor="middle" x="204" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_k0</text>
+</g>
+<!-- proc~construct_ejecta&#45;&gt;get_k0 -->
+<g id="proc~~construct_ejecta~~CallsGraph_edge4" class="edge">
+<title>proc~construct_ejecta&#45;&gt;get_k0</title>
 <path fill="none" stroke="#000000" d="M57.69,-276.34C70.18,-298.24 99.15,-343.95 136,-369 145.24,-375.28 156.46,-379.76 167.05,-382.92"/>
 <polygon fill="#000000" stroke="#000000" points="166.37,-386.36 176.93,-385.56 168.17,-379.59 166.37,-386.36"/>
 </g>
-<!-- interface~get_gamma1 -->
+<!-- interface~get_gamma2 -->
 <g id="proc~~construct_ejecta~~CallsGraph_node6" class="node">
-<title>interface~get_gamma1</title>
-<g id="a_proc~~construct_ejecta~~CallsGraph_node6"><a xlink:href=".././interface/get_gamma1.html" xlink:title="get_gamma1">
+<title>interface~get_gamma2</title>
+<g id="a_proc~~construct_ejecta~~CallsGraph_node6"><a xlink:href=".././interface/get_gamma2.html" xlink:title="get_gamma2">
 <polygon fill="#a7506f" stroke="#a7506f" points="245.5,-360 162.5,-360 162.5,-336 245.5,-336 245.5,-360"/>
-<text text-anchor="middle" x="204" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma1</text>
+<text text-anchor="middle" x="204" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma2</text>
 </a>
 </g>
 </g>
-<!-- proc~construct_ejecta&#45;&gt;interface~get_gamma1 -->
+<!-- proc~construct_ejecta&#45;&gt;interface~get_gamma2 -->
 <g id="proc~~construct_ejecta~~CallsGraph_edge5" class="edge">
-<title>proc~construct_ejecta&#45;&gt;interface~get_gamma1</title>
+<title>proc~construct_ejecta&#45;&gt;interface~get_gamma2</title>
 <path fill="none" stroke="#000000" d="M64.19,-276C80.15,-289.97 108.33,-312.92 136,-327 141.29,-329.69 146.99,-332.12 152.75,-334.29"/>
 <polygon fill="#000000" stroke="#000000" points="151.86,-337.68 162.45,-337.69 154.18,-331.08 151.86,-337.68"/>
 </g>
-<!-- get_k1 -->
+<!-- get_k2 -->
 <g id="proc~~construct_ejecta~~CallsGraph_node7" class="node">
-<title>get_k1</title>
+<title>get_k2</title>
 <polygon fill="#777777" stroke="#777777" points="231,-318 177,-318 177,-294 231,-294 231,-318"/>
-<text text-anchor="middle" x="204" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_k1</text>
+<text text-anchor="middle" x="204" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_k2</text>
 </g>
-<!-- proc~construct_ejecta&#45;&gt;get_k1 -->
+<!-- proc~construct_ejecta&#45;&gt;get_k2 -->
 <g id="proc~~construct_ejecta~~CallsGraph_edge6" class="edge">
-<title>proc~construct_ejecta&#45;&gt;get_k1</title>
+<title>proc~construct_ejecta&#45;&gt;get_k2</title>
 <path fill="none" stroke="#000000" d="M94.56,-276.04C117.43,-282.36 145.13,-290.01 166.8,-296"/>
 <polygon fill="#000000" stroke="#000000" points="166.04,-299.42 176.61,-298.71 167.9,-292.67 166.04,-299.42"/>
 </g>
-<!-- select_eos_parameters -->
+<!-- get_rho_0 -->
 <g id="proc~~construct_ejecta~~CallsGraph_node8" class="node">
-<title>select_eos_parameters</title>
-<polygon fill="#777777" stroke="#777777" points="272,-276 136,-276 136,-252 272,-252 272,-276"/>
-<text text-anchor="middle" x="204" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">select_eos_parameters</text>
+<title>get_rho_0</title>
+<polygon fill="#777777" stroke="#777777" points="236.5,-276 171.5,-276 171.5,-252 236.5,-252 236.5,-276"/>
+<text text-anchor="middle" x="204" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_rho_0</text>
 </g>
-<!-- proc~construct_ejecta&#45;&gt;select_eos_parameters -->
+<!-- proc~construct_ejecta&#45;&gt;get_rho_0 -->
 <g id="proc~~construct_ejecta~~CallsGraph_edge7" class="edge">
-<title>proc~construct_ejecta&#45;&gt;select_eos_parameters</title>
-<path fill="none" stroke="#000000" d="M100.35,-264C108.51,-264 117.14,-264 125.8,-264"/>
-<polygon fill="#000000" stroke="#000000" points="125.94,-267.5 135.94,-264 125.94,-260.5 125.94,-267.5"/>
+<title>proc~construct_ejecta&#45;&gt;get_rho_0</title>
+<path fill="none" stroke="#000000" d="M100.35,-264C119.95,-264 142.26,-264 161.06,-264"/>
+<polygon fill="#000000" stroke="#000000" points="161.11,-267.5 171.11,-264 161.11,-260.5 161.11,-267.5"/>
 </g>
 <!-- get_rho_1 -->
 <g id="proc~~construct_ejecta~~CallsGraph_node9" class="node">
@@ -438,131 +435,134 @@
 <path fill="none" stroke="#000000" d="M94.56,-251.96C115.52,-246.17 140.53,-239.26 161.24,-233.54"/>
 <polygon fill="#000000" stroke="#000000" points="162.33,-236.87 171.03,-230.83 160.46,-230.12 162.33,-236.87"/>
 </g>
-<!-- get_rho_0 -->
+<!-- interface~get_gamma1 -->
 <g id="proc~~construct_ejecta~~CallsGraph_node10" class="node">
-<title>get_rho_0</title>
-<polygon fill="#777777" stroke="#777777" points="236.5,-192 171.5,-192 171.5,-168 236.5,-168 236.5,-192"/>
-<text text-anchor="middle" x="204" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_rho_0</text>
-</g>
-<!-- proc~construct_ejecta&#45;&gt;get_rho_0 -->
-<g id="proc~~construct_ejecta~~CallsGraph_edge9" class="edge">
-<title>proc~construct_ejecta&#45;&gt;get_rho_0</title>
-<path fill="none" stroke="#000000" d="M64.19,-252C80.15,-238.03 108.33,-215.08 136,-201 144.05,-196.9 153.06,-193.42 161.79,-190.53"/>
-<polygon fill="#000000" stroke="#000000" points="162.95,-193.84 171.46,-187.53 160.88,-187.15 162.95,-193.84"/>
-</g>
-<!-- get_rho_2 -->
-<g id="proc~~construct_ejecta~~CallsGraph_node11" class="node">
-<title>get_rho_2</title>
-<polygon fill="#777777" stroke="#777777" points="236.5,-150 171.5,-150 171.5,-126 236.5,-126 236.5,-150"/>
-<text text-anchor="middle" x="204" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_rho_2</text>
-</g>
-<!-- proc~construct_ejecta&#45;&gt;get_rho_2 -->
-<g id="proc~~construct_ejecta~~CallsGraph_edge10" class="edge">
-<title>proc~construct_ejecta&#45;&gt;get_rho_2</title>
-<path fill="none" stroke="#000000" d="M57.69,-251.66C70.18,-229.76 99.15,-184.05 136,-159 143.7,-153.77 152.77,-149.79 161.7,-146.78"/>
-<polygon fill="#000000" stroke="#000000" points="162.72,-150.13 171.28,-143.88 160.69,-143.43 162.72,-150.13"/>
-</g>
-<!-- get_k2 -->
-<g id="proc~~construct_ejecta~~CallsGraph_node12" class="node">
-<title>get_k2</title>
-<polygon fill="#777777" stroke="#777777" points="231,-108 177,-108 177,-84 231,-84 231,-108"/>
-<text text-anchor="middle" x="204" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_k2</text>
-</g>
-<!-- proc~construct_ejecta&#45;&gt;get_k2 -->
-<g id="proc~~construct_ejecta~~CallsGraph_edge11" class="edge">
-<title>proc~construct_ejecta&#45;&gt;get_k2</title>
-<path fill="none" stroke="#000000" d="M54.68,-251.69C63.72,-223.53 89.74,-154.03 136,-117 144.8,-109.96 155.98,-105.26 166.68,-102.14"/>
-<polygon fill="#000000" stroke="#000000" points="167.86,-105.45 176.69,-99.6 166.13,-98.66 167.86,-105.45"/>
-</g>
-<!-- interface~get_gamma2 -->
-<g id="proc~~construct_ejecta~~CallsGraph_node13" class="node">
-<title>interface~get_gamma2</title>
-<g id="a_proc~~construct_ejecta~~CallsGraph_node13"><a xlink:href=".././interface/get_gamma2.html" xlink:title="get_gamma2">
-<polygon fill="#a7506f" stroke="#a7506f" points="245.5,-66 162.5,-66 162.5,-42 245.5,-42 245.5,-66"/>
-<text text-anchor="middle" x="204" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma2</text>
+<title>interface~get_gamma1</title>
+<g id="a_proc~~construct_ejecta~~CallsGraph_node10"><a xlink:href=".././interface/get_gamma1.html" xlink:title="get_gamma1">
+<polygon fill="#a7506f" stroke="#a7506f" points="245.5,-192 162.5,-192 162.5,-168 245.5,-168 245.5,-192"/>
+<text text-anchor="middle" x="204" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma1</text>
 </a>
 </g>
 </g>
-<!-- proc~construct_ejecta&#45;&gt;interface~get_gamma2 -->
-<g id="proc~~construct_ejecta~~CallsGraph_edge12" class="edge">
-<title>proc~construct_ejecta&#45;&gt;interface~get_gamma2</title>
-<path fill="none" stroke="#000000" d="M52.94,-251.8C58.9,-218.4 80.03,-124.68 136,-75 140.85,-70.7 146.57,-67.28 152.59,-64.56"/>
-<polygon fill="#000000" stroke="#000000" points="154.16,-67.7 162.23,-60.83 151.64,-61.17 154.16,-67.7"/>
+<!-- proc~construct_ejecta&#45;&gt;interface~get_gamma1 -->
+<g id="proc~~construct_ejecta~~CallsGraph_edge9" class="edge">
+<title>proc~construct_ejecta&#45;&gt;interface~get_gamma1</title>
+<path fill="none" stroke="#000000" d="M64.19,-252C80.15,-238.03 108.33,-215.08 136,-201 141.29,-198.31 146.99,-195.88 152.75,-193.71"/>
+<polygon fill="#000000" stroke="#000000" points="154.18,-196.92 162.45,-190.31 151.86,-190.32 154.18,-196.92"/>
 </g>
 <!-- interface~get_gamma3 -->
-<g id="proc~~construct_ejecta~~CallsGraph_node14" class="node">
+<g id="proc~~construct_ejecta~~CallsGraph_node11" class="node">
 <title>interface~get_gamma3</title>
-<g id="a_proc~~construct_ejecta~~CallsGraph_node14"><a xlink:href=".././interface/get_gamma3.html" xlink:title="get_gamma3">
-<polygon fill="#a7506f" stroke="#a7506f" points="245.5,-24 162.5,-24 162.5,0 245.5,0 245.5,-24"/>
-<text text-anchor="middle" x="204" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma3</text>
+<g id="a_proc~~construct_ejecta~~CallsGraph_node11"><a xlink:href=".././interface/get_gamma3.html" xlink:title="get_gamma3">
+<polygon fill="#a7506f" stroke="#a7506f" points="245.5,-150 162.5,-150 162.5,-126 245.5,-126 245.5,-150"/>
+<text text-anchor="middle" x="204" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma3</text>
 </a>
 </g>
 </g>
 <!-- proc~construct_ejecta&#45;&gt;interface~get_gamma3 -->
-<g id="proc~~construct_ejecta~~CallsGraph_edge13" class="edge">
+<g id="proc~~construct_ejecta~~CallsGraph_edge10" class="edge">
 <title>proc~construct_ejecta&#45;&gt;interface~get_gamma3</title>
-<path fill="none" stroke="#000000" d="M51.81,-251.95C55.01,-214 70.09,-95.77 136,-33 140.75,-28.48 146.46,-24.93 152.53,-22.14"/>
-<polygon fill="#000000" stroke="#000000" points="154.2,-25.25 162.25,-18.36 151.66,-18.72 154.2,-25.25"/>
+<path fill="none" stroke="#000000" d="M57.69,-251.66C70.18,-229.76 99.15,-184.05 136,-159 141.16,-155.49 146.94,-152.55 152.87,-150.08"/>
+<polygon fill="#000000" stroke="#000000" points="154.12,-153.35 162.27,-146.59 151.68,-146.79 154.12,-153.35"/>
 </g>
-<!-- proc~get_gamma0~2 -->
-<g id="proc~~construct_ejecta~~CallsGraph_node17" class="node">
-<title>proc~get_gamma0~2</title>
-<g id="a_proc~~construct_ejecta~~CallsGraph_node17"><a xlink:href=".././proc/get_gamma0~2.html" xlink:title="get_gamma0">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="391,-444 308,-444 308,-420 391,-420 391,-444"/>
-<text text-anchor="middle" x="349.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma0</text>
+<!-- get_rho_2 -->
+<g id="proc~~construct_ejecta~~CallsGraph_node12" class="node">
+<title>get_rho_2</title>
+<polygon fill="#777777" stroke="#777777" points="236.5,-108 171.5,-108 171.5,-84 236.5,-84 236.5,-108"/>
+<text text-anchor="middle" x="204" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_rho_2</text>
+</g>
+<!-- proc~construct_ejecta&#45;&gt;get_rho_2 -->
+<g id="proc~~construct_ejecta~~CallsGraph_edge11" class="edge">
+<title>proc~construct_ejecta&#45;&gt;get_rho_2</title>
+<path fill="none" stroke="#000000" d="M54.68,-251.69C63.72,-223.53 89.74,-154.03 136,-117 143.41,-111.07 152.5,-106.8 161.58,-103.74"/>
+<polygon fill="#000000" stroke="#000000" points="162.74,-107.05 171.34,-100.86 160.76,-100.33 162.74,-107.05"/>
+</g>
+<!-- interface~get_gamma0 -->
+<g id="proc~~construct_ejecta~~CallsGraph_node13" class="node">
+<title>interface~get_gamma0</title>
+<g id="a_proc~~construct_ejecta~~CallsGraph_node13"><a xlink:href=".././interface/get_gamma0.html" xlink:title="get_gamma0">
+<polygon fill="#a7506f" stroke="#a7506f" points="245.5,-66 162.5,-66 162.5,-42 245.5,-42 245.5,-66"/>
+<text text-anchor="middle" x="204" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma0</text>
 </a>
 </g>
 </g>
-<!-- interface~get_gamma0&#45;&gt;proc~get_gamma0~2 -->
+<!-- proc~construct_ejecta&#45;&gt;interface~get_gamma0 -->
+<g id="proc~~construct_ejecta~~CallsGraph_edge12" class="edge">
+<title>proc~construct_ejecta&#45;&gt;interface~get_gamma0</title>
+<path fill="none" stroke="#000000" d="M52.94,-251.8C58.9,-218.4 80.03,-124.68 136,-75 140.85,-70.7 146.57,-67.28 152.59,-64.56"/>
+<polygon fill="#000000" stroke="#000000" points="154.16,-67.7 162.23,-60.83 151.64,-61.17 154.16,-67.7"/>
+</g>
+<!-- get_k3 -->
+<g id="proc~~construct_ejecta~~CallsGraph_node14" class="node">
+<title>get_k3</title>
+<polygon fill="#777777" stroke="#777777" points="231,-24 177,-24 177,0 231,0 231,-24"/>
+<text text-anchor="middle" x="204" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_k3</text>
+</g>
+<!-- proc~construct_ejecta&#45;&gt;get_k3 -->
+<g id="proc~~construct_ejecta~~CallsGraph_edge1" class="edge">
+<title>proc~construct_ejecta&#45;&gt;get_k3</title>
+<path fill="none" stroke="#000000" d="M51.81,-251.95C55.01,-214 70.09,-95.77 136,-33 144.45,-24.95 155.94,-19.99 167.03,-16.93"/>
+<polygon fill="#000000" stroke="#000000" points="168.04,-20.28 176.99,-14.61 166.46,-13.47 168.04,-20.28"/>
+</g>
+<!-- proc~get_gamma2~2 -->
+<g id="proc~~construct_ejecta~~CallsGraph_node16" class="node">
+<title>proc~get_gamma2~2</title>
+<g id="a_proc~~construct_ejecta~~CallsGraph_node16"><a xlink:href=".././proc/get_gamma2~2.html" xlink:title="get_gamma2">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="391,-360 308,-360 308,-336 391,-336 391,-360"/>
+<text text-anchor="middle" x="349.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma2</text>
+</a>
+</g>
+</g>
+<!-- interface~get_gamma2&#45;&gt;proc~get_gamma2~2 -->
 <g id="proc~~construct_ejecta~~CallsGraph_edge14" class="edge">
-<title>interface~get_gamma0&#45;&gt;proc~get_gamma0~2</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M245.74,-432C261.79,-432 280.42,-432 297.36,-432"/>
-<polygon fill="#000000" stroke="#000000" points="297.66,-435.5 307.66,-432 297.66,-428.5 297.66,-435.5"/>
+<title>interface~get_gamma2&#45;&gt;proc~get_gamma2~2</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M245.74,-348C261.79,-348 280.42,-348 297.36,-348"/>
+<polygon fill="#000000" stroke="#000000" points="297.66,-351.5 307.66,-348 297.66,-344.5 297.66,-351.5"/>
 </g>
 <!-- proc~get_gamma1~2 -->
 <g id="proc~~construct_ejecta~~CallsGraph_node15" class="node">
 <title>proc~get_gamma1~2</title>
 <g id="a_proc~~construct_ejecta~~CallsGraph_node15"><a xlink:href=".././proc/get_gamma1~2.html" xlink:title="get_gamma1">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="391,-360 308,-360 308,-336 391,-336 391,-360"/>
-<text text-anchor="middle" x="349.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma1</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="391,-192 308,-192 308,-168 391,-168 391,-192"/>
+<text text-anchor="middle" x="349.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma1</text>
 </a>
 </g>
 </g>
 <!-- interface~get_gamma1&#45;&gt;proc~get_gamma1~2 -->
 <g id="proc~~construct_ejecta~~CallsGraph_edge15" class="edge">
 <title>interface~get_gamma1&#45;&gt;proc~get_gamma1~2</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M245.74,-348C261.79,-348 280.42,-348 297.36,-348"/>
-<polygon fill="#000000" stroke="#000000" points="297.66,-351.5 307.66,-348 297.66,-344.5 297.66,-351.5"/>
-</g>
-<!-- proc~get_gamma2~2 -->
-<g id="proc~~construct_ejecta~~CallsGraph_node16" class="node">
-<title>proc~get_gamma2~2</title>
-<g id="a_proc~~construct_ejecta~~CallsGraph_node16"><a xlink:href=".././proc/get_gamma2~2.html" xlink:title="get_gamma2">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="391,-66 308,-66 308,-42 391,-42 391,-66"/>
-<text text-anchor="middle" x="349.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma2</text>
-</a>
-</g>
-</g>
-<!-- interface~get_gamma2&#45;&gt;proc~get_gamma2~2 -->
-<g id="proc~~construct_ejecta~~CallsGraph_edge16" class="edge">
-<title>interface~get_gamma2&#45;&gt;proc~get_gamma2~2</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M245.74,-54C261.79,-54 280.42,-54 297.36,-54"/>
-<polygon fill="#000000" stroke="#000000" points="297.66,-57.5 307.66,-54 297.66,-50.5 297.66,-57.5"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M245.74,-180C261.79,-180 280.42,-180 297.36,-180"/>
+<polygon fill="#000000" stroke="#000000" points="297.66,-183.5 307.66,-180 297.66,-176.5 297.66,-183.5"/>
 </g>
 <!-- proc~get_gamma3~2 -->
 <g id="proc~~construct_ejecta~~CallsGraph_node18" class="node">
 <title>proc~get_gamma3~2</title>
 <g id="a_proc~~construct_ejecta~~CallsGraph_node18"><a xlink:href=".././proc/get_gamma3~2.html" xlink:title="get_gamma3">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="391,-24 308,-24 308,0 391,0 391,-24"/>
-<text text-anchor="middle" x="349.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma3</text>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="391,-150 308,-150 308,-126 391,-126 391,-150"/>
+<text text-anchor="middle" x="349.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma3</text>
 </a>
 </g>
 </g>
 <!-- interface~get_gamma3&#45;&gt;proc~get_gamma3~2 -->
-<g id="proc~~construct_ejecta~~CallsGraph_edge17" class="edge">
+<g id="proc~~construct_ejecta~~CallsGraph_edge16" class="edge">
 <title>interface~get_gamma3&#45;&gt;proc~get_gamma3~2</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M245.74,-12C261.79,-12 280.42,-12 297.36,-12"/>
-<polygon fill="#000000" stroke="#000000" points="297.66,-15.5 307.66,-12 297.66,-8.5 297.66,-15.5"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M245.74,-138C261.79,-138 280.42,-138 297.36,-138"/>
+<polygon fill="#000000" stroke="#000000" points="297.66,-141.5 307.66,-138 297.66,-134.5 297.66,-141.5"/>
+</g>
+<!-- proc~get_gamma0~2 -->
+<g id="proc~~construct_ejecta~~CallsGraph_node17" class="node">
+<title>proc~get_gamma0~2</title>
+<g id="a_proc~~construct_ejecta~~CallsGraph_node17"><a xlink:href=".././proc/get_gamma0~2.html" xlink:title="get_gamma0">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="391,-66 308,-66 308,-42 391,-42 391,-66"/>
+<text text-anchor="middle" x="349.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_gamma0</text>
+</a>
+</g>
+</g>
+<!-- interface~get_gamma0&#45;&gt;proc~get_gamma0~2 -->
+<g id="proc~~construct_ejecta~~CallsGraph_edge17" class="edge">
+<title>interface~get_gamma0&#45;&gt;proc~get_gamma0~2</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M245.74,-54C261.79,-54 280.42,-54 297.36,-54"/>
+<polygon fill="#000000" stroke="#000000" points="297.66,-57.5 307.66,-54 297.66,-50.5 297.66,-57.5"/>
 </g>
 </g>
 </svg>
@@ -940,7 +940,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-19 16:01:41           </p>
+ on 2022-04-20 10:40:32           </p>
         </div>
       </div>
       <br>
