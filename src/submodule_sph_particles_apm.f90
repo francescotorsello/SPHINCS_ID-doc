@@ -33,7 +33,8 @@ SUBMODULE (sph_particles) apm
   !
   !***********************************
 
-  USE constants,  ONLY: zero, quarter, one, two, three, ten
+  USE constants,  ONLY: quarter
+  USE utility,    ONLY: zero, one, two, three, ten
 
 
   IMPLICIT NONE
@@ -125,6 +126,9 @@ SUBMODULE (sph_particles) apm
     INTEGER,          PARAMETER:: m_max_it         = 50
     INTEGER,          PARAMETER:: search_pos       = 10
     !INTEGER,          PARAMETER:: print_step       = 15
+    INTEGER,          PARAMETER:: nuratio_max_steps= 50
+    INTEGER,          PARAMETER:: nuratio_min_it   = 100
+
     DOUBLE PRECISION, PARAMETER:: eps              = 5.0D-1
     DOUBLE PRECISION, PARAMETER:: ellipse_thickness= 1.1D0
     !DOUBLE PRECISION, PARAMETER:: ghost_dist       = 0.375D0!0.25D0 !30.0D0
@@ -134,11 +138,13 @@ SUBMODULE (sph_particles) apm
     !DOUBLE PRECISION, PARAMETER:: backup_h         = 0.25D0
     DOUBLE PRECISION, PARAMETER:: max_art_pr_ghost = 1.0D+10
     DOUBLE PRECISION, PARAMETER:: tiny_real        = 1.0D-10
+    DOUBLE PRECISION, PARAMETER:: nuratio_tol      = 0.0025
 
     INTEGER:: a, itr, itr2, n_inc, cnt1!, inde, index1   ! iterators
     INTEGER:: npart_real, npart_real_half, npart_ghost, npart_all
     INTEGER:: nx, ny, nz, i, j, k
     INTEGER:: a_numin, a_numin2, a_numax, a_numax2
+    INTEGER:: nuratio_cnt
     INTEGER:: dim_seed, rel_sign
     INTEGER:: n_problematic_h, ill, l, itot
     INTEGER, DIMENSION(:), ALLOCATABLE:: cnt_move
@@ -156,7 +162,7 @@ SUBMODULE (sph_particles) apm
                        err_mean_old, err_n_min, err_N_max, dN, &!dNstar, &
                        nstar_id_err, nstar_sph_err, dN_max, dN_av
     DOUBLE PRECISION:: art_pr_max
-    DOUBLE PRECISION:: nu_tot, nu_ratio, nu_tmp2, nuratio_tmp
+    DOUBLE PRECISION:: nu_tot, nu_ratio, nu_tmp2, nuratio_tmp, nuratio_tmp_prev
     DOUBLE PRECISION:: variance_nu, stddev_nu, mean_nu
     DOUBLE PRECISION:: variance_dN, stddev_dN
     DOUBLE PRECISION:: rand_num, rand_num2
@@ -619,8 +625,10 @@ SUBMODULE (sph_particles) apm
     PRINT *, " * The APM iteration starts here."
     PRINT *
 
-    n_inc= 0
-    err_N_mean_min= HUGE(one)
+    n_inc           = 0
+    err_N_mean_min  = HUGE(one)
+    nuratio_cnt     = 0
+    nuratio_tmp_prev= 1.D-8
     apm_iteration: DO itr= 1, apm_max_it, 1
 
       PRINT *, "------------------------------------------"
@@ -1045,30 +1053,39 @@ SUBMODULE (sph_particles) apm
       IF( debug ) PRINT *, SIZE(nstar_sph)
       IF( debug ) PRINT *, SIZE(correction_pos(1,:))
 
+      !
+      !-- The following loop shouldn't be needed, but apparently
+      !-- the test in the previous loop is not enough to remove
+      !-- random NaNs from the artificial pressure on the ghost particles.
+      !-- Which, btw, shouldn't be there at all since all the quantities are
+      !-- tested, and no errors are detected...
+      !-- Also, this loop is needed only when compiling with gfortran.
+      !
       !$OMP PARALLEL DO DEFAULT( NONE ) &
       !$OMP             SHARED( npart_all, npart_real, art_pr, nstar_sph, &
       !$OMP                     nstar_id, all_pos ) &
       !$OMP             PRIVATE( a )
-      find_nan_in_art_pr_ghost: DO a= npart_real + 1, npart_all, 1
+      fix_nan_in_art_pr_ghost: DO a= npart_real + 1, npart_all, 1
 
         IF( .NOT.is_finite_number(art_pr(a)) )THEN
-          PRINT *, "** ERROR! art_pr(", a, ")= ", art_pr(a), &
-                   " is not a finite number on a ghost particle!"
-          PRINT *, "   nstar_sph(", a, ")=", nstar_sph(a)
-          PRINT *, "   nstar_id(", a, ")=", nstar_id(a)
-          PRINT *, "   rho(", a, ")=", get_density( all_pos(1,a), &
-                                                    all_pos(2,a), &
-                                                    all_pos(3,a) )
-          PRINT *, " * Stopping.."
-          PRINT *
-          STOP
+          art_pr(a)= max_art_pr_ghost
+          !PRINT *, "** ERROR! art_pr(", a, ")= ", art_pr(a), &
+          !         " is not a finite number on a ghost particle!"
+          !PRINT *, "   nstar_sph(", a, ")=", nstar_sph(a)
+          !PRINT *, "   nstar_id(", a, ")=", nstar_id(a)
+          !PRINT *, "   rho(", a, ")=", get_density( all_pos(1,a), &
+          !                                          all_pos(2,a), &
+          !                                          all_pos(3,a) )
+          !PRINT *, " * Stopping.."
+          !PRINT *
+          !STOP
         ENDIF
 
-      ENDDO find_nan_in_art_pr_ghost
+      ENDDO fix_nan_in_art_pr_ghost
       !$OMP END PARALLEL DO
 
       PRINT *, " * Maximum relative error between the star density profile", &
-               "   and its SPH estimate: err_N_max= ", err_N_max
+               " and its SPH estimate: err_N_max= ", err_N_max
       PRINT *, "     at position: x=", pos_maxerr(1), ", y=", pos_maxerr(2), &
                ", z=", pos_maxerr(3)
       PRINT *, "     with r/(system size)= ", SQRT( &
@@ -1132,6 +1149,12 @@ SUBMODULE (sph_particles) apm
       IF( err_N_mean > err_mean_old )THEN
         n_inc= n_inc + 1
       ENDIF
+      IF( itr > nuratio_min_it .AND. nuratio_tmp /= nuratio_thres .AND. &
+          ABS(nuratio_tmp - nuratio_tmp_prev)/nuratio_tmp_prev <= nuratio_tol )THEN
+        nuratio_cnt= nuratio_cnt + 1
+      ELSE
+        nuratio_cnt= 0
+      ENDIF
 
       ! POSSIBLE EXIT CONDITION. DEPRECATED?
       !
@@ -1169,6 +1192,8 @@ SUBMODULE (sph_particles) apm
               nuratio_tmp <= nuratio_des*(one + quarter/ten) .AND. &
               nuratio_tmp /= nuratio_thres ) .OR. itr == apm_max_it ) EXIT
 
+        IF( nuratio_cnt >= nuratio_max_steps .OR. itr == apm_max_it ) EXIT
+
       ELSE
 
         PRINT *, " * n_inc= ", n_inc
@@ -1178,6 +1203,7 @@ SUBMODULE (sph_particles) apm
       ENDIF
       err_mean_old      = err_N_mean
       err_N_mean_min_old= err_N_mean_min
+      nuratio_tmp_prev  = nuratio_tmp
 
       !
       !-- If the particle distribution is not yet good enough, update it
@@ -1406,9 +1432,9 @@ SUBMODULE (sph_particles) apm
       !$OMP             PRIVATE( a )
       DO a= 1, npart_real, 1
 
-        IF( (all_pos_prev( 3, a ) > 0 .AND. all_pos( 3, a ) <= 0) &
+        IF( (all_pos_prev( 3, a ) > zero .AND. all_pos( 3, a ) <= zero) &
             .OR. &
-            (all_pos_prev( 3, a ) < 0 .AND. all_pos( 3, a ) >= 0) &
+            (all_pos_prev( 3, a ) < zero .AND. all_pos( 3, a ) >= zero) &
         )THEN
 
           all_pos( 3, a )= all_pos_prev( 3, a )

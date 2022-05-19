@@ -71,32 +71,32 @@ SUBMODULE (sph_particles) constructor_std
     !  that rely on an object of STATIC TYPE idbase.
     !
     !  @todo assign sub-tasks to separate SUBROUTINES
-    !        CONTAINED in this SUBMODULE
+    !        contained in this SUBMODULE
     !
     !  FT 17.10.2020
     !
-    !  @note Last updated: FT 17.01.2022
+    !  @note Last updated: FT 25.04.2022
     !
     !**************************************************
 
     !USE NaNChecker,    ONLY: Check_Array_for_NAN
-    USE constants,      ONLY: amu, pi, zero, half, third, one , two, Msun_geo
-    USE NR,             ONLY: indexx
-    USE kernel_table,   ONLY: ktable
-    USE input_output,   ONLY: read_options
-    USE units,          ONLY: set_units
-    USE options,        ONLY: ikernel, ndes, eos_str, eos_type
-    USE alive_flag,     ONLY: alive
-    USE pwp_EOS,        ONLY: shorten_eos_name
-    USE analyze,        ONLY: COM
-    USE utility,        ONLY: spherical_from_cartesian, &
-                              spatial_vector_norm_sym3x3
+    USE constants,          ONLY: amu, pi, half, third
+    USE utility,            ONLY: zero, one, two, ten, Msun_geo
+    !USE NR,                 ONLY: indexx
+    USE kernel_table,       ONLY: ktable
+    USE input_output,       ONLY: read_options
+    USE units,              ONLY: set_units
+    USE options,            ONLY: ikernel, ndes, eos_str, eos_type
+    USE alive_flag,         ONLY: alive
+    USE analyze,            ONLY: COM
+    USE utility,            ONLY: spherical_from_cartesian, &
+                                  spatial_vector_norm_sym3x3
 
     IMPLICIT NONE
 
     INTEGER, PARAMETER:: unit_pos= 2289
     ! Variable storing the number of column where nu is written
-    DOUBLE PRECISION, PARAMETER:: tol_equal_mass= 5D-3
+    DOUBLE PRECISION, PARAMETER:: tol_equal_mass= 5.0D-3
     ! Tolerance for the difference between the masse of the stars
     ! for a BNS system, to determine if a BNS is equal-mass or not.
     ! If the relative difference between the masses of the stars is lower
@@ -445,7 +445,7 @@ SUBMODULE (sph_particles) constructor_std
                    "one specified in parameter file SPHINCS_fm_input.dat."
           PRINT *
           PRINT *, " * EOS from the ID: ", &
-                   shorten_eos_name(parts% all_eos(i_matter)% eos_name)
+                   parts% all_eos(i_matter)% eos_name
           PRINT *, " * EOS from the parameter file SPHINCS_fm_input.dat: ", &
                    eos_type
           PRINT *, "Stopping..."
@@ -453,17 +453,16 @@ SUBMODULE (sph_particles) constructor_std
           STOP
         ENDIF
 
-        IF( (shorten_eos_name(parts% all_eos(i_matter)% eos_name) .LT. eos_str)&
+        IF( (parts% all_eos(i_matter)% eos_name .LT. eos_str)&
             .OR. &
-            (shorten_eos_name(parts% all_eos(i_matter)% eos_name) .GT. eos_str)&
+            (parts% all_eos(i_matter)% eos_name .GT. eos_str)&
         )THEN
 
           PRINT *, "** ERROR! On matter object ", i_matter, &
                    ", the EOS taken from the ID is not the same as the ",&
                    "one specified in parameter file SPHINCS_fm_input.dat."
           PRINT *
-          PRINT *, " * EOS from the ID: ", &
-                   shorten_eos_name(parts% all_eos(i_matter)% eos_name)
+          PRINT *, " * EOS from the ID: ", parts% all_eos(i_matter)% eos_name
           PRINT *, " * EOS from the parameter file SPHINCS_fm_input.dat: ", &
                    eos_str
           PRINT *, "Stopping..."
@@ -603,31 +602,31 @@ SUBMODULE (sph_particles) constructor_std
           ASSOCIATE( npart_in   => npart_i_tmp(itr)*(itr-1) + 1, &
                      npart_fin  => npart_i_tmp(itr) + npart_i_tmp(itr)*(itr-1) )
 
-           ! PRINT *, ABS( MINVAL( tmp_pos(1,npart_in:npart_fin) ) ) > &
-           !         ABS(center(itr,1)) + sizes(itr, 1)
-           ! PRINT *, ABS( MAXVAL( tmp_pos(1,npart_in:npart_fin) ) ) > &
-           !         ABS(center(itr,1)) + sizes(itr, 2)
-           ! PRINT *, ABS( MINVAL( tmp_pos(2,npart_in:npart_fin) ) ) > &
-           !         ABS(center(itr,2)) + sizes(itr, 3)
-           ! PRINT *, ABS( MAXVAL( tmp_pos(2,npart_in:npart_fin) ) ) > &
-           !         ABS(center(itr,2)) + sizes(itr, 4)
-           ! PRINT *, ABS( MINVAL( tmp_pos(3,npart_in:npart_fin) ) ) > &
-           !         ABS(center(itr,3)) + sizes(itr, 5)
-           ! PRINT *, ABS( MAXVAL( tmp_pos(3,npart_in:npart_fin) ) ) > &
-           !         ABS(center(itr,3)) + sizes(itr, 6)
-           !
-           ! PRINT *, ABS( MINVAL( tmp_pos(1,npart_in:npart_fin) ) )
-           ! PRINT *, ABS(center(itr,1)) + sizes(itr, 1)
-           ! PRINT *, ABS( MAXVAL( tmp_pos(1,npart_in:npart_fin) ) )
-           ! PRINT *, ABS(center(itr,1)) + sizes(itr, 2)
-           ! PRINT *, ABS( MINVAL( tmp_pos(2,npart_in:npart_fin) ) )
-           ! PRINT *, ABS(center(itr,2)) + sizes(itr, 3)
-           ! PRINT *, ABS( MAXVAL( tmp_pos(2,npart_in:npart_fin) ) )
-           ! PRINT *, ABS(center(itr,2)) + sizes(itr, 4)
-           ! PRINT *, ABS( MINVAL( tmp_pos(3,npart_in:npart_fin) ) )
-           ! PRINT *, ABS(center(itr,3)) + sizes(itr, 5)
-           ! PRINT *, ABS( MAXVAL( tmp_pos(3,npart_in:npart_fin) ) )
-           ! PRINT *, ABS(center(itr,3)) + sizes(itr, 6)
+          !  PRINT *, ABS( MINVAL( tmp_pos(1,npart_in:npart_fin) ) ) > &
+          !          ABS(center(itr,1)) + sizes(itr, 1)
+          !  PRINT *, ABS( MAXVAL( tmp_pos(1,npart_in:npart_fin) ) ) > &
+          !          ABS(center(itr,1)) + sizes(itr, 2)
+          !  PRINT *, ABS( MINVAL( tmp_pos(2,npart_in:npart_fin) ) ) > &
+          !          ABS(center(itr,2)) + sizes(itr, 3)
+          !  PRINT *, ABS( MAXVAL( tmp_pos(2,npart_in:npart_fin) ) ) > &
+          !          ABS(center(itr,2)) + sizes(itr, 4)
+          !  PRINT *, ABS( MINVAL( tmp_pos(3,npart_in:npart_fin) ) ) > &
+          !          ABS(center(itr,3)) + sizes(itr, 5)
+          !  PRINT *, ABS( MAXVAL( tmp_pos(3,npart_in:npart_fin) ) ) > &
+          !          ABS(center(itr,3)) + sizes(itr, 6)
+          !
+          !  PRINT *, ABS( MINVAL( tmp_pos(1,npart_in:npart_fin) ) )
+          !  PRINT *, ABS(center(itr,1)) + sizes(itr, 1)
+          !  PRINT *, ABS( MAXVAL( tmp_pos(1,npart_in:npart_fin) ) )
+          !  PRINT *, ABS(center(itr,1)) + sizes(itr, 2)
+          !  PRINT *, ABS( MINVAL( tmp_pos(2,npart_in:npart_fin) ) )
+          !  PRINT *, ABS(center(itr,2)) + sizes(itr, 3)
+          !  PRINT *, ABS( MAXVAL( tmp_pos(2,npart_in:npart_fin) ) )
+          !  PRINT *, ABS(center(itr,2)) + sizes(itr, 4)
+          !  PRINT *, ABS( MINVAL( tmp_pos(3,npart_in:npart_fin) ) )
+          !  PRINT *, ABS(center(itr,3)) + sizes(itr, 5)
+          !  PRINT *, ABS( MAXVAL( tmp_pos(3,npart_in:npart_fin) ) )
+          !  PRINT *, ABS(center(itr,3)) + sizes(itr, 6)
 
             IF( ABS( MINVAL( tmp_pos(1,npart_in:npart_fin) ) ) > &
                         ABS(center(itr,1)) + sizes(itr, 1) &
@@ -1098,7 +1097,8 @@ SUBMODULE (sph_particles) constructor_std
                     parts_all(i_matter)% pvol_i( 1:parts% npart_i(i_matter) )
         parts_all(i_matter)% pmass_i = &
                     parts_all(i_matter)% pmass_i( 1:parts% npart_i(i_matter) )
-
+        parts_all(i_matter)% nu_i = &
+                    parts_all(i_matter)% pmass_i( 1:parts% npart_i(i_matter) )
       ENDDO
 
       parts% npart= SUM( parts% npart_i )
@@ -1117,6 +1117,7 @@ SUBMODULE (sph_particles) constructor_std
       PRINT *, "** There is no implemented particle placer " &
                // "corresponding to the number", dist
       PRINT *, " * Stopping..."
+      PRINT *
       STOP
 
     END SELECT choose_particle_placer
@@ -1293,7 +1294,11 @@ SUBMODULE (sph_particles) constructor_std
       ! If nu is known already at this stage, either because computed by the APM
       ! or because it is read from file, assign it to the TYPE member array
       IF( apm_iterate(i_matter) &
-          .OR. ( parts% distribution_id == 0 .AND. read_nu ) )THEN
+          .OR. &
+          ( parts% distribution_id == id_particles_from_file .AND. read_nu ) &
+          .OR. &
+          ( parts% distribution_id == id_particles_on_spherical_surfaces ) &
+      )THEN
         parts% nu( parts% npart_i(i_matter-1) + 1: &
                    parts% npart_i(i_matter-1) + parts% npart_i(i_matter) )= &
                    parts_all(i_matter)% nu_i
@@ -1370,26 +1375,37 @@ SUBMODULE (sph_particles) constructor_std
     ! TODO: The idbase object should tell the location of the total
     !       computing frame center of mass to the particle object
 
-    CALL correct_center_of_mass( parts% npart, parts% pos, parts% nu, &
-                                 import_density, &
-                                 validate_position, [zero,zero,zero], &
-                                 verbose= .FALSE. )
+   ! DO i_matter= 1, parts% n_matter, 1
+   !   parts% barycenter_system(1:3)= &
+   !           parts% barycenter_system(1:3) + barycenter(i_matter,1:3)
+   ! ENDDO
+   ! PRINT *, parts% barycenter_system(1:3)
+   ! STOP
 
-    CALL correct_center_of_mass( parts% npart, parts% pos, parts% nu, &
-                                 import_density, &
-                                 validate_position, [zero,zero,zero], &
-                                 verbose= .FALSE. )
+    IF( dist /= id_particles_on_lattice )THEN
 
-    CALL correct_center_of_mass( parts% npart, parts% pos, parts% nu, &
-                                 import_density, &
-                                 validate_position, [zero,zero,zero], &
-                                 verbose= .TRUE. )
+      CALL correct_center_of_mass( parts% npart, parts% pos, parts% nu, &
+                                   import_density, &
+                                   validate_position, [zero,zero,zero], &
+                                   verbose= .FALSE. )
 
-    CALL COM( & ! input
-              parts% npart, parts% pos, parts% nu, &
-              ! output
-              parts% barycenter_system(1), parts% barycenter_system(2), &
-              parts% barycenter_system(3), parts% barycenter_system(4) )
+      CALL correct_center_of_mass( parts% npart, parts% pos, parts% nu, &
+                                   import_density, &
+                                   validate_position, [zero,zero,zero], &
+                                   verbose= .FALSE. )
+
+      CALL correct_center_of_mass( parts% npart, parts% pos, parts% nu, &
+                                   import_density, &
+                                   validate_position, [zero,zero,zero], &
+                                   verbose= .TRUE. )
+
+      CALL COM( & ! input
+                parts% npart, parts% pos, parts% nu, &
+                ! output
+                parts% barycenter_system(1), parts% barycenter_system(2), &
+                parts% barycenter_system(3), parts% barycenter_system(4) )
+
+    ENDIF
 
     !PRINT *, com_x, com_y, com_z, com_d
 
@@ -1582,8 +1598,16 @@ SUBMODULE (sph_particles) constructor_std
 
         ENDDO
         min_lapse= MINVAL( parts% lapse, DIM= 1 )
-        lapse_lengthscales= two*parts% masses(i_matter)/( one - min_lapse )
-        g00_lengthscales  = two*parts% masses(i_matter)/( one - min_g00_abs )
+        IF( one == min_lapse )THEN
+          lapse_lengthscales= HUGE(one)/(ten*ten*ten)
+        ELSE
+          lapse_lengthscales= two*parts% masses(i_matter)/( one - min_lapse )
+        ENDIF
+        IF( one == min_g00_abs )THEN
+          g00_lengthscales= HUGE(one)/(ten*ten*ten)
+        ELSE
+          g00_lengthscales= two*parts% masses(i_matter)/( one - min_g00_abs )
+        ENDIF
 
       END ASSOCIATE
 
@@ -1667,7 +1691,7 @@ SUBMODULE (sph_particles) constructor_std
                           baryon_density, &
                           gamma_euler )
 
-      USE matrix, ONLY: determinant_3x3_sym_matrix
+      USE utility,  ONLY: determinant_sym3x3
 
       IMPLICIT NONE
 
@@ -1685,7 +1709,7 @@ SUBMODULE (sph_particles) constructor_std
                                baryon_density, &
                                gamma_euler )
 
-      CALL determinant_3x3_sym_matrix(g,sqdetg)
+      CALL determinant_sym3x3(g,sqdetg)
       sqdetg= SQRT(sqdetg)
 
     END SUBROUTINE import_id
@@ -1756,33 +1780,33 @@ SUBMODULE (sph_particles) constructor_std
       DOUBLE PRECISION:: nstar_eul_id(npart)
       DOUBLE PRECISION:: nu_eul(npart)
 
-INTEGER:: a, itr2
+      INTEGER:: a, itr2
 
-PRINT *, "1"
+      PRINT *, "1"
 
-!$OMP PARALLEL DO DEFAULT( NONE ) &
-!$OMP             SHARED( npart, pos ) &
-!$OMP             PRIVATE( a, itr2 )
-find_nan_in_pos: DO a= 1, npart, 1
+      !$OMP PARALLEL DO DEFAULT( NONE ) &
+      !$OMP             SHARED( npart, pos ) &
+      !$OMP             PRIVATE( a, itr2 )
+      find_nan_in_pos: DO a= 1, npart, 1
 
-  DO itr2= 1, 3, 1
-    IF( .NOT.is_finite_number(pos(itr2,a)) )THEN
-      PRINT *, "** ERROR! pos(", itr2, a, ")= ", pos(itr2,a), &
-               " is not a finite number!"
-      PRINT *, " * Stopping.."
-      PRINT *
-      STOP
-    ENDIF
-  ENDDO
+        DO itr2= 1, 3, 1
+          IF( .NOT.is_finite_number(pos(itr2,a)) )THEN
+            PRINT *, "** ERROR! pos(", itr2, a, ")= ", pos(itr2,a), &
+                     " is not a finite number!"
+            PRINT *, " * Stopping.."
+            PRINT *
+            STOP
+          ENDIF
+        ENDDO
 
-ENDDO find_nan_in_pos
-!$OMP END PARALLEL DO
+      ENDDO find_nan_in_pos
+      !$OMP END PARALLEL DO
 
       CALL correct_center_of_mass( npart, pos, nu, import_density, &
                                    validate_position, com_system, &
                                    verbose= .TRUE. )
 
-PRINT *, "4"
+      PRINT *, "4"
 
     END SUBROUTINE correct_center_of_mass_of_system
 
@@ -1845,10 +1869,9 @@ PRINT *, "4"
       !
       !**************************************************************
 
-      USE constants,                    ONLY: zero, one, two
-      USE tensor,                       ONLY: jx, jy, jz, n_sym4x4
-      USE utility,                      ONLY: compute_g4, determinant_sym4x4, &
-                                              spacetime_vector_norm_sym4x4
+      USE tensor,   ONLY: jx, jy, jz, n_sym4x4
+      USE utility,  ONLY: compute_g4, determinant_sym4x4, &
+                          spacetime_vector_norm_sym4x4, zero, one, two
 
       IMPLICIT NONE
 
@@ -1965,10 +1988,9 @@ PRINT *, "4"
       !
       !**************************************************************
 
-      USE constants,                    ONLY: zero, one, two
-      USE tensor,                       ONLY: jx, jy, jz, n_sym4x4
-      USE utility,                      ONLY: compute_g4, determinant_sym3x3, &
-                                              spatial_vector_norm_sym3x3
+      USE tensor,   ONLY: jx, jy, jz, n_sym4x4
+      USE utility,  ONLY: compute_g4, determinant_sym3x3, &
+                          spatial_vector_norm_sym3x3, zero, one, two
 
       IMPLICIT NONE
 

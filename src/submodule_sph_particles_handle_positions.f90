@@ -49,18 +49,21 @@ SUBMODULE (sph_particles) handle_positions
     !
     !*************************************************************
 
-    USE constants,  ONLY: zero
+    USE utility,  ONLY: zero
 
     IMPLICIT NONE
 
-    INTEGER:: a
+    INTEGER:: a, npart_diff
 
-    INTEGER, DIMENSION(npart):: above_xy_plane
+    INTEGER, DIMENSION(npart):: above_xy_plane, below_xy_plane
+
+    DOUBLE PRECISION, DIMENSION(:), ALLOCATABLE:: above_xy_plane_a_tmp, below_xy_plane_a_tmp
 
     above_xy_plane= zero
+    below_xy_plane= zero
     npart_above_xy= zero
     !$OMP PARALLEL DO DEFAULT( NONE ) &
-    !$OMP             SHARED( pos, above_xy_plane, npart ) &
+    !$OMP             SHARED( pos, above_xy_plane, below_xy_plane, npart ) &
     !$OMP             PRIVATE( a ) &
     !$OMP             REDUCTION(+:npart_above_xy)
     DO a= 1, npart, 1
@@ -70,13 +73,82 @@ SUBMODULE (sph_particles) handle_positions
         npart_above_xy= npart_above_xy + 1
         above_xy_plane(a)= a
 
+      ELSEIF( pos(3,a) < zero )THEN
+
+        below_xy_plane(a)= a
+
       ENDIF
 
     ENDDO
     !$OMP END PARALLEL DO
 
+    npart_diff= 0
+    IF( npart/2 /= npart_above_xy )THEN
+
+      PRINT *, "** WARNING! Mismatch in the number of particles above the xy ",&
+               "plane in SUBROUTINE reflect_particles_xy_plane!"
+      PRINT *, " * npart/2= ", npart/2
+      PRINT *, " * npart_above_xy= ", npart_above_xy
+      PRINT *, " * If you are inside the APM iteration, you're safe since ", &
+               "this is taken care of."
+      PRINT *, "   Otherwise, you may want to double check that ", &
+               "you know what's going on."
+      PRINT *
+
+      IF( npart/2 > npart_above_xy )THEN
+        npart_diff= npart/2 - npart_above_xy
+      ENDIF
+
+      npart_above_xy= npart/2
+
+    ENDIF
+
     ALLOCATE(above_xy_plane_a(npart_above_xy))
-    above_xy_plane_a= PACK( above_xy_plane, above_xy_plane /= zero )
+
+    above_xy_plane_a_tmp= PACK( above_xy_plane, above_xy_plane /= zero )
+    below_xy_plane_a_tmp= PACK( below_xy_plane, below_xy_plane /= zero )
+
+    IF( npart_diff > 0 )THEN
+      !$OMP PARALLEL DO DEFAULT( NONE ) &
+      !$OMP             SHARED( pos, above_xy_plane_a, above_xy_plane_a_tmp, npart ) &
+      !$OMP             PRIVATE( a )
+      DO a= 1, SIZE(above_xy_plane_a_tmp), 1
+
+         above_xy_plane_a(a)= above_xy_plane_a_tmp(a)
+
+      ENDDO
+      !$OMP END PARALLEL DO
+      IF( npart_above_xy /= SIZE(above_xy_plane_a_tmp) + npart_diff )THEN
+         PRINT *, "** ERROR! Mismatch in the number of particles above the xy ",&
+                  "plane in SUBROUTINE reflect_particles_xy_plane!"
+         PRINT *, " * SIZE(above_xy_plane_a_tmp)= ", SIZE(above_xy_plane_a_tmp)
+         PRINT *, " * npart_diff= ", npart_diff
+         PRINT *, " * npart_above_xy= ", npart_above_xy
+         PRINT *, " * Stopping..."
+         PRINT *
+         STOP
+      ENDIF
+      !$OMP PARALLEL DO DEFAULT( NONE ) &
+      !$OMP             SHARED( pos, above_xy_plane_a, above_xy_plane_a_tmp, &
+      !$OMP                     npart_above_xy, below_xy_plane_a_tmp ) &
+      !$OMP             PRIVATE( a )
+      DO a= SIZE(above_xy_plane_a_tmp) + 1, npart_above_xy, 1
+
+         above_xy_plane_a(a)= below_xy_plane_a_tmp(a)
+
+      ENDDO
+      !$OMP END PARALLEL DO
+    ELSE
+      !$OMP PARALLEL DO DEFAULT( NONE ) &
+      !$OMP             SHARED( pos, above_xy_plane_a, above_xy_plane_a_tmp, npart_above_xy ) &
+      !$OMP             PRIVATE( a )
+      DO a= 1, npart_above_xy, 1
+
+         above_xy_plane_a(a)= above_xy_plane_a_tmp(a)
+
+      ENDDO
+      !$OMP END PARALLEL DO
+    ENDIF
 
   END PROCEDURE find_particles_above_xy_plane
 
@@ -108,20 +180,6 @@ SUBMODULE (sph_particles) handle_positions
       PRINT *, " * Stopping..."
       PRINT *
       STOP
-    ENDIF
-
-    IF( npart/2 /= npart_above_xy )THEN
-
-      PRINT *, "** WARNING! Mismatch in the number of particles above the xy ",&
-               "plane in SUBROUTINE reflect_particles_xy_plane!"
-      PRINT *, " * npart/2= ", npart/2
-      PRINT *, " * npart_above_xy= ", npart_above_xy
-      PRINT *, " * If you are inside the APM iteration, you're safe since ", &
-               "this is taken care of."
-      PRINT *, "   Otherwise, you may want to double check that ", &
-               "you know what's going on."
-      PRINT *
-
     ENDIF
 
     pos_tmp= pos
@@ -265,27 +323,29 @@ SUBMODULE (sph_particles) handle_positions
     ENDDO
     !$OMP END PARALLEL DO
 
-    IF( PRESENT(verbose) .AND. verbose .EQV. .TRUE. )THEN
+    IF( PRESENT(verbose) )THEN
+      IF( verbose .EQV. .TRUE. )THEN
 
-      CALL COM( npart, pos, nu, & ! input
-                com_x, com_y, com_z, com_d ) ! output
+        CALL COM( npart, pos, nu, & ! input
+                  com_x, com_y, com_z, com_d ) ! output
 
-      PRINT *, "** After mirroring particles:"
-      IF( PRESENT(com_star) ) PRINT *, &
-               " * x coordinate of the center of mass of the star, ", &
-               "from LORENE: com_star= ", com_star, "Msun_geo"
-      PRINT *, " * x coordinate of the center of mass of the particle ", &
-               "distribution: com_x= ", com_x, "Msun_geo"
-      PRINT *, " * y coordinate of the center of mass of the particle ", &
-               "distribution: com_y= ", com_y, "Msun_geo"
-      PRINT *, " * z coordinate of the center of mass of the particle ", &
-               "distribution: com_z= ", com_z, "Msun_geo"
-      PRINT *, " * Distance of the center of mass of the particle ", &
-               "distribution from the  origin: com_d= ", com_d
-      IF( PRESENT(com_star) ) PRINT *, " * |com_x-com_star/com_star|=", &
-               ABS( com_x-com_star )/ABS( com_star + 1 )
-      PRINT *
+        PRINT *, "** After mirroring particles:"
+        IF( PRESENT(com_star) ) PRINT *, &
+                 " * x coordinate of the center of mass of the star, ", &
+                 "from LORENE: com_star= ", com_star, "Msun_geo"
+        PRINT *, " * x coordinate of the center of mass of the particle ", &
+                 "distribution: com_x= ", com_x, "Msun_geo"
+        PRINT *, " * y coordinate of the center of mass of the particle ", &
+                 "distribution: com_y= ", com_y, "Msun_geo"
+        PRINT *, " * z coordinate of the center of mass of the particle ", &
+                 "distribution: com_z= ", com_z, "Msun_geo"
+        PRINT *, " * Distance of the center of mass of the particle ", &
+                 "distribution from the  origin: com_d= ", com_d
+        IF( PRESENT(com_star) ) PRINT *, " * |com_x-com_star/com_star|=", &
+                 ABS( com_x-com_star )/ABS( com_star + 1 )
+        PRINT *
 
+      ENDIF
     ENDIF
 
   END PROCEDURE impose_equatorial_plane_symmetry
@@ -362,39 +422,45 @@ SUBMODULE (sph_particles) handle_positions
 
     ENDIF
 
-    IF( PRESENT(debug) .AND. debug .EQV. .TRUE. )THEN
+    IF( PRESENT(debug) )THEN
 
-      !$OMP PARALLEL DO DEFAULT( NONE ) &
-      !$OMP             SHARED( pos, x_sort, x_number ) &
-      !$OMP             PRIVATE( itr, itr2, x_idx )
-      DO itr= 1, SIZE(x_number), 1
+      IF( debug .EQV. .TRUE. )THEN
+      ! These two IF statements are nested because gfortran doesn't like them
+      ! together when debug is not PRESENT
 
-        IF( itr == 1 )THEN
-          x_idx= 1
-        ELSE
-          x_idx= SUM(x_number(1:itr-1)) + 1
-        ENDIF
+        !$OMP PARALLEL DO DEFAULT( NONE ) &
+        !$OMP             SHARED( pos, x_sort, x_number ) &
+        !$OMP             PRIVATE( itr, itr2, x_idx )
+        DO itr= 1, SIZE(x_number), 1
 
-        DO itr2= x_idx, x_idx + x_number(itr) - 2, 1
-
-          ! If they do not have the same x
-          IF( pos( 1, x_sort(itr2) ) /= &
-              pos( 1, x_sort(itr2+1) ) )THEN
-
-            PRINT *, "** ERROR! ", "The two particles ", x_sort(itr2), &
-                     " and", x_sort(itr2+1), &
-                     " do not have the same x, but should!"
-            PRINT *, pos( :, x_sort(itr2) )
-            PRINT *, pos( :, x_sort(itr2+1) )
-            PRINT *, " * Stopping..."
-            PRINT *
-            STOP
-
+          IF( itr == 1 )THEN
+            x_idx= 1
+          ELSE
+            x_idx= SUM(x_number(1:itr-1)) + 1
           ENDIF
 
+          DO itr2= x_idx, x_idx + x_number(itr) - 2, 1
+
+            ! If they do not have the same x
+            IF( pos( 1, x_sort(itr2) ) /= &
+                pos( 1, x_sort(itr2+1) ) )THEN
+
+              PRINT *, "** ERROR! ", "The two particles ", x_sort(itr2), &
+                       " and", x_sort(itr2+1), &
+                       " do not have the same x, but should!"
+              PRINT *, pos( :, x_sort(itr2) )
+              PRINT *, pos( :, x_sort(itr2+1) )
+              PRINT *, " * Stopping..."
+              PRINT *
+              STOP
+
+            ENDIF
+
+          ENDDO
         ENDDO
-      ENDDO
-      !$OMP END PARALLEL DO
+        !$OMP END PARALLEL DO
+
+      ENDIF
 
     ENDIF
 
@@ -531,36 +597,38 @@ SUBMODULE (sph_particles) handle_positions
     !***********************************************************
 
     USE analyze,    ONLY: COM
-    USE constants,  ONLY: zero
+    USE utility,    ONLY: is_finite_number, zero
 
     IMPLICIT NONE
 
-    INTEGER:: a
+    INTEGER:: a, i
     DOUBLE PRECISION:: com_x, com_y, com_z, com_d
     DOUBLE PRECISION, DIMENSION(3):: pos_corr_tmp
 
-    CALL COM( npart, pos, nu, &       ! input
+    CALL COM( npart, pos, nu, &            ! input
               com_x, com_y, com_z, com_d ) ! output
 
-    IF( PRESENT(verbose) .AND. verbose .EQV. .TRUE. )THEN
-      PRINT *, "** Before center of mass correction:"
-      PRINT *, " * x coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(1), "Msun_geo"
-      PRINT *, " * y coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(2), "Msun_geo"
-      PRINT *, " * z coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(3), "Msun_geo"
-      PRINT *, " * x coordinate of the center of mass of the particle ", &
-               "distribution: com_x= ", com_x, "Msun_geo"
-      PRINT *, " * y coordinate of the center of mass of the particle ", &
-               "distribution: com_y= ", com_y, "Msun_geo"
-      PRINT *, " * z coordinate of the center of mass of the particle ", &
-               "distribution: com_z= ", com_z, "Msun_geo"
-      PRINT *, " * Distance of the center of mass of the particle ", &
-               "distribution from the  origin: com_d= ", com_d
-      PRINT *, " * |com_x-com_star_x/com_star_x|=", &
-               ABS( com_x-com_star(1) )/ABS( com_star(1) + 1 )
-      PRINT *
+    IF( PRESENT(verbose) )THEN
+      IF( verbose .EQV. .TRUE. )THEN
+        PRINT *, "** Before center of mass correction:"
+        PRINT *, " * x coordinate of the center of mass of the star, ", &
+                 "from the ID: com_star= ", com_star(1), "Msun_geo"
+        PRINT *, " * y coordinate of the center of mass of the star, ", &
+                 "from the ID: com_star= ", com_star(2), "Msun_geo"
+        PRINT *, " * z coordinate of the center of mass of the star, ", &
+                 "from the ID: com_star= ", com_star(3), "Msun_geo"
+        PRINT *, " * x coordinate of the center of mass of the particle ", &
+                 "distribution: com_x= ", com_x, "Msun_geo"
+        PRINT *, " * y coordinate of the center of mass of the particle ", &
+                 "distribution: com_y= ", com_y, "Msun_geo"
+        PRINT *, " * z coordinate of the center of mass of the particle ", &
+                 "distribution: com_z= ", com_z, "Msun_geo"
+        PRINT *, " * Distance of the center of mass of the particle ", &
+                 "distribution from the  origin: com_d= ", com_d
+        PRINT *, " * |com_x-com_star_x/com_star_x|=", &
+                 ABS( com_x-com_star(1) )/ABS( com_star(1) + 1 )
+        PRINT *
+      ENDIF
     ENDIF
 
     !$OMP PARALLEL DO DEFAULT( NONE ) &
@@ -573,10 +641,16 @@ SUBMODULE (sph_particles) handle_positions
       pos_corr_tmp(2)= pos(2,a) - ( com_y - com_star(2) )
       pos_corr_tmp(3)= pos(3,a) - ( com_z - com_star(3) )
 
+      DO i= 1, 3, 1
+        IF( .NOT.is_finite_number(pos_corr_tmp(i)) )THEN
+          PRINT *, pos_corr_tmp
+          STOP
+        ENDIF
+      ENDDO
+
       IF( get_density( &
                   pos_corr_tmp(1), pos_corr_tmp(2), pos_corr_tmp(3) ) > zero &
           .AND. &
-          !binary% is_hydro_negative( &
           validate_pos( &
                   pos_corr_tmp(1), pos_corr_tmp(2), pos_corr_tmp(3) ) &
       )THEN
@@ -591,25 +665,27 @@ SUBMODULE (sph_particles) handle_positions
     CALL COM( npart, pos, nu, & ! input
               com_x, com_y, com_z, com_d ) ! output
 
-    IF( PRESENT(verbose) .AND. verbose .EQV. .TRUE. )THEN
-      PRINT *, "** After center of mass correction:"
-      PRINT *, " * x coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(1), "Msun_geo"
-      PRINT *, " * y coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(2), "Msun_geo"
-      PRINT *, " * z coordinate of the center of mass of the star, ", &
-               "from the ID: com_star= ", com_star(3), "Msun_geo"
-      PRINT *, " * x coordinate of the center of mass of the particle ", &
-               "distribution: com_x= ", com_x, "Msun_geo"
-      PRINT *, " * y coordinate of the center of mass of the particle ", &
-               "distribution: com_y= ", com_y, "Msun_geo"
-      PRINT *, " * z coordinate of the center of mass of the particle ", &
-               "distribution: com_z= ", com_z, "Msun_geo"
-      PRINT *, " * Distance of the center of mass of the particle ", &
-               "distribution from the  origin: com_d= ", com_d
-      PRINT *, " * |com_x-com_star_x/com_star_x|=", &
-               ABS( com_x-com_star(1) )/ABS( com_star(1) + 1 )
-      PRINT *
+    IF( PRESENT(verbose) )THEN
+      IF( verbose .EQV. .TRUE. )THEN
+        PRINT *, "** After center of mass correction:"
+        PRINT *, " * x coordinate of the center of mass of the star, ", &
+                 "from the ID: com_star= ", com_star(1), "Msun_geo"
+        PRINT *, " * y coordinate of the center of mass of the star, ", &
+                 "from the ID: com_star= ", com_star(2), "Msun_geo"
+        PRINT *, " * z coordinate of the center of mass of the star, ", &
+                 "from the ID: com_star= ", com_star(3), "Msun_geo"
+        PRINT *, " * x coordinate of the center of mass of the particle ", &
+                 "distribution: com_x= ", com_x, "Msun_geo"
+        PRINT *, " * y coordinate of the center of mass of the particle ", &
+                 "distribution: com_y= ", com_y, "Msun_geo"
+        PRINT *, " * z coordinate of the center of mass of the particle ", &
+                 "distribution: com_z= ", com_z, "Msun_geo"
+        PRINT *, " * Distance of the center of mass of the particle ", &
+                 "distribution from the  origin: com_d= ", com_d
+        PRINT *, " * |com_x-com_star_x/com_star_x|=", &
+                 ABS( com_x-com_star(1) )/ABS( com_star(1) + 1 )
+        PRINT *
+      ENDIF
     ENDIF
 
   END PROCEDURE correct_center_of_mass

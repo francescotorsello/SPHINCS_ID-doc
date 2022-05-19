@@ -30,11 +30,34 @@ MODULE utility
   !***********************************************************************
 
 
-  USE matrix, ONLY: determinant_4x4_matrix
+  USE matrix,     ONLY: determinant_4x4_matrix
+  USE constants,  ONLY: G_Msun, c_light2, MSun
 
 
   IMPLICIT NONE
 
+  ! This should go in MODULE constants
+  DOUBLE PRECISION, PARAMETER :: zero            = 0.D0
+  DOUBLE PRECISION, PARAMETER :: one             = 1.D0
+  DOUBLE PRECISION, PARAMETER :: two             = 2.D0
+  DOUBLE PRECISION, PARAMETER :: three           = 3.D0
+  DOUBLE PRECISION, PARAMETER :: four            = 4.D0
+  DOUBLE PRECISION, PARAMETER :: five            = 5.D0
+  DOUBLE PRECISION, PARAMETER :: ten             = 10.D0
+  DOUBLE PRECISION, PARAMETER :: golden_ratio    = 1.618033988749894D0
+  DOUBLE PRECISION, PARAMETER :: km2m            = 1.D+3
+  DOUBLE PRECISION, PARAMETER :: m2cm            = 1D+2
+  DOUBLE PRECISION, PARAMETER :: g2kg            = 1D-3
+  DOUBLE PRECISION, PARAMETER :: kg2g            = 1D+3
+  DOUBLE PRECISION, PARAMETER :: MSun_geo        = G_Msun/c_light2/1.0D5! in km;
+  !# Msun_geo = 1.47662503825040 km
+  !  see https://einsteintoolkit.org/thornguide/EinsteinBase/HydroBase/documentation.html
+  DOUBLE PRECISION, PARAMETER :: km2Msun_geo     = 1.0D0/MSun_geo
+  DOUBLE PRECISION, PARAMETER :: lorene2hydrobase= &
+                                              (MSun_geo*km2m)**3/(MSun*g2kg)
+  !# lorene2hydrobase= (1477m)^3 / (2*10^30kg) ! 1.6110591665D-21
+  !  new value 1.6186541582311746851140226630074e-21, different by 0.5%
+  !  lorene2hydrobase is the conversion factor for the baryon mass density
 
   INTEGER:: itr
   !! Iterator for loops
@@ -308,7 +331,6 @@ MODULE utility
     !
     !***********************************************
 
-    USE constants,  ONLY: two
     USE tensor,     ONLY: itt, itx, ity, itz, ixx, ixy, &
                           ixz, iyy, iyz, izz, jxx, jxy, jxz, &
                           jyy, jyz, jzz, jx, jy, jz
@@ -356,7 +378,6 @@ MODULE utility
     !
     !***********************************************
 
-    USE constants,  ONLY: two
     USE matrix,     ONLY: invert_3x3_matrix
     USE tensor,     ONLY: itt, itx, ity, itz, ixx, ixy, &
                           ixz, iyy, iyz, izz, jxx, jxy, jxz, &
@@ -406,6 +427,96 @@ MODULE utility
                  - g4(itt) )
 
   END SUBROUTINE compute_tpo_metric
+
+
+  SUBROUTINE invert_sym4x4( A, iA )
+
+    !****************************************************************
+    !
+    !# Invert a \(4\times 4\) symemtric matrix stored as a \(10\)-vector
+    !  @note The inverse (and the adjugate) of a symmetric matrix
+    !        is symmetric
+    !
+    !  FT 25.04.2022
+    !
+    !****************************************************************
+
+    USE tensor,               ONLY: n_sym4x4
+    USE metric_on_particles,  ONLY: gvec2mat, mat2gvec
+    USE matrix,               ONLY: invert_4x4_matrix
+
+    IMPLICIT NONE
+
+    DOUBLE PRECISION, INTENT(IN):: A(:)
+    !# The \(4\times 4\) symmetric matrix, given as a 10-vector.
+    !  The first 3 components run over the numbers of grid points
+    !  along each axis. The fourth index runs over the number of
+    !  independent components of the \(4\times 4\) symmetric matrix.
+    DOUBLE PRECISION, INTENT(OUT):: iA(n_sym4x4)
+    !# Inverse of the \(4\times 4\) symmetric matrix, given as input.
+
+    DOUBLE PRECISION:: Amat(4,4)
+    !! The \(4\times 4\) symmetric matrix as a matrix
+    DOUBLE PRECISION:: iAmat(4,4)
+    !! The inverse of the \(4\times 4\) symmetric matrix, as a matrix
+
+    IF( SIZE(A) /= n_sym4x4 )THEN
+      PRINT *, "** ERROR in determinant_sym4x4_grid in MODULE utility.", &
+               " This subroutine needs a symmetric matrix with 10 components,",&
+               " and a ", SIZE(A), "component matrix was given instead."
+      STOP
+    ENDIF
+
+    CALL gvec2mat(A,Amat)
+
+    CALL invert_4x4_matrix(Amat,iAmat)
+
+    CALL mat2gvec(iA,iAmat)
+
+  END SUBROUTINE invert_sym4x4
+
+
+  SUBROUTINE invert_sym3x3( A, iA )
+
+    !****************************************************************
+    !
+    !# Invert a \(3\times 3\) symemtric matrix stored as a \(6\)-vector
+    !  @note The inverse (and the adjugate) of a symmetric matrix
+    !        is symmetric
+    !
+    !  FT 25.04.2022
+    !
+    !****************************************************************
+
+    USE tensor, ONLY: n_sym3x3
+    USE matrix, ONLY: invert_3x3_matrix
+
+    IMPLICIT NONE
+
+    DOUBLE PRECISION, INTENT(IN):: A(:)
+    !# The \(3\times 3\) symmetric matrix, given as a \(6\)-vector.
+    DOUBLE PRECISION, INTENT(OUT):: iA(n_sym3x3)
+    !# Inverse of the \(3\times 3\) symmetric matrix, given as input.
+
+    DOUBLE PRECISION:: Amat(3,3)
+    !! The \(3\times 3\) symmetric matrix as a matrix
+    DOUBLE PRECISION:: iAmat(3,3)
+    !! The inverse of the \(3\times 3\) symmetric matrix, as a matrix
+
+    IF( SIZE(A) /= n_sym3x3 )THEN
+      PRINT *, "** ERROR in determinant_sym3x3_grid in MODULE utility.", &
+               " This subroutine needs a symmetric matrix with 6 components,",&
+               " and a ", SIZE(A), "component matrix was given instead."
+      STOP
+    ENDIF
+
+    CALL vec2mat_sym3x3(A,Amat)
+
+    CALL invert_3x3_matrix(Amat,iAmat)
+
+    CALL mat2vec_sym3x3(iAmat,iA)
+
+  END SUBROUTINE invert_sym3x3
 
 
   SUBROUTINE determinant_sym4x4( A, det )
@@ -470,83 +581,6 @@ MODULE utility
   END SUBROUTINE determinant_sym4x4
 
 
-  SUBROUTINE spacetime_vector_norm_sym4x4( g4, v, norm )
-
-    !****************************************************************
-    !
-    !# Compute the spacetime squared norm of a vector, using the
-    !  metric given as an array of 10 components
-    !
-    !  FT 07.02.2022
-    !
-    !****************************************************************
-
-    USE tensor,    ONLY: itt, itx, ity, itz, ixx, ixy, ixz, iyy, iyz, izz, &
-                         it, ix, iy, iz, n_sym4x4
-    USE constants, ONLY: two
-
-    IMPLICIT NONE
-
-    DOUBLE PRECISION, INTENT(IN):: g4(itt:izz)
-    !# The \(4\times 4\) spacetime metric, given as a 10-vector.
-    DOUBLE PRECISION, INTENT(IN):: v(it:iz)
-    !# The \(4\)-vector whose norm has to be computed.
-    DOUBLE PRECISION, INTENT(OUT):: norm
-    !! Spacetime norm of the vector v.
-
-    IF( SIZE(g4) /= n_sym4x4 )THEN
-      PRINT *, "** ERROR in spacetime_vector_norm_sym4x4 in MODULE utility.", &
-               " This subroutine needs a symmetric matrix with 10 components,",&
-               " and a ", SIZE(g4), "component matrix was given instead."
-      STOP
-    ENDIF
-
-    norm= g4(itt)*v(it)*v(it)     + two*g4(itx)*v(it)*v(ix) &
-        + two*g4(ity)*v(it)*v(iy) + two*g4(itz)*v(it)*v(iz) &
-        + g4(ixx)*v(ix)*v(ix)     + two*g4(ixy)*v(ix)*v(iy) &
-        + two*g4(ixz)*v(ix)*v(iz) + g4(iyy)*v(iy)*v(iy)     &
-        + two*g4(iyz)*v(iy)*v(iz) + g4(izz)*v(iz)*v(iz)
-
-  END SUBROUTINE spacetime_vector_norm_sym4x4
-
-
-  SUBROUTINE spatial_vector_norm_sym3x3( g3, v, norm )
-
-    !****************************************************************
-    !
-    !# Compute the spatial squared norm of a vector, using the
-    !  spatial metric given as an array of 6 components
-    !
-    !  FT 14.02.2022
-    !
-    !****************************************************************
-
-    USE tensor,    ONLY: jxx, jxy, jxz, jyy, jyz, jzz, jx, jy, jz, n_sym3x3
-    USE constants, ONLY: two
-
-    IMPLICIT NONE
-
-    DOUBLE PRECISION, INTENT(IN):: g3(jxx:jzz)
-    !# The \(3\times 3\) spacetime metric, given as a 6-vector.
-    DOUBLE PRECISION, INTENT(IN):: v(jx:jz)
-    !# The \(3\)-vector whose norm has to be computed.
-    DOUBLE PRECISION, INTENT(OUT):: norm
-    !! Spatial norm of the vector v.
-
-    IF( SIZE(g3) /= n_sym3x3 )THEN
-      PRINT *, "** ERROR in spatial_vector_norm_sym3x3 in MODULE utility.", &
-               " This subroutine needs a symmetric matrix with 6 components,",&
-               " and a ", SIZE(g3), "component matrix was given instead."
-      STOP
-    ENDIF
-
-    norm= g3(jxx)*v(jx)*v(jx)     + two*g3(jxy)*v(jx)*v(jy) &
-        + two*g3(jxz)*v(jx)*v(jz) + g3(jyy)*v(jy)*v(jy)     &
-        + two*g3(jyz)*v(jy)*v(jz) + g3(jzz)*v(jz)*v(jz)
-
-  END SUBROUTINE spatial_vector_norm_sym3x3
-
-
   SUBROUTINE determinant_sym3x3( A, det )
 
     !****************************************************************
@@ -588,6 +622,141 @@ MODULE utility
   END SUBROUTINE determinant_sym3x3
 
 
+  SUBROUTINE spacetime_vector_norm_sym4x4( g4, v, norm )
+
+    !****************************************************************
+    !
+    !# Compute the spacetime squared norm of a vector, using the
+    !  metric given as an array of 10 components
+    !
+    !  FT 07.02.2022
+    !
+    !****************************************************************
+
+    USE tensor,    ONLY: itt, itx, ity, itz, ixx, ixy, ixz, iyy, iyz, izz, &
+                         it, ix, iy, iz, n_sym4x4
+
+    IMPLICIT NONE
+
+    DOUBLE PRECISION, INTENT(IN):: g4(itt:izz)
+    !# The \(4\times 4\) spacetime metric, given as a 10-vector.
+    DOUBLE PRECISION, INTENT(IN):: v(it:iz)
+    !# The \(4\)-vector whose norm has to be computed.
+    DOUBLE PRECISION, INTENT(OUT):: norm
+    !! Spacetime norm of the vector v.
+
+    IF( SIZE(g4) /= n_sym4x4 )THEN
+      PRINT *, "** ERROR in spacetime_vector_norm_sym4x4 in MODULE utility.", &
+               " This subroutine needs a symmetric matrix with 10 components,",&
+               " and a ", SIZE(g4), "component matrix was given instead."
+      STOP
+    ENDIF
+
+    norm= g4(itt)*v(it)*v(it)     + two*g4(itx)*v(it)*v(ix) &
+        + two*g4(ity)*v(it)*v(iy) + two*g4(itz)*v(it)*v(iz) &
+        + g4(ixx)*v(ix)*v(ix)     + two*g4(ixy)*v(ix)*v(iy) &
+        + two*g4(ixz)*v(ix)*v(iz) + g4(iyy)*v(iy)*v(iy)     &
+        + two*g4(iyz)*v(iy)*v(iz) + g4(izz)*v(iz)*v(iz)
+
+  END SUBROUTINE spacetime_vector_norm_sym4x4
+
+
+  SUBROUTINE spatial_vector_norm_sym3x3( g3, v, norm )
+
+    !****************************************************************
+    !
+    !# Compute the spatial squared norm of a vector, using the
+    !  spatial metric given as an array of 6 components
+    !
+    !  FT 14.02.2022
+    !
+    !****************************************************************
+
+    USE tensor,    ONLY: jxx, jxy, jxz, jyy, jyz, jzz, jx, jy, jz, n_sym3x3
+
+    IMPLICIT NONE
+
+    DOUBLE PRECISION, INTENT(IN):: g3(jxx:jzz)
+    !# The \(3\times 3\) spacetime metric, given as a 6-vector.
+    DOUBLE PRECISION, INTENT(IN):: v(jx:jz)
+    !# The \(3\)-vector whose norm has to be computed.
+    DOUBLE PRECISION, INTENT(OUT):: norm
+    !! Spatial norm of the vector v.
+
+    IF( SIZE(g3) /= n_sym3x3 )THEN
+      PRINT *, "** ERROR in spatial_vector_norm_sym3x3 in MODULE utility.", &
+               " This subroutine needs a symmetric matrix with 6 components,",&
+               " and a ", SIZE(g3), "component matrix was given instead."
+      STOP
+    ENDIF
+
+    norm= g3(jxx)*v(jx)*v(jx)     + two*g3(jxy)*v(jx)*v(jy) &
+        + two*g3(jxz)*v(jx)*v(jz) + g3(jyy)*v(jy)*v(jy)     &
+        + two*g3(jyz)*v(jy)*v(jz) + g3(jzz)*v(jz)*v(jz)
+
+  END SUBROUTINE spatial_vector_norm_sym3x3
+
+
+  PURE SUBROUTINE vec2mat_sym3x3( vec, mat )
+
+    !********************************************
+    !
+    !# Write the components of symmetric \(3\times 3\)
+    !  matrix given as a \(6\)-vector, into a
+    !  \(3\times 3\) matrix
+    !
+    ! FT 25.04.2022
+    !
+    !*********************************************
+
+    USE tensor,    ONLY: jxx, jxy, jxz, jyy, jyz, jzz, jx, jy, jz, n_sym3x3
+
+    IMPLICIT NONE
+
+    DOUBLE PRECISION, INTENT(IN)  :: vec(n_sym3x3)
+    DOUBLE PRECISION, INTENT(OUT) :: mat(3,3)
+
+    mat(1,1)= vec(jxx)
+    mat(1,2)= vec(jxy)
+    mat(1,3)= vec(jxz)
+
+    mat(2,1)= mat(1,2)
+    mat(2,2)= vec(jyy)
+    mat(2,3)= vec(jyz)
+
+    mat(3,1)= mat(1,3)
+    mat(3,2)= mat(2,3)
+    mat(3,3)= vec(jzz)
+
+  END SUBROUTINE vec2mat_sym3x3
+
+
+  PURE SUBROUTINE mat2vec_sym3x3( mat, vec )
+
+    !************************************
+    !                                   *
+    ! transform symmetric 4x4-matrix    *
+    ! into vector; SKR 30.11.2017       *
+    !                                   *
+    !************************************
+
+    USE tensor,    ONLY: jxx, jxy, jxz, jyy, jyz, jzz, jx, jy, jz, n_sym3x3
+
+    IMPLICIT NONE
+
+    DOUBLE PRECISION, INTENT(IN)  :: mat(3,3)
+    DOUBLE PRECISION, INTENT(OUT) :: vec(n_sym3x3)
+
+    vec(jxx)= mat(1,1)
+    vec(jxy)= mat(1,2)
+    vec(jxz)= mat(1,3)
+    vec(jyy)= mat(2,2)
+    vec(jyz)= mat(2,3)
+    vec(jzz)= mat(3,3)
+
+  END SUBROUTINE mat2vec_sym3x3
+
+
   PURE SUBROUTINE spherical_from_cartesian( x, y, z, xo, yo, zo, r, theta, phi )
 
     !****************************************************************
@@ -600,7 +769,7 @@ MODULE utility
     !
     !****************************************************************
 
-    USE constants, ONLY: zero, pi
+    USE constants, ONLY: pi
 
     IMPLICIT NONE
 
@@ -650,6 +819,55 @@ MODULE utility
     theta= ACOS( zd/r )
 
   END SUBROUTINE spherical_from_cartesian
+
+
+  FUNCTION k_lorene2hydrobase( gamma )
+
+    DOUBLE PRECISION :: gamma
+    DOUBLE PRECISION :: k_lorene2hydrobase
+
+    ! LORENE's EOS is in terms on number density n = rho/m_nucleon:
+    ! P = K n^Gamma
+    ! to convert to SI units:
+    ! K_SI(n) = K_LORENE rho_nuc c^2 / n_nuc^gamma
+    ! Converting this to be in terms of the mass density rho = n m_nucleon gets
+    ! changes n_nuc to rho_nuc:
+    ! K_SI(rho) = K_LORENE c^2 / rho_nuc^(gamma-1)
+    ! In SI units P has units of M / (L T^2) and rho has units of M/L^3 thus
+    ! K_SI has units of (L^3/M)^Gamma M/(L T^2).
+    ! In Cactus units P and rho have the same units thus K_Cactus is unitless.
+    ! Conversion between K_SI and K_Cactus thus amounts to dividing out the
+    ! units of the SI quantity.
+
+    !k_lorene2hydrobase= ((c_light*cm2m)**6/ &
+    !              ( (G_grav*(cm2m**3)/(g2kg))**3*(MSun*g2kg)**2*(1.66E+17) )) &
+    !              **( gamma - 1.0D0 )
+
+    ! Our testbed cases are gamma= 2.75, k= 30000; and gamma=2, k=100
+    ! in SPHINCS units
+
+    k_lorene2hydrobase= &
+                        ( (MSun*g2kg)/((MSun_geo*km2m)**3*(1.66D+17)) ) &
+                        **( gamma - 1.0D0 )
+
+
+  END FUNCTION
+
+
+  FUNCTION k_lorene2hydrobase_piecewisepolytrope( gamma0 )
+
+    DOUBLE PRECISION :: gamma0
+    DOUBLE PRECISION :: k_lorene2hydrobase_piecewisepolytrope
+
+    ! LORENE has K0 in units of (g cm^{-3})^{1-gamma0} for the piecewise
+    ! polytropes. This factor writes it in SPHINCS units
+
+    k_lorene2hydrobase_piecewisepolytrope= &
+                        ( MSun/((MSun_geo*km2m*m2cm)**3) ) &
+                        **( gamma0 - 1.0D0 )
+
+
+  END FUNCTION
 
 
 END MODULE utility

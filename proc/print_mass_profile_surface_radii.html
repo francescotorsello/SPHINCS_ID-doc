@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.0</small></a>
+          <a class="navbar-brand" href="../index.html">SPHINCS_ID <small>1.5</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -136,7 +136,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>subroutine print_mass_profile_surface_radii(mass_profile, mass_profile_idx, shell_radii, radius, dr, n_shells, filename_mass_profile, filename_shells_radii)</h2>
+    <h2>subroutine print_mass_profile_surface_radii(mass_profile, mass_profile_idx, surface_radii, radius, dr, n_surfaces, filename_mass_profile, filename_shells_radii)</h2>
     
 
     <p>Print star's radial mass profile and radii of
@@ -161,10 +161,10 @@
   <td><strong>mass_profile_idx</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-shell_radii~3"></span>double precision,</td>
+  <td><span class="anchor" id="variable-surface_radii~3"></span>double precision,</td>
 <td>intent(in),</td>
-  <td></td>  <td>DIMENSION( n_shells )</td><td>::</td>
-  <td><strong>shell_radii</strong></td><td></td>
+  <td></td>  <td>DIMENSION( n_surfaces )</td><td>::</td>
+  <td><strong>surface_radii</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-radius~5"></span>double precision,</td>
@@ -179,10 +179,10 @@
   <td><strong>dr</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-n_shells~4"></span>integer,</td>
+  <td><span class="anchor" id="variable-n_surfaces~4"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>n_shells</strong></td><td></td>
+  <td><strong>n_surfaces</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-filename_mass_profile~2"></span>character(len=*),</td>
@@ -365,8 +365,8 @@
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span>  <span class="k">SUBROUTINE </span><span class="n">print_mass_profile_surface_radii</span><span class="p">(</span> <span class="n">mass_profile</span><span class="p">,</span> <span class="n">mass_profile_idx</span><span class="p">,</span> <span class="p">&amp;</span>
-                                               <span class="n">shell_radii</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">dr</span><span class="p">,</span> <span class="p">&amp;</span>
-                                               <span class="n">n_shells</span><span class="p">,</span> <span class="p">&amp;</span>
+                                               <span class="n">surface_radii</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">dr</span><span class="p">,</span> <span class="p">&amp;</span>
+                                               <span class="n">n_surfaces</span><span class="p">,</span> <span class="p">&amp;</span>
                                                <span class="n">filename_mass_profile</span><span class="p">,</span> <span class="p">&amp;</span>
                                                <span class="n">filename_shells_radii</span> <span class="p">)</span>
 
@@ -383,11 +383,11 @@
 
     <span class="k">IMPLICIT NONE</span>
 
-<span class="k">    </span><span class="kt">INTEGER</span><span class="p">,</span>          <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">n_shells</span>
+<span class="k">    </span><span class="kt">INTEGER</span><span class="p">,</span>          <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">n_surfaces</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">radius</span><span class="p">,</span> <span class="n">dr</span>
 
     <span class="kt">INTEGER</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span> <span class="p">:</span> <span class="p">),</span>                 <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">mass_profile_idx</span>
-    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span> <span class="n">n_shells</span> <span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">shell_radii</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span> <span class="n">n_surfaces</span> <span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">surface_radii</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(</span> <span class="p">:,</span> <span class="p">:</span> <span class="p">),</span>     <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">mass_profile</span>
 
     <span class="kt">CHARACTER</span><span class="p">(</span> <span class="nb">LEN</span><span class="o">=</span> <span class="o">*</span> <span class="p">),</span> <span class="k">INTENT</span><span class="p">(</span> <span class="n">IN</span> <span class="p">)</span><span class="kd">::</span> <span class="n">filename_mass_profile</span><span class="p">,</span> <span class="p">&amp;</span>
@@ -455,10 +455,10 @@
       <span class="k">STOP</span>
 <span class="k">    </span><span class="n">ENDIF</span>
 
-    <span class="k">DO </span><span class="n">itr</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_shells</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">DO </span><span class="n">itr</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_surfaces</span><span class="p">,</span> <span class="mi">1</span>
 
       <span class="k">WRITE</span><span class="p">(</span> <span class="n">UNIT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">IOSTAT</span> <span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="n">IOMSG</span> <span class="o">=</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">FMT</span> <span class="o">=</span> <span class="o">*</span> <span class="p">)</span> <span class="p">&amp;</span>
-        <span class="n">shell_radii</span><span class="p">(</span> <span class="n">itr</span> <span class="p">)</span>
+        <span class="n">surface_radii</span><span class="p">(</span> <span class="n">itr</span> <span class="p">)</span>
 
       <span class="k">IF</span><span class="p">(</span> <span class="n">ios</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span><span class="k">THEN</span>
 <span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;...error when writing the arrays in &quot;</span> <span class="p">&amp;</span>
@@ -492,7 +492,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-04-20 10:40:32           </p>
+ on 2022-05-19 14:41:14           </p>
         </div>
       </div>
       <br>

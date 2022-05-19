@@ -40,7 +40,7 @@ SUBMODULE (ejecta_generic) constructor
 
 
   !
-  !-- Implementation of the constructor of the bns object
+  !-- Implementation of the constructor of the ejecta object
   !
   MODULE PROCEDURE construct_ejecta
 
@@ -54,10 +54,12 @@ SUBMODULE (ejecta_generic) constructor
     !****************************************************
 
     USE constants, ONLY: pi
+    USE utility,   ONLY: zero, one, two, four, ten
     USE NR,        ONLY: indexx
     USE pwp_EOS,   ONLY: get_Gamma0, get_Gamma1, get_Gamma2, get_Gamma3, &
                          get_K0, get_K1, get_K2, get_K3, get_p1, &
                          get_rho_0, get_rho_1, get_rho_2, select_EOS_parameters
+    USE timing,    ONLY: timer
 
     IMPLICIT NONE
 
@@ -90,6 +92,10 @@ SUBMODULE (ejecta_generic) constructor
 
     CALL derived_type% set_cold_system(.FALSE.)
 
+    derived_type% construction_timer= timer( "ejecta_construction_timer" )
+
+    CALL derived_type% construction_timer% start_timer()
+
     INQUIRE( FILE= TRIM(filename), EXIST= exist )
 
     IF( exist )THEN
@@ -120,7 +126,7 @@ SUBMODULE (ejecta_generic) constructor
 
     ! Allocate the temporary array to store data
     ALLOCATE( grid_tmp( 2*derived_type% n_gridpoints, 8 ) )
-    grid_tmp= 0.0D0
+    grid_tmp= zero
 
     ! Read the ID
     OPEN( UNIT= unit_pos, FILE= TRIM(filename), &
@@ -272,10 +278,10 @@ SUBMODULE (ejecta_generic) constructor
     ! Allocate and initialize member arrays
     CALL derived_type% allocate_gridid_memory( n_matter_loc )
 
-    derived_type% grid= 0.0D0
-    derived_type% baryon_mass_density= 0.0D0
-    derived_type% specific_energy= 0.0D0
-    derived_type% vel= 0.0D0
+    derived_type% grid= zero
+    derived_type% baryon_mass_density= zero
+    derived_type% specific_energy= zero
+    derived_type% vel= zero
 
     ! Store the ID into the member arrays
     DO i= 1, derived_type% nx_grid, 1
@@ -322,23 +328,23 @@ SUBMODULE (ejecta_generic) constructor
           IF( derived_type% baryon_mass_density( i, j, k ) &
               <= atmosphere_density )THEN
 
-            derived_type% baryon_mass_density( i, j, k )= 0.0D0
+            derived_type% baryon_mass_density( i, j, k )= zero
 
-            derived_type% specific_energy( i, j, k )= 0.0D0
+            derived_type% specific_energy( i, j, k )= zero
 
-            derived_type% vel( i, j, k, : )= 0.0D0
+            derived_type% vel( i, j, k, : )= zero
 
           ENDIF
 
           !derived_type% baryon_mass_density( i, j, k )= &
-          !  MAX( 0.0D0, &
+          !  MAX( zero, &
           !  derived_type% baryon_mass_density( i, j, k ) - atmosphere_density )
           !
-          !IF( derived_type% baryon_mass_density( i, j, k ) == 0.0D0 )THEN
+          !IF( derived_type% baryon_mass_density( i, j, k ) == zero )THEN
           !
-          !  derived_type% specific_energy( i, j, k )= 0.0D0
+          !  derived_type% specific_energy( i, j, k )= zero
           !
-          !  derived_type% vel( i, j, k, : )= 0.0D0
+          !  derived_type% vel( i, j, k, : )= zero
           !
           !ENDIF
 
@@ -350,22 +356,22 @@ SUBMODULE (ejecta_generic) constructor
     ! Assign ID properties to member arrays
     DO i_matter= 1, n_matter_loc, 1
 
-      !derived_type% masses(i_matter)= 0.0D0
-      derived_type% centers(i_matter,:)= 0.0D0
-      derived_type% barycenters(i_matter,:)= 0.0D0
+      !derived_type% masses(i_matter)= zero
+      derived_type% centers(i_matter,:)= zero
+      derived_type% barycenters(i_matter,:)= zero
       derived_type% sizes(i_matter,:)= [ &
-                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**2.0D0 &
-                  !    + ABS(MAXVAL(grid_tmp( :, 2 )))**2.0D0 ), &
-                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**2.0D0 &
-                  !    + ABS(MAXVAL(grid_tmp( :, 2 )))**2.0D0 ), &
-                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**2.0D0 &
-                  !    + ABS(MAXVAL(grid_tmp( :, 2 )))**2.0D0 ), &
-                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**2.0D0 &
-                  !    + ABS(MAXVAL(grid_tmp( :, 2 )))**2.0D0 ), &
-                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**2.0D0 &
-                  !    + ABS(MAXVAL(grid_tmp( :, 3 )))**2.0D0 ), &
-                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**2.0D0 &
-                  !    + ABS(MAXVAL(grid_tmp( :, 3 )))**2.0D0 ) ]
+                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**two &
+                  !    + ABS(MAXVAL(grid_tmp( :, 2 )))**two ), &
+                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**two &
+                  !    + ABS(MAXVAL(grid_tmp( :, 2 )))**two ), &
+                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**two &
+                  !    + ABS(MAXVAL(grid_tmp( :, 2 )))**two ), &
+                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**two &
+                  !    + ABS(MAXVAL(grid_tmp( :, 2 )))**two ), &
+                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**two &
+                  !    + ABS(MAXVAL(grid_tmp( :, 3 )))**two ), &
+                  !1.3D0*SQRT( ABS(MAXVAL(grid_tmp( :, 1 )))**two &
+                  !    + ABS(MAXVAL(grid_tmp( :, 3 )))**two ) ]
                                          ABS(derived_type% xL_grid), &
                                          ABS(MAXVAL(grid_tmp( :, 1 ))), &
                                          ABS(derived_type% yL_grid), &
@@ -405,10 +411,10 @@ SUBMODULE (ejecta_generic) constructor
             derived_type% grid( i, j, k, 3 ), &
             derived_type% baryon_mass_density( i, j, k ), &
             derived_type% read_mass_density( &
-              derived_type% grid( i, j, k, 1 ) + derived_type% dx_grid/2.0D0, &
+              derived_type% grid( i, j, k, 1 ) + derived_type% dx_grid/two, &
               derived_type% grid( i, j, k, 2 ), &
               derived_type% grid( i, j, k, 3 ) ), &
-            derived_type% grid( i, j, k, 1 ) + derived_type% dx_grid/2.0D0, &
+            derived_type% grid( i, j, k, 1 ) + derived_type% dx_grid/two, &
             derived_type% specific_energy( i, j, k )
         ENDDO
       ENDDO
@@ -417,9 +423,9 @@ SUBMODULE (ejecta_generic) constructor
     CLOSE( UNIT= 2 )
 
     ! Assign total mass to member variable
-    dr             = derived_type% dx_grid/4.0D0
-    dth            = pi/2.0D0/100.0D0
-    dphi           = 2.0D0*pi/100.0D0
+    dr             = derived_type% dx_grid/four
+    dth            = pi/two/ten*ten
+    dphi           = two*pi/ten*ten
 
     ALLOCATE( mass_profile( 3, 0:NINT(ABS(MAXVAL(grid_tmp( :, 1 )))/dr) ), &
               STAT= ios, ERRMSG= err_msg )
@@ -458,6 +464,8 @@ SUBMODULE (ejecta_generic) constructor
 
     derived_type% finalize_sph_id_ptr => finalize
 
+    CALL derived_type% construction_timer% stop_timer()
+
   END PROCEDURE construct_ejecta
 
 
@@ -471,20 +479,18 @@ SUBMODULE (ejecta_generic) constructor
     !
     !***********************************************
 
-    USE constants,  ONLY: zero
-
     IMPLICIT NONE
 
-    ! Temporary implementation, to avoid warnings about unuesed variables
+    ! Temporary implementation, to avoid warnings about unused variables
 
-    pos  = npart
-    nlrf = zero
-    nu   = zero
-    pr   = zero
-    vel_u= zero
-    theta= zero
-    nstar= zero
-    u    = zero
+    pos  = pos
+    nlrf = nlrf
+    nu   = nu
+    pr   = pr
+    vel_u= vel_u
+    theta= theta
+    nstar= nstar
+    u    = u
 
   END PROCEDURE finalize
 
