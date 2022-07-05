@@ -91,13 +91,13 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">54 statements</a>
+    title=" 0.1% of total for procedures.">48 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/submodule_bns_lorene_import.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/submodule_bns_lorene_read.f90"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/submodule_bns_lorene_import.f90.html'>submodule_bns_lorene_import.f90</a></li>
-     <li><a href='../module/import.html'>import</a></li>
+     <li><a href='../sourcefile/submodule_bns_lorene_read.f90.html'>submodule_bns_lorene_read.f90</a></li>
+     <li><a href='../module/read.html'>read</a></li>
      <li class="active">import_id_particles</li>
   </ol>
 </div>
@@ -120,6 +120,7 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
+      <a class="list-group-item" href="../proc/import_id_particles.html#variable-a~17">a</a>
       <a class="list-group-item" href="../proc/import_id_particles.html#variable-detg~2">detg</a>
     </div>
   </div>
@@ -139,8 +140,8 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/utility.html'>utility</a></li>
     <li>constants</li>
+    <li><a href='../module/utility.html'>utility</a></li>
   </ul>
       </li>
       <li class="list-group-item">
@@ -161,10 +162,22 @@
 <polygon fill="none" stroke="black" points="304,-46 190,-46 190,-22 304,-22 304,-46"/>
 <text text-anchor="middle" x="247" y="-31.6" font-family="Helvetica,sans-Serif" font-size="10.50">import_id_particles</text>
 </g>
-<!-- module~utility -->
+<!-- constants -->
 <g id="proc~~import_id_particles~~UsesGraph_node2" class="node">
+<title>constants</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="64,-66 0,-66 0,-42 64,-42 64,-66"/>
+<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
+</g>
+<!-- proc~import_id_particles&#45;&gt;constants -->
+<g id="proc~~import_id_particles~~UsesGraph_edge1" class="edge">
+<title>proc~import_id_particles&#45;&gt;constants</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.76,-39.28C153.5,-42.69 107.16,-47.04 74.29,-50.12"/>
+<polygon fill="#000000" stroke="#000000" points="73.75,-46.66 64.12,-51.08 74.41,-53.63 73.75,-46.66"/>
+</g>
+<!-- module~utility -->
+<g id="proc~~import_id_particles~~UsesGraph_node3" class="node">
 <title>module~utility</title>
-<g id="a_proc~~import_id_particles~~UsesGraph_node2"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<g id="a_proc~~import_id_particles~~UsesGraph_node3"><a xlink:href=".././module/utility.html" xlink:title="utility">
 <polygon fill="#337ab7" stroke="#337ab7" points="154,-26 100,-26 100,-2 154,-2 154,-26"/>
 <text text-anchor="middle" x="127" y="-11.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">utility</text>
 </a>
@@ -175,18 +188,6 @@
 <title>proc~import_id_particles&#45;&gt;module~utility</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.76,-24.47C181,-22.98 172.15,-21.48 164,-20.1"/>
 <polygon fill="#000000" stroke="#000000" points="164.55,-16.65 154.11,-18.42 163.38,-23.55 164.55,-16.65"/>
-</g>
-<!-- constants -->
-<g id="proc~~import_id_particles~~UsesGraph_node3" class="node">
-<title>constants</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="64,-66 0,-66 0,-42 64,-42 64,-66"/>
-<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
-</g>
-<!-- proc~import_id_particles&#45;&gt;constants -->
-<g id="proc~~import_id_particles~~UsesGraph_edge1" class="edge">
-<title>proc~import_id_particles&#45;&gt;constants</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.76,-39.28C153.5,-42.69 107.16,-47.04 74.29,-50.12"/>
-<polygon fill="#000000" stroke="#000000" points="73.75,-46.66 64.12,-51.08 74.41,-53.63 73.75,-46.66"/>
 </g>
 <!-- module~utility&#45;&gt;constants -->
 <g id="proc~~import_id_particles~~UsesGraph_edge4" class="edge">
@@ -281,7 +282,7 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~85"></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
+  <td><span class="anchor" id="variable-this~195"></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
@@ -311,85 +312,85 @@
   <td><strong>z</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-lapse~19"></span>double precision,</td>
+  <td><span class="anchor" id="variable-lapse~20"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>lapse</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-shift_x~13"></span>double precision,</td>
+  <td><span class="anchor" id="variable-shift_x~14"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>shift_x</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-shift_y~13"></span>double precision,</td>
+  <td><span class="anchor" id="variable-shift_y~14"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>shift_y</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-shift_z~13"></span>double precision,</td>
+  <td><span class="anchor" id="variable-shift_z~14"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>shift_z</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_xx~10"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_xx~11"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_xx</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_xy~10"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_xy~11"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_xy</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_xz~10"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_xz~11"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_xz</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_yy~10"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_yy~11"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_yy</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_yz~10"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_yz~11"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_yz</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_zz~10"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_zz~11"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_zz</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-baryon_density~16"></span>double precision,</td>
+  <td><span class="anchor" id="variable-baryon_density~15"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>baryon_density</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-energy_density~13"></span>double precision,</td>
+  <td><span class="anchor" id="variable-energy_density~12"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>energy_density</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-specific_energy~14"></span>double precision,</td>
+  <td><span class="anchor" id="variable-specific_energy~15"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>specific_energy</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-pressure~8"></span>double precision,</td>
+  <td><span class="anchor" id="variable-pressure~15"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>pressure</strong></td><td></td>
@@ -427,31 +428,46 @@
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~import_id_particles~~CallsGraph Pages: 1 -->
-<svg id="procimport_id_particlesCallsGraph" width="293pt" height="32pt"
- viewBox="0.00 0.00 293.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~import_id_particles~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<svg id="procimport_id_particlesCallsGraph" width="293pt" height="74pt"
+ viewBox="0.00 0.00 293.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~import_id_particles~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
 <title>proc~~import_id_particles~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 289,-28 289,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 289,-70 289,4 -4,4"/>
 <!-- proc~import_id_particles -->
 <g id="proc~~import_id_particles~~CallsGraph_node1" class="node">
 <title>proc~import_id_particles</title>
-<polygon fill="none" stroke="black" points="114,-24 0,-24 0,0 114,0 114,-24"/>
-<text text-anchor="middle" x="57" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">import_id_particles</text>
+<polygon fill="none" stroke="black" points="114,-45 0,-45 0,-21 114,-21 114,-45"/>
+<text text-anchor="middle" x="57" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">import_id_particles</text>
 </g>
 <!-- interface~get_lorene_id_particles -->
 <g id="proc~~import_id_particles~~CallsGraph_node2" class="node">
 <title>interface~get_lorene_id_particles</title>
 <g id="a_proc~~import_id_particles~~CallsGraph_node2"><a xlink:href=".././interface/get_lorene_id_particles.html" xlink:title="get_lorene_id_particles">
-<polygon fill="#a7506f" stroke="#a7506f" points="285,-24 150,-24 150,0 285,0 285,-24"/>
-<text text-anchor="middle" x="217.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_lorene_id_particles</text>
+<polygon fill="#a7506f" stroke="#a7506f" points="285,-66 150,-66 150,-42 285,-42 285,-66"/>
+<text text-anchor="middle" x="217.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_lorene_id_particles</text>
 </a>
 </g>
 </g>
 <!-- proc~import_id_particles&#45;&gt;interface~get_lorene_id_particles -->
 <g id="proc~~import_id_particles~~CallsGraph_edge1" class="edge">
 <title>proc~import_id_particles&#45;&gt;interface~get_lorene_id_particles</title>
-<path fill="none" stroke="#000000" d="M114.33,-12C122.58,-12 131.19,-12 139.76,-12"/>
-<polygon fill="#000000" stroke="#000000" points="139.79,-15.5 149.79,-12 139.79,-8.5 139.79,-15.5"/>
+<path fill="none" stroke="#000000" d="M114.33,-40.46C122.58,-41.56 131.19,-42.7 139.76,-43.83"/>
+<polygon fill="#000000" stroke="#000000" points="139.41,-47.32 149.79,-45.16 140.33,-40.38 139.41,-47.32"/>
+</g>
+<!-- proc~determinant_sym3x3 -->
+<g id="proc~~import_id_particles~~CallsGraph_node3" class="node">
+<title>proc~determinant_sym3x3</title>
+<g id="a_proc~~import_id_particles~~CallsGraph_node3"><a xlink:href=".././proc/determinant_sym3x3.html" xlink:title="determinant_sym3x3">
+<polygon fill="#d9534f" stroke="#d9534f" points="280,-24 155,-24 155,0 280,0 280,-24"/>
+<text text-anchor="middle" x="217.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym3x3</text>
+</a>
+</g>
+</g>
+<!-- proc~import_id_particles&#45;&gt;proc~determinant_sym3x3 -->
+<g id="proc~~import_id_particles~~CallsGraph_edge2" class="edge">
+<title>proc~import_id_particles&#45;&gt;proc~determinant_sym3x3</title>
+<path fill="none" stroke="#000000" d="M114.33,-25.54C124.2,-24.23 134.6,-22.85 144.83,-21.5"/>
+<polygon fill="#000000" stroke="#000000" points="145.52,-24.94 154.97,-20.15 144.6,-18 145.52,-24.94"/>
 </g>
 </g>
 </svg>
@@ -625,6 +641,7 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
+      <a class="list-group-item" href="../proc/import_id_particles.html#variable-a~17">a</a>
       <a class="list-group-item" href="../proc/import_id_particles.html#variable-detg~2">detg</a>
     </div>
   </div>
@@ -639,6 +656,11 @@
     <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
+<tr>
+  <td><span class="anchor" id="variable-a~17"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>a</strong></td><td></td><td></td><td></td>
+</tr>
 <tr>
   <td><span class="anchor" id="variable-detg~2"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
@@ -673,7 +695,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-05-24 08:27:25           </p>
+ on 2022-07-05 18:11:38           </p>
         </div>
       </div>
       <br>

@@ -192,35 +192,35 @@
 <title>sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_utility.f90</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M353.48,-30.97C320.4,-19.73 267.41,-4.47 220,-3"/>
 </g>
-<!-- sourcefile~module_id_base.f90 -->
-<g id="sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_node4" class="node">
-<title>sourcefile~module_id_base.f90</title>
-<g id="a_sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_node4"><a xlink:href=".././sourcefile/module_id_base.f90.html" xlink:title="module_id_base.f90">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="119,-85 0,-85 0,-61 119,-61 119,-85"/>
-<text text-anchor="middle" x="59.5" y="-70.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">module_id_base.f90</text>
-</a>
-</g>
-</g>
-<!-- sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_id_base.f90 -->
-<g id="sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_edge3" class="edge">
-<title>sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_id_base.f90</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M335.18,-55.05C318.64,-58.52 300.12,-61.92 283,-64 231.73,-70.22 173.38,-72.4 129.3,-73.06"/>
-<polygon fill="#000000" stroke="#000000" points="129.22,-69.56 119.27,-73.19 129.31,-76.56 129.22,-69.56"/>
-</g>
 <!-- sourcefile~module_bns_base.f90 -->
-<g id="sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_node5" class="node">
+<g id="sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_node4" class="node">
 <title>sourcefile~module_bns_base.f90</title>
-<g id="a_sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_node5"><a xlink:href=".././sourcefile/module_bns_base.f90.html" xlink:title="module_bns_base.f90">
+<g id="a_sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_node4"><a xlink:href=".././sourcefile/module_bns_base.f90.html" xlink:title="module_bns_base.f90">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="283,-55 155,-55 155,-31 283,-31 283,-55"/>
 <text text-anchor="middle" x="219" y="-40.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">module_bns_base.f90</text>
 </a>
 </g>
 </g>
 <!-- sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_bns_base.f90 -->
-<g id="sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_edge4" class="edge">
+<g id="sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_edge3" class="edge">
 <title>sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_bns_base.f90</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M318.96,-43C310.58,-43 301.97,-43 293.5,-43"/>
 <polygon fill="#000000" stroke="#000000" points="293.26,-39.5 283.26,-43 293.26,-46.5 293.26,-39.5"/>
+</g>
+<!-- sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_node5" class="node">
+<title>sourcefile~module_id_base.f90</title>
+<g id="a_sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_node5"><a xlink:href=".././sourcefile/module_id_base.f90.html" xlink:title="module_id_base.f90">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="119,-85 0,-85 0,-61 119,-61 119,-85"/>
+<text text-anchor="middle" x="59.5" y="-70.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">module_id_base.f90</text>
+</a>
+</g>
+</g>
+<!-- sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_id_base.f90 -->
+<g id="sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_edge4" class="edge">
+<title>sourcefile~module_bns_lorene.f90&#45;&gt;sourcefile~module_id_base.f90</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M335.18,-55.05C318.64,-58.52 300.12,-61.92 283,-64 231.73,-70.22 173.38,-72.4 129.3,-73.06"/>
+<polygon fill="#000000" stroke="#000000" points="129.22,-69.56 119.27,-73.19 129.31,-76.56 129.22,-69.56"/>
 </g>
 <!-- sourcefile~module_bns_base.f90&#45;&gt;sourcefile~module_utility.f90 -->
 <g id="sourcefile~~submodule_bns_lorene_constructor.f90~~EfferentGraph_edge7" class="edge">
@@ -403,164 +403,166 @@
 <a name="ln-105"></a>    <span class="k">CALL </span><span class="n">derived_type</span><span class="p">%</span> <span class="n">set_one_lapse</span> <span class="p">(</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.</span> <span class="p">)</span>
 <a name="ln-106"></a>    <span class="k">CALL </span><span class="n">derived_type</span><span class="p">%</span> <span class="n">set_zero_shift</span><span class="p">(</span> <span class="p">.</span><span class="n">FALSE</span><span class="p">.</span> <span class="p">)</span>
 <a name="ln-107"></a>
-<a name="ln-108"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">derived_type</span><span class="p">%</span> <span class="n">get_estimate_length_scale</span><span class="p">()</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-109"></a>
-<a name="ln-110"></a><span class="k">      ALLOCATE</span><span class="p">(</span> <span class="n">length_scale_pressure</span><span class="p">(</span><span class="n">derived_type</span><span class="p">%</span> <span class="n">get_n_matter</span><span class="p">())</span> <span class="p">)</span>
-<a name="ln-111"></a>      <span class="n">length_scale_pressure</span><span class="o">=</span> <span class="n">derived_type</span><span class="p">%</span> <span class="n">estimate_lengthscale_field</span><span class="p">(</span> <span class="p">&amp;</span>
-<a name="ln-112"></a>                                                <span class="n">get_pressure</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-113"></a>                                                <span class="n">derived_type</span><span class="p">%</span> <span class="n">get_n_matter</span><span class="p">()</span> <span class="p">)</span>
-<a name="ln-114"></a>
-<a name="ln-115"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Minimum length scale to resolve on star 1, based on &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-116"></a>               <span class="s2">&quot;pressure= &quot;</span><span class="p">,</span> <span class="n">length_scale_pressure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Msun_geo</span><span class="o">*</span><span class="n">ten</span><span class="o">*</span><span class="n">ten</span><span class="o">*</span><span class="n">ten</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span>
-<a name="ln-117"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Minimum length scale to resolve on star 2, based on &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-118"></a>               <span class="s2">&quot;pressure= &quot;</span><span class="p">,</span> <span class="n">length_scale_pressure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Msun_geo</span><span class="o">*</span><span class="n">ten</span><span class="o">*</span><span class="n">ten</span><span class="o">*</span><span class="n">ten</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span>
-<a name="ln-119"></a>      <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-120"></a>
-<a name="ln-121"></a>    <span class="n">ENDIF</span>
-<a name="ln-122"></a>
-<a name="ln-123"></a>    <span class="n">derived_type</span><span class="p">%</span> <span class="n">finalize_sph_id_ptr</span> <span class="o">=&gt;</span> <span class="n">correct_adm_linear_momentum</span>
-<a name="ln-124"></a>
-<a name="ln-125"></a>    <span class="k">CONTAINS</span>
+<a name="ln-108"></a>    <span class="c">! Compute typical length scales of the system using the pressure</span>
+<a name="ln-109"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">derived_type</span><span class="p">%</span> <span class="n">get_estimate_length_scale</span><span class="p">()</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-110"></a>
+<a name="ln-111"></a><span class="k">      ALLOCATE</span><span class="p">(</span> <span class="n">length_scale_pressure</span><span class="p">(</span><span class="n">derived_type</span><span class="p">%</span> <span class="n">get_n_matter</span><span class="p">())</span> <span class="p">)</span>
+<a name="ln-112"></a>      <span class="n">length_scale_pressure</span><span class="o">=</span> <span class="n">derived_type</span><span class="p">%</span> <span class="n">estimate_lengthscale_field</span><span class="p">(</span> <span class="p">&amp;</span>
+<a name="ln-113"></a>                                                <span class="n">get_pressure</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-114"></a>                                                <span class="n">derived_type</span><span class="p">%</span> <span class="n">get_n_matter</span><span class="p">()</span> <span class="p">)</span>
+<a name="ln-115"></a>
+<a name="ln-116"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Minimum length scale to resolve on star 1, based on &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-117"></a>               <span class="s2">&quot;pressure= &quot;</span><span class="p">,</span> <span class="n">length_scale_pressure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Msun_geo</span><span class="o">*</span><span class="n">ten</span><span class="o">*</span><span class="n">ten</span><span class="o">*</span><span class="n">ten</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span>
+<a name="ln-118"></a>      <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Minimum length scale to resolve on star 2, based on &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-119"></a>               <span class="s2">&quot;pressure= &quot;</span><span class="p">,</span> <span class="n">length_scale_pressure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">Msun_geo</span><span class="o">*</span><span class="n">ten</span><span class="o">*</span><span class="n">ten</span><span class="o">*</span><span class="n">ten</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span>
+<a name="ln-120"></a>      <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-121"></a>
+<a name="ln-122"></a>    <span class="n">ENDIF</span>
+<a name="ln-123"></a>
+<a name="ln-124"></a>    <span class="c">! Assign PROCEDURE POINTER to the desired PROCEDURE</span>
+<a name="ln-125"></a>    <span class="n">derived_type</span><span class="p">%</span> <span class="n">finalize_sph_id_ptr</span> <span class="o">=&gt;</span> <span class="n">correct_adm_linear_momentum</span>
 <a name="ln-126"></a>
-<a name="ln-127"></a><span class="k">    FUNCTION </span><span class="n">get_pressure</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">)</span> <span class="k">RESULT</span><span class="p">(</span> <span class="n">val</span> <span class="p">)</span>
-<a name="ln-128"></a>    <span class="c">!! Returns the value of the pressure at the desired point</span>
-<a name="ln-129"></a>
-<a name="ln-130"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span><span class="kd">::</span> <span class="n">x</span>
-<a name="ln-131"></a>      <span class="c">!! \(x\) coordinate of the desired point</span>
-<a name="ln-132"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span><span class="kd">::</span> <span class="n">y</span>
-<a name="ln-133"></a>      <span class="c">!! \(y\) coordinate of the desired point</span>
-<a name="ln-134"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span><span class="kd">::</span> <span class="n">z</span>
-<a name="ln-135"></a>      <span class="c">!! \(z\) coordinate of the desired point</span>
-<a name="ln-136"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">val</span>
-<a name="ln-137"></a>      <span class="c">!! Pressure at \((x,y,z)\)</span>
-<a name="ln-138"></a>
-<a name="ln-139"></a>      <span class="n">val</span><span class="o">=</span> <span class="n">derived_type</span><span class="p">%</span> <span class="n">import_pressure</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">)</span>
+<a name="ln-127"></a>    <span class="k">CONTAINS</span>
+<a name="ln-128"></a>
+<a name="ln-129"></a><span class="k">    FUNCTION </span><span class="n">get_pressure</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">)</span> <span class="k">RESULT</span><span class="p">(</span> <span class="n">val</span> <span class="p">)</span>
+<a name="ln-130"></a>    <span class="c">!! Returns the value of the pressure at the desired point</span>
+<a name="ln-131"></a>
+<a name="ln-132"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span><span class="kd">::</span> <span class="n">x</span>
+<a name="ln-133"></a>      <span class="c">!! \(x\) coordinate of the desired point</span>
+<a name="ln-134"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span><span class="kd">::</span> <span class="n">y</span>
+<a name="ln-135"></a>      <span class="c">!! \(y\) coordinate of the desired point</span>
+<a name="ln-136"></a>      <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">INTENT</span><span class="p">(</span><span class="n">IN</span><span class="p">)</span><span class="kd">::</span> <span class="n">z</span>
+<a name="ln-137"></a>      <span class="c">!! \(z\) coordinate of the desired point</span>
+<a name="ln-138"></a>      <span class="kt">DOUBLE PRECISION</span><span class="kd">::</span> <span class="n">val</span>
+<a name="ln-139"></a>      <span class="c">!! Pressure at \((x,y,z)\)</span>
 <a name="ln-140"></a>
-<a name="ln-141"></a>    <span class="k">END FUNCTION </span><span class="n">get_pressure</span>
+<a name="ln-141"></a>      <span class="n">val</span><span class="o">=</span> <span class="n">derived_type</span><span class="p">%</span> <span class="n">import_pressure</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">)</span>
 <a name="ln-142"></a>
-<a name="ln-143"></a>  <span class="k">END PROCEDURE </span><span class="n">construct_bnslorene</span>
+<a name="ln-143"></a>    <span class="k">END FUNCTION </span><span class="n">get_pressure</span>
 <a name="ln-144"></a>
-<a name="ln-145"></a>
-<a name="ln-146"></a>  <span class="c">!</span>
-<a name="ln-147"></a>  <span class="c">!-- Implementation of the destructor of the bnslorene object</span>
+<a name="ln-145"></a>  <span class="k">END PROCEDURE </span><span class="n">construct_bnslorene</span>
+<a name="ln-146"></a>
+<a name="ln-147"></a>
 <a name="ln-148"></a>  <span class="c">!</span>
-<a name="ln-149"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">destruct_bnslorene</span>
-<a name="ln-150"></a>
-<a name="ln-151"></a>    <span class="c">!***********************************************</span>
-<a name="ln-152"></a>    <span class="c">!</span>
-<a name="ln-153"></a>    <span class="c">!# Destructs an object of TYPE [[bnslorene]]</span>
+<a name="ln-149"></a>  <span class="c">!-- Implementation of the destructor of the bnslorene object</span>
+<a name="ln-150"></a>  <span class="c">!</span>
+<a name="ln-151"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">destruct_bnslorene</span>
+<a name="ln-152"></a>
+<a name="ln-153"></a>    <span class="c">!***********************************************</span>
 <a name="ln-154"></a>    <span class="c">!</span>
-<a name="ln-155"></a>    <span class="c">!  FT</span>
+<a name="ln-155"></a>    <span class="c">!# Destructs an object of TYPE [[bnslorene]]</span>
 <a name="ln-156"></a>    <span class="c">!</span>
-<a name="ln-157"></a>    <span class="c">!***********************************************</span>
-<a name="ln-158"></a>
-<a name="ln-159"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-157"></a>    <span class="c">!  FT</span>
+<a name="ln-158"></a>    <span class="c">!</span>
+<a name="ln-159"></a>    <span class="c">!***********************************************</span>
 <a name="ln-160"></a>
-<a name="ln-161"></a>    <span class="c">!PRINT *, &quot;Inside destructor of bns.&quot;</span>
-<a name="ln-162"></a>    <span class="c">!PRINT *</span>
-<a name="ln-163"></a>
-<a name="ln-164"></a>    <span class="c">! Deallocate memory</span>
-<a name="ln-165"></a>    <span class="k">CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">deallocate_bnslorene_memory</span><span class="p">()</span>
-<a name="ln-166"></a>
-<a name="ln-167"></a>  <span class="k">END PROCEDURE </span><span class="n">destruct_bnslorene</span>
+<a name="ln-161"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-162"></a>
+<a name="ln-163"></a>    <span class="c">!PRINT *, &quot;Inside destructor of bns.&quot;</span>
+<a name="ln-164"></a>    <span class="c">!PRINT *</span>
+<a name="ln-165"></a>
+<a name="ln-166"></a>    <span class="c">! Deallocate memory</span>
+<a name="ln-167"></a>    <span class="k">CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">deallocate_bnslorene_memory</span><span class="p">()</span>
 <a name="ln-168"></a>
-<a name="ln-169"></a>
-<a name="ln-170"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">construct_binary</span>
+<a name="ln-169"></a>  <span class="k">END PROCEDURE </span><span class="n">destruct_bnslorene</span>
+<a name="ln-170"></a>
 <a name="ln-171"></a>
-<a name="ln-172"></a>    <span class="c">!***********************************************</span>
-<a name="ln-173"></a>    <span class="c">!</span>
-<a name="ln-174"></a>    <span class="c">!# Construct the |lorene| |binns| object</span>
+<a name="ln-172"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">construct_binary</span>
+<a name="ln-173"></a>
+<a name="ln-174"></a>    <span class="c">!***********************************************</span>
 <a name="ln-175"></a>    <span class="c">!</span>
-<a name="ln-176"></a>    <span class="c">!  FT</span>
+<a name="ln-176"></a>    <span class="c">!# Construct the |lorene| |binns| object</span>
 <a name="ln-177"></a>    <span class="c">!</span>
-<a name="ln-178"></a>    <span class="c">!***********************************************</span>
-<a name="ln-179"></a>
-<a name="ln-180"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-178"></a>    <span class="c">!  FT</span>
+<a name="ln-179"></a>    <span class="c">!</span>
+<a name="ln-180"></a>    <span class="c">!***********************************************</span>
 <a name="ln-181"></a>
-<a name="ln-182"></a><span class="k">    </span><span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">KIND</span><span class="o">=</span> <span class="kt">C_CHAR</span><span class="p">,</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">7</span><span class="p">)</span><span class="kd">::</span> <span class="n">default_case</span>
-<a name="ln-183"></a>    <span class="kt">LOGICAL</span><span class="kd">::</span> <span class="n">exist</span>
-<a name="ln-184"></a>
-<a name="ln-185"></a>    <span class="c">!PRINT *, &quot;** Executing the construct_binary subroutine...&quot;</span>
+<a name="ln-182"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-183"></a>
+<a name="ln-184"></a><span class="k">    </span><span class="kt">CHARACTER</span><span class="p">(</span><span class="nb">KIND</span><span class="o">=</span> <span class="kt">C_CHAR</span><span class="p">,</span> <span class="nb">LEN</span><span class="o">=</span> <span class="mi">7</span><span class="p">)</span><span class="kd">::</span> <span class="n">default_case</span>
+<a name="ln-185"></a>    <span class="kt">LOGICAL</span><span class="kd">::</span> <span class="n">exist</span>
 <a name="ln-186"></a>
-<a name="ln-187"></a><span class="cp">#ifdef __INTEL_COMPILER</span>
+<a name="ln-187"></a>    <span class="c">!PRINT *, &quot;** Executing the construct_binary subroutine...&quot;</span>
 <a name="ln-188"></a>
-<a name="ln-189"></a>    <span class="k">IF</span> <span class="p">(</span> <span class="nb">C_ASSOCIATED</span><span class="p">(</span> <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="p">)</span> <span class="p">)</span> <span class="k">THEN</span>
+<a name="ln-189"></a><span class="cp">#ifdef __INTEL_COMPILER</span>
 <a name="ln-190"></a>
-<a name="ln-191"></a><span class="k">      CALL </span><span class="n">destruct_bin_ns</span><span class="p">(</span> <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="p">)</span>
+<a name="ln-191"></a>    <span class="k">IF</span> <span class="p">(</span> <span class="nb">C_ASSOCIATED</span><span class="p">(</span> <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="p">)</span> <span class="p">)</span> <span class="k">THEN</span>
 <a name="ln-192"></a>
-<a name="ln-193"></a>    <span class="n">ENDIF</span>
+<a name="ln-193"></a><span class="k">      CALL </span><span class="n">destruct_bin_ns</span><span class="p">(</span> <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="p">)</span>
 <a name="ln-194"></a>
-<a name="ln-195"></a><span class="cp">#endif</span>
+<a name="ln-195"></a>    <span class="n">ENDIF</span>
 <a name="ln-196"></a>
-<a name="ln-197"></a>    <span class="c">!</span>
-<a name="ln-198"></a>    <span class="c">!-- If the name of the |lorene| binary file resu_file is given as argument to</span>
-<a name="ln-199"></a>    <span class="c">!-- construct_binary, use it. Otherwise, give the string &quot;read_it&quot;</span>
-<a name="ln-200"></a>    <span class="c">!-- to construct_bin_ns as argument, which makes |lorene| read the name of</span>
-<a name="ln-201"></a>    <span class="c">!-- the file from the parameter file read_bin_ns.par</span>
-<a name="ln-202"></a>    <span class="c">!</span>
-<a name="ln-203"></a>    <span class="k">IF</span><span class="p">(</span> <span class="nb">PRESENT</span><span class="p">(</span> <span class="n">resu_file</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-204"></a>
-<a name="ln-205"></a><span class="k">      INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="n">resu_file</span><span class="p">,</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
+<a name="ln-197"></a><span class="cp">#endif</span>
+<a name="ln-198"></a>
+<a name="ln-199"></a>    <span class="c">!</span>
+<a name="ln-200"></a>    <span class="c">!-- If the name of the |lorene| binary file resu_file is given as argument to</span>
+<a name="ln-201"></a>    <span class="c">!-- construct_binary, use it. Otherwise, give the string &quot;read_it&quot;</span>
+<a name="ln-202"></a>    <span class="c">!-- to construct_bin_ns as argument, which makes |lorene| read the name of</span>
+<a name="ln-203"></a>    <span class="c">!-- the file from the parameter file read_bin_ns.par</span>
+<a name="ln-204"></a>    <span class="c">!</span>
+<a name="ln-205"></a>    <span class="k">IF</span><span class="p">(</span> <span class="nb">PRESENT</span><span class="p">(</span> <span class="n">resu_file</span> <span class="p">)</span> <span class="p">)</span><span class="k">THEN</span>
 <a name="ln-206"></a>
-<a name="ln-207"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-207"></a><span class="k">      INQUIRE</span><span class="p">(</span> <span class="k">FILE</span><span class="o">=</span> <span class="n">resu_file</span><span class="p">,</span> <span class="n">EXIST</span><span class="o">=</span> <span class="n">exist</span> <span class="p">)</span>
 <a name="ln-208"></a>
-<a name="ln-209"></a><span class="k">        CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">construction_timer</span><span class="p">%</span> <span class="n">start_timer</span><span class="p">()</span>
-<a name="ln-210"></a>        <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="o">=</span> <span class="n">construct_bin_ns</span><span class="p">(</span> <span class="n">resu_file</span><span class="o">//</span><span class="nb">C_NULL_CHAR</span> <span class="p">)</span>
-<a name="ln-211"></a>        <span class="k">CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">construction_timer</span><span class="p">%</span> <span class="n">stop_timer</span><span class="p">()</span>
-<a name="ln-212"></a>
-<a name="ln-213"></a>      <span class="k">ELSE</span>
+<a name="ln-209"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">exist</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-210"></a>
+<a name="ln-211"></a><span class="k">        CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">construction_timer</span><span class="p">%</span> <span class="n">start_timer</span><span class="p">()</span>
+<a name="ln-212"></a>        <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="o">=</span> <span class="n">construct_bin_ns</span><span class="p">(</span> <span class="n">resu_file</span><span class="o">//</span><span class="nb">C_NULL_CHAR</span> <span class="p">)</span>
+<a name="ln-213"></a>        <span class="k">CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">construction_timer</span><span class="p">%</span> <span class="n">stop_timer</span><span class="p">()</span>
 <a name="ln-214"></a>
-<a name="ln-215"></a><span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR in SUBROUTINE construct_binary: file &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-216"></a>                 <span class="n">resu_file</span><span class="p">,</span> <span class="s2">&quot; cannot be found!&quot;</span>
-<a name="ln-217"></a>        <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-218"></a>        <span class="k">STOP</span>
-<a name="ln-219"></a>
-<a name="ln-220"></a><span class="k">      </span><span class="n">ENDIF</span>
+<a name="ln-215"></a>      <span class="k">ELSE</span>
+<a name="ln-216"></a>
+<a name="ln-217"></a><span class="k">        PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;** ERROR in SUBROUTINE construct_binary: file &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-218"></a>                 <span class="n">resu_file</span><span class="p">,</span> <span class="s2">&quot; cannot be found!&quot;</span>
+<a name="ln-219"></a>        <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-220"></a>        <span class="k">STOP</span>
 <a name="ln-221"></a>
-<a name="ln-222"></a>    <span class="k">ELSE</span>
+<a name="ln-222"></a><span class="k">      </span><span class="n">ENDIF</span>
 <a name="ln-223"></a>
-<a name="ln-224"></a><span class="k">      </span><span class="n">default_case</span><span class="o">=</span> <span class="s2">&quot;read_it&quot;</span>
-<a name="ln-225"></a>      <span class="k">CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">construction_timer</span><span class="p">%</span> <span class="n">start_timer</span><span class="p">()</span>
-<a name="ln-226"></a>      <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="o">=</span> <span class="n">construct_bin_ns</span><span class="p">(</span> <span class="n">default_case</span><span class="o">//</span><span class="nb">C_NULL_CHAR</span> <span class="p">)</span>
-<a name="ln-227"></a>      <span class="k">CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">construction_timer</span><span class="p">%</span> <span class="n">stop_timer</span><span class="p">()</span>
-<a name="ln-228"></a>
-<a name="ln-229"></a>    <span class="n">ENDIF</span>
+<a name="ln-224"></a>    <span class="k">ELSE</span>
+<a name="ln-225"></a>
+<a name="ln-226"></a><span class="k">      </span><span class="n">default_case</span><span class="o">=</span> <span class="s2">&quot;read_it&quot;</span>
+<a name="ln-227"></a>      <span class="k">CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">construction_timer</span><span class="p">%</span> <span class="n">start_timer</span><span class="p">()</span>
+<a name="ln-228"></a>      <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="o">=</span> <span class="n">construct_bin_ns</span><span class="p">(</span> <span class="n">default_case</span><span class="o">//</span><span class="nb">C_NULL_CHAR</span> <span class="p">)</span>
+<a name="ln-229"></a>      <span class="k">CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">construction_timer</span><span class="p">%</span> <span class="n">stop_timer</span><span class="p">()</span>
 <a name="ln-230"></a>
-<a name="ln-231"></a>    <span class="c">!PRINT *, &quot;** Subroutine construct_binary executed.&quot;</span>
-<a name="ln-232"></a>    <span class="c">!PRINT *</span>
-<a name="ln-233"></a>
-<a name="ln-234"></a>  <span class="k">END PROCEDURE </span><span class="n">construct_binary</span>
+<a name="ln-231"></a>    <span class="n">ENDIF</span>
+<a name="ln-232"></a>
+<a name="ln-233"></a>    <span class="c">!PRINT *, &quot;** Subroutine construct_binary executed.&quot;</span>
+<a name="ln-234"></a>    <span class="c">!PRINT *</span>
 <a name="ln-235"></a>
-<a name="ln-236"></a>
-<a name="ln-237"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">destruct_binary</span>
+<a name="ln-236"></a>  <span class="k">END PROCEDURE </span><span class="n">construct_binary</span>
+<a name="ln-237"></a>
 <a name="ln-238"></a>
-<a name="ln-239"></a>    <span class="c">!************************************************</span>
-<a name="ln-240"></a>    <span class="c">!</span>
-<a name="ln-241"></a>    <span class="c">!# Destructs the |lorene| |binns| object and frees</span>
-<a name="ln-242"></a>    <span class="c">!  the pointer [[bns:bns_ptr]] pointing to it</span>
-<a name="ln-243"></a>    <span class="c">!</span>
-<a name="ln-244"></a>    <span class="c">!  FT</span>
+<a name="ln-239"></a>  <span class="k">MODULE PROCEDURE </span><span class="n">destruct_binary</span>
+<a name="ln-240"></a>
+<a name="ln-241"></a>    <span class="c">!************************************************</span>
+<a name="ln-242"></a>    <span class="c">!</span>
+<a name="ln-243"></a>    <span class="c">!# Destructs the |lorene| |binns| object and frees</span>
+<a name="ln-244"></a>    <span class="c">!  the pointer [[bns:bns_ptr]] pointing to it</span>
 <a name="ln-245"></a>    <span class="c">!</span>
-<a name="ln-246"></a>    <span class="c">!************************************************</span>
-<a name="ln-247"></a>
-<a name="ln-248"></a>    <span class="k">IMPLICIT NONE</span>
+<a name="ln-246"></a>    <span class="c">!  FT</span>
+<a name="ln-247"></a>    <span class="c">!</span>
+<a name="ln-248"></a>    <span class="c">!************************************************</span>
 <a name="ln-249"></a>
-<a name="ln-250"></a>    <span class="c">!PRINT *, &quot;** Executing the destruct_binary subroutine.&quot;</span>
+<a name="ln-250"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-251"></a>
-<a name="ln-252"></a>    <span class="k">IF</span> <span class="p">(</span> <span class="nb">C_ASSOCIATED</span><span class="p">(</span> <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="p">)</span> <span class="p">)</span> <span class="k">THEN</span>
+<a name="ln-252"></a>    <span class="c">!PRINT *, &quot;** Executing the destruct_binary subroutine.&quot;</span>
 <a name="ln-253"></a>
-<a name="ln-254"></a><span class="k">      CALL </span><span class="n">destruct_bin_ns</span><span class="p">(</span> <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="p">)</span>
-<a name="ln-255"></a>      <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="o">=</span> <span class="nb">C_NULL_PTR</span>
-<a name="ln-256"></a>
-<a name="ln-257"></a><span class="nb">    </span><span class="n">ENDIF</span>
+<a name="ln-254"></a>    <span class="k">IF</span> <span class="p">(</span> <span class="nb">C_ASSOCIATED</span><span class="p">(</span> <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="p">)</span> <span class="p">)</span> <span class="k">THEN</span>
+<a name="ln-255"></a>
+<a name="ln-256"></a><span class="k">      CALL </span><span class="n">destruct_bin_ns</span><span class="p">(</span> <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="p">)</span>
+<a name="ln-257"></a>      <span class="n">this</span><span class="p">%</span> <span class="n">bns_ptr</span> <span class="o">=</span> <span class="nb">C_NULL_PTR</span>
 <a name="ln-258"></a>
-<a name="ln-259"></a>    <span class="c">!PRINT *, &quot;** Subroutine destruct_binary executed.&quot;</span>
-<a name="ln-260"></a>    <span class="c">!PRINT *</span>
-<a name="ln-261"></a>
-<a name="ln-262"></a>  <span class="k">END PROCEDURE </span><span class="n">destruct_binary</span>
+<a name="ln-259"></a><span class="nb">    </span><span class="n">ENDIF</span>
+<a name="ln-260"></a>
+<a name="ln-261"></a>    <span class="c">!PRINT *, &quot;** Subroutine destruct_binary executed.&quot;</span>
+<a name="ln-262"></a>    <span class="c">!PRINT *</span>
 <a name="ln-263"></a>
-<a name="ln-264"></a>
-<a name="ln-265"></a><span class="k">END SUBMODULE </span><span class="n">constructor</span>
+<a name="ln-264"></a>  <span class="k">END PROCEDURE </span><span class="n">destruct_binary</span>
+<a name="ln-265"></a>
+<a name="ln-266"></a>
+<a name="ln-267"></a><span class="k">END SUBMODULE </span><span class="n">constructor</span>
 </pre></div>
 
     </section>
@@ -579,7 +581,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-05-24 08:27:25           </p>
+ on 2022-07-05 18:11:38           </p>
         </div>
       </div>
       <br>

@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.7% of total for source files.">294 statements</a>
+    title=" 1.5% of total for source files.">294 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_bns_base_access.f90"> Source File</a></li>
   </ul>
@@ -323,9 +323,9 @@
 <a name="ln-58"></a>
 <a name="ln-59"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-60"></a>
-<a name="ln-61"></a><span class="k">    CALL </span><span class="n">THIS</span><span class="p">%</span> <span class="n">check_i_matter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
+<a name="ln-61"></a><span class="k">    CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">check_i_matter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
 <a name="ln-62"></a>
-<a name="ln-63"></a>    <span class="n">get_mass</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">mass</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
+<a name="ln-63"></a>    <span class="n">get_mass</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">mass</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
 <a name="ln-64"></a>
 <a name="ln-65"></a>  <span class="k">END PROCEDURE </span><span class="n">get_mass</span>
 <a name="ln-66"></a>
@@ -343,9 +343,9 @@
 <a name="ln-78"></a>
 <a name="ln-79"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-80"></a>
-<a name="ln-81"></a><span class="k">    CALL </span><span class="n">THIS</span><span class="p">%</span> <span class="n">check_i_matter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
+<a name="ln-81"></a><span class="k">    CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">check_i_matter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
 <a name="ln-82"></a>
-<a name="ln-83"></a>    <span class="n">get_radii</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">radii</span><span class="p">(</span><span class="n">i_matter</span><span class="p">,:)</span>
+<a name="ln-83"></a>    <span class="n">get_radii</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">radii</span><span class="p">(</span><span class="n">i_matter</span><span class="p">,:)</span>
 <a name="ln-84"></a>
 <a name="ln-85"></a>  <span class="k">END PROCEDURE </span><span class="n">get_radii</span>
 <a name="ln-86"></a>
@@ -363,9 +363,9 @@
 <a name="ln-98"></a>
 <a name="ln-99"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-100"></a>
-<a name="ln-101"></a><span class="k">    CALL </span><span class="n">THIS</span><span class="p">%</span> <span class="n">check_i_matter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
+<a name="ln-101"></a><span class="k">    CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">check_i_matter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
 <a name="ln-102"></a>
-<a name="ln-103"></a>    <span class="n">get_center</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">center</span><span class="p">(</span><span class="n">i_matter</span><span class="p">,:)</span>
+<a name="ln-103"></a>    <span class="n">get_center</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">center</span><span class="p">(</span><span class="n">i_matter</span><span class="p">,:)</span>
 <a name="ln-104"></a>
 <a name="ln-105"></a>  <span class="k">END PROCEDURE </span><span class="n">get_center</span>
 <a name="ln-106"></a>
@@ -383,9 +383,9 @@
 <a name="ln-118"></a>
 <a name="ln-119"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-120"></a>
-<a name="ln-121"></a><span class="k">    CALL </span><span class="n">THIS</span><span class="p">%</span> <span class="n">check_i_matter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
+<a name="ln-121"></a><span class="k">    CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">check_i_matter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
 <a name="ln-122"></a>
-<a name="ln-123"></a>    <span class="n">get_barycenter</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">barycenter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">,:)</span>
+<a name="ln-123"></a>    <span class="n">get_barycenter</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">barycenter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">,:)</span>
 <a name="ln-124"></a>
 <a name="ln-125"></a>  <span class="k">END PROCEDURE </span><span class="n">get_barycenter</span>
 <a name="ln-126"></a>
@@ -403,10 +403,10 @@
 <a name="ln-138"></a>
 <a name="ln-139"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-140"></a>
-<a name="ln-141"></a><span class="k">    CALL </span><span class="n">THIS</span><span class="p">%</span> <span class="n">check_i_matter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
+<a name="ln-141"></a><span class="k">    CALL </span><span class="n">this</span><span class="p">%</span> <span class="n">check_i_matter</span><span class="p">(</span><span class="n">i_matter</span><span class="p">)</span>
 <a name="ln-142"></a>
-<a name="ln-143"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">i_matter</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="n">get_eos</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">eos1</span>
-<a name="ln-144"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">i_matter</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">)</span> <span class="n">get_eos</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">eos2</span>
+<a name="ln-143"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">i_matter</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span> <span class="n">get_eos</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">eos1</span>
+<a name="ln-144"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">i_matter</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">)</span> <span class="n">get_eos</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">eos2</span>
 <a name="ln-145"></a>
 <a name="ln-146"></a>  <span class="k">END PROCEDURE </span><span class="n">get_eos</span>
 <a name="ln-147"></a>
@@ -430,7 +430,7 @@
 <a name="ln-165"></a>
 <a name="ln-166"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-167"></a>
-<a name="ln-168"></a><span class="k">    </span><span class="n">get_gamma_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">gamma_1</span>
+<a name="ln-168"></a><span class="k">    </span><span class="n">get_gamma_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">gamma_1</span>
 <a name="ln-169"></a>
 <a name="ln-170"></a>  <span class="k">END PROCEDURE </span><span class="n">get_gamma_1</span>
 <a name="ln-171"></a>
@@ -449,7 +449,7 @@
 <a name="ln-184"></a>
 <a name="ln-185"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-186"></a>
-<a name="ln-187"></a><span class="k">    </span><span class="n">get_gamma_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">gamma_2</span>
+<a name="ln-187"></a><span class="k">    </span><span class="n">get_gamma_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">gamma_2</span>
 <a name="ln-188"></a>
 <a name="ln-189"></a>  <span class="k">END PROCEDURE </span><span class="n">get_gamma_2</span>
 <a name="ln-190"></a>
@@ -468,7 +468,7 @@
 <a name="ln-203"></a>
 <a name="ln-204"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-205"></a>
-<a name="ln-206"></a><span class="k">    </span><span class="n">get_kappa_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">kappa_1</span>
+<a name="ln-206"></a><span class="k">    </span><span class="n">get_kappa_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">kappa_1</span>
 <a name="ln-207"></a>
 <a name="ln-208"></a>  <span class="k">END PROCEDURE </span><span class="n">get_kappa_1</span>
 <a name="ln-209"></a>
@@ -487,7 +487,7 @@
 <a name="ln-222"></a>
 <a name="ln-223"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-224"></a>
-<a name="ln-225"></a><span class="k">    </span><span class="n">get_kappa_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">kappa_2</span>
+<a name="ln-225"></a><span class="k">    </span><span class="n">get_kappa_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">kappa_2</span>
 <a name="ln-226"></a>
 <a name="ln-227"></a>  <span class="k">END PROCEDURE </span><span class="n">get_kappa_2</span>
 <a name="ln-228"></a>
@@ -504,7 +504,7 @@
 <a name="ln-239"></a>
 <a name="ln-240"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-241"></a>
-<a name="ln-242"></a><span class="k">    </span><span class="n">get_angular_vel</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">angular_vel</span>
+<a name="ln-242"></a><span class="k">    </span><span class="n">get_angular_vel</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">angular_vel</span>
 <a name="ln-243"></a>
 <a name="ln-244"></a>  <span class="k">END PROCEDURE </span><span class="n">get_angular_vel</span>
 <a name="ln-245"></a>
@@ -521,7 +521,7 @@
 <a name="ln-256"></a>
 <a name="ln-257"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-258"></a>
-<a name="ln-259"></a><span class="k">    </span><span class="n">get_distance</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">distance</span>
+<a name="ln-259"></a><span class="k">    </span><span class="n">get_distance</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">distance</span>
 <a name="ln-260"></a>
 <a name="ln-261"></a>  <span class="k">END PROCEDURE </span><span class="n">get_distance</span>
 <a name="ln-262"></a>
@@ -539,7 +539,7 @@
 <a name="ln-274"></a>
 <a name="ln-275"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-276"></a>
-<a name="ln-277"></a><span class="k">    </span><span class="n">get_distance_com</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">distance_com</span>
+<a name="ln-277"></a><span class="k">    </span><span class="n">get_distance_com</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">distance_com</span>
 <a name="ln-278"></a>
 <a name="ln-279"></a>  <span class="k">END PROCEDURE </span><span class="n">get_distance_com</span>
 <a name="ln-280"></a>
@@ -556,7 +556,7 @@
 <a name="ln-291"></a>
 <a name="ln-292"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-293"></a>
-<a name="ln-294"></a><span class="k">    </span><span class="n">get_mass1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">mass1</span>
+<a name="ln-294"></a><span class="k">    </span><span class="n">get_mass1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">mass</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <a name="ln-295"></a>
 <a name="ln-296"></a>  <span class="k">END PROCEDURE </span><span class="n">get_mass1</span>
 <a name="ln-297"></a>
@@ -573,7 +573,7 @@
 <a name="ln-308"></a>
 <a name="ln-309"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-310"></a>
-<a name="ln-311"></a><span class="k">    </span><span class="n">get_mass2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">mass2</span>
+<a name="ln-311"></a><span class="k">    </span><span class="n">get_mass2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">mass</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <a name="ln-312"></a>
 <a name="ln-313"></a>  <span class="k">END PROCEDURE </span><span class="n">get_mass2</span>
 <a name="ln-314"></a>
@@ -590,7 +590,7 @@
 <a name="ln-325"></a>
 <a name="ln-326"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-327"></a>
-<a name="ln-328"></a><span class="k">    </span><span class="n">get_grav_mass1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">mass_grav1</span>
+<a name="ln-328"></a><span class="k">    </span><span class="n">get_grav_mass1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">mass_grav</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <a name="ln-329"></a>
 <a name="ln-330"></a>  <span class="k">END PROCEDURE </span><span class="n">get_grav_mass1</span>
 <a name="ln-331"></a>
@@ -607,7 +607,7 @@
 <a name="ln-342"></a>
 <a name="ln-343"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-344"></a>
-<a name="ln-345"></a><span class="k">    </span><span class="n">get_grav_mass2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">mass_grav2</span>
+<a name="ln-345"></a><span class="k">    </span><span class="n">get_grav_mass2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">mass_grav</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <a name="ln-346"></a>
 <a name="ln-347"></a>  <span class="k">END PROCEDURE </span><span class="n">get_grav_mass2</span>
 <a name="ln-348"></a>
@@ -624,7 +624,7 @@
 <a name="ln-359"></a>
 <a name="ln-360"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-361"></a>
-<a name="ln-362"></a><span class="k">    </span><span class="n">get_adm_mass</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">adm_mass</span>
+<a name="ln-362"></a><span class="k">    </span><span class="n">get_adm_mass</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">adm_mass</span>
 <a name="ln-363"></a>
 <a name="ln-364"></a>  <span class="k">END PROCEDURE </span><span class="n">get_adm_mass</span>
 <a name="ln-365"></a>
@@ -641,9 +641,9 @@
 <a name="ln-376"></a>
 <a name="ln-377"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-378"></a>
-<a name="ln-379"></a><span class="k">    </span><span class="n">get_linear_momentum</span><span class="o">=</span> <span class="p">[</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">linear_momentum_x</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-380"></a>                           <span class="n">THIS</span><span class="p">%</span> <span class="n">linear_momentum_y</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-381"></a>                           <span class="n">THIS</span><span class="p">%</span> <span class="n">linear_momentum_z</span> <span class="p">]</span>
+<a name="ln-379"></a><span class="k">    </span><span class="n">get_linear_momentum</span><span class="o">=</span> <span class="p">[</span> <span class="n">this</span><span class="p">%</span> <span class="n">linear_momentum_x</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-380"></a>                           <span class="n">this</span><span class="p">%</span> <span class="n">linear_momentum_y</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-381"></a>                           <span class="n">this</span><span class="p">%</span> <span class="n">linear_momentum_z</span> <span class="p">]</span>
 <a name="ln-382"></a>
 <a name="ln-383"></a>  <span class="k">END PROCEDURE </span><span class="n">get_linear_momentum</span>
 <a name="ln-384"></a>
@@ -660,9 +660,9 @@
 <a name="ln-395"></a>
 <a name="ln-396"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-397"></a>
-<a name="ln-398"></a><span class="k">    </span><span class="n">get_angular_momentum</span><span class="o">=</span> <span class="p">[</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">angular_momentum_x</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-399"></a>                            <span class="n">THIS</span><span class="p">%</span> <span class="n">angular_momentum_y</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-400"></a>                            <span class="n">THIS</span><span class="p">%</span> <span class="n">angular_momentum_z</span> <span class="p">]</span>
+<a name="ln-398"></a><span class="k">    </span><span class="n">get_angular_momentum</span><span class="o">=</span> <span class="p">[</span> <span class="n">this</span><span class="p">%</span> <span class="n">angular_momentum_x</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-399"></a>                            <span class="n">this</span><span class="p">%</span> <span class="n">angular_momentum_y</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-400"></a>                            <span class="n">this</span><span class="p">%</span> <span class="n">angular_momentum_z</span> <span class="p">]</span>
 <a name="ln-401"></a>
 <a name="ln-402"></a>  <span class="k">END PROCEDURE </span><span class="n">get_angular_momentum</span>
 <a name="ln-403"></a>
@@ -680,7 +680,7 @@
 <a name="ln-415"></a>
 <a name="ln-416"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-417"></a>
-<a name="ln-418"></a><span class="k">    </span><span class="n">get_radius1_x_comp</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">radius1_x_comp</span>
+<a name="ln-418"></a><span class="k">    </span><span class="n">get_radius1_x_comp</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">radius1_x_comp</span>
 <a name="ln-419"></a>
 <a name="ln-420"></a>  <span class="k">END PROCEDURE </span><span class="n">get_radius1_x_comp</span>
 <a name="ln-421"></a>
@@ -697,7 +697,7 @@
 <a name="ln-432"></a>
 <a name="ln-433"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-434"></a>
-<a name="ln-435"></a><span class="k">    </span><span class="n">get_radius1_y</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">radius1_y</span>
+<a name="ln-435"></a><span class="k">    </span><span class="n">get_radius1_y</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">radius1_y</span>
 <a name="ln-436"></a>
 <a name="ln-437"></a>  <span class="k">END PROCEDURE </span><span class="n">get_radius1_y</span>
 <a name="ln-438"></a>
@@ -714,7 +714,7 @@
 <a name="ln-449"></a>
 <a name="ln-450"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-451"></a>
-<a name="ln-452"></a><span class="k">    </span><span class="n">get_radius1_z</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">radius1_z</span>
+<a name="ln-452"></a><span class="k">    </span><span class="n">get_radius1_z</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">radius1_z</span>
 <a name="ln-453"></a>
 <a name="ln-454"></a>  <span class="k">END PROCEDURE </span><span class="n">get_radius1_z</span>
 <a name="ln-455"></a>
@@ -732,7 +732,7 @@
 <a name="ln-467"></a>
 <a name="ln-468"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-469"></a>
-<a name="ln-470"></a><span class="k">    </span><span class="n">get_radius1_x_opp</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">radius1_x_opp</span>
+<a name="ln-470"></a><span class="k">    </span><span class="n">get_radius1_x_opp</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">radius1_x_opp</span>
 <a name="ln-471"></a>
 <a name="ln-472"></a>  <span class="k">END PROCEDURE </span><span class="n">get_radius1_x_opp</span>
 <a name="ln-473"></a>
@@ -750,7 +750,7 @@
 <a name="ln-485"></a>
 <a name="ln-486"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-487"></a>
-<a name="ln-488"></a><span class="k">    </span><span class="n">get_center1_x</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">center1_x</span>
+<a name="ln-488"></a><span class="k">    </span><span class="n">get_center1_x</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">center1_x</span>
 <a name="ln-489"></a>
 <a name="ln-490"></a>  <span class="k">END PROCEDURE </span><span class="n">get_center1_x</span>
 <a name="ln-491"></a>
@@ -767,7 +767,7 @@
 <a name="ln-502"></a>
 <a name="ln-503"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-504"></a>
-<a name="ln-505"></a><span class="k">    </span><span class="n">get_barycenter1_x</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">barycenter1_x</span>
+<a name="ln-505"></a><span class="k">    </span><span class="n">get_barycenter1_x</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">barycenter1_x</span>
 <a name="ln-506"></a>
 <a name="ln-507"></a>  <span class="k">END PROCEDURE </span><span class="n">get_barycenter1_x</span>
 <a name="ln-508"></a>
@@ -785,7 +785,7 @@
 <a name="ln-520"></a>
 <a name="ln-521"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-522"></a>
-<a name="ln-523"></a><span class="k">    </span><span class="n">get_radius2_x_comp</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">radius2_x_comp</span>
+<a name="ln-523"></a><span class="k">    </span><span class="n">get_radius2_x_comp</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">radius2_x_comp</span>
 <a name="ln-524"></a>
 <a name="ln-525"></a>  <span class="k">END PROCEDURE </span><span class="n">get_radius2_x_comp</span>
 <a name="ln-526"></a>
@@ -802,7 +802,7 @@
 <a name="ln-537"></a>
 <a name="ln-538"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-539"></a>
-<a name="ln-540"></a><span class="k">    </span><span class="n">get_radius2_y</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">radius2_y</span>
+<a name="ln-540"></a><span class="k">    </span><span class="n">get_radius2_y</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">radius2_y</span>
 <a name="ln-541"></a>
 <a name="ln-542"></a>  <span class="k">END PROCEDURE </span><span class="n">get_radius2_y</span>
 <a name="ln-543"></a>
@@ -819,7 +819,7 @@
 <a name="ln-554"></a>
 <a name="ln-555"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-556"></a>
-<a name="ln-557"></a><span class="k">    </span><span class="n">get_radius2_z</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">radius2_z</span>
+<a name="ln-557"></a><span class="k">    </span><span class="n">get_radius2_z</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">radius2_z</span>
 <a name="ln-558"></a>
 <a name="ln-559"></a>  <span class="k">END PROCEDURE </span><span class="n">get_radius2_z</span>
 <a name="ln-560"></a>
@@ -837,7 +837,7 @@
 <a name="ln-572"></a>
 <a name="ln-573"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-574"></a>
-<a name="ln-575"></a><span class="k">    </span><span class="n">get_radius2_x_opp</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">radius2_x_opp</span>
+<a name="ln-575"></a><span class="k">    </span><span class="n">get_radius2_x_opp</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">radius2_x_opp</span>
 <a name="ln-576"></a>
 <a name="ln-577"></a>  <span class="k">END PROCEDURE </span><span class="n">get_radius2_x_opp</span>
 <a name="ln-578"></a>
@@ -855,7 +855,7 @@
 <a name="ln-590"></a>
 <a name="ln-591"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-592"></a>
-<a name="ln-593"></a><span class="k">    </span><span class="n">get_center2_x</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">center2_x</span>
+<a name="ln-593"></a><span class="k">    </span><span class="n">get_center2_x</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">center2_x</span>
 <a name="ln-594"></a>
 <a name="ln-595"></a>  <span class="k">END PROCEDURE </span><span class="n">get_center2_x</span>
 <a name="ln-596"></a>
@@ -872,7 +872,7 @@
 <a name="ln-607"></a>
 <a name="ln-608"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-609"></a>
-<a name="ln-610"></a><span class="k">    </span><span class="n">get_barycenter2_x</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">barycenter2_x</span>
+<a name="ln-610"></a><span class="k">    </span><span class="n">get_barycenter2_x</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">barycenter2_x</span>
 <a name="ln-611"></a>
 <a name="ln-612"></a>  <span class="k">END PROCEDURE </span><span class="n">get_barycenter2_x</span>
 <a name="ln-613"></a>
@@ -889,7 +889,7 @@
 <a name="ln-624"></a>
 <a name="ln-625"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-626"></a>
-<a name="ln-627"></a><span class="k">    </span><span class="n">get_ent_center1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">ent_center1</span>
+<a name="ln-627"></a><span class="k">    </span><span class="n">get_ent_center1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">ent_center1</span>
 <a name="ln-628"></a>
 <a name="ln-629"></a>  <span class="k">END PROCEDURE </span><span class="n">get_ent_center1</span>
 <a name="ln-630"></a>
@@ -907,7 +907,7 @@
 <a name="ln-642"></a>
 <a name="ln-643"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-644"></a>
-<a name="ln-645"></a><span class="k">    </span><span class="n">get_nbar_center1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">nbar_center1</span>
+<a name="ln-645"></a><span class="k">    </span><span class="n">get_nbar_center1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">nbar_center1</span>
 <a name="ln-646"></a>
 <a name="ln-647"></a>  <span class="k">END PROCEDURE </span><span class="n">get_nbar_center1</span>
 <a name="ln-648"></a>
@@ -925,7 +925,7 @@
 <a name="ln-660"></a>
 <a name="ln-661"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-662"></a>
-<a name="ln-663"></a><span class="k">    </span><span class="n">get_rho_center1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">rho_center1</span>
+<a name="ln-663"></a><span class="k">    </span><span class="n">get_rho_center1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">rho_center1</span>
 <a name="ln-664"></a>
 <a name="ln-665"></a>  <span class="k">END PROCEDURE </span><span class="n">get_rho_center1</span>
 <a name="ln-666"></a>
@@ -942,7 +942,7 @@
 <a name="ln-677"></a>
 <a name="ln-678"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-679"></a>
-<a name="ln-680"></a><span class="k">    </span><span class="n">get_energy_density_center1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">energy_density_center1</span>
+<a name="ln-680"></a><span class="k">    </span><span class="n">get_energy_density_center1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">energy_density_center1</span>
 <a name="ln-681"></a>
 <a name="ln-682"></a>  <span class="k">END PROCEDURE </span><span class="n">get_energy_density_center1</span>
 <a name="ln-683"></a>
@@ -959,7 +959,7 @@
 <a name="ln-694"></a>
 <a name="ln-695"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-696"></a>
-<a name="ln-697"></a><span class="k">    </span><span class="n">get_specific_energy_center1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">specific_energy_center1</span>
+<a name="ln-697"></a><span class="k">    </span><span class="n">get_specific_energy_center1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">specific_energy_center1</span>
 <a name="ln-698"></a>
 <a name="ln-699"></a>  <span class="k">END PROCEDURE </span><span class="n">get_specific_energy_center1</span>
 <a name="ln-700"></a>
@@ -976,7 +976,7 @@
 <a name="ln-711"></a>
 <a name="ln-712"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-713"></a>
-<a name="ln-714"></a><span class="k">    </span><span class="n">get_pressure_center1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">pressure_center1</span>
+<a name="ln-714"></a><span class="k">    </span><span class="n">get_pressure_center1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">pressure_center1</span>
 <a name="ln-715"></a>
 <a name="ln-716"></a>  <span class="k">END PROCEDURE </span><span class="n">get_pressure_center1</span>
 <a name="ln-717"></a>
@@ -993,7 +993,7 @@
 <a name="ln-728"></a>
 <a name="ln-729"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-730"></a>
-<a name="ln-731"></a><span class="k">    </span><span class="n">get_ent_center2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">ent_center2</span>
+<a name="ln-731"></a><span class="k">    </span><span class="n">get_ent_center2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">ent_center2</span>
 <a name="ln-732"></a>
 <a name="ln-733"></a>  <span class="k">END PROCEDURE </span><span class="n">get_ent_center2</span>
 <a name="ln-734"></a>
@@ -1011,7 +1011,7 @@
 <a name="ln-746"></a>
 <a name="ln-747"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-748"></a>
-<a name="ln-749"></a><span class="k">    </span><span class="n">get_nbar_center2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">nbar_center2</span>
+<a name="ln-749"></a><span class="k">    </span><span class="n">get_nbar_center2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">nbar_center2</span>
 <a name="ln-750"></a>
 <a name="ln-751"></a>  <span class="k">END PROCEDURE </span><span class="n">get_nbar_center2</span>
 <a name="ln-752"></a>
@@ -1029,7 +1029,7 @@
 <a name="ln-764"></a>
 <a name="ln-765"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-766"></a>
-<a name="ln-767"></a><span class="k">    </span><span class="n">get_rho_center2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">rho_center2</span>
+<a name="ln-767"></a><span class="k">    </span><span class="n">get_rho_center2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">rho_center2</span>
 <a name="ln-768"></a>
 <a name="ln-769"></a>  <span class="k">END PROCEDURE </span><span class="n">get_rho_center2</span>
 <a name="ln-770"></a>
@@ -1046,7 +1046,7 @@
 <a name="ln-781"></a>
 <a name="ln-782"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-783"></a>
-<a name="ln-784"></a><span class="k">    </span><span class="n">get_energy_density_center2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">energy_density_center2</span>
+<a name="ln-784"></a><span class="k">    </span><span class="n">get_energy_density_center2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">energy_density_center2</span>
 <a name="ln-785"></a>
 <a name="ln-786"></a>  <span class="k">END PROCEDURE </span><span class="n">get_energy_density_center2</span>
 <a name="ln-787"></a>
@@ -1063,7 +1063,7 @@
 <a name="ln-798"></a>
 <a name="ln-799"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-800"></a>
-<a name="ln-801"></a><span class="k">    </span><span class="n">get_specific_energy_center2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">specific_energy_center2</span>
+<a name="ln-801"></a><span class="k">    </span><span class="n">get_specific_energy_center2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">specific_energy_center2</span>
 <a name="ln-802"></a>
 <a name="ln-803"></a>  <span class="k">END PROCEDURE </span><span class="n">get_specific_energy_center2</span>
 <a name="ln-804"></a>
@@ -1080,7 +1080,7 @@
 <a name="ln-815"></a>
 <a name="ln-816"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-817"></a>
-<a name="ln-818"></a><span class="k">    </span><span class="n">get_pressure_center2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">pressure_center2</span>
+<a name="ln-818"></a><span class="k">    </span><span class="n">get_pressure_center2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">pressure_center2</span>
 <a name="ln-819"></a>
 <a name="ln-820"></a>  <span class="k">END PROCEDURE </span><span class="n">get_pressure_center2</span>
 <a name="ln-821"></a>
@@ -1097,7 +1097,7 @@
 <a name="ln-832"></a>
 <a name="ln-833"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-834"></a>
-<a name="ln-835"></a><span class="k">    </span><span class="n">get_eos1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">eos1</span>
+<a name="ln-835"></a><span class="k">    </span><span class="n">get_eos1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">eos1</span>
 <a name="ln-836"></a>
 <a name="ln-837"></a>  <span class="k">END PROCEDURE </span><span class="n">get_eos1</span>
 <a name="ln-838"></a>
@@ -1114,7 +1114,7 @@
 <a name="ln-849"></a>
 <a name="ln-850"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-851"></a>
-<a name="ln-852"></a><span class="k">    </span><span class="n">get_eos2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">eos2</span>
+<a name="ln-852"></a><span class="k">    </span><span class="n">get_eos2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">eos2</span>
 <a name="ln-853"></a>
 <a name="ln-854"></a>  <span class="k">END PROCEDURE </span><span class="n">get_eos2</span>
 <a name="ln-855"></a>
@@ -1131,7 +1131,7 @@
 <a name="ln-866"></a>
 <a name="ln-867"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-868"></a>
-<a name="ln-869"></a><span class="k">    </span><span class="n">get_npeos_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">npeos_1</span>
+<a name="ln-869"></a><span class="k">    </span><span class="n">get_npeos_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">npeos_1</span>
 <a name="ln-870"></a>
 <a name="ln-871"></a>  <span class="k">END PROCEDURE </span><span class="n">get_npeos_1</span>
 <a name="ln-872"></a>
@@ -1148,7 +1148,7 @@
 <a name="ln-883"></a>
 <a name="ln-884"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-885"></a>
-<a name="ln-886"></a><span class="k">    </span><span class="n">get_npeos_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">npeos_2</span>
+<a name="ln-886"></a><span class="k">    </span><span class="n">get_npeos_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">npeos_2</span>
 <a name="ln-887"></a>
 <a name="ln-888"></a>  <span class="k">END PROCEDURE </span><span class="n">get_npeos_2</span>
 <a name="ln-889"></a>
@@ -1167,7 +1167,7 @@
 <a name="ln-902"></a>
 <a name="ln-903"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-904"></a>
-<a name="ln-905"></a><span class="k">    </span><span class="n">get_gamma0_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">gamma0_1</span>
+<a name="ln-905"></a><span class="k">    </span><span class="n">get_gamma0_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">gamma0_1</span>
 <a name="ln-906"></a>
 <a name="ln-907"></a>  <span class="k">END PROCEDURE </span><span class="n">get_gamma0_1</span>
 <a name="ln-908"></a>
@@ -1186,7 +1186,7 @@
 <a name="ln-921"></a>
 <a name="ln-922"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-923"></a>
-<a name="ln-924"></a><span class="k">    </span><span class="n">get_gamma0_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">gamma0_2</span>
+<a name="ln-924"></a><span class="k">    </span><span class="n">get_gamma0_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">gamma0_2</span>
 <a name="ln-925"></a>
 <a name="ln-926"></a>  <span class="k">END PROCEDURE </span><span class="n">get_gamma0_2</span>
 <a name="ln-927"></a>
@@ -1205,7 +1205,7 @@
 <a name="ln-940"></a>
 <a name="ln-941"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-942"></a>
-<a name="ln-943"></a><span class="k">    </span><span class="n">get_gamma1_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">gamma1_1</span>
+<a name="ln-943"></a><span class="k">    </span><span class="n">get_gamma1_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">gamma1_1</span>
 <a name="ln-944"></a>
 <a name="ln-945"></a>  <span class="k">END PROCEDURE </span><span class="n">get_gamma1_1</span>
 <a name="ln-946"></a>
@@ -1224,7 +1224,7 @@
 <a name="ln-959"></a>
 <a name="ln-960"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-961"></a>
-<a name="ln-962"></a><span class="k">    </span><span class="n">get_gamma1_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">gamma1_2</span>
+<a name="ln-962"></a><span class="k">    </span><span class="n">get_gamma1_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">gamma1_2</span>
 <a name="ln-963"></a>
 <a name="ln-964"></a>  <span class="k">END PROCEDURE </span><span class="n">get_gamma1_2</span>
 <a name="ln-965"></a>
@@ -1243,7 +1243,7 @@
 <a name="ln-978"></a>
 <a name="ln-979"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-980"></a>
-<a name="ln-981"></a><span class="k">    </span><span class="n">get_gamma2_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">gamma2_1</span>
+<a name="ln-981"></a><span class="k">    </span><span class="n">get_gamma2_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">gamma2_1</span>
 <a name="ln-982"></a>
 <a name="ln-983"></a>  <span class="k">END PROCEDURE </span><span class="n">get_gamma2_1</span>
 <a name="ln-984"></a>
@@ -1262,7 +1262,7 @@
 <a name="ln-997"></a>
 <a name="ln-998"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-999"></a>
-<a name="ln-1000"></a><span class="k">    </span><span class="n">get_gamma2_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">gamma2_2</span>
+<a name="ln-1000"></a><span class="k">    </span><span class="n">get_gamma2_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">gamma2_2</span>
 <a name="ln-1001"></a>
 <a name="ln-1002"></a>  <span class="k">END PROCEDURE </span><span class="n">get_gamma2_2</span>
 <a name="ln-1003"></a>
@@ -1281,7 +1281,7 @@
 <a name="ln-1016"></a>
 <a name="ln-1017"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1018"></a>
-<a name="ln-1019"></a><span class="k">    </span><span class="n">get_gamma3_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">gamma3_1</span>
+<a name="ln-1019"></a><span class="k">    </span><span class="n">get_gamma3_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">gamma3_1</span>
 <a name="ln-1020"></a>
 <a name="ln-1021"></a>  <span class="k">END PROCEDURE </span><span class="n">get_gamma3_1</span>
 <a name="ln-1022"></a>
@@ -1300,7 +1300,7 @@
 <a name="ln-1035"></a>
 <a name="ln-1036"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1037"></a>
-<a name="ln-1038"></a><span class="k">    </span><span class="n">get_gamma3_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">gamma3_2</span>
+<a name="ln-1038"></a><span class="k">    </span><span class="n">get_gamma3_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">gamma3_2</span>
 <a name="ln-1039"></a>
 <a name="ln-1040"></a>  <span class="k">END PROCEDURE </span><span class="n">get_gamma3_2</span>
 <a name="ln-1041"></a>
@@ -1319,7 +1319,7 @@
 <a name="ln-1054"></a>
 <a name="ln-1055"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1056"></a>
-<a name="ln-1057"></a><span class="k">    </span><span class="n">get_kappa0_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">kappa0_1</span>
+<a name="ln-1057"></a><span class="k">    </span><span class="n">get_kappa0_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">kappa0_1</span>
 <a name="ln-1058"></a>
 <a name="ln-1059"></a>  <span class="k">END PROCEDURE </span><span class="n">get_kappa0_1</span>
 <a name="ln-1060"></a>
@@ -1338,7 +1338,7 @@
 <a name="ln-1073"></a>
 <a name="ln-1074"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1075"></a>
-<a name="ln-1076"></a><span class="k">    </span><span class="n">get_kappa1_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">kappa1_1</span>
+<a name="ln-1076"></a><span class="k">    </span><span class="n">get_kappa1_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">kappa1_1</span>
 <a name="ln-1077"></a>
 <a name="ln-1078"></a>  <span class="k">END PROCEDURE </span><span class="n">get_kappa1_1</span>
 <a name="ln-1079"></a>
@@ -1357,7 +1357,7 @@
 <a name="ln-1092"></a>
 <a name="ln-1093"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1094"></a>
-<a name="ln-1095"></a><span class="k">    </span><span class="n">get_kappa2_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">kappa2_1</span>
+<a name="ln-1095"></a><span class="k">    </span><span class="n">get_kappa2_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">kappa2_1</span>
 <a name="ln-1096"></a>
 <a name="ln-1097"></a>  <span class="k">END PROCEDURE </span><span class="n">get_kappa2_1</span>
 <a name="ln-1098"></a>
@@ -1376,7 +1376,7 @@
 <a name="ln-1111"></a>
 <a name="ln-1112"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1113"></a>
-<a name="ln-1114"></a><span class="k">    </span><span class="n">get_kappa3_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">kappa3_1</span>
+<a name="ln-1114"></a><span class="k">    </span><span class="n">get_kappa3_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">kappa3_1</span>
 <a name="ln-1115"></a>
 <a name="ln-1116"></a>  <span class="k">END PROCEDURE </span><span class="n">get_kappa3_1</span>
 <a name="ln-1117"></a>
@@ -1395,7 +1395,7 @@
 <a name="ln-1130"></a>
 <a name="ln-1131"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1132"></a>
-<a name="ln-1133"></a><span class="k">    </span><span class="n">get_kappa0_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">kappa0_2</span>
+<a name="ln-1133"></a><span class="k">    </span><span class="n">get_kappa0_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">kappa0_2</span>
 <a name="ln-1134"></a>
 <a name="ln-1135"></a>  <span class="k">END PROCEDURE </span><span class="n">get_kappa0_2</span>
 <a name="ln-1136"></a>
@@ -1414,7 +1414,7 @@
 <a name="ln-1149"></a>
 <a name="ln-1150"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1151"></a>
-<a name="ln-1152"></a><span class="k">    </span><span class="n">get_kappa1_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">kappa1_2</span>
+<a name="ln-1152"></a><span class="k">    </span><span class="n">get_kappa1_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">kappa1_2</span>
 <a name="ln-1153"></a>
 <a name="ln-1154"></a>  <span class="k">END PROCEDURE </span><span class="n">get_kappa1_2</span>
 <a name="ln-1155"></a>
@@ -1433,7 +1433,7 @@
 <a name="ln-1168"></a>
 <a name="ln-1169"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1170"></a>
-<a name="ln-1171"></a><span class="k">    </span><span class="n">get_kappa2_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">kappa2_2</span>
+<a name="ln-1171"></a><span class="k">    </span><span class="n">get_kappa2_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">kappa2_2</span>
 <a name="ln-1172"></a>
 <a name="ln-1173"></a>  <span class="k">END PROCEDURE </span><span class="n">get_kappa2_2</span>
 <a name="ln-1174"></a>
@@ -1452,7 +1452,7 @@
 <a name="ln-1187"></a>
 <a name="ln-1188"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1189"></a>
-<a name="ln-1190"></a><span class="k">    </span><span class="n">get_kappa3_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">kappa3_2</span>
+<a name="ln-1190"></a><span class="k">    </span><span class="n">get_kappa3_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">kappa3_2</span>
 <a name="ln-1191"></a>
 <a name="ln-1192"></a>  <span class="k">END PROCEDURE </span><span class="n">get_kappa3_2</span>
 <a name="ln-1193"></a>
@@ -1472,7 +1472,7 @@
 <a name="ln-1207"></a>
 <a name="ln-1208"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1209"></a>
-<a name="ln-1210"></a><span class="k">    </span><span class="n">get_logp1_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">logp1_1</span>
+<a name="ln-1210"></a><span class="k">    </span><span class="n">get_logp1_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">logp1_1</span>
 <a name="ln-1211"></a>
 <a name="ln-1212"></a>  <span class="k">END PROCEDURE </span><span class="n">get_logp1_1</span>
 <a name="ln-1213"></a>
@@ -1492,7 +1492,7 @@
 <a name="ln-1227"></a>
 <a name="ln-1228"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1229"></a>
-<a name="ln-1230"></a><span class="k">    </span><span class="n">get_logp1_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">logp1_2</span>
+<a name="ln-1230"></a><span class="k">    </span><span class="n">get_logp1_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">logp1_2</span>
 <a name="ln-1231"></a>
 <a name="ln-1232"></a>  <span class="k">END PROCEDURE </span><span class="n">get_logp1_2</span>
 <a name="ln-1233"></a>
@@ -1512,7 +1512,7 @@
 <a name="ln-1247"></a>
 <a name="ln-1248"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1249"></a>
-<a name="ln-1250"></a><span class="k">    </span><span class="n">get_logRho0_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">logRho0_1</span>
+<a name="ln-1250"></a><span class="k">    </span><span class="n">get_logRho0_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">logRho0_1</span>
 <a name="ln-1251"></a>
 <a name="ln-1252"></a>  <span class="k">END PROCEDURE </span><span class="n">get_logRho0_1</span>
 <a name="ln-1253"></a>
@@ -1532,7 +1532,7 @@
 <a name="ln-1267"></a>
 <a name="ln-1268"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1269"></a>
-<a name="ln-1270"></a><span class="k">    </span><span class="n">get_logRho0_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">logRho0_2</span>
+<a name="ln-1270"></a><span class="k">    </span><span class="n">get_logRho0_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">logRho0_2</span>
 <a name="ln-1271"></a>
 <a name="ln-1272"></a>  <span class="k">END PROCEDURE </span><span class="n">get_logRho0_2</span>
 <a name="ln-1273"></a>
@@ -1552,7 +1552,7 @@
 <a name="ln-1287"></a>
 <a name="ln-1288"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1289"></a>
-<a name="ln-1290"></a><span class="k">    </span><span class="n">get_logRho1_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">logRho1_1</span>
+<a name="ln-1290"></a><span class="k">    </span><span class="n">get_logRho1_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">logRho1_1</span>
 <a name="ln-1291"></a>
 <a name="ln-1292"></a>  <span class="k">END PROCEDURE </span><span class="n">get_logRho1_1</span>
 <a name="ln-1293"></a>
@@ -1572,7 +1572,7 @@
 <a name="ln-1307"></a>
 <a name="ln-1308"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1309"></a>
-<a name="ln-1310"></a><span class="k">    </span><span class="n">get_logRho1_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">logRho1_2</span>
+<a name="ln-1310"></a><span class="k">    </span><span class="n">get_logRho1_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">logRho1_2</span>
 <a name="ln-1311"></a>
 <a name="ln-1312"></a>  <span class="k">END PROCEDURE </span><span class="n">get_logRho1_2</span>
 <a name="ln-1313"></a>
@@ -1592,7 +1592,7 @@
 <a name="ln-1327"></a>
 <a name="ln-1328"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1329"></a>
-<a name="ln-1330"></a><span class="k">    </span><span class="n">get_logRho2_1</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">logRho2_1</span>
+<a name="ln-1330"></a><span class="k">    </span><span class="n">get_logRho2_1</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">logRho2_1</span>
 <a name="ln-1331"></a>
 <a name="ln-1332"></a>  <span class="k">END PROCEDURE </span><span class="n">get_logRho2_1</span>
 <a name="ln-1333"></a>
@@ -1612,7 +1612,7 @@
 <a name="ln-1347"></a>
 <a name="ln-1348"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-1349"></a>
-<a name="ln-1350"></a><span class="k">    </span><span class="n">get_logRho2_2</span><span class="o">=</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">logRho2_2</span>
+<a name="ln-1350"></a><span class="k">    </span><span class="n">get_logRho2_2</span><span class="o">=</span> <span class="n">this</span><span class="p">%</span> <span class="n">logRho2_2</span>
 <a name="ln-1351"></a>
 <a name="ln-1352"></a>  <span class="k">END PROCEDURE </span><span class="n">get_logRho2_2</span>
 <a name="ln-1353"></a>
@@ -1636,7 +1636,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-05-24 08:27:25           </p>
+ on 2022-07-05 18:11:38           </p>
         </div>
       </div>
       <br>

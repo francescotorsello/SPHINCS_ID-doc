@@ -91,13 +91,13 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">76 statements</a>
+    title=" 0.1% of total for procedures.">75 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/submodule_bns_lorene_import.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/submodule_bns_lorene_read.f90"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/submodule_bns_lorene_import.f90.html'>submodule_bns_lorene_import.f90</a></li>
-     <li><a href='../module/import.html'>import</a></li>
+     <li><a href='../sourcefile/submodule_bns_lorene_read.f90.html'>submodule_bns_lorene_read.f90</a></li>
+     <li><a href='../module/read.html'>read</a></li>
      <li class="active">import_id_spacetime</li>
   </ol>
 </div>
@@ -123,9 +123,9 @@
       <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-detg~3">detg</a>
       <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-detg4~2">detg4</a>
       <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-g4~8">g4</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-i~19">i</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-j~19">j</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-k~16">k</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-i~20">i</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-j~20">j</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-k~17">k</a>
     </div>
   </div>
 </div>
@@ -252,25 +252,25 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~86"></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
+  <td><span class="anchor" id="variable-this~196"></span>class(<a href='../type/bnslorene.html'>bnslorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>this</strong></td><td><p><a href="../type/bnslorene.html">bnslorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-nx~8"></span>integer,</td>
+  <td><span class="anchor" id="variable-nx~9"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>nx</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-ny~8"></span>integer,</td>
+  <td><span class="anchor" id="variable-ny~9"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>ny</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-nz~8"></span>integer,</td>
+  <td><span class="anchor" id="variable-nz~9"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>nz</strong></td><td></td>
@@ -282,7 +282,7 @@
   <td><strong>pos</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-lapse~20"></span>double precision,</td>
+  <td><span class="anchor" id="variable-lapse~21"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:,:,:)</td><td>::</td>
   <td><strong>lapse</strong></td><td></td>
@@ -331,50 +331,50 @@
 <polygon fill="none" stroke="black" points="124,-66 0,-66 0,-42 124,-42 124,-66"/>
 <text text-anchor="middle" x="62" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">import_id_spacetime</text>
 </g>
-<!-- proc~determinant_sym4x4 -->
-<g id="proc~~import_id_spacetime~~CallsGraph_node2" class="node">
-<title>proc~determinant_sym4x4</title>
-<g id="a_proc~~import_id_spacetime~~CallsGraph_node2"><a xlink:href=".././proc/determinant_sym4x4.html" xlink:title="determinant_sym4x4">
-<polygon fill="#d9534f" stroke="#d9534f" points="295,-108 170,-108 170,-84 295,-84 295,-108"/>
-<text text-anchor="middle" x="232.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym4x4</text>
-</a>
-</g>
-</g>
-<!-- proc~import_id_spacetime&#45;&gt;proc~determinant_sym4x4 -->
-<g id="proc~~import_id_spacetime~~CallsGraph_edge1" class="edge">
-<title>proc~import_id_spacetime&#45;&gt;proc~determinant_sym4x4</title>
-<path fill="none" stroke="#000000" d="M111.29,-66.04C130.67,-70.87 153.19,-76.48 173.46,-81.53"/>
-<polygon fill="#000000" stroke="#000000" points="172.66,-84.94 183.21,-83.96 174.35,-78.15 172.66,-84.94"/>
-</g>
-<!-- proc~compute_g4 -->
-<g id="proc~~import_id_spacetime~~CallsGraph_node3" class="node">
-<title>proc~compute_g4</title>
-<g id="a_proc~~import_id_spacetime~~CallsGraph_node3"><a xlink:href=".././proc/compute_g4.html" xlink:title="compute_g4">
-<polygon fill="#d9534f" stroke="#d9534f" points="272,-66 193,-66 193,-42 272,-42 272,-66"/>
-<text text-anchor="middle" x="232.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_g4</text>
-</a>
-</g>
-</g>
-<!-- proc~import_id_spacetime&#45;&gt;proc~compute_g4 -->
-<g id="proc~~import_id_spacetime~~CallsGraph_edge2" class="edge">
-<title>proc~import_id_spacetime&#45;&gt;proc~compute_g4</title>
-<path fill="none" stroke="#000000" d="M124.31,-54C143.51,-54 164.44,-54 182.66,-54"/>
-<polygon fill="#000000" stroke="#000000" points="182.76,-57.5 192.76,-54 182.76,-50.5 182.76,-57.5"/>
-</g>
 <!-- interface~get_lorene_id_spacetime -->
-<g id="proc~~import_id_spacetime~~CallsGraph_node4" class="node">
+<g id="proc~~import_id_spacetime~~CallsGraph_node2" class="node">
 <title>interface~get_lorene_id_spacetime</title>
-<g id="a_proc~~import_id_spacetime~~CallsGraph_node4"><a xlink:href=".././interface/get_lorene_id_spacetime.html" xlink:title="get_lorene_id_spacetime">
-<polygon fill="#a7506f" stroke="#a7506f" points="305,-24 160,-24 160,0 305,0 305,-24"/>
-<text text-anchor="middle" x="232.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_lorene_id_spacetime</text>
+<g id="a_proc~~import_id_spacetime~~CallsGraph_node2"><a xlink:href=".././interface/get_lorene_id_spacetime.html" xlink:title="get_lorene_id_spacetime">
+<polygon fill="#a7506f" stroke="#a7506f" points="305,-108 160,-108 160,-84 305,-84 305,-108"/>
+<text text-anchor="middle" x="232.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_lorene_id_spacetime</text>
 </a>
 </g>
 </g>
 <!-- proc~import_id_spacetime&#45;&gt;interface~get_lorene_id_spacetime -->
-<g id="proc~~import_id_spacetime~~CallsGraph_edge3" class="edge">
+<g id="proc~~import_id_spacetime~~CallsGraph_edge1" class="edge">
 <title>proc~import_id_spacetime&#45;&gt;interface~get_lorene_id_spacetime</title>
-<path fill="none" stroke="#000000" d="M111.29,-41.96C130.67,-37.13 153.19,-31.52 173.46,-26.47"/>
-<polygon fill="#000000" stroke="#000000" points="174.35,-29.85 183.21,-24.04 172.66,-23.06 174.35,-29.85"/>
+<path fill="none" stroke="#000000" d="M111.29,-66.04C130.67,-70.87 153.19,-76.48 173.46,-81.53"/>
+<polygon fill="#000000" stroke="#000000" points="172.66,-84.94 183.21,-83.96 174.35,-78.15 172.66,-84.94"/>
+</g>
+<!-- proc~determinant_sym4x4 -->
+<g id="proc~~import_id_spacetime~~CallsGraph_node3" class="node">
+<title>proc~determinant_sym4x4</title>
+<g id="a_proc~~import_id_spacetime~~CallsGraph_node3"><a xlink:href=".././proc/determinant_sym4x4.html" xlink:title="determinant_sym4x4">
+<polygon fill="#d9534f" stroke="#d9534f" points="295,-66 170,-66 170,-42 295,-42 295,-66"/>
+<text text-anchor="middle" x="232.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym4x4</text>
+</a>
+</g>
+</g>
+<!-- proc~import_id_spacetime&#45;&gt;proc~determinant_sym4x4 -->
+<g id="proc~~import_id_spacetime~~CallsGraph_edge2" class="edge">
+<title>proc~import_id_spacetime&#45;&gt;proc~determinant_sym4x4</title>
+<path fill="none" stroke="#000000" d="M124.31,-54C135.81,-54 147.92,-54 159.71,-54"/>
+<polygon fill="#000000" stroke="#000000" points="159.95,-57.5 169.95,-54 159.95,-50.5 159.95,-57.5"/>
+</g>
+<!-- proc~compute_g4 -->
+<g id="proc~~import_id_spacetime~~CallsGraph_node4" class="node">
+<title>proc~compute_g4</title>
+<g id="a_proc~~import_id_spacetime~~CallsGraph_node4"><a xlink:href=".././proc/compute_g4.html" xlink:title="compute_g4">
+<polygon fill="#d9534f" stroke="#d9534f" points="272,-24 193,-24 193,0 272,0 272,-24"/>
+<text text-anchor="middle" x="232.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_g4</text>
+</a>
+</g>
+</g>
+<!-- proc~import_id_spacetime&#45;&gt;proc~compute_g4 -->
+<g id="proc~~import_id_spacetime~~CallsGraph_edge3" class="edge">
+<title>proc~import_id_spacetime&#45;&gt;proc~compute_g4</title>
+<path fill="none" stroke="#000000" d="M111.29,-41.96C133.82,-36.35 160.58,-29.68 183.12,-24.06"/>
+<polygon fill="#000000" stroke="#000000" points="183.97,-27.45 192.83,-21.64 182.28,-20.66 183.97,-27.45"/>
 </g>
 </g>
 </svg>
@@ -551,9 +551,9 @@
       <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-detg~3">detg</a>
       <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-detg4~2">detg4</a>
       <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-g4~8">g4</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-i~19">i</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-j~19">j</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-k~16">k</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-i~20">i</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-j~20">j</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime.html#variable-k~17">k</a>
     </div>
   </div>
 </div>
@@ -583,17 +583,17 @@
   <td><strong>g4</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-i~19"></span>integer,</td>
+  <td><span class="anchor" id="variable-i~20"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>i</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-j~19"></span>integer,</td>
+  <td><span class="anchor" id="variable-j~20"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>j</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-k~16"></span>integer,</td>
+  <td><span class="anchor" id="variable-k~17"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>k</strong></td><td></td><td></td><td></td>
 </tr>
@@ -626,7 +626,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-05-24 08:27:25           </p>
+ on 2022-07-05 18:11:38           </p>
         </div>
       </div>
       <br>

@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p> 7.4% of total for derived types.</p>Including implementation: 68 statements,  5.3% of total for derived types.">59 statements</a>
+    title="<p> 7.1% of total for derived types.</p>Including implementation: 69 statements,  4.2% of total for derived types.">60 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/module_bns_lorene.f90"> Source File</a></li>
   </ul>
@@ -130,6 +130,7 @@
       <a class="list-group-item" href="../type/bnslorene.html#variable-barycenter~2">barycenter</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-barycenter1_x">barycenter1_x</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-barycenter2_x">barycenter2_x</a>
+      <a class="list-group-item" href="../type/bnslorene.html#variable-barycenter_system~2">barycenter_system</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-baryon_density~2">baryon_density</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-bns_identifier">bns_identifier</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-bns_ptr">bns_ptr</a>
@@ -208,6 +209,7 @@
       <a class="list-group-item" href="../type/bnslorene.html#variable-npeos_1">npeos_1</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-npeos_2">npeos_2</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-one_lapse">one_lapse</a>
+      <a class="list-group-item" href="../type/bnslorene.html#variable-pressure~2">pressure</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-pressure_center1">pressure_center1</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-pressure_center2">pressure_center2</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-radii">radii</a>
@@ -401,64 +403,64 @@
 <!-- type~bnslorene -->
 <g id="type~~bnslorene~~InheritsGraph_node1" class="node">
 <title>type~bnslorene</title>
-<polygon fill="none" stroke="black" points="466,-45 401,-45 401,-21 466,-21 466,-45"/>
-<text text-anchor="middle" x="433.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">bnslorene</text>
-</g>
-<!-- C_PTR -->
-<g id="type~~bnslorene~~InheritsGraph_node2" class="node">
-<title>C_PTR</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="327.5,-66 273.5,-66 273.5,-42 327.5,-42 327.5,-66"/>
-<text text-anchor="middle" x="300.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">C_PTR</text>
-</g>
-<!-- type~bnslorene&#45;&gt;C_PTR -->
-<g id="type~~bnslorene~~InheritsGraph_edge1" class="edge">
-<title>type~bnslorene&#45;&gt;C_PTR</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M400.79,-38.08C381.7,-41.14 357.34,-45.05 337.53,-48.22"/>
-<polygon fill="#000000" stroke="#000000" points="336.96,-44.77 327.64,-49.81 338.06,-51.68 336.96,-44.77"/>
-<text text-anchor="middle" x="365" y="-48.4" font-family="Helvetica,sans-Serif" font-size="9.50">bns_ptr</text>
+<polygon fill="none" stroke="black" points="466,-36 401,-36 401,-12 466,-12 466,-36"/>
+<text text-anchor="middle" x="433.5" y="-21.6" font-family="Helvetica,sans-Serif" font-size="10.50">bnslorene</text>
 </g>
 <!-- type~bnsbase -->
-<g id="type~~bnslorene~~InheritsGraph_node3" class="node">
+<g id="type~~bnslorene~~InheritsGraph_node2" class="node">
 <title>type~bnsbase</title>
-<g id="a_type~~bnslorene~~InheritsGraph_node3"><a xlink:href=".././type/bnsbase.html" xlink:title="bnsbase">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="329,-24 272,-24 272,0 329,0 329,-24"/>
-<text text-anchor="middle" x="300.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">bnsbase</text>
+<g id="a_type~~bnslorene~~InheritsGraph_node2"><a xlink:href=".././type/bnsbase.html" xlink:title="bnsbase">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="329,-66 272,-66 272,-42 329,-42 329,-66"/>
+<text text-anchor="middle" x="300.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">bnsbase</text>
 </a>
 </g>
 </g>
 <!-- type~bnslorene&#45;&gt;type~bnsbase -->
 <g id="type~~bnslorene~~InheritsGraph_edge2" class="edge">
 <title>type~bnslorene&#45;&gt;type~bnsbase</title>
-<path fill="none" stroke="#000000" d="M400.79,-27.92C382.3,-24.95 358.87,-21.2 339.42,-18.08"/>
-<polygon fill="#000000" stroke="#000000" points="339.79,-14.59 329.36,-16.47 338.68,-21.51 339.79,-14.59"/>
+<path fill="none" stroke="#000000" d="M400.79,-31.26C382.22,-35.52 358.66,-40.91 339.15,-45.38"/>
+<polygon fill="#000000" stroke="#000000" points="338.33,-41.98 329.36,-47.62 339.89,-48.8 338.33,-41.98"/>
+</g>
+<!-- C_PTR -->
+<g id="type~~bnslorene~~InheritsGraph_node3" class="node">
+<title>C_PTR</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="327.5,-24 273.5,-24 273.5,0 327.5,0 327.5,-24"/>
+<text text-anchor="middle" x="300.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">C_PTR</text>
+</g>
+<!-- type~bnslorene&#45;&gt;C_PTR -->
+<g id="type~~bnslorene~~InheritsGraph_edge1" class="edge">
+<title>type~bnslorene&#45;&gt;C_PTR</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M400.79,-21.1C381.79,-19.35 357.57,-17.14 337.8,-15.33"/>
+<polygon fill="#000000" stroke="#000000" points="337.91,-11.82 327.64,-14.39 337.28,-18.79 337.91,-11.82"/>
+<text text-anchor="middle" x="365" y="-22.4" font-family="Helvetica,sans-Serif" font-size="9.50">bns_ptr</text>
 </g>
 <!-- type~idbase -->
 <g id="type~~bnslorene~~InheritsGraph_node4" class="node">
 <title>type~idbase</title>
 <g id="a_type~~bnslorene~~InheritsGraph_node4"><a xlink:href=".././type/idbase.html" xlink:title="idbase">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="235,-24 181,-24 181,0 235,0 235,-24"/>
-<text text-anchor="middle" x="208" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">idbase</text>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="235,-66 181,-66 181,-42 235,-42 235,-66"/>
+<text text-anchor="middle" x="208" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">idbase</text>
 </a>
 </g>
 </g>
 <!-- type~bnsbase&#45;&gt;type~idbase -->
 <g id="type~~bnslorene~~InheritsGraph_edge3" class="edge">
 <title>type~bnsbase&#45;&gt;type~idbase</title>
-<path fill="none" stroke="#000000" d="M271.86,-12C263.49,-12 254.17,-12 245.32,-12"/>
-<polygon fill="#000000" stroke="#000000" points="245.24,-8.5 235.24,-12 245.24,-15.5 245.24,-8.5"/>
+<path fill="none" stroke="#000000" d="M271.86,-54C263.49,-54 254.17,-54 245.32,-54"/>
+<polygon fill="#000000" stroke="#000000" points="245.24,-50.5 235.24,-54 245.24,-57.5 245.24,-50.5"/>
 </g>
 <!-- timer -->
 <g id="type~~bnslorene~~InheritsGraph_node5" class="node">
 <title>timer</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-24 0,-24 0,0 54,0 54,-24"/>
-<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">timer</text>
 </g>
 <!-- type~idbase&#45;&gt;timer -->
 <g id="type~~bnslorene~~InheritsGraph_edge4" class="edge">
 <title>type~idbase&#45;&gt;timer</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M180.97,-12C150.22,-12 98.86,-12 64.23,-12"/>
-<polygon fill="#000000" stroke="#000000" points="64.06,-8.5 54.06,-12 64.06,-15.5 64.06,-8.5"/>
-<text text-anchor="middle" x="117.5" y="-14.4" font-family="Helvetica,sans-Serif" font-size="9.50">construction_timer</text>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M180.97,-54C150.22,-54 98.86,-54 64.23,-54"/>
+<polygon fill="#000000" stroke="#000000" points="64.06,-50.5 54.06,-54 64.06,-57.5 64.06,-50.5"/>
+<text text-anchor="middle" x="117.5" y="-56.4" font-family="Helvetica,sans-Serif" font-size="9.50">construction_timer</text>
 </g>
 </g>
 </svg>
@@ -518,6 +520,7 @@
       <a class="list-group-item" href="../type/bnslorene.html#variable-barycenter~2">barycenter</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-barycenter1_x">barycenter1_x</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-barycenter2_x">barycenter2_x</a>
+      <a class="list-group-item" href="../type/bnslorene.html#variable-barycenter_system~2">barycenter_system</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-baryon_density~2">baryon_density</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-bns_identifier">bns_identifier</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-bns_ptr">bns_ptr</a>
@@ -596,6 +599,7 @@
       <a class="list-group-item" href="../type/bnslorene.html#variable-npeos_1">npeos_1</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-npeos_2">npeos_2</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-one_lapse">one_lapse</a>
+      <a class="list-group-item" href="../type/bnslorene.html#variable-pressure~2">pressure</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-pressure_center1">pressure_center1</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-pressure_center2">pressure_center2</a>
       <a class="list-group-item" href="../type/bnslorene.html#variable-radii">radii</a>
@@ -833,6 +837,12 @@ in the mass-radius diagrams, together with the gravitatonal mass</p></td>
 <td>public</td>  <td></td><td>::</td>
   <td><strong>barycenter2_x</strong></td><td></td><td></td><td><p>Barycenter of star 2 <script type="math/tex">[L_\odot]</script>
 </p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-barycenter_system~2"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(3)</td><td>::</td>
+  <td><strong>barycenter_system</strong></td><td></td><td></td><td><p>Array containing the barycenters of the stars
+ </p><div class="alert alert-success" role="alert"><h4>Todo</h4><p>add details</p></div></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-baryon_density~2"></span>double precision,</td>
@@ -1239,7 +1249,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
 <tr>
   <td><span class="anchor" id="variable-mass_grav"></span>double precision,</td>
 <td>public,</td>  <td>DIMENSION(2)</td><td>::</td>
-  <td><strong>mass_grav</strong></td><td></td><td></td><td><p>Array containing the gravitatil masses <script type="math/tex">[M_\odot]</script>
+  <td><strong>mass_grav</strong></td><td></td><td></td><td><p>Array containing the gravitational masses <script type="math/tex">[M_\odot]</script>
 </p></td>
 </tr>
 <tr>
@@ -1288,6 +1298,11 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
 <td>public</td>  <td></td><td>::</td>
   <td><strong>one_lapse</strong></td><td></td><td></td><td><p>Logical variable that determines if the lapse function <script type="math/tex">\alpha=1</script>,
  i.e., if the geodesic gauge is to be used</p></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-pressure~2"></span>double precision,</td>
+<td>public,</td>  <td>DIMENSION(:), ALLOCATABLE</td><td>::</td>
+  <td><strong>pressure</strong></td><td></td><td></td><td><p>1-D array storing the pressure</p></td>
 </tr>
 <tr>
   <td><span class="anchor" id="variable-pressure_center1"></span>double precision,</td>
@@ -1923,7 +1938,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_adm_mass(THIS)   <a href='../proc/get_adm_mass.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_adm_mass(this)   <a href='../proc/get_adm_mass.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1932,7 +1947,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1957,7 +1972,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_angular_momentum(THIS)   <a href='../proc/get_angular_momentum.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_angular_momentum(this)   <a href='../proc/get_angular_momentum.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -1966,7 +1981,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -1988,7 +2003,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_angular_vel(THIS)   <a href='../proc/get_angular_vel.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_angular_vel(this)   <a href='../proc/get_angular_vel.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Returns angular_vel</p>
     
 <h4>Arguments</h4>      <table class="table table-striped varlist">
@@ -1998,7 +2013,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2020,7 +2035,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_barycenter1_x(THIS)   <a href='../proc/get_barycenter1_x.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_barycenter1_x(this)   <a href='../proc/get_barycenter1_x.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2029,7 +2044,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2051,7 +2066,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_barycenter2_x(THIS)   <a href='../proc/get_barycenter2_x.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_barycenter2_x(this)   <a href='../proc/get_barycenter2_x.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2060,7 +2075,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2113,7 +2128,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_center1_x(THIS)   <a href='../proc/get_center1_x.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_center1_x(this)   <a href='../proc/get_center1_x.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2122,7 +2137,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2144,7 +2159,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_center2_x(THIS)   <a href='../proc/get_center2_x.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_center2_x(this)   <a href='../proc/get_center2_x.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2153,7 +2168,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2210,7 +2225,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_distance(THIS)   <a href='../proc/get_distance.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_distance(this)   <a href='../proc/get_distance.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2219,7 +2234,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2241,7 +2256,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_distance_com(THIS)   <a href='../proc/get_distance_com.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_distance_com(this)   <a href='../proc/get_distance_com.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2250,7 +2265,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2272,7 +2287,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_energy_density_center1(THIS)   <a href='../proc/get_energy_density_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_energy_density_center1(this)   <a href='../proc/get_energy_density_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2281,7 +2296,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2303,7 +2318,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_energy_density_center2(THIS)   <a href='../proc/get_energy_density_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_energy_density_center2(this)   <a href='../proc/get_energy_density_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2312,7 +2327,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2334,7 +2349,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_ent_center1(THIS)   <a href='../proc/get_ent_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_ent_center1(this)   <a href='../proc/get_ent_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2343,7 +2358,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2365,7 +2380,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_ent_center2(THIS)   <a href='../proc/get_ent_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_ent_center2(this)   <a href='../proc/get_ent_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2374,7 +2389,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2396,7 +2411,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_eos1(THIS)   <a href='../proc/get_eos1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_eos1(this)   <a href='../proc/get_eos1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2405,7 +2420,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2489,7 +2504,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_eos2(THIS)   <a href='../proc/get_eos2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_eos2(this)   <a href='../proc/get_eos2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2498,7 +2513,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2722,7 +2737,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma0_1(THIS)   <a href='../proc/get_gamma0_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma0_1(this)   <a href='../proc/get_gamma0_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2731,7 +2746,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2753,7 +2768,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma0_2(THIS)   <a href='../proc/get_gamma0_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma0_2(this)   <a href='../proc/get_gamma0_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2762,7 +2777,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2784,7 +2799,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma1_1(THIS)   <a href='../proc/get_gamma1_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma1_1(this)   <a href='../proc/get_gamma1_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2793,7 +2808,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2815,7 +2830,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma1_2(THIS)   <a href='../proc/get_gamma1_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma1_2(this)   <a href='../proc/get_gamma1_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2824,7 +2839,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2846,7 +2861,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma2_1(THIS)   <a href='../proc/get_gamma2_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma2_1(this)   <a href='../proc/get_gamma2_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2855,7 +2870,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2877,7 +2892,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma2_2(THIS)   <a href='../proc/get_gamma2_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma2_2(this)   <a href='../proc/get_gamma2_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2886,7 +2901,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2908,7 +2923,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma3_1(THIS)   <a href='../proc/get_gamma3_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma3_1(this)   <a href='../proc/get_gamma3_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2917,7 +2932,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2939,7 +2954,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma3_2(THIS)   <a href='../proc/get_gamma3_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma3_2(this)   <a href='../proc/get_gamma3_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2948,7 +2963,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -2970,7 +2985,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma_1(THIS)   <a href='../proc/get_gamma_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma_1(this)   <a href='../proc/get_gamma_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -2979,7 +2994,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3001,7 +3016,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_gamma_2(THIS)   <a href='../proc/get_gamma_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_gamma_2(this)   <a href='../proc/get_gamma_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3010,7 +3025,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3032,7 +3047,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_grav_mass1(THIS)   <a href='../proc/get_grav_mass1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_grav_mass1(this)   <a href='../proc/get_grav_mass1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3041,7 +3056,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3063,7 +3078,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_grav_mass2(THIS)   <a href='../proc/get_grav_mass2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_grav_mass2(this)   <a href='../proc/get_grav_mass2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3072,7 +3087,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3094,7 +3109,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa0_1(THIS)   <a href='../proc/get_kappa0_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa0_1(this)   <a href='../proc/get_kappa0_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3103,7 +3118,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3125,7 +3140,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa0_2(THIS)   <a href='../proc/get_kappa0_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa0_2(this)   <a href='../proc/get_kappa0_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3134,7 +3149,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3156,7 +3171,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa1_1(THIS)   <a href='../proc/get_kappa1_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa1_1(this)   <a href='../proc/get_kappa1_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3165,7 +3180,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3187,7 +3202,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa1_2(THIS)   <a href='../proc/get_kappa1_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa1_2(this)   <a href='../proc/get_kappa1_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3196,7 +3211,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3218,7 +3233,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa2_1(THIS)   <a href='../proc/get_kappa2_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa2_1(this)   <a href='../proc/get_kappa2_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3227,7 +3242,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3249,7 +3264,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa2_2(THIS)   <a href='../proc/get_kappa2_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa2_2(this)   <a href='../proc/get_kappa2_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3258,7 +3273,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3280,7 +3295,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa3_1(THIS)   <a href='../proc/get_kappa3_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa3_1(this)   <a href='../proc/get_kappa3_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3289,7 +3304,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3311,7 +3326,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa3_2(THIS)   <a href='../proc/get_kappa3_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa3_2(this)   <a href='../proc/get_kappa3_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3320,7 +3335,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3342,7 +3357,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa_1(THIS)   <a href='../proc/get_kappa_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa_1(this)   <a href='../proc/get_kappa_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3351,7 +3366,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3373,7 +3388,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_kappa_2(THIS)   <a href='../proc/get_kappa_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_kappa_2(this)   <a href='../proc/get_kappa_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3382,7 +3397,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3407,7 +3422,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_linear_momentum(THIS)   <a href='../proc/get_linear_momentum.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_linear_momentum(this)   <a href='../proc/get_linear_momentum.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3416,7 +3431,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3438,7 +3453,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logP1_1(THIS)   <a href='../proc/get_logp1_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logP1_1(this)   <a href='../proc/get_logp1_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3447,7 +3462,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3469,7 +3484,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logP1_2(THIS)   <a href='../proc/get_logp1_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logP1_2(this)   <a href='../proc/get_logp1_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3478,7 +3493,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3500,7 +3515,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logRho0_1(THIS)   <a href='../proc/get_logrho0_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logRho0_1(this)   <a href='../proc/get_logrho0_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3509,7 +3524,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3531,7 +3546,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logRho0_2(THIS)   <a href='../proc/get_logrho0_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logRho0_2(this)   <a href='../proc/get_logrho0_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3540,7 +3555,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3562,7 +3577,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logRho1_1(THIS)   <a href='../proc/get_logrho1_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logRho1_1(this)   <a href='../proc/get_logrho1_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3571,7 +3586,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3593,7 +3608,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logRho1_2(THIS)   <a href='../proc/get_logrho1_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logRho1_2(this)   <a href='../proc/get_logrho1_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3602,7 +3617,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3624,7 +3639,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logRho2_1(THIS)   <a href='../proc/get_logrho2_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logRho2_1(this)   <a href='../proc/get_logrho2_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3633,7 +3648,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3655,7 +3670,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_logRho2_2(THIS)   <a href='../proc/get_logrho2_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_logRho2_2(this)   <a href='../proc/get_logrho2_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3664,7 +3679,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3686,7 +3701,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_mass1(THIS)   <a href='../proc/get_mass1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_mass1(this)   <a href='../proc/get_mass1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3695,7 +3710,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3717,7 +3732,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_mass2(THIS)   <a href='../proc/get_mass2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_mass2(this)   <a href='../proc/get_mass2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3726,7 +3741,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3783,7 +3798,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_nbar_center1(THIS)   <a href='../proc/get_nbar_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_nbar_center1(this)   <a href='../proc/get_nbar_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3792,7 +3807,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3814,7 +3829,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_nbar_center2(THIS)   <a href='../proc/get_nbar_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_nbar_center2(this)   <a href='../proc/get_nbar_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3823,7 +3838,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3845,7 +3860,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_npeos_1(THIS)   <a href='../proc/get_npeos_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_npeos_1(this)   <a href='../proc/get_npeos_1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3854,7 +3869,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3876,7 +3891,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_npeos_2(THIS)   <a href='../proc/get_npeos_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_npeos_2(this)   <a href='../proc/get_npeos_2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3885,7 +3900,7 @@ mOmega <script type="math/tex">=0.026</script>; for the EOS H4 and MS1, for mOme
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3942,7 +3957,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_pressure_center1(THIS)   <a href='../proc/get_pressure_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_pressure_center1(this)   <a href='../proc/get_pressure_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3951,7 +3966,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -3973,7 +3988,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_pressure_center2(THIS)   <a href='../proc/get_pressure_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_pressure_center2(this)   <a href='../proc/get_pressure_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -3982,7 +3997,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4004,7 +4019,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_radius1_x_comp(THIS)   <a href='../proc/get_radius1_x_comp.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_radius1_x_comp(this)   <a href='../proc/get_radius1_x_comp.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4013,7 +4028,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4035,7 +4050,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_radius1_x_opp(THIS)   <a href='../proc/get_radius1_x_opp.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_radius1_x_opp(this)   <a href='../proc/get_radius1_x_opp.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4044,7 +4059,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4066,7 +4081,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_radius1_y(THIS)   <a href='../proc/get_radius1_y.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_radius1_y(this)   <a href='../proc/get_radius1_y.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4075,7 +4090,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4097,7 +4112,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_radius1_z(THIS)   <a href='../proc/get_radius1_z.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_radius1_z(this)   <a href='../proc/get_radius1_z.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4106,7 +4121,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4128,7 +4143,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_radius2_x_comp(THIS)   <a href='../proc/get_radius2_x_comp.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_radius2_x_comp(this)   <a href='../proc/get_radius2_x_comp.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4137,7 +4152,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4159,7 +4174,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_radius2_x_opp(THIS)   <a href='../proc/get_radius2_x_opp.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_radius2_x_opp(this)   <a href='../proc/get_radius2_x_opp.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4168,7 +4183,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4190,7 +4205,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_radius2_y(THIS)   <a href='../proc/get_radius2_y.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_radius2_y(this)   <a href='../proc/get_radius2_y.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4199,7 +4214,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4221,7 +4236,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_radius2_z(THIS)   <a href='../proc/get_radius2_z.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_radius2_z(this)   <a href='../proc/get_radius2_z.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4230,7 +4245,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4252,7 +4267,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_rho_center1(THIS)   <a href='../proc/get_rho_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_rho_center1(this)   <a href='../proc/get_rho_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4261,7 +4276,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4283,7 +4298,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_rho_center2(THIS)   <a href='../proc/get_rho_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_rho_center2(this)   <a href='../proc/get_rho_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4292,7 +4307,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4314,7 +4329,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_specific_energy_center1(THIS)   <a href='../proc/get_specific_energy_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_specific_energy_center1(this)   <a href='../proc/get_specific_energy_center1.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4323,7 +4338,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4345,7 +4360,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
           <h3>interface
           </h3>
   
-          <h3>public pure module module function get_specific_energy_center2(THIS)   <a href='../proc/get_specific_energy_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public pure module module function get_specific_energy_center2(this)   <a href='../proc/get_specific_energy_center2.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -4354,7 +4369,7 @@ the lapse function <script type="math/tex">\alpha=1</script>, i.e., if the geode
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 </tbody>
 </table>
@@ -4816,7 +4831,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine print_summary_bnsbase(THIS, filename)   <a href='../proc/print_summary_bnsbase.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine print_summary_bnsbase(this, filename)   <a href='../proc/print_summary_bnsbase.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Prints a summary of the physical properties the \(\mathrm{BNS}\) system
  to the standard output and, optionally, to a formatted file whose name
  is given as the optional argument <code>filename</code></p>
@@ -4828,7 +4843,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td></td>
+  <td><strong>this</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>character(len=*),</td>
@@ -4886,7 +4901,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module subroutine import_id_full(this, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz, baryon_density, energy_density, specific_energy, u_euler_x, u_euler_y, u_euler_z)   <a href='../proc/import_id_full.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module subroutine import_id_full(this, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, k_xx, k_xy, k_xz, k_yy, k_yz, k_zz, baryon_density, energy_density, specific_energy, pressure, u_euler_x, u_euler_y, u_euler_z)   <a href='../proc/import_id_full.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3><p>Stores the ID in non <a href="../type/bnslorene.html">bnslorene</a>-member arrays with the same shape as the
  <a href="../type/bnslorene.html">bnslorene</a> member arrays</p>
     
@@ -5036,6 +5051,12 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>specific_energy</strong></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" ></span>double precision,</td>
+<td>intent(inout),</td>
+  <td></td>  <td>DIMENSION(:)</td><td>::</td>
+  <td><strong>pressure</strong></td><td></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>double precision,</td>
@@ -5586,7 +5607,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function get_barycenter(THIS, i_matter)   <a href='../proc/get_barycenter.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_barycenter(this, i_matter)   <a href='../proc/get_barycenter.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -5595,7 +5616,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -5619,7 +5640,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function get_center(THIS, i_matter)   <a href='../proc/get_center.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_center(this, i_matter)   <a href='../proc/get_center.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -5628,7 +5649,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -5652,7 +5673,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function get_eos(THIS, i_matter)   <a href='../proc/get_eos.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_eos(this, i_matter)   <a href='../proc/get_eos.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -5661,7 +5682,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -5724,7 +5745,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function get_mass(THIS, i_matter)   <a href='../proc/get_mass.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_mass(this, i_matter)   <a href='../proc/get_mass.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -5733,7 +5754,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -5757,7 +5778,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <h3>interface
           </h3>
   
-          <h3>public module module function get_radii(THIS, i_matter)   <a href='../proc/get_radii.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
+          <h3>public module module function get_radii(this, i_matter)   <a href='../proc/get_radii.html'><button type="button" class="btn btn-info depwarn">Implementation &rarr;</button></a>
 </h3>    
 <h4>Arguments</h4>      <table class="table table-striped varlist">
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
@@ -5766,7 +5787,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
   <td><span class="anchor" ></span>class(<a href='../type/bnsbase.html'>bnsbase</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsbase.html">bnsbase</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
   <td><span class="anchor" ></span>integer,</td>
@@ -6149,6 +6170,8 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">energy_density</span>
     <span class="c">!&gt; 1-D array storing the specific internal energy [c^2]</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">specific_energy</span>
+    <span class="c">!&gt; 1-D array storing the pressure</span>
+    <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">pressure</span>
     <span class="c">!&gt; 1-D array storing the x component of the fluid 3-velocity with respect to</span>
     <span class="c">!  the Eulerian observer [c]</span>
     <span class="kt">DOUBLE PRECISION</span><span class="p">,</span> <span class="k">DIMENSION</span><span class="p">(:),</span> <span class="k">ALLOCATABLE</span><span class="kd">::</span> <span class="n">v_euler_x</span>
@@ -6294,7 +6317,7 @@ INTEGER, DIMENSION(:), ALLOCATABLE, INTENT( INOUT ):: mass_profile_idx</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-05-24 08:27:25           </p>
+ on 2022-07-05 18:11:38           </p>
         </div>
       </div>
       <br>

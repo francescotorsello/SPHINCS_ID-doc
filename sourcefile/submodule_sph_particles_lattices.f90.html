@@ -91,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.9% of total for source files.">161 statements</a>
+    title=" 0.9% of total for source files.">164 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_sph_particles_lattices.f90"> Source File</a></li>
   </ul>
@@ -323,7 +323,7 @@
 <a name="ln-52"></a>    <span class="c">!*********************************************************</span>
 <a name="ln-53"></a>
 <a name="ln-54"></a>    <span class="k">USE </span><span class="n">constants</span><span class="p">,</span>  <span class="n">ONLY</span><span class="p">:</span> <span class="n">pi</span><span class="p">,</span> <span class="n">third</span>
-<a name="ln-55"></a>    <span class="k">USE </span><span class="n">utility</span><span class="p">,</span>    <span class="n">ONLY</span><span class="p">:</span> <span class="n">one</span>
+<a name="ln-55"></a>    <span class="k">USE </span><span class="n">utility</span><span class="p">,</span>    <span class="n">ONLY</span><span class="p">:</span> <span class="n">one</span><span class="p">,</span> <span class="n">zero</span><span class="p">,</span> <span class="n">two</span><span class="p">,</span> <span class="n">three</span>
 <a name="ln-56"></a>
 <a name="ln-57"></a>    <span class="k">IMPLICIT NONE</span>
 <a name="ln-58"></a>
@@ -351,7 +351,7 @@
 <a name="ln-80"></a>    <span class="c">!</span>
 <a name="ln-81"></a>    <span class="c">!-- Compute number of lattice points (for now, equal in each direction)</span>
 <a name="ln-82"></a>    <span class="c">!</span>
-<a name="ln-83"></a>    <span class="n">nx</span><span class="o">=</span> <span class="nb">FLOOR</span><span class="p">(</span><span class="n">stretch</span><span class="o">*</span><span class="p">(</span><span class="mf">6.0D0</span><span class="o">*</span><span class="nb">DBLE</span><span class="p">(</span><span class="n">npart_des</span><span class="p">)</span><span class="o">/</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="n">third</span><span class="p">)</span>
+<a name="ln-83"></a>    <span class="n">nx</span><span class="o">=</span> <span class="nb">FLOOR</span><span class="p">(</span><span class="n">stretch</span><span class="o">*</span><span class="p">(</span><span class="n">two</span><span class="o">*</span><span class="n">three</span><span class="o">*</span><span class="nb">DBLE</span><span class="p">(</span><span class="n">npart_des</span><span class="p">)</span><span class="o">/</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="n">third</span><span class="p">)</span>
 <a name="ln-84"></a>    <span class="k">IF</span><span class="p">(</span> <span class="nb">MOD</span><span class="p">(</span> <span class="n">nx</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">/=</span> <span class="mi">0</span> <span class="p">)</span> <span class="n">nx</span><span class="o">=</span> <span class="n">nx</span> <span class="o">+</span> <span class="mi">1</span>
 <a name="ln-85"></a>    <span class="n">ny</span><span class="o">=</span> <span class="n">nx</span>
 <a name="ln-86"></a>    <span class="n">nz</span><span class="o">=</span> <span class="n">nx</span>
@@ -383,93 +383,93 @@
 <a name="ln-112"></a>    <span class="n">dy</span><span class="o">=</span> <span class="nb">ABS</span><span class="p">(</span><span class="n">ymax</span> <span class="o">-</span> <span class="n">ymin</span><span class="p">)</span><span class="o">/</span><span class="nb">DBLE</span><span class="p">(</span> <span class="n">ny</span> <span class="p">)</span>
 <a name="ln-113"></a>    <span class="n">dz</span><span class="o">=</span> <span class="nb">ABS</span><span class="p">(</span><span class="n">zlim</span><span class="p">)</span><span class="o">/</span><span class="nb">DBLE</span><span class="p">(</span> <span class="n">nz</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span>
 <a name="ln-114"></a>
-<a name="ln-115"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * dx=&quot;</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span>  <span class="s2">&quot;, dy=&quot;</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span>  <span class="s2">&quot;, dz=&quot;</span><span class="p">,</span> <span class="n">dz</span>
-<a name="ln-116"></a>    <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-117"></a>
-<a name="ln-118"></a>    <span class="n">npart_tmp</span> <span class="o">=</span> <span class="n">nx</span><span class="o">*</span><span class="n">ny</span><span class="o">*</span><span class="n">nz</span>
-<a name="ln-119"></a>
-<a name="ln-120"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Number of lattice points= nx*ny*nz=&quot;</span><span class="p">,</span> <span class="n">npart_tmp</span>
-<a name="ln-121"></a>    <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-122"></a>
-<a name="ln-123"></a>    <span class="c">!</span>
-<a name="ln-124"></a>    <span class="c">!-- Set the threshold above which a lattice point is</span>
-<a name="ln-125"></a>    <span class="c">!-- promoted to a particle</span>
-<a name="ln-126"></a>    <span class="c">!</span>
-<a name="ln-127"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">THIS</span><span class="p">%</span> <span class="n">use_thres</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-128"></a><span class="k">      </span><span class="n">thres_baryon_density</span><span class="o">=</span> <span class="n">central_density</span><span class="o">/</span><span class="n">thres</span>
-<a name="ln-129"></a>    <span class="k">ELSE</span>
-<a name="ln-130"></a><span class="k">      </span><span class="n">thres_baryon_density</span><span class="o">=</span> <span class="mf">0.0D0</span>
-<a name="ln-131"></a>    <span class="n">ENDIF</span>
-<a name="ln-132"></a>
-<a name="ln-133"></a>    <span class="k">IF</span><span class="p">(.</span><span class="nb">NOT</span><span class="p">.</span><span class="nb">ALLOCATED</span><span class="p">(</span> <span class="n">pos_tmp</span> <span class="p">))</span><span class="k">THEN</span>
-<a name="ln-134"></a><span class="k">      ALLOCATE</span><span class="p">(</span> <span class="n">pos_tmp</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span> <span class="p">),</span> <span class="nb">STAT</span><span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-135"></a>                <span class="n">ERRMSG</span><span class="o">=</span> <span class="n">err_msg</span> <span class="p">)</span>
-<a name="ln-136"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">ios</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-137"></a><span class="k">         PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;...allocation error for array pos_tmp in SUBROUTINE&quot;</span> <span class="p">&amp;</span>
-<a name="ln-138"></a>                  <span class="o">//</span> <span class="s2">&quot;place_particles_3D_lattice. &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
-<a name="ln-139"></a>                  <span class="s2">&quot;The error message is&quot;</span><span class="p">,</span> <span class="n">err_msg</span>
-<a name="ln-140"></a>         <span class="k">STOP</span>
-<a name="ln-141"></a><span class="k">      </span><span class="n">ENDIF</span>
-<a name="ln-142"></a>      <span class="c">!CALL test_status( ios, err_msg, &amp;</span>
-<a name="ln-143"></a>      <span class="c">!                &quot;...allocation error for array pos in SUBROUTINE&quot; &amp;</span>
-<a name="ln-144"></a>      <span class="c">!                // &quot;place_particles_3D_lattice.&quot; )</span>
-<a name="ln-145"></a>    <span class="n">ENDIF</span>
-<a name="ln-146"></a>    <span class="c">! Initializing the array pos to 0</span>
-<a name="ln-147"></a>    <span class="n">pos_tmp</span><span class="o">=</span> <span class="nb">HUGE</span><span class="p">(</span><span class="mf">0.0D0</span><span class="p">)</span>
-<a name="ln-148"></a>
-<a name="ln-149"></a>    <span class="c">!---------------------------------------------------------!</span>
-<a name="ln-150"></a>    <span class="c">!--  Storing the particle positions into the array pos  --!</span>
-<a name="ln-151"></a>    <span class="c">!--  symmetrically w.r.t. the xy plane                  --!</span>
-<a name="ln-152"></a>    <span class="c">!---------------------------------------------------------!</span>
-<a name="ln-153"></a>
-<a name="ln-154"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Placing particles on the lattice...&quot;</span>
-<a name="ln-155"></a>    <span class="k">PRINT</span> <span class="o">*</span>
-<a name="ln-156"></a>
-<a name="ln-157"></a>    <span class="c">!</span>
-<a name="ln-158"></a>    <span class="c">!-- Choose the larger value for the boundary in z</span>
-<a name="ln-159"></a>    <span class="c">!</span>
-<a name="ln-160"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">zlim</span> <span class="o">==</span> <span class="n">zmin</span> <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-161"></a><span class="k">      </span><span class="n">sgn</span><span class="o">=</span> <span class="o">-</span> <span class="mi">1</span>
-<a name="ln-162"></a>    <span class="k">ELSE</span>
-<a name="ln-163"></a><span class="k">      </span><span class="n">sgn</span><span class="o">=</span> <span class="mi">1</span>
-<a name="ln-164"></a>    <span class="n">ENDIF</span>
-<a name="ln-165"></a>
-<a name="ln-166"></a>    <span class="c">!</span>
-<a name="ln-167"></a>    <span class="c">!-- Place the first half of the particle (above or below the xy plane,</span>
-<a name="ln-168"></a>    <span class="c">!-- depending on the variable sgn)</span>
-<a name="ln-169"></a>    <span class="c">!</span>
-<a name="ln-170"></a>    <span class="c">!$OMP PARALLEL DO DEFAULT( NONE ) &amp;</span>
-<a name="ln-171"></a>    <span class="c">!$OMP             SHARED( nx, ny, nz, dx, dy, dz, sgn, &amp;</span>
-<a name="ln-172"></a>    <span class="c">!$OMP                     pos_tmp, thres_baryon_density, xmin, ymin ) &amp;</span>
-<a name="ln-173"></a>    <span class="c">!$OMP             PRIVATE( i, j, k, xtemp, ytemp, ztemp )</span>
-<a name="ln-174"></a>    <span class="n">particle_pos_z</span><span class="p">:</span> <span class="k">DO </span><span class="n">k</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nz</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span>
-<a name="ln-175"></a>
-<a name="ln-176"></a>      <span class="n">ztemp</span><span class="o">=</span> <span class="n">sgn</span><span class="o">*</span><span class="p">(</span> <span class="n">dz</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span><span class="o">*</span><span class="n">dz</span> <span class="p">)</span>
-<a name="ln-177"></a>
-<a name="ln-178"></a>      <span class="n">particle_pos_y</span><span class="p">:</span> <span class="k">DO </span><span class="n">j</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-115"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * xmin=&quot;</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span>  <span class="s2">&quot;, xmax=&quot;</span><span class="p">,</span> <span class="n">xmax</span>
+<a name="ln-116"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * ymin=&quot;</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span>  <span class="s2">&quot;, ymax=&quot;</span><span class="p">,</span> <span class="n">ymax</span>
+<a name="ln-117"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * zmin=&quot;</span><span class="p">,</span> <span class="n">zmin</span><span class="p">,</span>  <span class="s2">&quot;, zmax=&quot;</span><span class="p">,</span> <span class="n">zmax</span>
+<a name="ln-118"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * dx=&quot;</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span>  <span class="s2">&quot;, dy=&quot;</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span>  <span class="s2">&quot;, dz=&quot;</span><span class="p">,</span> <span class="n">dz</span>
+<a name="ln-119"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-120"></a>    <span class="c">!STOP</span>
+<a name="ln-121"></a>
+<a name="ln-122"></a>    <span class="n">npart_tmp</span> <span class="o">=</span> <span class="n">nx</span><span class="o">*</span><span class="n">ny</span><span class="o">*</span><span class="n">nz</span>
+<a name="ln-123"></a>
+<a name="ln-124"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Number of lattice points= nx*ny*nz=&quot;</span><span class="p">,</span> <span class="n">npart_tmp</span>
+<a name="ln-125"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-126"></a>
+<a name="ln-127"></a>    <span class="c">!</span>
+<a name="ln-128"></a>    <span class="c">!-- Set the threshold above which a lattice point is</span>
+<a name="ln-129"></a>    <span class="c">!-- promoted to a particle</span>
+<a name="ln-130"></a>    <span class="c">!</span>
+<a name="ln-131"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">this</span><span class="p">%</span> <span class="n">use_thres</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-132"></a><span class="k">      </span><span class="n">thres_baryon_density</span><span class="o">=</span> <span class="n">central_density</span><span class="o">/</span><span class="n">thres</span>
+<a name="ln-133"></a>    <span class="k">ELSE</span>
+<a name="ln-134"></a><span class="k">      </span><span class="n">thres_baryon_density</span><span class="o">=</span> <span class="n">zero</span>
+<a name="ln-135"></a>    <span class="n">ENDIF</span>
+<a name="ln-136"></a>
+<a name="ln-137"></a>    <span class="k">IF</span><span class="p">(.</span><span class="nb">NOT</span><span class="p">.</span><span class="nb">ALLOCATED</span><span class="p">(</span> <span class="n">pos_tmp</span> <span class="p">))</span><span class="k">THEN</span>
+<a name="ln-138"></a><span class="k">      ALLOCATE</span><span class="p">(</span> <span class="n">pos_tmp</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nz</span> <span class="p">),</span> <span class="nb">STAT</span><span class="o">=</span> <span class="n">ios</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-139"></a>                <span class="n">ERRMSG</span><span class="o">=</span> <span class="n">err_msg</span> <span class="p">)</span>
+<a name="ln-140"></a>      <span class="k">IF</span><span class="p">(</span> <span class="n">ios</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-141"></a><span class="k">         PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot;...allocation error for array pos_tmp in SUBROUTINE&quot;</span> <span class="p">&amp;</span>
+<a name="ln-142"></a>                  <span class="o">//</span> <span class="s2">&quot;place_particles_3D_lattice. &quot;</span><span class="p">,</span> <span class="p">&amp;</span>
+<a name="ln-143"></a>                  <span class="s2">&quot;The error message is&quot;</span><span class="p">,</span> <span class="n">err_msg</span>
+<a name="ln-144"></a>         <span class="k">STOP</span>
+<a name="ln-145"></a><span class="k">      </span><span class="n">ENDIF</span>
+<a name="ln-146"></a>      <span class="c">!CALL test_status( ios, err_msg, &amp;</span>
+<a name="ln-147"></a>      <span class="c">!                &quot;...allocation error for array pos in SUBROUTINE&quot; &amp;</span>
+<a name="ln-148"></a>      <span class="c">!                // &quot;place_particles_3D_lattice.&quot; )</span>
+<a name="ln-149"></a>    <span class="n">ENDIF</span>
+<a name="ln-150"></a>    <span class="c">! Initializing the array pos to 0</span>
+<a name="ln-151"></a>    <span class="n">pos_tmp</span><span class="o">=</span> <span class="nb">HUGE</span><span class="p">(</span><span class="n">zero</span><span class="p">)</span>
+<a name="ln-152"></a>
+<a name="ln-153"></a>    <span class="c">!---------------------------------------------------------!</span>
+<a name="ln-154"></a>    <span class="c">!--  Storing the particle positions into the array pos  --!</span>
+<a name="ln-155"></a>    <span class="c">!--  symmetrically w.r.t. the xy plane                  --!</span>
+<a name="ln-156"></a>    <span class="c">!---------------------------------------------------------!</span>
+<a name="ln-157"></a>
+<a name="ln-158"></a>    <span class="k">PRINT</span> <span class="o">*</span><span class="p">,</span> <span class="s2">&quot; * Placing particles on the lattice...&quot;</span>
+<a name="ln-159"></a>    <span class="k">PRINT</span> <span class="o">*</span>
+<a name="ln-160"></a>
+<a name="ln-161"></a>    <span class="c">!</span>
+<a name="ln-162"></a>    <span class="c">!-- Choose the larger value for the boundary in z</span>
+<a name="ln-163"></a>    <span class="c">!</span>
+<a name="ln-164"></a>    <span class="k">IF</span><span class="p">(</span> <span class="n">zlim</span> <span class="o">==</span> <span class="n">zmin</span> <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-165"></a><span class="k">      </span><span class="n">sgn</span><span class="o">=</span> <span class="o">-</span> <span class="mi">1</span>
+<a name="ln-166"></a>    <span class="k">ELSE</span>
+<a name="ln-167"></a><span class="k">      </span><span class="n">sgn</span><span class="o">=</span> <span class="mi">1</span>
+<a name="ln-168"></a>    <span class="n">ENDIF</span>
+<a name="ln-169"></a>
+<a name="ln-170"></a>    <span class="c">!</span>
+<a name="ln-171"></a>    <span class="c">!-- Place the first half of the particle (above or below the xy plane,</span>
+<a name="ln-172"></a>    <span class="c">!-- depending on the variable sgn)</span>
+<a name="ln-173"></a>    <span class="c">!</span>
+<a name="ln-174"></a>    <span class="c">!$OMP PARALLEL DO DEFAULT( NONE ) &amp;</span>
+<a name="ln-175"></a>    <span class="c">!$OMP             SHARED( nx, ny, nz, dx, dy, dz, sgn, &amp;</span>
+<a name="ln-176"></a>    <span class="c">!$OMP                     pos_tmp, thres_baryon_density, xmin, ymin ) &amp;</span>
+<a name="ln-177"></a>    <span class="c">!$OMP             PRIVATE( i, j, k, xtemp, ytemp, ztemp )</span>
+<a name="ln-178"></a>    <span class="n">particle_pos_z</span><span class="p">:</span> <span class="k">DO </span><span class="n">k</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nz</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span>
 <a name="ln-179"></a>
-<a name="ln-180"></a>        <span class="n">ytemp</span><span class="o">=</span> <span class="n">ymin</span> <span class="o">+</span> <span class="p">(</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span><span class="o">*</span><span class="n">dy</span>
+<a name="ln-180"></a>      <span class="n">ztemp</span><span class="o">=</span> <span class="n">sgn</span><span class="o">*</span><span class="p">(</span> <span class="n">dz</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span><span class="o">*</span><span class="n">dz</span> <span class="p">)</span>
 <a name="ln-181"></a>
-<a name="ln-182"></a>        <span class="n">particle_pos_x</span><span class="p">:</span> <span class="k">DO </span><span class="n">i</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-182"></a>      <span class="n">particle_pos_y</span><span class="p">:</span> <span class="k">DO </span><span class="n">j</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="mi">1</span>
 <a name="ln-183"></a>
-<a name="ln-184"></a>          <span class="n">xtemp</span><span class="o">=</span> <span class="n">xmin</span> <span class="o">+</span> <span class="n">dx</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span><span class="o">*</span><span class="n">dx</span>
+<a name="ln-184"></a>        <span class="n">ytemp</span><span class="o">=</span> <span class="n">ymin</span> <span class="o">+</span> <span class="p">(</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span><span class="o">*</span><span class="n">dy</span>
 <a name="ln-185"></a>
-<a name="ln-186"></a>          <span class="c">!</span>
-<a name="ln-187"></a>          <span class="c">!-- Promote a lattice point to a particle,</span>
-<a name="ln-188"></a>          <span class="c">!-- if the mass density is higher than the threshold</span>
-<a name="ln-189"></a>          <span class="c">!</span>
-<a name="ln-190"></a>          <span class="k">IF</span><span class="p">(</span> <span class="p">(</span><span class="n">get_density</span><span class="p">(</span> <span class="n">xtemp</span><span class="p">,</span> <span class="n">ytemp</span><span class="p">,</span> <span class="n">ztemp</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="n">thres_baryon_density</span><span class="p">)</span> <span class="p">&amp;</span>
-<a name="ln-191"></a>              <span class="p">.</span><span class="nb">AND</span><span class="p">.</span> <span class="p">&amp;</span>
-<a name="ln-192"></a>              <span class="p">(</span><span class="n">validate_position_final</span><span class="p">(</span> <span class="n">xtemp</span><span class="p">,</span> <span class="n">ytemp</span><span class="p">,</span> <span class="n">ztemp</span> <span class="p">))</span> <span class="p">&amp;</span>
-<a name="ln-193"></a>          <span class="p">)</span><span class="k">THEN</span>
-<a name="ln-194"></a>
-<a name="ln-195"></a>            <span class="c">!IF( validate_position_final( xtemp, ytemp, ztemp ) )THEN</span>
-<a name="ln-196"></a>
-<a name="ln-197"></a>            <span class="n">pos_tmp</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="p">)</span><span class="o">=</span> <span class="n">xtemp</span>
-<a name="ln-198"></a>            <span class="n">pos_tmp</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="p">)</span><span class="o">=</span> <span class="n">ytemp</span>
-<a name="ln-199"></a>            <span class="n">pos_tmp</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="p">)</span><span class="o">=</span> <span class="n">ztemp</span>
-<a name="ln-200"></a>
-<a name="ln-201"></a>            <span class="c">!ENDIF</span>
+<a name="ln-186"></a>        <span class="n">particle_pos_x</span><span class="p">:</span> <span class="k">DO </span><span class="n">i</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="mi">1</span>
+<a name="ln-187"></a>
+<a name="ln-188"></a>          <span class="n">xtemp</span><span class="o">=</span> <span class="n">xmin</span> <span class="o">+</span> <span class="n">dx</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span><span class="o">*</span><span class="n">dx</span>
+<a name="ln-189"></a>
+<a name="ln-190"></a>          <span class="c">!</span>
+<a name="ln-191"></a>          <span class="c">!-- Promote a lattice point to a particle,</span>
+<a name="ln-192"></a>          <span class="c">!-- if the mass density is higher than the threshold</span>
+<a name="ln-193"></a>          <span class="c">!</span>
+<a name="ln-194"></a>          <span class="k">IF</span><span class="p">(</span> <span class="p">(</span><span class="n">get_density</span><span class="p">(</span> <span class="n">xtemp</span><span class="p">,</span> <span class="n">ytemp</span><span class="p">,</span> <span class="n">ztemp</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="n">thres_baryon_density</span><span class="p">)</span> <span class="p">&amp;</span>
+<a name="ln-195"></a>              <span class="p">.</span><span class="nb">AND</span><span class="p">.</span> <span class="p">&amp;</span>
+<a name="ln-196"></a>              <span class="p">(</span><span class="n">validate_position_final</span><span class="p">(</span> <span class="n">xtemp</span><span class="p">,</span> <span class="n">ytemp</span><span class="p">,</span> <span class="n">ztemp</span> <span class="p">))</span> <span class="p">&amp;</span>
+<a name="ln-197"></a>          <span class="p">)</span><span class="k">THEN</span>
+<a name="ln-198"></a>
+<a name="ln-199"></a><span class="k">            </span><span class="n">pos_tmp</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="p">)</span><span class="o">=</span> <span class="n">xtemp</span>
+<a name="ln-200"></a>            <span class="n">pos_tmp</span><span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="p">)</span><span class="o">=</span> <span class="n">ytemp</span>
+<a name="ln-201"></a>            <span class="n">pos_tmp</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="p">)</span><span class="o">=</span> <span class="n">ztemp</span>
 <a name="ln-202"></a>
 <a name="ln-203"></a>          <span class="n">ENDIF</span>
 <a name="ln-204"></a>
@@ -637,629 +637,7 @@
 <a name="ln-366"></a>  <span class="k">END PROCEDURE </span><span class="n">place_particles_lattice</span>
 <a name="ln-367"></a>
 <a name="ln-368"></a>
-<a name="ln-369"></a><span class="c">!  MODULE PROCEDURE place_particles_lattices</span>
-<a name="ln-370"></a><span class="c">!</span>
-<a name="ln-371"></a><span class="c">!    !****************************************************</span>
-<a name="ln-372"></a><span class="c">!    !</span>
-<a name="ln-373"></a><span class="c">!    !# Places paricles on two 3D lattices, each one</span>
-<a name="ln-374"></a><span class="c">!    !  containing a star</span>
-<a name="ln-375"></a><span class="c">!    !</span>
-<a name="ln-376"></a><span class="c">!    !  FT 19.10.2020</span>
-<a name="ln-377"></a><span class="c">!    !</span>
-<a name="ln-378"></a><span class="c">!    !****************************************************</span>
-<a name="ln-379"></a><span class="c">!</span>
-<a name="ln-380"></a><span class="c">!    USE constants, ONLY: Msun_geo</span>
-<a name="ln-381"></a><span class="c">!</span>
-<a name="ln-382"></a><span class="c">!    IMPLICIT NONE</span>
-<a name="ln-383"></a><span class="c">!</span>
-<a name="ln-384"></a><span class="c">!    INTEGER:: i, j, k, sgn, npart_half, npart_half2</span>
-<a name="ln-385"></a><span class="c">!    INTEGER:: npart_tmp, npart1_temp, npart2_temp</span>
-<a name="ln-386"></a><span class="c">!    INTEGER:: nx1, ny1, nz1, nx2, ny2, nz2</span>
-<a name="ln-387"></a><span class="c">!</span>
-<a name="ln-388"></a><span class="c">!    DOUBLE PRECISION:: dx1, dy1, dz1, dx2, dy2, dz2</span>
-<a name="ln-389"></a><span class="c">!    DOUBLE PRECISION:: xtemp, ytemp, ztemp, zlim, zlim2</span>
-<a name="ln-390"></a><span class="c">!    DOUBLE PRECISION:: max_baryon_density1, thres_baryon_density1</span>
-<a name="ln-391"></a><span class="c">!    DOUBLE PRECISION:: max_baryon_density2, thres_baryon_density2</span>
-<a name="ln-392"></a><span class="c">!    ! Variable used to compute the volume of a particle in an alternative way</span>
-<a name="ln-393"></a><span class="c">!    ! to perform a consistency check</span>
-<a name="ln-394"></a><span class="c">!    DOUBLE PRECISION:: vol_a_alt1, vol_a_alt2</span>
-<a name="ln-395"></a><span class="c">!</span>
-<a name="ln-396"></a><span class="c">!    DOUBLE PRECISION, DIMENSION(:,:,:,:), ALLOCATABLE:: pos_tmp</span>
-<a name="ln-397"></a><span class="c">!</span>
-<a name="ln-398"></a><span class="c">!    PRINT *, &quot;** Executing the place_particles_lattices &quot; &amp;</span>
-<a name="ln-399"></a><span class="c">!             // &quot;subroutine...&quot;</span>
-<a name="ln-400"></a><span class="c">!    PRINT *</span>
-<a name="ln-401"></a><span class="c">!</span>
-<a name="ln-402"></a><span class="c">!    !</span>
-<a name="ln-403"></a><span class="c">!    !-- Set the boundaries in z, for lattice 1 and lattice 2</span>
-<a name="ln-404"></a><span class="c">!    !</span>
-<a name="ln-405"></a><span class="c">!    IF( ABS(zmax1) &gt; ABS(zmin1) )THEN</span>
-<a name="ln-406"></a><span class="c">!      zlim= zmax1</span>
-<a name="ln-407"></a><span class="c">!    ELSE</span>
-<a name="ln-408"></a><span class="c">!      zlim= zmin1</span>
-<a name="ln-409"></a><span class="c">!    ENDIF</span>
-<a name="ln-410"></a><span class="c">!    IF( ABS(zmax2) &gt; ABS(zmin2) )THEN</span>
-<a name="ln-411"></a><span class="c">!      zlim2= zmax2</span>
-<a name="ln-412"></a><span class="c">!    ELSE</span>
-<a name="ln-413"></a><span class="c">!      zlim2= zmin2</span>
-<a name="ln-414"></a><span class="c">!    ENDIF</span>
-<a name="ln-415"></a><span class="c">!</span>
-<a name="ln-416"></a><span class="c">!    IF( THIS% mass1 &gt; THIS% mass2 )THEN</span>
-<a name="ln-417"></a><span class="c">!</span>
-<a name="ln-418"></a><span class="c">!      ! mass_ratio &lt; 1</span>
-<a name="ln-419"></a><span class="c">!      THIS% mass_ratio= THIS% mass2/THIS% mass1</span>
-<a name="ln-420"></a><span class="c">!      !</span>
-<a name="ln-421"></a><span class="c">!      !-- Compute lattices&#39; steps</span>
-<a name="ln-422"></a><span class="c">!      !</span>
-<a name="ln-423"></a><span class="c">!      nx2= nx</span>
-<a name="ln-424"></a><span class="c">!      ny2= ny</span>
-<a name="ln-425"></a><span class="c">!      nz2= nz</span>
-<a name="ln-426"></a><span class="c">!      dx2= ABS(xmax2 - xmin2)/DBLE( nx2 )</span>
-<a name="ln-427"></a><span class="c">!      dy2= ABS(ymax2 - ymin2)/DBLE( ny2 )</span>
-<a name="ln-428"></a><span class="c">!      dz2= ABS(zlim2)/DBLE( nz2/2 )</span>
-<a name="ln-429"></a><span class="c">!</span>
-<a name="ln-430"></a><span class="c">!      dx1= dx2*(THIS% mass_ratio**(1.0D0/3.0D0))</span>
-<a name="ln-431"></a><span class="c">!      dy1= dy2*(THIS% mass_ratio**(1.0D0/3.0D0))</span>
-<a name="ln-432"></a><span class="c">!      dz1= dz2*(THIS% mass_ratio**(1.0D0/3.0D0))</span>
-<a name="ln-433"></a><span class="c">!      nx1= NINT( ABS(xmax1 - xmin1)/dx1 ) + 1</span>
-<a name="ln-434"></a><span class="c">!      ny1= NINT( ABS(ymax1 - ymin1)/dy1 ) + 1</span>
-<a name="ln-435"></a><span class="c">!      nz1= NINT( 2*ABS(zlim)/dz1 ) + 1</span>
-<a name="ln-436"></a><span class="c">!</span>
-<a name="ln-437"></a><span class="c">!    ELSE</span>
-<a name="ln-438"></a><span class="c">!</span>
-<a name="ln-439"></a><span class="c">!      ! mass_ratio &lt; 1</span>
-<a name="ln-440"></a><span class="c">!      THIS% mass_ratio= THIS% mass1/THIS% mass2</span>
-<a name="ln-441"></a><span class="c">!      !</span>
-<a name="ln-442"></a><span class="c">!      !-- Compute lattices&#39; steps</span>
-<a name="ln-443"></a><span class="c">!      !</span>
-<a name="ln-444"></a><span class="c">!      nx1= nx</span>
-<a name="ln-445"></a><span class="c">!      ny1= ny</span>
-<a name="ln-446"></a><span class="c">!      nz1= nz</span>
-<a name="ln-447"></a><span class="c">!      dx1= ABS(xmax1 - xmin1)/DBLE( nx1 )</span>
-<a name="ln-448"></a><span class="c">!      dy1= ABS(ymax1 - ymin1)/DBLE( ny1 )</span>
-<a name="ln-449"></a><span class="c">!      dz1= ABS(zlim)/DBLE( nz1/2 )</span>
-<a name="ln-450"></a><span class="c">!</span>
-<a name="ln-451"></a><span class="c">!      dx2= dx1*(THIS% mass_ratio**(1.0D0/3.0D0))</span>
-<a name="ln-452"></a><span class="c">!      dy2= dy1*(THIS% mass_ratio**(1.0D0/3.0D0))</span>
-<a name="ln-453"></a><span class="c">!      dz2= dz1*(THIS% mass_ratio**(1.0D0/3.0D0))</span>
-<a name="ln-454"></a><span class="c">!      nx2= NINT( ABS(xmax2 - xmin2)/dx2 ) + 1</span>
-<a name="ln-455"></a><span class="c">!      ny2= NINT( ABS(ymax2 - ymin2)/dy2 ) + 1</span>
-<a name="ln-456"></a><span class="c">!      nz2= NINT( 2*ABS(zlim2)/dz2 ) + 1</span>
-<a name="ln-457"></a><span class="c">!</span>
-<a name="ln-458"></a><span class="c">!    ENDIF</span>
-<a name="ln-459"></a><span class="c">!</span>
-<a name="ln-460"></a><span class="c">!    ! Set the number of particles in the z direction to an even number</span>
-<a name="ln-461"></a><span class="c">!    ! since half of the particles are above the xy plane, and half below it</span>
-<a name="ln-462"></a><span class="c">!    IF( MOD( nz2, 2 ) /= 0 )THEN</span>
-<a name="ln-463"></a><span class="c">!      nz2= nz2 - 1</span>
-<a name="ln-464"></a><span class="c">!    ENDIF</span>
-<a name="ln-465"></a><span class="c">!</span>
-<a name="ln-466"></a><span class="c">!    PRINT *, &quot; * dx1=&quot;, dx1,  &quot;, dy1=&quot;, dx1,  &quot;, dz1=&quot;, dz1</span>
-<a name="ln-467"></a><span class="c">!    PRINT *, &quot; * dx2=&quot;, dx2,  &quot;, dy2=&quot;, dx2,  &quot;, dz2=&quot;, dz2</span>
-<a name="ln-468"></a><span class="c">!    PRINT *, &quot; * nx1=&quot;, nx1, &quot;, ny1=&quot;, ny1, &quot;, nz1=&quot;, nz1</span>
-<a name="ln-469"></a><span class="c">!    PRINT *, &quot; * nx2=&quot;, nx2, &quot;, ny2=&quot;, ny2, &quot;, nz2=&quot;, nz2</span>
-<a name="ln-470"></a><span class="c">!    PRINT *</span>
-<a name="ln-471"></a><span class="c">!</span>
-<a name="ln-472"></a><span class="c">!    !PRINT *, &quot; * xmin1=&quot;, xmin1, &quot;, xmax1=&quot;, xmax1</span>
-<a name="ln-473"></a><span class="c">!    !PRINT *, &quot; * xmin2=&quot;, xmin2, &quot;, xmax2=&quot;, xmax2</span>
-<a name="ln-474"></a><span class="c">!    !PRINT *</span>
-<a name="ln-475"></a><span class="c">!    !STOP</span>
-<a name="ln-476"></a><span class="c">!</span>
-<a name="ln-477"></a><span class="c">!    ! Compute number of lattice points (temporary particle number)</span>
-<a name="ln-478"></a><span class="c">!    npart1_temp = nx*ny*nz !+ nx*ny</span>
-<a name="ln-479"></a><span class="c">!    npart2_temp = nx2*ny2*nz2 !+ nx2*ny2</span>
-<a name="ln-480"></a><span class="c">!    npart_tmp  = npart1_temp + npart2_temp</span>
-<a name="ln-481"></a><span class="c">!</span>
-<a name="ln-482"></a><span class="c">!    PRINT *, &quot; * Number of points for lattice 1= nx1*ny1*nz1=&quot;, &amp;</span>
-<a name="ln-483"></a><span class="c">!             npart1_temp</span>
-<a name="ln-484"></a><span class="c">!    PRINT *, &quot; * Number of points for lattice 2= nx2*ny2*nz2=&quot;, &amp;</span>
-<a name="ln-485"></a><span class="c">!             npart2_temp</span>
-<a name="ln-486"></a><span class="c">!    PRINT *</span>
-<a name="ln-487"></a><span class="c">!</span>
-<a name="ln-488"></a><span class="c">!    !</span>
-<a name="ln-489"></a><span class="c">!    !-- Compute the mass density at the center of the stars</span>
-<a name="ln-490"></a><span class="c">!    !</span>
-<a name="ln-491"></a><span class="c">!</span>
-<a name="ln-492"></a><span class="c">!    ! The following two density ar in SPHINCS units [Msun Msun_geo^{-3}]</span>
-<a name="ln-493"></a><span class="c">!    max_baryon_density1= id% get_rho_center1()</span>
-<a name="ln-494"></a><span class="c">!    max_baryon_density2= id% get_rho_center2()</span>
-<a name="ln-495"></a><span class="c">!</span>
-<a name="ln-496"></a><span class="c">!    !</span>
-<a name="ln-497"></a><span class="c">!    !-- Set the thresholds above which a lattice point is</span>
-<a name="ln-498"></a><span class="c">!    !-- promoted to a particle</span>
-<a name="ln-499"></a><span class="c">!    !</span>
-<a name="ln-500"></a><span class="c">!    IF( THIS% use_thres )THEN</span>
-<a name="ln-501"></a><span class="c">!      thres_baryon_density1= max_baryon_density1/thres</span>
-<a name="ln-502"></a><span class="c">!      thres_baryon_density2= max_baryon_density2/thres</span>
-<a name="ln-503"></a><span class="c">!    ELSE</span>
-<a name="ln-504"></a><span class="c">!      thres_baryon_density1= 0.0D0</span>
-<a name="ln-505"></a><span class="c">!      thres_baryon_density2= 0.0D0</span>
-<a name="ln-506"></a><span class="c">!    ENDIF</span>
-<a name="ln-507"></a><span class="c">!</span>
-<a name="ln-508"></a><span class="c">!    ! Allocating the memory for the array pos( 3, npart_tmp )</span>
-<a name="ln-509"></a><span class="c">!    ! Note that after determining npart, the array pos is reshaped into</span>
-<a name="ln-510"></a><span class="c">!    ! pos( 3, npart )</span>
-<a name="ln-511"></a><span class="c">!    IF(.NOT.ALLOCATED( THIS% pos ))THEN</span>
-<a name="ln-512"></a><span class="c">!      ALLOCATE( THIS% pos( 3, npart_tmp ), STAT= ios, &amp;</span>
-<a name="ln-513"></a><span class="c">!                ERRMSG= err_msg )</span>
-<a name="ln-514"></a><span class="c">!      IF( ios &gt; 0 )THEN</span>
-<a name="ln-515"></a><span class="c">!         PRINT *, &quot;...allocation error for array pos in SUBROUTINE&quot; &amp;</span>
-<a name="ln-516"></a><span class="c">!                  // &quot;place_particles_3D_lattices. &quot;, &amp;</span>
-<a name="ln-517"></a><span class="c">!                  &quot;The error message is&quot;, err_msg</span>
-<a name="ln-518"></a><span class="c">!         STOP</span>
-<a name="ln-519"></a><span class="c">!      ENDIF</span>
-<a name="ln-520"></a><span class="c">!      !CALL test_status( ios, err_msg, &amp;</span>
-<a name="ln-521"></a><span class="c">!      !                &quot;...allocation error for array pos in SUBROUTINE&quot; &amp;</span>
-<a name="ln-522"></a><span class="c">!      !                // &quot;place_particles_3D_lattice.&quot; )</span>
-<a name="ln-523"></a><span class="c">!    ENDIF</span>
-<a name="ln-524"></a><span class="c">!</span>
-<a name="ln-525"></a><span class="c">!    IF(.NOT.ALLOCATED( pos_tmp ))THEN</span>
-<a name="ln-526"></a><span class="c">!      ALLOCATE( pos_tmp( 3, nx, ny, nz ), STAT= ios, &amp;</span>
-<a name="ln-527"></a><span class="c">!                ERRMSG= err_msg )</span>
-<a name="ln-528"></a><span class="c">!      IF( ios &gt; 0 )THEN</span>
-<a name="ln-529"></a><span class="c">!         PRINT *, &quot;...allocation error for array pos_tmp in SUBROUTINE&quot; &amp;</span>
-<a name="ln-530"></a><span class="c">!                  // &quot;place_particles_3D_lattices. &quot;, &amp;</span>
-<a name="ln-531"></a><span class="c">!                  &quot;The error message is&quot;, err_msg</span>
-<a name="ln-532"></a><span class="c">!         STOP</span>
-<a name="ln-533"></a><span class="c">!      ENDIF</span>
-<a name="ln-534"></a><span class="c">!      !CALL test_status( ios, err_msg, &amp;</span>
-<a name="ln-535"></a><span class="c">!      !                &quot;...allocation error for array pos in SUBROUTINE&quot; &amp;</span>
-<a name="ln-536"></a><span class="c">!      !                // &quot;place_particles_3D_lattice.&quot; )</span>
-<a name="ln-537"></a><span class="c">!    ENDIF</span>
-<a name="ln-538"></a><span class="c">!    ! Initializing the array pos to 0</span>
-<a name="ln-539"></a><span class="c">!    pos_tmp= HUGE(0.0D0)</span>
-<a name="ln-540"></a><span class="c">!</span>
-<a name="ln-541"></a><span class="c">!    !---------------------------------------------------------!</span>
-<a name="ln-542"></a><span class="c">!    !--  Storing the particle positions into the array pos  --!</span>
-<a name="ln-543"></a><span class="c">!    !--  symmetrically w.r.t. the xy plane                  --!</span>
-<a name="ln-544"></a><span class="c">!    !---------------------------------------------------------!</span>
-<a name="ln-545"></a><span class="c">!</span>
-<a name="ln-546"></a><span class="c">!    !</span>
-<a name="ln-547"></a><span class="c">!    !-- Placing particles on NS 1</span>
-<a name="ln-548"></a><span class="c">!    !</span>
-<a name="ln-549"></a><span class="c">!    PRINT *, &quot;Placing particles on NS 1...&quot;</span>
-<a name="ln-550"></a><span class="c">!    PRINT *</span>
-<a name="ln-551"></a><span class="c">!    THIS% npart= 0</span>
-<a name="ln-552"></a><span class="c">!    THIS% npart1= 0</span>
-<a name="ln-553"></a><span class="c">!    !</span>
-<a name="ln-554"></a><span class="c">!    !-- Choose the larger value for the boundary in z</span>
-<a name="ln-555"></a><span class="c">!    !</span>
-<a name="ln-556"></a><span class="c">!    IF( zlim == zmin1 )THEN</span>
-<a name="ln-557"></a><span class="c">!      sgn= - 1</span>
-<a name="ln-558"></a><span class="c">!    ELSE</span>
-<a name="ln-559"></a><span class="c">!      sgn= 1</span>
-<a name="ln-560"></a><span class="c">!    ENDIF</span>
-<a name="ln-561"></a><span class="c">!    !</span>
-<a name="ln-562"></a><span class="c">!    !-- Place the first half of the particle (above or below the xy plane)</span>
-<a name="ln-563"></a><span class="c">!    !</span>
-<a name="ln-564"></a><span class="c">!    !$OMP PARALLEL DO DEFAULT( NONE ) &amp;</span>
-<a name="ln-565"></a><span class="c">!    !$OMP             SHARED( nx, ny, nz, id, dx1, dy1, dz1, sgn, &amp;</span>
-<a name="ln-566"></a><span class="c">!    !$OMP                     pos_tmp, thres_baryon_density1, xmin1, ymin1 ) &amp;</span>
-<a name="ln-567"></a><span class="c">!    !$OMP             PRIVATE( i, j, k, xtemp, ytemp, ztemp )</span>
-<a name="ln-568"></a><span class="c">!    particle_pos_z1: DO k= 1, nz/2, 1</span>
-<a name="ln-569"></a><span class="c">!</span>
-<a name="ln-570"></a><span class="c">!      ztemp= sgn*( dz1/2 + ( k - 1 )*dz1 )</span>
-<a name="ln-571"></a><span class="c">!</span>
-<a name="ln-572"></a><span class="c">!      particle_pos_y1: DO j= 1, ny, 1</span>
-<a name="ln-573"></a><span class="c">!</span>
-<a name="ln-574"></a><span class="c">!        ytemp= ymin1 + dy1/2 + ( j - 1 )*dy1</span>
-<a name="ln-575"></a><span class="c">!</span>
-<a name="ln-576"></a><span class="c">!        particle_pos_x1: DO i= 1, nx, 1</span>
-<a name="ln-577"></a><span class="c">!</span>
-<a name="ln-578"></a><span class="c">!          xtemp= xmin1 + dx1/2 + ( i - 1 )*dx1</span>
-<a name="ln-579"></a><span class="c">!</span>
-<a name="ln-580"></a><span class="c">!          !</span>
-<a name="ln-581"></a><span class="c">!          !-- Promote a lattice point to a particle,</span>
-<a name="ln-582"></a><span class="c">!          !-- if the mass density is higher than the threshold</span>
-<a name="ln-583"></a><span class="c">!          !</span>
-<a name="ln-584"></a><span class="c">!          IF( id% read_mass_density( xtemp, ytemp, ztemp ) &amp;</span>
-<a name="ln-585"></a><span class="c">!                                &gt; thres_baryon_density1 &amp;</span>
-<a name="ln-586"></a><span class="c">!              .AND. &amp;</span>
-<a name="ln-587"></a><span class="c">!              id% test_position( xtemp, ytemp, ztemp ) == 0 )THEN</span>
-<a name="ln-588"></a><span class="c">!</span>
-<a name="ln-589"></a><span class="c">!            !THIS% npart = THIS% npart + 1</span>
-<a name="ln-590"></a><span class="c">!            !THIS% npart1= THIS% npart1 + 1</span>
-<a name="ln-591"></a><span class="c">!            !THIS% pos( 1, THIS% npart )= xtemp</span>
-<a name="ln-592"></a><span class="c">!            !THIS% pos( 2, THIS% npart )= ytemp</span>
-<a name="ln-593"></a><span class="c">!            !THIS% pos( 3, THIS% npart )= ztemp</span>
-<a name="ln-594"></a><span class="c">!            pos_tmp( 1, i, j, k )= xtemp</span>
-<a name="ln-595"></a><span class="c">!            pos_tmp( 2, i, j, k )= ytemp</span>
-<a name="ln-596"></a><span class="c">!            pos_tmp( 3, i, j, k )= ztemp</span>
-<a name="ln-597"></a><span class="c">!</span>
-<a name="ln-598"></a><span class="c">!          ENDIF</span>
-<a name="ln-599"></a><span class="c">!</span>
-<a name="ln-600"></a><span class="c">!          ! Print progress on screen, every 10%</span>
-<a name="ln-601"></a><span class="c">!          !perc= 50*( nx*ny*k + nx*j + i )/ &amp;</span>
-<a name="ln-602"></a><span class="c">!          !        ( nx*ny*nz/2 )</span>
-<a name="ln-603"></a><span class="c">!          !IF( show_progress .AND. MOD( perc, 10 ) == 0 )THEN</span>
-<a name="ln-604"></a><span class="c">!          !  WRITE( *, &quot;(A2,I3,A1)&quot;, ADVANCE= &quot;NO&quot; ) &amp;</span>
-<a name="ln-605"></a><span class="c">!          !         creturn//&quot; &quot;, perc, &quot;%&quot;</span>
-<a name="ln-606"></a><span class="c">!          ! ENDIF</span>
-<a name="ln-607"></a><span class="c">!        ENDDO particle_pos_x1</span>
-<a name="ln-608"></a><span class="c">!      ENDDO particle_pos_y1</span>
-<a name="ln-609"></a><span class="c">!    ENDDO particle_pos_z1</span>
-<a name="ln-610"></a><span class="c">!    !$OMP END PARALLEL DO</span>
-<a name="ln-611"></a><span class="c">!    !WRITE( *, &quot;(A1)&quot;, ADVANCE= &quot;NO&quot; ) creturn</span>
-<a name="ln-612"></a><span class="c">!</span>
-<a name="ln-613"></a><span class="c">!</span>
-<a name="ln-614"></a><span class="c">!    DO k= 1, nz, 1</span>
-<a name="ln-615"></a><span class="c">!</span>
-<a name="ln-616"></a><span class="c">!      DO j= 1, ny, 1</span>
-<a name="ln-617"></a><span class="c">!</span>
-<a name="ln-618"></a><span class="c">!        DO i= 1, nx, 1</span>
-<a name="ln-619"></a><span class="c">!</span>
-<a name="ln-620"></a><span class="c">!          IF( pos_tmp( 1, i, j, k ) &lt; HUGE(0.0D0) )THEN</span>
-<a name="ln-621"></a><span class="c">!</span>
-<a name="ln-622"></a><span class="c">!            THIS% npart= THIS% npart + 1</span>
-<a name="ln-623"></a><span class="c">!            THIS% npart1= THIS% npart1 + 1</span>
-<a name="ln-624"></a><span class="c">!            THIS% pos( 1, THIS% npart )= pos_tmp( 1, i, j, k )</span>
-<a name="ln-625"></a><span class="c">!            THIS% pos( 2, THIS% npart )= pos_tmp( 2, i, j, k )</span>
-<a name="ln-626"></a><span class="c">!            THIS% pos( 3, THIS% npart )= pos_tmp( 3, i, j, k )</span>
-<a name="ln-627"></a><span class="c">!</span>
-<a name="ln-628"></a><span class="c">!          ENDIF</span>
-<a name="ln-629"></a><span class="c">!</span>
-<a name="ln-630"></a><span class="c">!         ENDDO</span>
-<a name="ln-631"></a><span class="c">!      ENDDO</span>
-<a name="ln-632"></a><span class="c">!    ENDDO</span>
-<a name="ln-633"></a><span class="c">!    npart_half= THIS% npart</span>
-<a name="ln-634"></a><span class="c">!    IF( npart_half == 0 )THEN</span>
-<a name="ln-635"></a><span class="c">!      PRINT *, &quot;** There are no particles on star 1! Execution stopped...&quot;</span>
-<a name="ln-636"></a><span class="c">!      PRINT *</span>
-<a name="ln-637"></a><span class="c">!      STOP</span>
-<a name="ln-638"></a><span class="c">!    ENDIF</span>
-<a name="ln-639"></a><span class="c">!</span>
-<a name="ln-640"></a><span class="c">!    DEALLOCATE( pos_tmp )</span>
-<a name="ln-641"></a><span class="c">!</span>
-<a name="ln-642"></a><span class="c">!    !</span>
-<a name="ln-643"></a><span class="c">!    !-- Place the second half of the particles, mirroring the first half</span>
-<a name="ln-644"></a><span class="c">!    !-- w.r.t the xy plane</span>
-<a name="ln-645"></a><span class="c">!    !</span>
-<a name="ln-646"></a><span class="c">!    particle_pos_z1_mirror: DO k= 1, npart_half, 1</span>
-<a name="ln-647"></a><span class="c">!</span>
-<a name="ln-648"></a><span class="c">!      xtemp=   THIS% pos( 1, k )</span>
-<a name="ln-649"></a><span class="c">!      ytemp=   THIS% pos( 2, k )</span>
-<a name="ln-650"></a><span class="c">!      ztemp= - THIS% pos( 3, k )</span>
-<a name="ln-651"></a><span class="c">!</span>
-<a name="ln-652"></a><span class="c">!      ! TODO: is this check needed?</span>
-<a name="ln-653"></a><span class="c">!      !IF( import_mass_density( xtemp, ytemp, ztemp ) &amp;</span>
-<a name="ln-654"></a><span class="c">!      !                               &gt; thres_baryon_density1 )THEN</span>
-<a name="ln-655"></a><span class="c">!</span>
-<a name="ln-656"></a><span class="c">!      THIS% npart = THIS% npart + 1</span>
-<a name="ln-657"></a><span class="c">!      THIS% npart1= THIS% npart1 + 1</span>
-<a name="ln-658"></a><span class="c">!      THIS% pos( 1, THIS% npart )= xtemp</span>
-<a name="ln-659"></a><span class="c">!      THIS% pos( 2, THIS% npart )= ytemp</span>
-<a name="ln-660"></a><span class="c">!      THIS% pos( 3, THIS% npart )= ztemp</span>
-<a name="ln-661"></a><span class="c">!</span>
-<a name="ln-662"></a><span class="c">!      !ENDIF</span>
-<a name="ln-663"></a><span class="c">!</span>
-<a name="ln-664"></a><span class="c">!      perc= 50 + 50*k/( npart_half )</span>
-<a name="ln-665"></a><span class="c">!      IF( show_progress .AND. MOD( perc, 10 ) == 0 )THEN</span>
-<a name="ln-666"></a><span class="c">!        WRITE( *, &quot;(A2,I3,A1)&quot;, ADVANCE= &quot;NO&quot; ) &amp;</span>
-<a name="ln-667"></a><span class="c">!               creturn//&quot; &quot;, perc, &quot;%&quot;</span>
-<a name="ln-668"></a><span class="c">!      ENDIF</span>
-<a name="ln-669"></a><span class="c">!</span>
-<a name="ln-670"></a><span class="c">!    ENDDO particle_pos_z1_mirror</span>
-<a name="ln-671"></a><span class="c">!    WRITE( *, &quot;(A1)&quot;, ADVANCE= &quot;NO&quot; ) creturn</span>
-<a name="ln-672"></a><span class="c">!</span>
-<a name="ln-673"></a><span class="c">!    !</span>
-<a name="ln-674"></a><span class="c">!    !-- Place the particles on the xy plane</span>
-<a name="ln-675"></a><span class="c">!    !</span>
-<a name="ln-676"></a><span class="c">!    !ztemp= 0.0D0</span>
-<a name="ln-677"></a><span class="c">!    !</span>
-<a name="ln-678"></a><span class="c">!    !particle_pos_y1_xy: DO j= 1, ny, 1</span>
-<a name="ln-679"></a><span class="c">!    !</span>
-<a name="ln-680"></a><span class="c">!    !  ytemp= ymin1 + dy/2 + ( j - 1 )*dy</span>
-<a name="ln-681"></a><span class="c">!    !</span>
-<a name="ln-682"></a><span class="c">!    !  particle_pos_x1_xy: DO i= 1, nx, 1</span>
-<a name="ln-683"></a><span class="c">!    !</span>
-<a name="ln-684"></a><span class="c">!    !    xtemp= xmin1 + dx/2 + ( i - 1 )*dx</span>
-<a name="ln-685"></a><span class="c">!    !</span>
-<a name="ln-686"></a><span class="c">!    !    !</span>
-<a name="ln-687"></a><span class="c">!    !    !-- Promote a lattice point to a particle,</span>
-<a name="ln-688"></a><span class="c">!    !    !-- if the mass density is higher than the threshold</span>
-<a name="ln-689"></a><span class="c">!    !    !</span>
-<a name="ln-690"></a><span class="c">!    !    IF( id% import_mass_density( xtemp, ytemp, ztemp ) &amp;</span>
-<a name="ln-691"></a><span class="c">!    !                          &gt; thres_baryon_density1 )THEN</span>
-<a name="ln-692"></a><span class="c">!    !</span>
-<a name="ln-693"></a><span class="c">!    !      THIS% npart = THIS% npart + 1</span>
-<a name="ln-694"></a><span class="c">!    !      THIS% npart1= THIS% npart1 + 1</span>
-<a name="ln-695"></a><span class="c">!    !      THIS% pos( 1, THIS% npart )= xtemp</span>
-<a name="ln-696"></a><span class="c">!    !      THIS% pos( 2, THIS% npart )= ytemp</span>
-<a name="ln-697"></a><span class="c">!    !      THIS% pos( 3, THIS% npart )= ztemp</span>
-<a name="ln-698"></a><span class="c">!    !</span>
-<a name="ln-699"></a><span class="c">!    !    ENDIF</span>
-<a name="ln-700"></a><span class="c">!    !</span>
-<a name="ln-701"></a><span class="c">!    !    ! Print progress on screen, every 10%</span>
-<a name="ln-702"></a><span class="c">!    !    perc= 50*( nx*ny*k + nx*j + i )/ &amp;</span>
-<a name="ln-703"></a><span class="c">!    !            ( nx*ny*nz/2 )</span>
-<a name="ln-704"></a><span class="c">!    !    IF( MOD( perc, 10 ) == 0 )THEN</span>
-<a name="ln-705"></a><span class="c">!    !      WRITE( *, &quot;(A2,I3,A1)&quot;, ADVANCE= &quot;NO&quot; ) &amp;</span>
-<a name="ln-706"></a><span class="c">!    !             creturn//&quot; &quot;, perc, &quot;%&quot;</span>
-<a name="ln-707"></a><span class="c">!    !     ENDIF</span>
-<a name="ln-708"></a><span class="c">!    !   ENDDO particle_pos_x1_xy</span>
-<a name="ln-709"></a><span class="c">!    !ENDDO particle_pos_y1_xy</span>
-<a name="ln-710"></a><span class="c">!    !WRITE( *, &quot;(A1)&quot;, ADVANCE= &quot;NO&quot; ) creturn</span>
-<a name="ln-711"></a><span class="c">!</span>
-<a name="ln-712"></a><span class="c">!    IF(.NOT.ALLOCATED( pos_tmp ))THEN</span>
-<a name="ln-713"></a><span class="c">!      ALLOCATE( pos_tmp( 3, nx2, ny2, nz2 ), STAT= ios, &amp;</span>
-<a name="ln-714"></a><span class="c">!                ERRMSG= err_msg )</span>
-<a name="ln-715"></a><span class="c">!      IF( ios &gt; 0 )THEN</span>
-<a name="ln-716"></a><span class="c">!         PRINT *, &quot;...allocation error for array pos_tmp in SUBROUTINE&quot; &amp;</span>
-<a name="ln-717"></a><span class="c">!                  // &quot;place_particles_3D_lattices. &quot;, &amp;</span>
-<a name="ln-718"></a><span class="c">!                  &quot;The error message is&quot;, err_msg</span>
-<a name="ln-719"></a><span class="c">!         STOP</span>
-<a name="ln-720"></a><span class="c">!      ENDIF</span>
-<a name="ln-721"></a><span class="c">!      !CALL test_status( ios, err_msg, &amp;</span>
-<a name="ln-722"></a><span class="c">!      !                &quot;...allocation error for array pos in SUBROUTINE&quot; &amp;</span>
-<a name="ln-723"></a><span class="c">!      !                // &quot;place_particles_3D_lattice.&quot; )</span>
-<a name="ln-724"></a><span class="c">!    ENDIF</span>
-<a name="ln-725"></a><span class="c">!    ! Initializing the array pos to 0</span>
-<a name="ln-726"></a><span class="c">!    pos_tmp= HUGE(0.0D0)</span>
-<a name="ln-727"></a><span class="c">!</span>
-<a name="ln-728"></a><span class="c">!    !</span>
-<a name="ln-729"></a><span class="c">!    !-- Placing particles on NS 2 with the same algorithm as for NS 1</span>
-<a name="ln-730"></a><span class="c">!    !</span>
-<a name="ln-731"></a><span class="c">!    PRINT *, &quot;Placing particles on NS 2...&quot;</span>
-<a name="ln-732"></a><span class="c">!    PRINT *</span>
-<a name="ln-733"></a><span class="c">!    THIS% npart2= 0</span>
-<a name="ln-734"></a><span class="c">!    IF( zlim2 == zmin2 )THEN</span>
-<a name="ln-735"></a><span class="c">!      sgn= - 1</span>
-<a name="ln-736"></a><span class="c">!    ELSE</span>
-<a name="ln-737"></a><span class="c">!      sgn= 1</span>
-<a name="ln-738"></a><span class="c">!    ENDIF</span>
-<a name="ln-739"></a><span class="c">!    !$OMP PARALLEL DO DEFAULT( NONE ) &amp;</span>
-<a name="ln-740"></a><span class="c">!    !$OMP             SHARED( nx2, ny2, nz2, id, dx2, dy2, dz2, sgn, &amp;</span>
-<a name="ln-741"></a><span class="c">!    !$OMP                     pos_tmp, thres_baryon_density2, xmin2, ymin2 ) &amp;</span>
-<a name="ln-742"></a><span class="c">!    !$OMP             PRIVATE( i, j, k, xtemp, ytemp, ztemp )</span>
-<a name="ln-743"></a><span class="c">!    particle_pos_z2: DO k= 1, nz2/2, 1</span>
-<a name="ln-744"></a><span class="c">!</span>
-<a name="ln-745"></a><span class="c">!      ztemp= sgn*( dz2/2 + ( k - 1 )*dz2 )</span>
-<a name="ln-746"></a><span class="c">!</span>
-<a name="ln-747"></a><span class="c">!      particle_pos_y2: DO j= 1, ny2, 1</span>
-<a name="ln-748"></a><span class="c">!</span>
-<a name="ln-749"></a><span class="c">!        ytemp= ymin2 + dy2/2 + ( j - 1 )*dy2</span>
-<a name="ln-750"></a><span class="c">!</span>
-<a name="ln-751"></a><span class="c">!        particle_pos_x2: DO i= 1, nx2, 1</span>
-<a name="ln-752"></a><span class="c">!</span>
-<a name="ln-753"></a><span class="c">!          xtemp= xmin2 + dx2/2 + ( i - 1 )*dx2</span>
-<a name="ln-754"></a><span class="c">!</span>
-<a name="ln-755"></a><span class="c">!          IF( id% read_mass_density( xtemp, ytemp, ztemp ) &amp;</span>
-<a name="ln-756"></a><span class="c">!                                  &gt; thres_baryon_density2 &amp;</span>
-<a name="ln-757"></a><span class="c">!              .AND. &amp;</span>
-<a name="ln-758"></a><span class="c">!              id% test_position( xtemp, ytemp, ztemp ) == 0 )THEN</span>
-<a name="ln-759"></a><span class="c">!</span>
-<a name="ln-760"></a><span class="c">!            !THIS% npart = THIS% npart + 1</span>
-<a name="ln-761"></a><span class="c">!            !THIS% npart2= THIS% npart2 + 1</span>
-<a name="ln-762"></a><span class="c">!            !THIS% pos( 1, THIS% npart )= xtemp</span>
-<a name="ln-763"></a><span class="c">!            !THIS% pos( 2, THIS% npart )= ytemp</span>
-<a name="ln-764"></a><span class="c">!            !THIS% pos( 3, THIS% npart )= ztemp</span>
-<a name="ln-765"></a><span class="c">!            pos_tmp( 1, i, j, k )= xtemp</span>
-<a name="ln-766"></a><span class="c">!            pos_tmp( 2, i, j, k )= ytemp</span>
-<a name="ln-767"></a><span class="c">!            pos_tmp( 3, i, j, k )= ztemp</span>
-<a name="ln-768"></a><span class="c">!</span>
-<a name="ln-769"></a><span class="c">!          ENDIF</span>
-<a name="ln-770"></a><span class="c">!</span>
-<a name="ln-771"></a><span class="c">!          ! Print progress on screen, every 10%</span>
-<a name="ln-772"></a><span class="c">!          !perc= 50*( nx2*ny2*( k - 1 ) + nx2*( j - 1 ) &amp;</span>
-<a name="ln-773"></a><span class="c">!          !      + i )/( nx2*ny2*nz2/2 )</span>
-<a name="ln-774"></a><span class="c">!          !IF( show_progress .AND. MOD( perc, 10 ) == 0 )THEN</span>
-<a name="ln-775"></a><span class="c">!          !  WRITE( *, &quot;(A2,I3,A1)&quot;, ADVANCE= &quot;NO&quot; ) &amp;</span>
-<a name="ln-776"></a><span class="c">!          !         creturn//&quot; &quot;, perc, &quot;%&quot;</span>
-<a name="ln-777"></a><span class="c">!          !ENDIF</span>
-<a name="ln-778"></a><span class="c">!        ENDDO particle_pos_x2</span>
-<a name="ln-779"></a><span class="c">!      ENDDO particle_pos_y2</span>
-<a name="ln-780"></a><span class="c">!    ENDDO particle_pos_z2</span>
-<a name="ln-781"></a><span class="c">!    !$OMP END PARALLEL DO</span>
-<a name="ln-782"></a><span class="c">!    !WRITE( *, &quot;(A1)&quot;, ADVANCE= &quot;NO&quot; ) creturn</span>
-<a name="ln-783"></a><span class="c">!</span>
-<a name="ln-784"></a><span class="c">!    DO k= 1, nz2, 1</span>
-<a name="ln-785"></a><span class="c">!</span>
-<a name="ln-786"></a><span class="c">!      DO j= 1, ny2, 1</span>
-<a name="ln-787"></a><span class="c">!</span>
-<a name="ln-788"></a><span class="c">!        DO i= 1, nx2, 1</span>
-<a name="ln-789"></a><span class="c">!</span>
-<a name="ln-790"></a><span class="c">!          IF( pos_tmp( 1, i, j, k ) &lt; HUGE(0.0D0) )THEN</span>
-<a name="ln-791"></a><span class="c">!</span>
-<a name="ln-792"></a><span class="c">!            THIS% npart= THIS% npart + 1</span>
-<a name="ln-793"></a><span class="c">!            THIS% npart2= THIS% npart2 + 1</span>
-<a name="ln-794"></a><span class="c">!            THIS% pos( 1, THIS% npart )= pos_tmp( 1, i, j, k )</span>
-<a name="ln-795"></a><span class="c">!            THIS% pos( 2, THIS% npart )= pos_tmp( 2, i, j, k )</span>
-<a name="ln-796"></a><span class="c">!            THIS% pos( 3, THIS% npart )= pos_tmp( 3, i, j, k )</span>
-<a name="ln-797"></a><span class="c">!</span>
-<a name="ln-798"></a><span class="c">!          ENDIF</span>
-<a name="ln-799"></a><span class="c">!</span>
-<a name="ln-800"></a><span class="c">!         ENDDO</span>
-<a name="ln-801"></a><span class="c">!      ENDDO</span>
-<a name="ln-802"></a><span class="c">!    ENDDO</span>
-<a name="ln-803"></a><span class="c">!    npart_half2= THIS% npart</span>
-<a name="ln-804"></a><span class="c">!    IF( npart_half2 == 2*npart_half )THEN</span>
-<a name="ln-805"></a><span class="c">!      PRINT *, &quot;** There are no particles on star 2! Execution stopped...&quot;</span>
-<a name="ln-806"></a><span class="c">!      PRINT *</span>
-<a name="ln-807"></a><span class="c">!      STOP</span>
-<a name="ln-808"></a><span class="c">!    ENDIF</span>
-<a name="ln-809"></a><span class="c">!</span>
-<a name="ln-810"></a><span class="c">!    DEALLOCATE( pos_tmp )</span>
-<a name="ln-811"></a><span class="c">!</span>
-<a name="ln-812"></a><span class="c">!    particle_pos_z2_mirror: DO k= 2*npart_half + 1, npart_half2, 1</span>
-<a name="ln-813"></a><span class="c">!</span>
-<a name="ln-814"></a><span class="c">!      xtemp=   THIS% pos( 1, k )</span>
-<a name="ln-815"></a><span class="c">!      ytemp=   THIS% pos( 2, k )</span>
-<a name="ln-816"></a><span class="c">!      ztemp= - THIS% pos( 3, k )</span>
-<a name="ln-817"></a><span class="c">!</span>
-<a name="ln-818"></a><span class="c">!      !IF( import_mass_density( xtemp, ytemp, ztemp ) &amp;</span>
-<a name="ln-819"></a><span class="c">!      !                               &gt; thres_baryon_density2 )THEN</span>
-<a name="ln-820"></a><span class="c">!</span>
-<a name="ln-821"></a><span class="c">!      THIS% npart = THIS% npart + 1</span>
-<a name="ln-822"></a><span class="c">!      THIS% npart2= THIS% npart2 + 1</span>
-<a name="ln-823"></a><span class="c">!      THIS% pos( 1, THIS% npart )= xtemp</span>
-<a name="ln-824"></a><span class="c">!      THIS% pos( 2, THIS% npart )= ytemp</span>
-<a name="ln-825"></a><span class="c">!      THIS% pos( 3, THIS% npart )= ztemp</span>
-<a name="ln-826"></a><span class="c">!</span>
-<a name="ln-827"></a><span class="c">!      !ENDIF</span>
-<a name="ln-828"></a><span class="c">!</span>
-<a name="ln-829"></a><span class="c">!      ! Print progress on screen, every 10%</span>
-<a name="ln-830"></a><span class="c">!      perc= 50 + 50*( k - 2*npart_half + 1 ) &amp;</span>
-<a name="ln-831"></a><span class="c">!                    /( npart_half2 - 2*npart_half )</span>
-<a name="ln-832"></a><span class="c">!      IF( show_progress .AND. MOD( perc, 10 ) == 0 )THEN</span>
-<a name="ln-833"></a><span class="c">!        WRITE( *, &quot;(A2,I3,A1)&quot;, ADVANCE= &quot;NO&quot; ) &amp;</span>
-<a name="ln-834"></a><span class="c">!                creturn//&quot; &quot;, perc, &quot;%&quot;</span>
-<a name="ln-835"></a><span class="c">!      ENDIF</span>
-<a name="ln-836"></a><span class="c">!</span>
-<a name="ln-837"></a><span class="c">!    ENDDO particle_pos_z2_mirror</span>
-<a name="ln-838"></a><span class="c">!    WRITE( *, &quot;(A1)&quot;, ADVANCE= &quot;NO&quot; ) creturn</span>
-<a name="ln-839"></a><span class="c">!</span>
-<a name="ln-840"></a><span class="c">!    !</span>
-<a name="ln-841"></a><span class="c">!    !-- Place the particles on the xy plane</span>
-<a name="ln-842"></a><span class="c">!    !</span>
-<a name="ln-843"></a><span class="c">!    !ztemp= 0.0D0</span>
-<a name="ln-844"></a><span class="c">!    !</span>
-<a name="ln-845"></a><span class="c">!    !particle_pos_y2_xy: DO j= 1, ny2, 1</span>
-<a name="ln-846"></a><span class="c">!    !</span>
-<a name="ln-847"></a><span class="c">!    !  ytemp= ymin2 + dy/2 + ( j - 1 )*dy</span>
-<a name="ln-848"></a><span class="c">!    !</span>
-<a name="ln-849"></a><span class="c">!    !  particle_pos_x2_xy: DO i= 1, nx2, 1</span>
-<a name="ln-850"></a><span class="c">!    !</span>
-<a name="ln-851"></a><span class="c">!    !    xtemp= xmin2 + dx/2 + ( i - 1 )*dx</span>
-<a name="ln-852"></a><span class="c">!    !</span>
-<a name="ln-853"></a><span class="c">!    !    IF( id% import_mass_density( xtemp, ytemp, ztemp ) &amp;</span>
-<a name="ln-854"></a><span class="c">!    !                            &gt; thres_baryon_density2 )THEN</span>
-<a name="ln-855"></a><span class="c">!    !</span>
-<a name="ln-856"></a><span class="c">!    !      THIS% npart = THIS% npart + 1</span>
-<a name="ln-857"></a><span class="c">!    !      THIS% npart2= THIS% npart2 + 1</span>
-<a name="ln-858"></a><span class="c">!    !      THIS% pos( 1, THIS% npart )= xtemp</span>
-<a name="ln-859"></a><span class="c">!    !      THIS% pos( 2, THIS% npart )= ytemp</span>
-<a name="ln-860"></a><span class="c">!    !      THIS% pos( 3, THIS% npart )= ztemp</span>
-<a name="ln-861"></a><span class="c">!    !</span>
-<a name="ln-862"></a><span class="c">!    !    ENDIF</span>
-<a name="ln-863"></a><span class="c">!    !</span>
-<a name="ln-864"></a><span class="c">!    !    ! Print progress on screen, every 10%</span>
-<a name="ln-865"></a><span class="c">!    !    perc= 50*( nx2*ny2*( k - 1 ) + nx2*( j - 1 ) + i )&amp;</span>
-<a name="ln-866"></a><span class="c">!    !          /( nx2*ny2*nz2/2 )</span>
-<a name="ln-867"></a><span class="c">!    !    IF( MOD( perc, 10 ) == 0 )THEN</span>
-<a name="ln-868"></a><span class="c">!    !      WRITE( *, &quot;(A2,I3,A1)&quot;, ADVANCE= &quot;NO&quot; ) &amp;</span>
-<a name="ln-869"></a><span class="c">!    !             creturn//&quot; &quot;, perc, &quot;%&quot;</span>
-<a name="ln-870"></a><span class="c">!    !    ENDIF</span>
-<a name="ln-871"></a><span class="c">!    !  ENDDO particle_pos_x2_xy</span>
-<a name="ln-872"></a><span class="c">!    !ENDDO particle_pos_y2_xy</span>
-<a name="ln-873"></a><span class="c">!    !WRITE( *, &quot;(A1)&quot;, ADVANCE= &quot;NO&quot; ) creturn</span>
-<a name="ln-874"></a><span class="c">!</span>
-<a name="ln-875"></a><span class="c">!    !</span>
-<a name="ln-876"></a><span class="c">!    !-- Consistency checks</span>
-<a name="ln-877"></a><span class="c">!    !</span>
-<a name="ln-878"></a><span class="c">!    IF( THIS% npart /= ( 2*( npart_half2 - npart_half ) ) )THEN</span>
-<a name="ln-879"></a><span class="c">!      PRINT *</span>
-<a name="ln-880"></a><span class="c">!      PRINT *, &quot;** ERROR: The number of particles &quot;, THIS% npart, &amp;</span>
-<a name="ln-881"></a><span class="c">!               &quot; is not the expected value &quot;, &amp;</span>
-<a name="ln-882"></a><span class="c">!               2*( npart_half2 - npart_half )</span>
-<a name="ln-883"></a><span class="c">!      PRINT *</span>
-<a name="ln-884"></a><span class="c">!      STOP</span>
-<a name="ln-885"></a><span class="c">!    ENDIF</span>
-<a name="ln-886"></a><span class="c">!</span>
-<a name="ln-887"></a><span class="c">!    DO k= 1, npart_half, 1</span>
-<a name="ln-888"></a><span class="c">!      IF( THIS% pos( 3, k ) /= - THIS% pos( 3, npart_half + k ) )THEN</span>
-<a name="ln-889"></a><span class="c">!        PRINT *</span>
-<a name="ln-890"></a><span class="c">!        PRINT *, &quot;** ERROR: The lattice around NS 1 are not mirrored &quot; &amp;</span>
-<a name="ln-891"></a><span class="c">!                 // &quot;by the xy plane.&quot;</span>
-<a name="ln-892"></a><span class="c">!        PRINT *</span>
-<a name="ln-893"></a><span class="c">!        STOP</span>
-<a name="ln-894"></a><span class="c">!      ENDIF</span>
-<a name="ln-895"></a><span class="c">!    ENDDO</span>
-<a name="ln-896"></a><span class="c">!    DO k= 2*npart_half + 1, npart_half2, 1</span>
-<a name="ln-897"></a><span class="c">!      IF( THIS% pos( 3, k ) /= &amp;</span>
-<a name="ln-898"></a><span class="c">!          - THIS% pos( 3, ( npart_half2 - 2*npart_half ) + k ) )THEN</span>
-<a name="ln-899"></a><span class="c">!        PRINT *</span>
-<a name="ln-900"></a><span class="c">!        PRINT *, &quot;** ERROR: The lattice around NS 2 are not mirrored &quot; &amp;</span>
-<a name="ln-901"></a><span class="c">!                 // &quot;by the xy plane.&quot;</span>
-<a name="ln-902"></a><span class="c">!        PRINT *</span>
-<a name="ln-903"></a><span class="c">!        STOP</span>
-<a name="ln-904"></a><span class="c">!      ENDIF</span>
-<a name="ln-905"></a><span class="c">!    ENDDO</span>
-<a name="ln-906"></a><span class="c">!</span>
-<a name="ln-907"></a><span class="c">!    IF( THIS% npart1 + THIS% npart2 /= THIS% npart )THEN</span>
-<a name="ln-908"></a><span class="c">!      PRINT *, &quot;** ERROR: npart1 + npart2 /= npart&quot;</span>
-<a name="ln-909"></a><span class="c">!      PRINT *, &quot; * npart1=&quot;, THIS% npart1</span>
-<a name="ln-910"></a><span class="c">!      PRINT *, &quot; * npart2=&quot;, THIS% npart2</span>
-<a name="ln-911"></a><span class="c">!      PRINT *, &quot; * npart1 + npart2=&quot;, THIS% npart1 + THIS% npart2</span>
-<a name="ln-912"></a><span class="c">!      PRINT *, &quot; * npart=&quot;, THIS% npart</span>
-<a name="ln-913"></a><span class="c">!      STOP</span>
-<a name="ln-914"></a><span class="c">!    ENDIF</span>
-<a name="ln-915"></a><span class="c">!</span>
-<a name="ln-916"></a><span class="c">!    !</span>
-<a name="ln-917"></a><span class="c">!    !-- Printouts</span>
-<a name="ln-918"></a><span class="c">!    !</span>
-<a name="ln-919"></a><span class="c">!    PRINT *, &quot; * Particles placed. Number of particles=&quot;, &amp;</span>
-<a name="ln-920"></a><span class="c">!             THIS% npart, &quot;=&quot;, DBLE(THIS% npart)/DBLE(npart_tmp), &amp;</span>
-<a name="ln-921"></a><span class="c">!             &quot; of the points in lattices.&quot;</span>
-<a name="ln-922"></a><span class="c">!    PRINT *</span>
-<a name="ln-923"></a><span class="c">!    PRINT *, &quot; * Number of particles on NS 1=&quot;, THIS% npart1, &quot;=&quot;, &amp;</span>
-<a name="ln-924"></a><span class="c">!             DBLE(THIS% npart1)/DBLE(npart1_temp), &amp;</span>
-<a name="ln-925"></a><span class="c">!             &quot; of the points in the first lattice.&quot;</span>
-<a name="ln-926"></a><span class="c">!    PRINT *, &quot; * Number of particles on NS 2=&quot;, THIS% npart2, &quot;=&quot;, &amp;</span>
-<a name="ln-927"></a><span class="c">!             DBLE(THIS% npart2)/DBLE(npart2_temp), &amp;</span>
-<a name="ln-928"></a><span class="c">!             &quot; of the points in the second lattice.&quot;</span>
-<a name="ln-929"></a><span class="c">!    PRINT *</span>
-<a name="ln-930"></a><span class="c">!</span>
-<a name="ln-931"></a><span class="c">!    !</span>
-<a name="ln-932"></a><span class="c">!    !-- Computing total volume and volume per particle</span>
-<a name="ln-933"></a><span class="c">!    !</span>
-<a name="ln-934"></a><span class="c">!    IF(.NOT.ALLOCATED( THIS% pvol ))THEN</span>
-<a name="ln-935"></a><span class="c">!      ALLOCATE( THIS% pvol( THIS% npart ), STAT= ios, &amp;</span>
-<a name="ln-936"></a><span class="c">!              ERRMSG= err_msg )</span>
-<a name="ln-937"></a><span class="c">!      IF( ios &gt; 0 )THEN</span>
-<a name="ln-938"></a><span class="c">!        PRINT *, &quot;...allocation error for array pvol &quot;, &amp;</span>
-<a name="ln-939"></a><span class="c">!                 &quot;. The error message is&quot;, err_msg</span>
-<a name="ln-940"></a><span class="c">!        STOP</span>
-<a name="ln-941"></a><span class="c">!      ENDIF</span>
-<a name="ln-942"></a><span class="c">!      !CALL test_status( ios, err_msg, &amp;</span>
-<a name="ln-943"></a><span class="c">!      !        &quot;...allocation error for array v_euler_parts_z&quot; )</span>
-<a name="ln-944"></a><span class="c">!    ENDIF</span>
-<a name="ln-945"></a><span class="c">!</span>
-<a name="ln-946"></a><span class="c">!    THIS% vol1_a= dx1*dy1*dz1</span>
-<a name="ln-947"></a><span class="c">!    THIS% vol1 = (xmax1 - xmin1)*(ymax1 - ymin1)*2*ABS(zlim)</span>
-<a name="ln-948"></a><span class="c">!    !THIS% vol2 = npart2_temp * THIS% vol_a</span>
-<a name="ln-949"></a><span class="c">!    !THIS% vol  = THIS% vol1 + THIS% vol2</span>
-<a name="ln-950"></a><span class="c">!    vol_a_alt1  = THIS% vol1/npart1_temp</span>
-<a name="ln-951"></a><span class="c">!</span>
-<a name="ln-952"></a><span class="c">!    THIS% vol2_a= dx2*dy2*dz2</span>
-<a name="ln-953"></a><span class="c">!    THIS% vol2 =  dx2*nx2*dy2*ny2*dz2*nz2</span>
-<a name="ln-954"></a><span class="c">!    !THIS% vol2 = (xmax2 - xmin2)*(ymax2 - ymin2)*2*ABS(zlim2)</span>
-<a name="ln-955"></a><span class="c">!    !THIS% vol2 = npart2_temp * THIS% vol_a2</span>
-<a name="ln-956"></a><span class="c">!    !THIS% vol  = THIS% vol1 + THIS% vol2</span>
-<a name="ln-957"></a><span class="c">!    vol_a_alt2  = THIS% vol2/npart2_temp</span>
-<a name="ln-958"></a><span class="c">!</span>
-<a name="ln-959"></a><span class="c">!    THIS% pvol( 1:THIS% npart1 )              = THIS% vol1_a</span>
-<a name="ln-960"></a><span class="c">!    THIS% pvol( THIS% npart1 + 1:THIS% npart )= THIS% vol2_a</span>
-<a name="ln-961"></a><span class="c">!</span>
-<a name="ln-962"></a><span class="c">!    THIS% vol= THIS% vol1 + THIS% vol2</span>
-<a name="ln-963"></a><span class="c">!</span>
-<a name="ln-964"></a><span class="c">!    ! Consistency check for the particle volume</span>
-<a name="ln-965"></a><span class="c">!    IF( ABS( THIS% vol1_a - vol_a_alt1 ) &gt; 1D-7 )THEN</span>
-<a name="ln-966"></a><span class="c">!      PRINT *, &quot; * The particle volume vol_a_alt1=&quot;, vol_a_alt1, &quot;Msun_geo^3&quot;</span>
-<a name="ln-967"></a><span class="c">!      PRINT *, &quot; is not equal to dx1*dy1*dz1=&quot;, THIS% vol1_a, &quot;Msun_geo^3.&quot;</span>
-<a name="ln-968"></a><span class="c">!      PRINT *</span>
-<a name="ln-969"></a><span class="c">!      STOP</span>
-<a name="ln-970"></a><span class="c">!    ENDIF</span>
-<a name="ln-971"></a><span class="c">!    ! Consistency check for the particle volume</span>
-<a name="ln-972"></a><span class="c">!    IF( ABS( THIS% vol2_a - vol_a_alt2 ) &gt; 1D-7 )THEN</span>
-<a name="ln-973"></a><span class="c">!      PRINT *, &quot; * The particle volume vol_a_alt2=&quot;, vol_a_alt2, &quot;Msun_geo^3&quot;</span>
-<a name="ln-974"></a><span class="c">!      PRINT *, &quot; is not equal to dx2*dy2*dz2=&quot;, THIS% vol2_a, &quot;Msun_geo^3.&quot;</span>
-<a name="ln-975"></a><span class="c">!      PRINT *</span>
-<a name="ln-976"></a><span class="c">!      STOP</span>
-<a name="ln-977"></a><span class="c">!    ENDIF</span>
-<a name="ln-978"></a><span class="c">!</span>
-<a name="ln-979"></a><span class="c">!    PRINT *, &quot; * Total volume of the lattices=&quot;, THIS% vol, &quot;Msun_geo^3&quot;</span>
-<a name="ln-980"></a><span class="c">!    PRINT *, &quot; * Particle volume on NS 1=&quot;, THIS% vol1_a, &quot;Msun_geo^3&quot;</span>
-<a name="ln-981"></a><span class="c">!    PRINT *, &quot; * Particle volume on NS 2=&quot;, THIS% vol2_a, &quot;Msun_geo^3&quot;</span>
-<a name="ln-982"></a><span class="c">!    PRINT *</span>
-<a name="ln-983"></a><span class="c">!</span>
-<a name="ln-984"></a><span class="c">!    PRINT *, &quot;** Subroutine place_particles_lattices &quot; &amp;</span>
-<a name="ln-985"></a><span class="c">!             // &quot;executed.&quot;</span>
-<a name="ln-986"></a><span class="c">!    PRINT *</span>
-<a name="ln-987"></a><span class="c">!</span>
-<a name="ln-988"></a><span class="c">!  END PROCEDURE place_particles_lattices</span>
-<a name="ln-989"></a>
-<a name="ln-990"></a>
-<a name="ln-991"></a><span class="k">END SUBMODULE </span><span class="n">lattices</span>
+<a name="ln-369"></a><span class="k">END SUBMODULE </span><span class="n">lattices</span>
 </pre></div>
 
     </section>
@@ -1278,7 +656,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-05-24 08:27:25           </p>
+ on 2022-07-05 18:11:38           </p>
         </div>
       </div>
       <br>

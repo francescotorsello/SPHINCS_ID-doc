@@ -93,11 +93,11 @@
     data-placement="bottom" data-html="true"
     title=" 0.1% of total for procedures.">90 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/submodule_diffstar_lorene_import.f90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/submodule_diffstar_lorene_read.f90"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/submodule_diffstar_lorene_import.f90.html'>submodule_diffstar_lorene_import.f90</a></li>
-     <li><a href='../module/import~2.html'>import</a></li>
+     <li><a href='../sourcefile/submodule_diffstar_lorene_read.f90.html'>submodule_diffstar_lorene_read.f90</a></li>
+     <li><a href='../module/read~3.html'>read</a></li>
      <li class="active">import_id_spacetime</li>
   </ol>
 </div>
@@ -120,12 +120,12 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-detg~5">detg</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-detg4~3">detg4</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-g4~10">g4</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-i~22">i</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-j~21">j</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-k~17">k</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-detg~7">detg</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-detg4~4">detg4</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-g4~11">g4</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-i~28">i</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-j~26">j</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-k~22">k</a>
     </div>
   </div>
 </div>
@@ -135,7 +135,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>module procedure import_id_spacetime <small>module module subroutine import_id_spacetime(THIS, nx, ny, nz, pos, lapse, shift, g, ek)</small>   <a href='../interface/import_id_spacetime~2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    <h2>module procedure import_id_spacetime <small>module module subroutine import_id_spacetime(this, nx, ny, nz, pos, lapse, shift, g, ek)</small>   <a href='../interface/import_id_spacetime~2.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h2>
         <div class="panel panel-default">
       <div class="panel-heading">
@@ -252,37 +252,37 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~198"></span>class(<a href='../type/diffstarlorene.html'>diffstarlorene</a>),</td>
+  <td><span class="anchor" id="variable-this~256"></span>class(<a href='../type/diffstarlorene.html'>diffstarlorene</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/diffstarlorene.html">diffstarlorene</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/diffstarlorene.html">diffstarlorene</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-nx~12"></span>integer,</td>
+  <td><span class="anchor" id="variable-nx~16"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>nx</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-ny~12"></span>integer,</td>
+  <td><span class="anchor" id="variable-ny~16"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>ny</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-nz~12"></span>integer,</td>
+  <td><span class="anchor" id="variable-nz~16"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>nz</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-pos~24"></span>double precision,</td>
+  <td><span class="anchor" id="variable-pos~25"></span>double precision,</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(:,:,:,:)</td><td>::</td>
   <td><strong>pos</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-lapse~32"></span>double precision,</td>
+  <td><span class="anchor" id="variable-lapse~35"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:,:,:)</td><td>::</td>
   <td><strong>lapse</strong></td><td></td>
@@ -294,7 +294,7 @@
   <td><strong>shift</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g~9"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g~10"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:,:,:,:)</td><td>::</td>
   <td><strong>g</strong></td><td></td>
@@ -331,35 +331,35 @@
 <polygon fill="none" stroke="black" points="124,-66 0,-66 0,-42 124,-42 124,-66"/>
 <text text-anchor="middle" x="62" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">import_id_spacetime</text>
 </g>
-<!-- proc~determinant_sym4x4 -->
-<g id="proc~~import_id_spacetime~2~~CallsGraph_node2" class="node">
-<title>proc~determinant_sym4x4</title>
-<g id="a_proc~~import_id_spacetime~2~~CallsGraph_node2"><a xlink:href=".././proc/determinant_sym4x4.html" xlink:title="determinant_sym4x4">
-<polygon fill="#d9534f" stroke="#d9534f" points="289,-108 164,-108 164,-84 289,-84 289,-108"/>
-<text text-anchor="middle" x="226.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym4x4</text>
-</a>
-</g>
-</g>
-<!-- proc~import_id_spacetime~2&#45;&gt;proc~determinant_sym4x4 -->
-<g id="proc~~import_id_spacetime~2~~CallsGraph_edge1" class="edge">
-<title>proc~import_id_spacetime~2&#45;&gt;proc~determinant_sym4x4</title>
-<path fill="none" stroke="#000000" d="M109.57,-66.04C128.09,-70.82 149.59,-76.38 168.99,-81.4"/>
-<polygon fill="#000000" stroke="#000000" points="168.37,-84.85 178.93,-83.96 170.12,-78.07 168.37,-84.85"/>
-</g>
 <!-- proc~compute_g4 -->
-<g id="proc~~import_id_spacetime~2~~CallsGraph_node3" class="node">
+<g id="proc~~import_id_spacetime~2~~CallsGraph_node2" class="node">
 <title>proc~compute_g4</title>
-<g id="a_proc~~import_id_spacetime~2~~CallsGraph_node3"><a xlink:href=".././proc/compute_g4.html" xlink:title="compute_g4">
-<polygon fill="#d9534f" stroke="#d9534f" points="266,-66 187,-66 187,-42 266,-42 266,-66"/>
-<text text-anchor="middle" x="226.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_g4</text>
+<g id="a_proc~~import_id_spacetime~2~~CallsGraph_node2"><a xlink:href=".././proc/compute_g4.html" xlink:title="compute_g4">
+<polygon fill="#d9534f" stroke="#d9534f" points="266,-108 187,-108 187,-84 266,-84 266,-108"/>
+<text text-anchor="middle" x="226.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_g4</text>
 </a>
 </g>
 </g>
 <!-- proc~import_id_spacetime~2&#45;&gt;proc~compute_g4 -->
-<g id="proc~~import_id_spacetime~2~~CallsGraph_edge2" class="edge">
+<g id="proc~~import_id_spacetime~2~~CallsGraph_edge1" class="edge">
 <title>proc~import_id_spacetime~2&#45;&gt;proc~compute_g4</title>
-<path fill="none" stroke="#000000" d="M124.43,-54C141.54,-54 159.89,-54 176.2,-54"/>
-<polygon fill="#000000" stroke="#000000" points="176.59,-57.5 186.59,-54 176.59,-50.5 176.59,-57.5"/>
+<path fill="none" stroke="#000000" d="M109.57,-66.04C130.7,-71.5 155.68,-77.95 177.04,-83.47"/>
+<polygon fill="#000000" stroke="#000000" points="176.32,-86.9 186.88,-86.02 178.07,-80.13 176.32,-86.9"/>
+</g>
+<!-- proc~determinant_sym4x4 -->
+<g id="proc~~import_id_spacetime~2~~CallsGraph_node3" class="node">
+<title>proc~determinant_sym4x4</title>
+<g id="a_proc~~import_id_spacetime~2~~CallsGraph_node3"><a xlink:href=".././proc/determinant_sym4x4.html" xlink:title="determinant_sym4x4">
+<polygon fill="#d9534f" stroke="#d9534f" points="289,-66 164,-66 164,-42 289,-42 289,-66"/>
+<text text-anchor="middle" x="226.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym4x4</text>
+</a>
+</g>
+</g>
+<!-- proc~import_id_spacetime~2&#45;&gt;proc~determinant_sym4x4 -->
+<g id="proc~~import_id_spacetime~2~~CallsGraph_edge2" class="edge">
+<title>proc~import_id_spacetime~2&#45;&gt;proc~determinant_sym4x4</title>
+<path fill="none" stroke="#000000" d="M124.43,-54C134.04,-54 144.04,-54 153.85,-54"/>
+<polygon fill="#000000" stroke="#000000" points="153.98,-57.5 163.98,-54 153.98,-50.5 153.98,-57.5"/>
 </g>
 <!-- interface~get_diffstar_spacetime -->
 <g id="proc~~import_id_spacetime~2~~CallsGraph_node4" class="node">
@@ -548,12 +548,12 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-detg~5">detg</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-detg4~3">detg4</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-g4~10">g4</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-i~22">i</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-j~21">j</a>
-      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-k~17">k</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-detg~7">detg</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-detg4~4">detg4</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-g4~11">g4</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-i~28">i</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-j~26">j</a>
+      <a class="list-group-item" href="../proc/import_id_spacetime~2.html#variable-k~22">k</a>
     </div>
   </div>
 </div>
@@ -568,32 +568,32 @@
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-detg~5"></span>double precision,</td>
+  <td><span class="anchor" id="variable-detg~7"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>detg</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-detg4~3"></span>double precision,</td>
+  <td><span class="anchor" id="variable-detg4~4"></span>double precision,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>detg4</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g4~10"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g4~11"></span>double precision,</td>
 <td>private,</td>  <td>DIMENSION( :, :, :, : ), ALLOCATABLE</td><td>::</td>
   <td><strong>g4</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-i~22"></span>integer,</td>
+  <td><span class="anchor" id="variable-i~28"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>i</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-j~21"></span>integer,</td>
+  <td><span class="anchor" id="variable-j~26"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>j</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-k~17"></span>integer,</td>
+  <td><span class="anchor" id="variable-k~22"></span>integer,</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>k</strong></td><td></td><td></td><td></td>
 </tr>
@@ -626,7 +626,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-05-24 08:27:25           </p>
+ on 2022-07-05 18:11:38           </p>
         </div>
       </div>
       <br>

@@ -91,13 +91,13 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.0% of total for procedures.">5 statements</a>
+    title=" 0.1% of total for procedures.">52 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/submodule_bns_fuka_read.f90"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
      <li><a href='../sourcefile/submodule_bns_fuka_read.f90.html'>submodule_bns_fuka_read.f90</a></li>
-     <li><a href='../module/read.html'>read</a></li>
+     <li><a href='../module/read~2.html'>read</a></li>
      <li class="active">read_fuka_id_particles</li>
   </ol>
 </div>
@@ -116,14 +116,22 @@
     <div id="sidebar">
   <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../proc/read_fuka_id_particles.html#variable-a~20">a</a>
+      <a class="list-group-item" href="../proc/read_fuka_id_particles.html#variable-detg~4">detg</a>
+    </div>
+  </div>
+</div>
 
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>module procedure read_fuka_id_particles <small>module module subroutine read_fuka_id_particles(THIS, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, baryon_density, energy_density, specific_energy, pressure, u_euler_x, u_euler_y, u_euler_z)</small>   <a href='../interface/read_fuka_id_particles.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
+    <h2>module procedure read_fuka_id_particles <small>module module subroutine read_fuka_id_particles(this, n, x, y, z, lapse, shift_x, shift_y, shift_z, g_xx, g_xy, g_xz, g_yy, g_yz, g_zz, baryon_density, energy_density, specific_energy, pressure, u_euler_x, u_euler_y, u_euler_z)</small>   <a href='../interface/read_fuka_id_particles.html'><button type="button" class="btn btn-info depwarn">Interface &rarr;</button></a>
 </h2>
         <div class="panel panel-default">
       <div class="panel-heading">
@@ -132,8 +140,8 @@
       <ul class="list-group">
       <li class="list-group-item">
   <ul class="list-inline">
-    <li><a href='../module/utility.html'>utility</a></li>
     <li>constants</li>
+    <li><a href='../module/utility.html'>utility</a></li>
   </ul>
       </li>
       <li class="list-group-item">
@@ -154,10 +162,22 @@
 <polygon fill="none" stroke="black" points="320,-46 190,-46 190,-22 320,-22 320,-46"/>
 <text text-anchor="middle" x="255" y="-31.6" font-family="Helvetica,sans-Serif" font-size="10.50">read_fuka_id_particles</text>
 </g>
-<!-- module~utility -->
+<!-- constants -->
 <g id="proc~~read_fuka_id_particles~~UsesGraph_node2" class="node">
+<title>constants</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="64,-66 0,-66 0,-42 64,-42 64,-66"/>
+<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
+</g>
+<!-- proc~read_fuka_id_particles&#45;&gt;constants -->
+<g id="proc~~read_fuka_id_particles~~UsesGraph_edge1" class="edge">
+<title>proc~read_fuka_id_particles&#45;&gt;constants</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.78,-39.81C152.52,-43.18 106.69,-47.33 74.23,-50.27"/>
+<polygon fill="#000000" stroke="#000000" points="73.83,-46.79 64.19,-51.18 74.46,-53.76 73.83,-46.79"/>
+</g>
+<!-- module~utility -->
+<g id="proc~~read_fuka_id_particles~~UsesGraph_node3" class="node">
 <title>module~utility</title>
-<g id="a_proc~~read_fuka_id_particles~~UsesGraph_node2"><a xlink:href=".././module/utility.html" xlink:title="utility">
+<g id="a_proc~~read_fuka_id_particles~~UsesGraph_node3"><a xlink:href=".././module/utility.html" xlink:title="utility">
 <polygon fill="#337ab7" stroke="#337ab7" points="154,-26 100,-26 100,-2 154,-2 154,-26"/>
 <text text-anchor="middle" x="127" y="-11.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">utility</text>
 </a>
@@ -168,18 +188,6 @@
 <title>proc~read_fuka_id_particles&#45;&gt;module~utility</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.89,-23.82C181.1,-22.43 172.34,-21.04 164.29,-19.76"/>
 <polygon fill="#000000" stroke="#000000" points="164.6,-16.27 154.17,-18.15 163.5,-23.18 164.6,-16.27"/>
-</g>
-<!-- constants -->
-<g id="proc~~read_fuka_id_particles~~UsesGraph_node3" class="node">
-<title>constants</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="64,-66 0,-66 0,-42 64,-42 64,-66"/>
-<text text-anchor="middle" x="32" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">constants</text>
-</g>
-<!-- proc~read_fuka_id_particles&#45;&gt;constants -->
-<g id="proc~~read_fuka_id_particles~~UsesGraph_edge1" class="edge">
-<title>proc~read_fuka_id_particles&#45;&gt;constants</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M189.78,-39.81C152.52,-43.18 106.69,-47.33 74.23,-50.27"/>
-<polygon fill="#000000" stroke="#000000" points="73.83,-46.79 64.19,-51.18 74.46,-53.76 73.83,-46.79"/>
 </g>
 <!-- module~utility&#45;&gt;constants -->
 <g id="proc~~read_fuka_id_particles~~UsesGraph_edge4" class="edge">
@@ -266,7 +274,8 @@
 
     <p>Stores the hydro \(\mathrm{ID}\) in the arrays needed to
   compute the \(\mathrm{SPH}\) \(\mathrm{ID}\)</p>
-<p>FT 09.02.2022</p>
+<p>Created:     FT 09.02.2022
+  Last update: FT 27.05.2022</p>
 <hr>
 
     <h3>Arguments</h3>
@@ -274,133 +283,133 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-this~130"></span>class(<a href='../type/bnsfuka.html'>bnsfuka</a>),</td>
+  <td><span class="anchor" id="variable-this~232"></span>class(<a href='../type/bnsfuka.html'>bnsfuka</a>),</td>
 <td>intent(inout)</td>
   <td></td>  <td></td><td>::</td>
-  <td><strong>THIS</strong></td><td><p><a href="../type/bnsfuka.html">bnsfuka</a> object which this PROCEDURE is a member of</p></td>
+  <td><strong>this</strong></td><td><p><a href="../type/bnsfuka.html">bnsfuka</a> object which this PROCEDURE is a member of</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-n~14"></span>integer,</td>
+  <td><span class="anchor" id="variable-n~15"></span>integer,</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>n</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-x~43"></span>real(kind=C_DOUBLE),</td>
+  <td><span class="anchor" id="variable-x~50"></span>real(kind=C_DOUBLE),</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>x</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-y~42"></span>real(kind=C_DOUBLE),</td>
+  <td><span class="anchor" id="variable-y~49"></span>real(kind=C_DOUBLE),</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>y</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-z~42"></span>real(kind=C_DOUBLE),</td>
+  <td><span class="anchor" id="variable-z~49"></span>real(kind=C_DOUBLE),</td>
 <td>intent(in),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>z</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-lapse~25"></span>double precision,</td>
+  <td><span class="anchor" id="variable-lapse~27"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>lapse</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-shift_x~18"></span>double precision,</td>
+  <td><span class="anchor" id="variable-shift_x~20"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>shift_x</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-shift_y~18"></span>double precision,</td>
+  <td><span class="anchor" id="variable-shift_y~20"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>shift_y</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-shift_z~18"></span>double precision,</td>
+  <td><span class="anchor" id="variable-shift_z~20"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>shift_z</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_xx~12"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_xx~14"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_xx</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_xy~12"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_xy~14"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_xy</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_xz~12"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_xz~14"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_xz</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_yy~12"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_yy~14"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_yy</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_yz~12"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_yz~14"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_yz</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-g_zz~12"></span>double precision,</td>
+  <td><span class="anchor" id="variable-g_zz~14"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>g_zz</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-baryon_density~24"></span>double precision,</td>
+  <td><span class="anchor" id="variable-baryon_density~21"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>baryon_density</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-energy_density~19"></span>double precision,</td>
+  <td><span class="anchor" id="variable-energy_density~16"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>energy_density</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-specific_energy~20"></span>double precision,</td>
+  <td><span class="anchor" id="variable-specific_energy~22"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>specific_energy</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-pressure~12"></span>double precision,</td>
+  <td><span class="anchor" id="variable-pressure~22"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>pressure</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-u_euler_x~6"></span>double precision,</td>
+  <td><span class="anchor" id="variable-u_euler_x~7"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>u_euler_x</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-u_euler_y~6"></span>double precision,</td>
+  <td><span class="anchor" id="variable-u_euler_y~7"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>u_euler_y</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-u_euler_z~6"></span>double precision,</td>
+  <td><span class="anchor" id="variable-u_euler_z~7"></span>double precision,</td>
 <td>intent(inout),</td>
   <td></td>  <td>DIMENSION(:)</td><td>::</td>
   <td><strong>u_euler_z</strong></td><td></td>
@@ -409,6 +418,136 @@
 </table>
 
     <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~read_fuka_id_particles~~CallsGraph Pages: 1 -->
+<svg id="procread_fuka_id_particlesCallsGraph" width="299pt" height="116pt"
+ viewBox="0.00 0.00 299.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~read_fuka_id_particles~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>proc~~read_fuka_id_particles~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 295,-112 295,4 -4,4"/>
+<!-- proc~read_fuka_id_particles -->
+<g id="proc~~read_fuka_id_particles~~CallsGraph_node1" class="node">
+<title>proc~read_fuka_id_particles</title>
+<polygon fill="none" stroke="black" points="130,-66 0,-66 0,-42 130,-42 130,-66"/>
+<text text-anchor="middle" x="65" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">read_fuka_id_particles</text>
+</g>
+<!-- interface~get_fuka_id_particles -->
+<g id="proc~~read_fuka_id_particles~~CallsGraph_node2" class="node">
+<title>interface~get_fuka_id_particles</title>
+<g id="a_proc~~read_fuka_id_particles~~CallsGraph_node2"><a xlink:href=".././interface/get_fuka_id_particles.html" xlink:title="get_fuka_id_particles">
+<polygon fill="#a7506f" stroke="#a7506f" points="290.5,-108 166.5,-108 166.5,-84 290.5,-84 290.5,-108"/>
+<text text-anchor="middle" x="228.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get_fuka_id_particles</text>
+</a>
+</g>
+</g>
+<!-- proc~read_fuka_id_particles&#45;&gt;interface~get_fuka_id_particles -->
+<g id="proc~~read_fuka_id_particles~~CallsGraph_edge3" class="edge">
+<title>proc~read_fuka_id_particles&#45;&gt;interface~get_fuka_id_particles</title>
+<path fill="none" stroke="#000000" d="M112.28,-66.04C130.69,-70.82 152.05,-76.38 171.34,-81.4"/>
+<polygon fill="#000000" stroke="#000000" points="170.65,-84.83 181.21,-83.96 172.42,-78.06 170.65,-84.83"/>
+</g>
+<!-- proc~is_finite_number -->
+<g id="proc~~read_fuka_id_particles~~CallsGraph_node3" class="node">
+<title>proc~is_finite_number</title>
+<g id="a_proc~~read_fuka_id_particles~~CallsGraph_node3"><a xlink:href=".././proc/is_finite_number.html" xlink:title="is_finite_number">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="278.5,-66 178.5,-66 178.5,-42 278.5,-42 278.5,-66"/>
+<text text-anchor="middle" x="228.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">is_finite_number</text>
+</a>
+</g>
+</g>
+<!-- proc~read_fuka_id_particles&#45;&gt;proc~is_finite_number -->
+<g id="proc~~read_fuka_id_particles~~CallsGraph_edge2" class="edge">
+<title>proc~read_fuka_id_particles&#45;&gt;proc~is_finite_number</title>
+<path fill="none" stroke="#000000" d="M130.29,-54C142.8,-54 155.86,-54 168.2,-54"/>
+<polygon fill="#000000" stroke="#000000" points="168.36,-57.5 178.36,-54 168.36,-50.5 168.36,-57.5"/>
+</g>
+<!-- proc~determinant_sym3x3 -->
+<g id="proc~~read_fuka_id_particles~~CallsGraph_node4" class="node">
+<title>proc~determinant_sym3x3</title>
+<g id="a_proc~~read_fuka_id_particles~~CallsGraph_node4"><a xlink:href=".././proc/determinant_sym3x3.html" xlink:title="determinant_sym3x3">
+<polygon fill="#d9534f" stroke="#d9534f" points="291,-24 166,-24 166,0 291,0 291,-24"/>
+<text text-anchor="middle" x="228.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">determinant_sym3x3</text>
+</a>
+</g>
+</g>
+<!-- proc~read_fuka_id_particles&#45;&gt;proc~determinant_sym3x3 -->
+<g id="proc~~read_fuka_id_particles~~CallsGraph_edge1" class="edge">
+<title>proc~read_fuka_id_particles&#45;&gt;proc~determinant_sym3x3</title>
+<path fill="none" stroke="#000000" d="M112.28,-41.96C130.69,-37.18 152.05,-31.62 171.34,-26.6"/>
+<polygon fill="#000000" stroke="#000000" points="172.42,-29.94 181.21,-24.04 170.65,-23.17 172.42,-29.94"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="594pt" height="32pt"
+ viewBox="0.00 0.00 594.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 590,-28 590,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="388,-24 244,-24 244,0 388,0 388,-24"/>
+<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="463.5,-24 406.5,-24 406.5,0 463.5,0 463.5,-24"/>
+<text text-anchor="middle" x="435" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="586,-24 482,-24 482,0 586,0 586,-24"/>
+<text text-anchor="middle" x="534" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
     <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Called by</h3>
@@ -514,12 +653,40 @@
     <section class="visible-xs visible-sm hidden-md">
       <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../proc/read_fuka_id_particles.html#variable-a~20">a</a>
+      <a class="list-group-item" href="../proc/read_fuka_id_particles.html#variable-detg~4">detg</a>
+    </div>
+  </div>
+</div>
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
 
+    <section>    
+      <h2>Variables</h2>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-a~20"></span>integer,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>a</strong></td><td></td><td></td><td></td>
+</tr>
+<tr>
+  <td><span class="anchor" id="variable-detg~4"></span>double precision,</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>detg</strong></td><td></td><td></td><td></td>
+</tr>
+</tbody>
+</table>
+
+    </section>
+    <br>
     
     
 
@@ -544,7 +711,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-05-24 08:27:25           </p>
+ on 2022-07-05 18:11:38           </p>
         </div>
       </div>
       <br>
